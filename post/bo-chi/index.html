@@ -1,0 +1,464 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+ <meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta HTTP-EQUIV="pragma" CONTENT="no-cache"> 
+<meta HTTP-EQUIV="Cache-Control" CONTENT="no-cache, must-revalidate"> 
+<meta HTTP-EQUIV="expires" CONTENT="0"> 
+<title>剥离 | Coder109</title>	
+
+<link rel="stylesheet" href="https://coder109.github.io/styles/main.css">
+<script type="text/javascript">
+function getCSS()
+{
+        datetoday = new Date();
+        timenow=datetoday.getTime();
+        datetoday.setTime(timenow);
+        thehour = datetoday.getHours();
+
+        if (thehour<7:00)
+
+            display = "https://coder109.github.io/media/css/night.css";
+
+       else if (thehour>20:00)
+
+            display = "https://coder109.github.io/media/css/night.css";   
+
+        else if (thehour>7:00)
+           
+            display = "https://coder109.github.io/media/css/day.css";
+
+        else if (thehour<20:00)
+
+            display = "https://coder109.github.io/media/css/day.css";
+      
+
+var css = '<';
+        css+='link rel="stylesheet" href='+display+' \/';
+        css+='>';
+        document.write(css);
+}
+</script>
+<link href="https://fonts.googleapis.com/css?family=Dancing+Script|Noto+Sans+SC:300|Montserrat&display=swap" rel="stylesheet">
+<link href="https://at.alicdn.com/t/font_1306644_jwtuc2zzbrd.css" rel="stylesheet" />
+<script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+<script type='text/javascript' src='https://coder109.github.io/media/scripts/script.js'></script>
+<link href="https://cdn.bootcss.com/animate.css/3.5.2/animate.min.css" rel="stylesheet" />
+  <script src="https://cdn.bootcss.com/wow/1.1.2/wow.min.js"></script>
+  <script src="https://cdn.bootcss.com/highlight.js/9.15.8/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+  <script>wow=new WOW({boxClass:'wow',animateClass:'animated',offset:0,mobile:true,live:true});wow.init();</script>
+
+<script type="text/javascript">
+window.onload=getCSS();
+</script>
+
+
+ 	
+</head>
+<body class="post-template-default single single-post postid-70 single-format-standard">
+    <div id="wrapper">
+        
+			
+		<header id="header" class="site-header" 
+		
+		>
+			<div class="site-branding">
+									<h1 class="site-title"><a href="https://coder109.github.io" rel="home">Coder109</a></h1>
+										
+					<h2 class="site-description">Welcome!</h2>
+										
+							</div>
+			<nav id="nav-wrapper">
+				<div class="container">
+					<div class="nav-toggle">
+						<div class="bars">
+							<div class="bar"></div>
+							<div class="bar"></div>
+							<div class="bar"></div>
+						</div>
+					</div>
+					<div class="clear"></div>
+					<ul id="" class="dove">
+		 
+     			
+<li>
+	 
+	<a  href="/"> 首页</a></li>
+	
+    
+     			
+<li>
+	 
+	<a  href="/archives"> 归档</a></li>
+	
+    
+     			
+<li>
+	 
+	<a  href="/tags"> 标签</a></li>
+	
+    
+     			
+<li>
+	 
+	<a  href="/post/about"> 关于</a></li>
+	
+    
+
+</ul>
+</li>		
+		
+</ul>				</div>
+			</nav>
+						<div class="jingge">
+
+
+    
+
+    
+			
+<a  href="https://github.com/coder109" target="_blank" ><i class="iconfont icon-github"></i></a>
+ 
+    
+			
+<a  href="https://www.zhihu.com/people/noxcadit" target="_blank" ><i class="iconfont icon-zhihu"></i></a>
+ 
+    
+
+    
+
+    
+
+    
+			
+<a  href="https://www.douban.com/people/fallennight/" target="_blank" ><i class="iconfont icon-douban"></i></a>
+ 
+    
+
+    
+			
+<a  href="3083422196" target="_blank" ><i class="iconfont icon-qq"></i></a>
+ 
+    
+			
+<a  href="https://weibo.com/Fallennight" target="_blank" ><i class="iconfont icon-weibo"></i></a>
+ 
+    
+
+    
+        </header>
+
+		<div id="content" class="container">
+			<div class="row">
+	<div class="col-md-8 site-main">
+				
+<article id="post-70" class="post-70 post type-post status-publish format-standard hentry category-5 tag-10 tag-9 tag-11">
+
+	
+	                      
+		<div class="entry-content">
+			<h1 class="wow swing entry-title">剥离</h1>
+<div class="entry-meta">
+<div class="wow bounce">
+	<i class="iconfont icon-rili"> <time class="lately-a" datetime="2020-06-05 18:56:41" itemprop="datePublished" pubdate="">2020-06-05</time></i>
+	          </div>
+			
+</span>
+													 
+		</div>
+                  
+			<div class="wow slideInLeft entry-summary song">
+				<pre><code>    从我的学校向东大概三百余米有一家书店，名为“泊舟”。门面不大，黑色边框的玻璃门将两个迥然各异的世界隔开来。门外是世间万物，喧闹的大千世界，门内是店主苏先生的小天地。苏先生大概三十多岁，据说是某名牌大学毕业的高材生，在外地经商失败后回到家乡开了这家书店。虽说地处学校旁边，苏先生却不大想卖一些教辅资料。店里只有老师们口中的“闲书”。又由于真正看书的人越来越少，店内基本上冷冷清清。
+
+    我经常去“泊舟”读书。家中一半的书都是从那里苦觅而来。比起网购，那里的书便宜、质量又好。从哲学到艺术，一应俱全。去得多了，我与苏先生也熟悉起来。
+
+    “吱呀——”浑身淋湿的我推开“泊舟”的门。柜台后的苏先生有些诧异，放下茶杯抬起头望着我。
+
+    “雨天还来看书？”说着，递给了我一条蓝白格子毛巾。
+
+    “刚刚雨没有这么大来着，老师拖堂，不肯早放学。”我抱怨道，擦干雨水，将毛巾递给苏先生。他笑了笑，没作声。
+
+    书架上的书，位置几乎没有变动，有的书还积了灰。店内的冷清有些悲哀。当下的世界，谁有时间看书呢？只有一小部分爱好者苟延残喘撑起自己的一片天地而已。这就是世界，没有商量的余地。不愿投身于大潮者，只得接受被流放的命运。
+
+    “我要关店了，”苏先生突然说道，声音在潮湿的空气里弥散开来，“你看得出来为什么。”
+
+    “那苏先生……您今后要做些什么呢？”
+
+    “白手起家，寻找能养得起人的工作。”苏先生加重了最后几个字的读音，手里的茶杯和桌子碰撞，像极了雷声。
+
+    “我真的维持不下去了。欠了一身债，又没有存款。其他人——我的同龄人——大都事业有成，家庭美满，只有我这么悲惨。我是个失败者。这么长时间，也只有你会经常来看书，以后你要寂寞了。”苏先生苦笑着。“有时妥协也是门艺术。”
+
+    “您还留在这吗？”我问道。
+
+
+    “会的，会的……我没有其他地方可以去……也许你还会见到我。唔，做个不恰当的比喻，到时候我会像爱伦坡的厄舍一样。极度病态而不堪。”
+
+    “为什么？”
+
+    “我这样的人要么摧毁一切，要么被一切所摧毁。”这句话从高中生嘴里说出来就很中二，可苏先生说出来，我只能感到无奈。
+
+    “雨小了，回去吧。”
+
+    窗外的雨早已停歇，天空呈现出一种怪诞的黄色。街上，背着书包的学生四下散去。闪烁着的霓虹令将要沉没的“泊舟”更加黯淡。
+
+    第二天，“泊舟”被一家炸串坊所替代，门前有不少学生和路人大快朵颐。
+
+    过了很久，我没有看见那所谓“厄舍”的身影。但我有预感，我将再次见到他。
+
+    大概是一个学期之后，我的语文老师由于某些“不可抗力因素”辞去职务，有一位新聘的老师代为授课。一面思考着那极度神秘的“不可抗力”，一面期待着新老师的来临。
+
+    铃声响起，我发现那站在台上的正是消失已久的苏先生。他穿着西装革履，意气风发，脸上洋溢着笑容，这个男人很难和之前的店主联系起来。“苏先生，苏先生”我默念道。
+
+    他的课很有趣，深深吸引住了身旁同学的注意。“原来他是这样的人啊”我心下想着，“早点当老师多好啊。”
+
+    苏先生的目光扫视着台下一双双求知若渴的眸子，他的眼神中充满着希望、激情。突然，他看见了我。坐在最后一排的我。苏先生的眼中闪过了一丝怪异的光，随即把视线离开了。我记不得那节课是怎么熬过去的，只记得他再也没有看过我一眼。
+
+    下课之后我去办公室找苏先生，他的身边挤满了学生。好不容易把学生们应付走，他拿起桌子上的茶杯，呷了一口。“你来啦。”
+
+    “您原来是这样厉害的老师啊。”我说道。“您为什么一开始不去做老师呢？”
+
+    “你没有必要知道。我的一切你都没有必要知道。我是老师，你是学生，尽管学习就好。”
+
+    “那您上次说的厄舍……？”
+
+    “好啦好啦，别来烦我了，回去吧。”他摆摆手，有些不耐烦。
+
+    我没有说些什么，不明白为什么他会变成这个样子。但我知道他不再是以前的苏先生了。
+
+   - to be continued -</code></pre>
+
+							</div>
+	<div class="wow bounceInDown vt-post-tags">
+ 
+					</div>						
+<nav class="navigation3 post-navigation3" role="navigation">
+		
+		<div class="nav-links3">
+      
+		 
+		</div>
+	</nav>
+	<div class="wow rollIn author-info" style="visibility: visible; animation-name: rollIn;">
+	<div class="author-avatar pull-left"><img src="https://coder109.github.io/images/avatar.png" ></div>
+ 
+	<div class="author-description"><div class="author-title"><div class="author-link" rel="author">Coder109</div></div>
+
+
+	<p class="author-bio">Vive hodie.</p></div></div>
+	
+		</div>
+		
+ 
+		
+</article>
+
+<div id="marlin_lite_about_widget-2" class="wow bounceInUp widget marlin_lite_about_widget" data-wow-delay="0.1s">
+		
+        
+		<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src='https://coder109.github.io/media/scripts/Valine.min.js'></script>
+
+<div class="comment"></div>
+<script>
+        new Valine({
+            // AV 对象来自上面引入av-min.js(老司机们不要开车➳♡゛扎心了老铁)
+            av: AV, 
+            el: '.comment',
+            lang: 'zh-cn',
+            
+            
+      emoticon_list: ["吐.png","喷血.png","狂汗.png","不说话.png","汗.png","坐等.png","献花.png","不高兴.png","中刀.png","害羞.png","皱眉.png","小眼睛.png","中指.png","尴尬.png","瞅你.png","想一想.png","中枪.png","得意.png","肿包.png","扇耳光.png","亲亲.png","惊喜.png","脸红.png","无所谓.png","便便.png","愤怒.png","蜡烛.png","献黄瓜.png","内伤.png","投降.png","观察.png","看不见.png","击掌.png","抠鼻.png","邪恶.png","看热闹.png","口水.png","抽烟.png","锁眉.png","装大款.png","吐舌.png","无奈.png","长草.png","赞一个.png","呲牙.png","无语.png","阴暗.png","不出所料.png","咽气.png","期待.png","高兴.png","吐血倒地.png","哭泣.png","欢呼.png","黑线.png","喜极而泣.png","喷水.png","深思.png","鼓掌.png","暗地观察.png"],
+     	
+      	
+          
+        });
+    </script> 
+
+
+   
+  
+ 
+
+		</div>
+
+			</div>
+			
+
+
+<div class="tocc col l3 hide-on-med-and-down">
+	
+        <div class="toc-widget">
+			
+            <div class="toc-title"></div>
+			
+            <div id="toc-content">
+			
+			
+			</div>
+        </div>
+    </div>
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.5.0/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '.entry-summary',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            // headingsOffset: -205,
+            headingSelector: 'h2, h3, h4'
+        });
+
+        // modify the toc link href to support Chinese.
+        let i = 0;
+        let tocHeading = 'toc-heading-';
+        $('#toc-content a').each(function () {
+            $(this).attr('href', '#' + tocHeading + (++i));
+        });
+
+        // modify the heading title id to support Chinese.
+        i = 0;
+        $('.entry-summary').children('h2, h3, h4').each(function () {
+            $(this).attr('id', tocHeading + (++i));
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+    });
+</script>										 
+
+ 
+       
+
+
+			</div>
+		</div>
+
+		
+		 	<footer id="colophon" class="site-footer">
+
+			<div class="container">
+	
+				<div class="copyright">Powered by <a href="https://github.com/getgridea/gridea" target="_blank"> Gridea</a><br>Theme:   <a href="https://github.com/alterfang/gridea-theme-pan" target="_blank" title="Pan"><span>Pan</span></a>. Powered by <a href="https://gridea.dev/" target="_blank" title="Gridea"><span>Gridea</span></a></div>		
+			</div>
+		
+		</footer>
+
+</div>
+
+<script src="https://cdn.bootcss.com/fitvids/1.2.0/jquery.fitvids.min.js"></script>
+<script type='text/javascript' src='https://coder109.github.io/media/scripts/marlin-scripts.js'></script>
+ <script src="//tokinx.github.io/lately/lately.min.js"></script>
+  <script>jQuery(document).ready(function(){$.lately({'target':'.lately-a,.lately-b,.lately-c'})});</script>
+  <style type="text/css">a.back_to_top {
+    text-decoration: none;
+    position: fixed;
+    bottom: 40px;
+    right: 30px;
+    background: #f0f0f0;
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    line-height: 36px;
+    font-size: 18px;
+    text-align: center;
+    transition-duration: .5s;
+    transition-propety: background-color;
+    display: none;
+}
+
+a.back_to_top span {
+    color: #888;
+}
+
+a.back_to_top:hover {
+    cursor: pointer;
+    background: #dfdfdf;
+}
+
+a.back_to_top:hover span {
+    color: #555;
+}
+
+@media print, screen and (max-width: 580px) {
+    .back_to_top {
+        display: none !important;
+    }
+}
+
+
+
+</style><a id="back_to_top" href="#" class="back_to_top"><span><i class="iconfont icon-xiangshang"></i></span>
+</a>
+
+
+<script>$(document).ready((function(_this) {
+  return function() {
+    var bt;
+    bt = $('#back_to_top');
+    if ($(document).width() > 480) {
+      $(window).scroll(function() {
+        var st;
+        st = $(window).scrollTop();
+        if (st > 30) {
+          return bt.css('display', 'block');
+        } else {
+          return bt.css('display', 'none');
+        }
+      });
+      return bt.click(function() {
+        $('body,html').animate({
+          scrollTop: 0
+        }, 800);
+        return false;
+      });
+    }
+  };
+})(this));
+</script>
+
+		<script data-no-instant>
+    (function ($) {
+        $.extend({
+            adamsOverload: function () {
+                $('.navigation:eq(0)').remove();
+                $("").attr("rel" , "external");
+                $("a[rel='external'],a[rel='external nofollow']").attr("target","_blank");
+                $("a.vi").attr("rel" , "");
+                $.viewImage({
+                    'target'  : 'img',
+                    'exclude' : '.vsmile-icons img,.gallery img',
+                    'delay'   : 300
+                });
+                $.lately({
+                    'target' : '.commentmetadata a,.infos time,.post-list time'
+                });
+                prettyPrint();
+                
+                $('ul.links li a').each(function(){
+                    if($(this).parent().find('.bg').length==0){
+                        $(this).parent().append('<!---<div class="bg" style="background-image:url(https://c3.glgoo.top/s2/favicons?domain='+$(this).attr("href")+')"></div>--->')
+                    }
+                });
+            }
+        });
+    })(jQuery);
+    jQuery.adamsOverload();
+</script>
+
+</body>
+</html>
