@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://coder109.github.io</id>
     <title>Coder109</title>
-    <updated>2020-06-05T11:42:08.941Z</updated>
+    <updated>2020-06-06T03:57:18.728Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://coder109.github.io"/>
     <link rel="self" href="https://coder109.github.io/atom.xml"/>
@@ -10,6 +10,33 @@
     <logo>https://coder109.github.io/images/avatar.png</logo>
     <icon>https://coder109.github.io/favicon.ico</icon>
     <rights>All rights reserved 2020, Coder109</rights>
+    <entry>
+        <title type="html"><![CDATA[死]]></title>
+        <id>https://coder109.github.io/post/si/</id>
+        <link href="https://coder109.github.io/post/si/">
+        </link>
+        <updated>2020-06-06T03:55:25.000Z</updated>
+        <content type="html"><![CDATA[<p>寒冷吞没了我的灵魂，</p>
+<p>那触手可及的痛苦，</p>
+<p>是唯一的所有物。</p>
+<p>他，就此沉沦。</p>
+<br />
+<p>春天唯一的过冬者，</p>
+<p>如今成了生命唯一的送葬人。</p>
+<p>寂静，也喧闹着。</p>
+<p>他的双眼，暗淡无神。</p>
+<br />
+<p>默不作声的人们四下散去，</p>
+<p>绯红的花朵早已变成黑色。</p>
+<p>这不过是另一个，</p>
+<p>人们早已看惯的终结而已。</p>
+<br />
+<p>存在是苟活者的托词，</p>
+<p>快乐是麻木者的借口。</p>
+<p>上帝看惯了生与死，</p>
+<p>世间的万物，覆水难收。</p>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[剥离]]></title>
         <id>https://coder109.github.io/post/bo-chi/</id>
