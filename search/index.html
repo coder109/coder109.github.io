@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
     <meta charset="utf-8" />
@@ -47,10 +47,38 @@
                     })();
                 </script>
                 
+    <script src="//cdn.jsdelivr.net/gh/tangkaichuan/gridea-search/lib/fuse.js"></script>
+    <script src="//cdn.jsdelivr.net/gh/tangkaichuan/gridea-search/lib/ejs.min.js"></script>
+    <script src="//cdn.jsdelivr.net/gh/tangkaichuan/gridea-search/lib/gridea-search.min.js"></script>
+    <script src="//cdn.jsdelivr.net/gh/tangkaichuan/gridea-search/example/assets/media/gridea-search/result-template.ejs" type="text/ejs"></script>
+    <style>
+            .main_ {
+                display: flex;
+                flex-direction: column;
+                width: 100%;
+                height: 90vh;
+            }
+            
+            .result-box {
+                margin-top: 50px;
+                display: flex;
+                border-radius: 5px;
+                -webkit-box-sizing: border-box;
+                -moz-box-sizing: border-box;
+                box-sizing: border-box;
+                margin-left: auto;
+                margin-right: auto;
+            }
+        </style>
 </head>
 
 <body>
-    <div class="wrapper">
+    <style>
+        .searched-keyword {
+            background-color: green;
+        }
+    </style>
+    <div class="main_">
         <header>
     <nav class="navbar">
         <div class="container">
@@ -149,147 +177,15 @@
 
     }
 </script>
-            <div class="main">
-                <div class="container">
-                    <article class="post-wrap">
-                        <header class="post-header">
-                            <h1 class="post-title">
-                                死
-                            </h1>
-                            
-                                <!--en-->
-                                <div class="post-meta en">
-                                    Author:
-                                    <a itemprop="author" rel="author" href="/">
-                                        Coder109
-                                    </a>
-                                    <span class="post-time">
-                                Date: <a href="#">2020-06-06</a>
-                            </span>
-                                    <span class="post-readtime">Reading Time:<a
-                                    href="#">0.5
-                                    mins</a></span>
-                                    <span class="post-words">words:<a href="#">138</a></span>
-                                    
-                                            Views:
-                                            <span data-hk-page="current"> - </span>
-                                            
-                                </div>
-                                
-                        </header>
-                        
-                        <div class="post-content">
-                            <p>寒冷吞没了他的灵魂，</p>
-<p>那触手可及的痛苦，</p>
-<p>是唯一的所有物。</p>
-<p>他，就此沉沦。</p>
-<br />
-<p>春天唯一的过冬者，</p>
-<p>如今成了生命唯一的送葬人。</p>
-<p>寂静，也喧闹着。</p>
-<p>他的双眼，暗淡无神。</p>
-<br />
-<p>默不作声的人们四下散去，</p>
-<p>绯红的花朵早已变成黑色。</p>
-<p>这不过是另一个，</p>
-<p>人们早已看惯的终结而已。</p>
-<br />
-<p>存在是苟活者的托词，</p>
-<p>快乐是麻木者的借口。</p>
-<p>上帝看惯了生与死，</p>
-<p>世间的万物，覆水难收。</p>
-
-                        </div>
-                        
-                                
-                                    
-                                        <!--en-->
-                                        <section class="post-copyright en">
-                                            <p class="copyright-item">
-                                                <span>Author:</span>
-                                                <span>Coder109</span>
-                                            </p>
-
-                                            <p class="copyright-item">
-                                                <span>Permalink:</span>
-                                                <span><a href="https://coder109.github.io/post/si/">https://coder109.github.io/post/si/</a></span>
-                                            </p>
-
-                                            <p class="copyright-item">
-                                                <span>License:</span>
-                                                <span>MIT License</span>
-                                            </p>
-                                        </section>
-                                        
-                                                
-                                                    
-                                                        <!-- Share-->
-                                                        <span style="margin-right:15px">
-                                                    <i class="post-share"></i>
-                                                    <span>Share:</span>
-                                                        <a title="QR Code" target="_blank" href="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://coder109.github.io/post/si/"><i class="fa fa-qrcode"></i></a>
-                                                        <a title="QQ" target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://coder109.github.io/post/si/&sharesource=qzone&title=死&pics=https://coder109.github.io/images/avatar.png?v=1592027013611&summary="><i class="fa fa-qq"></i></a>
-                                                        <a title="Weibo" target="_blank" href="https://service.weibo.com/share/share.php?url=https://coder109.github.io/post/si/&sharesource=weibo&title=死 + " - " + &pic="https://coder109.github.io/images/avatar.png?v=1592027013611 "><i class="fa fa-weibo "></i></a>
-                                                        
-                                                                </span>
-                                                                <!--en-->
-                                                                <section class="post-tags en ">
-                                                                    <div>
-                                                                        <span>Tag(s):</span>
-                                                                        <span class="tag ">
-                        
-                                                            </span>
-                                                                    </div>
-                                                                    <div>
-                                                                        <a href="javascript:window.history.back();">back</a>
-                                                                        <span>&dot;</span>
-                                                                        <a href="#">home</a>
-                                                                    </div>
-                                                                </section>
-                                                                
-                                                                                <!---->
-                                                                                <section class="post-nav">
-                                                                                    
-                                                                                        <a class="prev" rel="prev" href="https://coder109.github.io/post/ku-xing/">
-                                                                                            苦行
-                                                                                        </a>
-                                                                                        
-                                                                                            
-                                                                                                <a class="next" rel="next" href="https://coder109.github.io/post/bo-chi/">
-                                                                                                    剥离
-                                                                                                </a>
-                                                                                                
-                                                                                </section>
-                    </article>
+            <div class="result-box">
+                <div id="gridea-search-result">
+                    <p class="searching">搜索中......</p>
+                    <p class="no-result" style="display:none">未搜索到相关文章</p>
                 </div>
-                
-                    
-                        <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
-<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
-
-<div id="gitalk-container" style="width: 100%;max-width: 780px;margin: auto;"></div>
-
-<script>
-    var gitalk = new Gitalk({
-        clientID: 'b6d11db883291941a60f',
-        clientSecret: '2e582fd84a4fcf69b598df70186492f3cba2a90f',
-        repo: 'coder109.github.io',
-        owner: 'coder109',
-        admin: ['coder109'],
-        id: (location.pathname).substring(0, 49), // Ensure uniqueness and length less than 50
-        distractionFreeMode: false // Facebook-like distraction free mode
-    })
-
-    gitalk.render('gitalk-container')
-</script>
-                            
-                                        
-                                            
             </div>
     </div>
-    </div>
-    </div>
-    
+</body>
+
     <div id="player"></div>
     
         <footer id="footer" class="footer">
@@ -365,10 +261,5 @@
                     console.log("\n %c \u26a1Theme:Chic Author's Blog:https://blog.itjoker.cn  Write By ITJoker  \n\n", "color: #ffffff; background: rgba(49, 49, 49, 0.85); padding:5px 0;border-radius:5px;");
                 </script>
                 
-        </div>
-</body>
-<script>
-    scroll();
-</script>
 
 </html>
