@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://coder109.github.io</id>
     <title>Coder109</title>
-    <updated>2020-06-13T13:44:55.381Z</updated>
+    <updated>2020-06-13T13:47:10.453Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://coder109.github.io"/>
     <link rel="self" href="https://coder109.github.io/atom.xml"/>
@@ -122,30 +122,20 @@
         <link href="https://coder109.github.io/post/ji-meng/">
         </link>
         <updated>2020-06-13T13:32:28.000Z</updated>
-        <content type="html"><![CDATA[<pre><code>    幻梦？遥远的乌托邦。
-
-    秽土中生长的，是邪恶，是日复一日——
-
-    腐烂与残败的交响。
-
-    
-
-    万亿世代中的璀璨星河，
-
-    如今化作黑白与谁成说？
-
-    幻觉中的晨雾是心上的纱帐，
-
-    虚无的悲叹，是为了消失的信仰。
-
-
-    违心的梦啊，月中无奈的捣药声。
-
-    清醒的恶啊，风里绝望的唱诗班。
-
-    眼前毫无血色的脸，
-
-    是我，是他，是万物的死与生。</code></pre>
+        <content type="html"><![CDATA[<p>幻梦？遥远的乌托邦。</p>
+<p>秽土中生长的，是邪恶，是日复一日——</p>
+<p>腐烂与残败的交响。</p>
+<br />
+<p>万亿世代中的璀璨星河，</p>
+<p>如今化作黑白与谁成说？</p>
+<p>幻觉中的晨雾是心上的纱帐，</p>
+<p>虚无的悲叹，是为了消失的信仰。</p>
+<br />
+  违心的梦啊，月中无奈的捣药声。
+<br /><br />
+<p>清醒的恶啊，风里绝望的唱诗班。</p>
+<p>眼前毫无血色的脸，</p>
+<p>是我，是他，是万物的死与生。</p>
 ]]></content>
     </entry>
     <entry>
