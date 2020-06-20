@@ -2120,7 +2120,13 @@ body {
         width: 960px;
         margin: 0 auto;
       }
-    body {
+    @font-face {
+      font-family: 'trebuc';
+      src: url('/media/fonts/trebuc.ttf');
+    }
+    * {
+        font-family: 'trebuc';
+    }body {
       color: #555;
     }
     .next-md-body {
@@ -2235,14 +2241,12 @@ body {
       background: #FFFFFFfe;
     }.box-scale > #landlord {
       transform: scale([0,1]);
-    }.box-shadow-wrapper {
-      box-shadow: none !important;
     }body {
-      cursor: default;
+      cursor: url('/media/curs/Arrow.cur'), default;
     }a {
-      cursor: pointer;
+      cursor: url('/media/curs/Hand.cur'), pointer !important;
     }input, textarea, code {
-      cursor: text;
+      cursor: url('/media/curs/Wait.cur'), text !important;
     }code > span.copy-code {
       cursor: pointer;
     }.post img {
