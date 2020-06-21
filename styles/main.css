@@ -2136,7 +2136,7 @@ body {
       border-bottom-color: #555;
     }
     .archive-timeline-box::after, .tag-timeline-wrapper::after {
-      background: #eeeeeefe;
+      background: #343a40fe;
     }h1, h2, h3, h4, h5, h6 {
       color: #555;
     }
@@ -2183,11 +2183,11 @@ body {
       }.nav-item a:hover {
         color: #222;
       }.nav-item-active {
-      background: #f9f9f9fe;
+      background: #dee2e6fe;
     }
 
     .nav-item:hover {
-      background: #f9f9f9fe;
+      background: #dee2e6fe;
       color: rgba(0, 0, 0, 0.98);
     }.site-author-image {
       border-radius: 50%;
