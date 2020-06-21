@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://coder109.github.io</id>
     <title>Coder109</title>
-    <updated>2020-06-20T06:05:37.664Z</updated>
+    <updated>2020-06-21T00:33:05.485Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://coder109.github.io"/>
     <link rel="self" href="https://coder109.github.io/atom.xml"/>
@@ -10,6 +10,23 @@
     <logo>https://coder109.github.io/images/avatar.png</logo>
     <icon>https://coder109.github.io/favicon.ico</icon>
     <rights>All rights reserved 2020, Coder109</rights>
+    <entry>
+        <title type="html"><![CDATA[2020/6/21]]></title>
+        <id>https://coder109.github.io/post/2020621/</id>
+        <link href="https://coder109.github.io/post/2020621/">
+        </link>
+        <updated>2020-06-21T00:31:58.000Z</updated>
+        <content type="html"><![CDATA[<p>我将从高崖之上</p>
+<p>坠落，落入黑暗的深渊</p>
+<p>阳光无法击溃午夜的迷障</p>
+<p>遗失的欲念，灵魂徒然地流浪</p>
+<br />
+<p>我将从深谷之间</p>
+<p>仰望，仰望无边的光明</p>
+<p>初阳无法驱除黎明的寒冷</p>
+<p>消散的温存，生命踏上了归程</p>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[幻想小段]]></title>
         <id>https://coder109.github.io/post/huan-xiang-xiao-duan/</id>
