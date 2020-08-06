@@ -8,7 +8,7 @@
 <meta name="keywords" content="Coder109">
 <meta name="description" content="Vive hodie!">
 <meta name="theme-color" content="#000">
-<title>【歌词相关】化学中二版青花瓷浅解 | Coder109</title>
+<title>【笔记】西方哲学史 中国人民大学公开课 | Coder109</title>
 <link rel="shortcut icon" href="/favicon.ico?v=1596682300968">
 <link rel="stylesheet" href="/media/css/pisces.css">
 <link rel="stylesheet" href="/media/fonts/font-awesome.css">
@@ -48,8 +48,8 @@
 </script>
 
 
-  <meta name="description" content="【歌词相关】化学中二版青花瓷浅解" />
-  <meta name="keywords" content="歌词相关" />
+  <meta name="description" content="【笔记】西方哲学史 中国人民大学公开课" />
+  <meta name="keywords" content="笔记" />
 </head>
 
 <body>
@@ -187,7 +187,8 @@
       <div class="sidebar-body pisces" id="sidebar_body">
         
           
-            
+            <div class="post-side-meta" id="post_side_meta">
+              
 <div class="sidebar-wrapper box-shadow-wrapper bg-color">
   <div class="sidebar-item">
     <img class="site-author-image right-motion" src="/images/avatar.png"/>
@@ -236,6 +237,197 @@
 
 
 </div>
+            </div>
+            <div class="post-toc sidebar-body-active" id="post_toc" style="opacity: 1;">
+              <div class="toc-box right-motion">
+  <div class="toc-wrapper auto-number auto"
+    id="toc_wrapper">
+    <ul class="markdownIt-TOC">
+<li>
+<ul>
+<li><a href="#%E5%93%B2%E5%AD%A6%E7%9A%84%E7%89%B9%E7%82%B9">哲学的特点</a></li>
+<li><a href="#%E5%AD%A6%E4%B9%A0%E6%B3%95">学习法</a></li>
+<li><a href="#%E5%93%B2%E5%AD%A6%E7%9A%84%E8%AF%9E%E7%94%9F">哲学的诞生</a></li>
+</ul>
+</li>
+</ul>
+
+  </div>
+</div>
+
+<script>
+
+  let lastTop = 0, lList = [], hList = [], postBody, lastIndex = -1;
+  let active = 'active-show', activeClass = 'active-current';
+  let tocWrapper = document.querySelector('#toc_wrapper');
+  let tocContent = tocWrapper.children[0];
+  let autoNumber = tocWrapper && tocWrapper.classList.contains('auto-number');
+
+  function addTocNumber(elem, deep) {
+    if (!elem) {
+      return;
+    }
+    let prop = elem.__proto__;
+
+    if (prop === HTMLUListElement.prototype) {
+      for (let i = 0; i < elem.children.length; i++) {
+        addTocNumber(elem.children[i], deep + (i + 1) + '.');
+      }
+    } else if (prop === HTMLLIElement.prototype) {
+      // 保存li元素
+      if (elem.children[0] && elem.children[0].__proto__ === HTMLAnchorElement.prototype) {
+        lList.push(elem);
+      }
+      for (let i = 0; i < elem.children.length; i++) {
+        let cur = elem.children[i];
+        if (cur.__proto__ === HTMLAnchorElement.prototype) {
+          if (autoNumber) {
+            cur.text = deep + ' ' + cur.text;
+          }
+        } else if (cur.__proto__ === HTMLUListElement.prototype) {
+          addTocNumber(cur, deep);
+        }
+      }
+    }
+  }
+
+  function removeParentActiveClass() {
+    let parents = tocContent.querySelectorAll('.' + active)
+    parents.forEach(function (elem) {
+      elem.classList.remove(active);
+    });
+  }
+
+  function addActiveClass(index) {
+    if (index >= 0 && index < hList.length) {
+      lList[index].classList.add(activeClass);
+    }
+  }
+
+  function removeActiveClass(index) {
+    if (index >= 0 && index < hList.length) {
+      lList[index].classList.remove(activeClass);
+    }
+  }
+
+  function addActiveLiElemment(elem, parent) {
+    if (!elem || elem === parent) {
+      return;
+    } else {
+      if (elem.__proto__ === HTMLLIElement.prototype) {
+        elem.classList.add(active);
+      }
+      addActiveLiElemment(elem.parentElement, parent);
+    }
+  }
+
+  function showToc() {
+    if (tocWrapper) {
+      postBody = document.querySelector('#post_body');
+      for (let i = 0; i < postBody.children.length; i++) {
+        if (postBody.children[i].__proto__ === HTMLHeadingElement.prototype) {
+          hList.push(postBody.children[i]);
+        }
+      }
+      if (tocWrapper.classList.contains('compress')) {
+        tocContent.classList.add('closed');
+      } else if (tocWrapper.classList.contains('no_compress')) {
+        tocContent.classList.add('expanded');
+      } else {
+        if (hList.length > 10) {
+          active = 'active-hidden'
+          tocContent.classList.add('closed');
+        } else {
+          tocContent.classList.add('expanded');
+        }
+      }
+    }
+  }
+
+  (function () {
+    // 处理不是从#一级标题开始目录
+    if (tocContent.children.length === 1 && tocContent.children[0].__proto__ === HTMLLIElement.prototype) {
+      let con = tocContent.children[0].children[0];
+      tocContent.innerHTML = con.innerHTML;
+    }
+    let markdownItTOC = document.querySelector('.markdownIt-TOC');
+    let innerHeight = window.innerHeight;
+    markdownItTOC.style = `max-height: ${innerHeight - 80 > 0 ? innerHeight - 80 : innerHeight}px`
+    addTocNumber(tocContent, '');
+  })();
+
+  document.addEventListener('scroll', function (e) {
+    if (lList.length <= 0) {
+      return;
+    }
+    let scrollTop = document.scrollingElement.scrollTop + 10;
+    let dir;
+
+    if (lastTop - scrollTop > 0) {
+      dir = 'up';
+    } else {
+      dir = 'down';
+    }
+
+    lastTop = scrollTop;
+    if (scrollTop <= 0) {
+      if (lastIndex >= 0 && lastIndex < hList.length) {
+        lList[lastIndex].classList.remove(activeClass);
+      }
+      return;
+    }
+
+    let current = 0, hasFind = false;
+    for (let i = 0; i < hList.length; i++) {
+      if (hList[i].offsetTop > scrollTop) {
+        current = i;
+        hasFind = true;
+        break;
+      }
+    }
+    if (!hasFind && scrollTop > lList[lList.length - 1].offsetTop) {
+      current = hList.length - 1;
+    } else {
+      current--;
+    }
+    if (dir === 'down') {
+      if (current > lastIndex) {
+        addActiveClass(current);
+        removeActiveClass(lastIndex)
+        lastIndex = current;
+        removeParentActiveClass();
+        lList[current] && addActiveLiElemment(lList[current].parentElement, tocContent);
+      }
+    } else {
+      if (current < lastIndex) {
+        addActiveClass(current);
+        removeActiveClass(lastIndex);
+        lastIndex = current;
+        removeParentActiveClass();
+        lList[current] && addActiveLiElemment(lList[current].parentElement, tocContent);
+      }
+    }
+  });
+
+
+  window.addEventListener('load', function () {
+    showToc();
+    document.querySelector('#sidebar').style = 'display: block;';
+    tocWrapper.classList.add('toc-active');
+    setTimeout(function () {
+      if ("createEvent" in document) {
+        let evt = document.createEvent("HTMLEvents");
+        evt.initEvent("scroll", false, true);
+        document.dispatchEvent(evt);
+      }
+      else {
+        document.fireEvent("scroll");
+      }
+    }, 500)
+  })
+
+</script>
+            </div>
           
         
       </div>
@@ -323,8 +515,8 @@
           <div class="section bg-color post post-page">
             <header class="post-header">
   <h1 class="post-title">
-    <a class="post-title-link" href="https://coder109.github.io/post/ge-ci-xiang-guan-hua-xue-zhong-er-ban-qing-hua-ci-qian-jie/">
-      【歌词相关】化学中二版青花瓷浅解
+    <a class="post-title-link" href="https://coder109.github.io/post/bi-ji-xi-fang-zhe-xue-shi-zhong-guo-ren-min-da-xue-gong-kai-ke/">
+      【笔记】西方哲学史 中国人民大学公开课
     </a>
   </h1>
   <div class="post-meta">
@@ -332,7 +524,7 @@
     <span class="meta-item pc-show">
       <i class="fa fa-calendar-o"></i>
       <span class="language" data-lan="publish">发布于</span>
-      <span>2020-08-05</span>
+      <span>2020-06-26</span>
       <span class="post-meta-divider pc-show">|</span>
     </span>
     
@@ -341,8 +533,8 @@
       <span class="pc-show language" data-lan="category-in">分类于</span>
       
       
-      <a href="https://coder109.github.io/tag/kLk_XjK-N/">
-        <span>歌词相关</span>
+      <a href="https://coder109.github.io/tag/afXYXfi0q/">
+        <span>笔记</span>
       </a>
       
       
@@ -351,145 +543,37 @@
     
     <span class="meta-item">
       <i class="fa fa-clock-o"></i>
-      <span>7<span class="language" data-lan="minute">分钟</span></span>
+      <span>2<span class="language" data-lan="minute">分钟</span></span>
     </span>
     <span class="meta-item">
       <span class="post-meta-divider">|</span>
       <i class="fa fa-file-word-o"></i>
-      <span>1683<span class="pc-show language" data-lan="words">字数</span></span>
+      <span>382<span class="pc-show language" data-lan="words">字数</span></span>
     </span>
     
   </div>
 </header>
             <div class="post-body next-md-body" id="post_body">
-              <p>原视频：BV19s411X7ch AV3774715</p>
-<p>剧烈震荡叠氮酸 强光照氯仿<br>
-·叠氮酸即氢叠氮酸，化学式HN3，受撞击爆炸性分解（2HN3=3N2↑+H2↑）<br>
-·氯仿即三氯甲烷，化学式CHCl3，强光照射下发生反应：2CHCl3+O2=2HCl+2COCl2（光气，有毒，遇水有强烈腐蚀性）<br>
-<br /><br>
-苯中的高氯酸银 加入碘甲烷<br>
-·高氯酸银的苯溶液与碘甲烷旋转蒸馏制得高氯酸甲酯，高氯酸甲酯极其不稳定，发生反应：2CH3ClO4=2CO2↑+2H2O+2HCl↑+O2↑<br>
-<br /><br>
-冉冉氡气透过肺呼吸我了然<br>
-·Rn，三种同位素皆有放射性。建材大部分可释放氡气。<br>
-<br /><br>
-作死上实验至此搁一半<br>
-·中二党特性<br>
-<br /><br>
-血色沾染试剂瓶 锰镁被私藏<br>
-·即高锰酸钾和镁粉混合，发生反应：2KMnO4+7Mg=K2O+2Mn+7MgO，由于使用镁粉，发生爆炸。<br>
-<br /><br>
-而你轰然的一爆如铀核开放<br>
-·235U+n→236U→135Xe+95Sr+2n<br>
-235U+n→236U→144Ba+89Kr+3n<br>
-<br /><br>
-磷化氢一缕飘散<br>
-·PH3，即膦，磷化氢，无色，纯PH3无味，用金属磷化物制取有诡异的蒜味或腐鱼味，有剧毒（A级无机剧毒物）<br>
-<br /><br>
-饮我喝不了的氟利昂<br>
-·Freon，有很多种类，对环境有害<br>
-<br /><br>
-硝酸钾蔗糖里，吨级铝热剂<br>
-·硝糖，KNSU，可能发生反应：5C12H22O11 + 48KNO3 =点燃= 36CO2↑+ 55H2O↑+ 24K2CO3 + 24N2↑，可应用于火箭推进剂，另外还有KNDX（可能：24KNO3+5C6H12O6=点燃=12K2O+30CO2↑+30H2O+12N2↑）等<br>
-·由于比例多变，故反应只是可能发生的反应<br>
-·铝热剂：Al与Fe2O3的混合物（COD二战里头炸炮就用这玩意，绝命毒师里也有出现），发生反应：2Al+Fe2O3==2Fe+Al2O3，少量的反应便十分壮观，吨级可想而知~<br>
-<br /><br>
-浓烟滚滚升起遮蔽千万里<br>
-<br /><br>
-向硝酸银溶液中通入乙炔气<br>
-·乙炔银制法之一，反应：2AgNO3+C2H2=Ag2C2↓+2HNO3<br>
-·乙炔银不稳定，可用作起爆药，分解：Ag2C2=2Ag+2C，销毁用HNO3或CN-<br>
-·另外的制法：向含有过量氨水的硝酸银溶液里通入乙炔，滤取白色沉淀，水洗，再用乙醇、乙醚洗涤干燥后即得。<br>
-<br /><br>
-三过氧二胺六亚甲基<br>
-·六亚甲基三过氧化二胺（HMTD），化学式为N2(H2COOCH2)3 ，由乌洛托品，过氧化氢，85%磷酸制得，自杀式炸弹袭击中常见的炸药。<br>
-<br /><br>
-锤砸TATP<br>
-·三过氧化三丙酮（TATP），由过氧化氢和丙酮制取，自杀式炸弹袭击中常见的炸药。<br>
-<br /><br>
-氯磷入瓶里<br>
-·氯酸钾与红磷混合会爆炸，发生反应：5KClO3+6P=5KCl+3P2O5，不少中二党因为这个实验而受伤甚至死亡。<br>
-<br /><br>
-硝甘被打捞起 轰开了结局<br>
-·硝化甘油，可用作炸药亦可用于治疗心脏病。诺贝尔曾用这个东西将自己的家炸上了天<br>
-·制取：丙三醇+发烟硝酸（浓硫酸催化）<br>
-<br /><br>
-镁热氧化铜汞银铅铬锇锰锡<br>
-·镁热反应，类似于铝热，但是要更剧烈一些。<br>
-<br /><br>
-你掩盖蒸汽<br>
-<br /><br>
-色绿发紫硝酸镍跃然水合肼<br>
-·Ni(NO3)2+3N2H4·H2O=(Ni(N2H4)3)(NO3)2+3H2O,硝酸镍为绿色，硝酸肼镍（NHN）为紫色，后者可用于起爆药<br>
-<br /><br>
-制取EDDN时却惦记着你<br>
-·乙二胺二硝酸盐，EDDN，硝酸+乙二胺反应制得<br>
-<br /><br>
-隐藏在黑火药里千年的秘密<br>
-·著名的黑火药，有口诀：“一硫二硝三木炭”，反应：2KNO3+S+3C=K2S+N2↑+3CO2↑<br>
-<br /><br>
-极细腻犹如碘化氮落地<br>
-·三碘化氮，极其不稳定，振动，碰撞可令之分解发出爆炸声。制取：5NH3+3I2=NI3·NH3↓+3NH4I，分解：2NI3·NH3=3I2+N2↑+2NH3↑<br>
-<br /><br>
-帘外铷铯入骤雨 苯环惹氢氯<br>
-·由基本化学常识可知这俩东西金属性非常强，与水反应十分剧烈，生成强碱和氢气。碱金属与水反应可参见BV1Ys411k739（Cs简直笑死我）<br>
-·苯与氯气在紫外线照射下反应生成六氯环己烷（农药666）<br>
-<br /><br>
-而我路过那试剂小店惹了你<br>
-·危险品圣殿！<br>
-<br /><br>
-在二甲基亚砜里 你从四氢呋喃中隐去<br>
-·DMSO（二甲基亚砜）在石化、合成纤维、医药等方面应用广泛，其有一定毒性作用，且能渗入皮肤。<br>
-·THF（四氢呋喃），致癌，可用于色谱分析，溶剂等，其可溶解PVC（聚氯乙烯）塑料，极度易燃，有生殖毒性<br>
-<br /><br>
-八硝基立方烷 HHTDD<br>
-·ONC（八硝基立方烷），爆炸时几乎不产生烟雾（C8(NO2)8 → 8CO2↑ + 4N2↑），是猛炸药。ONC产率很低，要先合成TNC（四硝基立方烷）再另行处理。<br>
-·HHTDD（六硝基六氮杂三环十二烷二酮），在浓盐酸中，用1,4-甲酰基-2,3,5,6-四甲基哌嗪与尿素反应，生成2,4,6,8,10,12-六氮杂三环[7.3.0.0]十二烷-5,11-二酮二盐酸盐水合物，然后进行硝化即可得到产物HHTDD。是猛炸药<br>
-<br /><br>
-硝烟滚滚升起 震动千万里<br>
-<br /><br>
-在瓶底蚀刻氢氟魔酸的威力<br>
-·氢氟酸，HF，可蚀刻玻璃。SiO2+4HF=SiF4+2H2O<br>
-·魔酸，氟锑磺酸，HSbF5（OSO2F），应用PTFE（聚四氟乙烯）容器盛放。<br>
-<br /><br>
-就当我为你吸入氰气<br>
-·氰（二声！）气，（CN）2，有杏仁气味，无色，有剧毒，制取：法老之蛇：4Hg(SCN)₂ =4HgS + 2CS₂+ 3(CN)₂↑+ N₂↑或者高温下：N2+2C=（CN）2<br>
-<br /><br>
-浓硝酸发烟雨 三鹿在等你<br>
-·发烟硝酸，溶解NO2的浓硝酸，可用于有机反应硝化。<br>
-·三鹿奶粉事件，牵扯到三聚氰胺（1,3,5-三嗪-2,4,6-三胺），致癌物<br>
-<br /><br>
-雷汞加四氮烯 引爆了结局<br>
-·雷汞，雷酸汞，Hg（ONC）2，《绝命毒师》中曾出现，白色或灰色晶体，可用于火帽击发药。<br>
-·四氮烯，即特屈拉辛，水合四唑基脒基四氮烯 。可用于击发药。<br>
-<br /><br>
-如经典的TNT自顾自凌厉<br>
-·三硝基甲苯。<br>
-<br /><br>
-你连带硝基<br>
-·硝酸铵啥的都是易爆物~<br>
-<br /><br>
-火球空中游弋 是叔丁基锂<br>
-·详询化吧拜山贴：https://tieba.baidu.com/p/2641524269<br>
-<br /><br>
-红烟袅袅升起 液溴拌入铝<br>
-·2Al+3Br2=2AlBr3，萌凤曾做过这个实验：BV1SW411873h<br>
-<br /><br>
-在饱和食盐水中接通阴阳极<br>
-·2NaCl+2H2O=通电=2NaOH+H2↑+Cl2↑，氯碱工业<br>
-<br /><br>
-十个电解九个是大锑<br>
-·有些“化学爱好者”电解操作不规范，锑即Sb。<br>
-<br /><br>
-高材生胡振宇 大师赵明毅<br>
-·胡振宇，翎客航天创始人，由于火箭和TATP曾卷入争议。<br>
-·赵明毅，超理学带师。<br>
-<br /><br>
-熊孩被急救起 曝出了结局<br>
-·自己公斤级CuO镁热，掺杂氧化剂。<br>
-<br /><br>
-如遍地的中二党自顾自装逼<br>
-你眼带蛤意</p>
+              <p>公开课BV号-BV16t411p7n8</p>
+<h2 id="哲学的特点">哲学的特点</h2>
+<p>哲学不是自然科学式的科学。</p>
+<p>科学知识的对象--&gt;现实性，哲学的对象--&gt;理想性（无法验证！）</p>
+<p>唯有哲学是自由的学问，唯独哲学是为了自身而被追求的知识。——亚里士多德</p>
+<p>哲学和科学一样讲理性。（理论方式体现）但起源于终极关怀。</p>
+<p>有标准答案的问题，称之为“问题”。没有标准答案，只有不同解决方式的问题，称为“难题”。</p>
+<p>所有的问题归结起来无非是起源于生死。</p>
+<p>西方哲学特点：学以致知、拯救现象、科学思维方式</p>
+<p>试图给事物的存在给出合理的原因。</p>
+<h2 id="学习法">学习法</h2>
+<p>学习哲学：解决问题的方法重于理论。</p>
+<p>注意：1.了解哲学家的问题。 2.熟悉哲学家的术语。 3.沿着哲学家的思路。 4.理解哲学家的思想。</p>
+<p>哲学只能存在于哲学史中。——黑格尔</p>
+<h2 id="哲学的诞生">哲学的诞生</h2>
+<p>原因：人们开始关注终极关怀的问题、有时间思考这些问题、有思想的自由的条件。</p>
+<p>分期：前苏格拉底哲学、雅典哲学、晚期希腊哲学</p>
+<p>本原（Arche&lt;希腊文&gt;）：始元、开端、主宰</p>
+<p>逻各斯（Logos&lt;希腊文&gt;）：（本义：计算、逻辑、推理）规律，“永恒的活火”的尺度。</p>
+<p>早期自然哲学局限：缺乏科学知识、建立在经验基础上、众说纷纭。</p>
 
             </div>
             
@@ -502,7 +586,7 @@
     </li>
     <li class="post-copyright-link">
       <strong class="language" data-lan="link">本文链接：</strong>
-      <a href="https://coder109.github.io/post/ge-ci-xiang-guan-hua-xue-zhong-er-ban-qing-hua-ci-qian-jie/" title="【歌词相关】化学中二版青花瓷浅解">https://coder109.github.io/post/ge-ci-xiang-guan-hua-xue-zhong-er-ban-qing-hua-ci-qian-jie/</a>
+      <a href="https://coder109.github.io/post/bi-ji-xi-fang-zhe-xue-shi-zhong-guo-ren-min-da-xue-gong-kai-ke/" title="【笔记】西方哲学史 中国人民大学公开课">https://coder109.github.io/post/bi-ji-xi-fang-zhe-xue-shi-zhong-guo-ren-min-da-xue-gong-kai-ke/</a>
     </li>
     <li class="post-copyright-license">
       <strong class="language" data-lan="copyright">版权声明： </strong>
@@ -511,17 +595,21 @@
   </ul>
   <div class="tags">
     
-      <a href="https://coder109.github.io/tag/kLk_XjK-N/"># 歌词相关</a>
+      <a href="https://coder109.github.io/tag/afXYXfi0q/"># 笔记</a>
     
   </div>
   <div class="nav">
     <div class="nav-prev">
       
+        <i class="fa fa-chevron-left"></i>
+        <a class="nav-pc-next" title="【书摘】论人类不平等的起源和基础——卢梭" href="https://coder109.github.io/post/shu-zhai-lun-ren-lei-bu-ping-deng-de-qi-yuan-he-ji-chu/">【书摘】论人类不平等的起源和基础——卢梭</a class="nav-pc-next">
+        <a class="nav-mobile-prev" title="【书摘】论人类不平等的起源和基础——卢梭" href="https://coder109.github.io/post/shu-zhai-lun-ren-lei-bu-ping-deng-de-qi-yuan-he-ji-chu/">上一篇</a>
+      
     </div>
     <div class="nav-next">
       
-        <a class="nav-pc-next" title="舞会" href="https://coder109.github.io/post/wu-hui/">舞会</a>
-        <a class="nav-mobile-next" title="舞会" href="https://coder109.github.io/post/wu-hui/">下一篇</a>
+        <a class="nav-pc-next" title="【笔记】冥想法" href="https://coder109.github.io/post/ming-xiang-fa/">【笔记】冥想法</a>
+        <a class="nav-mobile-next" title="【笔记】冥想法" href="https://coder109.github.io/post/ming-xiang-fa/">下一篇</a>
         <i class="fa fa-chevron-right"></i>
       
     </div>
