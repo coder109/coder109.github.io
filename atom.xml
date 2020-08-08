@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://coder109.github.io</id>
     <title>Coder109</title>
-    <updated>2020-08-08T13:26:55.375Z</updated>
+    <updated>2020-08-08T14:17:37.084Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://coder109.github.io"/>
     <link rel="self" href="https://coder109.github.io/atom.xml"/>
@@ -10,6 +10,30 @@
     <logo>https://coder109.github.io/images/avatar.png</logo>
     <icon>https://coder109.github.io/favicon.ico</icon>
     <rights>All rights reserved 2020, Coder109</rights>
+    <entry>
+        <title type="html"><![CDATA[Firefox配置相关备忘]]></title>
+        <id>https://coder109.github.io/post/firefox-pei-zhi-xiang-guan-bei-wang/</id>
+        <link href="https://coder109.github.io/post/firefox-pei-zhi-xiang-guan-bei-wang/">
+        </link>
+        <updated>2020-08-08T14:09:19.000Z</updated>
+        <content type="html"><![CDATA[<h1 id="扩展程序">扩展程序</h1>
+<p>隐私獾<br>
+Archive Page<br>
+BiliMini<br>
+Dark Reader<br>
+HTTPS Everywhere<br>
+Simple Translate<br>
+Tabliss<br>
+uBlock Origin</p>
+<h1 id="主题">主题</h1>
+<p>Arc Dark Theme</p>
+<h1 id="aboutconfig界面">about:config界面</h1>
+<p>browser.tabs.loadBookmarksInTabs-true<br>
+browser.search.openintab-true<br>
+browser.tabs.closeWindowWithLastTab-false<br>
+browser.tabs.closeTabByDblclick-true</p>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[2020/8/8]]></title>
         <id>https://coder109.github.io/post/202088/</id>
@@ -341,19 +365,6 @@ Z - Zulu</p>
 <p>“你终会明白的！你既然来了就逃不掉！死亡终将惩罚逃离乌托邦的人！”</p>
 <p>这时我突然意识到疼痛，由内而外，几乎撕裂身体。我低下头，俯视自己的身体，血汩汩流出。我眼前一黑摔倒在地面。</p>
 <p>“原来……如此。”</p>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[【补】2020/4/5]]></title>
-        <id>https://coder109.github.io/post/bu-202045/</id>
-        <link href="https://coder109.github.io/post/bu-202045/">
-        </link>
-        <updated>2020-08-04T11:17:58.000Z</updated>
-        <content type="html"><![CDATA[<p>最近的生活可以用一个词来代替——“困苦”。</p>
-<p>语文老师极其喜欢深夜留作业，也许她是喜欢捉弄学生的。她喜欢毫无根据的下结论，自己曾经在上课的时候看了她一眼，她便说我不守纪律。辩解也是无用的。同学们其实也是对她颇有意见。高中，也许教学水平比什么都重要罢。</p>
-<p>上网课实在是没有效率。自己已经找不回学习的热情了，每天只想看书，和那些伟大的哲学家交流（其实他们说的我很难去理解，与其说是交流，不如说是另一种授课）。但这样估计就要从尖子班里淘汰了，未来估计也就变的更加灰暗了。姑且努力着吧。</p>
-<p>占卜的准确性越来越低，自从找回了自己丢放在隐秘角落的灵摆之后，它似乎变的不太喜欢我了。改天净化一下试试吧。最近冥想也静不下心来，总是感觉到一种无力感与疲惫感。</p>
-<p>耳机里放着爵士乐，自己稍微的安静了下来。不论如何总是要向未来前行的啊。</p>
 ]]></content>
     </entry>
 </feed>
