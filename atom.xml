@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://coder109.github.io</id>
     <title>Coder109</title>
-    <updated>2020-09-30T10:42:48.674Z</updated>
+    <updated>2020-09-30T10:44:24.230Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://coder109.github.io"/>
     <link rel="self" href="https://coder109.github.io/atom.xml"/>
@@ -10,6 +10,34 @@
     <logo>https://coder109.github.io/images/avatar.png</logo>
     <icon>https://coder109.github.io/favicon.ico</icon>
     <rights>All rights reserved 2020, Coder109</rights>
+    <entry>
+        <title type="html"><![CDATA[末日琴音 ]]></title>
+        <id>https://coder109.github.io/post/mo-ri-qin-yin/</id>
+        <link href="https://coder109.github.io/post/mo-ri-qin-yin/">
+        </link>
+        <updated>2020-09-30T10:44:13.000Z</updated>
+        <content type="html"><![CDATA[<p>这是始与终的挽歌<br>
+这是古与今的绝音<br>
+如今我一个人弹着六弦琴<br>
+走在末日的土地上</p>
+<p>赤色的风卷着灰色的土<br>
+血腥之气弥散在空气中<br>
+我的琴声是生灵最后的欢愉——<br>
+此间世，最末的丧钟</p>
+<p>走过血流的河，越过尸骨的山<br>
+只有我一人，在这世上——<br>
+挣扎前行，露宿风餐——<br>
+挥洒生与死最后的倔强！</p>
+<p>前路漫漫，风声簌簌<br>
+我要走到何处，去往何方？<br>
+“世界的本质是虚无”<br>
+可如今连虚无也消失流浪！</p>
+<p>终于琴弦锈蚀，腐为尘土<br>
+劳顿，我——世末最末的乐者<br>
+终于可叹这神灵倏忽<br>
+孤独的世末！</p>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Chaos]]></title>
         <id>https://coder109.github.io/post/kong-wu-yi-ren-de-shi-jie/</id>
@@ -327,19 +355,6 @@ Z - Zulu</p>
 <p>“我亲爱的子民们，中午好！”</p>
 <p>“砰！”枪声令民众吃了一惊，他们以为这是军队的示意。回过头来，皇帝早已倒在血泊之中。</p>
 <p>冬天来了。萨罗先勋爵，彼得罗夫娜公主。冬天来了。</p>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[幻]]></title>
-        <id>https://coder109.github.io/post/huan/</id>
-        <link href="https://coder109.github.io/post/huan/">
-        </link>
-        <updated>2020-08-04T11:23:44.000Z</updated>
-        <content type="html"><![CDATA[<p>独自坐在午后的落地窗前。</p>
-<p>斜斜的阳光洒在木地板上，显现出金色的影像。微风跨过窗棂，在小室里游走，清凉，带着一丝青草与泥土的芳香。小桌上的书页哗啦作响，清脆的声音让人的神经放松下来。我慵懒地爬上床，消磨时光。</p>
-<p>檐上的风铃被风吹动，精铁撞击的声音如流水一般，使人仿佛置身于梦境。午后，是那么美好。我想一直在这午后休憩，或者在外面游荡。风吹向何方，我便行往何处——没有风便躺在草地上，沐浴阳光，睡眠直至夕阳西下，信步归去。</p>
-<p>我想在这午后片刻的欢愉中沉醉，但我终究是忙碌的，只能以须臾轻快的光景麻痹自己，暂时从繁杂的事物中抽出身来，在自然的气息中荡涤心灵，寻觅那一丝极其脆弱的快慰。我，不过是一个不愿接受现实的梦想家。</p>
-<p>我的名字？我的名字叫幻。</p>
 ]]></content>
     </entry>
 </feed>
