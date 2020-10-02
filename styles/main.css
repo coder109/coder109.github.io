@@ -2123,11 +2123,11 @@ pre > span.copy-code:hover {
         margin: 0 auto;
       }
     @font-face {
-      font-family: 'SourceHanSerifCN-Medium';
-      src: url('/media/fonts/SourceHanSerifCN-Medium.ttf');
+      font-family: 'PingfangXiJian';
+      src: url('/media/fonts/PingfangXiJian.ttf');
     }
     * {
-        font-family: 'SourceHanSerifCN-Medium';
+        font-family: 'PingfangXiJian';
     }body {
       color: #212529;
     }
