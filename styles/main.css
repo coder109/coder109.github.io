@@ -2123,11 +2123,11 @@ pre > span.copy-code:hover {
         margin: 0 auto;
       }
     @font-face {
-      font-family: 'trebuc';
-      src: url('/media/fonts/trebuc.ttf');
+      font-family: 'SourceHanSerifCN-Medium';
+      src: url('/media/fonts/SourceHanSerifCN-Medium.ttf');
     }
     * {
-        font-family: 'trebuc';
+        font-family: 'SourceHanSerifCN-Medium';
     }body {
       color: #212529;
     }
