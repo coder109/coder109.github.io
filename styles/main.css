@@ -2123,11 +2123,11 @@ pre > span.copy-code:hover {
         margin: 0 auto;
       }
     @font-face {
-      font-family: 'PingfangXiJian';
-      src: url('/media/fonts/PingfangXiJian.ttf');
+      font-family: 'NotoSerif-Regular';
+      src: url('/media/fonts/NotoSerif-Regular.ttf');
     }
     * {
-        font-family: 'PingfangXiJian';
+        font-family: 'NotoSerif-Regular';
     }body {
       color: #212529;
     }
