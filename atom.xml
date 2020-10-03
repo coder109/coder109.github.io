@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://coder109.github.io</id>
     <title>Coder109</title>
-    <updated>2020-10-03T05:33:39.791Z</updated>
+    <updated>2020-10-03T05:54:23.422Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://coder109.github.io"/>
     <link rel="self" href="https://coder109.github.io/atom.xml"/>
@@ -10,6 +10,18 @@
     <logo>https://coder109.github.io/images/avatar.png</logo>
     <icon>https://coder109.github.io/favicon.ico</icon>
     <rights>All rights reserved 2020, Coder109</rights>
+    <entry>
+        <title type="html"><![CDATA[随笔]]></title>
+        <id>https://coder109.github.io/post/sui-bi/</id>
+        <link href="https://coder109.github.io/post/sui-bi/">
+        </link>
+        <updated>2020-10-03T05:34:51.000Z</updated>
+        <content type="html"><![CDATA[<p>Let me write something in English.I'm just a high school student.I would appreciate it if you could point out my mistakes politely.</p>
+<p>I am not good at dealing with the relationship with others.There is a girl ,who I knew when I was a junior high student,saying that I have said something impolite about her and she kept on spreading something fake about me.This is a kind of childish behavior,in my perspective,but I am tired of explaining to everyone.Perhaps she just dislikes me.Sometimes,if you keep on saying that you are innocent,others will regard you as a flustered liar.</p>
+<p>One of the most difficult thing in this world is to make a person trust you.Possibly,they just want to make you embarrassed by design.One should focus on my world and take the curse as a kind of joke.Reading,learning something new or watching a few videos...They are more meaningful.</p>
+<p>So,coder109,just forget about the people who dislike you and do what you should do carefully.</p>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Delusion]]></title>
         <id>https://coder109.github.io/post/delusion/</id>
@@ -331,22 +343,6 @@ Z - Zulu</p>
 <p>他慢慢的走到床边，抚摸着少女的发丝。“Francoise”，他低声叫着，“Francoise”。这声音在房间里回荡，打破了夜的沉寂。他挥了挥手，那虫子惊吓到，飞开了。戛然而止的舞会。他低下头，亲吻着少女的额头。“Francoise”。</p>
 <p>他扶起那冰冷的尸体，跳起舞来。口中打着拍子，四三拍的圆舞曲。那脚步声又一次在这屋子里响起。</p>
 <p>哦，她没有死。</p>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[独白]]></title>
-        <id>https://coder109.github.io/post/du-bai/</id>
-        <link href="https://coder109.github.io/post/du-bai/">
-        </link>
-        <updated>2020-08-04T11:27:45.000Z</updated>
-        <content type="html"><![CDATA[<p>我记不得这是我第几次被扔进这地方了，暗无天日，一股霉味。灰色的墙上爬满了青苔，爬到窗檐上，顺着铁槛寻觅着自己的自由。这房子还是只有一张破旧的床和一个泛着黄色的马桶，污物外涌，极其恶心。</p>
-<p>哦，忘了和你们说了——如果你们能看到这张纸条的话——现在是2135年，4月……也许是7号，也许是8号。我是不配拥有姓名的罪犯，763号。如果你去和狱警询问我的代号，他们会告诉你我的一切，他们对我知根知底！我不知道你犯了什么罪，但总不会比我的罪恶更加讨厌……</p>
-<p>这脚镣真是烦人，稍动一下就要叮叮当当响个不停……但这被束缚着的感觉是真的令人安心。监狱是这社会唯一完全安全的地方……外界的“自由”毫无魅力可言。那些所谓的“自由人”还是那么忙碌，还要担心自己的安全。真是可笑至极。这都是科技的精华啊！</p>
-<p>噢！罪恶！说到罪恶，我是思想罪犯！我自诩为“对抗资本的前线战士”，那些资本家我实在是看不惯。一切的自然科学最终都是为了他们而工作，哲学也终将是为了意识形态服务的。楼上的人们始终占有着最好的景色，而楼下的人们总是要饱受工业废气的折磨，这是现实。教科书中的二十一世纪初叶似乎已经天下统一了，20……2010年左右吧。我想回到那个年代。那个思想大爆炸的年代，“万事皆允”。</p>
-<p>我不知道该怎么做，身边的人都是麻木不仁的。死亡？我没有那个魄力。反抗？这是我唯一的选择了。而如今我又被扔进这里来！他们总是要“改造”我——一次又一次的毒打。我知道这次也是一样。</p>
-<p>我不知道你犯了什么罪，但是你要记得，要反抗！反抗！我的兄弟。这世界唯一安全的地方就是你的大脑。你的思想。思想无罪，罪恶是楼上的人强加给你的。</p>
-<p>哦！狱警刚才对我讲这是我最后一次蹲监狱了——明天我就要踏上死亡的道路了。我知道的。兄弟，我不知道该做些什么，我知道我所思考的一切都将化作虚无。人是无高低贵贱的，但是阶级总会让人无意识地意识到自己的卑微。学校的师生差异、公司的头衔差异、社会的阶级差异，兄弟，你可要小心！娱乐至死的社会，一切都是无罪的。</p>
-<p>到点了，该走了，我要把这个纸条藏起来。</p>
 ]]></content>
     </entry>
 </feed>
