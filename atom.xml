@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://coder109.github.io</id>
     <title>Coder109</title>
-    <updated>2020-10-03T05:58:30.476Z</updated>
+    <updated>2020-10-04T05:08:56.826Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://coder109.github.io"/>
     <link rel="self" href="https://coder109.github.io/atom.xml"/>
@@ -10,6 +10,25 @@
     <logo>https://coder109.github.io/images/avatar.png</logo>
     <icon>https://coder109.github.io/favicon.ico</icon>
     <rights>All rights reserved 2020, Coder109</rights>
+    <entry>
+        <title type="html"><![CDATA[2020/10/4]]></title>
+        <id>https://coder109.github.io/post/2020104/</id>
+        <link href="https://coder109.github.io/post/2020104/">
+        </link>
+        <updated>2020-10-04T04:35:09.000Z</updated>
+        <content type="html"><![CDATA[<p>又要上学了呀，短短四天假期很快就过去了。</p>
+<h2 id="计划">计划</h2>
+<p>还有不到250天就要高考了，自己现在却仍然处在一个茫然无措的状态。未来会怎么样？高考考得会如何？上了大学之后又是怎样的日子？在心底一直告诫自己，不要再想这些遥远缥缈的问题。却仍然被它们困扰着。念及，心底总会涌起一种莫名的焦虑感。现在唯一驱动自己前行的，就只是高考之后充实的计划了。大概以下几点：</p>
+<p>·去京都旅游。</p>
+<p>·学着把《无题》（陈亮的指弹曲）较为完美地弹下来，再练练《fight!》（押尾的指弹曲）。</p>
+<p>·学着写个Gridea主题，把自己的博客美化一下。</p>
+<p>·学学乐理（学吉他没学乐理你敢信？）</p>
+<p>嘛，自己做事都是计划极为详尽，等到实施的时候却总是被懒惰拖慢步伐。未来的日子，又有谁说的准呢？</p>
+<h2 id="音乐与番剧">音乐与番剧</h2>
+<p>自己一直以来都是很喜欢蒸汽波，Chill一类风格的音乐。听起来有一种虚幻与放松的感觉。许多音乐制作人的作品都极为优秀，比如说国外的LAKEY INSPIRED，国内的眠，幸子小姐之类的。</p>
+<p>说到番剧，自己最近在刷《星际牛仔》，一部制作极为精良的冷门番。作为一部经常被拿来做采样的番剧，赛博朋克和泡沫霓虹味足够浓烈。四个人的命运与四处寻找赏金通缉犯的剧情穿插在一起。对于情感的刻画细腻到了极致。配乐于我而言也是足够精致……等等，我怎么开始写番剧评论了？</p>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[随笔]]></title>
         <id>https://coder109.github.io/post/sui-bi/</id>
@@ -328,21 +347,6 @@ Z - Zulu</p>
 <br /><br>
 如遍地的中二党自顾自装逼<br>
 你眼带蛤意</p>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[舞会]]></title>
-        <id>https://coder109.github.io/post/wu-hui/</id>
-        <link href="https://coder109.github.io/post/wu-hui/">
-        </link>
-        <updated>2020-08-04T11:28:32.000Z</updated>
-        <content type="html"><![CDATA[<p>黑夜，是将死者与亡灵的放浪。</p>
-<p>月光顺着破旧的窗帘洒进来，落在木地板厚厚的灰尘上。窗内，古老的檀木家具泛着微弱的幽香，银质的吊灯有些发黑，斑驳。少女躺在紫色的床上，紫色的寝具象征着她的华贵。她的肌肤在月光下显得洁白无瑕，如同午夜盛开的昙花一般，难以企及的纯洁。青紫的嘴唇，金色的发丝，这是极其诡谲的搭配，静止与运动的冲突。她双手抱着破碎的洋娃娃，棉絮都已经外露，生了霉。</p>
-<p>她死了，的确。空气中有虫子飞来飞去，嗡嗡作响。那是停留在尸体上的胜利者们，他们轻而易举就战胜了大它万倍的人类，蚕食着那些失败者最后的营养。他们跳着交谊舞，庆祝这唾手可得的佳肴。</p>
-<p>门。开了。刺耳的声音。黑色的影子。</p>
-<p>他慢慢的走到床边，抚摸着少女的发丝。“Francoise”，他低声叫着，“Francoise”。这声音在房间里回荡，打破了夜的沉寂。他挥了挥手，那虫子惊吓到，飞开了。戛然而止的舞会。他低下头，亲吻着少女的额头。“Francoise”。</p>
-<p>他扶起那冰冷的尸体，跳起舞来。口中打着拍子，四三拍的圆舞曲。那脚步声又一次在这屋子里响起。</p>
-<p>哦，她没有死。</p>
 ]]></content>
     </entry>
 </feed>
