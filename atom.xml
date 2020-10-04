@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://coder109.github.io</id>
     <title>Coder109</title>
-    <updated>2020-10-04T06:33:14.520Z</updated>
+    <updated>2020-10-04T06:44:48.303Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://coder109.github.io"/>
     <link rel="self" href="https://coder109.github.io/atom.xml"/>
@@ -19,8 +19,8 @@
         <content type="html"><![CDATA[<p>炎阳高照，七月沙场，<br>
 城郊大漠上的死亡之钟，<br>
 在二位武者的头顶敲响，<br>
-回荡，千万年前干涸的河床之上。</p>
-<p>寒光出鞘，血溅四方——<br>
+回荡，千万年前干涸的河床之上。<br>
+寒光出鞘，血溅四方——<br>
 只剩下，盔甲的流苏轻轻摇晃。</p>
 ]]></content>
     </entry>
