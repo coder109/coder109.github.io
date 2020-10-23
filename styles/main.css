@@ -2122,13 +2122,7 @@ pre > span.copy-code:hover {
         width: 960px;
         margin: 0 auto;
       }
-    @font-face {
-      font-family: 'NotoSerif-Regular';
-      src: url('/media/fonts/NotoSerif-Regular.ttf');
-    }
-    * {
-        font-family: 'NotoSerif-Regular';
-    }body {
+    body {
       color: #212529;
     }
     .next-md-body {
