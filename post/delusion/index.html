@@ -9,7 +9,7 @@
 <meta name="description" content="Vive hodie!">
 <meta name="theme-color" content="#3b5bdb">
 <title>Delusion | 幻</title>
-<link rel="shortcut icon" href="/favicon.ico?v=1603463804805">
+<link rel="shortcut icon" href="/favicon.ico?v=1603464164828">
 <link rel="stylesheet" href="/media/css/pisces.css">
 <link rel="stylesheet" href="/media/fonts/font-awesome.css">
 <link
@@ -506,48 +506,6 @@
   
   
   
-  
-  
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.css">
-  <script src="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.js"></script>
-  <div class="aplayer" id="aplayer"></div>
-  <script>
-  let musics = JSON.parse('[{"author":"みゆな","cover":"http://p1.music.126.net/_vfooBqXs9-AMvdTSrGFUA==/109951164368047555.jpg?param=130y130","lrc":"","musicLink":"http://music.163.com/song/media/outer/url?id=1387105693.mp3","musicName":"缶ビール(罐装啤酒)"},{"author":"PSYQUI","cover":"http://p2.music.126.net/ySA0TaaXTIYLGBc59wZxhQ==/109951163904766216.jpg?param=130y130","lrc":"","musicLink":"http://music.163.com/song/media/outer/url?id=1339905525.mp3","musicName":"就寝御礼"},{"author":"みゆな","cover":"http://p1.music.126.net/cBye6bG_jtd_SNe-Do9AKg==/109951164231058989.jpg?param=130y130","lrc":"","musicLink":"http://music.163.com/song/media/outer/url?id=1379424260.mp3","musicName":" ユラレル"},{"author":"Lamp","cover":"http://p1.music.126.net/pGC9b2-dozspMvpR4rj73A==/2518981139234882.jpg?param=130y130","lrc":"","musicLink":"http://music.163.com/song/media/outer/url?id=25723360.mp3","musicName":"明日になれば僕は"}]');
-  let mediaMusic = [];
-  for (let i = 0; i < musics.length; i++) {
-    let item = musics[i];
-    mediaMusic.push({
-      name: item.musicName,
-      artist: item.author,
-      url: item.musicLink,
-      lrc: item.lrc,
-      cover: item.cover
-    });
-  }
-
-  const ap = new APlayer({
-      container: document.getElementById('aplayer'),
-      fixed: true,
-      lrcType: 3,
-      listFolded: false,
-      listMaxHeight: 90,
-      audio: mediaMusic
-  });
-  window.addEventListener('load', function() {
-    let postBody = document.querySelector('#post_body');
-    let hs = ['h1', 'h2', 'h3', 'h4', 'h5', 'h6'];
-    postBody && hs.forEach(h => {
-      let helems = postBody.querySelectorAll(h);
-      if (helems.length > 0) {
-        helems.forEach(elem => {
-          elem.id = encodeURI(elem.id);
-        })
-      }
-    })
-  })
-  </script>
-
-
   
 </div>
 <script>
@@ -2191,8 +2149,13 @@ Z - Zulu&lt;/p&gt;
 </script>
 <script src="/media/js/motion.js"></script>
 
+<script src="https://cdn.jsdelivr.net/gh/cferdinandi/smooth-scroll/dist/smooth-scroll.polyfills.min.js"></script>
+<script>
+  var scroll = new SmoothScroll('a[href*="#"]', {
+    speed: 200
+  });
+</script>
 
-<script src="/media/js/mouse/love.js"></script>
 
 
 <script src="/media/js/cool.js"></script>
