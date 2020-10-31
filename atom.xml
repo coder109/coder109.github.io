@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://coder109.github.io</id>
     <title>幻</title>
-    <updated>2020-10-31T01:49:13.746Z</updated>
+    <updated>2020-10-31T01:54:18.154Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://coder109.github.io"/>
     <link rel="self" href="https://coder109.github.io/atom.xml"/>
@@ -161,18 +161,6 @@
 ]]></content>
     </entry>
     <entry>
-        <title type="html"><![CDATA[随笔]]></title>
-        <id>https://coder109.github.io/post/sui-bi/</id>
-        <link href="https://coder109.github.io/post/sui-bi/">
-        </link>
-        <updated>2020-10-03T05:34:51.000Z</updated>
-        <content type="html"><![CDATA[<p>Let me write something in English.I'm just a high school student.I would appreciate it if you could point out my mistakes politely.</p>
-<p>I am not good at dealing with the relationship with others.There is a girl ,who I knew when I was a junior high student,saying that I have said something impolite about her and she kept on spreading something fake about me.This is a kind of childish behavior,in my perspective,but I am tired of explaining to everyone.Perhaps she just dislikes me.Sometimes,if you keep on saying that you are innocent,others will regard you as a flustered liar.</p>
-<p>One of the most difficult thing in this world is to make a person trust you.Possibly,they just want to make you embarrassed by design.One should focus on his/her world and take the curse as a kind of joke.Reading,learning something new or watching a few videos...They are more meaningful.</p>
-<p>So,coder109,just forget about the people who dislike you and do what you should do carefully.</p>
-]]></content>
-    </entry>
-    <entry>
         <title type="html"><![CDATA[Delusion]]></title>
         <id>https://coder109.github.io/post/delusion/</id>
         <link href="https://coder109.github.io/post/delusion/">
@@ -230,6 +218,25 @@
 劳顿，我——世末最末的乐者<br>
 终于可叹这神灵倏忽<br>
 孤独的世末！</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Chaos]]></title>
+        <id>https://coder109.github.io/post/kong-wu-yi-ren-de-shi-jie/</id>
+        <link href="https://coder109.github.io/post/kong-wu-yi-ren-de-shi-jie/">
+        </link>
+        <updated>2020-09-30T10:01:09.000Z</updated>
+        <content type="html"><![CDATA[<p>拂面吹过七海的悲风，<br>
+奔向身后灯火通明的城，<br>
+皎白色的海面的倒影，不是月光，<br>
+是深海的尸骨、生前求生的梦。<br>
+倾圮的高楼广厦、朱墙皇宫，<br>
+又是见证了谁人的一生？</p>
+<p>虚无，虚无！<br>
+缥缈闪烁的霓虹，<br>
+将萧瑟的长街照亮，<br>
+徒然遥望、花火灿烂的远方，<br>
+那是我无法归去的灵魂故乡。</p>
 ]]></content>
     </entry>
 </feed>
