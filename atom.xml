@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://coder109.github.io</id>
     <title>幻</title>
-    <updated>2020-11-08T02:40:30.002Z</updated>
+    <updated>2020-11-08T07:29:39.936Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://coder109.github.io"/>
     <link rel="self" href="https://coder109.github.io/atom.xml"/>
@@ -10,6 +10,30 @@
     <logo>https://coder109.github.io/images/avatar.png</logo>
     <icon>https://coder109.github.io/favicon.ico</icon>
     <rights>All rights reserved 2020, 幻</rights>
+    <entry>
+        <title type="html"><![CDATA[暮秋杂感]]></title>
+        <id>https://coder109.github.io/post/mu-qiu-za-gan/</id>
+        <link href="https://coder109.github.io/post/mu-qiu-za-gan/">
+        </link>
+        <updated>2020-11-08T07:11:14.000Z</updated>
+        <content type="html"><![CDATA[<p>血色的枫叶飘飞，<br>
+染红暮秋寒冷的空气，<br>
+我的长衣下摆被吹动，<br>
+迷失在夕阳逝去之际。</p>
+<p>前路遥远，尘土飞扬。<br>
+身后的空城染尽秋霜。<br>
+我只能向前跑去，<br>
+跑向冬日，跑向未来春季的芬芳。</p>
+<p>人们的嘲笑，难以维系，<br>
+心内的迷茫，已到归期。<br>
+我只能向前跑去，<br>
+跑向黑夜，跑向崭新黎明的露滴。</p>
+<p>墓碑上刻着我的姓名，<br>
+生卒年月模糊不清，<br>
+我只能向前跑去，<br>
+跑向死亡，跑向高悬夜空的繁星。</p>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[2020/11/8]]></title>
         <id>https://coder109.github.io/post/2020118/</id>
@@ -84,8 +108,8 @@ HEARTBREAK ジェネレーション<br>
         <link href="https://coder109.github.io/post/yuan-you-shen-ye-dian-ying-yuan/">
         </link>
         <updated>2020-11-08T00:43:09.000Z</updated>
-        <content type="html"><![CDATA[<p>荧幕上的人们跳出束缚<br>
-对着我张望注目<br>
+        <content type="html"><![CDATA[<p>荧幕上的人们跳出束缚，<br>
+对着我张望注目，<br>
 演绎着初生的欢乐，<br>
 而我享受着心灵的迟暮。</p>
 <p>他们拉起我向银幕跑去，<br>
@@ -246,38 +270,6 @@ HEARTBREAK ジェネレーション<br>
 <h2 id="音乐与番剧">音乐与番剧</h2>
 <p>自己一直以来都是很喜欢蒸汽波，Chill一类风格的音乐。听起来有一种虚幻与放松的感觉。许多音乐制作人的作品都极为优秀，比如说国外的LAKEY INSPIRED，国内的眠，幸子小姐之类的。</p>
 <p>说到番剧，自己最近在刷《星际牛仔》，一部制作极为精良的冷门番。作为一部经常被拿来做采样的番剧，赛博朋克和泡沫霓虹味足够浓烈。四个人的命运与四处寻找赏金通缉犯的剧情穿插在一起。对于情感的刻画细腻到了极致。配乐于我而言也是足够精致……等等，我怎么开始写番剧评论了？</p>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Delusion]]></title>
-        <id>https://coder109.github.io/post/delusion/</id>
-        <link href="https://coder109.github.io/post/delusion/">
-        </link>
-        <updated>2020-10-01T05:39:47.000Z</updated>
-        <content type="html"><![CDATA[<p>我站在高楼之顶，<br>
-脚下是万千行人、车水马龙，<br>
-他们不曾仰视，那将死的少年，<br>
-自顾自地跃向他们的远方。</p>
-<p>闪烁霓虹、万家灯火通明，<br>
-可我应栖息在何处？<br>
-也许我注定要坠落，<br>
-如同深渊之末的天使之影。</p>
-<p>张开双臂，拥抱寒冷的夜风，<br>
-此刻，我与万物同死，万物同生——<br>
-只因哲学家的箴言，“一切尽是虚妄！”<br>
-琴弦崩断，听者突惊。</p>
-<p>路灯杆下呕吐的死魂灵，<br>
-罹患未来与过去的疑心病，<br>
-察言观色，如履薄冰，<br>
-只能在午夜默念初恋之情。</p>
-<p>我将大笑，我将歌唱，<br>
-为我自己，为友与仇！<br>
-远方没有夕阳，<br>
-只有松散灰土、剥落高墙。</p>
-<p>夜空无比遥远，我无法归去；<br>
-寒冷吞没了我的梦，<br>
-这只是个人人看淡的结局，<br>
-尸体之侧，摩肩接踵。</p>
 ]]></content>
     </entry>
 </feed>
