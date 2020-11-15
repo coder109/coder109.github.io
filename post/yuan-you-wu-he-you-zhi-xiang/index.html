@@ -8,7 +8,7 @@
 <meta name="keywords" content="幻">
 <meta name="description" content="Vive hodie!">
 <meta name="theme-color" content="#3b5bdb">
-<title>Firefox配置相关备忘 | 幻</title>
+<title>远游·无何有之乡 | 幻</title>
 <link rel="shortcut icon" href="/favicon.ico?v=1605406133219">
 <link rel="stylesheet" href="/media/css/pisces.css">
 <link rel="stylesheet" href="/media/fonts/font-awesome.css">
@@ -48,8 +48,8 @@
 </script>
 
 
-  <meta name="description" content="Firefox配置相关备忘" />
-  <meta name="keywords" content="计算机相关" />
+  <meta name="description" content="远游·无何有之乡" />
+  <meta name="keywords" content="远游,随笔" />
 </head>
 
 <body>
@@ -200,8 +200,7 @@
       <div class="sidebar-body pisces" id="sidebar_body">
         
           
-            <div class="post-side-meta" id="post_side_meta">
-              
+            
 <div class="sidebar-wrapper box-shadow-wrapper bg-color">
   <div class="sidebar-item">
     <img class="site-author-image right-motion" src="/images/avatar.png"/>
@@ -250,193 +249,6 @@
 
 
 </div>
-            </div>
-            <div class="post-toc sidebar-body-active" id="post_toc" style="opacity: 1;">
-              <div class="toc-box right-motion">
-  <div class="toc-wrapper auto-number auto"
-    id="toc_wrapper">
-    <ul class="markdownIt-TOC">
-<li><a href="#%E6%89%A9%E5%B1%95%E7%A8%8B%E5%BA%8F">扩展程序</a></li>
-<li><a href="#%E4%B8%BB%E9%A2%98">主题</a></li>
-<li><a href="#aboutconfig%E7%95%8C%E9%9D%A2">about:config界面</a></li>
-</ul>
-
-  </div>
-</div>
-
-<script>
-
-  let lastTop = 0, lList = [], hList = [], postBody, lastIndex = -1;
-  let active = 'active-show', activeClass = 'active-current';
-  let tocWrapper = document.querySelector('#toc_wrapper');
-  let tocContent = tocWrapper.children[0];
-  let autoNumber = tocWrapper && tocWrapper.classList.contains('auto-number');
-
-  function addTocNumber(elem, deep) {
-    if (!elem) {
-      return;
-    }
-    let prop = elem.__proto__;
-
-    if (prop === HTMLUListElement.prototype) {
-      for (let i = 0; i < elem.children.length; i++) {
-        addTocNumber(elem.children[i], deep + (i + 1) + '.');
-      }
-    } else if (prop === HTMLLIElement.prototype) {
-      // 保存li元素
-      if (elem.children[0] && elem.children[0].__proto__ === HTMLAnchorElement.prototype) {
-        lList.push(elem);
-      }
-      for (let i = 0; i < elem.children.length; i++) {
-        let cur = elem.children[i];
-        if (cur.__proto__ === HTMLAnchorElement.prototype) {
-          if (autoNumber) {
-            cur.text = deep + ' ' + cur.text;
-          }
-        } else if (cur.__proto__ === HTMLUListElement.prototype) {
-          addTocNumber(cur, deep);
-        }
-      }
-    }
-  }
-
-  function removeParentActiveClass() {
-    let parents = tocContent.querySelectorAll('.' + active)
-    parents.forEach(function (elem) {
-      elem.classList.remove(active);
-    });
-  }
-
-  function addActiveClass(index) {
-    if (index >= 0 && index < hList.length) {
-      lList[index].classList.add(activeClass);
-    }
-  }
-
-  function removeActiveClass(index) {
-    if (index >= 0 && index < hList.length) {
-      lList[index].classList.remove(activeClass);
-    }
-  }
-
-  function addActiveLiElemment(elem, parent) {
-    if (!elem || elem === parent) {
-      return;
-    } else {
-      if (elem.__proto__ === HTMLLIElement.prototype) {
-        elem.classList.add(active);
-      }
-      addActiveLiElemment(elem.parentElement, parent);
-    }
-  }
-
-  function showToc() {
-    if (tocWrapper) {
-      postBody = document.querySelector('#post_body');
-      for (let i = 0; i < postBody.children.length; i++) {
-        if (postBody.children[i].__proto__ === HTMLHeadingElement.prototype) {
-          hList.push(postBody.children[i]);
-        }
-      }
-      if (tocWrapper.classList.contains('compress')) {
-        tocContent.classList.add('closed');
-      } else if (tocWrapper.classList.contains('no_compress')) {
-        tocContent.classList.add('expanded');
-      } else {
-        if (hList.length > 10) {
-          active = 'active-hidden'
-          tocContent.classList.add('closed');
-        } else {
-          tocContent.classList.add('expanded');
-        }
-      }
-    }
-  }
-
-  (function () {
-    // 处理不是从#一级标题开始目录
-    if (tocContent.children.length === 1 && tocContent.children[0].__proto__ === HTMLLIElement.prototype) {
-      let con = tocContent.children[0].children[0];
-      tocContent.innerHTML = con.innerHTML;
-    }
-    let markdownItTOC = document.querySelector('.markdownIt-TOC');
-    let innerHeight = window.innerHeight;
-    markdownItTOC.style = `max-height: ${innerHeight - 80 > 0 ? innerHeight - 80 : innerHeight}px`
-    addTocNumber(tocContent, '');
-  })();
-
-  document.addEventListener('scroll', function (e) {
-    if (lList.length <= 0) {
-      return;
-    }
-    let scrollTop = document.scrollingElement.scrollTop + 10;
-    let dir;
-
-    if (lastTop - scrollTop > 0) {
-      dir = 'up';
-    } else {
-      dir = 'down';
-    }
-
-    lastTop = scrollTop;
-    if (scrollTop <= 0) {
-      if (lastIndex >= 0 && lastIndex < hList.length) {
-        lList[lastIndex].classList.remove(activeClass);
-      }
-      return;
-    }
-
-    let current = 0, hasFind = false;
-    for (let i = 0; i < hList.length; i++) {
-      if (hList[i].offsetTop > scrollTop) {
-        current = i;
-        hasFind = true;
-        break;
-      }
-    }
-    if (!hasFind && scrollTop > lList[lList.length - 1].offsetTop) {
-      current = hList.length - 1;
-    } else {
-      current--;
-    }
-    if (dir === 'down') {
-      if (current > lastIndex) {
-        addActiveClass(current);
-        removeActiveClass(lastIndex)
-        lastIndex = current;
-        removeParentActiveClass();
-        lList[current] && addActiveLiElemment(lList[current].parentElement, tocContent);
-      }
-    } else {
-      if (current < lastIndex) {
-        addActiveClass(current);
-        removeActiveClass(lastIndex);
-        lastIndex = current;
-        removeParentActiveClass();
-        lList[current] && addActiveLiElemment(lList[current].parentElement, tocContent);
-      }
-    }
-  });
-
-
-  window.addEventListener('load', function () {
-    showToc();
-    document.querySelector('#sidebar').style = 'display: block;';
-    tocWrapper.classList.add('toc-active');
-    setTimeout(function () {
-      if ("createEvent" in document) {
-        let evt = document.createEvent("HTMLEvents");
-        evt.initEvent("scroll", false, true);
-        document.dispatchEvent(evt);
-      }
-      else {
-        document.fireEvent("scroll");
-      }
-    }, 500)
-  })
-
-</script>
-            </div>
           
         
       </div>
@@ -524,8 +336,8 @@
           <div class="section bg-color post post-page">
             <header class="post-header">
   <h1 class="post-title">
-    <a class="post-title-link" href="https://coder109.github.io/post/firefox-pei-zhi-xiang-guan-bei-wang/">
-      Firefox配置相关备忘
+    <a class="post-title-link" href="https://coder109.github.io/post/yuan-you-wu-he-you-zhi-xiang/">
+      远游·无何有之乡
     </a>
   </h1>
   <div class="post-meta">
@@ -533,7 +345,7 @@
     <span class="meta-item pc-show">
       <i class="fa fa-calendar-o"></i>
       <span class="language" data-lan="publish">发布于</span>
-      <span>2020-08-08</span>
+      <span>2020-11-15</span>
       <span class="post-meta-divider pc-show">|</span>
     </span>
     
@@ -542,8 +354,14 @@
       <span class="pc-show language" data-lan="category-in">分类于</span>
       
       
-      <a href="https://coder109.github.io/tag/JmSxkJzad/">
-        <span>计算机相关</span>
+      <a href="https://coder109.github.io/tag/gnMUVQwtZ/">
+        <span>远游</span>
+      </a>、
+      
+      
+      
+      <a href="https://coder109.github.io/tag/EJq56QK9_/">
+        <span>随笔</span>
       </a>
       
       
@@ -552,33 +370,31 @@
     
     <span class="meta-item">
       <i class="fa fa-clock-o"></i>
-      <span>1<span class="language" data-lan="minute">分钟</span></span>
+      <span>3<span class="language" data-lan="minute">分钟</span></span>
     </span>
     <span class="meta-item">
       <span class="post-meta-divider">|</span>
       <i class="fa fa-file-word-o"></i>
-      <span>44<span class="pc-show language" data-lan="words">字数</span></span>
+      <span>638<span class="pc-show language" data-lan="words">字数</span></span>
     </span>
     
   </div>
 </header>
             <div class="post-body next-md-body" id="post_body">
-              <h1 id="扩展程序">扩展程序</h1>
-<p>隐私獾<br>
-Archive Page<br>
-BiliMini<br>
-Dark Reader<br>
-HTTPS Everywhere<br>
-Simple Translate<br>
-Tabliss<br>
-uBlock Origin</p>
-<h1 id="主题">主题</h1>
-<p>Arc Dark Theme</p>
-<h1 id="aboutconfig界面">about:config界面</h1>
-<p>browser.tabs.loadBookmarksInTabs-true<br>
-browser.search.openintab-true<br>
-browser.tabs.closeWindowWithLastTab-false<br>
-browser.tabs.closeTabByDblclick-true</p>
+              <p>苦行，苦行。离了神社很远了。没有时间去思考，只能向前走去。心中并不期待前方会遇见什么人，并不期盼迎来团聚，允许我走着就好。</p>
+<p>黄沙弥漫，炎阳高悬。一片大漠。连绵起伏的黄色丘陵。滚烫的空气刺痛鼻腔。“这里是撒哈拉吧……”我不确定自己是否有三毛的勇气。</p>
+<p>荒凉的四野里只有我一人。孤寂、凄凉、无奈一时全涌入心头，自己在城中居住十余年，却创造不了自己的安身之所。人们见了我便总要讽刺道，“看哪！那是个年轻的失败者！”自己在任何方面都大为不顺。神也是不会眷顾不幸者的。它在空中看着大地上的人们，看着他们自以为受庇佑地欣然微笑。其实神不过是人们心中的精神罢，信仰万神，大抵还是相信自己的。自己逃离了那些事物，又在大漠中忖度行路，哪里摆脱了痛苦呢？</p>
+<p>自己突然一脚踏空，摔下小丘，撞在一块滚烫的石碑上，只觉四肢俱碎，骨肉齑粉。艰难爬起，一块砂岩石碑上刻着几个字，“无何有之乡”。</p>
+<p>“这造物主蛮喜欢石碑的啊”心下想着。</p>
+<p>似乎《庄子》里有言，“今子有大树，患其无用，何不树之于无何有之乡？”</p>
+<p>树呢?</p>
+<p>热浪所及，皆为黄沙。</p>
+<p>也许树只是指无用的东西吧，而这个地方只有我一人。未来的路很长望不到头，身后的黑暗追逐着，无有退路。如果不会死亡，他人的嘲讽又有什么呢？人在对比中认识世界，只有“我”这一个概念，没有任何意义。宠辱也好，非誉也罢，人们太看重了。我只想在一座空旷的城中渡过此生。但如若如此，生命又有什么意义呢？失去了对比，人就是漂浮于真空宇宙中的一粒尘埃了啊。从38万光年处飞到近处，又飞向38万光年以外，时间消去了。向往孤寂、又厌恶绝对的自由。</p>
+<p>迁怒与造物主的游戏，我从口袋里掏出刀子，向自己的胸口刺去。</p>
+<p>游者们大抵也是如此这般死去的吧。</p>
+<p>无所谓，无所有。</p>
+<p>在尖锐的痛楚消退后，自己陷入了昏迷。</p>
+<p>但这场梦又哪里终结了呢？</p>
 
             </div>
             
@@ -591,7 +407,7 @@ browser.tabs.closeTabByDblclick-true</p>
     </li>
     <li class="post-copyright-link">
       <strong class="language" data-lan="link">本文链接：</strong>
-      <a href="https://coder109.github.io/post/firefox-pei-zhi-xiang-guan-bei-wang/" title="Firefox配置相关备忘">https://coder109.github.io/post/firefox-pei-zhi-xiang-guan-bei-wang/</a>
+      <a href="https://coder109.github.io/post/yuan-you-wu-he-you-zhi-xiang/" title="远游·无何有之乡">https://coder109.github.io/post/yuan-you-wu-he-you-zhi-xiang/</a>
     </li>
     <li class="post-copyright-license">
       <strong class="language" data-lan="copyright">版权声明： </strong>
@@ -600,21 +416,23 @@ browser.tabs.closeTabByDblclick-true</p>
   </ul>
   <div class="tags">
     
-      <a href="https://coder109.github.io/tag/JmSxkJzad/"># 计算机相关</a>
+      <a href="https://coder109.github.io/tag/gnMUVQwtZ/"># 远游</a>
+    
+      <a href="https://coder109.github.io/tag/EJq56QK9_/"># 随笔</a>
     
   </div>
   <div class="nav">
     <div class="nav-prev">
       
         <i class="fa fa-chevron-left"></i>
-        <a class="nav-pc-next" title="高三碎碎念" href="https://coder109.github.io/post/gao-san-sui-sui-nian/">高三碎碎念</a class="nav-pc-next">
-        <a class="nav-mobile-prev" title="高三碎碎念" href="https://coder109.github.io/post/gao-san-sui-sui-nian/">上一篇</a>
+        <a class="nav-pc-next" title="远游·空城" href="https://coder109.github.io/post/yuan-you-kong-cheng/">远游·空城</a class="nav-pc-next">
+        <a class="nav-mobile-prev" title="远游·空城" href="https://coder109.github.io/post/yuan-you-kong-cheng/">上一篇</a>
       
     </div>
     <div class="nav-next">
       
-        <a class="nav-pc-next" title="2020/8/8" href="https://coder109.github.io/post/202088/">2020/8/8</a>
-        <a class="nav-mobile-next" title="2020/8/8" href="https://coder109.github.io/post/202088/">下一篇</a>
+        <a class="nav-pc-next" title="噩梦" href="https://coder109.github.io/post/e-meng/">噩梦</a>
+        <a class="nav-mobile-next" title="噩梦" href="https://coder109.github.io/post/e-meng/">下一篇</a>
         <i class="fa fa-chevron-right"></i>
       
     </div>
