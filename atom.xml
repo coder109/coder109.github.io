@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://coder109.github.io</id>
     <title>幻</title>
-    <updated>2020-11-15T06:38:19.444Z</updated>
+    <updated>2020-11-21T23:55:35.632Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://coder109.github.io"/>
     <link rel="self" href="https://coder109.github.io/atom.xml"/>
@@ -10,6 +10,22 @@
     <logo>https://coder109.github.io/images/avatar.png</logo>
     <icon>https://coder109.github.io/favicon.ico</icon>
     <rights>All rights reserved 2020, 幻</rights>
+    <entry>
+        <title type="html"><![CDATA[雪]]></title>
+        <id>https://coder109.github.io/post/xue/</id>
+        <link href="https://coder109.github.io/post/xue/">
+        </link>
+        <updated>2020-11-21T23:55:07.000Z</updated>
+        <content type="html"><![CDATA[<p>北疆的旅人望向窗外，<br>
+飘飞的雪，苍白的天，<br>
+邻家的孩童嬉笑着跑过窗前，<br>
+有冷风吹来。</p>
+<p>他的眼中婉转着冬日的梦，<br>
+熟悉的温存，南疆遥远的城。<br>
+孤独的雪花飞入小窗，<br>
+在他的手指间消散。</p>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[【收集】国际歌完整版歌词]]></title>
         <id>https://coder109.github.io/post/shou-ji-guo-ji-ge-wan-zheng-ban-ge-ci/</id>
@@ -452,32 +468,6 @@ HEARTBREAK ジェネレーション<br>
 <p>这两天有点时间，多说点罢。</p>
 <p>自己比较好奇精神病态者的生活（自己是一个通常意义上的正常人），也喜欢想象他们的视角。</p>
 <p>其实自己看来，这世界没有正常人，只不过是个体之间的病态程度不同而已。被关进精神病院的人与大街上演奏乐曲的小提琴手没有什么区别。究竟怎么证明自己是一个正常人呢？很难说。对着四五个阴沉沉的医生回答问题，想必正常的人也要被逼疯了吧。</p>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[远游·光之神社]]></title>
-        <id>https://coder109.github.io/post/yuan-you-guang-zhi-shen-she/</id>
-        <link href="https://coder109.github.io/post/yuan-you-guang-zhi-shen-she/">
-        </link>
-        <updated>2020-10-23T12:39:22.000Z</updated>
-        <content type="html"><![CDATA[<blockquote>
-<p>偶然翻到初中的本子，当时自己悠闲地写了十来篇怪诞的游记，现在看来不过是流水账而已，稍微改改凑合看罢。<br>
-感鲁迅《墓碣文》所作（我当时居然看过鲁迅？？？）</p>
-</blockquote>
-<p>沿着人们口中的“神社路”走了许久，也不见半点人影。</p>
-<p>自己在大都市里走投无路，便只得背上行囊走向远方。目的地在哪？中间要干什么？自己并不清楚，只知道走下去就有希望。神社路是东郊的一条偏僻小道，直直地通向森林深处。有传言说，旅人们一旦踏上那松木栈道，就永远的消失在里面。有人说会被神灵吞噬啦，有人说会被野兽吃掉啦。既然自己总是要死的，探索一下也是无妨。</p>
-<p>栈道两旁是郁郁葱葱的树木和灌木，两旁的树叶向中间生长，搭起了一个拱形。阳光顺着叶隙洒进来，照亮这个生气勃勃的世界，松鼠、飞鸟自得其乐。栈道不宽，只能容纳一个人通过。两旁的杂草恣肆地生长着，想必早无人走过了。</p>
-<p>不清楚自己走了多久，两旁的光景丝毫未变。森林深处自己从未来过。生了十余年，自幼就被警告着东郊食人的树林的存在。至于这个传说从谁二期，不得而知。但如果没人回来，那么这个传说也就是其他人杜撰的而已。人们对于并不了解的事物，总是衍生出过于夸张的印象。</p>
-<p>栈道渐渐腐朽，最终变成了土道，消失在杂草之间。我突然发现了一座破败的房子。走近细看，稀疏的松木篱笆早已被蛀得千疮百孔，窗户也只剩下了两个空洞，如死人眼一般空洞。门前的石牌上刻着几个模糊的字：</p>
-<p>“……答我，否则离开……”</p>
-<p>&quot;光之神社&quot;</p>
-<p>回答什么？这是个神社？我一时间茫然无措了。神社在森林空地上苟延残喘，又如此破败不堪。我推开木门，它向内倾倒，摔得粉碎。里面只有一个石桌，上面有一个银烛台和一本书。“大概是古人的手记罢”我想道。翻开封面，上面的字迹竟未消褪：</p>
-<p>“生兮死之所倚，死兮生之所伏”</p>
-<p>“前路漫漫，君一孤独者何以为生？”</p>
-<p>“道终为死，道始为生。”</p>
-<p>“呜呼，君殆无退路矣！”</p>
-<p>我于是慌张地奔出“神社”，回望前路，惊觉那里只剩下漆黑一片。以神社为分隔，世界被分为两面，我此刻在生与死之间，不得脱身。</p>
-<p>旅行开始了。</p>
 ]]></content>
     </entry>
 </feed>
