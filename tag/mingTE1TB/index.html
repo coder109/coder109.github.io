@@ -1,2399 +1,701 @@
 <!DOCTYPE html>
-<html>
-
-<head>
-  <meta charset="UTF-8" />
-
-<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-<meta name="keywords" content="幻">
-<meta name="description" content="Vive hodie!">
-<meta name="theme-color" content="#3b5bdb">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<!-- 最新版本的 Bootstrap 核心 CSS 文件 -->
+<link rel="stylesheet" href="https://coder109.github.io/media/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/850552586/ericamcdn@0.1/css/live2d.css">
+<link rel="stylesheet" href="https://coder109.github.io/styles/main.css">
+<link rel="stylesheet" href="https://coder109.github.io/media/css/font-awesome.css">
 <title>幻</title>
-<link rel="shortcut icon" href="/favicon.ico?v=1606002930625">
-<link rel="stylesheet" href="/media/css/pisces.css">
-<link rel="stylesheet" href="/media/fonts/font-awesome.css">
-<link
-  href="//fonts.googleapis.com/css?family=Monda:300,300italic,400,400italic,700,700italic|Roboto Slab:300,300italic,400,400italic,700,700italic|Rosario:300,300italic,400,400italic,700,700italic|PT Mono:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext"
-  rel="stylesheet" type="text/css">
 
-<link href="/media/hljs/styles/androidstudio.css"
-  rel="stylesheet">
-
-<link rel="stylesheet" href="/styles/main.css">
-
-<script src="/media/hljs/highlight.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/velocity-animate@1.5.0/velocity.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/velocity-animate@1.5.0/velocity.ui.min.js"></script>
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.css"
-  integrity="sha384-zB1R0rpPzHqg7Kpt0Aljp8JPLqbXI3bhnPWROx27a9N0Ll6ZP/+DiW/UqRcLbRjq" crossorigin="anonymous">
-
-
-<script defer src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.js"
-  integrity="sha384-y23I5Q6l+B6vatafAwxRu/0oK/79VlbSz7Q9aiSZUvyWYIYsd+qj+o24G5ZU2zJz" crossorigin="anonymous"></script>
-<script defer src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/contrib/auto-render.min.js"
-  integrity="sha384-kWPLUVMOks5AQFrykwIup5lo0m3iMkkHrD0uJ4H5cjeGihAutqP0yW0J6dpFiVkI" crossorigin="anonymous"
-  onload="renderMathInElement(document.body);"></script>
-
-
-
-
-<script>
-  var _hmt = _hmt || [];
-  (function () {
-    var hm = document.createElement("script");
-    hm.src = "https://hm.baidu.com/hm.js?626680d972fc57c443b0e83a99fa5638";
-    var s = document.getElementsByTagName("script")[0];
-    s.parentNode.insertBefore(hm, s);
-  })();
-</script>
-
-
-</head>
 
 <body>
-  <div class="head-top-line"></div>
-  <div class="header-box">
+    <!-- 响应式布局，针对PC端内容显示 -->
+    <div id="content">
+        <div class="nav-large">
+            <div class="row">
+                
+                <div class="side"><body>
     
-<div class="pisces">
-  <header class="header  ">
-    <div class="blog-header box-shadow-wrapper bg-color " id="header">
-      <div class="nav-toggle" id="nav_toggle">
-        <div class="toggle-box">
-          <div class="line line-top"></div>
-          <div class="line line-center"></div>
-          <div class="line line-bottom"></div>
-        </div>
-      </div>
-      <div class="site-meta">       
-        <div class="site-title">
-          
-            <a href="/" class="brand">
-              <span>幻</span>
-            </a>  
-          
-        </div>
-        
-          <p class="subtitle">万亿世代，璀璨星河。</p>
-        
-      </div>
-      <nav class="site-nav" id="site_nav">
-        <ul id="nav_ul">
-          
-            
-            
-              
-            
-            <li class="nav-item ">
-              
-              
-                <a href="/" target="_self">
-                  <i class="fa fa-home"></i> 首页
-                </a>
-              
-            </li>
-          
-            
-            
-              
-            
-            <li class="nav-item ">
-              
-              
-                <a href="/archives/" target="_self">
-                  <i class="fa fa-archive"></i> 归档
-                </a>
-              
-            </li>
-          
-            
-            
-              
-            
-            <li class="nav-item ">
-              
-              
-                <a href="/post/about/" target="_self">
-                  <i class="fa fa-user"></i> 关于
-                </a>
-              
-            </li>
-          
-            
-            
-              
-            
-            <li class="nav-item ">
-              
-              
-                <a href="https://coder109.github.io/tags/" target="_self">
-                  <i class="fa fa-globe"></i> 分类
-                </a>
-              
-            </li>
-          
-          
-            
-              <li class="nav-item ">
-                <a href="/friends/" target="_self">
+
+
+
+    
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <a class="navbar-brand" href="https://coder109.github.io"
+                    style="font-size:21px">幻&nbsp;&nbsp;|&nbsp;&nbsp;</a>
+                <a class="navbar-brand" href=""
+                    style="font-size:15px;font-family:kaiti">Vive hodie!</a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse">
+                
+                <div class="search nav navbar-nav" style="margin-top:8px">
+                    <!-- <input type="text" class="search-input" placeholder="标题搜索(●'◡'●)" /> -->
+                    <input type="text" class="search-input" placeholder="Searching......">
+                    <div class="search-results"></div>
+                </div>
+                
+                <div class="search nav navbar-nav searchtop">
+                <a title="text" onclick="document.getElementById('socialMenu').style.display='block'"><i><img class="social"
+                    src="https://coder109.github.io/media/images/social.png" alt=""></i></a>
+            </div>
+            <ul class="nav navbar-nav" style="float: right;margin-right:5%">
+                
+                
+                <li>
+                    <a href="/" style="color:white">
+                        首页
+                    </a>
+                </li>
+                
+                
+                
+                <li>
+                    <a href="/archives" style="color:white">
+                        归档
+                    </a>
+                </li>
+                
+                
+                
+                <li>
+                    <a href="/post/about" style="color:white">
+                        关于
+                    </a>
+                </li>
+                
+                
+                
+                <li>
+                    <a href="https://coder109.github.io/tags" style="color:white">
+                        分类
+                    </a>
+                </li>
+                
+                
+                
+                <li><a href="https://coder109.github.io/talk" style="color:white;">说说</a></li>
+                
                   
-                    <i class="fa fa-address-book"></i> 友链
-                  
-                </a>
-              </li>
-            
-          
-          
-            <li id="fa_search" class="nav-item">
-              <a href="javascript:void(0);">
-                <i class="fa fa-search"></i> <span class="language" data-lan="search">搜索</span>
-              </a>
-            </li>
-          
-        </ul>
-      </nav>
+                <li><a href="https://coder109.github.io/friends" style="color:white">友链</a></li>
+                
+                  <li><img src="https://coder109.github.io/images/avatar.png?v=1606007990829" alt=""
+                class="menutopavatar"></li>
+            </ul>
+        </div><!-- /.navbar-collapse -->
+        </div><!-- /.container-fluid -->
+    </nav>
+    <div id="socialMenu">
+        <div class="animate">
+            <div class="socialContainer">
+                
+                
+                
+                
+                <a href="https://space.bilibili.com/107122501" target="_blank"><i style="font-size: 40px;"><img class="icon"
+                            src="https://coder109.github.io/media/images/bilibili.png" alt=""></i></a>
+                
+                
+                
+            </div>
+            <div id="qq" style="display:none"></div>
+        </div>
     </div>
-  </header>
-</div>
+    <!-- 引入jQuery核心js文件 -->
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js"></script>
+    <script>
+        var social = document.getElementById('socialMenu');
+        // 鼠标点击模型外区域关闭登录框
+        window.onclick = function (event) {
+            if (event.target == social) {
+                social.style.display = "none";
+            }
+        }
+    </script>
+    
+</body>
+<script>
+    //-------------------------------------------------搜索
+    // 获取搜索框、搜索按钮、清空搜索、结果输出对应的元素
+    var searchInput = document.querySelector('.search-input');
+    var searchResults = document.querySelector('.search-results');
 
-<script type="text/javascript"> 
- 
-  let showNav = true;
+    // 申明保存文章的标题、链接、内容的数组变量
+    var searchValue = '',
+        arrItems = [],
+        arrLinks = [],
+        arrTitles = [],
+        arrResults = [],
+        indexItem = [],
+        itemLength = 0;
+    var tmpDiv = document.createElement('div');
+    tmpDiv.className = 'result-item';
 
-  let navToggle = document.querySelector('#nav_toggle'),
-  siteNav = document.querySelector('#site_nav');
-  
-  function navClick() {
-    let sideBar = document.querySelector('.sidebar');
-    let navUl = document.querySelector('#nav_ul');
-    navToggle.classList.toggle('nav-toggle-active');
-    siteNav.classList.toggle('nav-menu-active');
-    if (siteNav.classList.contains('nav-menu-active')) {
-      siteNav.style = "height: " + (navUl.children.length * 42) +"px !important";
-    } else {
-      siteNav.style = "";
+    // ajax 的兼容写法
+    var xhr = new XMLHttpRequest() || new ActiveXObject('Microsoft.XMLHTTP');
+    xhr.onreadystatechange = function () {
+        if (xhr.readyState == 4 && xhr.status == 200) {
+            xml = xhr.responseXML;
+            arrItems = xml.getElementsByTagName('entry');
+            itemLength = arrItems.length;
+            // 遍历并保存所有文章对应的标题、链接、内容到对应的数组中
+            // 同时过滤掉 HTML 标签
+            for (i = 0; i < itemLength; i++) {
+                var link = arrItems[i].getElementsByTagName('link')[0];
+                arrLinks[i] = link.getAttribute("href");
+                arrTitles[i] = arrItems[i].getElementsByTagName('title')[0].
+                childNodes[0].nodeValue.replace(/<.*?>/g, '');
+            }
+        }
     }
-  }
 
-  navToggle.addEventListener('click',navClick);  
+    // 开始获取根目录下 feed.xml 文件内的数据
+    xhr.open('get', '/atom.xml', true);
+    xhr.send();
+
+
+
+    // 输入框内容变化后就开始匹配，可以不用点按钮
+    // 经测试，onkeydown, onchange 等方法效果不太理想，
+    // 存在输入延迟等问题，最后发现触发 input 事件最理想，
+    // 并且可以处理中文输入法拼写的变化
+    searchInput.oninput = function () {
+        setTimeout(searchConfirm, 0);
+    }
+    searchInput.onfocus = function () {
+        searchResults.style.display = 'block';
+    }
+
+    function searchConfirm() {
+        if (searchInput.value == '') {
+            searchResults.style.display = 'none';
+        } else if (searchInput.value.search(/^\s+$/) >= 0) {
+            // 检测输入值全是空白的情况
+            searchInit();
+            var itemDiv = tmpDiv.cloneNode(true);
+            itemDiv.innerText = '请输入有效内容...';
+            searchResults.appendChild(itemDiv);
+        } else {
+            // 合法输入值的情况
+            searchInit();
+            searchValue = searchInput.value;
+            // 在标题、内容中查找
+            searchMatching(arrTitles, searchValue);
+        }
+    }
+
+    // 每次搜索完成后的初始化
+    function searchInit() {
+        arrResults = [];
+        indexItem = [];
+        searchResults.innerHTML = '';
+        searchResults.style.display = 'block';
+    }
+
+    function searchMatching(arr1, input) {
+        // 忽略输入大小写
+        input = new RegExp(input, 'i');
+        // 在所有文章标题、内容中匹配查询值
+        for (i = 0; i < itemLength; i++) {
+            if (arr1[i].search(input) !== -1) {
+                var arr = arr1;
+                indexItem.push(i); // 保存匹配值的索引
+                var indexContent = arr[i].search(input);
+                // 此时 input 为 RegExp 格式 /input/i，转换为原 input 字符串长度
+                var l = input.toString().length - 3;
+                var step = 10;
+
+                // 将匹配到内容的地方进行黄色标记，并包括周围一定数量的文本
+                arrResults.push(arr[i].slice(indexContent - step, indexContent));
+            }
+        }
+
+        // 输出总共匹配到的数目
+        var totalDiv = tmpDiv.cloneNode(true);
+        totalDiv.innerHTML = '<b>总匹配：' + indexItem.length + ' 项<hr></b>';
+        searchResults.appendChild(totalDiv);
+
+        // 未匹配到内容的情况
+        if (indexItem.length == 0) {
+            var itemDiv = tmpDiv.cloneNode(true);
+            itemDiv.innerText = '未匹配到内容...';
+            searchResults.appendChild(itemDiv);
+        }
+
+        // 将所有匹配内容进行组合
+        for (i = 0; i < arrResults.length; i++) {
+            var itemDiv = tmpDiv.cloneNode(true);
+            itemDiv.innerHTML = '<b>[' + arrTitles[indexItem[i]] +
+                ']</b><p>' + arrResults[i] + "</p><hr />";
+            itemDiv.setAttribute('onclick', 'changeHref(arrLinks[indexItem[' + i + ']])');
+            searchResults.appendChild(itemDiv);
+        }
+    }
+
+    function changeHref(href) {
+        location.href = href;
+    }
+
+    function showqq() {
+        var qq = document.getElementById("qq").innerHTML;
+        if (qq != '')
+            window.location.href = "tencent://message/?uin=" + qq + "&Site=&Menu=yes";
+        else
+            alert("博主暂未设置QQ联系方式");
+    }
 </script>
-  </div>
-  <div class="main-continer">
+</div>
+                <div id="main" class="col-xs-12 col-sm-7" style="width:50%;margin-top:50px;left:27%">
+                    <link rel="stylesheet" href="https://coder109.github.io/media/css/font-awesome.css">
+<div class="tag-container">
     
-    <div
-      class="section-layout  pisces">
-      <div class="section-layout-wrapper">
-        <div id="sidebarMeta" class="sidebar">
-    
-<div class="sidebar-wrapper box-shadow-wrapper bg-color">
-  <div class="sidebar-item">
-    <img class="site-author-image right-motion" src="/images/avatar.png"/>
-    <p class="site-author-name">幻</p>
-    
-    <div class="site-description right-motion">
-      
-        <p id="binft">某不知名的学生。</p>
-      
-    </div>
-    
-  </div>
-  <div class="sidebar-item side-item-stat right-motion">
-    <div class="sidebar-item-box">
-      <a href="/archives/">
+    <div class="postshow">
         
-        <span class="site-item-stat-count">47</span>
-        <span class="site-item-stat-name language" data-lan="article">文章</span>
-      </a>
-    </div>
-    <div class="sidebar-item-box">
-      <a href="">
-        <span class="site-item-stat-count">9</span>
-        <span class="site-item-stat-name language" data-lan="category">分类</span>
-      </a>
-    </div>
-    <div class="sidebar-item-box">
-      <a href="/tags/">
-        <span class="site-item-stat-count">9</span>
-        <span class="site-item-stat-name language" data-lan="tag">标签</span>
-      </a>
-    </div>
-  </div>
-  
-    
-      <div class="sidebar-item">
-        <span class="site-item-rss">
-            <i class="fa fa-rss"></i>
-            <a href="https://coder109.github.io/atom.xml" target="_blank">RSS</a>
-        </span>
-      </div>
-    
-  
-  
+        <div id="post" style="width:100%">
+            <img src="https://w.wallhaven.cc/full/6q/wallhaven-6qqd5l.png" class="postimage"
+                onclick="window.location.href= 'https://coder109.github.io/post/shou-ji-guo-ji-ge-wan-zheng-ban-ge-ci/';return false">
+            <div class="posttitlebox">
+                <div class="posttitle" onclick="window.location.href= 'https://coder109.github.io/post/shou-ji-guo-ji-ge-wan-zheng-ban-ge-ci/';return false">
+                    【收集】国际歌完整版歌词
+                </div>
+            </div>
+        </div>
+        <div class="postinfo">
+            <div class="postdate"><i class="fa fa-calendar"></i>2020-11-15</div>
+            <div class="poststatus postdate"><i class="fa fa-clock-o"></i> 3 min read</div>
+            <div class="posttag">
+                
+                <a href="https://coder109.github.io/tag/mingTE1TB/" class="postlink">
+                    <i class="fa fa-tag"></i> 收集
+                </a>
+                
+            </div>
+        </div>
+        
+</div>
 
+    <div class="postshow">
+        
+        <div id="post" style="width:100%">
+            <img src="https://w.wallhaven.cc/full/47/wallhaven-472kyo.png" class="postimage"
+                onclick="window.location.href= 'https://coder109.github.io/post/shou-ji-you-ji-za-huan-hua-he-wu/';return false">
+            <div class="posttitlebox">
+                <div class="posttitle" onclick="window.location.href= 'https://coder109.github.io/post/shou-ji-you-ji-za-huan-hua-he-wu/';return false">
+                    【收集】有机杂环化合物
+                </div>
+            </div>
+        </div>
+        <div class="postinfo">
+            <div class="postdate"><i class="fa fa-calendar"></i>2020-10-31</div>
+            <div class="poststatus postdate"><i class="fa fa-clock-o"></i> 0 min read</div>
+            <div class="posttag">
+                
+                <a href="https://coder109.github.io/tag/mingTE1TB/" class="postlink">
+                    <i class="fa fa-tag"></i> 收集
+                </a>
+                
+            </div>
+        </div>
+        
+</div>
 
+    <div class="postshow">
+        
+        <div id="post" style="width:100%">
+            
+            <img src="https://ae01.alicdn.com/kf/H0c7d77e78912497e9bfdec2d08ff6d9fb.jpg" class="postimage"
+                onclick="window.location.href= 'https://coder109.github.io/post/shou-ji-bei-yue-yin-biao-zi-mu/';return false">
+            
+        <div class="posttitlebox">
+            <div class="posttitle" onclick="window.location.href= 'https://coder109.github.io/post/shou-ji-bei-yue-yin-biao-zi-mu/';return false">
+            【收集】北约音标字母
+        </div>
+    </div>
+</div>
+<div class="postinfo">
+    <div class="postdate"><i class="fa fa-calendar"></i>2020-08-08</div>
+    <div class="poststatus postdate"><i class="fa fa-clock-o"></i> 1 min read</div>
+    <div class="posttag">
+        
+        <a href="https://coder109.github.io/tag/mingTE1TB/" class="postlink">
+            <i class="fa fa-tag"></i> 收集
+        </a>
+        
+    </div>
+</div>
 
 </div>
+
 </div>
+                    <div>
+                        <div class="pagi">
+    <ul>
+        
+        <li><a style="width:100px">&nbsp;</a></li>
+        
+                <li><a id="page1">1</a></li>
+                <li><a id="page2" class="active">2</a></li>
+                <li><a id="page3">3</a></li>
+                
+        <li><a style="width:100px">&nbsp;</a></li>
+        
+            </ul>
+</div>
+
+<div id="pagination-prev" style="display:none"> 
+</div>
+<div id="pagination-next" style="display:none"> </div>
+
+
 <script>
-  let sidebarMeta = document.querySelector('#sidebarMeta');
-  let scheme = 'pisces';
-  let sidebarWrapper = document.querySelector('.sidebar-wrapper');
-  if (sidebarMeta && (scheme === 'pisces' || scheme === 'gemini')) {
-    document.addEventListener('scroll', function(e) {
-      if (document.scrollingElement.scrollTop > parseInt(sidebarMeta.style.marginTop) + 10) {
-        sidebarWrapper.classList.add('home-sidebar-fixed')
-      } else {
-        sidebarWrapper.classList.remove('home-sidebar-fixed')
-      }
-    });
-  }
-  </script>
-        <div class="section-box tag-line box-shadow-wrapper">
-          <section class="section tags-section posts-expand bg-color">
-            <div class="padding-wrapper">
-  <div class="tag-timeline-box">
-    <div class="tag-timeline-wrapper">
-      <div class="tag-timeline-title">
-        <h2>
-          收集
-          <small class="language" data-lan="tag">标签</small>
-        </h2>
-      </div>
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      <a href="https://coder109.github.io/post/shou-ji-guo-ji-ge-wan-zheng-ban-ge-ci/">
-        <div class="motion-warpper">
-          <div class="tag-post-node">
-            <h1>
-              11-15
-              <small>【收集】国际歌完整版歌词</small>
-            </h1>
-          </div>
-        </div>
-      </a>
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      <a href="https://coder109.github.io/post/shou-ji-you-ji-za-huan-hua-he-wu/">
-        <div class="motion-warpper">
-          <div class="tag-post-node">
-            <h1>
-              10-31
-              <small>【收集】有机杂环化合物</small>
-            </h1>
-          </div>
-        </div>
-      </a>
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      <a href="https://coder109.github.io/post/shou-ji-bei-yue-yin-biao-zi-mu/">
-        <div class="motion-warpper">
-          <div class="tag-post-node">
-            <h1>
-              08-08
-              <small>【收集】北约音标字母</small>
-            </h1>
-          </div>
-        </div>
-      </a>
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-    </div>
-  </div>
-</div>
-          </section>
-        </div>
-      </div>
-    </div>
-    <div class="footer-box">
-  <footer class="footer">
-    <div class="copyright">
-      Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> | © 2019-2020 Theme By <a
-        href="https://github.com/hsxyhao/gridea-theme-next" target="_blank">HsxyHao</a>
-    </div>
-    <div class="poweredby">
-      
-    </div>
-  </footer>
-  
-  
-  <div class="pisces back-to-top" id="back_to_top">
-    <i class="fa fa-arrow-up"></i>
-    
-    <span class="scrollpercent">
-      <span id="back_to_top_text">0</span>%
-    </span>
-    
-  </div>
-  
-  
-  
-  <div class="bg-img">
-    <img src="/media/images/1.jpg" />
-  </div>
-  
-  
-  
-  
-</div>
-<script>
-
-  let sideBarOpen = 'sidebar-open';
-  let body = document.body;
-  let back2Top = document.querySelector('#back_to_top'),
-    back2TopText = document.querySelector('#back_to_top_text'),
-    drawerBox = document.querySelector('#drawer_box'),
-    rightSideBar = document.querySelector('.sidebar'),
-    viewport = document.querySelector('body');
-
-  function scrollAnimation(currentY, targetY) {
-
-    let needScrollTop = targetY - currentY
-    let _currentY = currentY
-    setTimeout(() => {
-      const dist = Math.ceil(needScrollTop / 10)
-      _currentY += dist
-      window.scrollTo(_currentY, currentY)
-      if (needScrollTop > 10 || needScrollTop < -10) {
-        scrollAnimation(_currentY, targetY)
-      } else {
-        window.scrollTo(_currentY, targetY)
-      }
-    }, 1)
-  }
-
-  back2Top.addEventListener("click", function (e) {
-    scrollAnimation(document.scrollingElement.scrollTop, 0);
-    e.stopPropagation();
-    return false;
-  });
-
-  window.addEventListener('scroll', function (e) {
-    let percent = document.scrollingElement.scrollTop / (document.scrollingElement.scrollHeight - document.scrollingElement.clientHeight) * 100;
-    if (percent > 1 && !back2Top.classList.contains('back-top-active')) {
-      back2Top.classList.add('back-top-active');
+    var prevstr = document.getElementById("pagination-prev").innerHTML;
+    var nextstr = document.getElementById("pagination-next").innerHTML;
+    var page1 = document.getElementById("page1");
+    var page2 = document.getElementById("page2");
+    var page3 = document.getElementById("page3");
+    page1.innerHTML = '-';
+    page2.innerHTML = '1';
+    page3.innerHTML = '-';
+    if (prevstr.length > 5) {
+        if (prevstr.indexOf("page/") != -1) {
+            var prevnum = parseInt(prevstr.split("page/")[1]);
+            page1.innerHTML = prevnum;
+            page2.innerHTML = prevnum + 1;
+        } else {
+            page1.innerHTML = 1;
+            page2.innerHTML = 2;
+        }
     }
-    if (percent == 0) {
-      back2Top.classList.remove('back-top-active');
+    if (nextstr.indexOf("page/") != -1) {
+        var nextnum = parseInt(nextstr.split("page/")[1]);
+        page3.innerHTML = nextnum;
+        page2.innerHTML = nextnum - 1;
     }
-    if (back2TopText) {
-      back2TopText.textContent = Math.floor(percent);
-    }
-  });
-
-
-  let hasCacu = false;
-  window.onresize = function () {
-    calcuHeight();
-  }
-
-  function calcuHeight() {
-    // 动态调整站点概览高度
-    if (!hasCacu && back2Top.classList.contains('pisces') || back2Top.classList.contains('gemini')) {
-      let sideBar = document.querySelector('.sidebar');
-      let navUl = document.querySelector('#site_nav');
-      sideBar.style = 'margin-top:' + (navUl.offsetHeight + navUl.offsetTop + 15) + 'px;';
-      hasCacu = true;
-    }
-  }
-  calcuHeight();
-
-  let open = false, MOTION_TIME = 300, RIGHT_MOVE_DIS = '320px';
-
-  if (drawerBox) {
-    let rightMotions = document.querySelectorAll('.right-motion');
-    let right = drawerBox.classList.contains('right');
-
-    let transitionDir = right ? "transition.slideRightIn" : "transition.slideLeftIn";
-
-    let openProp, closeProp;
-    if (right) {
-      openProp = {
-        paddingRight: RIGHT_MOVE_DIS
-      };
-      closeProp = {
-        paddingRight: '0px'
-      };
-    } else {
-      openProp = {
-        paddingLeft: RIGHT_MOVE_DIS
-      };
-      closeProp = {
-        paddingLeft: '0px'
-      };
-    }
-
-    drawerBox.onclick = function () {
-      open = !open;
-      window.Velocity(rightSideBar, 'stop');
-      window.Velocity(viewport, 'stop');
-      window.Velocity(rightMotions, 'stop');
-      if (open) {
-        window.Velocity(rightSideBar, {
-          width: RIGHT_MOVE_DIS
-        }, {
-          duration: MOTION_TIME,
-          begin: function () {
-            window.Velocity(rightMotions, transitionDir, {});
-          }
-        })
-        window.Velocity(viewport, openProp, {
-          duration: MOTION_TIME
-        });
-      } else {
-        window.Velocity(rightSideBar, {
-          width: '0px'
-        }, {
-          duration: MOTION_TIME,
-          begin: function () {
-            window.Velocity(rightMotions, {
-              opacity: 0
-            });
-          }
-        })
-        window.Velocity(viewport, closeProp, {
-          duration: MOTION_TIME
-        });
-      }
-      for (let i = 0; i < drawerBox.children.length; i++) {
-        drawerBox.children[i].classList.toggle('muse-line');
-      }
-      drawerBox.classList.toggle(sideBarOpen);
-    }
-  }
-
-  // 链接跳转
-  let newWindow = 'true'
-  if (newWindow === 'true') {
-    let links = document.querySelectorAll('.post-body a')
-    links.forEach(item => {
-      if (!item.classList.contains('btn')) {
-        item.setAttribute("target", "_blank");
-      }
-    })
-  }
-
-  let faSearch = document.querySelector('#fa_search');
-  faSearch.addEventListener('click', function () {
-    document.querySelector('#search_mask').style = ''
-  })
-
-  // 代码高亮
-  hljs.initHighlightingOnLoad();
-  
-  // 离开当前页title变化
-  var leaveTitle = 'w(ﾟДﾟ)w~出错惹';
-  if (leaveTitle) {
-    document.addEventListener('visibilitychange', function () {
-      if (document.visibilityState == 'hidden') {
-        normal_title = document.title;
-        document.title = leaveTitle;
-      } else {
-        document.title = normal_title;
-      }
-    });
-  }
-
 </script>
-  </div>
+                        <div style="padding-bottom:10%"></div>
+                    </div>
+                </div>
+                <div class="col-xs-6 col-sm-2"></div>
+                
+            </div>
+            
+                <head>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css">
+</head>
+<body>
+    <div class="miniMode">
+        <meting-js id="myaplayer" server="netease" type="playlist" fixed="true" order="default">
+        </meting-js>
+    </div>   
 </body>
 
-  <div class="search-mask" id="search_mask" style="display: none;">
-  <div class="search-box">
-    <div class="search-title">
-      <i class="fa fa-search"></i>
-      <div class="input-box">
-        <input id="search" type="text" class="language" data-lan="search" placeholder="搜索">
-      </div>
-      <i id="close" class="fa fa-times-circle"></i>
-    </div>
-    <div class="stat-box">
-      <span id="stat_count">0</span><span class="language" data-lan="stat">条相关条目，使用了</span><span id="stat_times">0</span><span class="language" data-lan="stat-time">毫秒</span>
-      <hr>
-    </div>
-    <div class="result" id="result">
-      
-      <div class="item">
-        <a class="result-title" style="opacity: 0;" href="https://coder109.github.io/post/xue/"" data-c="
-          &lt;p&gt;北疆的旅人望向窗外，&lt;br&gt;
-飘飞的雪，苍白的天，&lt;br&gt;
-邻家的孩童嬉笑着跑过窗前，&lt;br&gt;
-有冷风吹来。&lt;/p&gt;
-&lt;p&gt;他的眼中婉转着冬日的梦，&lt;br&gt;
-熟悉的温存，南疆遥远的城。&lt;br&gt;
-孤独的雪花飞入小窗，&lt;br&gt;
-在他的手指间消散。&lt;/p&gt;
-">雪</a>
-      </div>
-      
-      <div class="item">
-        <a class="result-title" style="opacity: 0;" href="https://coder109.github.io/post/shou-ji-guo-ji-ge-wan-zheng-ban-ge-ci/"" data-c="
-          &lt;blockquote&gt;
-&lt;p&gt;有修改&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;第一段：&lt;/p&gt;
-&lt;p&gt;起来，饥寒交迫的奴隶！&lt;/p&gt;
-&lt;p&gt;起来，全世界受苦的人！&lt;/p&gt;
-&lt;p&gt;满腔的热血已经沸腾，&lt;/p&gt;
-&lt;p&gt;要为真理而斗争！&lt;/p&gt;
-&lt;p&gt;旧世界打个落花流水，&lt;/p&gt;
-&lt;p&gt;奴隶们起来，起来！&lt;/p&gt;
-&lt;p&gt;不要说我们一无所有，&lt;/p&gt;
-&lt;p&gt;我们要做天下的主人！&lt;/p&gt;
-&lt;p&gt;这是最后的斗争，团结起来到明天，&lt;/p&gt;
-&lt;p&gt;英特纳雄耐尔就一定要实现！&lt;/p&gt;
-&lt;p&gt;这是最后的斗争，团结起来到明天，&lt;/p&gt;
-&lt;p&gt;英特纳雄耐尔就一定要实现！&lt;/p&gt;
-&lt;p&gt;第二段：&lt;/p&gt;
-&lt;p&gt;从来就没有什么救世主，&lt;/p&gt;
-&lt;p&gt;也不靠神仙皇帝！&lt;/p&gt;
-&lt;p&gt;要创造人类的幸福，&lt;/p&gt;
-&lt;p&gt;全靠我们自己！&lt;/p&gt;
-&lt;p&gt;我们要夺回劳动果实，&lt;/p&gt;
-&lt;p&gt;让思想冲破牢笼！&lt;/p&gt;
-&lt;p&gt;快把那炉火烧得通红，&lt;/p&gt;
-&lt;p&gt;趁热打铁才会成功！&lt;/p&gt;
-&lt;p&gt;这是最后的斗争，团结起来到明天，&lt;/p&gt;
-&lt;p&gt;英特纳雄耐尔就一定要实现！&lt;/p&gt;
-&lt;p&gt;这是最后的斗争，团结起来到明天，&lt;/p&gt;
-&lt;p&gt;英特纳雄耐尔就一定要实现！&lt;/p&gt;
-&lt;p&gt;&lt;/p&gt;
-&lt;p&gt;第三段：&lt;/p&gt;
-&lt;p&gt;压迫的国家、空洞的法律，&lt;/p&gt;
-&lt;p&gt;苛捐杂税榨穷苦；&lt;/p&gt;
-&lt;p&gt;富人不尽义务独逍遥。&lt;/p&gt;
-&lt;p&gt;穷人的权利只是空话，&lt;/p&gt;
-&lt;p&gt;受够了监护下的沉沦。&lt;/p&gt;
-&lt;p&gt;&lt;/p&gt;
-&lt;p&gt;&lt;/p&gt;
-&lt;p&gt;&lt;/p&gt;
-&lt;p&gt;平等呼唤新的法律，&lt;/p&gt;
-&lt;p&gt;没有无义务的权利，&lt;/p&gt;
-&lt;p&gt;&lt;/p&gt;
-&lt;p&gt;&lt;/p&gt;
-&lt;p&gt;&lt;/p&gt;
-&lt;p&gt;也没有无权利的义务！&lt;/p&gt;
-&lt;p&gt;&lt;/p&gt;
-&lt;p&gt;&lt;/p&gt;
-&lt;p&gt;&lt;/p&gt;
-&lt;p&gt;这是最后的斗争，团结起来到明天，&lt;/p&gt;
-&lt;p&gt;&lt;/p&gt;
-&lt;p&gt;&lt;/p&gt;
-&lt;p&gt;&lt;/p&gt;
-&lt;p&gt;英特纳雄耐尔就一定要实现！&lt;/p&gt;
-&lt;p&gt;&lt;/p&gt;
-&lt;p&gt;&lt;/p&gt;
-&lt;p&gt;&lt;/p&gt;
-&lt;p&gt;这是最后的斗争，团结起来到明天，&lt;/p&gt;
-&lt;p&gt;&lt;/p&gt;
-&lt;p&gt;&lt;/p&gt;
-&lt;p&gt;&lt;/p&gt;
-&lt;p&gt;英特纳雄耐尔就一定要实现！&lt;/p&gt;
-&lt;p&gt;&lt;/p&gt;
-&lt;p&gt;&lt;/p&gt;
-&lt;p&gt;&lt;/p&gt;
-&lt;p&gt;&lt;/p&gt;
-&lt;p&gt;&lt;/p&gt;
-&lt;p&gt;第四段：&lt;/p&gt;
-&lt;p&gt;&lt;/p&gt;
-&lt;p&gt;&lt;/p&gt;
-&lt;p&gt;&lt;/p&gt;
-&lt;p&gt;矿井和铁路的帝王，&lt;/p&gt;
-&lt;p&gt;&lt;/p&gt;
-&lt;p&gt;&lt;/p&gt;
-&lt;p&gt;&lt;/p&gt;
-&lt;p&gt;神坛上奇丑无比。&lt;/p&gt;
-&lt;p&gt;&lt;/p&gt;
-&lt;p&gt;&lt;/p&gt;
-&lt;p&gt;&lt;/p&gt;
-&lt;p&gt;他们除了掠夺劳动，&lt;/p&gt;
-&lt;p&gt;&lt;/p&gt;
-&lt;p&gt;&lt;/p&gt;
-&lt;p&gt;&lt;/p&gt;
-&lt;p&gt;还会做些什么呢？&lt;/p&gt;
-&lt;p&gt;&lt;/p&gt;
-&lt;p&gt;&lt;/p&gt;
-&lt;p&gt;&lt;/p&gt;
-&lt;p&gt;&lt;/p&gt;
-&lt;p&gt;&lt;/p&gt;
-&lt;p&gt;在他们的保险箱里，&lt;/p&gt;
-&lt;p&gt;&lt;/p&gt;
-&lt;p&gt;&lt;/p&gt;
-&lt;p&gt;&lt;/p&gt;
-&lt;p&gt;劳动创造的价值融化！&lt;/p&gt;
-&lt;p&gt;&lt;/p&gt;
-&lt;p&gt;&lt;/p&gt;
-&lt;p&gt;&lt;/p&gt;
-&lt;p&gt;从那些剥削者的手里，&lt;/p&gt;
-&lt;p&gt;&lt;/p&gt;
-&lt;p&gt;&lt;/p&gt;
-&lt;p&gt;&lt;/p&gt;
-&lt;p&gt;我们只是讨回血债。&lt;/p&gt;
-&lt;p&gt;&lt;/p&gt;
-&lt;p&gt;&lt;/p&gt;
-&lt;p&gt;&lt;/p&gt;
-&lt;p&gt;这是最后的斗争，团结起来到明天，&lt;/p&gt;
-&lt;p&gt;&lt;/p&gt;
-&lt;p&gt;&lt;/p&gt;
-&lt;p&gt;&lt;/p&gt;
-&lt;p&gt;英特纳雄耐尔就一定要实现！&lt;/p&gt;
-&lt;p&gt;&lt;/p&gt;
-&lt;p&gt;&lt;/p&gt;
-&lt;p&gt;&lt;/p&gt;
-&lt;p&gt;这是最后的斗争，团结起来到明天，&lt;/p&gt;
-&lt;p&gt;&lt;/p&gt;
-&lt;p&gt;&lt;/p&gt;
-&lt;p&gt;&lt;/p&gt;
-&lt;p&gt;英特纳雄耐尔就一定要实现！&lt;/p&gt;
-&lt;p&gt;&lt;/p&gt;
-&lt;p&gt;&lt;/p&gt;
-&lt;p&gt;&lt;/p&gt;
-&lt;p&gt;&lt;/p&gt;
-&lt;p&gt;&lt;/p&gt;
-&lt;p&gt;第五段：&lt;/p&gt;
-&lt;p&gt;&lt;/p&gt;
-&lt;p&gt;&lt;/p&gt;
-&lt;p&gt;&lt;/p&gt;
-&lt;p&gt;国王用烟雾迷惑我们，&lt;/p&gt;
-&lt;p&gt;&lt;/p&gt;
-&lt;p&gt;&lt;/p&gt;
-&lt;p&gt;&lt;/p&gt;
-&lt;p&gt;我们要联合讨伐他。&lt;/p&gt;
-&lt;p&gt;&lt;/p&gt;
-&lt;p&gt;&lt;/p&gt;
-&lt;p&gt;&lt;/p&gt;
-&lt;p&gt;让军中战士一齐罢工，&lt;/p&gt;
-&lt;p&gt;&lt;/p&gt;
-&lt;p&gt;&lt;/p&gt;
-&lt;p&gt;&lt;/p&gt;
-&lt;p&gt;暴力机器乱作一团。&lt;/p&gt;
-&lt;p&gt;&lt;/p&gt;
-&lt;p&gt;&lt;/p&gt;
-&lt;p&gt;&lt;/p&gt;
-&lt;p&gt;如果他们坚持护卫敌人，&lt;/p&gt;
-&lt;p&gt;&lt;/p&gt;
-&lt;p&gt;&lt;/p&gt;
-&lt;p&gt;&lt;/p&gt;
-&lt;p&gt;让我们牺牲为他虚荣；&lt;/p&gt;
-&lt;p&gt;&lt;/p&gt;
-&lt;p&gt;&lt;/p&gt;
-&lt;p&gt;&lt;/p&gt;
-&lt;p&gt;就让他知道我们子弹，&lt;/p&gt;
-&lt;p&gt;&lt;/p&gt;
-&lt;p&gt;&lt;/p&gt;
-&lt;p&gt;&lt;/p&gt;
-&lt;p&gt;全都射向自己将军。&lt;/p&gt;
-&lt;p&gt;&lt;/p&gt;
-&lt;p&gt;&lt;/p&gt;
-&lt;p&gt;&lt;/p&gt;
-&lt;p&gt;这是最后的斗争，团结起来到明天，&lt;/p&gt;
-&lt;p&gt;&lt;/p&gt;
-&lt;p&gt;&lt;/p&gt;
-&lt;p&gt;&lt;/p&gt;
-&lt;p&gt;英特纳雄耐尔就一定要实现！&lt;/p&gt;
-&lt;p&gt;&lt;/p&gt;
-&lt;p&gt;&lt;/p&gt;
-&lt;p&gt;&lt;/p&gt;
-&lt;p&gt;这是最后的斗争，团结起来到明天，&lt;/p&gt;
-&lt;p&gt;&lt;/p&gt;
-&lt;p&gt;&lt;/p&gt;
-&lt;p&gt;&lt;/p&gt;
-&lt;p&gt;&lt;/p&gt;
-&lt;p&gt;&lt;/p&gt;
-&lt;p&gt;英特纳雄耐尔就一定要实现！&lt;/p&gt;
-&lt;p&gt;&lt;/p&gt;
-&lt;p&gt;&lt;/p&gt;
-&lt;p&gt;&lt;/p&gt;
-&lt;p&gt;&lt;/p&gt;
-&lt;p&gt;&lt;/p&gt;
-&lt;p&gt;第六段：&lt;/p&gt;
-&lt;p&gt;&lt;/p&gt;
-&lt;p&gt;&lt;/p&gt;
-&lt;p&gt;&lt;/p&gt;
-&lt;p&gt;是谁创造了人类世界？&lt;/p&gt;
-&lt;p&gt;&lt;/p&gt;
-&lt;p&gt;&lt;/p&gt;
-&lt;p&gt;是我们劳动群众！&lt;/p&gt;
-&lt;p&gt;&lt;/p&gt;
-&lt;p&gt;&lt;/p&gt;
-&lt;p&gt;&lt;/p&gt;
-&lt;p&gt;一切归劳动者所有，&lt;/p&gt;
-&lt;p&gt;&lt;/p&gt;
-&lt;p&gt;&lt;/p&gt;
-&lt;p&gt;哪能容得寄生虫？！&lt;/p&gt;
-&lt;p&gt;&lt;/p&gt;
-&lt;p&gt;&lt;/p&gt;
-&lt;p&gt;&lt;/p&gt;
-&lt;p&gt;最可恨那些毒蛇猛兽，&lt;/p&gt;
-&lt;p&gt;&lt;/p&gt;
-&lt;p&gt;&lt;/p&gt;
-&lt;p&gt;吃尽了我们的血肉！&lt;/p&gt;
-&lt;p&gt;&lt;/p&gt;
-&lt;p&gt;&lt;/p&gt;
-&lt;p&gt;&lt;/p&gt;
-&lt;p&gt;一旦将它们消灭干净，&lt;/p&gt;
-&lt;p&gt;&lt;/p&gt;
-&lt;p&gt;&lt;/p&gt;
-&lt;p&gt;鲜红的太阳照遍全球！&lt;/p&gt;
-&lt;p&gt;&lt;/p&gt;
-&lt;p&gt;&lt;/p&gt;
-&lt;p&gt;&lt;/p&gt;
-&lt;p&gt;这是最后的斗争，团结起来到明天，&lt;/p&gt;
-&lt;p&gt;&lt;/p&gt;
-&lt;p&gt;&lt;/p&gt;
-&lt;p&gt;&lt;/p&gt;
-&lt;p&gt;英特纳雄耐尔就一定要实现！&lt;/p&gt;
-&lt;p&gt;&lt;/p&gt;
-&lt;p&gt;&lt;/p&gt;
-&lt;p&gt;&lt;/p&gt;
-&lt;p&gt;这是最后的斗争，团结起来到明天，&lt;/p&gt;
-&lt;p&gt;&lt;/p&gt;
-&lt;p&gt;&lt;/p&gt;
-&lt;p&gt;&lt;/p&gt;
-&lt;p&gt;英特纳雄耐尔就一定要实现！&lt;/p&gt;
-">【收集】国际歌完整版歌词</a>
-      </div>
-      
-      <div class="item">
-        <a class="result-title" style="opacity: 0;" href="https://coder109.github.io/post/yuan-you-kong-cheng/"" data-c="
-          &lt;p&gt;空城中万物荒颓，残垣剥离，&lt;br&gt;
-石墙上的高草弥漫着末世的孤凄，&lt;br&gt;
-死去的游者盘桓难去，&lt;br&gt;
-风中喧闹着痛苦的流离。&lt;/p&gt;
-&lt;p&gt;脚步声叩响了死寂的城，&lt;br&gt;
-零落的枫叶交织着古老的梦，&lt;br&gt;
-破碎的楹联上式丰年的祝福，&lt;br&gt;
-旧年除去，庇佑新生。&lt;/p&gt;
-&lt;p&gt;月光碧玉，夜星琉璃，&lt;br&gt;
-夕阳隐去的赤色秋季，&lt;br&gt;
-在这浩渺天穹下，&lt;br&gt;
-世界上有几人能同我伫立？&lt;/p&gt;
-&lt;p&gt;我踟蹰与此地，&lt;br&gt;
-呼吸历史凝固的气息。&lt;br&gt;
-我知道我终末的命运，&lt;br&gt;
-大抵是了然一切地悲怆与快意。&lt;/p&gt;
-">远游·空城</a>
-      </div>
-      
-      <div class="item">
-        <a class="result-title" style="opacity: 0;" href="https://coder109.github.io/post/yuan-you-wu-he-you-zhi-xiang/"" data-c="
-          &lt;p&gt;苦行，苦行。离了神社很远了。没有时间去思考，只能向前走去。心中并不期待前方会遇见什么人，并不期盼迎来团聚，允许我走着就好。&lt;/p&gt;
-&lt;p&gt;黄沙弥漫，炎阳高悬。一片大漠。连绵起伏的黄色丘陵。滚烫的空气刺痛鼻腔。“这里是撒哈拉吧……”我不确定自己是否有三毛的勇气。&lt;/p&gt;
-&lt;p&gt;荒凉的四野里只有我一人。孤寂、凄凉、无奈一时全涌入心头，自己在城中居住十余年，却创造不了自己的安身之所。人们见了我便总要讽刺道，“看哪！那是个年轻的失败者！”自己在任何方面都大为不顺。神也是不会眷顾不幸者的。它在空中看着大地上的人们，看着他们自以为受庇佑地欣然微笑。其实神不过是人们心中的精神罢，信仰万神，大抵还是相信自己的。自己逃离了那些事物，又在大漠中忖度行路，哪里摆脱了痛苦呢？&lt;/p&gt;
-&lt;p&gt;自己突然一脚踏空，摔下小丘，撞在一块滚烫的石碑上，只觉四肢俱碎，骨肉齑粉。艰难爬起，一块砂岩石碑上刻着几个字，“无何有之乡”。&lt;/p&gt;
-&lt;p&gt;“这造物主蛮喜欢石碑的啊”心下想着。&lt;/p&gt;
-&lt;p&gt;似乎《庄子》里有言，“今子有大树，患其无用，何不树之于无何有之乡？”&lt;/p&gt;
-&lt;p&gt;树呢?&lt;/p&gt;
-&lt;p&gt;热浪所及，皆为黄沙。&lt;/p&gt;
-&lt;p&gt;也许树只是指无用的东西吧，而这个地方只有我一人。未来的路很长望不到头，身后的黑暗追逐着，无有退路。如果不会死亡，他人的嘲讽又有什么呢？人在对比中认识世界，只有“我”这一个概念，没有任何意义。宠辱也好，非誉也罢，人们太看重了。我只想在一座空旷的城中渡过此生。但如若如此，生命又有什么意义呢？失去了对比，人就是漂浮于真空宇宙中的一粒尘埃了啊。从38万光年处飞到近处，又飞向38万光年以外，时间消去了。向往孤寂、又厌恶绝对的自由。&lt;/p&gt;
-&lt;p&gt;迁怒于造物主的游戏，我从口袋里掏出刀子，向自己的胸口刺去。&lt;/p&gt;
-&lt;p&gt;游者们大抵也是如此这般死去的吧。&lt;/p&gt;
-&lt;p&gt;无所谓，无所有。&lt;/p&gt;
-&lt;p&gt;在尖锐的痛楚消退后，自己陷入了昏迷。&lt;/p&gt;
-&lt;p&gt;但这场梦又哪里终结了呢？&lt;/p&gt;
-">远游·无何有之乡</a>
-      </div>
-      
-      <div class="item">
-        <a class="result-title" style="opacity: 0;" href="https://coder109.github.io/post/e-meng/"" data-c="
-          &lt;p&gt;尖刀割裂我的肌肤，&lt;br&gt;
-鲜血横流，创口模糊，&lt;br&gt;
-飞翔的绯色蝴蝶隐入碧色的海，&lt;br&gt;
-涛声依旧，我看见有斑驳的鬼火倏忽。&lt;/p&gt;
-&lt;p&gt;夜空之中只余虚无，&lt;br&gt;
-月色已尽，暖风轻拂，&lt;br&gt;
-溺亡的哀怨灵魂遁入终末的天，&lt;br&gt;
-风铃轻响，我看见撕碎的占星之书。&lt;/p&gt;
-&lt;p&gt;六芒星出现在天幕，&lt;br&gt;
-七彩之光，清灵之术，&lt;br&gt;
-持剑的披甲战士守护坠崖的人，&lt;br&gt;
-寒刃生光，我看见古老的十字之图。&lt;/p&gt;
-&lt;p&gt;PS：迷茫的梦。&lt;/p&gt;
-">噩梦</a>
-      </div>
-      
-      <div class="item">
-        <a class="result-title" style="opacity: 0;" href="https://coder109.github.io/post/mu-qiu-za-gan/"" data-c="
-          &lt;p&gt;血色的枫叶飘飞，&lt;br&gt;
-染红暮秋寒冷的空气，&lt;br&gt;
-我的长衣下摆被吹动，&lt;br&gt;
-迷失在夕阳逝去之际。&lt;/p&gt;
-&lt;p&gt;前路遥远，尘土飞扬。&lt;br&gt;
-身后的空城染尽秋霜。&lt;br&gt;
-我只能向前跑去，&lt;br&gt;
-跑向冬日，跑向未来春季的芬芳。&lt;/p&gt;
-&lt;p&gt;人们的嘲笑，难以维系，&lt;br&gt;
-心内的迷茫，已到归期。&lt;br&gt;
-我只能向前跑去，&lt;br&gt;
-跑向黑夜，跑向崭新黎明的露滴。&lt;/p&gt;
-&lt;p&gt;墓碑上刻着我的姓名，&lt;br&gt;
-生卒年月模糊不清，&lt;br&gt;
-我只能向前跑去，&lt;br&gt;
-跑向死亡，跑向高悬夜空的繁星。&lt;/p&gt;
-">暮秋杂感</a>
-      </div>
-      
-      <div class="item">
-        <a class="result-title" style="opacity: 0;" href="https://coder109.github.io/post/2020118/"" data-c="
-          &lt;p&gt;最近突然多出来了许多时间，学业也不算太紧，多写点吧~&lt;/p&gt;
-&lt;h2 id=&#34;名句左翼中二病&#34;&gt;名句？左翼？中二病？&lt;/h2&gt;
-&lt;p&gt;最近写了好多篇作文，引用总是必不可少的。&lt;/p&gt;
-&lt;p&gt;而总有人在听到范文中引用的句子是，低声嘲讽道，“呵，中二病。”，引用的句子从维特根斯坦到裴斯泰洛齐。有的范文写的的确精彩（不自主地推翻了之前的博文QAQ），这若是中二使然，那这个病也有些伟大了。&lt;/p&gt;
-&lt;p&gt;下课和几个同学谈着西班牙内战、共产主义一系列事，结果自己说得很来劲，一个同学嘲讽道，“呵，中二病，等你长大就知道资本家是多么好了。”，哭笑不得。&lt;/p&gt;
-&lt;p&gt;也许有的人以当资本家为理想，有的人以共产主义为理想，也有的人只想苟且偷生而已。人没有嘲笑其他人信条的权利嘛。个人主义大行其道，资本主义的渗透之下，什么思想都会有人去接受。“团结我们的真正的朋友，以攻击我们的真正的敌人”，这句话的实现也许需要一段时间了。&lt;/p&gt;
-&lt;h2 id=&#34;写博客的原因和杂感&#34;&gt;写博客的原因和杂感&lt;/h2&gt;
-&lt;p&gt;以前在lofter上写blog，后来用了几天WORDPRESS，太慢。后来用GRIDEA搭了一个。&lt;/p&gt;
-&lt;p&gt;一开始写博客其实是在看了 &lt;a href=&#34;https://phenol-phthalein.info&#34;&gt;酚酞&lt;/a&gt; 的博客之后，为了提升一下写作能力，像他一样富有智慧，并且写点自己想写的东西。自己的朋友大多不大适合谈论一些严肃的事物，真正的思考只能自己消化一下。后来逐渐发现，自己在写作里逐渐变得成熟，思考逐渐深刻起来。&lt;/p&gt;
-&lt;p&gt;其实没有人可以交流，自己的知识也只是一潭死水，自以为清澈透底，大抵还是有些浑浊、微微散发臭气的。许多糟粕也都信以为真。以前应该读书的日子没有读书，现在却又忧虑自己的一无所知，实在是有些愚蠢啊（笑）。&lt;/p&gt;
-&lt;h2 id=&#34;放松与歌曲&#34;&gt;放松与歌曲&lt;/h2&gt;
-&lt;p&gt;最近的压力大了起来，也就是老师口中的“疲劳期”。只能听歌放松一下自己了，别无他法。以下是自己常听的几首歌：&lt;/p&gt;
-&lt;iframe frameborder=&#34;no&#34; border=&#34;0&#34; marginwidth=&#34;0&#34; marginheight=&#34;0&#34; width=470 height=86 src=&#34;//music.163.com/outchain/player?type=2&amp;id=864046&amp;auto=1&amp;height=66&#34;&gt;&lt;/iframe&gt;
-&lt;blockquote&gt;
-&lt;p&gt;拉丁语格言，大抵是能告诫自己的。&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;邦邦（Bang Dream！）的歌词大多是很正能量的。&lt;/p&gt;
-&lt;iframe frameborder=&#34;no&#34; border=&#34;0&#34; marginwidth=&#34;0&#34; marginheight=&#34;0&#34; width=470 height=86 src=&#34;//music.163.com/outchain/player?type=2&amp;id=473817010&amp;auto=1&amp;height=66&#34;&gt;&lt;/iframe&gt;
-&lt;blockquote&gt;
-&lt;p&gt;暗い夜も【fighting】&lt;br&gt;
-黑暗的夜晚【fighting】&lt;br&gt;
-怯えずに今【smiling】&lt;br&gt;
-如今不再畏惧【smiling】&lt;br&gt;
-信じた道【running】&lt;br&gt;
-坚信的道路【running】&lt;br&gt;
-迷わず進もう　黒でもいい【all right】&lt;br&gt;
-果断的前进吧　堕入黑暗也挺不错【all right】&lt;br&gt;
-......&lt;br&gt;
-空は嘲笑い沈んだ&lt;br&gt;
-天空在嘲笑 (我)沉默不语&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;iframe frameborder=&#34;no&#34; border=&#34;0&#34; marginwidth=&#34;0&#34; marginheight=&#34;0&#34; width=470 height=86 src=&#34;//music.163.com/outchain/player?type=2&amp;id=445450088&amp;auto=1&amp;height=66&#34;&gt;&lt;/iframe&gt;
-&lt;blockquote&gt;
-&lt;p&gt;ティアドロップス・レボリューション&lt;br&gt;
-泪水落下·革命开始&lt;br&gt;
-涙 ゼンブあつめたら&lt;br&gt;
-只要将眼泪收起来的话&lt;br&gt;
-HEARTBREAK ジェネレーション&lt;br&gt;
-在这令人心碎的伤心时代&lt;br&gt;
-新しいキミに会える&lt;br&gt;
-就能遇见焕发新生的你&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;iframe frameborder=&#34;no&#34; border=&#34;0&#34; marginwidth=&#34;0&#34; marginheight=&#34;0&#34; width=470 height=86 src=&#34;//music.163.com/outchain/player?type=2&amp;id=22636684&amp;auto=1&amp;height=66&#34;&gt;&lt;/iframe&gt;
-&lt;iframe frameborder=&#34;no&#34; border=&#34;0&#34; marginwidth=&#34;0&#34; marginheight=&#34;0&#34; width=470 height=86 src=&#34;//music.163.com/outchain/player?type=2&amp;id=22636680&amp;auto=1&amp;height=66&#34;&gt;&lt;/iframe&gt;
-&lt;blockquote&gt;
-&lt;p&gt;老婆的角色曲（笑）&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;iframe frameborder=&#34;no&#34; border=&#34;0&#34; marginwidth=&#34;0&#34; marginheight=&#34;0&#34; width=470 height=86 src=&#34;//music.163.com/outchain/player?type=2&amp;id=1397468254&amp;auto=1&amp;height=66&#34;&gt;&lt;/iframe&gt;
-&lt;blockquote&gt;
-&lt;p&gt;规律的生活。拥抱这样的生活罢。（笑）&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;h2 id=&#34;不同声音&#34;&gt;不同声音&lt;/h2&gt;
-&lt;p&gt;自己的哲学启蒙大抵是从……儿时爷爷给讲毛泽东和马克思时开始的。逐渐的也了解到什么是资本主义，什么是六四事件，什么是白色恐怖。其实没有中共的领导，中国大抵还是一团乱粥而已。但是，自己永远是向往自由的，对于一些东西还是持有保留意见。&lt;/p&gt;
-&lt;p&gt;对于一个政治主张，或者一个哲学学说，人需要思考，再决定支持与否。而现在的“赛博空间”啊，学校还是社会啊，是容不下不同的声音的。一旦看见有人的思想不同于己，便要用口水分个高低。自己的语文老师甚至因为其他人和自己观点不同而大发脾气。“健康的社会不应只有一种声音”，人们拼了老命让别人接受自己的观点，不容辩驳，也许是其内心的焦虑与无知作祟吧。&lt;/p&gt;
-&lt;p&gt;一个全都是低音6的曲子必然是不好听的啊，一个道理。&lt;/p&gt;
-&lt;h2 id=&#34;死亡&#34;&gt;死亡&lt;/h2&gt;
-&lt;p&gt;死亡....？生的一部分啊。&lt;/p&gt;
-&lt;p&gt;活着远比死亡要困难，自打早晨睁眼起，就要开始一天的焦虑。鞋上踩上了口香糖，总不能连鞋一块丢掉了吧。疯癫、死亡、半梦半醒，大抵是生活最后的几个选择。自己还是很幼稚的，经历扔到过去就好。也许未来会有惊喜呢，死亡总会来的嘛~~&lt;/p&gt;
-&lt;p&gt;“Nemo ante mortem beatus.”&lt;/p&gt;
-&lt;p&gt;“Nobody is blessed before his death.”&lt;/p&gt;
-">2020/11/8</a>
-      </div>
-      
-      <div class="item">
-        <a class="result-title" style="opacity: 0;" href="https://coder109.github.io/post/yuan-you-shen-ye-dian-ying-yuan/"" data-c="
-          &lt;p&gt;荧幕上的人们跳出束缚，&lt;br&gt;
-对着我张望注目，&lt;br&gt;
-演绎着初生的欢乐，&lt;br&gt;
-而我享受着心灵的迟暮。&lt;/p&gt;
-&lt;p&gt;他们拉起我向银幕跑去，&lt;br&gt;
-唱着欢乐的歌，跳着疯狂的舞，&lt;br&gt;
-我摔在冰冷的水泥墙上，&lt;br&gt;
-嬉笑声埋葬了我的日暮。&lt;/p&gt;
-&lt;p&gt;惊觉一切不过是夜的幻术，&lt;br&gt;
-剧中人散，灯明如烛，&lt;br&gt;
-电影在三两看客的欠伸中逝去，&lt;br&gt;
-冰冷的空气在梦中喷薄而出。&lt;/p&gt;
-">远游·深夜电影院</a>
-      </div>
-      
-      <div class="item">
-        <a class="result-title" style="opacity: 0;" href="https://coder109.github.io/post/shou-ji-you-ji-za-huan-hua-he-wu/"" data-c="
-          &lt;figure data-type=&#34;image&#34; tabindex=&#34;1&#34;&gt;&lt;img src=&#34;https://coder109.github.io/post-images/1604108921286.jpg&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;/figure&gt;
-">【收集】有机杂环化合物</a>
-      </div>
-      
-      <div class="item">
-        <a class="result-title" style="opacity: 0;" href="https://coder109.github.io/post/sui-sui-nian/"" data-c="
-          &lt;h2 id=&#34;1029-夜&#34;&gt;10/29 夜&lt;/h2&gt;
-&lt;p&gt;最近生活并不顺利。&lt;/p&gt;
-&lt;p&gt;自己逃体育课去打羽毛球的事被人检举，上报给老师，给予了“停三日晚自习”的处罚。为什么加引号呢？这是因为自己是喜欢在家一个人学习的。没有同学干扰，可以自顾自的查漏补缺。有的时候听好几节晚课都不一定能讲到自己不会的东西。&lt;/p&gt;
-&lt;p&gt;话说回来，规章制度是为了高效学习的——至少对于学校生活是这样，而为什么我们没有选择它的权利呢？名义上是学生会一致讨论决定的，其实不过是老师自顾自地发布而已。&lt;/p&gt;
-&lt;p&gt;体育课逃课，女生几乎没受惩罚，这又是为什么呢？在大多数人的心中，已经固化的将女性置于“天然的弱势”了，而许多女性也将之视为自己的标签。虽说在生理上，男女确实有着差异，但一旦将这种差异扩大化，普及到方方面面，甚至精神上，就显得不那么正确了。平权这码事，对于不同性别的人有着不同的理解，而一旦“性别”无法从语言文化中被抹除，就很难平权；而无法平权，又很难将性别从语言文化中抹除。&lt;/p&gt;
-&lt;p&gt;学校的体育馆一般只准许女生进入，身为男生的我没有这个权利。不言自明的道理嘛~&lt;/p&gt;
-&lt;h2 id=&#34;1030-午&#34;&gt;10/30 午&lt;/h2&gt;
-&lt;p&gt;在被老师责备的五分钟内，她说了几句话，“我无私地为了你们，你们就这么对我，你想干什么？一次成绩突出就是一切了？？？”班主任一直以来都偏爱那些成绩突出的学生，无私？大概是为了自己的利益吧。&lt;/p&gt;
-&lt;p&gt;一面说着“成绩好就是一切了？”，一面偏爱那些好学生，倒真有种double thinking的味道了。&lt;/p&gt;
-&lt;p&gt;上着她的课，她就突然嘲讽起了唯心主义，同学们也跟着笑着。虽说唯物唯心这样的分类过于不科学且粗暴，但自己还是不喜欢这种价值观的输出，也不喜欢她毫无了解就大发评论的做法。人们理应对自己所接受的事物加以深思熟虑再选择是否接受。但如今……大抵是向喉咙里伸一根管子灌水一般，想不接受也很难哪~&lt;/p&gt;
-&lt;h2 id=&#34;1030-夜&#34;&gt;10/30 夜&lt;/h2&gt;
-&lt;p&gt;今天是三天“归去来兮”生活的末尾，R.I.P.（笑）&lt;/p&gt;
-&lt;p&gt;学校的体育课很“水”，一年能换个三四个体育老师，而他们也没有好好教授课程。就是绕着操场跑两圈，然后解散，这种课没什么上的必要。最近在练队列——准确的说是怎么跑得齐，口号喊得响而已。这都没有自由活动来得实在。形式主义罢了。自己被训斥着又觉得滑稽可笑。&lt;/p&gt;
-&lt;h2 id=&#34;1031-夜&#34;&gt;10/31 夜&lt;/h2&gt;
-&lt;p&gt;这两天有点时间，多说点罢。&lt;/p&gt;
-&lt;p&gt;自己比较好奇精神病态者的生活（自己是一个通常意义上的正常人），也喜欢想象他们的视角。&lt;/p&gt;
-&lt;p&gt;其实自己看来，这世界没有正常人，只不过是个体之间的病态程度不同而已。被关进精神病院的人与大街上演奏乐曲的小提琴手没有什么区别。究竟怎么证明自己是一个正常人呢？很难说。对着四五个阴沉沉的医生回答问题，想必正常的人也要被逼疯了吧。&lt;/p&gt;
-">碎碎念</a>
-      </div>
-      
-      <div class="item">
-        <a class="result-title" style="opacity: 0;" href="https://coder109.github.io/post/yuan-you-guang-zhi-shen-she/"" data-c="
-          &lt;blockquote&gt;
-&lt;p&gt;偶然翻到初中的本子，当时自己悠闲地写了十来篇怪诞的游记，现在看来不过是流水账而已，稍微改改凑合看罢。&lt;br&gt;
-感鲁迅《墓碣文》所作（我当时居然看过鲁迅？？？）&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;沿着人们口中的“神社路”走了许久，也不见半点人影。&lt;/p&gt;
-&lt;p&gt;自己在大都市里走投无路，便只得背上行囊走向远方。目的地在哪？中间要干什么？自己并不清楚，只知道走下去就有希望。神社路是东郊的一条偏僻小道，直直地通向森林深处。有传言说，旅人们一旦踏上那松木栈道，就永远的消失在里面。有人说会被神灵吞噬啦，有人说会被野兽吃掉啦。既然自己总是要死的，探索一下也是无妨。&lt;/p&gt;
-&lt;p&gt;栈道两旁是郁郁葱葱的树木和灌木，两旁的树叶向中间生长，搭起了一个拱形。阳光顺着叶隙洒进来，照亮这个生气勃勃的世界，松鼠、飞鸟自得其乐。栈道不宽，只能容纳一个人通过。两旁的杂草恣肆地生长着，想必早无人走过了。&lt;/p&gt;
-&lt;p&gt;不清楚自己走了多久，两旁的光景丝毫未变。森林深处自己从未来过。生了十余年，自幼就被警告着东郊食人的树林的存在。至于这个传说从谁二期，不得而知。但如果没人回来，那么这个传说也就是其他人杜撰的而已。人们对于并不了解的事物，总是衍生出过于夸张的印象。&lt;/p&gt;
-&lt;p&gt;栈道渐渐腐朽，最终变成了土道，消失在杂草之间。我突然发现了一座破败的房子。走近细看，稀疏的松木篱笆早已被蛀得千疮百孔，窗户也只剩下了两个空洞，如死人眼一般空洞。门前的石牌上刻着几个模糊的字：&lt;/p&gt;
-&lt;p&gt;“……答我，否则离开……”&lt;/p&gt;
-&lt;p&gt;&amp;quot;光之神社&amp;quot;&lt;/p&gt;
-&lt;p&gt;回答什么？这是个神社？我一时间茫然无措了。神社在森林空地上苟延残喘，又如此破败不堪。我推开木门，它向内倾倒，摔得粉碎。里面只有一个石桌，上面有一个银烛台和一本书。“大概是古人的手记罢”我想道。翻开封面，上面的字迹竟未消褪：&lt;/p&gt;
-&lt;p&gt;“生兮死之所倚，死兮生之所伏”&lt;/p&gt;
-&lt;p&gt;“前路漫漫，君一孤独者何以为生？”&lt;/p&gt;
-&lt;p&gt;“道终为死，道始为生。”&lt;/p&gt;
-&lt;p&gt;“呜呼，君殆无退路矣！”&lt;/p&gt;
-&lt;p&gt;我于是慌张地奔出“神社”，回望前路，惊觉那里只剩下漆黑一片。以神社为分隔，世界被分为两面，我此刻在生与死之间，不得脱身。&lt;/p&gt;
-&lt;p&gt;旅行开始了。&lt;/p&gt;
-">远游·光之神社</a>
-      </div>
-      
-      <div class="item">
-        <a class="result-title" style="opacity: 0;" href="https://coder109.github.io/post/wei-wang-ren-zhi-ge/"" data-c="
-          &lt;p&gt;光明，光明！那璀璨的——&lt;br&gt;
-如太阳一般的未来！&lt;br&gt;
-在历史的天边划过一道流星，&lt;br&gt;
-割断黑暗，荡涤尘埃。&lt;/p&gt;
-&lt;p&gt;我身体里是人类的血脉，&lt;br&gt;
-创造的文明，投下高大的影。&lt;br&gt;
-我将拥抱这末世的诙谐，&lt;br&gt;
-它嘲笑着我——嘲笑这自以为是的生命。&lt;/p&gt;
-&lt;p&gt;挥动长刀，以钢刃劈杀寂静；&lt;br&gt;
-拾起古琴，用绝音驱散无奈！&lt;br&gt;
-我便是这遗忘之地唯一的存在！&lt;br&gt;
-地上的月！水中的星！&lt;/p&gt;
-">未亡人之歌</a>
-      </div>
-      
-      <div class="item">
-        <a class="result-title" style="opacity: 0;" href="https://coder109.github.io/post/2020109-~-20201023/"" data-c="
-          &lt;h2 id=&#34;痛苦&#34;&gt;痛苦&lt;/h2&gt;
-&lt;p&gt;最近自己总有些无力感，如同“秒五”中困于大雪中的列车上，苦于见所爱之人的男主一般。自己在读了（硬塞）了一大堆哲学书之后，才发现自己没有驾驭那些知识的能力，反倒是“被知识异化了”。&lt;/p&gt;
-&lt;p&gt;总是受困于“人生的意义是不是虚无”这个问题上。积极虚无主义和存在主义似乎无法解决这个问题，于是自己有些颓废而不上进。但说来讽刺，自己仍然在努力学习，在一道道题目中厮杀，从这个意义上来说，自己与虚无主义又背道而驰了（笑）。也许自己并不该去思考这个问题，但又觉得人既然活在世上，欺瞒自我并不妥当。如若一个人总是关注于眼前的事，而不思考世界的本质，做人也太腻了。&lt;/p&gt;
-&lt;p&gt;痛苦这档子事，本就是伴随生活左右的事，而我坚信无法令我毁灭的痛苦终究是我向上的途径。仔细想来，自己比起高一高二，成熟了不少——至少不再那么敏感多疑了。“道终为死，道始为生”，而道路上的一个个节点则是最珍贵的东西。&lt;/p&gt;
-&lt;p&gt;长远来看，没有什么东西是一成不变的，那么也就没有什么东西是永远留存的，释然一点总是好的。绝望不过是一时的状态而已。“于一切眼中看见无所有，于无所希望中得救”。&lt;/p&gt;
-&lt;h2 id=&#34;写作&#34;&gt;写作&lt;/h2&gt;
-&lt;p&gt;回看自己以前写的东西总是有些阴暗的，结尾又仓促、滑稽，往往写到一半就突然失去灵感。便只能委屈笔下的人物匆匆弃去了。大多是难过的时候写些东西，也许自己是那“最瘦的擦泪的诗人”罢。（笑）&lt;/p&gt;
-&lt;p&gt;写这种博客日记就很自由，想到什么就记下来。但语文考试卷的写作题就不同，再自由也终究是“带着镣铐跳舞”，自己写不好那种作文，尤其是那些写道理的议论文，短短几十分钟怎么把一个问题分析透呢？看着范文，“流下浑浊的眼泪”，感觉他们没写出来什么东西，老师却一个劲地夸赞，“同学们，这是有深度的啊”，倒有种故弄玄虚的感觉了。&lt;/p&gt;
-&lt;p&gt;漂亮话堆砌的，不是文章。仔细想想，倒也难为那些“教育专家”们了，又要考察写作能力，又要考察学生思考能力，大概也别无他法了罢。&lt;/p&gt;
-&lt;p&gt;自己有一个朋友，姑且称之为M，同自己性格相似，到作文课就要抱怨一番，“阿拉，讲这个有什么用呢？终究是好的更好，坏的更坏罢了”。M是一个作文苦手，每每认为自己写的很有见地，却总不提分。确实努力，但总是二类文的水平。M的QQ签名是“就这样随波逐流吧”，大概他正处于“生活的黄昏”罢。&lt;/p&gt;
-&lt;p&gt;怎么说到M了？？算了。&lt;/p&gt;
-&lt;p&gt;M是一个向往自由的实用主义者，不喜欢形式主义的做法和限制自由的规章，又有一点不近人情。他总想去改变世界，却总被弄得狼狈不堪。这样有信念的人，身边少了很多。&lt;/p&gt;
-&lt;h2 id=&#34;世界&#34;&gt;世界&lt;/h2&gt;
-&lt;p&gt;这个世界确乎病了，我姑且说一下自己的见解罢。&lt;/p&gt;
-&lt;p&gt;内卷、右倾的国际社会、灯塔国人民的躁动和愚昧，但这一切的发生一定事出有因。科技、经济发展的繁荣是一把双刃剑，其弊端大概在此。人们一方面享受着它带来的便利，一方面又为之所困，无助的人们只能等待，等待一个日出的黎明。&lt;/p&gt;
-&lt;p&gt;八月份、十月份自杀的学生，是在黑暗中摸索，但是坠入深渊的人，身旁的人对此不以为然。这不过是人们看淡的另一个结局而已。一个温柔的灵逝去了，安息。&lt;/p&gt;
-&lt;p&gt;自己向前走着，从破败的光之神社走向终结的星之海（自己初中日记写的地方），若葬于星光之中，大概会被宇宙尘土所歌唱吧。&lt;/p&gt;
-&lt;p&gt;倒有种《东方永夜抄》里天文密葬法的意思了~&lt;/p&gt;
-&lt;h2 id=&#34;学生&#34;&gt;学生&lt;/h2&gt;
-&lt;p&gt;学生是社会的新鲜血液，是思想的先锋。然而我身旁的同学却没有这种先锋的样子。&lt;/p&gt;
-&lt;p&gt;勾心斗角、相互栽赃、攀比……本不该是这样的。学生时代尚且如此，以后的日子又会怎么做呢？自己游离于这些圈子之外，又多少受了影响。那些处于“舆论漩涡”中的学生呢？那些被欺凌甚至休学的学生呢？那些被人冤枉，对一切充满敌意的学生呢？加害者（姑且这样称呼）为了一己私欲，或是利益，或是幸灾乐祸的快感而不惜做出下三滥的举动，自己是难以理解。他们放弃思考真正重要的东西，而在蝇头小利上锱铢必较，错误。&lt;/p&gt;
-&lt;p&gt;学校是社会的缩影，而社会又是世界的化身。大的思潮总会在小地方或多或少的体现出来。人们可以为了利益无所不为，这大概是哲学的衰落罢。自己在班级里的归属感几乎为零，也被许多人所微微厌恶。“鸷鸟之不群兮，自前世而固然”，自我安慰？叛逆？哼，无所谓了。&lt;/p&gt;
-&lt;p&gt;以前的自己认为自己是错误的——不合群，敏感，理想主义——现在看来未必如此。也许自己只是站到了大潮的另一面而已，无需抑郁，无需痛苦。保全自己的思想就好。&lt;/p&gt;
-&lt;p&gt;人总是见不得其他人过得好，只要看见他们受难，便要抚掌大笑了。这究竟是谁的错呢？也许人的本性就是这样吧，在自我的价值与他人的价值之间萌生恨意，化作利剑刺向落败的他人。&lt;/p&gt;
-&lt;p&gt;未来逐渐变得复杂与艰险，但总会有和我一样的学生在思考，和我一样在大潮的对立面拼杀，总会有真正的战士举起投枪的。&lt;/p&gt;
-&lt;h2 id=&#34;野草&#34;&gt;野草&lt;/h2&gt;
-&lt;p&gt;自己突然很喜欢鲁迅的文章，《野草》翻来覆去读了好几遍，确实很有意思。&lt;/p&gt;
-&lt;p&gt;讽刺的感觉总是在的。看完回想自身，“啊，我原来也是个彻头彻尾的混蛋啊”（笑）&lt;/p&gt;
-&lt;p&gt;又有人说要把鲁迅的文章从课本中删去，这大概是愚蠢到极致的做法了吧？&lt;/p&gt;
-">十月的思考</a>
-      </div>
-      
-      <div class="item">
-        <a class="result-title" style="opacity: 0;" href="https://coder109.github.io/post/jue-zhan/"" data-c="
-          &lt;p&gt;炎阳高照，七月沙场，&lt;br&gt;
-城郊大漠上的死亡之钟，&lt;br&gt;
-在二位武者的头顶敲响，&lt;br&gt;
-回荡，千万年前干涸的河床之上。&lt;br&gt;
-寒光出鞘，血溅四方——&lt;br&gt;
-只剩下，盔甲的流苏轻轻摇晃。&lt;/p&gt;
-">决战</a>
-      </div>
-      
-      <div class="item">
-        <a class="result-title" style="opacity: 0;" href="https://coder109.github.io/post/2020104/"" data-c="
-          &lt;p&gt;又要上学了呀，短短四天假期很快就过去了。&lt;/p&gt;
-&lt;h2 id=&#34;计划&#34;&gt;计划&lt;/h2&gt;
-&lt;p&gt;还有不到250天就要高考了，自己现在却仍然处在一个茫然无措的状态。未来会怎么样？高考考得会如何？上了大学之后又是怎样的日子？在心底一直告诫自己，不要再想这些遥远缥缈的问题。却仍然被它们困扰着。念及，心底总会涌起一种莫名的焦虑感。现在唯一驱动自己前行的，就只是高考之后充实的计划了。大概以下几点：&lt;/p&gt;
-&lt;p&gt;·去京都旅游。&lt;/p&gt;
-&lt;p&gt;·学着把《无题》（陈亮的指弹曲）较为完美地弹下来，再练练《fight!》（押尾的指弹曲）。&lt;/p&gt;
-&lt;p&gt;·学着写个Gridea主题，把自己的博客美化一下。&lt;/p&gt;
-&lt;p&gt;·学学乐理（学吉他没学乐理你敢信？）&lt;/p&gt;
-&lt;p&gt;嘛，自己做事都是计划极为详尽，等到实施的时候却总是被懒惰拖慢步伐。未来的日子，又有谁说的准呢？&lt;/p&gt;
-&lt;h2 id=&#34;音乐与番剧&#34;&gt;音乐与番剧&lt;/h2&gt;
-&lt;p&gt;自己一直以来都是很喜欢蒸汽波，Chill一类风格的音乐。听起来有一种虚幻与放松的感觉。许多音乐制作人的作品都极为优秀，比如说国外的LAKEY INSPIRED，国内的眠，幸子小姐之类的。&lt;/p&gt;
-&lt;p&gt;说到番剧，自己最近在刷《星际牛仔》，一部制作极为精良的冷门番。作为一部经常被拿来做采样的番剧，赛博朋克和泡沫霓虹味足够浓烈。四个人的命运与四处寻找赏金通缉犯的剧情穿插在一起。对于情感的刻画细腻到了极致。配乐于我而言也是足够精致……等等，我怎么开始写番剧评论了？&lt;/p&gt;
-">2020/10/4</a>
-      </div>
-      
-      <div class="item">
-        <a class="result-title" style="opacity: 0;" href="https://coder109.github.io/post/delusion/"" data-c="
-          &lt;p&gt;我站在高楼之顶，&lt;br&gt;
-脚下是万千行人、车水马龙，&lt;br&gt;
-他们不曾仰视，那将死的少年，&lt;br&gt;
-自顾自地跃向他们的远方。&lt;/p&gt;
-&lt;p&gt;闪烁霓虹、万家灯火通明，&lt;br&gt;
-可我应栖息在何处？&lt;br&gt;
-也许我注定要坠落，&lt;br&gt;
-如同深渊之末的天使之影。&lt;/p&gt;
-&lt;p&gt;张开双臂，拥抱寒冷的夜风，&lt;br&gt;
-此刻，我与万物同死，万物同生——&lt;br&gt;
-只因哲学家的箴言，“一切尽是虚妄！”&lt;br&gt;
-琴弦崩断，听者突惊。&lt;/p&gt;
-&lt;p&gt;路灯杆下呕吐的死魂灵，&lt;br&gt;
-罹患未来与过去的疑心病，&lt;br&gt;
-察言观色，如履薄冰，&lt;br&gt;
-只能在午夜默念初恋之情。&lt;/p&gt;
-&lt;p&gt;我将大笑，我将歌唱，&lt;br&gt;
-为我自己，为友与仇！&lt;br&gt;
-远方没有夕阳，&lt;br&gt;
-只有松散灰土、剥落高墙。&lt;/p&gt;
-&lt;p&gt;夜空无比遥远，我无法归去；&lt;br&gt;
-寒冷吞没了我的梦，&lt;br&gt;
-这只是个人人看淡的结局，&lt;br&gt;
-尸体之侧，摩肩接踵。&lt;/p&gt;
-">Delusion</a>
-      </div>
-      
-      <div class="item">
-        <a class="result-title" style="opacity: 0;" href="https://coder109.github.io/post/mo-ri-qin-yin/"" data-c="
-          &lt;p&gt;这是始与终的挽歌&lt;br&gt;
-这是古与今的绝音&lt;br&gt;
-如今我一个人弹着六弦琴&lt;br&gt;
-走在末日的土地上&lt;/p&gt;
-&lt;p&gt;赤色的风卷着灰色的土&lt;br&gt;
-血腥之气弥散在空气中&lt;br&gt;
-我的琴声是生灵最后的欢愉——&lt;br&gt;
-此间世，最末的丧钟&lt;/p&gt;
-&lt;p&gt;走过血流的河，越过尸骨的山&lt;br&gt;
-只有我一人，在这世上——&lt;br&gt;
-挣扎前行，露宿风餐——&lt;br&gt;
-挥洒生与死最后的倔强！&lt;/p&gt;
-&lt;p&gt;前路漫漫，风声簌簌&lt;br&gt;
-我要走到何处，去往何方？&lt;br&gt;
-“世界的本质是虚无”&lt;br&gt;
-可如今连虚无也消失流浪！&lt;/p&gt;
-&lt;p&gt;终于琴弦锈蚀，腐为尘土&lt;br&gt;
-劳顿，我——世末最末的乐者&lt;br&gt;
-终于可叹这神灵倏忽&lt;br&gt;
-孤独的世末！&lt;/p&gt;
-">末日琴音 </a>
-      </div>
-      
-      <div class="item">
-        <a class="result-title" style="opacity: 0;" href="https://coder109.github.io/post/kong-wu-yi-ren-de-shi-jie/"" data-c="
-          &lt;p&gt;拂面吹过七海的悲风，&lt;br&gt;
-奔向身后灯火通明的城，&lt;br&gt;
-皎白色的海面的倒影，不是月光，&lt;br&gt;
-是深海的尸骨、生前求生的梦。&lt;br&gt;
-倾圮的高楼广厦、朱墙皇宫，&lt;br&gt;
-又是见证了谁人的一生？&lt;/p&gt;
-&lt;p&gt;虚无，虚无！&lt;br&gt;
-缥缈闪烁的霓虹，&lt;br&gt;
-将萧瑟的长街照亮，&lt;br&gt;
-徒然遥望、花火灿烂的远方，&lt;br&gt;
-那是我无法归去的灵魂故乡。&lt;/p&gt;
-">Chaos</a>
-      </div>
-      
-      <div class="item">
-        <a class="result-title" style="opacity: 0;" href="https://coder109.github.io/post/gao-san-sui-sui-nian/"" data-c="
-          &lt;h2 id=&#34;一&#34;&gt;一&lt;/h2&gt;
-&lt;p&gt;上了高三，成绩下滑的有些快，做题的准确率下降了许多。有些茫然。&lt;/p&gt;
-&lt;p&gt;未来仿佛是那么遥远，窗外下着小雨，汽车驶过发出有些沉闷的声音。起风了，在窗户外哭号。书桌上的书厚厚一摞，明天依旧是同样的一天，依旧期盼着终结的到来。&lt;/p&gt;
-&lt;p&gt;说到终结，真正的终结到底在哪里？死亡之后会不会有另一个世界，那里是否仍旧会有升学，工作之类的东西？如果是真的，那么死亡反倒是另一段痛苦的开始了。&lt;/p&gt;
-&lt;h2 id=&#34;二&#34;&gt;二&lt;/h2&gt;
-&lt;p&gt;我喜欢臆想出一个世界，把自己封锁在里面。明知这是危险和无力的做法，却仍在幻想中沉溺。很多人说这是中二啊，精神病啊。但是那短暂的快乐倒也挺好。白日梦也是人类不可或缺的娱乐啊。自己十分疲惫，考试考的并不理想，尤其是物理。&lt;/p&gt;
-&lt;p&gt;对于大学，重点班里的同学都有自己的打算，北京啊，上海啊，他们把自己的志愿写在便利贴上贴在教室后的黑板上，佐以自己喜欢的句子。自己随随便便写了一个，毕竟对于未来，毫无计划。被身旁的人催动着学习，挨过一天便是。&lt;/p&gt;
-&lt;p&gt;Pathetic.&lt;/p&gt;
-&lt;h2 id=&#34;三&#34;&gt;三&lt;/h2&gt;
-&lt;p&gt;人总该努力的，哪怕近一段时间诸事不顺。自己姑且也是有了点梦想，为之努力吧。最近一次月考考了37名，算是发挥失常，物理的压轴题错得一塌糊涂。&lt;/p&gt;
-&lt;p&gt;好不容易有一个假期，回到了家，修复了博客的一些错误还把友链加上了。高三好累QwQ。&lt;/p&gt;
-">高三碎碎念</a>
-      </div>
-      
-      <div class="item">
-        <a class="result-title" style="opacity: 0;" href="https://coder109.github.io/post/firefox-pei-zhi-xiang-guan-bei-wang/"" data-c="
-          &lt;h1 id=&#34;扩展程序&#34;&gt;扩展程序&lt;/h1&gt;
-&lt;p&gt;隐私獾&lt;br&gt;
-Archive Page&lt;br&gt;
-BiliMini&lt;br&gt;
-Dark Reader&lt;br&gt;
-HTTPS Everywhere&lt;br&gt;
-Simple Translate&lt;br&gt;
-Tabliss&lt;br&gt;
-uBlock Origin&lt;/p&gt;
-&lt;h1 id=&#34;主题&#34;&gt;主题&lt;/h1&gt;
-&lt;p&gt;Arc Dark Theme&lt;/p&gt;
-&lt;h1 id=&#34;aboutconfig界面&#34;&gt;about:config界面&lt;/h1&gt;
-&lt;p&gt;browser.tabs.loadBookmarksInTabs-true&lt;br&gt;
-browser.search.openintab-true&lt;br&gt;
-browser.tabs.closeWindowWithLastTab-false&lt;br&gt;
-browser.tabs.closeTabByDblclick-true&lt;/p&gt;
-">Firefox配置相关备忘</a>
-      </div>
-      
-      <div class="item">
-        <a class="result-title" style="opacity: 0;" href="https://coder109.github.io/post/202088/"" data-c="
-          &lt;p&gt;高中最后的一个暑假也快过完了，面对即将到来的高三忽然有些不知所错。&lt;/p&gt;
-&lt;p&gt;明年自己就要高考了，想想也蛮快的。自己勉强在重点班待了下来，凭借运气和小聪明躲过了被淘汰的命运。但我知道，这一切都不能维系太久。总归要努力，我不想在最后一年里摔个人仰马翻。&lt;/p&gt;
-&lt;p&gt;我是个浅薄的人，没读过多少书却总要卖弄一番——有的“高深”语句甚至是现编的。不止一次陷入被他人拆穿的尴尬境地，却总是改不掉这个坏习惯。自己拼命地寻找和他人的不同之处，本质却和他们一模一样。事到如今，自己不得不承认这个事实：我没有比其他人厉害多少，看不懂的哲学书终归还是看不懂，理解不了的名言终究还是理解不了。自己是容易自满的，我只是不愿意去接受这个现实而已。我终究还是在逃避，逃避自己性格的阴暗面，逃避那些自己不愿去面对的缺点。&lt;/p&gt;
-&lt;p&gt;曾经和自己恋爱的女孩子说过，“你的性格可真是糟糕啊，明明不喜欢的人非要说喜欢”。那段日子想起来是自己比较快乐的时候，但由于自己的任性，一切都灰飞烟灭。&lt;/p&gt;
-&lt;p&gt;自己的文笔也一直不好，看着以前在WordPress上写的文章有些惊讶，“果然……果然越写越退步！”&lt;/p&gt;
-&lt;p&gt;高三该努力了啊，109！&lt;/p&gt;
-">2020/8/8</a>
-      </div>
-      
-      <div class="item">
-        <a class="result-title" style="opacity: 0;" href="https://coder109.github.io/post/shou-ji-bei-yue-yin-biao-zi-mu/"" data-c="
-          &lt;p&gt;即国际无线电通话拼写字母/NATO phonetic alphabet。&lt;br&gt;
-——————&lt;br&gt;
-A - Alpha&lt;br&gt;
-B - Bravo&lt;br&gt;
-C - Charlie&lt;br&gt;
-D - Delta&lt;br&gt;
-E - Echo&lt;br&gt;
-F - Foxtrot&lt;br&gt;
-G - Golf&lt;br&gt;
-H - Hotel&lt;br&gt;
-I - India&lt;br&gt;
-J - Juliet&lt;br&gt;
-K - Kilo&lt;br&gt;
-L - Lima&lt;br&gt;
-M - Mike&lt;br&gt;
-N - November&lt;br&gt;
-O - Oscar&lt;br&gt;
-P - Pappa&lt;br&gt;
-Q - Quebec&lt;br&gt;
-R - Romeo&lt;br&gt;
-S - Sierra&lt;br&gt;
-T - Tango&lt;br&gt;
-U - Uniform&lt;br&gt;
-V - Victor&lt;br&gt;
-W - Whiskey&lt;br&gt;
-X - X-Ray&lt;br&gt;
-Y - Yankee&lt;br&gt;
-Z - Zulu&lt;/p&gt;
-">【收集】北约音标字母</a>
-      </div>
-      
-      <div class="item">
-        <a class="result-title" style="opacity: 0;" href="https://coder109.github.io/post/ge-ci-xiang-guan-hua-xue-zhong-er-ban-qing-hua-ci-qian-jie/"" data-c="
-          &lt;p&gt;原视频：BV19s411X7ch AV3774715&lt;/p&gt;
-&lt;p&gt;剧烈震荡叠氮酸 强光照氯仿&lt;br&gt;
-·叠氮酸即氢叠氮酸，化学式HN3，受撞击爆炸性分解（2HN3=3N2↑+H2↑）&lt;br&gt;
-·氯仿即三氯甲烷，化学式CHCl3，强光照射下发生反应：2CHCl3+O2=2HCl+2COCl2（光气，有毒，遇水有强烈腐蚀性）&lt;br&gt;
-&lt;br /&gt;&lt;br&gt;
-苯中的高氯酸银 加入碘甲烷&lt;br&gt;
-·高氯酸银的苯溶液与碘甲烷旋转蒸馏制得高氯酸甲酯，高氯酸甲酯极其不稳定，发生反应：2CH3ClO4=2CO2↑+2H2O+2HCl↑+O2↑&lt;br&gt;
-&lt;br /&gt;&lt;br&gt;
-冉冉氡气透过肺呼吸我了然&lt;br&gt;
-·Rn，三种同位素皆有放射性。建材大部分可释放氡气。&lt;br&gt;
-&lt;br /&gt;&lt;br&gt;
-作死上实验至此搁一半&lt;br&gt;
-·中二党特性&lt;br&gt;
-&lt;br /&gt;&lt;br&gt;
-血色沾染试剂瓶 锰镁被私藏&lt;br&gt;
-·即高锰酸钾和镁粉混合，发生反应：2KMnO4+7Mg=K2O+2Mn+7MgO，由于使用镁粉，发生爆炸。&lt;br&gt;
-&lt;br /&gt;&lt;br&gt;
-而你轰然的一爆如铀核开放&lt;br&gt;
-·235U+n→236U→135Xe+95Sr+2n&lt;br&gt;
-235U+n→236U→144Ba+89Kr+3n&lt;br&gt;
-&lt;br /&gt;&lt;br&gt;
-磷化氢一缕飘散&lt;br&gt;
-·PH3，即膦，磷化氢，无色，纯PH3无味，用金属磷化物制取有诡异的蒜味或腐鱼味，有剧毒（A级无机剧毒物）&lt;br&gt;
-&lt;br /&gt;&lt;br&gt;
-饮我喝不了的氟利昂&lt;br&gt;
-·Freon，有很多种类，对环境有害&lt;br&gt;
-&lt;br /&gt;&lt;br&gt;
-硝酸钾蔗糖里，吨级铝热剂&lt;br&gt;
-·硝糖，KNSU，可能发生反应：5C12H22O11 + 48KNO3 =点燃= 36CO2↑+ 55H2O↑+ 24K2CO3 + 24N2↑，可应用于火箭推进剂，另外还有KNDX（可能：24KNO3+5C6H12O6=点燃=12K2O+30CO2↑+30H2O+12N2↑）等&lt;br&gt;
-·由于比例多变，故反应只是可能发生的反应&lt;br&gt;
-·铝热剂：Al与Fe2O3的混合物（COD二战里头炸炮就用这玩意，绝命毒师里也有出现），发生反应：2Al+Fe2O3==2Fe+Al2O3，少量的反应便十分壮观，吨级可想而知~&lt;br&gt;
-&lt;br /&gt;&lt;br&gt;
-浓烟滚滚升起遮蔽千万里&lt;br&gt;
-&lt;br /&gt;&lt;br&gt;
-向硝酸银溶液中通入乙炔气&lt;br&gt;
-·乙炔银制法之一，反应：2AgNO3+C2H2=Ag2C2↓+2HNO3&lt;br&gt;
-·乙炔银不稳定，可用作起爆药，分解：Ag2C2=2Ag+2C，销毁用HNO3或CN-&lt;br&gt;
-·另外的制法：向含有过量氨水的硝酸银溶液里通入乙炔，滤取白色沉淀，水洗，再用乙醇、乙醚洗涤干燥后即得。&lt;br&gt;
-&lt;br /&gt;&lt;br&gt;
-三过氧二胺六亚甲基&lt;br&gt;
-·六亚甲基三过氧化二胺（HMTD），化学式为N2(H2COOCH2)3 ，由乌洛托品，过氧化氢，85%磷酸制得，自杀式炸弹袭击中常见的炸药。&lt;br&gt;
-&lt;br /&gt;&lt;br&gt;
-锤砸TATP&lt;br&gt;
-·三过氧化三丙酮（TATP），由过氧化氢和丙酮制取，自杀式炸弹袭击中常见的炸药。&lt;br&gt;
-&lt;br /&gt;&lt;br&gt;
-氯磷入瓶里&lt;br&gt;
-·氯酸钾与红磷混合会爆炸，发生反应：5KClO3+6P=5KCl+3P2O5，不少中二党因为这个实验而受伤甚至死亡。&lt;br&gt;
-&lt;br /&gt;&lt;br&gt;
-硝甘被打捞起 轰开了结局&lt;br&gt;
-·硝化甘油，可用作炸药亦可用于治疗心脏病。诺贝尔曾用这个东西将自己的家炸上了天&lt;br&gt;
-·制取：丙三醇+发烟硝酸（浓硫酸催化）&lt;br&gt;
-&lt;br /&gt;&lt;br&gt;
-镁热氧化铜汞银铅铬锇锰锡&lt;br&gt;
-·镁热反应，类似于铝热，但是要更剧烈一些。&lt;br&gt;
-&lt;br /&gt;&lt;br&gt;
-你掩盖蒸汽&lt;br&gt;
-&lt;br /&gt;&lt;br&gt;
-色绿发紫硝酸镍跃然水合肼&lt;br&gt;
-·Ni(NO3)2+3N2H4·H2O=(Ni(N2H4)3)(NO3)2+3H2O,硝酸镍为绿色，硝酸肼镍（NHN）为紫色，后者可用于起爆药&lt;br&gt;
-&lt;br /&gt;&lt;br&gt;
-制取EDDN时却惦记着你&lt;br&gt;
-·乙二胺二硝酸盐，EDDN，硝酸+乙二胺反应制得&lt;br&gt;
-&lt;br /&gt;&lt;br&gt;
-隐藏在黑火药里千年的秘密&lt;br&gt;
-·著名的黑火药，有口诀：“一硫二硝三木炭”，反应：2KNO3+S+3C=K2S+N2↑+3CO2↑&lt;br&gt;
-&lt;br /&gt;&lt;br&gt;
-极细腻犹如碘化氮落地&lt;br&gt;
-·三碘化氮，极其不稳定，振动，碰撞可令之分解发出爆炸声。制取：5NH3+3I2=NI3·NH3↓+3NH4I，分解：2NI3·NH3=3I2+N2↑+2NH3↑&lt;br&gt;
-&lt;br /&gt;&lt;br&gt;
-帘外铷铯入骤雨 苯环惹氢氯&lt;br&gt;
-·由基本化学常识可知这俩东西金属性非常强，与水反应十分剧烈，生成强碱和氢气。碱金属与水反应可参见BV1Ys411k739（Cs简直笑死我）&lt;br&gt;
-·苯与氯气在紫外线照射下反应生成六氯环己烷（农药666）&lt;br&gt;
-&lt;br /&gt;&lt;br&gt;
-而我路过那试剂小店惹了你&lt;br&gt;
-·危险品圣殿！&lt;br&gt;
-&lt;br /&gt;&lt;br&gt;
-在二甲基亚砜里 你从四氢呋喃中隐去&lt;br&gt;
-·DMSO（二甲基亚砜）在石化、合成纤维、医药等方面应用广泛，其有一定毒性作用，且能渗入皮肤。&lt;br&gt;
-·THF（四氢呋喃），致癌，可用于色谱分析，溶剂等，其可溶解PVC（聚氯乙烯）塑料，极度易燃，有生殖毒性&lt;br&gt;
-&lt;br /&gt;&lt;br&gt;
-八硝基立方烷 HHTDD&lt;br&gt;
-·ONC（八硝基立方烷），爆炸时几乎不产生烟雾（C8(NO2)8 → 8CO2↑ + 4N2↑），是猛炸药。ONC产率很低，要先合成TNC（四硝基立方烷）再另行处理。&lt;br&gt;
-·HHTDD（六硝基六氮杂三环十二烷二酮），在浓盐酸中，用1,4-甲酰基-2,3,5,6-四甲基哌嗪与尿素反应，生成2,4,6,8,10,12-六氮杂三环[7.3.0.0]十二烷-5,11-二酮二盐酸盐水合物，然后进行硝化即可得到产物HHTDD。是猛炸药&lt;br&gt;
-&lt;br /&gt;&lt;br&gt;
-硝烟滚滚升起 震动千万里&lt;br&gt;
-&lt;br /&gt;&lt;br&gt;
-在瓶底蚀刻氢氟魔酸的威力&lt;br&gt;
-·氢氟酸，HF，可蚀刻玻璃。SiO2+4HF=SiF4+2H2O&lt;br&gt;
-·魔酸，氟锑磺酸，HSbF5（OSO2F），应用PTFE（聚四氟乙烯）容器盛放。&lt;br&gt;
-&lt;br /&gt;&lt;br&gt;
-就当我为你吸入氰气&lt;br&gt;
-·氰（二声！）气，（CN）2，有杏仁气味，无色，有剧毒，制取：法老之蛇：4Hg(SCN)₂ =4HgS + 2CS₂+ 3(CN)₂↑+ N₂↑或者高温下：N2+2C=（CN）2&lt;br&gt;
-&lt;br /&gt;&lt;br&gt;
-浓硝酸发烟雨 三鹿在等你&lt;br&gt;
-·发烟硝酸，溶解NO2的浓硝酸，可用于有机反应硝化。&lt;br&gt;
-·三鹿奶粉事件，牵扯到三聚氰胺（1,3,5-三嗪-2,4,6-三胺），致癌物&lt;br&gt;
-&lt;br /&gt;&lt;br&gt;
-雷汞加四氮烯 引爆了结局&lt;br&gt;
-·雷汞，雷酸汞，Hg（ONC）2，《绝命毒师》中曾出现，白色或灰色晶体，可用于火帽击发药。&lt;br&gt;
-·四氮烯，即特屈拉辛，水合四唑基脒基四氮烯 。可用于击发药。&lt;br&gt;
-&lt;br /&gt;&lt;br&gt;
-如经典的TNT自顾自凌厉&lt;br&gt;
-·三硝基甲苯。&lt;br&gt;
-&lt;br /&gt;&lt;br&gt;
-你连带硝基&lt;br&gt;
-·硝酸铵啥的都是易爆物~&lt;br&gt;
-&lt;br /&gt;&lt;br&gt;
-火球空中游弋 是叔丁基锂&lt;br&gt;
-·详询化吧拜山贴：https://tieba.baidu.com/p/2641524269&lt;br&gt;
-&lt;br /&gt;&lt;br&gt;
-红烟袅袅升起 液溴拌入铝&lt;br&gt;
-·2Al+3Br2=2AlBr3，萌凤曾做过这个实验：BV1SW411873h&lt;br&gt;
-&lt;br /&gt;&lt;br&gt;
-在饱和食盐水中接通阴阳极&lt;br&gt;
-·2NaCl+2H2O=通电=2NaOH+H2↑+Cl2↑，氯碱工业&lt;br&gt;
-&lt;br /&gt;&lt;br&gt;
-十个电解九个是大锑&lt;br&gt;
-·有些“化学爱好者”电解操作不规范，锑即Sb。&lt;br&gt;
-&lt;br /&gt;&lt;br&gt;
-高材生胡振宇 大师赵明毅&lt;br&gt;
-·胡振宇，翎客航天创始人，由于火箭和TATP曾卷入争议。&lt;br&gt;
-·赵明毅，超理学带师。&lt;br&gt;
-&lt;br /&gt;&lt;br&gt;
-熊孩被急救起 曝出了结局&lt;br&gt;
-·自己公斤级CuO镁热，掺杂氧化剂。&lt;br&gt;
-&lt;br /&gt;&lt;br&gt;
-如遍地的中二党自顾自装逼&lt;br&gt;
-你眼带蛤意&lt;/p&gt;
-">【歌词相关】化学中二版青花瓷浅解</a>
-      </div>
-      
-      <div class="item">
-        <a class="result-title" style="opacity: 0;" href="https://coder109.github.io/post/wu-hui/"" data-c="
-          &lt;p&gt;黑夜，是将死者与亡灵的放浪。&lt;/p&gt;
-&lt;p&gt;月光顺着破旧的窗帘洒进来，落在木地板厚厚的灰尘上。窗内，古老的檀木家具泛着微弱的幽香，银质的吊灯有些发黑，斑驳。少女躺在紫色的床上，紫色的寝具象征着她的华贵。她的肌肤在月光下显得洁白无瑕，如同午夜盛开的昙花一般，难以企及的纯洁。青紫的嘴唇，金色的发丝，这是极其诡谲的搭配，静止与运动的冲突。她双手抱着破碎的洋娃娃，棉絮都已经外露，生了霉。&lt;/p&gt;
-&lt;p&gt;她死了，的确。空气中有虫子飞来飞去，嗡嗡作响。那是停留在尸体上的胜利者们，他们轻而易举就战胜了大它万倍的人类，蚕食着那些失败者最后的营养。他们跳着交谊舞，庆祝这唾手可得的佳肴。&lt;/p&gt;
-&lt;p&gt;门。开了。刺耳的声音。黑色的影子。&lt;/p&gt;
-&lt;p&gt;他慢慢的走到床边，抚摸着少女的发丝。“Francoise”，他低声叫着，“Francoise”。这声音在房间里回荡，打破了夜的沉寂。他挥了挥手，那虫子惊吓到，飞开了。戛然而止的舞会。他低下头，亲吻着少女的额头。“Francoise”。&lt;/p&gt;
-&lt;p&gt;他扶起那冰冷的尸体，跳起舞来。口中打着拍子，四三拍的圆舞曲。那脚步声又一次在这屋子里响起。&lt;/p&gt;
-&lt;p&gt;哦，她没有死。&lt;/p&gt;
-">舞会</a>
-      </div>
-      
-      <div class="item">
-        <a class="result-title" style="opacity: 0;" href="https://coder109.github.io/post/du-bai/"" data-c="
-          &lt;p&gt;我记不得这是我第几次被扔进这地方了，暗无天日，一股霉味。灰色的墙上爬满了青苔，爬到窗檐上，顺着铁槛寻觅着自己的自由。这房子还是只有一张破旧的床和一个泛着黄色的马桶，污物外涌，极其恶心。&lt;/p&gt;
-&lt;p&gt;哦，忘了和你们说了——如果你们能看到这张纸条的话——现在是2135年，4月……也许是7号，也许是8号。我是不配拥有姓名的罪犯，763号。如果你去和狱警询问我的代号，他们会告诉你我的一切，他们对我知根知底！我不知道你犯了什么罪，但总不会比我的罪恶更加讨厌……&lt;/p&gt;
-&lt;p&gt;这脚镣真是烦人，稍动一下就要叮叮当当响个不停……但这被束缚着的感觉是真的令人安心。监狱是这社会唯一完全安全的地方……外界的“自由”毫无魅力可言。那些所谓的“自由人”还是那么忙碌，还要担心自己的安全。真是可笑至极。这都是科技的精华啊！&lt;/p&gt;
-&lt;p&gt;噢！罪恶！说到罪恶，我是思想罪犯！我自诩为“对抗资本的前线战士”，那些资本家我实在是看不惯。一切的自然科学最终都是为了他们而工作，哲学也终将是为了意识形态服务的。楼上的人们始终占有着最好的景色，而楼下的人们总是要饱受工业废气的折磨，这是现实。教科书中的二十一世纪初叶似乎已经天下统一了，20……2010年左右吧。我想回到那个年代。那个思想大爆炸的年代，“万事皆允”。&lt;/p&gt;
-&lt;p&gt;我不知道该怎么做，身边的人都是麻木不仁的。死亡？我没有那个魄力。反抗？这是我唯一的选择了。而如今我又被扔进这里来！他们总是要“改造”我——一次又一次的毒打。我知道这次也是一样。&lt;/p&gt;
-&lt;p&gt;我不知道你犯了什么罪，但是你要记得，要反抗！反抗！我的兄弟。这世界唯一安全的地方就是你的大脑。你的思想。思想无罪，罪恶是楼上的人强加给你的。&lt;/p&gt;
-&lt;p&gt;哦！狱警刚才对我讲这是我最后一次蹲监狱了——明天我就要踏上死亡的道路了。我知道的。兄弟，我不知道该做些什么，我知道我所思考的一切都将化作虚无。人是无高低贵贱的，但是阶级总会让人无意识地意识到自己的卑微。学校的师生差异、公司的头衔差异、社会的阶级差异，兄弟，你可要小心！娱乐至死的社会，一切都是无罪的。&lt;/p&gt;
-&lt;p&gt;到点了，该走了，我要把这个纸条藏起来。&lt;/p&gt;
-">独白</a>
-      </div>
-      
-      <div class="item">
-        <a class="result-title" style="opacity: 0;" href="https://coder109.github.io/post/lin-dong-jiang-zhi/"" data-c="
-          &lt;p&gt;“萨罗先勋爵，您记得763吗？”穿着米黄色风衣的女孩发问了。&lt;/p&gt;
-&lt;p&gt;“谁？”勋爵模样的人有些惊异，反问道。&lt;/p&gt;
-&lt;p&gt;“763，那个昨天被处死的思想犯。”&lt;/p&gt;
-&lt;p&gt;“哦……”勋爵扶了扶眼镜，盯着纸页的眼睛终于挪向了女孩。她是国王的女儿，众民爱戴的彼得罗夫娜公主。&lt;/p&gt;
-&lt;p&gt;勋爵不知道为什么公主认识一个毫不出名的思想犯，也不知道她为什么要问自己。他身上的金色坠饰颤动了一下，“我知道，公主，我知道。”&lt;br&gt;
-——————&lt;/p&gt;
-&lt;p&gt;我站在断头台上，身后是两个人高马大的刽子手，台下是密密麻麻的人群，极其安静的看着我。呵，他们中有不少所谓的“贵族”，幸灾乐祸的看着当初反对者的丑态。那只粗糙沾满血污的手把我的头放在了刀片之下。我突然感受到了一种极其怪异的感觉。不是恐惧也不是无奈，是一种解脱与快慰。我笑了。台下的人们还是一声不吭。刽子手拉动了绳子，“咔嚓”。&lt;br&gt;
-——————&lt;/p&gt;
-&lt;p&gt;“您知道他犯了什么罪吗？”&lt;/p&gt;
-&lt;p&gt;“那是一个不出名的小罪犯……他的罪行都记录在案宗里面，我记不清。”勋爵摇摇头。金色坠饰随着他的摆动有节奏的晃着。&lt;/p&gt;
-&lt;p&gt;勋爵更加费解：难不成这个罪犯还有点背景不成？不，不能，他进来过太多次，我对他了解的透透的……莫非还有共犯？他的家人都死去了，毋庸置疑。不可能的，他那种人走在大街上都显得格格不入，共犯？开玩笑。公主为什么要问？我不可能判错案子，几十年的经验了……&lt;/p&gt;
-&lt;p&gt;“劳驾您去查查好吗？”公主忽闪着大眼睛，问道。&lt;/p&gt;
-&lt;p&gt;“好，好……”&lt;br&gt;
-——————&lt;/p&gt;
-&lt;p&gt;这是我第一次看行刑过程，血喷出来的一刹那是那么美丽。那罪犯临死前的狞笑着实让我吃了一惊……不过教科书上写着，“犯法者皆为异种”，大概就是如此吧。人群散去之后我还待在那，那鲜血顺着台沿滴下来，染红了下面的沙土地。763……？大概是这个代号吧。女仆可真是烦人，始终让我回宫。我才不想回去那无聊的地方呢！我要改天问问勋爵他到底犯了什么罪。&lt;br&gt;
-——————&lt;br&gt;
-勋爵面前摆满了记录报告，终于从夹缝中勉强抽出来一份皱皱巴巴的案宗。递给彼得罗夫娜公主。&lt;/p&gt;
-&lt;p&gt;公主翻了几页，突然指着其中一行。&lt;/p&gt;
-&lt;p&gt;“‘传授不正当的知识以及误导他人的正确思想’，勋爵，这是什么意思？”&lt;/p&gt;
-&lt;p&gt;“就是想错了东西，还将错误传授给他人。公主，您大概在学校学过这个吧，叫，叫……”&lt;/p&gt;
-&lt;p&gt;“思想谬误罪？”&lt;/p&gt;
-&lt;p&gt;“正是如此！思想无罪，但是不能影响社会的正常发展，一旦影响了便是触犯了大罪！死刑都不为过!”勋爵明显激动起来，身上的金色坠饰不住地晃动着。“毕竟集体总是比个人重要，全国如此，为了个人牺牲集体，太过荒谬。”勋爵撅起了嘴，摇了摇头。&lt;/p&gt;
-&lt;p&gt;“是啊。”公主应和着，眼睛还在不住地扫视案宗。“喔，这人还被抓过不少次呢哈哈。”公主翘起了脚。&lt;/p&gt;
-&lt;p&gt;“他可是个典型的思想犯，屡教不止。”&lt;/p&gt;
-&lt;p&gt;“你们怎么教化他？”&lt;/p&gt;
-&lt;p&gt;“用知识，去感化他。让他知道国家的伟大，人民的力量以及法律的威严！”&lt;/p&gt;
-&lt;p&gt;“这可是个好方法。”公主说道。&lt;br&gt;
-——————&lt;/p&gt;
-&lt;p&gt;教堂敲响了正午的钟声，人民欢呼着，这是一年一度的朝拜日，类似于大洋彼岸的圣诞节和遥远东方的春节。每到正午皇帝都会站在阳台上，亲自发表演说。&lt;/p&gt;
-&lt;p&gt;“我亲爱的子民们，中午好！”&lt;/p&gt;
-&lt;p&gt;“砰！”枪声令民众吃了一惊，他们以为这是军队的示意。回过头来，皇帝早已倒在血泊之中。&lt;/p&gt;
-&lt;p&gt;冬天来了。萨罗先勋爵，彼得罗夫娜公主。冬天来了。&lt;/p&gt;
-">凛冬将至</a>
-      </div>
-      
-      <div class="item">
-        <a class="result-title" style="opacity: 0;" href="https://coder109.github.io/post/huan/"" data-c="
-          &lt;p&gt;独自坐在午后的落地窗前。&lt;/p&gt;
-&lt;p&gt;斜斜的阳光洒在木地板上，显现出金色的影像。微风跨过窗棂，在小室里游走，清凉，带着一丝青草与泥土的芳香。小桌上的书页哗啦作响，清脆的声音让人的神经放松下来。我慵懒地爬上床，消磨时光。&lt;/p&gt;
-&lt;p&gt;檐上的风铃被风吹动，精铁撞击的声音如流水一般，使人仿佛置身于梦境。午后，是那么美好。我想一直在这午后休憩，或者在外面游荡。风吹向何方，我便行往何处——没有风便躺在草地上，沐浴阳光，睡眠直至夕阳西下，信步归去。&lt;/p&gt;
-&lt;p&gt;我想在这午后片刻的欢愉中沉醉，但我终究是忙碌的，只能以须臾轻快的光景麻痹自己，暂时从繁杂的事物中抽出身来，在自然的气息中荡涤心灵，寻觅那一丝极其脆弱的快慰。我，不过是一个不愿接受现实的梦想家。&lt;/p&gt;
-">幻</a>
-      </div>
-      
-      <div class="item">
-        <a class="result-title" style="opacity: 0;" href="https://coder109.github.io/post/qing-fu/"" data-c="
-          &lt;p&gt;我惊醒了，U城的死尸仍然历历在目。“噩梦啊。”但我为什么会梦见小A呢？&lt;/p&gt;
-&lt;p&gt;艰难爬起打开灯，眼睛因为不适应而刺痛。窗户半开着，夏夜温暖的风吹入，掀起了薄帘的一角，好似巴金笔下半透明的处子的肌肤。小A啊…&lt;/p&gt;
-&lt;p&gt;小A从幼儿园起便是我的挚友。她母亲早逝，父亲又酗酒，喝醉了就殴打她。在我的印象里，她一年四季都穿着长袖，也许正是为了掩盖那些怖人的淤青吧。刚上高中，父亲便因酒精中毒而死去，她也开始了一个人的生活。她的房子离我家不远，我又是独居，所以她经常叫我过去玩。和她在一起总是快乐而又放松。&lt;/p&gt;
-&lt;p&gt;电话响了，是小A。真是说曹操曹操到啊，我笑了笑，“怎么了？”我问道。&lt;/p&gt;
-&lt;p&gt;“半夜睡不着，看见你家灯亮着，想说会话。”柔软的女孩子声线，“来我家天台好吗？你知道……电话是会隔绝情感的。”前所未有的理论。&lt;/p&gt;
-&lt;p&gt;“好吧。”&lt;/p&gt;
-&lt;p&gt;夏夜星空是最美丽的，月亮的清辉和星耀一同洒下，照的大地都一片乳白。&lt;/p&gt;
-&lt;p&gt;我登上天台，她正靠着混凝土围栏，仰望着天空。修长的发丝轻微的摆动，月白的连衣裙给人一种梦幻般的美感。这令我青春期的心有了一丝浮躁。“要安定下来”，我想着。&lt;/p&gt;
-&lt;p&gt;“你来啦，过来过来。”还是那样熟悉的小A。&lt;/p&gt;
-&lt;p&gt;“还失眠了啊。”我走到她身边，问道。&lt;/p&gt;
-&lt;p&gt;“是啊，总是觉得郁闷。”她说道，“我一直在想一个问题。你觉得这世界有什么意义吗？你知道的，人总是忙忙碌碌忙忙碌碌，但却好像没有想过这个问题，好像自以为是的赋予了一个意义，但最终因是什么呢？苏格拉底他们似乎也没有想明白，没有意义，那为什么还要活下去？有意义，那意义究竟是什么呢？”&lt;/p&gt;
-&lt;p&gt;我惊叹于小A的思维之速。我也困于这个问题之内不能自拔。思考总是累人的。我不愿去弄的完全透彻，人为什么要活得那么清楚呢？海德格尔笔下的“诸神远离的黑夜”，我们人类就能去弄清楚吗？语言总是有限度的。限度。想要拿语言描述语言描述不了的地方实在是荒诞可笑的。&lt;/p&gt;
-&lt;p&gt;“月亮很美啊。”我说道。“为什么要追求那些呢？享乐主义它不香吗？”&lt;/p&gt;
-&lt;p&gt;“哦我亲爱的先生，你为什么要这样呢？”她笑吟吟的看着我。“人总是为外物所束缚，为了一时的生而放弃思考与追问。这可不好。”&lt;/p&gt;
-&lt;p&gt;是啊，我们把生交给了现实，把现实又交给了虚幻，这是无尽的恶性循环。月亮的光辉也许正是这样的，圆又缺，缺又圆，这样下去迟早不是回事！人出生、考学、工作、退休、死亡。为了什么呢？有什么意义呢？是啊，有什么意义呢？风又刮起来了，小A的穿上这身衣服真好看啊。穿衣服有意义么？那种不穿衣服的淫荡有意义么？意义就好像沙漠中泼下去的水，越去观察便越少。荒诞的世界……&lt;/p&gt;
-&lt;p&gt;“你怎么不说话了啊”，小A把眼睛睁的大大的望着我。&lt;/p&gt;
-&lt;p&gt;“我……不知道。这个问题太深奥了。”&lt;/p&gt;
-&lt;p&gt;“来纵欲吧。”小A满脸坏笑地说道、&lt;/p&gt;
-&lt;p&gt;“什么？”我有些惊诧。&lt;/p&gt;
-&lt;p&gt;“放弃追问吧，来纵欲吧！让我们来创造意义吧！我想透了。这世界多么的荒诞！”&lt;/p&gt;
-&lt;p&gt;清新的花？如今变得妖艳而恶心，长满蛆虫的腐肉，发炎流脓的溃烂。邪恶。我看不透她的内心，正如看不透我的一样。从理性到感性，从美学到淫荡。小A竟然是如此恶心的人？人类社会不乏这样的人，表面一本正经，内心却极为邪恶。这是人的优良传统，美丽的邪恶学！善，与人类毫不相关，只有伪善。消亡，出生。那是死亡与生存的交响乐！&lt;/p&gt;
-&lt;p&gt;回过神来，小A被扼死了，泛着泡沫的白色液体从她的嘴里涌出来。&lt;/p&gt;
-">倾覆</a>
-      </div>
-      
-      <div class="item">
-        <a class="result-title" style="opacity: 0;" href="https://coder109.github.io/post/utopia/"" data-c="
-          &lt;p&gt;友人A希望我去拜访一座小镇，经历了两天两夜的行走，我终于到达了目的地。小镇用混凝土围墙围了起来，一扇铁门是小镇与外界的唯一通路。门前立着一个木牌，上面用英语写着“Utopia”。乌托邦？我有些迷茫。&lt;/p&gt;
-&lt;p&gt;这密不透风的架势着实让我吃了一惊，哪会有人愿意把小镇围得这样严实呢？&lt;/p&gt;
-&lt;p&gt;我搞不懂友人A的用意，只得向里走去。这时我瞥见，木牌的下方，蹭着一点不明的红色液体。&lt;/p&gt;
-&lt;p&gt;当我走进这个小镇时，我瞬间明白了那红色液体的成分。血。&lt;/p&gt;
-&lt;p&gt;小镇里极度血腥。白骨、残肢、喷溅四周的黄色的脑浆。利器、石块、倾圮倒塌的石墙。与其说是小镇，不如说是一个屠宰场来的贴切。&lt;/p&gt;
-&lt;p&gt;我走在街上，两旁是姿态各异的尸体，表情大多是愕然的，呆呆地凝望着天空，甚至嘴角还会流下未干的鲜血。我惊诧了，是什么样的变态能够做出这种事情来。人的本性是恶的——我不否认——但这样的屠杀，连一些恶人也会感到反胃罢。&lt;/p&gt;
-&lt;p&gt;转过残肢断体的街角，我的前方出现了一座极其华美的房子，哥特式风格，金色的外墙，镶嵌着钻石，以红宝石块制成的台阶在阳光下泛着光。活脱脱是微型的巴黎圣母院。它与周围令人作呕的光景形成了极其鲜明的对比，令我头晕目眩。我势必要拜访一下这房子的主人。因为这样富庶的人，一般是在金字塔尖生活着的，什么都不愁，享受着最高的生活与精神待遇。&lt;/p&gt;
-&lt;p&gt;我走近了那幢房子，那大门突然打开，从大厅走出了一个人，披着肉色的外套，头戴银色的皇冠，上面镶嵌着绿色与绯色的宝石。腰间挂着的头颅随着他的运动来回摇动。他微笑着，对我行了个礼，说道：“欢迎来到我的国度，远方的客人，不介意的话，请来寒舍一坐吧。”冰冷的语气，没有一点感情。&lt;/p&gt;
-&lt;p&gt;我不得已走上台阶，走入大厅，里面的光景与外墙严重不符。杂物乱堆，吃剩的包装盒散发着腐臭的气息，地上似乎是撒过含糖饮料，长出了一层绿色的霉。蜘蛛网在墙角挂着，上面似乎还有着一些昆虫的尸体。沙发上的面包屑足够养活一个国家的人。我干呕着。&lt;/p&gt;
-&lt;p&gt;他请我坐下，我没有理会他，问道：“这……这到底是什么地方？”&lt;/p&gt;
-&lt;p&gt;“乌托邦，U-T-O-P-I-A”他乜斜着眼，一个字母一个字母重复着，语气里满是骄傲与轻蔑。我的不适加剧了。&lt;/p&gt;
-&lt;p&gt;他提高了声音：“这是宇宙和平的汇聚，是时间的交点，是万物的生与死，是幸福与快乐的交响曲！”莎士比亚式的夸张。&lt;/p&gt;
-&lt;p&gt;我冷笑着：“你说的这种地方会有一地的血污与残肢么？”&lt;/p&gt;
-&lt;p&gt;他愣了一下，旋即说道：“哦！他们是……是历史的见证，是战争的子女，是邪恶的化身，他们要为自己的行径付出代价。我想要拯救他们，他们却起来反抗我。没有办法。”&lt;/p&gt;
-&lt;p&gt;“哦？忘记问您的尊姓大名了。”我的心里，恶心，滑稽，愤怒交织着。&lt;/p&gt;
-&lt;p&gt;“我是上帝，你们口中的上帝！”&lt;/p&gt;
-&lt;p&gt;“什……”我还未说完，他又开始他的演讲了。&lt;/p&gt;
-&lt;p&gt;“有一小部分人不相信我是救世主，于是想要毁灭我，我改变不了他们，只能消灭那一小部分人去维持和平，和平，和平！多美妙的词语啊，客人。文人们为了他谱写出了最美丽的诗篇，您说呢？哈哈哈，那也是我的愿景，安定、祥和！”&lt;/p&gt;
-&lt;p&gt;“一小部分？那街上可满是尸体！”&lt;/p&gt;
-&lt;p&gt;“那怪我吗？！！！他们自己造的孽终究要他们自己去偿还！我是那至善！！！孩子，你从小就注定了要被支配的命运。醒醒吧！人的本性都是利己的！我有什么办法？！！！为了你们的可悲的理想放弃我自己的生命？可笑，太可笑了！”&lt;/p&gt;
-&lt;p&gt;我愤然起身，摔门而去。&lt;/p&gt;
-&lt;p&gt;他的声音在我身后响起。&lt;/p&gt;
-&lt;p&gt;“你终会明白的！你既然来了就逃不掉！死亡终将惩罚逃离乌托邦的人！”&lt;/p&gt;
-&lt;p&gt;这时我突然意识到疼痛，由内而外，几乎撕裂身体。我低下头，俯视自己的身体，血汩汩流出。我眼前一黑摔倒在地面。&lt;/p&gt;
-&lt;p&gt;“原来……如此。”&lt;/p&gt;
-">Utopia</a>
-      </div>
-      
-      <div class="item">
-        <a class="result-title" style="opacity: 0;" href="https://coder109.github.io/post/bu-202045/"" data-c="
-          &lt;p&gt;最近的生活可以用一个词来代替——“困苦”。&lt;/p&gt;
-&lt;p&gt;语文老师极其喜欢深夜留作业，也许她是喜欢捉弄学生的。她喜欢毫无根据的下结论，自己曾经在上课的时候看了她一眼，她便说我不守纪律。辩解也是无用的。同学们其实也是对她颇有意见。高中，也许教学水平比什么都重要罢。&lt;/p&gt;
-&lt;p&gt;上网课实在是没有效率。自己已经找不回学习的热情了，每天只想看书，和那些伟大的哲学家交流（其实他们说的我很难去理解，与其说是交流，不如说是另一种授课）。但这样估计就要从尖子班里淘汰了，未来估计也就变的更加灰暗了。姑且努力着吧。&lt;/p&gt;
-&lt;p&gt;占卜的准确性越来越低，自从找回了自己丢放在隐秘角落的灵摆之后，它似乎变的不太喜欢我了。改天净化一下试试吧。最近冥想也静不下心来，总是感觉到一种无力感与疲惫感。&lt;/p&gt;
-&lt;p&gt;耳机里放着爵士乐，自己稍微的安静了下来。不论如何总是要向未来前行的啊。&lt;/p&gt;
-">【补】2020/4/5</a>
-      </div>
-      
-      <div class="item">
-        <a class="result-title" style="opacity: 0;" href="https://coder109.github.io/post/duan-lie/"" data-c="
-          &lt;p&gt;她在镜子里看着我，泪水顺着脸颊流下来，红肿的双眼令我心生怜惜。但我触碰不到她，那个世界，可望而不可即。&lt;/p&gt;
-&lt;p&gt;我第一次遇见她，是在一个傍晚。我在卧室里看书，音响里放着佩尔金特组曲，极其悠扬的曲子，它总会让我感到放松而轻快。太阳的光逐渐消逝，我站起身，准备去开灯。与以往不同，我瞟到了镜子中极其怪异的光景——那不是我的影子——青草，阳光，湛蓝的天空，时不时有鸟儿飞过。远方是郁郁葱葱的白桦树林，树叶随着风摇动。但这一切都是寂静的，没有一点声音。&lt;/p&gt;
-&lt;p&gt;我不禁坐在镜子前面，欣赏起这默剧。太阳已经落下，但是镜子中的光影，却依旧是那么温暖。我的房间，也如同白昼般明亮。太荒谬了，我心下想着，却仍沉浸在这似真似幻的场景中。&lt;/p&gt;
-&lt;p&gt;某一瞬间，这一切都化作黑暗，一个女孩出现在镜子里。她约莫十三四岁，梳着马尾辫，一双蓝色的大眼睛忽闪忽闪。奔跑着。在黑暗里向我跑过来，我明显看见她脸上的疲态，但我们之间的距离并没有缩短。我突然站起身，发疯似的向镜子扑过去，她也是终于跑到了我的近前。&lt;/p&gt;
-&lt;p&gt;她的嘴唇翕动着，显然是想告诉我什么东西。但我听见的，只有死寂，冰冷的死寂。她始终笑着，但却极其不自然，像绝望之人硬挤出来的微笑，我的身体，不自主的打了个寒战。也许是感觉到了我什么也听不见，她叹了口气，消失在镜子里。我一时间呆滞地伫立于原地。&lt;/p&gt;
-&lt;p&gt;午夜，月光顺着窗子洒进来，一片皎白。&lt;/p&gt;
-&lt;p&gt;这之后的每天晚上，她都会在镜子里出现，继续说着我无法听闻的言语。而我除了“倾听”，别无他法。&lt;/p&gt;
-&lt;p&gt;我看得见她脸上的笑逐渐退却，看得见她的眼神越来越迷离，但我什么也做不了。我曾想过这一切都是幻象，但幻象却又那么真实，没有留给我怀疑的余地。她是痛苦的，我要把她救出来。我心下想着。&lt;/p&gt;
-&lt;p&gt;她在镜子里看着我，泪水顺着脸颊流下来，红肿的双眼令我心生怜惜。我砸碎了镜子，碎片四散。她的影子也碎裂了，那眼泪与无声的梦，也该结束了。&lt;/p&gt;
-&lt;p&gt;她没有走出来，和那碎片一起飞落入无声的夜。在那一刻，我听见了少女的尖叫，划破了整个夜晚的寂静。&lt;/p&gt;
-&lt;p&gt;我闭上眼睛，泪水不由自主地涌出来。我知道，这一切，不过是少女的噩梦而已。&lt;/p&gt;
-&lt;p&gt;睁开双眼，我的眼睛被极强的白光刺得生疼。太阳。蓝天。此刻我正躺在青草地上，远方是郁郁葱葱的白桦树林，树叶随着风摇动。我爬起身，却又摔倒在地上——我的身旁，是一具少女的尸体。鲜血染红了泥土，身躯碎裂，脸上满是惊愕。&lt;/p&gt;
-">断裂</a>
-      </div>
-      
-      <div class="item">
-        <a class="result-title" style="opacity: 0;" href="https://coder109.github.io/post/luan-xie/"" data-c="
-          &lt;p&gt;他们在清晨的荒野里跳舞，那里尘土飞扬，不见阳光，乐声为呼啸的风击溃，荡然无存。&lt;/p&gt;
-&lt;p&gt;他们在未建成的大楼楼顶栖居，以黑夜为庇护，遁入自己将死的梦中去。&lt;/p&gt;
-&lt;p&gt;他们在生与死的交界散步，左手边是万丈钢铁森林，右手边是形而上的美好天堂。&lt;/p&gt;
-&lt;p&gt;他们在痛苦的书籍里寻求精神的无何有之乡，那里有尼采，有黑格尔，有康德，但回归于现实他们仍然陷入迷茫。&lt;/p&gt;
-&lt;p&gt;他们在黎明的昏暗中怅望远方，仅存的一点希望冉冉升起，这成了他们的唯一慰藉.&lt;/p&gt;
-&lt;p&gt;他们在世界的顶端高歌，触摸炙热的明亮天体，探寻理论背后的实践意义，却终究为上帝削平的巴别塔刺痛敏感的神经。&lt;/p&gt;
-&lt;p&gt;他们在娱乐的漩涡中自相残杀，在流行文化劣质音乐乌烟瘴气中打滚，在智慧的苏格拉底式箴言中麻痹自己，在物质中迷失自我前进的方向，在内卷的空间里丧失自己的雪之精魂，&lt;/p&gt;
-&lt;p&gt;我驻足于这万千剪影的长廊，那里有喜悦，有悲伤。有纵欲的碾核音乐，有古典奏鸣曲的婉转动听，&lt;/p&gt;
-&lt;p&gt;剪影里的人放声号哭，对着画框外的世界狂奔，但终究无法逃离圆形监狱。&lt;/p&gt;
-">乱写</a>
-      </div>
-      
-      <div class="item">
-        <a class="result-title" style="opacity: 0;" href="https://coder109.github.io/post/zhi-bai-xian-sheng/"" data-c="
-          &lt;p&gt;白先生敬启：&lt;/p&gt;
-&lt;p&gt;贵安。&lt;/p&gt;
-&lt;p&gt;——————————————&lt;/p&gt;
-&lt;p&gt;我与你已余四年未见了吧，身体还好么？我不知道你如今旅行到了何方，也许在欧洲的某个意大利风格小镇上喝着咖啡吧。我只得将这封信寄向您最常住的居所。如果您能看到这封信，再好不过。&lt;/p&gt;
-&lt;p&gt;我如今尚未知晓您寄来的那封信的深意，只觉得晦涩难懂，文字间的抑郁令我对于你的心境有些担忧。“现实是沾满血污、极其不堪的”，但为了它发闷气也不太利于身体健康。我只是个学生，只能尽力去用文字安抚您了。&lt;/p&gt;
-&lt;p&gt;窗外的天苍白无力，水泥森林毫无生机。行人们忙忙碌碌地走向自己的结局。这有些荒诞。随着科技发展，人与人却越加疏远了。未来如烟尘般模糊不清，我一时间不知道该做些什么。我多想听您讲一讲文学啊，白先生。“了无知音，然则胸怀大志，不过华胥一梦。”现在我的同学们只讨论娱乐、游戏，我根本插不上嘴，哲学、文学似乎是离经叛道的事物。他们对那些东西嗤之以鼻。我在他们眼中——夸张一点——只是一个书呆子。白先生！我不是想屈服于他们，而是想成为您那样的人。饱读诗书，不受人影响，思想自由。也许这样讲很怪——您是我天空中的月亮。&lt;/p&gt;
-&lt;p&gt;我如今确实不大正常，白先生。天空中的月亮那么皎洁，可我终究无法完全认识它。我听见月台上归客的喜悦，听见投海者灵魂的悲哀，听见草坪上顽童的喜悦……可我听不见我。我不知道我的所思所想，仿佛从这个世界中抽离出来一般。我不知道您有没有过这种感觉：回首过去，觉得自己浑浑噩噩，一切如泡沫一般。仿佛从未认真对待过一般——梦幻、追悔莫及。您说过人总是要珍惜时间的，毕竟生命短暂得有些荒谬。可我如今沉浸在荒废的快感中。也许您看到这，会斥责我罢。&lt;/p&gt;
-&lt;p&gt;明明身处不可再真实的真实中，却又有着难以逾越的隔阂。白先生，倘若您还在，您一定会为我指明一条出路的吧。沉醉于世界，我茫然无措。生命的痛苦确乎令人疲乏。&lt;/p&gt;
-&lt;p&gt;神学家们搬出“原罪”解释人的存活。如果这是对的——假设是——那么我们都是受审判的人啊，来人间赎罪，却不知道“何罪之有”，这是最大的悲哀啊。&lt;/p&gt;
-&lt;p&gt;——————————————&lt;/p&gt;
-&lt;p&gt;自己手捧着教材，将知识灌入脑子。那些实验，明明一个都没有做过，却要将步骤烂熟于心，实在有些滑稽可笑。手机里放着chillhop，jazz hip hop一类的歌，学习也没有那样枯燥了，能缓解一下处于崩溃边缘的紧张神经。我突然想到了灵修者们，我向往他们的生活。也许这是“城外的人们”的看法罢。&lt;/p&gt;
-&lt;p&gt;痛苦让人们感受到自己是存活的人。安定会麻痹人们的神经，令他们处于如真如幻的梦里。饱尝痛苦的人大多是悲观主义者们。而所有的痛苦基本都来自于外界与内心的冲突，毋庸置疑。白先生，我和您讨论哲学有点班门弄斧了罢。不过我同您只能讲这些了，您的生活我一概不知的。&lt;/p&gt;
-&lt;p&gt;人们总在不停追求，为什么？追求一定是好事么？我们的时代语境的确这样引导我们，为什么不能去语境化思考呢？一切都应该这样，冷静地去考虑考虑。事情的存在必然合乎理性，合乎理性的东西必然是现实。那些痛苦，也必然合乎理性。思考真够累人的啊，白先生。&lt;/p&gt;
-&lt;p&gt;幻&lt;br&gt;
-2020.7.11&lt;/p&gt;
-">致白先生</a>
-      </div>
-      
-      <div class="item">
-        <a class="result-title" style="opacity: 0;" href="https://coder109.github.io/post/202077/"" data-c="
-          &lt;h2 id=&#34;这不就是性别霸凌嘛&#34;&gt;这不就是性别霸凌嘛！&lt;/h2&gt;
-&lt;p&gt;昨天晚上友人L发来消息，说有人嘲讽他没有喉结，十分郁闷。&lt;/p&gt;
-&lt;p&gt;自己原以为世界上只有样式、品牌一类的攀比，但从未想到还有基于外表的嘲讽。毋庸置疑，这是浅薄之人刷存在感而已。人类始终是基于底层的经验认识世界的，但是很不幸，有些经验是错误的。有许多人（或者说是现在的大多数人，也许与自己居住的十三线小城市有关吧）都认为男性应该是强壮、阳刚、富有激情活力的。这是一种性别霸凌。&lt;/p&gt;
-&lt;p&gt;正如洛克所说，“启示必须由理性裁断。”人们没有仔细思考这种观念的正确与否，就将之当做理所应当的事物，实在是愚蠢且偏颇。用这个理论去嘲讽别人，更加令人哭笑不得。&lt;/p&gt;
-&lt;h2 id=&#34;求求您我不要推送&#34;&gt;求求您，我不要推送！&lt;/h2&gt;
-&lt;p&gt;突然想起了网课时候下的某个答题软件。自己刚注册完就收到了人类称为“骚扰短信”的事物。惊诧于该软件后台的极高效率，一分钟之后我又收到了“骚扰电话”。“你有意向报一个我们的补习班吗，提分很快哦。”。身为新世纪的优秀青年，我笑笑，“不需要哦。”，说罢挂断了电话。&lt;/p&gt;
-&lt;p&gt;这样过了一两天，自己收到了总共四五个推送电话，不同的号码，但几乎是同一个声音，同一个语调，同一句话。&lt;/p&gt;
-&lt;p&gt;绝了！&lt;/p&gt;
-&lt;h2 id=&#34;是幻想是空中楼阁&#34;&gt;是幻想？是空中楼阁？&lt;/h2&gt;
-&lt;p&gt;自己一直是喜欢超现实主义的，不论是文学、画作还是视频，都能带来一种极端怪诞的快感。&lt;/p&gt;
-&lt;p&gt;达利的《记忆的永恒》、《内战的预感》，科塔萨尔的南方高速……它们比描述现实的东西更加有趣，可以用直觉感性去感受，使人如置身于梦境一样。&lt;/p&gt;
-&lt;p&gt;幻想中的世界总是令人向往的嘛~&lt;/p&gt;
-">2020/7/7</a>
-      </div>
-      
-      <div class="item">
-        <a class="result-title" style="opacity: 0;" href="https://coder109.github.io/post/shu-zhai-lesslessju-wai-ren-greatergreater-a-er-bei-jia-mou/"" data-c="
-          &lt;h2 id=&#34;第一部分&#34;&gt;第一部分&lt;/h2&gt;
-&lt;p&gt;天空是蓝白相间，周围是单调的颜色——开裂的柏油是黏糊糊的黑，人们的衣着是死气沉沉的黑，车子是油光发亮的黑。我有点迷失在这样的天地之间。阳光、皮革味、马车的马粪味、油漆味。香炉味、一夜没睡的疲惫，这一切让我两眼模糊、神志不清。&lt;/p&gt;
-&lt;p&gt;我感觉自己淹没在一阵噪声和尘埃中，我什么都看不见，只感到这种奔跑中混乱的冲动，身边尽是绞车、机器。天际晃动的桅杆和一路排开的轮船。&lt;/p&gt;
-&lt;p&gt;于是，我又对准那具已经了无生气的肉体开了四枪，子弹打进去，也看不出什么来。而这四枪，就像是我在苦难之门上，急促地叩了四下。&lt;/p&gt;
-&lt;h2 id=&#34;第二部分&#34;&gt;第二部分&lt;/h2&gt;
-&lt;p&gt;我始终不理解，日子为什么可以如此漫长又如此短暂。日子过起来如此漫长，这是毫无疑问的，但它们却又如此紧凑，一天推涌着一天。它们失去了自己的名字，只有“昨天”和“明天”两个词，对我来说还剩下一点意义。&lt;/p&gt;
-&lt;p&gt;在我所度过的整个荒诞的人生中，从我未来的深处，一股昏暗的气息穿越尚未到来的岁月向我扑来，这股气息一路袭来，使别人向我建议的一切都变得毫无差别，未来的岁月并不比我已经度过的岁月更真实。&lt;/p&gt;
-">【书摘】《局外人》——阿尔贝·加缪</a>
-      </div>
-      
-      <div class="item">
-        <a class="result-title" style="opacity: 0;" href="https://coder109.github.io/post/shu-zhai-lun-ren-lei-bu-ping-deng-de-qi-yuan-he-ji-chu/"" data-c="
-          &lt;h2 id=&#34;致辞献给日内瓦共和国&#34;&gt;致辞：献给日内瓦共和国&lt;/h2&gt;
-&lt;p&gt;无论一个政府的组成形式为何，如果出现一个人不服从法律，那么所有其他人就必然会受这个人的随意支配；如果同时存在一个国内的首领和一个国外的首领，那么无论他们能够以何种方式分配权力，人民都无法很好地服从他们，而国家也不可能被很好地治理。&lt;/p&gt;
-&lt;p&gt;自由就像那美味的食物或者甘醇的葡萄酒，它们可能适合那些早就对此习以为常的健壮之躯，可以供他们使用或者使他们变得强壮，但是却并不适合那些柔弱、娇嫩之躯，根本无法让他们适应，只能让他们难受、毁灭或者沉醉。人民一旦习惯主人的存在，便再也无法脱离他。&lt;br&gt;
-讽刺的真理。&lt;/p&gt;
-&lt;h2 id=&#34;序言&#34;&gt;序言&lt;/h2&gt;
-&lt;p&gt;如果我被迫不对我的同类作恶，这更应该是因为他是一个感性的存在，而不是因为他是一个理性的存在。&lt;/p&gt;
-&lt;h2 id=&#34;本论&#34;&gt;本论&lt;/h2&gt;
-&lt;p&gt;当你不满于现状，而且对你可怜的后代将要面临的时代感到更加不满的时候，你可能会产生想要回到过去的愿望。&lt;/p&gt;
-&lt;h2 id=&#34;第一部分&#34;&gt;第一部分&lt;/h2&gt;
-&lt;p&gt;思考的状态是一种反自然的状态，而进行思考的人类则是堕落的动物。&lt;/p&gt;
-&lt;p&gt;我们之所以有认知的欲望，是因为我们要享受。我们无法想象一个既没有欲望又没有恐惧的人却费尽心思地推理。&lt;/p&gt;
-&lt;p&gt;怜悯心是一种自然地情感，它可以通过克制个体的“自爱”来促进整个物种的相互保存。&lt;/p&gt;
-&lt;p&gt;爱情和其他所有情欲一样，只有进入社会后才会激起如此狂热的欲望，从而时常让人类陷入危险的境地。&lt;/p&gt;
-&lt;p&gt;只有当人类相互间产生依赖，并且相互间的需求将他们联系起来后，奴役关系才会形成。&lt;/p&gt;
-&lt;h2 id=&#34;第二部分&#34;&gt;第二部分&lt;/h2&gt;
-&lt;p&gt;谁第一个将一块土地圈起来，并毫无顾忌地说“这是我的”，然后找到一些足够天真的人对此信以为真，谁就是文明社会真正的创始人。&lt;/p&gt;
-&lt;p&gt;人类的第一个感知便是他的存在，而第一个担忧的问题就是他的自我保存。&lt;/p&gt;
-&lt;p&gt;嫉妒随爱情而生。&lt;/p&gt;
-&lt;p&gt;一旦人类开始相互欣赏，并开始在脑海中形成“尊重”的概念，每个人都将认为自己拥有获得尊重的权利。&lt;/p&gt;
-&lt;p&gt;正如智者洛克的一句哲言所说：“没有私有制，便不会有不公正。”&lt;/p&gt;
-&lt;p&gt;对于诗人而言，将人类教化并使他们堕落的是黄金和白银；对于哲学家而言，罪魁祸首正是铁和小麦。&lt;/p&gt;
-&lt;p&gt;一旦人类开始着眼于未来，并且每个人都能够预见自己对某些财产的损失时，没有一个人不会害怕由自己可能对他人造成的损失所带来的报复。&lt;/p&gt;
-&lt;p&gt;自然地不平等随着关系的不平等而逐渐显现出来，同时人类之间的差别随着情况的不同而不断扩大，其产生的效果也变得更加显著与持久，继而以同样的比例影响着人类的命运。&lt;/p&gt;
-&lt;p&gt;对于富人而言，他们一旦体会到统治的快乐，便会蔑视所有其他的快乐。&lt;/p&gt;
-&lt;p&gt;（富人）便理所当然地编造了一系列动听的理由，来诱导他们帮助自己达到目的。他会对他们说：“让我们团结起来吧！愿弱者摆脱压迫，野心得到抑制，我们每个人都能拥有自有之物！让我们制定一些平等、和平的准则吧！”&lt;/p&gt;
-&lt;p&gt;他们已经拥有足够的理性，来感受一个政治组织所能带来的好处，但却没有足够的经验，来预见可能带来的危险。而那些最可能预见其中弊端的人，却又恰巧是那些打算利用这一点的人。&lt;/p&gt;
-&lt;p&gt;这便是或者应该是社会和法律的起源。从此，弱者有了新的束缚，富人则拥有了新的权力。&lt;/p&gt;
-&lt;p&gt;社会一开始只不过建立在一些普遍协议的基础上，这些协议得到了所有人类个体的认可，而且集体可以为其中的每个成员做出担保。&lt;/p&gt;
-&lt;p&gt;我们不应该通过被奴役人民的堕落，来判断人类天性是赞同还是反对奴役。&lt;/p&gt;
-&lt;p&gt;认为专制政治的建立是出于人民自愿的这一说法，既没有可靠的依据，也缺乏真实性。&lt;/p&gt;
-&lt;p&gt;政府并不是以专制权力开始的，因为这一权力只是政府的变质和极端，正是这一权利使得政府走向了它曾希望克服的强者定律。&lt;/p&gt;
-">【书摘】论人类不平等的起源和基础——卢梭</a>
-      </div>
-      
-      <div class="item">
-        <a class="result-title" style="opacity: 0;" href="https://coder109.github.io/post/bi-ji-xi-fang-zhe-xue-shi-zhong-guo-ren-min-da-xue-gong-kai-ke/"" data-c="
-          &lt;p&gt;公开课BV号-BV16t411p7n8&lt;/p&gt;
-&lt;h2 id=&#34;哲学的特点&#34;&gt;哲学的特点&lt;/h2&gt;
-&lt;p&gt;哲学不是自然科学式的科学。&lt;/p&gt;
-&lt;p&gt;科学知识的对象--&amp;gt;现实性，哲学的对象--&amp;gt;理想性（无法验证！）&lt;/p&gt;
-&lt;p&gt;唯有哲学是自由的学问，唯独哲学是为了自身而被追求的知识。——亚里士多德&lt;/p&gt;
-&lt;p&gt;哲学和科学一样讲理性。（理论方式体现）但起源于终极关怀。&lt;/p&gt;
-&lt;p&gt;有标准答案的问题，称之为“问题”。没有标准答案，只有不同解决方式的问题，称为“难题”。&lt;/p&gt;
-&lt;p&gt;所有的问题归结起来无非是起源于生死。&lt;/p&gt;
-&lt;p&gt;西方哲学特点：学以致知、拯救现象、科学思维方式&lt;/p&gt;
-&lt;p&gt;试图给事物的存在给出合理的原因。&lt;/p&gt;
-&lt;h2 id=&#34;学习法&#34;&gt;学习法&lt;/h2&gt;
-&lt;p&gt;学习哲学：解决问题的方法重于理论。&lt;/p&gt;
-&lt;p&gt;注意：1.了解哲学家的问题。 2.熟悉哲学家的术语。 3.沿着哲学家的思路。 4.理解哲学家的思想。&lt;/p&gt;
-&lt;p&gt;哲学只能存在于哲学史中。——黑格尔&lt;/p&gt;
-&lt;h2 id=&#34;哲学的诞生&#34;&gt;哲学的诞生&lt;/h2&gt;
-&lt;p&gt;原因：人们开始关注终极关怀的问题、有时间思考这些问题、有思想的自由的条件。&lt;/p&gt;
-&lt;p&gt;分期：前苏格拉底哲学、雅典哲学、晚期希腊哲学&lt;/p&gt;
-&lt;p&gt;本原（Arche&amp;lt;希腊文&amp;gt;）：始元、开端、主宰&lt;/p&gt;
-&lt;p&gt;逻各斯（Logos&amp;lt;希腊文&amp;gt;）：（本义：计算、逻辑、推理）规律，“永恒的活火”的尺度。&lt;/p&gt;
-&lt;p&gt;早期自然哲学局限：缺乏科学知识、建立在经验基础上、众说纷纭。&lt;/p&gt;
-">【笔记】西方哲学史 中国人民大学公开课</a>
-      </div>
-      
-      <div class="item">
-        <a class="result-title" style="opacity: 0;" href="https://coder109.github.io/post/ming-xiang-fa/"" data-c="
-          &lt;p&gt;来源：里克汉森、理查德蒙迪斯《冥想五分钟等于熟睡两小时》&lt;/p&gt;
-&lt;h2 id=&#34;定的冥想法&#34;&gt;定的冥想法&lt;/h2&gt;
-&lt;p&gt;1.闭眼，花几分钟做深呼吸，放松。稳定一下你的情绪。随后，你可以把注意力集中在肚子上、胸口，或者嘴唇上，感受他们随着呼吸一起一伏。&lt;/p&gt;
-&lt;p&gt;2.集中注意力，静观你以往经历的感情色彩，看看它们是愉快的，不愉快的，还是中性的。要带着一种公正无私、不偏不倚的心态，去体验心头升起的各种想法和感觉，并让这种公正无私不断壮大。&lt;/p&gt;
-&lt;p&gt;3.体会一下此时内心的自在、轻松和安宁，平静地查看这些想法和感觉。让你的意识变得越来越稳定，越来越安详，越来越冷静。&lt;/p&gt;
-&lt;p&gt;4.倾听周遭的各种声音，但是不要让听到的东西影响你的心绪；体会各种感觉，同样也不要让这些感觉影响你的心绪；体会各种想法（下略）&lt;/p&gt;
-&lt;p&gt;5.在倾听、体会、思考时，注意它们附带的感情色彩。&lt;/p&gt;
-&lt;p&gt;6.体会它们来来去去，但不要对他们有所反应。体会自己与它们逐渐脱离，让自己既不会去捕捉欢乐，也不会拼命抗拒痛苦。&lt;/p&gt;
-&lt;h2 id=&#34;数呼吸冥想法&#34;&gt;数呼吸冥想法&lt;/h2&gt;
-&lt;p&gt;1.深呼吸，眼睛可睁可闭。&lt;/p&gt;
-&lt;p&gt;2.倾听周遭的声音。&lt;/p&gt;
-&lt;p&gt;3.专注于呼吸。&lt;/p&gt;
-&lt;p&gt;4.数呼吸：1-&amp;gt;10，再从1开始。忘记数字可以从1开始数。&lt;/p&gt;
-&lt;p&gt;5.意识安顿后，体会呼吸感觉。&lt;/p&gt;
-&lt;p&gt;6.把呼吸看作一个锚，让那些在你意识中飘来飘去的想法和感觉定位，来由他来，去由他去，不要让意识深陷其中！&lt;/p&gt;
-">【笔记】冥想法</a>
-      </div>
-      
-      <div class="item">
-        <a class="result-title" style="opacity: 0;" href="https://coder109.github.io/post/2020621/"" data-c="
-          &lt;p&gt;我将从高崖之上&lt;/p&gt;
-&lt;p&gt;坠落，落入黑暗的深渊&lt;/p&gt;
-&lt;p&gt;阳光无法击溃午夜的迷障&lt;/p&gt;
-&lt;p&gt;遗失的欲念，灵魂徒然地流浪&lt;/p&gt;
-&lt;br /&gt;
-&lt;p&gt;我将从深谷之间&lt;/p&gt;
-&lt;p&gt;仰望，仰望无边的光明&lt;/p&gt;
-&lt;p&gt;初阳无法驱除黎明的寒冷&lt;/p&gt;
-&lt;p&gt;消散的温存，生命踏上了归程&lt;/p&gt;
-">2020/6/21</a>
-      </div>
-      
-      <div class="item">
-        <a class="result-title" style="opacity: 0;" href="https://coder109.github.io/post/huan-xiang-xiao-duan/"" data-c="
-          &lt;p&gt;那沾满血污的双手，紧扼着最后一位弥留者的咽喉。她狞笑着，紧咬牙关。痛苦的干柴终于燃烧出了复仇的怒火，终于烧尽了那微薄的生命。她松开手，看着满地的残肢与鲜血默念着：“兰特，兰特……”拿起刀子对准自己的胸膛刺去。宁静的夜。&lt;br&gt;
-&lt;br /&gt;——————————————&lt;br /&gt;&lt;br&gt;
-祈祷者们跪在台下默念祷词，教堂外雷声大作。金色的烛台火光摇曳。忽然一个祈祷者发了疯，张牙舞爪，说着其他人听不懂的话。余下的人吃了一惊，“这定是恶灵附上了身！”。随后七手八脚地将他缚住，作净化仪式，但终究没有效果，于是将他刺死，杀灭凶灵。&lt;/p&gt;
-&lt;p&gt;教堂外下起了大雨，打在屋顶发出闷响，大主教不知怎的也受了刺激，张牙舞爪，说自己是天神转世。余下的人吃了一惊，“这定是天神施恩，降临人间！”于是纷纷拜伏起来。&lt;/p&gt;
-&lt;p&gt;那被刺死的疯祈祷者的魂魄在教堂里盘旋着，纳了闷：同样是发疯，为何自己被刺死了呢？&lt;br&gt;
-&lt;br /&gt;——————————————&lt;br /&gt;&lt;br&gt;
-我正策马行向那大地狱。&lt;/p&gt;
-&lt;p&gt;身上只背着一点干粮和水，携上银色的长剑，踏马向西行去。铁质盔甲闪闪发光，长剑在阳光下顿展锋芒，我似乎是这长天之下的王。&lt;/p&gt;
-&lt;p&gt;路上常会有人问我，“勇士呵，你要前往何方？”&lt;/p&gt;
-&lt;p&gt;我总会回答：“我将行往西方，于大地狱中讨伐邪佞，诛杀邪气。”&lt;/p&gt;
-&lt;p&gt;他们听了，总会大加赞扬，“这是新世界的凯撒，善良光辉的嫡生之子！”&lt;/p&gt;
-&lt;p&gt;日复一日，夕阳起落，白云游走。我跨越了三个大洲，十八个国度，却终未寻得那大地狱。即便如此，人们总是会问我同样的问题，发出类似的赞赏。&lt;/p&gt;
-&lt;p&gt;日复一日，明月圆缺，春去秋来。我身上的盔甲早已生锈，长剑也失去了光泽。瘦马嶙峋。我第一次卸下了铁甲，勒住了马。大海拦住了我的去路。回头罢。&lt;/p&gt;
-&lt;p&gt;我又怎能回头？&lt;/p&gt;
-&lt;p&gt;这时我突然意识到，自己已身在地狱里，不能自拔。&lt;br&gt;
-&lt;br /&gt;——————————————&lt;br /&gt;&lt;br&gt;
-我望着地平线那边的太阳，怔怔的出神。&lt;/p&gt;
-&lt;p&gt;夕阳将云朵染成鲜红色，美人迟暮般美丽的光让海面变成金色。几点归鸥，几叶小舟是这将夜少有的生存之景。暖风吹着我的后背，那是我拥抱不得的浪漫，它从我身后的城中逃逸，奔向属于自己的自由。&lt;/p&gt;
-&lt;p&gt;天上的星光闪烁，在未暗的天幕之中，若隐若现，一弯月牙挂在天边，亮度与残阳相比逊色了一些。&lt;/p&gt;
-&lt;p&gt;夜临了。&lt;br&gt;
-&lt;br /&gt;——————————————&lt;br /&gt;&lt;br&gt;
-寒意杀灭了一切光明与生机。山野之中，了无月华，了无月光，暗夜吞没了一切。&lt;/p&gt;
-&lt;p&gt;突然，某处闪烁着一点暖橘色的光，摇曳着微薄的影，在夜里却是那么扎眼。那是古庙的——早已断绝香火的荒破古庙——一点灯明。&lt;/p&gt;
-&lt;p&gt;古庙的门早已化为腐朽，门槛也被虫蛀得不成样子。古佛黯然无光，昔日的金壳剥落无存。供桌上的香火坛中空，红漆也褪了色。旁边放着一盏同样破烂的油灯。&lt;/p&gt;
-&lt;p&gt;一位老和尚坐在灯前，翻阅经书，泛黄的纸页上，青字如群蚁排衙。他花白的眉下，一双炯炯有神的双眼盯着书页，口中念念有词。&lt;/p&gt;
-&lt;p&gt;他忽然意识到了什么，合上书，双手合十，立起身来，挪到门口，望着远方——只有一片黑暗——出了神。&lt;/p&gt;
-&lt;p&gt;两行清泪从他眼中流下来，花白的眉毛、胡须微微颤动。&lt;/p&gt;
-&lt;p&gt;灯火摇曳，为风所灭。&lt;/p&gt;
-&lt;p&gt;黑暗中，他扶着门墙，蹲下身来，却突然体力不支仰面躺倒。&lt;/p&gt;
-&lt;p&gt;冷风哀怨着吹进古庙，翻动着经书。&lt;/p&gt;
-">幻想小段</a>
-      </div>
-      
-      <div class="item">
-        <a class="result-title" style="opacity: 0;" href="https://coder109.github.io/post/shu-zhai-xi-fang-zhe-xue-shi-luo-su/"" data-c="
-          &lt;h1 id=&#34;原子论者&#34;&gt;原子论者：&lt;/h1&gt;
-&lt;p&gt;用“目的”或者“最终因”的观念解释世界，这是苏格拉底、柏拉图、亚里士多德等大多数哲学家的做法。原子论者却与之相反，他们不用“目的”或者“最终因”解释世界。&lt;/p&gt;
-&lt;h1 id=&#34;普罗泰格拉&#34;&gt;普罗泰格拉：&lt;/h1&gt;
-&lt;p&gt;要想全心全意追求真理，就不能掺杂任何道德因素。智者们对于一切都要论证到底，直至得出结论，当然这往往使他们走向怀疑主义。&lt;/p&gt;
-&lt;p&gt;普罗泰格拉命题：“人是万物的尺度，是存在的事物存在的尺度，也是不存在的事物不存在的尺度。”&lt;/p&gt;
-&lt;h1 id=&#34;柏拉图&#34;&gt;柏拉图：&lt;/h1&gt;
-&lt;p&gt;①乌托邦思想。②理念论。③灵魂不朽论。④宇宙起源理论。⑤“回忆说”。&lt;/p&gt;
-&lt;p&gt;人类本身囚禁在自己的心里，人与人之间无法辨别彼此的真实身份。人类的经验不是现实的经验，而是存在于人类的思维之中。&lt;/p&gt;
-&lt;p&gt;一个假说如果能启发人们以一种新的方式去思考事物的话，那么，这一假说不论多么荒谬，它都是有用的。&lt;/p&gt;
-&lt;h1 id=&#34;亚里士多德&#34;&gt;亚里士多德：&lt;/h1&gt;
-&lt;p&gt;……他认为任何事物都有四种原因：质料因、形式因、动力因、目的因。……他认为，灵魂与身体的关系即形式与质料的关系，灵魂是身体的目的因。&lt;/p&gt;
-&lt;h1 id=&#34;希腊化时代&#34;&gt;希腊化时代：&lt;/h1&gt;
-&lt;p&gt;混乱必然引起道德败坏，而道德败坏更甚于知识的衰退。。当你知道你们一切储蓄明天就可能分文不值时，勤俭似乎就无用了；当你对别人诚实，别人却欺骗你时，诚实几乎也无益了……一个人的道德观如果除了琐碎的斤斤计较而没有深厚的文化底蕴，如果他还保留着勇气，他可能会成为这个世界的一个冒险家，如果他没有勇气，那他只能是一个默默无闻的怯弱的无赖。&lt;/p&gt;
-&lt;h1 id=&#34;伊壁鸠鲁&#34;&gt;伊壁鸠鲁：&lt;/h1&gt;
-&lt;p&gt;“一个人受鞭挞时也可以是幸福的”&lt;/p&gt;
-&lt;h1 id=&#34;圣奥古斯丁&#34;&gt;圣奥古斯丁：&lt;/h1&gt;
-&lt;p&gt;时间是主观的，时间存在于期望者与回忆者的精神之中。因此，如果没有被创造之物，也就不可能有时间，那么，谈论创造以前的时间是无意义的。&lt;/p&gt;
-&lt;h1 id=&#34;约翰斯各托&#34;&gt;约翰·斯各托：&lt;/h1&gt;
-&lt;p&gt;斯各托把不同的事物，有形体的和无形体的，都包括在“非有”的概念之中，只有创造者具有本质的存在，是一切事物的本质。（他反对实在论）&lt;/p&gt;
-&lt;h1 id=&#34;理智复兴安瑟勒姆&#34;&gt;理智复兴­——安瑟勒姆：&lt;/h1&gt;
-&lt;p&gt;本体论论证：可以将“上帝”定义为最大可能的思维对象。如果一个对象不存在，而另一个和它极为相似的对象存在的话，这个对象就比它更伟大。因此，任何思维对象的最伟大者必须存在，如若不然，可能就还存在一个更伟大的对象。&lt;/p&gt;
-&lt;h1 id=&#34;阿奎那&#34;&gt;阿奎那：&lt;/h1&gt;
-&lt;p&gt;五个论证：①所有运动的东西都被其它某个东西所推动，所以有一个不被推动的推动者，即上帝。&lt;/p&gt;
-&lt;p&gt;②凡是被推动的某物都是被另一个某物所推动的。&lt;/p&gt;
-&lt;p&gt;③一切必然性必然有它的最初根源。&lt;/p&gt;
-&lt;p&gt;④既然世界上存在种种完美的事物，那么，这些“完美的事      物”必定有其渊源；这些渊源就是某些至善至美的事物。&lt;/p&gt;
-&lt;p&gt;⑤无意识的自然物似乎也是朝着某个目的在活动。无意识的东 西只有当被某个有意识的东西所引导时才会朝着某个目的活动。有一个理性存在，引导着所有自然物朝向一个目的。这就是上帝。&lt;/p&gt;
-&lt;h1 id=&#34;罗吉尔培根&#34;&gt;罗吉尔·培根：&lt;/h1&gt;
-&lt;p&gt;愚昧有四种原因……②受习惯的影响。③相信无知群众的见解。&lt;/p&gt;
-&lt;h1 id=&#34;奥卡姆&#34;&gt;奥卡姆：&lt;/h1&gt;
-&lt;p&gt;奥卡姆剃刀原理：“如无必要，勿增实体。”&lt;/p&gt;
-&lt;h1 id=&#34;教皇制的衰落&#34;&gt;教皇制的衰落：&lt;/h1&gt;
-&lt;p&gt;人类经过了数世纪的禁欲主义，而今它已被艺术、诗歌和快乐的喧嚣代替了。旧时代的恐怖，已经吓不了人了，新的、精神的自由使人们如痴如醉。这是一种消除了恐惧的陶醉。在这个人类解放的快乐时刻，近代世界诞生了。&lt;/p&gt;
-&lt;h1 id=&#34;培根&#34;&gt;培根：&lt;/h1&gt;
-&lt;p&gt;如果完全无条件相信单纯枚举归纳，很可能得出错误结论。&lt;/p&gt;
-&lt;h1 id=&#34;霍布斯&#34;&gt;霍布斯：&lt;/h1&gt;
-&lt;p&gt;人类的结合是通过社会契约发生的。&lt;/p&gt;
-&lt;p&gt;人类给自己加上约束，有一个重大理由，那就是当爱好个人自由和爱好支配旁人的矛盾激化后，在引起总体混战里得到自我保护。&lt;/p&gt;
-&lt;h1 id=&#34;笛卡尔&#34;&gt;笛卡尔：&lt;/h1&gt;
-&lt;p&gt;感官知觉的知识是可以被怀疑的……认识外界事物只能靠精神感知，不可凭感官。&lt;/p&gt;
-&lt;p&gt;“我思故我在”：当我怀疑一切事物的存在时，我却不用怀疑我本身的思想，因为此时我唯一可以确定的事就是我自己思想的存在。……“我”的一切本性或本质在于思维作用，不需要以场所或物质事物作为存在前提。&lt;/p&gt;
-&lt;p&gt;他承认神、精神、物质是三个实体，并认为广延性是物质的本质。（广延性：凡是物质必然占据空间）&lt;/p&gt;
-&lt;h1 id=&#34;斯宾诺莎&#34;&gt;斯宾诺莎：&lt;/h1&gt;
-&lt;p&gt;神是一切事物的“内因”……所以物质世界中的任何事物都不是独立存在的，都受某种绝对的逻辑必然性支配。&lt;/p&gt;
-&lt;p&gt;人屈从于感情，有如套上了枷锁；只有运用理智，人才有自由。&lt;/p&gt;
-&lt;h1 id=&#34;莱布尼茨&#34;&gt;莱布尼茨：&lt;/h1&gt;
-&lt;p&gt;①本体论论证：任何一个人或事物，一方面它存在，另一方面由于它固有的性质，构成它的本质。&lt;/p&gt;
-&lt;p&gt;②宇宙论论证：必须把一切事物设定一个“无因的原因”。&lt;/p&gt;
-&lt;p&gt;③永恒真理说论证&lt;/p&gt;
-&lt;p&gt;④前定和谐说论证&lt;/p&gt;
-&lt;h1 id=&#34;卢梭&#34;&gt;卢梭：&lt;/h1&gt;
-&lt;p&gt;社会契约论：我们每人把自己的人身与财产共同置于总意志的最高指导之下，我们把每个成员理解为整体的不可分割的一部分。&lt;/p&gt;
-&lt;h1 id=&#34;浪漫主义&#34;&gt;浪漫主义：&lt;/h1&gt;
-&lt;p&gt;人性的本质是自利的。出于自利原因，人类选择了群居，但在本质上一直非常孤独。&lt;/p&gt;
-&lt;h1 id=&#34;洛克&#34;&gt;洛克：&lt;/h1&gt;
-&lt;p&gt;“启示必须由理性裁断。”&lt;/p&gt;
-&lt;p&gt;追求现时快乐或者避免痛苦是人类永远的动机。&lt;/p&gt;
-&lt;p&gt;道德上的善或恶，仅仅是我们自愿的行为与某种法则的一致或冲突。&lt;/p&gt;
-&lt;h1 id=&#34;休谟&#34;&gt;休谟：&lt;/h1&gt;
-&lt;p&gt;盖然性：靠非论证性推论从经验的资料所得到的不确实的知识。→怀疑主义&lt;/p&gt;
-&lt;h1 id=&#34;康德&#34;&gt;康德：&lt;/h1&gt;
-&lt;p&gt;再没有任何事情会比人的行为要服从他人的意志更可怕了。&lt;/p&gt;
-&lt;p&gt;①分析命题：谓语是主语一部分的命题。是矛盾规律的归结。&lt;/p&gt;
-&lt;p&gt;②综合命题：不是通过分析得来的命题。一切综合命题通过经验才知道。&lt;/p&gt;
-&lt;p&gt;③经验命题：除借助于感官之外人们无法知道的命题。&lt;/p&gt;
-&lt;p&gt;④先天命题：由经验虽然可以把它引申出来，但一旦认识了它，就发现它无经验以外的其他基础。纯数学里的所有命题都是先天命题。&lt;/p&gt;
-&lt;p&gt;时间和空间是感性的先天形式；因果性等十二个范畴是知识固有的先天形式。&lt;/p&gt;
-&lt;p&gt;二律背反：困于两个相互矛盾的命题。&lt;/p&gt;
-&lt;p&gt;一切道德概念都先天的寓于理性，来源于理性。&lt;/p&gt;
-&lt;h1 id=&#34;康德道德形而上学&#34;&gt;康德《道德形而上学》：&lt;/h1&gt;
-&lt;p&gt;命令分为有条件的（假言）和无条件的（定言），前者只是为达到某个具体目的的技术性的明智的劝告，……后者则是道德上的“绝对命令”，它唯一的原则只是实践理性本身……这种表达方式……未考虑行为的实质性动机。&lt;/p&gt;
-&lt;p&gt;知识的产生需要时间、空间和范畴三个要件。&lt;/p&gt;
-&lt;h1 id=&#34;黑格尔&#34;&gt;黑格尔：&lt;/h1&gt;
-&lt;p&gt;凡是合乎理性的东西都是现实的，凡是现实的东西都是合乎理性的。&lt;/p&gt;
-&lt;p&gt;任何不合理的事物，即因其不合理，便不得认作现实。&lt;/p&gt;
-&lt;p&gt;任何事物若不是关于整体“实在”的，就不可能是实际真实确切的。&lt;/p&gt;
-">【书摘】西方哲学史——罗素</a>
-      </div>
-      
-      <div class="item">
-        <a class="result-title" style="opacity: 0;" href="https://coder109.github.io/post/zui-sheng-meng-si/"" data-c="
-          &lt;p&gt;此时的我，正和小W（她是我的朋友，极其文静的女孩子。）一起坐在沙丘上，身后是万千高楼林立。夜微凉，月光洒在白沙上，给人一种似梦似幻的感觉。&lt;/p&gt;
-&lt;p&gt;我觉着无聊，看了看小W。她望着远方，眼神里满是忧郁。&lt;/p&gt;
-&lt;p&gt;“这世界究竟有什么意义呢？”她先开口问道。声音是那么的浅，那么的淡。&lt;/p&gt;
-&lt;p&gt;“你为什么要说这个？”我有些困惑，问道。&lt;/p&gt;
-&lt;p&gt;“我很迷茫，对这世界....一切的一切。”那微弱的声音在风里有些模糊。&lt;/p&gt;
-&lt;p&gt;“你搞明白这些有什么用呢？有的时候活的不清楚，反倒有好处。”说完这话，自己便后悔了。我明显看见她眼中的光越发的暗淡。&lt;/p&gt;
-&lt;p&gt;“人这一生，不就是一个从无到有...再到无的过程么？追求那么多....有什么意义呢？一切都是虚无啊。为了虚无而存在，不免有些....追求什么都是无意义的，真是悲哀。”她对我说，也许只是自言自语罢了。&lt;/p&gt;
-&lt;p&gt;风渐渐小了。我抬起头，望着月亮。一部分月亮被云遮住，光影变幻。&lt;/p&gt;
-&lt;p&gt;“那既然毫无意义，就自己赋予一个意义吧。为了虚无而忧郁，不也是很令人悲哀的一件事么。活的那么清楚，非要深究到底，也是毫无意义的。不如欺骗自己，开开心心的，不好么？”我的思考突然加快。&lt;/p&gt;
-&lt;p&gt;“你知道这是欺骗自己。这只是麻痹自己的方法，这些问题总会在你的心底安居的，在你无助的时候，抑郁的时候跑出来折磨你。”她说道，“它们会让你极其的痛苦，会让你贬低你的价值，会让你一时间不知所措。悲观的虚无主义。”&lt;/p&gt;
-&lt;p&gt;我无言以对。&lt;/p&gt;
-&lt;p&gt;就在这时，我突然意识到:我从未去过沙漠，也没去过沙漠中的都市。一切开始崩坏。那月，那城，那小W的脸，一时间都化为碎片零落。&lt;/p&gt;
-&lt;p&gt;我惊醒了，此时正趴在电脑桌上。&lt;/p&gt;
-&lt;p&gt;窗户半开着，冷风涌入。&lt;/p&gt;
-">醉生梦死</a>
-      </div>
-      
-      <div class="item">
-        <a class="result-title" style="opacity: 0;" href="https://coder109.github.io/post/ji-meng/"" data-c="
-          &lt;p&gt;幻梦？遥远的乌托邦。&lt;/p&gt;
-&lt;p&gt;秽土中生长的，是邪恶，是日复一日——&lt;/p&gt;
-&lt;p&gt;腐烂与残败的交响。&lt;/p&gt;
-&lt;br /&gt;
-&lt;p&gt;万亿世代中的璀璨星河，&lt;/p&gt;
-&lt;p&gt;如今化作黑白与谁成说？&lt;/p&gt;
-&lt;p&gt;幻觉中的晨雾是心上的纱帐，&lt;/p&gt;
-&lt;p&gt;虚无的悲叹，是为了消失的信仰。&lt;/p&gt;
-&lt;br /&gt;
-&lt;p&gt;违心的梦啊，月中无奈的捣药声。&lt;/p&gt;
-&lt;p&gt;清醒的恶啊，风里绝望的唱诗班。&lt;/p&gt;
-&lt;p&gt;眼前毫无血色的脸，&lt;/p&gt;
-&lt;p&gt;是我，是他，是万物的死与生。&lt;/p&gt;
-">记梦</a>
-      </div>
-      
-      <div class="item">
-        <a class="result-title" style="opacity: 0;" href="https://coder109.github.io/post/shu-zhai-lesslessxi-fang-shen-mi-xue-zhi-jin-greatergreater-di-yi-er-zhang-wu-te-ha-nei-he-la-fu/"" data-c="
-          &lt;h1 id=&#34;第一章&#34;&gt;第一章：&lt;/h1&gt;
-&lt;p&gt;在费弗尔本人看来，西方神秘学的最佳原型可见于现代早期文化——大致从16世纪的帕拉塞尔苏斯到浪漫主义时代——所谓的基督教神智学和“自然哲学”运动。&lt;/p&gt;
-&lt;p&gt;对流行漫画或角色扮演游戏中“超能力”的迷恋乃是“神圣者”在当代大众文化中显示自己的一个重要例子。&lt;/p&gt;
-&lt;p&gt;它基于这样一种信念，即确实存在着一个普遍的、隐藏的、神秘的实在维度。然而，学术方法根据定义就是“公开的”，即只能研究观测者可由经验获得的那些东西，无论其个人信念是什么；学术界没有任何工具来直接契入这个模型所假定的真实而绝对的存在，这一实在的存在性无法被证实或证伪。&lt;/p&gt;
-&lt;h1 id=&#34;第二章&#34;&gt;第二章：&lt;/h1&gt;
-&lt;p&gt;西方神秘学起源于古代晚期的希腊化文化，其标志是希腊哲学与本土宗教传统之间复杂的混合。&lt;/p&gt;
-&lt;p&gt;赫尔墨斯主义的热情拥护者必须超越单纯的理性认识和世俗牵绊，通过在一个非物质的光明灵体中重生而获得拯救和最终解脱。这个解脱和转变的终点是灵性的飞升，最终于神圣光明的至高力量幸福地合一。&lt;/p&gt;
-&lt;p&gt;通神术的合一似乎需要引发不同寻常的、迷狂或恍惚的意识状态，藉此直接经验到神。&lt;/p&gt;
-&lt;p&gt;自然魔法的一个重要部分是对所谓的隐秘性质亦即自然之中那些神秘力量的研究……它们无法用中世纪科学来解释。&lt;/p&gt;
-&lt;p&gt;占星学暗示天体是神圣的，还蕴含着一种被认为威胁了自由意志观念的普遍决定论。&lt;/p&gt;
-">【书摘】《西方神秘学指津》第一二章——乌特·哈内赫拉夫</a>
-      </div>
-      
-      <div class="item">
-        <a class="result-title" style="opacity: 0;" href="https://coder109.github.io/post/2020613/"" data-c="
-          &lt;p&gt;对待死亡的态度？虚无主义者们认为生既然是没有意义的，那么死也是没有意义的，其实万事万物都是毫无意义的。人们总是喜欢将死亡置于善的对立面，为什么呢？私以为这是一种对于无法取得价值的愤懑。哲学家们研究了很长时间，生与死，价值与虚无，疯狂与理智，超验与经验。在虚无主义者看来，这些都是毫无意义的事情。（好啰嗦啊）&lt;/p&gt;
-&lt;p&gt;自杀，不全是意志的消沉，也有可能是意志的巅峰与世界的冲突导致的不知所措。自己是一个悲观主义者，一直以来都是这样。小的时候就知道生毫无意义，抑郁的冲击。将自己关闭在一个小小的盒子里，享受孤独以及冲击灵魂的抑郁。中二？但这是真实的。痛苦让人了解到真实，让人知道自己还活着。幸福的人不能说是“活人”。&lt;/p&gt;
-&lt;p&gt;反对主流，反对一切，反对他人认为的世界。“这个世界会好吗？”。真实不一定是真实，幻觉不一定是虚幻，相对论。&lt;/p&gt;
-&lt;p&gt;“人生而自由，却又无往不在枷锁之中。”卢梭曾言。选择受限，人就不再是自由的。自己行将在不自由中消亡，行将在痛苦中终老，行将在意义与无意义的冲突中死去。我没有选择的余地，过去的已经不属于我，未来的一切又迷茫难期。研究哲学是没有意义的……爵士乐？小窗里放着的京吹马上就要结束了。很好的番剧啊……哲学，哲学。自己的思考有些混乱，理性还是非理性？无穷的追问下去总会陷入最终因的谜题之中，亚里士多德的思维迷宫。&lt;/p&gt;
-&lt;p&gt;自己的脑中有两个人，一个存在主义者，一个虚无主义者——我不了解尼采和萨特，甚至连他们的思想都不甚了解——争辩着，在一个幼稚可笑自以为是的脑中争辩着。我知道经年之后自己再去会看这些碎碎念会感到极其的可笑而浅显。&lt;/p&gt;
-&lt;p&gt;Alea jacta est.&lt;/p&gt;
-">2020/6/13</a>
-      </div>
-      
-      <div class="item">
-        <a class="result-title" style="opacity: 0;" href="https://coder109.github.io/post/ku-xing/"" data-c="
-          &lt;p&gt;“你该走下去，别停下来，别向后看。”&lt;/p&gt;
-&lt;p&gt;我的母亲在我小时候经常对我讲这句话。如今，我确在走着。&lt;/p&gt;
-&lt;p&gt;四周是飞扬的尘土，阳光被削弱了，只能感觉到黄色的微茫的光。脚下的石板路早已为沙子所掩盖。我被笼罩在一片暗黄色的世界里，密不透气。&lt;/p&gt;
-&lt;p&gt;我不知道是否有人和我一样在苦行着，也不知道自己将前往何处。唯一明了的事情就是自己该听母亲的话，走下去。&lt;/p&gt;
-&lt;p&gt;身上的旅行者披风破烂不堪，那是临行之际同乡的女孩子送给我的，轻薄但又结实耐用，但终究是在狂风中破碎了。儿时的天总是很蓝，白云朵朵，阳光普照——千里之外的家乡。我不明白为什么在我成年之际母亲要赶我出门，让我沿着石板路走下去。她甚至没有告诉我目的地在哪。&lt;/p&gt;
-&lt;p&gt;我看不见石板路了。我如今在哪？撒哈拉？也许走到了遥远的东方沙漠也说不定。自打出了家乡，我从来没有看见过一个人，甚至连动物也没见到。一开始还有蓝天，白云，清新的带着青草味道的风。后来就只剩下茫茫的灰土。&lt;/p&gt;
-&lt;p&gt;我怀念家乡的一切……或许，我该回去了？是的，我该回去了，我已经晕头转向，沙土快将我憋死了。披风的下摆已经破得不成样子。该回去了，我要去问问我的目的地在哪里……哦，不，我不能回去，母亲会生气的，她将责备我的不堪与懦弱。退一步讲我回不去了。我连自己在朝哪个方位走都不甚清楚，怎么回去呢？水壶里还有些水，还好，还好。但是粮食不够了。传说德国人的语言里有个短语，叫 Wasser und Brot ，他们似乎把面包和水看得同等重要。我只有水。德国人见了我估计要无奈吧。&lt;/p&gt;
-&lt;p&gt;我受制于当下的迷茫，下定决心返回家乡。碰碰运气也比走投无路好啊。&lt;/p&gt;
-&lt;p&gt;我转过身去，迈开步子。突然撞到了极其坚硬的物体上。那什么也没有。&lt;/p&gt;
-&lt;p&gt;突然，眼前的光景崩塌了，黄色的世界崩坏成彩色的残片分散消失，留下绝对的黑色漏洞。那风，那沙土，都被黑色的虚空吞噬。崩塌的速度很快，但是在我的近前停下了。世界以我为界限，一分为二。&lt;/p&gt;
-&lt;p&gt;是的，我回不去了。我的回忆终究是消逝了。我的家乡，母亲的低语，织披风的女孩都不见了。&lt;/p&gt;
-&lt;p&gt;我的巨大物恐惧症突然发作，促使着我跑向灰黄的沙土之中去。虚空紧追不舍。堕落的速度。我嚎叫着，哭泣着，踉跄着。不，不，那不是恐惧，那是安详的黑暗与焦虑的光明啊。&lt;/p&gt;
-&lt;p&gt;随着不安褪去，我停下了脚步。黑暗谦卑的跟在我身后，寸步不离。这是只有我一人的世界了。走过的路行将消逝，未来的路却又无迹可寻。&lt;/p&gt;
-&lt;p&gt;走下去吧。&lt;/p&gt;
-&lt;p&gt;站起身，向前走去，闭上双眼。&lt;/p&gt;
-&lt;p&gt;有一滴泪从眼中滑落。&lt;/p&gt;
-">苦行</a>
-      </div>
-      
-      <div class="item">
-        <a class="result-title" style="opacity: 0;" href="https://coder109.github.io/post/si/"" data-c="
-          &lt;p&gt;寒冷吞没了他的灵魂，&lt;/p&gt;
-&lt;p&gt;那触手可及的痛苦，&lt;/p&gt;
-&lt;p&gt;是唯一的所有物。&lt;/p&gt;
-&lt;p&gt;他，就此沉沦。&lt;/p&gt;
-&lt;br /&gt;
-&lt;p&gt;春天唯一的过冬者，&lt;/p&gt;
-&lt;p&gt;如今成了生命唯一的送葬人。&lt;/p&gt;
-&lt;p&gt;寂静，也喧闹着。&lt;/p&gt;
-&lt;p&gt;他的双眼，暗淡无神。&lt;/p&gt;
-&lt;br /&gt;
-&lt;p&gt;默不作声的人们四下散去，&lt;/p&gt;
-&lt;p&gt;绯红的花朵早已变成黑色。&lt;/p&gt;
-&lt;p&gt;这不过是另一个，&lt;/p&gt;
-&lt;p&gt;人们早已看惯的终结而已。&lt;/p&gt;
-&lt;br /&gt;
-&lt;p&gt;存在是苟活者的托词，&lt;/p&gt;
-&lt;p&gt;快乐是麻木者的借口。&lt;/p&gt;
-&lt;p&gt;上帝看惯了生与死，&lt;/p&gt;
-&lt;p&gt;世间的万物，覆水难收。&lt;/p&gt;
-">死</a>
-      </div>
-      
-      <div class="item">
-        <a class="result-title" style="opacity: 0;" href="https://coder109.github.io/post/about/"" data-c="
-          &lt;p&gt;Welcome to my blog！这里是幻，这个博客将存放我的书摘和日常的碎碎念。想要添加友链可以在友链页面评论或者发送邮件~&lt;/p&gt;
-&lt;p&gt;编程相关存放在这个博客里：https://www.cnblogs.com/coder106/&lt;/p&gt;
-&lt;h2 id=&#34;博主是谁&#34;&gt;博主是谁&lt;/h2&gt;
-&lt;p&gt;·来自某三线小城的高三学生，化竞退役党，哲学、艺术、文学爱好者（只能算是一个爱好者），运动废柴。性格被说过像女孩子。&lt;/p&gt;
-&lt;p&gt;·在学CSS，python，js和C++，但都不是太熟练。&lt;/p&gt;
-&lt;p&gt;·会点德语，仅限于Guten Morgen（早上好），Auf Wiedersehen（再见）这种程度；韩语只会读和初级的应用。&lt;/p&gt;
-&lt;p&gt;·据测试为INFP人格&lt;/p&gt;
-&lt;p&gt;·东方死忠粉，邦邦人。&lt;/p&gt;
-&lt;p&gt;·极度追求隐私。窃取他人隐私是极度不道德的行为。&lt;/p&gt;
-&lt;p&gt;·不常看番，看也只是看老番。对二次元逐渐失去兴趣。&lt;/p&gt;
-&lt;p&gt;·曾学过一点神秘学，仅限于冥想和灵摆初级使用。&lt;/p&gt;
-&lt;p&gt;·指弹初学者，苦练《无题》ing...&lt;/p&gt;
-&lt;p&gt;·PolitiScales测试结果：&lt;br&gt;
-&lt;img src=&#34;https://coder109.github.io/post-images/1603515975495.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;/p&gt;
-&lt;h2 id=&#34;兴趣爱好&#34;&gt;兴趣爱好&lt;/h2&gt;
-&lt;p&gt;·阅读，睡觉，弹弹琴。&lt;/p&gt;
-&lt;p&gt;·音乐：古典乐、蒸汽波&lt;/p&gt;
-&lt;p&gt;·自学自己喜欢的东西&lt;/p&gt;
-&lt;p&gt;·打羽毛球&lt;/p&gt;
-&lt;h2 id=&#34;极其厌恶的东西&#34;&gt;极其厌恶的东西&lt;/h2&gt;
-&lt;p&gt;·自以为是、高高在上的权威&lt;/p&gt;
-&lt;p&gt;·道德绑架、性别歧视（不只是对女性的歧视）&lt;/p&gt;
-&lt;p&gt;·随意干涉他人自由的人&lt;/p&gt;
-&lt;p&gt;·未经学习就对某一领域评头论足的人&lt;/p&gt;
-&lt;p&gt;·找bug最后发现是极其低级的错误&lt;/p&gt;
-&lt;h2 id=&#34;有关建站&#34;&gt;有关建站&lt;/h2&gt;
-&lt;p&gt;·博客采用github+Gridea方式&lt;/p&gt;
-&lt;p&gt;·Gridea主题为NexT（https://github.com/hsxyhao/gridea-theme-next）&lt;/p&gt;
-&lt;h2 id=&#34;联系我呀&#34;&gt;联系我呀&lt;/h2&gt;
-&lt;p&gt;电邮地址：coder109@qq.com&lt;/p&gt;
-">关于</a>
-      </div>
-      
-    </div>
-    <div class="page">
-      <div id="page_ul"></div>
-    </div>
-  </div>
-</div>
+
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js"></script>
 <script>
-  !function () {
-    let searchMask = document.querySelector('#search_mask');
-    let result = document.querySelector('#result');
-    let items = document.querySelectorAll('.item');
-    let searchBox = document.querySelector('#search');
-    let statCount = document.querySelector('#stat_count');
-    let statTimes = document.querySelector('#stat_times');
-    let pageUl = document.querySelector('#page_ul');
-    let close = document.querySelector('#close');
-    
-    close.addEventListener('click', function() {
-      searchMask.style = 'display: none;'
-    })
-
-    let finds = [];
-    let contents = [];
-    let pageSize = 10;
-    items.forEach(item => {
-      let a = item.querySelector('a');
-      contents.push({
-        title: a.innerText,
-        details: a.dataset.c,
-        link: a.href
-      })
-      item.remove();
-    })
-
-    function insertStr(soure, start, count) {
-      let newStr = soure.substr(start, count);
-      return soure.slice(0, start) + '<em>' + newStr + '</em>' + soure.slice(start + count);
-    }
-
-    pageUl.addEventListener('click', function(event) {
-      let target = event.target;
-      if (target.__proto__ === HTMLSpanElement.prototype) {
-        appendResults(parseInt(target.dataset.i));
-      }
-    })
-
-    function appendResults(index) {
-      let htmlResult = '';
-      let start = index || 0;
-      let end = Math.min(start + pageSize, finds.length);
-      for (let i = start; i < end; i++) {
-        const current = finds[i];
-        let html = current.title;
-        let sum = 0;
-        let positions = current.positions;
-        positions.forEach(position => {
-          html = insertStr(html, position.start + sum, position.count);
-          sum += 9;
-        })
-        htmlResult += `<div class="item"><a class="result-title" href="${current.link}">${html}</a></div>`;
-      }
-      result.innerHTML = htmlResult;
-      pageUl.innerHTML = '';
-      let count = finds.length / pageSize;
-      let lis = '';
-      if (start !== 0) {
-        lis += `<span class="fa fa-angle-left" data-i='${start - 1}'></span>`;
-      }
-      for (let i = 0; i < count; i++) {
-        lis += `<span class='${i === start?'current':''}' data-i='${i}'>${i+1}</span>`;     
-      }
-      if (start+1 < count) {
-        lis += `<span class="fa fa-angle-right" data-i='${start+1}'></span>`;  
-      }
-      pageUl.innerHTML = lis;
-    }
-
-    function search(delay) {
-      let timer = null
-      return function () {
-        clearTimeout(timer)
-        timer = setTimeout(() => {
-          let start = Date.now();
-          let segments = searchBox.value.split(' ').filter(c => c != '');
-          if (segments.length <= 0) {
-            return;
-          }
-          finds = [];
-          let htmlResult = '';
-          contents.forEach(content => {
-            let title = content.title;
-            let positions = [];
-            let find = false;
-            segments.forEach((segment) => {
-              if (content.title.includes(segment)) {
-                find = true;
-                positions.push({
-                  start: content.title.indexOf(segment),
-                  count: segment.length
-                })
-              } else if (content.details.includes(segment)) {
-                find = true;
-              }
-            });
-            if (find) {
-              finds.push({
-                title: content.title,
-                link: content.link,
-                positions
-              });
-            }
-          })
-          appendResults(0);
-          statCount.textContent = finds.length;
-          statTimes.textContent = Date.now() - start;
-        }, delay)
-      }
-    }
-    searchBox.addEventListener('input', search(200));
-  }()
+    var aplayerid = "599284645";
+    var aplayerserver = "netease";
+    var aplayerorder = "random";
+    var aplayerautoplay = "false";
+    var aplayer = $("#myaplayer");
+    aplayer.attr("server",aplayerserver);
+    aplayer.attr("id",aplayerid);
+    aplayer.attr("order",aplayerorder);
+    if(aplayerautoplay=="true")
+        aplayer.attr("autoplay","true");
 </script>
 
-<input hidden id="copy" />
-<script>
-  let language = '';
-  if (language !== '') {
-    let map = new Map();
-    if (language === 'en') {
-      map.set('search', 'Search');
-      map.set('category', 'Categories');
-      map.set('article', 'Articles');
-      map.set('tag', 'Tags');
-      map.set('top', 'Top');
-      map.set('publish', 'published');
-      map.set('minute', ' minutes');
-      map.set('read-more', 'Read More');
-      map.set('view', 'View');
-      map.set('words', ' words');
-      map.set('category-in', 'category in');
-      map.set('preview', 'Meta');
-      map.set('index', 'Toc');
-      map.set('no-archives', "You haven't created yet");
-      map.set('archives', " articles in total");
-      map.set('cloud-tags', " tags in total");
-      map.set('copyright', "Copyright: ");
-      map.set('author', "Author: ");
-      map.set('link', "Link: ");
-      map.set('leave-message', "Leave a message");
-      map.set('format', "Links Format");
-      map.set('site-name', "Name: ");
-      map.set('site-link', "Link: ");
-      map.set('site-desc', "Desc: ");
-      map.set('stat', " related results, taking ");
-      map.set('stat-time', " ms");
-      map.set('site-img', "Image: ");
-    }
+<script src="https://cdn.jsdelivr.net/gh/850552586/ericamcdn@0.1/js/Aplayer.min.js"></script>
+<!-- require MetingJS -->
+<script src="https://cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js"></script>
 
-    if (map.size > 0) {
-      let lanElems = document.querySelectorAll('.language');
-      lanElems.forEach(elem => {
-        let lan = elem.dataset.lan, text = map.get(lan);
-        if (elem.__proto__ === HTMLInputElement.prototype) {
-          elem.placeholder = text
-        } else {
-          if (elem.dataset.count) {
-            text = elem.dataset.count + text;
-          }
-          elem.textContent = text;
+<script>
+    function aplayerbtnInit(){
+        var player = document.querySelectorAll('meting-js')[0].aplayer;
+        player.lrc.hide();
+        var mbabtn = $("#mbaplayer");
+        if(player.paused==false)
+        {
+            mbabtn.removeClass("fa-play-circle-o");
+            mbabtn.addClass("fa-pause-circle");
         }
-      })
+        else
+        {
+            mbabtn.addClass("fa-play-circle-o");
+            mbabtn.removeClass("fa-pause-circle");
+        }
+    }
+
+    function aplayerPlay(){
+        var player = document.querySelectorAll('meting-js')[0].aplayer;
+        var mbabtn = $("#mbaplayer");
+        if(player.paused==true)
+        {
+            player.play();
+            mbabtn.removeClass("fa-play-circle-o");
+            mbabtn.addClass("fa-pause-circle");
+        }
+        else
+        {
+            player.pause();
+            mbabtn.addClass("fa-play-circle-o");
+            mbabtn.removeClass("fa-pause-circle");
+        }
+    }
+</script>
+            
+        </div>
+        <div id="bg">
+        </div>
+        <div id="bgchoice" style="display: none">link
+            </div>
+            
+            <div id="bgurl" style="display:none">https://images.wallpaperscraft.com/image/girl_bike_night_140306_1280x720.jpg</div>
+               
+    </div>
+
+
+    <!-- 响应式布局，针对手机端内容显示 -->
+    <div class="nav-small">
+        <head>
+  <!-- 引入Bootstrap核心样式文件 -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/850552586/ericamcdn@0.1/css/bootstrap.min.css">
+</head>
+<style>
+  @media screen and (max-width:1200px) and (min-width: 768px) {
+    @media (min-width: 768px) {
+      .navbar-nav {
+        float: right;
+        margin: 0;
+      }
     }
   }
-  //拿来主义(真香)^_^，Clipboard 实现摘自掘金 https://juejin.im/post/5aefeb6e6fb9a07aa43c20af
-  window.Clipboard = (function (window, document, navigator) {
-    var textArea,
-      copy;
-
-    // 判断是不是ios端
-    function isOS() {
-      return navigator.userAgent.match(/ipad|iphone/i);
-    }
-    //创建文本元素
-    function createTextArea(text) {
-      textArea = document.createElement('textArea');
-      textArea.value = text;
-      textArea.style.width = 0;
-      textArea.style.height = 0;
-      textArea.clientHeight = 0;
-      textArea.clientWidth = 0;
-      document.body.appendChild(textArea);
-    }
-    //选择内容
-    function selectText() {
-      var range,
-        selection;
-
-      if (isOS()) {
-        range = document.createRange();
-        range.selectNodeContents(textArea);
-        selection = window.getSelection();
-        selection.removeAllRanges();
-        selection.addRange(range);
-        textArea.setSelectionRange(0, 999999);
-      } else {
-        textArea.select();
-      }
-    }
-
-    //复制到剪贴板
-    function copyToClipboard() {
-      try {
-        document.execCommand("Copy")
-      } catch (err) {
-        alert("复制错误！请手动复制！")
-      }
-      document.body.removeChild(textArea);
-    }
-
-    copy = function (text) {
-      createTextArea(text);
-      selectText();
-      copyToClipboard();
-    };
-
-    return {
-      copy: copy
-    };
-  })(window, document, navigator);
-
-  function copyCode(e) {
-    if (e.srcElement.tagName === 'SPAN' && e.srcElement.classList.contains('copy-code')) {
-      let code = e.currentTarget.querySelector('code');
-      var text = code.innerText;
-      if (e.srcElement.textContent === '复制成功') {
-        console.log('复制操作频率过高');
-        return;
-      }
-      e.srcElement.textContent = '复制成功';
-      (function (elem) {
-        setTimeout(() => {
-          if (elem.textContent === '复制成功') {
-            elem.textContent = '复制代码'
-          }
-        }, 1000);
-      })(e.srcElement)
-      Clipboard.copy(text);
+  @media screen and (max-width:768px){
+    .mbapspan{
+      padding: 0;
     }
   }
+</style>
 
-  let pres = document.querySelectorAll('pre');
-  pres.forEach(pre => {
-    let code = pre.querySelector('code');
-    let copyElem = document.createElement('span');
-    copyElem.classList.add('copy-code');
-    copyElem.textContent = '复制代码';
-    pre.appendChild(copyElem);
-    pre.onclick = copyCode
+<body>
+  <nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container-fluid">
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#barmenu"
+          aria-expanded="false" id="barbutton">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="https://coder109.github.io">幻&nbsp;&nbsp;|</a>
+        <span class="navbar-brand mbapspan"><i id="mbaplayer" class="fa fa-play-circle-o" aria-hidden="true"
+            style="font-size: 28px;top: 12px;position: absolute;" onclick="aplayerPlay();"></i></span>
+      </div>
+
+      <!-- Collect the nav links, forms, and other content for toggling -->
+      <div class="collapse navbar-collapse" id="barmenu">
+        <ul class="nav navbar-nav">
+          
+          
+          <li>
+            <a href="/">
+              首页
+            </a>
+          </li>
+          
+          
+          
+          <li>
+            <a href="/archives">
+              归档
+            </a>
+          </li>
+          
+          
+          
+          <li>
+            <a href="/post/about">
+              关于
+            </a>
+          </li>
+          
+          
+          
+          <li>
+            <a href="https://coder109.github.io/tags">
+              分类
+            </a>
+          </li>
+          
+          
+          
+          <li><a href="https://coder109.github.io/talk">说说</a></li>
+          
+          
+          <li><a href="https://coder109.github.io/friends">友链</a></li>
+
+          
+        </ul>
+      </div><!-- /.navbar-collapse -->
+    </div><!-- /.container-fluid -->
+  </nav>
+
+
+  <!-- 引入jQuery核心js文件 -->
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js"></script>
+  <script>
+  var btstate = false;
+  var bt = $("#barbutton");
+  var bm = $("#barmenu");
+  bt.click(function(){
+    dropdown();
   })
+  function dropdown(){
+    console.log(btstate);
+    //下拉
+    if(btstate==false){
+      bt.removeClass("collapsed");
+      bt.attr("aria-expanded","true");
+      bm.attr("aria-expanded","true")
+      bm.fadeIn(700);
+      btstate = true;
+    }
+    else{
+      bt.addClass("collapsed");
+      bt.attr("aria-expanded","false");
+      bm.removeClass("in");
+      bm.hide();
+      bm.attr("aria-expanded","false");
+      btstate = false;
+    }
+  }
+  </script> 
+</body>
+            <div style="margin-top:50px"></div>
+            <link rel="stylesheet" href="https://coder109.github.io/media/css/font-awesome.css">
+<div class="tag-container">
+    
+    <div class="postshow">
+        
+        <div id="post" style="width:100%">
+            <img src="https://w.wallhaven.cc/full/6q/wallhaven-6qqd5l.png" class="postimage"
+                onclick="window.location.href= 'https://coder109.github.io/post/shou-ji-guo-ji-ge-wan-zheng-ban-ge-ci/';return false">
+            <div class="posttitlebox">
+                <div class="posttitle" onclick="window.location.href= 'https://coder109.github.io/post/shou-ji-guo-ji-ge-wan-zheng-ban-ge-ci/';return false">
+                    【收集】国际歌完整版歌词
+                </div>
+            </div>
+        </div>
+        <div class="postinfo">
+            <div class="postdate"><i class="fa fa-calendar"></i>2020-11-15</div>
+            <div class="poststatus postdate"><i class="fa fa-clock-o"></i> 3 min read</div>
+            <div class="posttag">
+                
+                <a href="https://coder109.github.io/tag/mingTE1TB/" class="postlink">
+                    <i class="fa fa-tag"></i> 收集
+                </a>
+                
+            </div>
+        </div>
+        
+</div>
 
-</script>
-<script src="/media/js/motion.js"></script>
+    <div class="postshow">
+        
+        <div id="post" style="width:100%">
+            <img src="https://w.wallhaven.cc/full/47/wallhaven-472kyo.png" class="postimage"
+                onclick="window.location.href= 'https://coder109.github.io/post/shou-ji-you-ji-za-huan-hua-he-wu/';return false">
+            <div class="posttitlebox">
+                <div class="posttitle" onclick="window.location.href= 'https://coder109.github.io/post/shou-ji-you-ji-za-huan-hua-he-wu/';return false">
+                    【收集】有机杂环化合物
+                </div>
+            </div>
+        </div>
+        <div class="postinfo">
+            <div class="postdate"><i class="fa fa-calendar"></i>2020-10-31</div>
+            <div class="poststatus postdate"><i class="fa fa-clock-o"></i> 0 min read</div>
+            <div class="posttag">
+                
+                <a href="https://coder109.github.io/tag/mingTE1TB/" class="postlink">
+                    <i class="fa fa-tag"></i> 收集
+                </a>
+                
+            </div>
+        </div>
+        
+</div>
 
-<script src="https://cdn.jsdelivr.net/gh/cferdinandi/smooth-scroll/dist/smooth-scroll.polyfills.min.js"></script>
-<script>
-  var scroll = new SmoothScroll('a[href*="#"]', {
-    speed: 200
-  });
-</script>
+    <div class="postshow">
+        
+        <div id="post" style="width:100%">
+            
+            <img src="https://ae01.alicdn.com/kf/H0c7d77e78912497e9bfdec2d08ff6d9fb.jpg" class="postimage"
+                onclick="window.location.href= 'https://coder109.github.io/post/shou-ji-bei-yue-yin-biao-zi-mu/';return false">
+            
+        <div class="posttitlebox">
+            <div class="posttitle" onclick="window.location.href= 'https://coder109.github.io/post/shou-ji-bei-yue-yin-biao-zi-mu/';return false">
+            【收集】北约音标字母
+        </div>
+    </div>
+</div>
+<div class="postinfo">
+    <div class="postdate"><i class="fa fa-calendar"></i>2020-08-08</div>
+    <div class="poststatus postdate"><i class="fa fa-clock-o"></i> 1 min read</div>
+    <div class="posttag">
+        
+        <a href="https://coder109.github.io/tag/mingTE1TB/" class="postlink">
+            <i class="fa fa-tag"></i> 收集
+        </a>
+        
+    </div>
+</div>
 
+</div>
 
-
-<script src="/media/js/cool.js"></script>
-
+</div>
+            <div class="pagination-container">
+                
+                
+            </div>
+        </div>
+        <div id="landlord">
+            <div class="message" style="opacity:0"></div>
+            <canvas id="live2d" width="240" height="250" class="live2d"></canvas>
+        </div>
+        <div id="domainname" style="display:none">https://coder109.github.io</div>
+</body>
 
 </html>
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js"></script>
+
+<script type="text/javascript">
+    var message_Path = '/live2d/'
+    var home_Path = document.getElementById("domainname").innerHTML + "/"; //此处修改为你的域名，必须带斜杠
+</script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/850552586/ericamcdn@0.1/js/live2d.js"></script>
+<script type="text/javascript" src="https://coder109.github.io/media/live2d/js/message.js"></script>
+<script type="text/javascript">
+    loadlive2d("live2d", "https://coder109.github.io/media/live2d/assets/tororo.model.json");
+</script>
+
+
+<script>
+        var bgchoice=$('#bgchoice').html();
+        var bg = $('#bg');
+        var bgurl = document.getElementById("bgurl").innerHTML;
+        if(bgchoice=='default')
+            for (var i = 0; i < 3; i++)
+                bgurl = bgurl.replace("\\", "/");
+        bg.css("background", "url('" + bgurl + "')");
+
+        window.onload = function(){
+            aplayerbtnInit();
+        }
+</script>
