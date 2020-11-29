@@ -86,7 +86,7 @@
                   
                 <li><a href="https://coder109.github.io/friends" style="color:white">友链</a></li>
                 
-                  <li><img src="https://coder109.github.io/images/avatar.png?v=1606617168540" alt=""
+                  <li><img src="https://coder109.github.io/images/avatar.png?v=1606632256326" alt=""
                 class="menutopavatar"></li>
             </ul>
         </div><!-- /.navbar-collapse -->
@@ -500,7 +500,7 @@
     add();
 
     function get() {
-        var t = JSON.parse('[{"author":"幻","img":"","text":"人们大多是因为焦虑才读书的吧。","time":"2020/11/22"},{"author":"幻","img":"","text":"一大群人在操场上做着一样的事倒蛮有意思，也许应该留一篇练习作文，题目就叫《如何批量生产机器人》。","time":"2020/11/22"},{"author":"幻的朋友","img":"","text":"我恐惧这种一眼能望得到头的生活，想逃离却又无路可走。","time":"2020/11/29"}]');
+        var t = JSON.parse('[{"author":"幻","img":"","text":"人们大多是因为焦虑才读书的吧。","time":"2020/11/22"},{"author":"幻","img":"","text":"一大群人在操场上做着一样的事倒蛮有意思，也许应该留一篇练习作文，题目就叫《如何批量生产机器人》。","time":"2020/11/22"},{"author":"幻的朋友","img":"","text":"我恐惧这种一眼能望得到头的生活，想逃离却又无路可走。","time":"2020/11/29"},{"author":"《1984》","img":"","text":"战争不仅完成了必要的毁坏，而且所用方式在心理上是可以接受的。原则上，要浪费世上的剩余劳动力，尽可以修庙宇、盖殿堂、筑金字塔，挖了地洞再埋上，甚至先生产大量物品然后再付诸一炬。但这只能为等级社会提供经济基础，而不能提供感情基础。","time":"2020/11/29"}]');
         talkindex = t.length - 1;
         for (var i = t.length - 1; i >= 0; i--) {
             var d = {};
@@ -532,7 +532,7 @@
                 <img src="' + talks[i].img + '" class="talkimg"> \
                 <div class="ainfo">\
                     <div class="ainfo-intro">\
-                        <img class="intro1" src="https://coder109.github.io/images/avatar.png?v=1606617168540">\
+                        <img class="intro1" src="https://coder109.github.io/images/avatar.png?v=1606632256326">\
                         <div class="author">' + talks[i].author + '</div>·\
                         <div class="time">' + talks[i].time + '</div>\
                     </div>\
@@ -545,7 +545,7 @@
             <div class="talk" v-for="t in talks"> \
                 <div class="ainfo">\
                     <div class="ainfo-intro">\
-                        <img class="intro1" src="https://coder109.github.io/images/avatar.png?v=1606617168540">\
+                        <img class="intro1" src="https://coder109.github.io/images/avatar.png?v=1606632256326">\
                         <div class="author">' + talks[i].author + '</div>·\
                         <div class="time">' + talks[i].time + '</div>\
                     </div>\
