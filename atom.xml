@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://coder109.github.io</id>
     <title>幻</title>
-    <updated>2020-11-29T07:11:37.218Z</updated>
+    <updated>2020-12-06T02:09:44.258Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://coder109.github.io"/>
     <link rel="self" href="https://coder109.github.io/atom.xml"/>
@@ -10,6 +10,66 @@
     <logo>https://coder109.github.io/images/avatar.png</logo>
     <icon>https://coder109.github.io/favicon.ico</icon>
     <rights>All rights reserved 2020, 幻</rights>
+    <entry>
+        <title type="html"><![CDATA[流浪者]]></title>
+        <id>https://coder109.github.io/post/liu-lang-zhe/</id>
+        <link href="https://coder109.github.io/post/liu-lang-zhe/">
+        </link>
+        <updated>2020-12-06T02:08:34.000Z</updated>
+        <content type="html"><![CDATA[<p>渴睡人眼中闪着暗淡的光，<br>
+怅望——<br>
+碧蓝的苍穹，飞鸟翱翔，<br>
+他半张着口，冷风吹入玻璃窗。</p>
+<p>他不相信夜半灯火中模糊的梦，<br>
+不相信纸页飞舞间只有分数一场，<br>
+不相信那年长人口中的缥缈理想，<br>
+他半张着口，冷风吹入玻璃窗。</p>
+<p>他坚信心底的信念，<br>
+追随那木琴匣中陈旧的芬芳，<br>
+他挣扎着、奔跑着、厮杀着，<br>
+却在与友人的对谈中陷入迷茫。</p>
+<p>他出生时带着纸、带着火把、带着希望——<br>
+带着他人的希冀而归于流浪，<br>
+不相信一切，却仍未颓唐，<br>
+他似乎清楚未来模糊的方向。</p>
+<p>他半张着口，冷风吹入玻璃窗，<br>
+迟暮的灯火取代了已逝的阳光，<br>
+他揉了揉眼，拾起了笔，<br>
+追求那充满诗和艺术的远方。</p>
+<p>他的身旁是嫉妒，是友情，是哀叹，是希望，<br>
+但那渴睡人没有在意，<br>
+他拾起了火把，关上了窗，<br>
+向那世界尽头流浪。</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[世界影]]></title>
+        <id>https://coder109.github.io/post/shi-jie-ying/</id>
+        <link href="https://coder109.github.io/post/shi-jie-ying/">
+        </link>
+        <updated>2020-12-06T01:55:37.000Z</updated>
+        <content type="html"><![CDATA[<h3 id="一">一</h3>
+<p>阳光欹斜着洒进我的屋，<br>
+寒冷的秋风将书页吹拂，<br>
+邻家的学子返回家中，<br>
+铁门碰撞，昭示这一天的迟暮。</p>
+<p>我看着落木旋飞在空中，<br>
+听见汽车驶过柏油路，<br>
+这一切终将无限轮回，<br>
+夕阳，明日的天幕。</p>
+<h3 id="二">二</h3>
+<p>他看见窗外的灯火忽明忽暗，<br>
+漫天的星斗旋转，<br>
+看见车水马龙的街衢里，<br>
+那迷茫的孩子，<br>
+悲泣那夜风里的离散。</p>
+<h3 id="三">三</h3>
+<p>他看见诗文被弃掷于地，燃烧<br>
+火光照亮了文字的归期，<br>
+于金钱上交媾的人，<br>
+享受着腥臭的快意。</p>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[2020/11/22]]></title>
         <id>https://coder109.github.io/post/20201122/</id>
@@ -435,35 +495,6 @@ HEARTBREAK ジェネレーション<br>
 <p>活着远比死亡要困难，自打早晨睁眼起，就要开始一天的焦虑。鞋上踩上了口香糖，总不能连鞋一块丢掉了吧。疯癫、死亡、半梦半醒，大抵是生活最后的几个选择。自己还是很幼稚的，经历扔到过去就好。也许未来会有惊喜呢，死亡总会来的嘛~~</p>
 <p>“Nemo ante mortem beatus.”</p>
 <p>“Nobody is blessed before his death.”</p>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[远游·深夜电影院]]></title>
-        <id>https://coder109.github.io/post/yuan-you-shen-ye-dian-ying-yuan/</id>
-        <link href="https://coder109.github.io/post/yuan-you-shen-ye-dian-ying-yuan/">
-        </link>
-        <updated>2020-11-08T00:43:09.000Z</updated>
-        <content type="html"><![CDATA[<p>荧幕上的人们跳出束缚，<br>
-对着我张望注目，<br>
-演绎着初生的欢乐，<br>
-而我享受着心灵的迟暮。</p>
-<p>他们拉起我向银幕跑去，<br>
-唱着欢乐的歌，跳着疯狂的舞，<br>
-我摔在冰冷的水泥墙上，<br>
-嬉笑声埋葬了我的日暮。</p>
-<p>惊觉一切不过是夜的幻术，<br>
-剧中人散，灯明如烛，<br>
-电影在三两看客的欠伸中逝去，<br>
-冰冷的空气在梦中喷薄而出。</p>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[【收集】有机杂环化合物]]></title>
-        <id>https://coder109.github.io/post/shou-ji-you-ji-za-huan-hua-he-wu/</id>
-        <link href="https://coder109.github.io/post/shou-ji-you-ji-za-huan-hua-he-wu/">
-        </link>
-        <updated>2020-10-31T01:48:25.000Z</updated>
-        <content type="html"><![CDATA[<figure data-type="image" tabindex="1"><img src="https://coder109.github.io/post-images/1604108921286.jpg" alt="" loading="lazy"></figure>
 ]]></content>
     </entry>
 </feed>
