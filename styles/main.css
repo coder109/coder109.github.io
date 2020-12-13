@@ -341,7 +341,7 @@ hr {
 }
 .menubutton {
   font-size: 1.1em;
-  font-family: kaiti;
+  font-family: Arial, Verdana, "宋体";
   color: antiquewhite;
 }
 .menubutton:hover {
@@ -582,7 +582,7 @@ hr {
   font-size: 20px;
   text-align: center;
   line-height: 40px;
-  background: #353535;
+  background: #66ccff;
   color: #565656;
   text-decoration: none;
   margin: 5px;
@@ -1166,7 +1166,7 @@ tr:nth-child(2n) {
   padding-top: 3%;
   text-align: left;
   font-weight: lighter;
-  color: #ced4da;
+  color: black;
 }
 @media screen and (max-width: 1200px) {
   .archives-content ul li > span {
@@ -1748,11 +1748,18 @@ body {
   width: 80%;
   float: left;
   padding: 10px;
-  background: aliceblue;
-  border-radius: 10px;
+  background: #090e20;
+  border-radius: 100px;
+  border-color: #090e20;
   font-size: 15px;
   font-weight: bold;
   margin-bottom: 50px;
+}
+/*ADD OF GETMOREBT*/
+#getmorebt {
+  font-family: Brush Script Std;
+  font-size: 20px;
+  color: cyan;
 }
 #getmorebt:focus {
   outline: 0;
@@ -1899,56 +1906,24 @@ body {
 a {
   text-decoration: none;
 }
-@keyframes fade-in {
-  0% {
-    opacity: 0;
-  }
-  /*初始状态 透明度为0*/
-  40% {
-    opacity: 0;
-  }
-  /*过渡状态 透明度为0*/
-  100% {
-    opacity: 1;
-  }
-  /*结束状态 透明度为1*/
-}
-@-webkit-keyframes fade-in {
-  /*针对webkit内核*/
-  0% {
-    opacity: 0;
-  }
-  40% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-}
 .tags-container {
   min-height: 100vh;
   position: absolute;
   padding-bottom: 70px;
-  animation: fade-in;
-  /*动画名称*/
-  animation-duration: 1s;
-  /*动画持续时间*/
-  -webkit-animation: fade-in 1s;
-  /*针对webkit内核*/
+  opacity: 0.9;
 }
 .tagsbackgroundleft {
   position: fixed;
   min-height: 100vh;
   background: whitesmoke;
   width: 58.33%;
-  opacity: 0.6;
+  opacity: 0.9;
 }
 .tagsbackgroundtop {
   position: fixed;
   min-height: 100vh;
   background: whitesmoke;
   width: 50%;
-  opacity: 0.6;
 }
 .tagintro {
   padding-top: 2%;
