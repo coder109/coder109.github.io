@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://coder109.github.io</id>
     <title>幻</title>
-    <updated>2020-12-13T06:22:08.249Z</updated>
+    <updated>2020-12-20T01:44:57.882Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://coder109.github.io"/>
     <link rel="self" href="https://coder109.github.io/atom.xml"/>
@@ -10,6 +10,32 @@
     <logo>https://coder109.github.io/images/avatar.png</logo>
     <icon>https://coder109.github.io/favicon.ico</icon>
     <rights>All rights reserved 2020, 幻</rights>
+    <entry>
+        <title type="html"><![CDATA[2020/12/13]]></title>
+        <id>https://coder109.github.io/post/20201213/</id>
+        <link href="https://coder109.github.io/post/20201213/">
+        </link>
+        <updated>2020-12-13T02:02:39.000Z</updated>
+        <content type="html"><![CDATA[<h2 id="竞赛">竞赛</h2>
+<p>幻在一个竞赛弱省上学，而幻的学校又是竞赛弱校。其他出名的学校大多在初三开始做竞赛预备，学习高中课程，而幻从高一开始才接触竞赛。</p>
+<p>幻的学校一周三节竞赛课，大多在4：00~5：30之间，十来个竞赛生去一个相对大一些的教室里上课，有机、无机分别由不同的老师讲述。但是讲的大多浅显，照本宣科而已。</p>
+<p>初三的时候，自己喜欢化学，花重金购《基础有机化学》上下两册。当时只是看个乐趣，“方框是……环丁烷？”，“久置乙醚会炸？？”……其实并没有学会什么东西</p>
+<p>幻曾经去北京参加过两次培训。第一次在高一，七百多号人挤在同一个大礼堂里，一共三个不同的讲师、两个助教。当时的幻只有初中的知识水平，老师讲的大抵是一概不知，身旁同去的同学玩着手机。而幻呢？半梦半醒，记下了几十页笔记，而脑子里还是空空如也。虽说是去听课，倒是去了不少旅游景点，798，三里屯……没有“读万卷书”，却“行万里路”。</p>
+<p>第二次是在高二，这次的人少了很多，而幻依旧是一个菜鸡，考了两次试，一次第一，一次第二，倒数！</p>
+<p>自己后来渐渐对于竞赛失去了兴趣，也没有精力再去继续下去，而同学的人呢？大多铩羽而归，几个获得省二的同学也放弃了。</p>
+<p>看着柜子里厚厚的一沓竞赛书，陷入沉思。嘛，算了~</p>
+<h2 id="同学">同学</h2>
+<p>自己是小地方的学生，思想、见识必定会有所闭塞。曾领略过大城市的学生如何优秀，资源如何丰富，甚至有家境极其殷实者，付出于超出自己数十倍的努力。</p>
+<p>且说一说自己身旁的同学吧，勾心斗角、争强好胜、保守……大抵认为自己足够优秀了吧，撑住了三次淘汰考试，坐在重点班里，也不免有一种凌驾于他人之上的优越。但这并不正确。幻曾和几个朋友闲聊，他们说：“我感觉不到团结、集体感，这个班级是一团散沙。”确乎如此，互相拆台导致人与人之间并不信任。</p>
+<p>他们，包括幻在内，都有思考偏激的毛病。Critical Thinking，从未有人教授过，老师却一个劲地让我们做到这一点。连概念都模糊不清，怎么去应用呢？</p>
+<p>Knowledge is money.同学们认为学习只是为了钱，知识只是为了金钱而存在着的。哲学、政治，他们听了便会发笑，“这有什么用呢？以后参加工作了你也用不到这个，学了没用啊。”幻有一些自恃清高，但这至少，至少，比活成那种样子要好。</p>
+<p>幻的学校，是重女轻男的，体育馆不让男生进入，向老师询问缘由，只招来一顿臭骂。女生认为男生应该包揽班级内所有的劳动，且男生不能与女孩子争吵。领导、老师不闻不问，同学们习以为常，这种“矫枉过正”的行为，又何时是个头呢？幻并不是性别歧视，但这样的“平等”，怎么算得上是平等呢？</p>
+<h2 id="性">性？</h2>
+<p>友人L前几日向我发问，大抵是些有关性启蒙的问题。他不懂人是如何怀孕的，对于交欢之类的事也是一概不知。幻给他讲了许久，他才沉吟许久，“……是这样啊……”</p>
+<p>自己从小到大没有经历过任何一次“性启蒙课程”，问幻怎么学来的？……看外公的解剖书和《生理学》……</p>
+<p>身旁的许多人对于性之类的事，大抵有些抵触。认为那是“不健康的”“肮脏的”。其实这个事情和吃饭，喝水，睡觉一样，都是生活必不可缺的一部分，又有什么“不可说”呢？</p>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[流浪者]]></title>
         <id>https://coder109.github.io/post/liu-lang-zhe/</id>
@@ -427,74 +453,6 @@
 生卒年月模糊不清，<br>
 我只能向前跑去，<br>
 跑向死亡，跑向高悬夜空的繁星。</p>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[2020/11/8]]></title>
-        <id>https://coder109.github.io/post/2020118/</id>
-        <link href="https://coder109.github.io/post/2020118/">
-        </link>
-        <updated>2020-11-08T00:51:24.000Z</updated>
-        <content type="html"><![CDATA[<p>最近突然多出来了许多时间，学业也不算太紧，多写点吧~</p>
-<h2 id="名句左翼中二病">名句？左翼？中二病？</h2>
-<p>最近写了好多篇作文，引用总是必不可少的。</p>
-<p>而总有人在听到范文中引用的句子是，低声嘲讽道，“呵，中二病。”，引用的句子从维特根斯坦到裴斯泰洛齐。有的范文写的的确精彩（不自主地推翻了之前的博文QAQ），这若是中二使然，那这个病也有些伟大了。</p>
-<p>下课和几个同学谈着西班牙内战、共产主义一系列事，结果自己说得很来劲，一个同学嘲讽道，“呵，中二病，等你长大就知道资本家是多么好了。”，哭笑不得。</p>
-<p>也许有的人以当资本家为理想，有的人以共产主义为理想，也有的人只想苟且偷生而已。人没有嘲笑其他人信条的权利嘛。个人主义大行其道，资本主义的渗透之下，什么思想都会有人去接受。“团结我们的真正的朋友，以攻击我们的真正的敌人”，这句话的实现也许需要一段时间了。</p>
-<h2 id="写博客的原因和杂感">写博客的原因和杂感</h2>
-<p>以前在lofter上写blog，后来用了几天WORDPRESS，太慢。后来用GRIDEA搭了一个。</p>
-<p>一开始写博客其实是在看了 <a href="https://phenol-phthalein.info">酚酞</a> 的博客之后，为了提升一下写作能力，像他一样富有智慧，并且写点自己想写的东西。自己的朋友大多不大适合谈论一些严肃的事物，真正的思考只能自己消化一下。后来逐渐发现，自己在写作里逐渐变得成熟，思考逐渐深刻起来。</p>
-<p>其实没有人可以交流，自己的知识也只是一潭死水，自以为清澈透底，大抵还是有些浑浊、微微散发臭气的。许多糟粕也都信以为真。以前应该读书的日子没有读书，现在却又忧虑自己的一无所知，实在是有些愚蠢啊（笑）。</p>
-<h2 id="放松与歌曲">放松与歌曲</h2>
-<p>最近的压力大了起来，也就是老师口中的“疲劳期”。只能听歌放松一下自己了，别无他法。以下是自己常听的几首歌：</p>
-<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=470 height=86 src="//music.163.com/outchain/player?type=2&id=864046&auto=1&height=66"></iframe>
-<blockquote>
-<p>拉丁语格言，大抵是能告诫自己的。</p>
-</blockquote>
-<p>邦邦（Bang Dream！）的歌词大多是很正能量的。</p>
-<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=470 height=86 src="//music.163.com/outchain/player?type=2&id=473817010&auto=1&height=66"></iframe>
-<blockquote>
-<p>暗い夜も【fighting】<br>
-黑暗的夜晚【fighting】<br>
-怯えずに今【smiling】<br>
-如今不再畏惧【smiling】<br>
-信じた道【running】<br>
-坚信的道路【running】<br>
-迷わず進もう　黒でもいい【all right】<br>
-果断的前进吧　堕入黑暗也挺不错【all right】<br>
-......<br>
-空は嘲笑い沈んだ<br>
-天空在嘲笑 (我)沉默不语</p>
-</blockquote>
-<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=470 height=86 src="//music.163.com/outchain/player?type=2&id=445450088&auto=1&height=66"></iframe>
-<blockquote>
-<p>ティアドロップス・レボリューション<br>
-泪水落下·革命开始<br>
-涙 ゼンブあつめたら<br>
-只要将眼泪收起来的话<br>
-HEARTBREAK ジェネレーション<br>
-在这令人心碎的伤心时代<br>
-新しいキミに会える<br>
-就能遇见焕发新生的你</p>
-</blockquote>
-<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=470 height=86 src="//music.163.com/outchain/player?type=2&id=22636684&auto=1&height=66"></iframe>
-<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=470 height=86 src="//music.163.com/outchain/player?type=2&id=22636680&auto=1&height=66"></iframe>
-<blockquote>
-<p>老婆的角色曲（笑）</p>
-</blockquote>
-<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=470 height=86 src="//music.163.com/outchain/player?type=2&id=1397468254&auto=1&height=66"></iframe>
-<blockquote>
-<p>规律的生活。拥抱这样的生活罢。（笑）</p>
-</blockquote>
-<h2 id="不同声音">不同声音</h2>
-<p>自己的哲学启蒙大抵是从……儿时爷爷给讲毛泽东和马克思时开始的。逐渐的也了解到什么是资本主义，什么是六四事件，什么是白色恐怖。其实没有中共的领导，中国大抵还是一团乱粥而已。但是，自己永远是向往自由的，对于一些东西还是持有保留意见。</p>
-<p>对于一个政治主张，或者一个哲学学说，人需要思考，再决定支持与否。而现在的“赛博空间”啊，学校还是社会啊，是容不下不同的声音的。一旦看见有人的思想不同于己，便要用口水分个高低。自己的语文老师甚至因为其他人和自己观点不同而大发脾气。“健康的社会不应只有一种声音”，人们拼了老命让别人接受自己的观点，不容辩驳，也许是其内心的焦虑与无知作祟吧。</p>
-<p>一个全都是低音6的曲子必然是不好听的啊，一个道理。</p>
-<h2 id="死亡">死亡</h2>
-<p>死亡....？生的一部分啊。</p>
-<p>活着远比死亡要困难，自打早晨睁眼起，就要开始一天的焦虑。鞋上踩上了口香糖，总不能连鞋一块丢掉了吧。疯癫、死亡、半梦半醒，大抵是生活最后的几个选择。自己还是很幼稚的，经历扔到过去就好。也许未来会有惊喜呢，死亡总会来的嘛~~</p>
-<p>“Nemo ante mortem beatus.”</p>
-<p>“Nobody is blessed before his death.”</p>
 ]]></content>
     </entry>
 </feed>
