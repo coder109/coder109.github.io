@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://coder109.github.io</id>
     <title>幻</title>
-    <updated>2020-12-26T13:18:25.411Z</updated>
+    <updated>2020-12-26T14:14:33.554Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://coder109.github.io"/>
     <link rel="self" href="https://coder109.github.io/atom.xml"/>
@@ -10,6 +10,58 @@
     <logo>https://coder109.github.io/images/avatar.png</logo>
     <icon>https://coder109.github.io/favicon.ico</icon>
     <rights>All rights reserved 2020, 幻</rights>
+    <entry>
+        <title type="html"><![CDATA[【教程】Penbeat初级教程]]></title>
+        <id>https://coder109.github.io/post/jiao-cheng-penbeat-chu-ji-jiao-cheng/</id>
+        <link href="https://coder109.github.io/post/jiao-cheng-penbeat-chu-ji-jiao-cheng/">
+        </link>
+        <updated>2020-12-26T13:24:18.000Z</updated>
+        <content type="html"><![CDATA[<blockquote>
+<p>自己在两年……一年……好久之前是一名Pber，那时候写了个教程，改改发了吧！</p>
+</blockquote>
+<h1 id="penbeat是什么啊">Penbeat是什么啊？</h1>
+<p>说白了，就是用手和笔来模仿鼓。这有几个比较经典的视频<a href="https://www.youtube.com/watch?v=aDzHpdV9-PU">PEN BEAT I BATTLE</a>、<a href="https://www.youtube.com/watch?v=YcHLh2_tteM">Pen Beats</a>（都在油管上，所以你懂得）</p>
+<h1 id="那我需要什么啊">那我……需要什么啊？</h1>
+<p>·两个像笔的东西：笔、钥匙、修正带、从家里老古董收音机上拆下来的天线（逃</p>
+<p>·一个硬平面：桌子、朋友的后背、吉他面板（嗯？</p>
+<p>·手</p>
+<p>PS：虽然说什么笔都可以打PB，但是幻比较喜欢用“bic ultra round stic grip”这款笔，相对来说比较稳，而且非！常！抗！摔！</p>
+<h1 id="说的轻巧咋拿笔啊">说的轻巧，咋拿笔啊？</h1>
+<p>A Photo From 幻：<img src="https://coder109.github.io/post-images/1608990452425.jpg" alt="" loading="lazy"></p>
+<p>注意：小指一定要勾住！</p>
+<h1 id="鼓有鼓谱penbeat有谱吗">鼓有鼓谱，Penbeat有谱吗？</h1>
+<p>有滴~R表示右手，L表示左手。</p>
+<p>以下是几个常用音（以百度pb吧为准）：</p>
+<p>0-&gt;休止符</p>
+<p>1-&gt;用手腕下打，发出“咚”的声音。手掌最下端有一块比较软的肉，用那里打比较好。不过还是看个人喜欢咯~</p>
+<p>2-&gt;笔尖轻点桌面，发出“嗒”的声音。</p>
+<p>3-&gt;笔杆下砸桌面，发出“啪——”的声音。此时小指松开，无名指随意。</p>
+<p>4-&gt;笔刷，用笔尖在桌面（建议粗糙一些）上轻扫，发出“chuachua”的声音。不过由于向前扫和回扫声音不大相同，freestyle时也可以做不同音处理。</p>
+<p>5-&gt;手指骨轻打桌面，发出“嗒（闷）”的声音。</p>
+<p>6-&gt;竖直笔尾敲桌，发出“啪（闷）”的声音。</p>
+<p>下面是一些小众音：</p>
+<p>1#-&gt;用手掌拍桌子。</p>
+<p>2#-&gt;笔敲桌腿。</p>
+<p>2^-&gt;用非竖直笔尾敲桌面。（比6音闷了不少啊！）</p>
+<p>u-&gt;笔敲桌棱，发出“卡卡”声。</p>
+<p>B，b-&gt;分别是用力、轻轻敲击玻璃杯，发出“叮叮”的悦耳敲击声。个人最喜欢这个音。有的Pber甚至会让玻璃杯滑动，从而创造区别于4，7音的滑音。</p>
+<p>p-&gt;笔尖互打。</p>
+<p>7-&gt;笔尾刷桌，发出“划——”的声音。和4音有类似的特点。</p>
+<p>q-&gt;笔尾互打。</p>
+<p>m-&gt;拇指关节敲桌面。</p>
+<p>i-&gt;二段跳，两根手指捏住笔尾，用笔尖自然地在桌子上弹两下。</p>
+<h1 id="我去这也太难了啊咋练啊">我去，这也太难了啊，咋练啊？</h1>
+<p>先从惯用手4b开始（有点类似架子鼓与bbox）：1232 1232 1232 1232……或者2232 2232 2232 2232……</p>
+<p>之后打8b：1232 2232、1121 2111、1221 3223……自己组合吧！</p>
+<p>之后慢慢的把8b不断组合起来，最后就行了。可以随着慢歌、节拍器练一练节奏感，逐渐加快，Penbeat其实比较好练啊！不要着急，从慢到快，循序渐进！</p>
+<h1 id="来点资料呗~">来点资料呗~</h1>
+<p><a href="https://tieba.baidu.com/p/1271273721">【谱子整理】含各种新手练习谱</a></p>
+<p><a href="https://tieba.baidu.com/p/4002427231">【弱侠出品】penbeat双手入门教程＆基础技巧</a></p>
+<p><a href="https://tieba.baidu.com/p/2302085025">penbeat教程-左手开发 by冰块</a></p>
+<p>有些难-&gt;<a href="https://tieba.baidu.com/p/4531234488">【Taipunise 制作】笔尾进行曲（带谱）（纯节奏Free Style）</a></p>
+<p>还行-&gt;<a href="https://tieba.baidu.com/p/4146849917">【弱侠＆若侠】玩转16beat</a></p>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[障碍]]></title>
         <id>https://coder109.github.io/post/zhang-ai/</id>
@@ -438,28 +490,6 @@
 呼吸历史凝固的气息。<br>
 我知道我终末的命运，<br>
 大抵是了然一切地悲怆与快意。</p>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[远游·无何有之乡]]></title>
-        <id>https://coder109.github.io/post/yuan-you-wu-he-you-zhi-xiang/</id>
-        <link href="https://coder109.github.io/post/yuan-you-wu-he-you-zhi-xiang/">
-        </link>
-        <updated>2020-11-15T01:25:11.000Z</updated>
-        <content type="html"><![CDATA[<p>苦行，苦行。离了神社很远了。没有时间去思考，只能向前走去。心中并不期待前方会遇见什么人，并不期盼迎来团聚，允许我走着就好。</p>
-<p>黄沙弥漫，炎阳高悬。一片大漠。连绵起伏的黄色丘陵。滚烫的空气刺痛鼻腔。“这里是撒哈拉吧……”我不确定自己是否有三毛的勇气。</p>
-<p>荒凉的四野里只有我一人。孤寂、凄凉、无奈一时全涌入心头，自己在城中居住十余年，却创造不了自己的安身之所。人们见了我便总要讽刺道，“看哪！那是个年轻的失败者！”自己在任何方面都大为不顺。神也是不会眷顾不幸者的。它在空中看着大地上的人们，看着他们自以为受庇佑地欣然微笑。其实神不过是人们心中的精神罢，信仰万神，大抵还是相信自己的。自己逃离了那些事物，又在大漠中忖度行路，哪里摆脱了痛苦呢？</p>
-<p>自己突然一脚踏空，摔下小丘，撞在一块滚烫的石碑上，只觉四肢俱碎，骨肉齑粉。艰难爬起，一块砂岩石碑上刻着几个字，“无何有之乡”。</p>
-<p>“这造物主蛮喜欢石碑的啊”心下想着。</p>
-<p>似乎《庄子》里有言，“今子有大树，患其无用，何不树之于无何有之乡？”</p>
-<p>树呢?</p>
-<p>热浪所及，皆为黄沙。</p>
-<p>也许树只是指无用的东西吧，而这个地方只有我一人。未来的路很长望不到头，身后的黑暗追逐着，无有退路。如果不会死亡，他人的嘲讽又有什么呢？人在对比中认识世界，只有“我”这一个概念，没有任何意义。宠辱也好，非誉也罢，人们太看重了。我只想在一座空旷的城中渡过此生。但如若如此，生命又有什么意义呢？失去了对比，人就是漂浮于真空宇宙中的一粒尘埃了啊。从38万光年处飞到近处，又飞向38万光年以外，时间消去了。向往孤寂、又厌恶绝对的自由。</p>
-<p>迁怒于造物主的游戏，我从口袋里掏出刀子，向自己的胸口刺去。</p>
-<p>游者们大抵也是如此这般死去的吧。</p>
-<p>无所谓，无所有。</p>
-<p>在尖锐的痛楚消退后，自己陷入了昏迷。</p>
-<p>但这场梦又哪里终结了呢？</p>
 ]]></content>
     </entry>
 </feed>
