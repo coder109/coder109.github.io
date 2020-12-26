@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://coder109.github.io</id>
     <title>幻</title>
-    <updated>2020-12-26T02:47:35.871Z</updated>
+    <updated>2020-12-26T13:13:34.850Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://coder109.github.io"/>
     <link rel="self" href="https://coder109.github.io/atom.xml"/>
@@ -10,6 +10,34 @@
     <logo>https://coder109.github.io/images/avatar.png</logo>
     <icon>https://coder109.github.io/favicon.ico</icon>
     <rights>All rights reserved 2020, 幻</rights>
+    <entry>
+        <title type="html"><![CDATA[障碍]]></title>
+        <id>https://coder109.github.io/post/zhang-ai/</id>
+        <link href="https://coder109.github.io/post/zhang-ai/">
+        </link>
+        <updated>2020-12-26T12:35:21.000Z</updated>
+        <content type="html"><![CDATA[<p>他们用鞭子摧残梦想，<br>
+他们用高墙掩盖朝阳。<br>
+他们用绳索束缚大脑，<br>
+他们用未来伪造曙光！</p>
+<p>利刃，紧抵脊背，<br>
+谎言，冠冕堂皇，<br>
+我将义不容辞拾起钢枪，<br>
+以敌人的鲜血献祭远方！</p>
+<p>断指，落入泥土，<br>
+笑声，从心底发出。<br>
+我点燃了书本，以之为炬，<br>
+在微薄的光亮中扣动扳机！</p>
+<p>告诉你吧，世界：<br>
+摧残吧！我将守护理想！<br>
+掩盖吧！我将翻越高墙！<br>
+束缚吧！我将割裂绳索！<br>
+伪造吧！我将拥抱曙光！</p>
+<p>那里 将有光！</p>
+<p>PS：自己一直想写一首这样的诗歌……怎么去描述呢？“离经叛道”“不服管教”（几个美好的褒义词）。自己非常喜欢友人三七新发的诗<a href="https://atlasquan.github.io/2020/12/26/fence/">《栅栏》</a> ，最后一句也拙劣化用“那里，曾有光”。</p>
+<p>自由终究是美好的，但同时也是难以追求的。</p>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[2020/12/26]]></title>
         <id>https://coder109.github.io/post/20201226/</id>
@@ -432,27 +460,6 @@
 <p>无所谓，无所有。</p>
 <p>在尖锐的痛楚消退后，自己陷入了昏迷。</p>
 <p>但这场梦又哪里终结了呢？</p>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[噩梦]]></title>
-        <id>https://coder109.github.io/post/e-meng/</id>
-        <link href="https://coder109.github.io/post/e-meng/">
-        </link>
-        <updated>2020-11-15T01:15:18.000Z</updated>
-        <content type="html"><![CDATA[<p>尖刀割裂我的肌肤，<br>
-鲜血横流，创口模糊，<br>
-飞翔的绯色蝴蝶隐入碧色的海，<br>
-涛声依旧，我看见有斑驳的鬼火倏忽。</p>
-<p>夜空之中只余虚无，<br>
-月色已尽，暖风轻拂，<br>
-溺亡的哀怨灵魂遁入终末的天，<br>
-风铃轻响，我看见撕碎的占星之书。</p>
-<p>六芒星出现在天幕，<br>
-七彩之光，清灵之术，<br>
-持剑的披甲战士守护坠崖的人，<br>
-寒刃生光，我看见古老的十字之图。</p>
-<p>PS：迷茫的梦。</p>
 ]]></content>
     </entry>
 </feed>
