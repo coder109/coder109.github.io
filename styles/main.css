@@ -691,13 +691,7 @@ ul li {
 #disqus_thread {
   padding: 24px 32px;
   width: 80%;
-  /**
   max-width: 1000px;
-  **/
-}
-svg {
-  width: 10%;
-  height: 10%;
 }
 textarea {
   resize: none;
