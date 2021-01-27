@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://coder109.github.io</id>
     <title>幻</title>
-    <updated>2021-01-26T11:24:07.536Z</updated>
+    <updated>2021-01-27T00:22:52.831Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://coder109.github.io"/>
     <link rel="self" href="https://coder109.github.io/atom.xml"/>
@@ -10,6 +10,22 @@
     <logo>https://coder109.github.io/images/avatar.png</logo>
     <icon>https://coder109.github.io/favicon.ico</icon>
     <rights>All rights reserved 2021, 幻</rights>
+    <entry>
+        <title type="html"><![CDATA[幽灵]]></title>
+        <id>https://coder109.github.io/post/you-ling/</id>
+        <link href="https://coder109.github.io/post/you-ling/">
+        </link>
+        <updated>2021-01-27T00:15:44.000Z</updated>
+        <content type="html"><![CDATA[<p>你看不见我，<br>
+因为我在夜中沉默，<br>
+当心底的人化作寒冷的骨，<br>
+寻我的人，请等待来生。</p>
+<p>你看不见我，<br>
+因为我如流星划落，<br>
+坠在梦海中七尺的浪，<br>
+化为思念者心头的迷障。</p>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[致白先生（二）]]></title>
         <id>https://coder109.github.io/post/zhi-bai-xian-sheng-er/</id>
@@ -291,22 +307,6 @@
 <p>那里 将有光！</p>
 <p>PS：自己一直想写一首这样的诗歌……怎么去描述呢？“离经叛道”“不服管教”（几个美好的褒义词）。看了友人三七新发的诗<a href="https://atlasquan.github.io/2020/12/26/fence/">《栅栏》</a> ，最后一句也拙劣化用“那里，曾有光”。</p>
 <p>自由终究是美好的，但同时也是难以追求的。</p>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[2020/12/26]]></title>
-        <id>https://coder109.github.io/post/20201226/</id>
-        <link href="https://coder109.github.io/post/20201226/">
-        </link>
-        <updated>2020-12-25T23:57:02.000Z</updated>
-        <content type="html"><![CDATA[<blockquote>
-<p>思想的巨婴，写作的矮子。——幻</p>
-</blockquote>
-<h2 id="entfremdung异化">Entfremdung（异化）</h2>
-<p>没有其他人的评判，幻并不知道自己的优点是什么，缺点有哪些，脑海里只是自我模糊的印象。单独凭借着别人的表现来内省，用着原有的知识体系去思考自己，得出错误的结论。于是……一方面接受着新的信息，修改或完善原有的思想，一方面和原先得出的结论冲突，陷入矛盾中去。</p>
-<p>对于情感的体会会加深这种“症状”罢，大概。自己并不喜欢过度的情感，常态的冷静、理性才是不拖累人的。相反，过度的喜悦，过度的悲哀，都是不利于生命的。人与人之间的关系、交流，决定人的情感，情感反过来制约人，影响人的活动。这样的人，又怎是一个自由的人呢？</p>
-<p>大抵、大抵，知识也在无形中禁锢我们，又赐予我们新的自由。犹记之前PolitiScales上有一个问题，大抵是说，所有的知识都是不纯粹的，而是知识一种符合人类认知体系的模式。自己当时选了“Absolutely Agree”。如果真的有一种超出人类理解范围的知识，不，不可能有，人类永无得出它的可能。人们首先认为知识是符合认知的，才会选择接受。</p>
-<p>所以，人根本上是被自己所束缚着，被其他个体的影响所异化的吧。永无脱身的可能了！</p>
 ]]></content>
     </entry>
 </feed>
