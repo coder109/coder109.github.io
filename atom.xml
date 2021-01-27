@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://coder109.github.io</id>
     <title>幻</title>
-    <updated>2021-01-27T00:37:12.239Z</updated>
+    <updated>2021-01-27T14:57:52.367Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://coder109.github.io"/>
     <link rel="self" href="https://coder109.github.io/atom.xml"/>
@@ -10,6 +10,31 @@
     <logo>https://coder109.github.io/images/avatar.png</logo>
     <icon>https://coder109.github.io/favicon.ico</icon>
     <rights>All rights reserved 2021, 幻</rights>
+    <entry>
+        <title type="html"><![CDATA[致白先生（三）]]></title>
+        <id>https://coder109.github.io/post/zhi-bai-xian-sheng-san/</id>
+        <link href="https://coder109.github.io/post/zhi-bai-xian-sheng-san/">
+        </link>
+        <updated>2021-01-27T14:34:40.000Z</updated>
+        <content type="html"><![CDATA[<p>白先生敬启：</p>
+<p>安好？此刻将近深夜。</p>
+<p>——————————————</p>
+<p>寄出上一封信之后，自己想了很久，明白痛苦与恐惧都是来自对现实的无能为力。也许我真该好好面对现实了吧。这两天看完了<a href="https://www.bilibili.com/bangumi/media/md5989/">《月色真美》</a>这部番剧。好久之前，是这部番剧让自己接触到了日本文学。太宰治、夏目漱石……日本作家的文字有特别的质感，就像朴素的米黄色桌布一样，看上去平平无奇，却能很好搭配其他的东西——生活中的琐事。剧中的书店老板很像您啊，开明、文雅。只可惜我好久没见您了，其实我一直没有见过您。您只是我心底臆想出的一个人物而已。这封信——以前的信我都不会寄出去。</p>
+<p>写信？其实只是给自己一个派遣的方式而已。想象着那么一个人，会期待着自己的消息。白先生，其实您是我的梦想啊，与书为伴，自由自在，无拘无束。这样子的信要写到什么时候呢？会不会有回信呢？我不知道。至少我现在是需要您的。</p>
+<p>恋爱？您似乎说过这件事。自己曾经是恋爱过的。但都因为自己的原因，没有延续下去，其实她是个很好的人啊。懦弱？恐惧？迷茫？都有一点吧。不过自己仍旧喜欢闭塞着，沉浸在只有自己的世界，不希望打搅别人的美梦，也不希望被他人扰动。也许是那段失败的经历改变了自己吧。我不知道，白先生，我不知道。我不会处理感情，自己的、他人的，我都不会。我是个懦弱者，是吧？</p>
+<p>最近总在想死亡与生活这样的事情。但是自己驾驭不了这样宏达的话题。啊啊，累人啊，白先生。我此刻把你当成了一个真人，一个哲学家、文学家，可惜，我只是在和我自己交谈着。</p>
+<p>有点分裂感，不是么？我还是想把你当成另外一个人，用自我的谎言欺骗自我，编织一个七彩的梦境来麻痹自己。也许我的心底有着一个答案，只是我不愿意去面对。我终究要被抛到社会中去的，终究要抛到无尽的人际关系中去的，白先生啊白先生，您说呢？我不明白，自己理应是一个幸福的人，赖以生存之物足够，有足够的书来读，可我为什么这么难受呢？我也许该试着挑战一下自己。</p>
+<blockquote>
+<p>活着，啊，这是一件多么难以应付，令人无法喘息的伟业啊。</p>
+</blockquote>
+<blockquote>
+<p>人类是为了恋爱和革命才诞生在这个世界上的。</p>
+</blockquote>
+<p>是时候面对世界了吧？白先生。也许未来我不会再常和你通信了。您此刻住在京都吧，祝您生活愉快，万事胜意！</p>
+<p>幻</p>
+<p>2021.1.27</p>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[致白先生（二）]]></title>
         <id>https://coder109.github.io/post/zhi-bai-xian-sheng-er/</id>
@@ -291,22 +316,6 @@
 <p>那里 将有光！</p>
 <p>PS：自己一直想写一首这样的诗歌……怎么去描述呢？“离经叛道”“不服管教”（几个美好的褒义词）。看了友人三七新发的诗<a href="https://atlasquan.github.io/2020/12/26/fence/">《栅栏》</a> ，最后一句也拙劣化用“那里，曾有光”。</p>
 <p>自由终究是美好的，但同时也是难以追求的。</p>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[2020/12/26]]></title>
-        <id>https://coder109.github.io/post/20201226/</id>
-        <link href="https://coder109.github.io/post/20201226/">
-        </link>
-        <updated>2020-12-25T23:57:02.000Z</updated>
-        <content type="html"><![CDATA[<blockquote>
-<p>思想的巨婴，写作的矮子。——幻</p>
-</blockquote>
-<h2 id="entfremdung异化">Entfremdung（异化）</h2>
-<p>没有其他人的评判，幻并不知道自己的优点是什么，缺点有哪些，脑海里只是自我模糊的印象。单独凭借着别人的表现来内省，用着原有的知识体系去思考自己，得出错误的结论。于是……一方面接受着新的信息，修改或完善原有的思想，一方面和原先得出的结论冲突，陷入矛盾中去。</p>
-<p>对于情感的体会会加深这种“症状”罢，大概。自己并不喜欢过度的情感，常态的冷静、理性才是不拖累人的。相反，过度的喜悦，过度的悲哀，都是不利于生命的。人与人之间的关系、交流，决定人的情感，情感反过来制约人，影响人的活动。这样的人，又怎是一个自由的人呢？</p>
-<p>大抵、大抵，知识也在无形中禁锢我们，又赐予我们新的自由。犹记之前PolitiScales上有一个问题，大抵是说，所有的知识都是不纯粹的，而是知识一种符合人类认知体系的模式。自己当时选了“Absolutely Agree”。如果真的有一种超出人类理解范围的知识，不，不可能有，人类永无得出它的可能。人们首先认为知识是符合认知的，才会选择接受。</p>
-<p>所以，人根本上是被自己所束缚着，被其他个体的影响所异化的吧。永无脱身的可能了！</p>
 ]]></content>
     </entry>
 </feed>
