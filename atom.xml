@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://coder109.github.io</id>
     <title>幻</title>
-    <updated>2021-01-28T23:22:11.437Z</updated>
+    <updated>2021-01-29T01:14:13.542Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://coder109.github.io"/>
     <link rel="self" href="https://coder109.github.io/atom.xml"/>
@@ -10,40 +10,6 @@
     <logo>https://coder109.github.io/images/avatar.png</logo>
     <icon>https://coder109.github.io/favicon.ico</icon>
     <rights>All rights reserved 2021, 幻</rights>
-    <entry>
-        <title type="html"><![CDATA[2021/1/29：梦]]></title>
-        <id>https://coder109.github.io/post/2021129meng/</id>
-        <link href="https://coder109.github.io/post/2021129meng/">
-        </link>
-        <updated>2021-01-28T22:37:52.000Z</updated>
-        <content type="html"><![CDATA[<blockquote>
-<p>疲惫的梦。琐碎。无法串联成一个完整的故事！</p>
-</blockquote>
-<p>自己从原来的高中转到了女子学院，学院的摆设与自己的家无异，寝室里只有三张床。</p>
-<p>这个学院有10来个学生，却只有一个寝室，自己的床和另外两个女孩子的上下铺分隔开，彼此交谈，却又看不见脸。</p>
-<p>自己似乎与学院领导起了冲突——虽然那张脸就是自己化学老师的脸——于是逃出了那个地方，学院外的车流量很大，自己跑了很久，身后却没人追逐。又突然被传送到了学院。</p>
-<p>我躺在床上，床头有一个水龙头，我打开旋钮，洗手，发现流出来的是墨水。我的手、白衣服都被染黑。洗了很久，衣服上有一块污渍难以洗净。这时同寝的女孩子告诉自己，以后高考要用钢笔答卷了。</p>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[高中？]]></title>
-        <id>https://coder109.github.io/post/gao-zhong/</id>
-        <link href="https://coder109.github.io/post/gao-zhong/">
-        </link>
-        <updated>2021-01-28T13:28:49.000Z</updated>
-        <content type="html"><![CDATA[<p>友人L曾经问过我这样一个问题，“幻，你是怎么看待高中这个体制的啊？”</p>
-<p>是啊，我是怎么看待高中的呢？</p>
-<p>一个充满压迫的地方！当广大学生失去了话语权，那么就如同待宰的羔羊一般，无论领导们做出了如何荒唐的规矩，都要无条件的执行。</p>
-<p>幻的学校曾经发生过一次欺凌案件。欺凌者有10余人，而幻的同班同学路过那里，驻足察看，却被学生会某位干部检举（与幻的同学关系不好的一位干部），最后受到了处分，原因是：没有及时制止欺凌案件。后来呢，当我的同学前去校长室辩解，却被赶了出来，最后被告知：就算处分错了，你们也不能去辩解啊！你们肯定是有做错的地方，为什么不反思自己呢？</p>
-<p>面对十来号人，两个人去制止？只不过驻足察看，就要受到处分么？学生会干部的话一定可信么？最后的告知也令我哭笑不得。官僚主义在高中就开始盛行？不把学生当成成年人来看，骨子里认为我们是幼稚的，所说的话语是毫无意义的，歧视。</p>
-<p>学生们只愿意去学习，而不愿意操心这些破事。这就是第二个印象。</p>
-<p>一个冷漠的地方。彼此之间是分离的，不团结的，只关心自己的未来。过了这一届我们就自由了，下一届呢？下下届呢？以后会不会导致一个社会的冷漠呢？分成单独的个体，于是人们失去了反抗的力量。不够团结，于是导致许多问题。</p>
-<p>为什么学生们不够团结？当教师们用大学生活（过分美化的）去迷惑学生，学生们就不会管其他事物。于是！成功的将学生们的联系分开了，再用无休止的作业以及严格的规定，不团结也是难免的事。而一旦不团结，所有的反抗都只能是个人的反抗，仅此而已。掀不起大动静的。</p>
-<p>如果只想着买东西啊，有足够金钱的日子，不觉得有些无趣么？幻不是为了秀优越感，只是觉得只去追求物质上的东西有些不足，不足以体现人生的价值。处处被权威束缚，有金钱就足够了么？</p>
-<p>大概就是这样的印象。仅此而已。</p>
-<p>幻有些激进，如果您在<a href="https://coder109.github.io/post/about/">关于</a>看过我的PolitiScales测试结果，您会发现幻是一个激进的Anarchy分子。看个乐呵就行啦~</p>
-]]></content>
-    </entry>
     <entry>
         <title type="html"><![CDATA[致白先生（三）]]></title>
         <id>https://coder109.github.io/post/zhi-bai-xian-sheng-san/</id>
@@ -270,6 +236,86 @@
 <p>学生一直被权威束缚着，处处都有一些“潜规则”，如“唯领导为是论”、“学生无权论”。他们对于这些东西习以为常，不曾察觉这背后的不合理之处。是啊，没见过天空，笼中鸟怎会有逃离之心？没见过阳光，向日葵何以向光生长？</p>
 <p>自由是什么？写作文不用写成“人民日报体”，有说“不”的质疑权，有着个人独有的意志。</p>
 <p>而我们需要等待，至少是很长的一段时间。</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[【教程】Penbeat初级教程]]></title>
+        <id>https://coder109.github.io/post/jiao-cheng-penbeat-chu-ji-jiao-cheng/</id>
+        <link href="https://coder109.github.io/post/jiao-cheng-penbeat-chu-ji-jiao-cheng/">
+        </link>
+        <updated>2020-12-26T13:24:18.000Z</updated>
+        <content type="html"><![CDATA[<blockquote>
+<p>自己在两年……一年……好久之前是一名Pber，那时候写了个教程，改改发了吧！</p>
+</blockquote>
+<h1 id="penbeat是什么啊">Penbeat是什么啊？</h1>
+<p>说白了，就是用手和笔来模仿鼓。这有几个比较经典的视频<a href="https://www.youtube.com/watch?v=aDzHpdV9-PU">PEN BEAT I BATTLE</a>、<a href="https://www.youtube.com/watch?v=YcHLh2_tteM">Pen Beats</a>（都在油管上，所以你懂得）</p>
+<h1 id="那我需要什么啊">那我……需要什么啊？</h1>
+<p>·两个像笔的东西：笔、钥匙、修正带、从家里老古董收音机上拆下来的天线（逃</p>
+<p>·一个硬平面：桌子、朋友的后背、吉他面板（嗯？</p>
+<p>·手</p>
+<p>PS：虽然说什么笔都可以打PB，但是幻比较喜欢用“bic ultra round stic grip”这款笔，相对来说比较稳，而且非！常！抗！摔！</p>
+<h1 id="说的轻巧咋拿笔啊">说的轻巧，咋拿笔啊？</h1>
+<p>A Photo From 幻：<img src="https://coder109.github.io/post-images/1608990452425.jpg" alt="" loading="lazy"></p>
+<p>注意：小指一定要勾住！</p>
+<h1 id="鼓有鼓谱penbeat有谱吗">鼓有鼓谱，Penbeat有谱吗？</h1>
+<p>有滴~R表示右手，L表示左手。</p>
+<p>以下是几个常用音（以百度pb吧为准）：</p>
+<p>0-&gt;休止符</p>
+<p>1-&gt;用手腕下打，发出“咚”的声音。手掌最下端有一块比较软的肉，用那里打比较好。不过还是看个人喜欢咯~</p>
+<p>2-&gt;笔尖轻点桌面，发出“嗒”的声音。</p>
+<p>3-&gt;笔杆下砸桌面，发出“啪——”的声音。此时小指松开，无名指随意。</p>
+<p>4-&gt;笔刷，用笔尖在桌面（建议粗糙一些）上轻扫，发出“chuachua”的声音。不过由于向前扫和回扫声音不大相同，freestyle时也可以做不同音处理。</p>
+<p>5-&gt;手指骨轻打桌面，发出“嗒（闷）”的声音。</p>
+<p>6-&gt;竖直笔尾敲桌，发出“啪（闷）”的声音。</p>
+<p>下面是一些小众音：</p>
+<p>1#-&gt;用手掌拍桌子。</p>
+<p>2#-&gt;笔敲桌腿。</p>
+<p>2^-&gt;用非竖直笔尾敲桌面。（比6音闷了不少啊！）</p>
+<p>u-&gt;笔敲桌棱，发出“卡卡”声。</p>
+<p>B，b-&gt;分别是用力、轻轻敲击玻璃杯，发出“叮叮”的悦耳敲击声。个人最喜欢这个音。有的Pber甚至会让玻璃杯滑动，从而创造区别于4，7音的滑音。</p>
+<p>p-&gt;笔尖互打。</p>
+<p>7-&gt;笔尾刷桌，发出“划——”的声音。和4音有类似的特点。</p>
+<p>q-&gt;笔尾互打。</p>
+<p>m-&gt;拇指关节敲桌面。</p>
+<p>i-&gt;二段跳，两根手指捏住笔尾，用笔尖自然地在桌子上弹两下。</p>
+<h1 id="我去这也太难了啊咋练啊">我去，这也太难了啊，咋练啊？</h1>
+<p>先从惯用手4b开始（有点类似架子鼓与bbox）：1232 1232 1232 1232……或者2232 2232 2232 2232……</p>
+<p>之后打8b：1232 2232、1121 2111、1221 3223……自己组合吧！</p>
+<p>之后慢慢的把8b不断组合起来，最后就行了。可以随着慢歌、节拍器练一练节奏感，逐渐加快，Penbeat其实比较好练啊！不要着急，从慢到快，循序渐进！</p>
+<h1 id="来点资料呗~">来点资料呗~</h1>
+<p><a href="https://tieba.baidu.com/p/1271273721">【谱子整理】含各种新手练习谱</a></p>
+<p><a href="https://tieba.baidu.com/p/4002427231">【弱侠出品】penbeat双手入门教程＆基础技巧</a></p>
+<p><a href="https://tieba.baidu.com/p/2302085025">penbeat教程-左手开发 by冰块</a></p>
+<p>有些难-&gt;<a href="https://tieba.baidu.com/p/4531234488">【Taipunise 制作】笔尾进行曲（带谱）（纯节奏Free Style）</a></p>
+<p>还行-&gt;<a href="https://tieba.baidu.com/p/4146849917">【弱侠＆若侠】玩转16beat</a></p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[障碍]]></title>
+        <id>https://coder109.github.io/post/zhang-ai/</id>
+        <link href="https://coder109.github.io/post/zhang-ai/">
+        </link>
+        <updated>2020-12-26T12:35:21.000Z</updated>
+        <content type="html"><![CDATA[<p>他们用鞭子摧残梦想，<br>
+他们用高墙掩盖朝阳。<br>
+他们用绳索束缚大脑，<br>
+他们用未来伪造曙光！</p>
+<p>利刃，紧抵脊背，<br>
+谎言，冠冕堂皇，<br>
+我将义不容辞拾起钢枪，<br>
+以敌人的鲜血献祭远方！</p>
+<p>断指，落入泥土，<br>
+笑声，从心底发出。<br>
+我点燃了书本，以之为炬，<br>
+在微薄的光亮中扣动扳机！</p>
+<p>告诉你吧，世界：<br>
+摧残吧！我将守护理想！<br>
+掩盖吧！我将翻越高墙！<br>
+束缚吧！我将割裂绳索！<br>
+伪造吧！我将拥抱曙光！</p>
+<p>那里 将有光！</p>
+<p>PS：自己一直想写一首这样的诗歌……怎么去描述呢？“离经叛道”“不服管教”（几个美好的褒义词）。看了友人三七新发的诗<a href="https://atlasquan.github.io/2020/12/26/fence/">《栅栏》</a> ，最后一句也拙劣化用“那里，曾有光”。</p>
+<p>自由终究是美好的，但同时也是难以追求的。</p>
 ]]></content>
     </entry>
 </feed>
