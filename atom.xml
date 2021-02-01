@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://coder109.github.io</id>
     <title>幻</title>
-    <updated>2021-01-31T23:47:25.195Z</updated>
+    <updated>2021-02-01T13:24:46.186Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://coder109.github.io"/>
     <link rel="self" href="https://coder109.github.io/atom.xml"/>
@@ -10,6 +10,23 @@
     <logo>https://coder109.github.io/images/avatar.png</logo>
     <icon>https://coder109.github.io/favicon.ico</icon>
     <rights>All rights reserved 2021, 幻</rights>
+    <entry>
+        <title type="html"><![CDATA[小记]]></title>
+        <id>https://coder109.github.io/post/xiao-ji/</id>
+        <link href="https://coder109.github.io/post/xiao-ji/">
+        </link>
+        <updated>2021-02-01T12:32:48.000Z</updated>
+        <content type="html"><![CDATA[<p>面对着空白的纸，笔尖微微有一些颤动，却终究还是写不出一个字来。“好烦啊！”我冲着冰冷的空气喊道。</p>
+<p>这大概就是所谓的心浮气躁吧。看着窗外覆着大雪的世界，星点灯火，这便是人类文明的剪影。为了生存，不得不聚在一起。建设社会，创造价值，本质还是为了维持自己的生存。凭借着为他人创造价值，养活自己的生命，忙忙碌碌，乐在其中。人嘛~</p>
+<p>我笑了笑，站起身，躺到床上。洁白的天花板，白色的灯光微微刺痛了我的眼。</p>
+<p>人为什么要生存呢？我心下想道，自己……是从什么时候开始被这个问题困扰着的呢？高……一？高二？记不清啦。反正从别人口中得出了许多答案，但却总不符合自己的境况。人类文明延续了几千年，为什么连最基本的问题都解决不了呢？为了信仰，为了金钱，为了革命，为了爱情，为了一切所求之物而生存。被外物所困，不得脱出。但是啊，要是不为了外物而活，那样的话，我自己的存在不也是毫无价值的了？我又有什么必要存在于这个世界上呢？</p>
+<p>窗外有辆轿车驶过，碾压着雪，发出闷响。我打开窗，寒冷的空气涌进屋子，涌进肺部，涌进属于我的小小世界。演算纸被风吹动，散落开来。</p>
+<p>没有必要思考太多，只需走下去。我又为什么对前面那个问题如此郁闷呢？啊……不知道啊不知道……</p>
+<p>有些冷，我关上了窗户，坐在书桌前面，写下了这些句子。求索，求索答案。</p>
+<p>在我浏览我的b站收藏时，我突然注意起了我的用户名——“落夜寒枫”。于是那许久之前，在夜中静看枫叶凋零的幻想再一次出现在我的脑海里。夜里……估计是看不清枫叶的吧。</p>
+<p>没有纸了，停在这里吧！</p>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[【游戏手记】千面 Melancholy Love]]></title>
         <id>https://coder109.github.io/post/you-xi-shou-ji-qian-mian-melancholy-love/</id>
@@ -260,58 +277,6 @@
 <p>学生一直被权威束缚着，处处都有一些“潜规则”，如“唯领导为是论”、“学生无权论”。他们对于这些东西习以为常，不曾察觉这背后的不合理之处。是啊，没见过天空，笼中鸟怎会有逃离之心？没见过阳光，向日葵何以向光生长？</p>
 <p>自由是什么？写作文不用写成“人民日报体”，有说“不”的质疑权，有着个人独有的意志。</p>
 <p>而我们需要等待，至少是很长的一段时间。</p>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[【教程】Penbeat初级教程]]></title>
-        <id>https://coder109.github.io/post/jiao-cheng-penbeat-chu-ji-jiao-cheng/</id>
-        <link href="https://coder109.github.io/post/jiao-cheng-penbeat-chu-ji-jiao-cheng/">
-        </link>
-        <updated>2020-12-26T13:24:18.000Z</updated>
-        <content type="html"><![CDATA[<blockquote>
-<p>自己在两年……一年……好久之前是一名Pber，那时候写了个教程，改改发了吧！</p>
-</blockquote>
-<h1 id="penbeat是什么啊">Penbeat是什么啊？</h1>
-<p>说白了，就是用手和笔来模仿鼓。这有几个比较经典的视频<a href="https://www.youtube.com/watch?v=aDzHpdV9-PU">PEN BEAT I BATTLE</a>、<a href="https://www.youtube.com/watch?v=YcHLh2_tteM">Pen Beats</a>（都在油管上，所以你懂得）</p>
-<h1 id="那我需要什么啊">那我……需要什么啊？</h1>
-<p>·两个像笔的东西：笔、钥匙、修正带、从家里老古董收音机上拆下来的天线（逃</p>
-<p>·一个硬平面：桌子、朋友的后背、吉他面板（嗯？</p>
-<p>·手</p>
-<p>PS：虽然说什么笔都可以打PB，但是幻比较喜欢用“bic ultra round stic grip”这款笔，相对来说比较稳，而且非！常！抗！摔！</p>
-<h1 id="说的轻巧咋拿笔啊">说的轻巧，咋拿笔啊？</h1>
-<p>A Photo From 幻：<img src="https://coder109.github.io/post-images/1608990452425.jpg" alt="" loading="lazy"></p>
-<p>注意：小指一定要勾住！</p>
-<h1 id="鼓有鼓谱penbeat有谱吗">鼓有鼓谱，Penbeat有谱吗？</h1>
-<p>有滴~R表示右手，L表示左手。</p>
-<p>以下是几个常用音（以百度pb吧为准）：</p>
-<p>0-&gt;休止符</p>
-<p>1-&gt;用手腕下打，发出“咚”的声音。手掌最下端有一块比较软的肉，用那里打比较好。不过还是看个人喜欢咯~</p>
-<p>2-&gt;笔尖轻点桌面，发出“嗒”的声音。</p>
-<p>3-&gt;笔杆下砸桌面，发出“啪——”的声音。此时小指松开，无名指随意。</p>
-<p>4-&gt;笔刷，用笔尖在桌面（建议粗糙一些）上轻扫，发出“chuachua”的声音。不过由于向前扫和回扫声音不大相同，freestyle时也可以做不同音处理。</p>
-<p>5-&gt;手指骨轻打桌面，发出“嗒（闷）”的声音。</p>
-<p>6-&gt;竖直笔尾敲桌，发出“啪（闷）”的声音。</p>
-<p>下面是一些小众音：</p>
-<p>1#-&gt;用手掌拍桌子。</p>
-<p>2#-&gt;笔敲桌腿。</p>
-<p>2^-&gt;用非竖直笔尾敲桌面。（比6音闷了不少啊！）</p>
-<p>u-&gt;笔敲桌棱，发出“卡卡”声。</p>
-<p>B，b-&gt;分别是用力、轻轻敲击玻璃杯，发出“叮叮”的悦耳敲击声。个人最喜欢这个音。有的Pber甚至会让玻璃杯滑动，从而创造区别于4，7音的滑音。</p>
-<p>p-&gt;笔尖互打。</p>
-<p>7-&gt;笔尾刷桌，发出“划——”的声音。和4音有类似的特点。</p>
-<p>q-&gt;笔尾互打。</p>
-<p>m-&gt;拇指关节敲桌面。</p>
-<p>i-&gt;二段跳，两根手指捏住笔尾，用笔尖自然地在桌子上弹两下。</p>
-<h1 id="我去这也太难了啊咋练啊">我去，这也太难了啊，咋练啊？</h1>
-<p>先从惯用手4b开始（有点类似架子鼓与bbox）：1232 1232 1232 1232……或者2232 2232 2232 2232……</p>
-<p>之后打8b：1232 2232、1121 2111、1221 3223……自己组合吧！</p>
-<p>之后慢慢的把8b不断组合起来，最后就行了。可以随着慢歌、节拍器练一练节奏感，逐渐加快，Penbeat其实比较好练啊！不要着急，从慢到快，循序渐进！</p>
-<h1 id="来点资料呗~">来点资料呗~</h1>
-<p><a href="https://tieba.baidu.com/p/1271273721">【谱子整理】含各种新手练习谱</a></p>
-<p><a href="https://tieba.baidu.com/p/4002427231">【弱侠出品】penbeat双手入门教程＆基础技巧</a></p>
-<p><a href="https://tieba.baidu.com/p/2302085025">penbeat教程-左手开发 by冰块</a></p>
-<p>有些难-&gt;<a href="https://tieba.baidu.com/p/4531234488">【Taipunise 制作】笔尾进行曲（带谱）（纯节奏Free Style）</a></p>
-<p>还行-&gt;<a href="https://tieba.baidu.com/p/4146849917">【弱侠＆若侠】玩转16beat</a></p>
 ]]></content>
     </entry>
 </feed>
