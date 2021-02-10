@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://coder109.github.io</id>
     <title>幻</title>
-    <updated>2021-02-10T11:03:16.584Z</updated>
+    <updated>2021-02-10T14:27:26.293Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://coder109.github.io"/>
     <link rel="self" href="https://coder109.github.io/atom.xml"/>
@@ -11,17 +11,41 @@
     <icon>https://coder109.github.io/favicon.ico</icon>
     <rights>All rights reserved 2021, 幻</rights>
     <entry>
-        <title type="html"><![CDATA[【笔记】世界语]]></title>
+        <title type="html"><![CDATA[【笔记】世界语语法]]></title>
+        <id>https://coder109.github.io/post/bi-ji-shi-jie-yu-yu-fa/</id>
+        <link href="https://coder109.github.io/post/bi-ji-shi-jie-yu-yu-fa/">
+        </link>
+        <updated>2021-02-10T14:04:52.000Z</updated>
+        <content type="html"><![CDATA[<blockquote>
+<p>有修正。</p>
+</blockquote>
+<p>资料大多来自<a href="http://reto.cn/php/hanyu/">绿网-中国世界语网站</a>，也有其它网站搜集的杂项。语法简单，慕名而来~</p>
+<h1 id="名词与形容词">名词与形容词</h1>
+<p>主谓宾可自由排列，但SVO比较常见。</p>
+<p>##规则</p>
+<p>1.宾语后加词缀<strong>-n</strong><br>
+2.复数名词加词缀<strong>-j</strong>,若同时当宾语则先加-j后加-n。<br>
+3.形容词要和它所修饰的名词在数和格上保持一致，也就是说，如果名词后面带 j 或 n，形容词后面也要带 j 或 n。</p>
+<blockquote>
+<p>Alta junulo kuras sur la vojo. 一个高个子小伙子在路上跑。（形容词和名词都是单数）<br>
+Du altaj junuloj kuras sur la vojo. 两个高个子小伙子在路上跑。（形容词和名词都是复数）</p>
+</blockquote>
+<p>4.说话时，有时会省略主语和谓语，只剩下宾语，这时宾语也要保留宾语词尾 -n。如在电影院门口买票，你不一定说 “我要买一张票。（mi volas aĉeti bileton.）” 而可能只说“一张（票）（bileton）”。因为主语（mi）和谓语（volas aĉeti）都省略了，留下的是宾语，所以 bileto 后要加宾格词尾 -n。</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[【笔记】世界语词汇]]></title>
         <id>https://coder109.github.io/post/bi-ji-shi-jie-yu/</id>
         <link href="https://coder109.github.io/post/bi-ji-shi-jie-yu/">
         </link>
         <updated>2021-02-10T10:05:53.000Z</updated>
         <content type="html"><![CDATA[<blockquote>
-<p>有修正。未完。</p>
+<p>有修正。</p>
 </blockquote>
 <p>资料大多来自<a href="http://reto.cn/php/hanyu/">绿网-中国世界语网站</a>，也有其它网站搜集的杂项。语法简单，慕名而来~</p>
 <h1 id="读音">读音</h1>
-<h2 id="字母读法">字母读法</h2>
+<br>
+## 字母读法
 <p>Aa Bb Cc Ĉĉ Dd Ee Ff<br>
 /a/ /b/ /ts/ /ʧ/ /d/ /e/ /f/<br>
 Gg Ĝĝ Hh Ĥĥ Ii Jj Ĵĵ<br>
@@ -34,13 +58,31 @@ Ss Ŝŝ Tt Uu Ŭŭ Vv Zz<br>
 <h2 id="规则">规则</h2>
 <p>每个字母只有一个读音，不能和其他字母连读。</p>
 <p>单词重音在倒数第二个音节上（好耶！）</p>
+<p>拼读时，前缀和词根、词根和词根要分开拼读，只有词根和后缀才能连起来拼读。</p>
 <h1 id="词汇">词汇</h1>
+<br>
 <h2 id="词尾">词尾</h2>
 <p>名词：-o<br>
 动词：-i<br>
 形容词：-a<br>
 副词：由其它词转化而来的：-e<br>
 冠词：只有一个：la</p>
+<h2 id="词缀">词缀</h2>
+<br>
+<h3 id="前缀">前缀</h3>
+<p>mal- 相反（高的alta-&gt;malalta矮的）<br>
+ge-男女两性兼具（父亲patro-&gt;gepatro父母）<br>
+re-重新，再次（给doni-&gt;redoni归还）<br>
+mis-错误，不恰当，恶劣（写skribi-&gt;misskribi写错）</p>
+<h3 id="后缀">后缀</h3>
+<p>-isto 常从事（某事）者（医治kuraci-&gt;kuracisto医生）<br>
+-aro 同类事物集合（树arbo-&gt;arbaro森林）<br>
+-eco 性质、状态（年轻的juna-&gt;juneco青春）<br>
+-ejo 场所（网络reto-&gt;retejo网站）<br>
+-ino 雌性、女性（牛bovo-&gt;bovino母牛）<br>
+-emo 倾向、习惯（工作labori-&gt;laborema勤劳的）</p>
+<h3 id="其他神奇的构词法">其他神奇的构词法</h3>
+<p>词根+词根：fremda（外国的，陌生的）＋lingvo（语言）＝fremdlingvo（外语，fremd-lingv-o）</p>
 <h2 id="可列举的词汇">可列举的词汇</h2>
 <p>数词：nul（0），unu(1)，du(2)，tri(3)，kvar(4)，kvin(5)，ses(6)，sep(7)，ok(8)，naŭ(9)，dek(10)，cent(100)，mil(1000)，miliono（1000000）<br>
 ！：103：cent tri（中间的0不读出来）、10000：dek moj（十千）</p>
@@ -54,8 +96,10 @@ Ss Ŝŝ Tt Uu Ŭŭ Vv Zz<br>
 命令/请求：-u<br>
 虚拟语气：-us</p>
 <h2 id="规则-3">规则</h2>
-<p>两个动词连在一起<strong>描述一个动作</strong>时，第二个动词用原形</p>
-<p>我<em>愿意</em><strong>学</strong>这个东西。</p>
+<p>两个动词连在一起<strong>描述一个动作</strong>时，第二个动词用原形.</p>
+<p>例如：我<em>愿意</em><strong>学</strong>这个东西。</p>
+<h1 id="图片资料">图片资料</h1>
+<figure data-type="image" tabindex="1"><img src="https://coder109.github.io/post-images/1612966701245.png" alt="" loading="lazy"></figure>
 ]]></content>
     </entry>
     <entry>
@@ -245,21 +289,6 @@ Ss Ŝŝ Tt Uu Ŭŭ Vv Zz<br>
 当权威成为钢铁之剑，<br>
 那作文讲评中的荒唐，<br>
 消解于柠檬汽水回味的酸。</p>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[梦]]></title>
-        <id>https://coder109.github.io/post/meng/</id>
-        <link href="https://coder109.github.io/post/meng/">
-        </link>
-        <updated>2021-01-23T10:56:03.000Z</updated>
-        <content type="html"><![CDATA[<p>我梦见自己坠入了异样世界。</p>
-<p>天空中没有太阳，只有一张惨白的脸，双目通红，有血顺着脸颊流下来，狰狞地笑着，俯察地面上的生灵。它挂在黑色的天上，血色的大地寸草不生。一望无际的原野如机器打磨般平坦。我伫立着。</p>
-<p>那脸说了话，用极刺耳的声音划破寂静，“你逃不了的，这里除了你我之外空无一物，你终是困在这异世界了！”。我问道，“你便是造物主了？”那脸抽动起来，“我……不是……或者是，这空旷世界的创造者，你若来追求我，必有答案。”</p>
-<p>我于是向前走去，终是走近了那张脸，它却转过去，不再看我。“你不必知晓我是谁，只需明白我与你对立着，不是敌人，不是朋友！”我伸出手，滚烫的血熔化了我的手。</p>
-<p>我太息了。向前走去，走入了那白脸的内部，却只看见一面镜子，镜子里有一张惨白的滴血的脸。</p>
-<p>我惊醒了，发觉手压在胸上，导致我的梦魇。</p>
-<p>PS：如果世界只有我，那么“我”这个概念也应该是荡然无存的。只有对比，才有了无穷的概念！</p>
 ]]></content>
     </entry>
 </feed>
