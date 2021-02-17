@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://coder109.github.io</id>
     <title>幻</title>
-    <updated>2021-02-15T14:46:00.011Z</updated>
+    <updated>2021-02-17T09:11:52.450Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://coder109.github.io"/>
     <link rel="self" href="https://coder109.github.io/atom.xml"/>
@@ -10,6 +10,20 @@
     <logo>https://coder109.github.io/images/avatar.png</logo>
     <icon>https://coder109.github.io/favicon.ico</icon>
     <rights>All rights reserved 2021, 幻</rights>
+    <entry>
+        <title type="html"><![CDATA[【书摘】一些句子]]></title>
+        <id>https://coder109.github.io/post/shu-zhai-yi-xie-ju-zi/</id>
+        <link href="https://coder109.github.io/post/shu-zhai-yi-xie-ju-zi/">
+        </link>
+        <updated>2021-02-17T09:08:47.000Z</updated>
+        <content type="html"><![CDATA[<h2 id="中国文学">中国文学</h2>
+<p>于浩歌狂热之际中寒；于天上看见深渊。于一切眼中看见无所有；于无所希望中得救。</p>
+<p>——鲁迅《墓碣文》</p>
+<h2 id="外国文学">外国文学</h2>
+<p>往日跪拜在其脚下的记忆，会促使你在今后讲脚踏在其头上。今后不受此侮辱，我不愿意在眼下接受他人的尊敬，宁可忍受眼下的孤寂，也不愿意在将来忍受更残酷的孤寂。我们既然生逢充满自由、独立与自我气息的时代，恐怕也必须作出相应的牺牲，以忍受孤寂为代价吧。</p>
+<p>——夏目漱石《心》</p>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[【笔记】世界语语法]]></title>
         <id>https://coder109.github.io/post/bi-ji-shi-jie-yu-yu-fa/</id>
@@ -258,37 +272,6 @@ mis-错误，不恰当，恶劣（写skribi-&gt;misskribi写错）</p>
 <p>窗外的雪停了，您是否也如这雪花一样，正在这星球上的某处飘零呢？</p>
 <p>幻</p>
 <p>2021.1.26</p>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[两首小破诗]]></title>
-        <id>https://coder109.github.io/post/liang-shou-xiao-po-shi/</id>
-        <link href="https://coder109.github.io/post/liang-shou-xiao-po-shi/">
-        </link>
-        <updated>2021-01-23T11:04:02.000Z</updated>
-        <content type="html"><![CDATA[<h2 id="柠檬汽水的哲学">柠檬汽水的哲学</h2>
-<p>透明气泡，飘摇，<br>
-绽放在液面上的烟花，<br>
-清凉的焰，燃烧，<br>
-消解苦闷而炎热的夏。</p>
-<p>光辉岁月，璀璨，<br>
-柠檬香精惊艳的一瞬，<br>
-没有柠檬！幻觉，<br>
-化作鼻尖一酸，泪如雨下。</p>
-<h2 id="想要喝柠檬汽水的人的哲学">想要喝柠檬汽水的人的哲学</h2>
-<p>当心底臆想，透明气泡，<br>
-笔尖滑动，字迹潦草——<br>
-连鼻尖一酸也成奢望。<br>
-哀叹现实难逃！</p>
-<p>虽说这称不上一首诗，<br>
-虽说将度过固化一日，<br>
-我的心底仍有一罐——<br>
-柠檬汽水，助我挨过，<br>
-难捱一日！</p>
-<p>当打工人成为“荣誉头衔”，<br>
-当权威成为钢铁之剑，<br>
-那作文讲评中的荒唐，<br>
-消解于柠檬汽水回味的酸。</p>
 ]]></content>
     </entry>
 </feed>
