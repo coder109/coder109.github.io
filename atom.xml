@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://coder109.github.io</id>
     <title>幻</title>
-    <updated>2021-03-20T22:44:23.871Z</updated>
+    <updated>2021-03-26T14:01:37.872Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://coder109.github.io"/>
     <link rel="self" href="https://coder109.github.io/atom.xml"/>
@@ -10,6 +10,28 @@
     <logo>https://coder109.github.io/images/avatar.png</logo>
     <icon>https://coder109.github.io/favicon.ico</icon>
     <rights>All rights reserved 2021, 幻</rights>
+    <entry>
+        <title type="html"><![CDATA[2020/3]]></title>
+        <id>https://coder109.github.io/post/20203/</id>
+        <link href="https://coder109.github.io/post/20203/">
+        </link>
+        <updated>2021-03-26T13:48:59.000Z</updated>
+        <content type="html"><![CDATA[<h2 id="所谓的我">所谓的我</h2>
+<p>无意义的内耗。无法控制的思考。无法抑制的焦虑。我终究还是处在这个令我恐惧的状态中。</p>
+<p>这是一种精神上的疲倦，思维的列车脱了轨，碾碎一切路上的障碍，陷在毫无生气的沙漠中，失去了动力，失去了方向。这不太像是一种颓废，而是一种病态的“奋进”：被本不属于自己的目的驱使着，驶向迷茫——然后粉身碎骨。明知自己应该去做一点事情，但总是质疑这一切的本因，面对着越努力越退步的状态。下沉、下沉。</p>
+<p>当冥想也收效甚微时，我明白自己走到了浮躁的恶性循环之中。想获得明显的成效，但却在理想与现实的巨大落差之间陷入迷茫。我不擅长处理情感上的事物——感受得到但是只能在那种情绪中沦陷。用文字维持一个脆弱的平衡——一个在下沉与上升之间的脆弱平衡。</p>
+<p>我明明不是太在意学业与前途的，而此刻却是如此的焦虑，明明未来是那么清晰，也有力量去实现梦想，可为什么……？一个个想法如同泡沫转瞬即逝，但却还是“占用了太多资源”。也许只是有些累了吧。</p>
+<p>人之所以为人是因为思考，而之所以不为人也是因为思考吧。</p>
+<h2 id="春">春</h2>
+<p>春天就这样来临了。温暖的风、迟黑的夜、学校门前散发着响起的小吃摊位。人们从漫长的冬中醒了过来，在漫长时节经过后唱着生活的赞歌。</p>
+<p>春天的空气中有一种特殊的味道，天气一热便有了那个味道，也许是昭昭生机的序言，又或者是自然之神喜悦的消息。花还未开，北国的春意一向是淡的。南国人尽踏青之时，北国的枝梢可是了无一点吐芳斗艳的意思。可我以为这是北国春的秉性：含蓄内敛。偶有簌簌的冷雨降于世，又让人感知起这春的“萧瑟”来、可这样有希望的萧瑟，比起秋天残死的快意来，哪一个更浪漫呢？</p>
+<h2 id="短诗">短诗</h2>
+<p>我听闻黑暗的喧嚣吞没人间，<br>
+我看见死寂的光明远离海岸。<br>
+人头攒动，引入黑夜。<br>
+此刻只我一人伫立海滩。</p>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[时代·主义]]></title>
         <id>https://coder109.github.io/post/shi-dai-zhu-yi/</id>
@@ -188,29 +210,6 @@
 <p>我的脑海里忽地浮现出秋天里原野的景色，那是我和父亲坐汽车到那须野去游玩在途中下车时看到的情景。野外盛开着胡枝子，瞿麦，龙胆和败酱草等秋季花草。野葡萄还没有熟。</p>
 <p>这些情景前后毫无关联地在我的脑海里时而浮现，时而消失。</p>
 <p>——太宰治《斜阳》</p>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[【笔记】世界语语法]]></title>
-        <id>https://coder109.github.io/post/bi-ji-shi-jie-yu-yu-fa/</id>
-        <link href="https://coder109.github.io/post/bi-ji-shi-jie-yu-yu-fa/">
-        </link>
-        <updated>2021-02-10T14:04:52.000Z</updated>
-        <content type="html"><![CDATA[<blockquote>
-<p>有修正。</p>
-</blockquote>
-<p>资料大多来自<a href="http://reto.cn/php/hanyu/">绿网-中国世界语网站</a>，也有其它网站搜集的杂项。语法简单，慕名而来~</p>
-<h1 id="名词与形容词">名词与形容词</h1>
-<p>主谓宾可自由排列，但SVO比较常见。</p>
-<h2 id="规则">规则</h2>
-<p>1.宾语后加词缀<strong>-n</strong><br>
-2.复数名词加词缀<strong>-j</strong>,若同时当宾语则先加-j后加-n。<br>
-3.形容词要和它所修饰的名词在数和格上保持一致，也就是说，如果名词后面带 j 或 n，形容词后面也要带 j 或 n。</p>
-<blockquote>
-<p>Alta junulo kuras sur la vojo. 一个高个子小伙子在路上跑。（形容词和名词都是单数）<br>
-Du altaj junuloj kuras sur la vojo. 两个高个子小伙子在路上跑。（形容词和名词都是复数）</p>
-</blockquote>
-<p>4.说话时，有时会省略主语和谓语，只剩下宾语，这时宾语也要保留宾语词尾 -n。如在电影院门口买票，你不一定说 “我要买一张票。（mi volas aĉeti bileton.）” 而可能只说“一张（票）（bileton）”。因为主语（mi）和谓语（volas aĉeti）都省略了，留下的是宾语，所以 bileto 后要加宾格词尾 -n。</p>
 ]]></content>
     </entry>
 </feed>
