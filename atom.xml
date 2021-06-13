@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://coder109.github.io</id>
     <title>幻</title>
-    <updated>2021-06-13T09:14:02.949Z</updated>
+    <updated>2021-06-13T12:42:11.525Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://coder109.github.io"/>
     <link rel="self" href="https://coder109.github.io/atom.xml"/>
@@ -10,6 +10,48 @@
     <logo>https://coder109.github.io/images/avatar.png</logo>
     <icon>https://coder109.github.io/favicon.ico</icon>
     <rights>All rights reserved 2021, 幻</rights>
+    <entry>
+        <title type="html"><![CDATA[【书摘】《做哲学》——小西奥多·希克&刘易斯·沃恩]]></title>
+        <id>https://coder109.github.io/post/shu-zhai-lesslesszuo-zhe-xue-greatergreater-xiao-xi-ao-duo-xi-ke-andliu-yi-si-wo-en/</id>
+        <link href="https://coder109.github.io/post/shu-zhai-lesslesszuo-zhe-xue-greatergreater-xiao-xi-ao-duo-xi-ke-andliu-yi-si-wo-en/">
+        </link>
+        <updated>2021-06-13T11:24:13.000Z</updated>
+        <content type="html"><![CDATA[<blockquote>
+<p>本书豆瓣地址<a href="https://book.douban.com/subject/30136393/">点击这里！</a></p>
+</blockquote>
+<h2 id="哲学的事业">哲学的事业</h2>
+<p>哲学分为形而上学、认识论、价值论和逻辑学。</p>
+<p>要知道某物的定义或本质其实就是要知道它的充要条件。</p>
+<p>必要条件是一项要求：它是使某物可以发生或存在的一个必须被满足的条件。……要表明X不是Y的必要条件，你只需要表明有可能存在Y却不同时存在X。</p>
+<p>一个充分条件满足所有的要求。换句话说，有它就足够了。</p>
+<p>要判断一个条件对某物的存在是否是必要的或充分的，就要看该物是否可能在该条件未被满足时存在。或者反过来，看在该条件得到满足时该物是否可能不存在。</p>
+<p>亨利·沃尔特·比彻：“这个世纪的哲学就是下个世纪的常识。”</p>
+<p>辨明（explication）：将一个不严格的、前科学的概念转化为一个新的严格的概念。</p>
+<p>苏格拉底辩驳法：确定或提出一个问题→提出一个假说→推导出一个待测试的蕴涵结论（test implication）→进行测试→接受或拒绝该假说</p>
+<p>逻辑律（亚里士多德）：1.没有任何东西同时既具有一个性质又没有这个性质。2.任何事物都与它自身同一。3.任何事物要么具有某性质要么不具有该性质。</p>
+<p>对“是什么使得某物成为X？”这种形式的问题有两种回答方式：（1）说明使得X产生的因果上的充要条件；（2）说明成为X的逻辑上的充要条件。</p>
+<p>溯因：1.有现象p。2.如果假说h为真，则它可以为现象p提供最佳解释。3.所以，h可能为真。</p>
+<p>一个假说能在多大程度上将我们的知识组织和结合起来是由不同的充足性标准（criteria of adequacy）衡量的，例如一致性（consistency），简单性（simplicity），广泛性（scope），成果性（fruitfulness），保守性（conservatism）。</p>
+<blockquote>
+<p>一致性：与自身所解释的材料一致。<br>
+简单性：假说预设越少越好。<br>
+广泛性：解释的现象数量越多越好。<br>
+保守性：与已知理论契合<br>
+成果性：该理论解决问题越多越好。</p>
+</blockquote>
+<p>不幸的是，逻辑上有谬误的论证却可能是在心理上强有力的。</p>
+<p>谬误相关：</p>
+<blockquote>
+<p>预设结论：一个论证的结论被当做前提使用。<br>
+假两难悖论：论证预设两个选项，然而实际选项多于二。<br>
+含糊其辞：No woman is a man.（man可指人类亦可指男性）<br>
+合成：声称对于部分真的，对于整体也真。<br>
+来源谬误：基于一个论断的来源来论证其真或假。<br>
+诉诸不当权威：明星、权威崇拜而已。<br>
+诉诸大众、传统、无知、恐惧：“所有人都认为……”，“古往今来……”，“没有证据证明……，所以……为假”，“如果你们不判之死刑，你们都会被报复。”</p>
+</blockquote>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[【书摘】《野草》——鲁迅]]></title>
         <id>https://coder109.github.io/post/shu-zhai-lesslessye-cao-greatergreater-lu-xun/</id>
@@ -272,23 +314,6 @@
 飘摇在这暗夜的低处，<br>
 用虚构的血与幻想，<br>
 歌咏着生存者心绪的流浪。</p>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[写给余下一百余天的自己]]></title>
-        <id>https://coder109.github.io/post/xie-gei-yu-xia-yi-bai-yu-tian-de-zi-ji/</id>
-        <link href="https://coder109.github.io/post/xie-gei-yu-xia-yi-bai-yu-tian-de-zi-ji/">
-        </link>
-        <updated>2021-02-28T05:22:58.000Z</updated>
-        <content type="html"><![CDATA[<p>幻敬启：</p>
-<p>Kiel vi fartas?</p>
-<p>我写了很多文字，终究还是删掉了。</p>
-<p>你的成绩如何呢？是否还是那样的“离经叛道”“不服管教”呢？不管怎样，你都是你自己，不用在意别人对你的看法。你要过的是一个属于你自己的生活啊。</p>
-<p>你记不记得，你在Via浏览器的主页，写了一个高考倒计时的demo？只是为了走形式，还是真正想要鞭策你去学习？我不是想让你效仿那反人类的“衡水模式”，但至少努力一些吧。考上好的大学，<strong>也许</strong>生活会快乐一些。</p>
-<p>我希望你还保持着那样的平等观与自由观。不要被那些“道德绑架”与保守的思想所荼毒。你要知道，他们为了自己的利益，是不会理睬学生思想成长的。无论他们说得如何冠冕堂皇，总改变不了为了利益而教育的，目的。走下去就好。准备好迎接每一次挑战，每一个你将遇见的人，每一个你将接触的新思想。高考不过是一个阶段的结束而已。成功了，很好。失败了？难道这辈子就毁了？不是的。这是他们认为的人生。他们向你输出他们的价值观，但我想，你有自己的判断力。</p>
-<p>现实同理想总是有差异的。所以要有人去改变它。这注定是困难的事情，改变身边人几乎不可能。所以，不如“独善其身”吧，提升自己——这是唯一的办法了。</p>
-<p>要不看看你自己的<a href="https://coder109.github.io/post/gao-kao-hou-xiang-yao-zuo-de-shi">TO DO LIST</a>，未来还是很美好的对吧。你要想办法，在这看重文凭的世界，争取优秀的经济独立水平，再去做自己理想中的事情。</p>
-<p>黎明就要来了。你所渴望的日子就要来了。</p>
 ]]></content>
     </entry>
 </feed>
