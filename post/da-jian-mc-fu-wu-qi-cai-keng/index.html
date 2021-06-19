@@ -4,7 +4,7 @@
 <meta name="description" content="" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-<title>【书摘】《局外人》——阿尔贝·加缪 | 幻</title>
+<title>搭建MC服务器踩坑 | 幻</title>
 
 <link rel="shortcut icon" href="https://coder109.github.io/favicon.ico?v=1624068011503">
 
@@ -116,29 +116,33 @@
         <div class="post-detail gt-bg-theme-color-second">
             <article class="gt-post-content">
                 <h2 class="post-title">
-                    【书摘】《局外人》——阿尔贝·加缪
+                    搭建MC服务器踩坑
                 </h2>
                 <div class="post-info">
                     <time class="post-time gt-c-content-color-first">
-                        · 2020-06-26 ·
+                        · 2021-06-18 ·
                     </time>
                     
-                        <a href="https://coder109.github.io/tag/FnEQ80-1Q/" class="post-tags">
-                            # 书摘
+                        <a href="https://coder109.github.io/tag/JmSxkJzad/" class="post-tags">
+                            # 计算机相关
                         </a>
                     
                 </div>
                 <div class="post-content">
                     <blockquote>
-<p>本书豆瓣链接：<a href="https://book.douban.com/subject/4246968/">点击这里！</a></p>
+<p>大体搭建方式来自于mcbbs以及直觉。</p>
 </blockquote>
-<h2 id="第一部分">第一部分</h2>
-<p>天空是蓝白相间，周围是单调的颜色——开裂的柏油是黏糊糊的黑，人们的衣着是死气沉沉的黑，车子是油光发亮的黑。我有点迷失在这样的天地之间。阳光、皮革味、马车的马粪味、油漆味。香炉味、一夜没睡的疲惫，这一切让我两眼模糊、神志不清。</p>
-<p>我感觉自己淹没在一阵噪声和尘埃中，我什么都看不见，只感到这种奔跑中混乱的冲动，身边尽是绞车、机器。天际晃动的桅杆和一路排开的轮船。</p>
-<p>于是，我又对准那具已经了无生气的肉体开了四枪，子弹打进去，也看不出什么来。而这四枪，就像是我在苦难之门上，急促地叩了四下。</p>
-<h2 id="第二部分">第二部分</h2>
-<p>我始终不理解，日子为什么可以如此漫长又如此短暂。日子过起来如此漫长，这是毫无疑问的，但它们却又如此紧凑，一天推涌着一天。它们失去了自己的名字，只有“昨天”和“明天”两个词，对我来说还剩下一点意义。</p>
-<p>在我所度过的整个荒诞的人生中，从我未来的深处，一股昏暗的气息穿越尚未到来的岁月向我扑来，这股气息一路袭来，使别人向我建议的一切都变得毫无差别，未来的岁月并不比我已经度过的岁月更真实。</p>
+<p>服务器使用的是腾讯云的轻量应用服务器，基于catserver搭建的模组服务器，版本为1.12.2。</p>
+<h2 id="yaml语法">YAML语法</h2>
+<p>一般插件（plugins）会有.yml为后缀的配置文件，其语言使用的是YAML。这个鬼东西有这样几个神奇的、令人抓狂的、恶劣的特性：大小写敏感、只能用空格缩进（tab不配），并且一个层级的元素左端必须对齐！</p>
+<h2 id="启动服务器时发生卡顿">启动服务器时发生卡顿</h2>
+<p>通过批处理文件启动服务器，但是却卡在了preparing spawn area的步骤上，最后崩溃。</p>
+<p>将使用最大内存从1G变为4G，问题解决。</p>
+<h2 id="开放端口">开放端口</h2>
+<p>历经千辛万苦，虽然后台仍旧不停报错，但好歹没有崩溃。于是幻打开了本地MC启动器，连接服务器。突然报错： java.net.ConnectException: Connection timed out: no further information</p>
+<p>ん？这个意思是说我连不上服务器咯？那我瞅瞅……</p>
+<p>防火墙设置？没问题！服务器正常？确实！25565端口？没错啊！</p>
+<p>问题出在哪里呢？虽然能通过在服务器端命令台运行netstat -an观察到25565端口是开放的，我们仍需要在腾讯云的控制台中设置开放25565端口。</p>
 
                 </div>
             </article>
@@ -147,8 +151,8 @@
         
             <div class="next-post">
                 <div class="next gt-c-content-color-first">下一篇</div>
-                <a href="https://coder109.github.io/post/shu-zhai-lun-ren-lei-bu-ping-deng-de-qi-yuan-he-ji-chu/" class="post-title gt-a-link">
-                    【书摘】《论人类不平等的起源和基础》——卢梭
+                <a href="https://coder109.github.io/post/2021617/" class="post-title gt-a-link">
+                    2021/6/17
                 </a>
             </div>
         
