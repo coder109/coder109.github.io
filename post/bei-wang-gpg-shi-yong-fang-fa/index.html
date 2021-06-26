@@ -6,7 +6,7 @@
 
 <title>【备忘】GPG使用方法 | 幻</title>
 
-<link rel="shortcut icon" href="https://coder109.github.io/favicon.ico?v=1624609653484">
+<link rel="shortcut icon" href="https://coder109.github.io/favicon.ico?v=1624672738338">
 
 <link href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" rel="stylesheet">
 <link rel="stylesheet" href="https://coder109.github.io/styles/main.css">
@@ -93,7 +93,7 @@
             
         </div>
         <div style="text-align: center">
-            <form id="gridea-search-form" style="position: relative" data-update="1624609653484"
+            <form id="gridea-search-form" style="position: relative" data-update="1624672738338"
                 action="/search/">
                 <input class="search-input" autocomplete="off" spellcheck="false" name="q" placeholder="搜索文章" />
                 <i class="fas fa-search gt-c-content-color-first" style="position: absolute; top: 9px; left: 10px;"></i>
@@ -130,30 +130,21 @@
                 </div>
                 <div class="post-content">
                     <h2 id="导入公钥">导入公钥</h2>
-<pre><code>gpg --import example.asc
-</code></pre>
+<p>gpg --import example.asc</p>
 <p>之后会print出一个key ID，为X，然后运行下面的代码来检查公钥指纹。</p>
-<pre><code>gpg --fingerprint X
-</code></pre>
+<p>gpg --fingerprint X</p>
 <h2 id="导出公钥及加密文件">导出公钥及加密文件</h2>
-<pre><code>gpg --armor --output pubkey.asc --export Client_ID 
-
-gpg --reipient Client_ID --output KEY.gpg --encrypt example.txt
-</code></pre>
+<p>gpg --armor --output pubkey.asc --export Client_ID</p>
+<p>gpg --reipient Client_ID --output KEY.gpg --encrypt example.txt</p>
 <h2 id="生成签名">生成签名</h2>
-<pre><code>gpg --sign example.txt ::二进制
-
-gpg --clearsign example.txt ::ASCII
-</code></pre>
+<p>gpg --sign example.txt ::二进制</p>
+<p>gpg --clearsign example.txt ::ASCII</p>
 <h2 id="验证签名">验证签名</h2>
-<pre><code>gpg --verify example.txt.asc example.txt
-
-gpg --verify file.ext.asc file.ext
-</code></pre>
+<p>gpg --verify example.txt.asc example.txt</p>
+<p>gpg --verify file.ext.asc file.ext</p>
 <h2 id="加密与解密">加密与解密</h2>
-<pre><code>gpg --local-user Sender_ID --recipient Receiver_ID --armor --sign --encrypt example.txt
-
-gpg  --output psw.txt --decrypt example.asc</code></pre>
+<p>gpg --local-user Sender_ID --recipient Receiver_ID --armor --sign --encrypt example.txt</p>
+<p>gpg  --output psw.txt --decrypt example.asc</p>
 
                 </div>
             </article>
