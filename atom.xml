@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://coder109.github.io</id>
     <title>幻</title>
-    <updated>2021-07-03T08:11:20.280Z</updated>
+    <updated>2021-07-06T05:20:11.695Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://coder109.github.io"/>
     <link rel="self" href="https://coder109.github.io/atom.xml"/>
@@ -10,6 +10,28 @@
     <logo>https://coder109.github.io/images/avatar.png</logo>
     <icon>https://coder109.github.io/favicon.ico</icon>
     <rights>All rights reserved 2021, 幻</rights>
+    <entry>
+        <title type="html"><![CDATA[【笔记】基础德语]]></title>
+        <id>https://coder109.github.io/post/bi-ji-ji-chu-de-yu/</id>
+        <link href="https://coder109.github.io/post/bi-ji-ji-chu-de-yu/">
+        </link>
+        <updated>2021-06-24T01:32:49.000Z</updated>
+        <content type="html"><![CDATA[<blockquote>
+<p>本视频b站链接: <a href="https://www.bilibili.com/video/BV1xt411j7jV/">点击这里！</a></p>
+</blockquote>
+<h2 id="语音注意事项">语音注意事项</h2>
+<ul>
+<li>ah读作长音a，ah，eh，ieh，ih等中的h不发音。</li>
+<li>一般的，元音字母后有两个或以上辅音字母时，元音字母为短音。</li>
+<li>单词起始的S读成z。</li>
+<li>元音字母e在非重读前缀中be，ge中轻读。</li>
+</ul>
+<h2 id="单词">单词</h2>
+<ul>
+<li>阴性名词：die，阳性名词：der，中性名词：das，复数名词：die</li>
+</ul>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[【备忘】GPG使用方法]]></title>
         <id>https://coder109.github.io/post/bei-wang-gpg-shi-yong-fang-fa/</id>
@@ -75,14 +97,74 @@
         </link>
         <updated>2021-06-16T23:21:33.000Z</updated>
         <content type="html"><![CDATA[<blockquote>
-<p>本课b站链接：<a href="https://www.bilibili.com/video/BV12W411f7YF">零基础自学音乐学乐理合集</a>，辅助以<a href="https://www.bilibili.com/video/BV1jW411J765">基础乐理入门</a></p>
+<p>本课b站链接：<a href="https://www.bilibili.com/video/BV12W411f7YF">零基础自学音乐学乐理合集</a></p>
 </blockquote>
+<h2 id="音程相关及基础">音程相关及基础</h2>
+<p>附点作用为将前面音符时值增加一半。</p>
+<p>音程是指两个乐音之间的音高关系。</p>
 <p>音程分类记忆：2367没有纯，1458没大小。</p>
-<p>增四度音数为3，减五度音数也为3，纯五度音数为3.5，八度为低音-中音，中音-高音的关系，音数为6。</p>
 <p>音程的转位：转位音程+原位音程=9度</p>
 <p>音程转位纯不变，大小增减互相换（即原音程为大3，转音程便为小6）</p>
 <p>自然音程：纯、大、小、增四度、减五度</p>
 <p>自然大调：以1=C为例，1为C，往上根据相同音程排列的1234567形成的体系为大调。</p>
+<h2 id="五线谱相关">五线谱相关</h2>
+<p>高音谱号（G谱号）将第二线确定为小字一组的G音，高音谱表下加一线为中央C。</p>
+<p>低音谱号（F谱号）将第四线确定为小字组的F音，低音谱表上加一线为中央C。</p>
+<p>中音谱号第三线为中央C。</p>
+<p>次中音谱号第四线为中央C。</p>
+<blockquote>
+<p>幻：只要记住哪里是中央C就OK辣~</p>
+</blockquote>
+<p>音符上若出现8va----------（高八度记号）字样，则表明要高一个八度演奏音符。8vb----------为低八度记号，在音符下方出现。十五度记号则为15ma，15mb。v-otta<font color="red">v</font>a，a-<font color="red">a</font>lta，b-<font color="red">b</font>assa，m-quindicesi<font color="red">m</font>a（意大利语）</p>
+<table>
+<thead>
+<tr>
+<th>符号类型</th>
+<th>五线谱表示方法（符头，符干，符尾组成音符）</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>全音符</td>
+<td>o</td>
+</tr>
+<tr>
+<td>二分音符</td>
+<td>四分音符符头空心</td>
+</tr>
+<tr>
+<td>四分音符</td>
+<td>♩</td>
+</tr>
+<tr>
+<td>八分音符</td>
+<td>🎵</td>
+</tr>
+<tr>
+<td>十六分音符</td>
+<td>八分音符基础上再添加一个符尾，三十二分音符以此类推</td>
+</tr>
+<tr>
+<td>附点</td>
+<td>（符头右边略下）·</td>
+</tr>
+<tr>
+<td>全休止符</td>
+<td>（第四线下）-</td>
+</tr>
+<tr>
+<td>二分休止符</td>
+<td>（第三线上方）-</td>
+</tr>
+<tr>
+<td>四分休止符及其他</td>
+<td><a href="https://pic2.zhimg.com/80/v2-e57526d6269b793ccfaa123986b0ca89_720w.jpg">查看图片</a></td>
+</tr>
+</tbody>
+</table>
+<h2 id="度">度</h2>
+<p>度：从一个音名到另一个音名，其间包含几个音名就是几度。（C到E是三度）</p>
+<p>增四度音数为3，减五度音数也为3，纯五度音数为3.5，八度为低音-中音，中音-高音的关系，音数为6。</p>
 ]]></content>
     </entry>
     <entry>
@@ -193,24 +275,6 @@
 <p>我走出了地铁站，前方人头攒动。</p>
 <p>我挤进人群，看见是一个男人跳楼自尽了。</p>
 <p>“幻？”</p>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[【笔记】東京大学入学式上野千鹤子致辞]]></title>
-        <id>https://coder109.github.io/post/bi-ji-dong-jing-da-xue-ru-xue-shi-shang-ye-qian-he-zi-zhi-ci/</id>
-        <link href="https://coder109.github.io/post/bi-ji-dong-jing-da-xue-ru-xue-shi-shang-ye-qian-he-zi-zhi-ci/">
-        </link>
-        <updated>2021-06-15T05:27:59.000Z</updated>
-        <content type="html"><![CDATA[<blockquote>
-<p>视频b站链接：<a href="https://www.bilibili.com/video/BV1T7411f7xu">点击这里！</a></p>
-</blockquote>
-<p>那是因为，对于男生来说，成绩好是一项资本；对于女生来说，成绩好却不等于有魅力。因为从小到大，所有人都希望她们“可爱”。那么“可爱”算什么魅力？“可爱” 的潜台词就是被疼爱，被选择，被保护，暗含了顺从的意味。</p>
-<p>各位同学，你们在此之前身处的每一所学校，只是一个个营造表面平等的社会。</p>
-<p>驱使我一路走到今天的，是无穷无尽的好奇心，以及对社会不公的愤怒。</p>
-<p>今后等待着你们的会是一个“付出也未必会有相应回报”的社会。</p>
-<p>你现在之所以会认为“付出就有回报”，那是因为你一直以来面临的环境都是：有人鼓励你，推着你向前。拉着你的手，肯定你的点滴进步。</p>
-<p>所以，请你们不要把努力用在追逐个人的胜利。你们被优越的环境所塑造出来的能力，不是为了凌驾于没有享受过同等资源的人们之上，而应该把这些能力用来帮助他们。</p>
-<p>大学学习的价值，不在于掌握既有的知识，而是创造出尚未被开发的知识。</p>
 ]]></content>
     </entry>
     <entry>
