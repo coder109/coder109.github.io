@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://coder109.github.io</id>
     <title>幻</title>
-    <updated>2021-07-15T13:19:48.128Z</updated>
+    <updated>2021-07-16T03:06:41.164Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://coder109.github.io"/>
     <link rel="self" href="https://coder109.github.io/atom.xml"/>
@@ -10,6 +10,75 @@
     <logo>https://coder109.github.io/images/avatar.png</logo>
     <icon>https://coder109.github.io/favicon.ico</icon>
     <rights>All rights reserved 2021, 幻</rights>
+    <entry>
+        <title type="html"><![CDATA[【收集】赛博空间独立宣言 ]]></title>
+        <id>https://coder109.github.io/post/shou-ji-sai-bo-kong-jian-du-li-xuan-yan/</id>
+        <link href="https://coder109.github.io/post/shou-ji-sai-bo-kong-jian-du-li-xuan-yan/">
+        </link>
+        <updated>2021-07-16T00:33:19.000Z</updated>
+        <content type="html"><![CDATA[<blockquote>
+<p>英文原版：<a href="https://www.eff.org/cyberspace-independence">Click here!</a>，中文翻译：<a href="https://www.douban.com/group/topic/20771202/">点击这里！</a>，翻译有修改，置于脚注。</p>
+</blockquote>
+<h1 id="原文">原文</h1>
+<br>
+<h2 id="a-declaration-of-the-independence-of-cyberspace">A Declaration of the Independence of Cyberspace</h2>
+<p>by John Perry Barlow</p>
+<p>Governments of the Industrial World, you weary giants of flesh and steel, I come from Cyberspace, the new home of Mind. On behalf of the future, I ask you of the past to leave us alone. You are not welcome among us. You have no sovereignty where we gather.</p>
+<p>We have no elected government, nor are we likely to have one, so I address you with no greater authority than that with which liberty itself always speaks. I declare the global social space we are building to be naturally independent of the tyrannies you seek to impose on us. You have no moral right to rule us nor do you possess any methods of enforcement we have true reason to fear.</p>
+<p>Governments derive their just powers from the consent of the governed. You have neither solicited nor received ours. We did not invite you. You do not know us, nor do you know our world. Cyberspace does not lie within your borders. Do not think that you can build it, as though it were a public construction project. You cannot. It is an act of nature and it grows itself through our collective actions.</p>
+<p>You have not engaged in our great and gathering conversation, nor did you create the wealth of our marketplaces. You do not know our culture, our ethics, or the unwritten codes that already provide our society more order than could be obtained by any of your impositions.</p>
+<p>You claim there are problems among us that you need to solve. You use this claim as an excuse to invade our precincts. Many of these problems don't exist. Where there are real conflicts, where there are wrongs, we will identify them and address them by our means. We are forming our own Social Contract. This governance will arise according to the conditions of our world, not yours. Our world is different.</p>
+<p>Cyberspace consists of transactions, relationships, and thought itself, arrayed like a standing wave in the web of our communications. Ours is a world that is both everywhere and nowhere, but it is not where bodies live.</p>
+<p>We are creating a world that all may enter without privilege or prejudice accorded by race, economic power, military force, or station of birth.</p>
+<p>We are creating a world where anyone, anywhere may express his or her beliefs, no matter how singular, without fear of being coerced into silence or conformity.</p>
+<p>Your legal concepts of property, expression, identity, movement, and context do not apply to us. They are all based on matter, and there is no matter here.</p>
+<p>Our identities have no bodies, so, unlike you, we cannot obtain order by physical coercion. We believe that from ethics, enlightened self-interest, and the commonweal, our governance will emerge. Our identities may be distributed across many of your jurisdictions. The only law that all our constituent cultures would generally recognize is the Golden Rule. We hope we will be able to build our particular solutions on that basis. But we cannot accept the solutions you are attempting to impose.</p>
+<p>In the United States, you have today created a law, the Telecommunications Reform Act, which repudiates your own Constitution and insults the dreams of Jefferson, Washington, Mill, Madison, DeToqueville, and Brandeis. These dreams must now be born anew in us.</p>
+<p>You are terrified of your own children, since they are natives in a world where you will always be immigrants. Because you fear them, you entrust your bureaucracies with the parental responsibilities you are too cowardly to confront yourselves. In our world, all the sentiments and expressions of humanity, from the debasing to the angelic, are parts of a seamless whole, the global conversation of bits. We cannot separate the air that chokes from the air upon which wings beat.</p>
+<p>In China, Germany, France, Russia, Singapore, Italy and the United States, you are trying to ward off the virus of liberty by erecting guard posts at the frontiers of Cyberspace. These may keep out the contagion for a small time, but they will not work in a world that will soon be blanketed in bit-bearing media.</p>
+<p>Your increasingly obsolete information industries would perpetuate themselves by proposing laws, in America and elsewhere, that claim to own speech itself throughout the world. These laws would declare ideas to be another industrial product, no more noble than pig iron. In our world, whatever the human mind may create can be reproduced and distributed infinitely at no cost. The global conveyance of thought no longer requires your factories to accomplish.</p>
+<p>These increasingly hostile and colonial measures place us in the same position as those previous lovers of freedom and self-determination who had to reject the authorities of distant, uninformed powers. We must declare our virtual selves immune to your sovereignty, even as we continue to consent to your rule over our bodies. We will spread ourselves across the Planet so that no one can arrest our thoughts.</p>
+<p>We will create a civilization of the Mind in Cyberspace. May it be more humane and fair than the world your governments have made before.</p>
+<p>Davos, Switzerland<br>
+February 8, 1996</p>
+<h1 id="原翻译">原翻译</h1>
+<br>
+<h2 id="赛博空间独立宣言">赛博空间独立宣言</h2>
+<p>工业世界的政府，你们这些肉体和钢铁的巨人，令人厌倦，我来自赛博空间，思维的新家园。以未来的名义，我要求属于过去的你们，不要干涉我们的自由。我们不欢迎你们，我们聚集的地方，你们不享有主权。</p>
+<p>我们没有民选政府，将来也不会有，所以我现在跟你们讲话，运用的不过是自由言说的权威<sup class="footnote-ref"><a href="#fn1" id="fnref1">[1]</a></sup>。我宣布，我们建立的全球社会空间，自然地不受你们强加给我们的专制的约束。你们没有任何道德权利统治我们，你们也没有任何强制方法，让我们真的有理由恐惧。</p>
+<p>政府的正当权利来自被统治者的同意。你们从来没有要求过我们的同意，你们也没有得到我们的同意。我们没有邀请你来，你们不了解我们，不了解我们的世界。赛柏空间不在你们的疆界之内。不要认为你们可以建造这样一个疆界，好像建造一座公共建筑。你们没有这个能力。这个疆界是一件<sup class="footnote-ref"><a href="#fn2" id="fnref2">[2]</a></sup>自然行为，它将从我们的集体行动中生发出来。</p>
+<p>你们从来没有参加过我们的大会，你们也没有创造我们的市场财富。对我们的文化，我们的道德，我们的不成文法典，你们一无所知，这些法典已经在维护我们社会的秩序，比你们的任何强制<sup class="footnote-ref"><a href="#fn3" id="fnref3">[3]</a></sup>所能达到的要好得多。</p>
+<p>你们说我们有问题，你们要解决这些问题。你们用这个借口侵犯我们的领地。你们所宣称的这些问题，许多都不存在。真正冲突出现的时候，不公正出现的时候，我们自己会鉴定它，用自己的方式解决它。我们正在形成我们自己的社会契约。治理将出现，但根据的是我们世界的情况，不是你们的。我们的世界，是不同的。</p>
+<p>赛柏空间由交易、关系和思想本身构成，它们像一道永恒的波浪，在我们的交流之网上部署着。我们的世界无处不在，又无处可寻，我们的世界不是肉体存在的世界。</p>
+<p>我们正在创造一个新世界，人人都可以进入这个世界，而不必考虑由种族、经济力、武力、出生地而来的特权或偏见。</p>
+<p>我们正在创造一个新世界，人人、处处可以表达他或她的信仰，无论这种信仰是多么古怪，而不再害怕被强制沉默或强制一律。</p>
+<p>你们关于财产、表达、身份、迁徙的法律概念及其关联对我们不适用。这些概念建立在物质的基础上，我们这里没有物质。</p>
+<p>我们的身份不涉及肉体，所以和你们不一样，我们不能通过肉体的强制来获得秩序。我们相信，我们的治道将从伦理、明智的自我利益和公益中产生出来。我们的身份可能分布在你们许许多多的法律管辖中。我们全部的立宪文化能够普遍认可的唯一法律就是这样一个法则：己所不欲，勿施予人。我们希望能在这个基础上确立我们特殊的解决方案。但是我们不能接受你们企图强加给我们的解决方案。</p>
+<blockquote>
+<p>原文翻译就到这里，下文由幻尝试翻译。</p>
+</blockquote>
+<h1 id="后文">后文</h1>
+<p>如今在美国，你们出台了这样一部法律——《电信改革法案》，它背弃了你们自己的宪法，玷污了杰斐逊、华盛顿、密尔、麦迪逊、德·托克维尔以及布兰代斯的梦想。这些梦想定将在此刻，从我们这里重获新生！</p>
+<p>你们恐惧着，恐惧着你们自己的孩子，因为在他们的世界里，你们永远是移民！正因为你恐惧他们，才委托你们的官僚系统代为行使父母的责任。你们太过懦弱，以至于无法面对你们自身！在我们的世界里，一切情感以及人性的表达，从卑微的到高贵的，全是不可分割的整体，全是世界对话的组成部分！我们不能将翅膀拍打着的空气和提供阻力的空气分隔开来！</p>
+<p>在中国、德国、法国、俄罗斯、新加坡、意大利和美国，你们正试图在赛博空间的前线建立岗哨，来扫清名为自由的病毒！短期内，这么做或许可以阻止自由蔓延开来，但是，在这行将被数字化媒体覆盖的世界上，这么做将毫无用处。</p>
+<p>在美国和其他地区，通过立法，你们日渐倾颓的信息工业将延续最末的鼻息。这些法律，在世界范围内聒噪不已！这些法律，宣称思想是另一种工业产品！这些法律，认为思想远没有生铁值钱！在我们的世界里，人类思想的一切产物被毫无代价地复制，被毫无限制地传播开来！全球性的思想传播，将不再需要你们的工厂来实现。</p>
+<p>日渐增加的敌对与殖民化政策，让我们和那些热爱自由、热爱自决的先烈们同呼吸、共命运。这些先烈们，曾反对外来的、潜藏着的权威力量。那么我们也必须向世界发出我们的声音：虽然我们允许你们统治我们的肉体，但我们在虚拟世界中的权利，绝不归你们所管！我们的同僚将遍布这星球的每一个角落，没有人能束缚住我们的思想！</p>
+<p>我们将在赛博空间中创造属于思想的文明。愿它能比你们的政府一直以来所创造的世界更加人性、更加公正。</p>
+<p>瑞士，达沃斯</p>
+<p>1996年2月8日</p>
+<hr class="footnotes-sep">
+<section class="footnotes">
+<ol class="footnotes-list">
+<li id="fn1" class="footnote-item"><p>我同你们讲话，是以自由本身为名的，并非权威。 <a href="#fnref1" class="footnote-backref">↩︎</a></p>
+</li>
+<li id="fn2" class="footnote-item"><p>一种 <a href="#fnref2" class="footnote-backref">↩︎</a></p>
+</li>
+<li id="fn3" class="footnote-item"><p>任何强制性的行为。 <a href="#fnref3" class="footnote-backref">↩︎</a></p>
+</li>
+</ol>
+</section>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[我眼中的读书]]></title>
         <id>https://coder109.github.io/post/tan-tan-du-shu/</id>
@@ -358,23 +427,6 @@
 <p>我走出了地铁站，前方人头攒动。</p>
 <p>我挤进人群，看见是一个男人跳楼自尽了。</p>
 <p>“幻？”</p>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[2021/6/15]]></title>
-        <id>https://coder109.github.io/post/2020615/</id>
-        <link href="https://coder109.github.io/post/2020615/">
-        </link>
-        <updated>2021-06-15T00:07:07.000Z</updated>
-        <content type="html"><![CDATA[<p>“只有读书，我才能反抗他们。”幻在高二时曾写过这样的句子。</p>
-<p>反观当下，不懂得如何去思考的人、用强盗逻辑绑架他人的人有很多，一旦你戳破他们，他们便会占据道德制高点，把其他人拉过来，一起讽刺、辱骂你。人们听不进去所谓的“解释”，因为他们不是为了和你论道，只是为了打败并羞辱你。许多自诩平等自由的人，都会在某一个时刻倒向自己反对的那一面。</p>
-<p>我们对之习以为常，认为这是一种解决问题的、行而有效的、正当存在的办法，然而，是这样吗？处处绑架别人，扼杀别人的思想，拆毁别人的讲台——只因为这不合自己的口味——这样做是正确的的吗？他们不愿意读书，不愿意思考，只愿意凭借自己的主观意愿，遵循本能活在这个世界上，仅此而已。用着怪诞荒谬的逻辑。“不尊重老师就是不爱学习”，“不尊重师长就是毫无道德的表现”……很有趣的说法，但一丁点道理都没有的。<br>
-他们预设上述说法都是成立的，因为这是他们的生活、师长告诉他们的，可生活教会你的，一定是正确的吗？</p>
-<p>所以，我不再想改变他们，因为他们并不想被改变，他们只想蜗居在自己的框架里，对于外界事物是排斥且痛恨的。一旦你尝试拆除他们的框架，等于拆除了他们最后一点伪装，最后一处庇护所。我只好在书、电影、音乐、游戏以及胡乱写东西中给自己一点微薄的安慰。您可以讲我是个悲观者，是个懦夫，与此同时，我也不信您有着改变世界的力量，如若有，那么我只能祝你一路安好。</p>
-<p>我只是太息着，学习新思想，在新思想与现实的冲突中陷入“政治性抑郁”，在这抑郁中追寻新的思想。死循环，容易导致内存溢出，而我在这循环里又没有释放的方法。我只得走下去，走向更为广阔的平台，走向更为美好的明天——美好？大概——才可能有一点改变。</p>
-<p>我很庆幸高考之后有约莫两个月的假期供我阅读。高考考得好，我也不会欣喜，因为那只标志着一个阶段的圆满；高考考砸了，我也不会哀叹，因为那无法决定我的一生——或者说，我没有勇气再走一遍这痛苦不堪的高三了。我只想读书，仅此而已。哪怕所有人都反对我的选择，我终究有逃离这一切的方法——自尽。</p>
-<p>幻并不是精神疾病患者（虽然精神疾病患者大都这样讲），也并非对生活丧失了希望，只是觉得死亡没有那样的可怖。因为此时的我，什么也没有，也终将什么也没有。生与死不过是自主选择与强制选择的问题罢了。我将大踏步走向未来，走向那许久之后的无法逃离的死亡。</p>
-<p>所以，这又是一篇杂谈类的没有中心的日记。</p>
 ]]></content>
     </entry>
 </feed>
