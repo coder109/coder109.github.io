@@ -1,0 +1,413 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search> 
+  
+  
+    
+    <entry>
+      <title>Hello World</title>
+      <link href="/2022/11/01/hello-world/"/>
+      <url>/2022/11/01/hello-world/</url>
+      
+        <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title></title>
+      <link href="/2022/11/01/linuxRaod2/"/>
+      <url>/2022/11/01/linuxRaod2/</url>
+      
+        <content type="html"><![CDATA[<h1 id="Linux苦痛之路（二）：命令行篇"><a href="#Linux苦痛之路（二）：命令行篇" class="headerlink" title="Linux苦痛之路（二）：命令行篇"></a>Linux苦痛之路（二）：命令行篇</h1><h2 id="1-chmod"><a href="#1-chmod" class="headerlink" title="1.chmod"></a>1.chmod</h2>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title></title>
+      <link href="/2022/11/01/linuxRoad1/"/>
+      <url>/2022/11/01/linuxRoad1/</url>
+      
+        <content type="html"><![CDATA[<h1 id="Linux苦痛之路-一-：基本配置篇"><a href="#Linux苦痛之路-一-：基本配置篇" class="headerlink" title="Linux苦痛之路(一)：基本配置篇"></a>Linux苦痛之路(一)：基本配置篇</h1><h2 id="0-引子"><a href="#0-引子" class="headerlink" title="0.引子"></a>0.引子</h2><p>最近购置了一台台式机，在配置的时候，突发奇想，“不如安个Linux吧！”。于是安上了Fedora，安完发现发现新版本的Fedora没有网卡驱动，而我手头又没有网线，安装驱动也有问题。</p><p>秉持着“能折腾就折腾，不能折腾就逃跑”的思想，于是又重新安了个Ubuntu 22.04。由于一直都在用windows，感觉linux配置起来没有windows那么简单。</p><p>这篇blog就当作是自己的踩坑记录了。</p><h2 id="1-QQ-amp-微信解决方案"><a href="#1-QQ-amp-微信解决方案" class="headerlink" title="1.QQ&amp;微信解决方案"></a>1.QQ&amp;微信解决方案</h2><p>这两个软件也算是国内相当一部分人没有选择Linux作为主力系统的原因，QQ for Linux做得太垃圾，甚至没有办法登陆。</p><p>一开始想要用原生的wine，一路配置好，发现微信和QQ都非常卡，还容易闪退，只好放弃这个方案。</p><p>最终幻采用deepin-wine方案，网上流传的各大版本都存在依赖的问题，最终尝试后，微信可以在<a href="https://github.com/zq1997/deepin-wine">zq1997’s deepin-wine</a>下运行，但是有时会报错，但是不影响运行：</p><p><img src="/home/brucesung/snap/typora/76/.config/Typora/typora-user-images/image-20221031232215996.png" alt="image-20221031232215996"></p><p>那么QQ呢？QQ在deepin-wine下会闪退，采取作者在Issue中提到的方法也无济于事。</p><p>后来幻尝试了一下docker qq，但是由于版本过低无法登陆。</p><p>最后幻选择不用qq。</p><h2 id="2-Nvidia驱动"><a href="#2-Nvidia驱动" class="headerlink" title="2.Nvidia驱动"></a>2.Nvidia驱动</h2><p>本人的显卡是GeForce GTX 1050Ti。</p><p>先要禁用Nouveau：</p><p>在&#x2F;etc&#x2F;modprobe.d&#x2F;blacklist.conf最后加上</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">blacklist nouveau</span><br><span class="line">options nouveau modeset=0</span><br></pre></td></tr></table></figure><p>即可。</p><p>在nvidia官网下载驱动文件安装。</p><p>最后用nvidia-smi命令验证即可，能够看到驱动版本就说明安装成功啦。</p><h2 id="3-代替方案"><a href="#3-代替方案" class="headerlink" title="3.代替方案"></a>3.代替方案</h2><p>左边是Linux下软件名，右边是Win下的。</p><p>KeepassX-Keepass2</p><h2 id="4-字体安装"><a href="#4-字体安装" class="headerlink" title="4.字体安装"></a>4.字体安装</h2><p>各种报告、论文要用到一些特定字体。</p><p>下载下来.ttc,.ttf等类型的字体文件，首先将字体移动到指定文件夹里，更改权限：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo <span class="built_in">cp</span> &lt;fontFiles&gt; /usr/share/fonts/myFonts</span><br><span class="line">sudo <span class="built_in">chmod</span> 644 /usr/share/fonts/myFonts</span><br></pre></td></tr></table></figure><p>接着执行指令：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sudo mkfontscale</span><br><span class="line">sudo mkfontdir</span><br><span class="line">sudo fc-cache fv</span><br></pre></td></tr></table></figure><p>大功告成。</p><h2 id="5-Hey-Hexo"><a href="#5-Hey-Hexo" class="headerlink" title="5.Hey!Hexo!"></a>5.Hey!Hexo!</h2><p>一直都在考虑把博客迁移到Hexo上面，Gridea的操作还是有些不人性化，但是在安装Hexo的过程中，也出现了不少困难。</p><h3 id="cannot-read-properties"><a href="#cannot-read-properties" class="headerlink" title="cannot read properties"></a>cannot read properties</h3><p>用apt安装好node.js，采用npm安装hexo，结果报错：</p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm <span class="variable constant_">ERR</span>! <span class="title class_">Cannot</span> read property <span class="string">&#x27;insert&#x27;</span> <span class="keyword">of</span> <span class="literal">undefined</span></span><br></pre></td></tr></table></figure><p>困扰了将近一天后，突然觉得应该是版本的问题，可能旧版本没有insert这个属性，于是查看node.js的版本：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">node -v</span><br><span class="line">npm -v</span><br></pre></td></tr></table></figure><p>分别输出：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">12.22.9</span><br><span class="line">8.5.1</span><br></pre></td></tr></table></figure><p>然后看了看node.js的官网，发现已经出到19.x.x系列了，果然是版本的问题！</p><p>于是卸载node.js，去官网查看<a href="https://nodejs.org/en/download/package-manager/#debian-and-ubuntu-based-linux-distributions">Ubuntu下node.js的安装方式</a>,最终跟随指引成功安装，也能够安装hexo了。</p><h3 id="权限不够"><a href="#权限不够" class="headerlink" title="权限不够"></a>权限不够</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install -g hexo-cli</span><br></pre></td></tr></table></figure><p>报错，其中有permission denied字样，改为：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo npm install -g hexo-cli</span><br></pre></td></tr></table></figure><p>成功安装。</p><h2 id="6-啊哈，色黑雅拉唱吐森"><a href="#6-啊哈，色黑雅拉唱吐森" class="headerlink" title="6.啊哈，色黑雅拉唱吐森"></a>6.啊哈，色黑雅拉唱吐森<img src="/%E6%88%98%E5%9C%B0%E4%B8%80%E7%9A%84%E6%A2%97%EF%BC%8C%E6%9D%A5%E6%BA%90%E8%87%AA%E5%A5%A5%E6%96%AF%E6%9B%BC%E5%B8%9D%E5%9B%BD%E5%8C%BB%E7%96%97%E5%85%B5%E6%94%BE%E7%BD%AE%E5%8C%BB%E7%96%97%E7%AE%B1%E6%97%B6%E7%9A%84%E8%AF%AD%E9%9F%B3%E7%A9%BA%E8%80%B3%E3%80%82" alt="^1"></h2><p>让我们来打游戏吧！我想在Ubuntu下安装战地一。很不巧，战地一并不支持Linux下运行，只好寻找一些替代的解决方案。</p><p>wine？太卡了！还有许多不明不白的bug，不算是很好的选择。</p><p>deepin-wine？没有提供战地一的包，安装不了。</p><p>经过搜索，选择lutris。</p><p>从github上安装lutris的稳定版本，安装。</p><p>首先要去lutris注册一个账号，搜索相关的游戏，安装。</p><p>然而由于lutris官网的问题，我们没办法下载游戏，会报错（链接已重置）。</p><p>再搜索……proton！proton是steam play出品的工具，集成了wine等工具。首先我们要切换steam为beta版本，之后在设置-steam play里把Advanced里面的勾勾勾上，然后下载战地一即可。</p><p><img src="/home/brucesung/snap/typora/76/.config/Typora/typora-user-images/image-20221031231749464.png" alt="image-20221031231749464"></p>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>【算法】快速傅里叶变换</title>
+      <link href="/2022/10/26/suan-fa-kuai-su-fu-li-xie-bian-huan/"/>
+      <url>/2022/10/26/suan-fa-kuai-su-fu-li-xie-bian-huan/</url>
+      
+        <content type="html"><![CDATA[<blockquote><p>关键词：傅里叶变换、分治思想</p></blockquote><p>@[TOC]</p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> 算法 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>【LaTeX】符号表和相关用法</title>
+      <link href="/2022/10/19/latex-fu-hao-biao-he-xiang-guan-yong-fa/"/>
+      <url>/2022/10/19/latex-fu-hao-biao-he-xiang-guan-yong-fa/</url>
+      
+        <content type="html"><![CDATA[<p><img src="https://coder109.github.io/post-images/1666193536094.png"></p><p><img src="https://coder109.github.io/post-images/1666193542067.png"></p><p><img src="https://coder109.github.io/post-images/1666193551596.png"></p><p><img src="https://coder109.github.io/post-images/1666193554310.png"></p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> LaTeX </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>【数学/数理逻辑】备忘</title>
+      <link href="/2022/10/19/shu-xue-shu-li-luo-ji-bei-wang/"/>
+      <url>/2022/10/19/shu-xue-shu-li-luo-ji-bei-wang/</url>
+      
+        <content type="html"><![CDATA[<p>@[TOC]</p><h1 id="1-求主合取范式和主析取范式"><a href="#1-求主合取范式和主析取范式" class="headerlink" title="1.求主合取范式和主析取范式"></a>1.求主合取范式和主析取范式</h1><p>合取，两个都对才对，所以是“与”号。</p><p>析取，一个对就对，所以是“或”号。</p><p>对于一个逻辑表达式，先列出真值表，主合取范式为所有令结果为假的最大项合取，主析取范式为所有令结果为真的最小项析取，举个例子：</p><p>求：$p\to q$的主合取范式和主析取范式。<br>解：列真值表：</p><table><thead><tr><th>p</th><th>q</th><th>$p\to q$</th></tr></thead><tbody><tr><td>0</td><td>0</td><td>1</td></tr><tr><td>0</td><td>1</td><td>1</td></tr><tr><td>1</td><td>1</td><td>1</td></tr><tr><td>1</td><td>0</td><td>0</td></tr></tbody></table><p>所以弄假表达式的最大项为：<br><img src="https://coder109.github.io/post-images/1666169581268.png"></p><p>弄真表达式的最小项为：<br><img src="https://coder109.github.io/post-images/1666169631827.png"></p><p>主合取范式、主析取范式可得。</p><h1 id="2-逻辑等价-x2F-蕴含是否成立"><a href="#2-逻辑等价-x2F-蕴含是否成立" class="headerlink" title="2.逻辑等价&#x2F;蕴含是否成立"></a>2.逻辑等价&#x2F;蕴含是否成立</h1><p>反证法，若蕴含不成立，则必定存在一种指派$v$，弄真左侧，弄假右侧。</p><p>也可以列真值表求解。</p><p>对于任意指派，逻辑等价为两个逻辑表达式真值恒等，逻辑蕴含是指蕴含式恒真。</p><h1 id="3-PC-Propositional-Calculus-系统上的定理备忘（部分）"><a href="#3-PC-Propositional-Calculus-系统上的定理备忘（部分）" class="headerlink" title="3.PC(Propositional Calculus)系统上的定理备忘（部分）"></a>3.PC(Propositional Calculus)系统上的定理备忘（部分）</h1><p>$$<br>If \ \ \vdash P,then\ \ \vdash A\to P<br>$$<br>$$<br>\neg A\to (A\to B)\<br>$$<br>$$<br>(\neg A\to B)\to ((\neg A\to\neg B)\to A)\<br>$$<br>$$<br>\neg A\to C,B\to C\Leftrightarrow (A\to B)\to C\<br>$$<br>$$<br>(A\to B)\to((A\to \neg B)\to\neg A)\<br>$$<br>$$<br>A\to B,C\to D \to (B\to C)\to(A \to D)<br>$$</p><h1 id="4-ND-Natural-Deduction-系统上的定理备忘（部分）"><a href="#4-ND-Natural-Deduction-系统上的定理备忘（部分）" class="headerlink" title="4.ND(Natural Deduction)系统上的定理备忘（部分）"></a>4.ND(Natural Deduction)系统上的定理备忘（部分）</h1><p>$$<br>\frac{\Gamma;A\vdash B\ \ \Gamma;\neg A\vdash B}{\Gamma\vdash B}\ \ (\neg -)\<br>$$<br>$$<br>\frac{\Gamma\vdash A}{\Gamma\vdash A\vee B}\ \ (\vee +)\<br>$$<br>$$<br>\frac{\Gamma;A\vdash C\ \ \Gamma;B\vdash C\ \ \Gamma\vdash A\vee B}{\Gamma\vdash C}\ \ (\vee -)\<br>$$<br>$$<br>\frac{\Gamma;A\vdash B\ \ \Gamma;A\vdash\neg B}{\Gamma\vdash \neg A}\ \ (\neg +)\<br>$$<br>$$<br>\frac{\Gamma\vdash A\ \ \Gamma\vdash\neg A}{\Gamma\vdash B}\ \ (\neg -)\<br>$$</p><p>事实上，PC、ND两个系统等价，定理可以通用。可惜考试的时候不能用。</p><h1 id="5-连接词备忘"><a href="#5-连接词备忘" class="headerlink" title="5.连接词备忘"></a>5.连接词备忘</h1><p>$\uparrow,\downarrow$分别为与非词，或非词。有如下规律：<br>$$<br>\neg p &#x3D; p\uparrow p&#x3D;p\downarrow p<br>$$<br>$$<br>p\vee q &#x3D; (p\downarrow q)\downarrow(p\downarrow q)<br>$$<br>$$<br>p\wedge q &#x3D; (p \uparrow q)\uparrow (p \uparrow q)<br>$$</p><p>对于蕴含词$\to$，可变换为：<br>$$<br>p\to q &#x3D; \neg p \vee q<br>$$</p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> 数学 </tag>
+            
+            <tag> 数理逻辑 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>【数学/近世代数】备忘</title>
+      <link href="/2022/10/18/shu-xue-jin-shi-dai-shu-bei-wang/"/>
+      <url>/2022/10/18/shu-xue-jin-shi-dai-shu-bei-wang/</url>
+      
+        <content type="html"><![CDATA[<p>@[TOC]</p><h1 id="1-幂等元存在性"><a href="#1-幂等元存在性" class="headerlink" title="1.幂等元存在性"></a>1.幂等元存在性</h1><p>问：有限半群$(G,\cdot)$中，必定存在元素$a$，令$a\cdot a &#x3D; a$。<br>证：设$|G|&#x3D;n$，$a,a^2,a^3,\cdots,a^{n+1}\in G$，则必定存在$a^i&#x3D;a^j,1\leq i &lt; j \leq n+1$。<br>那么存在$k&gt;0$，令$a^i \cdot a^k &#x3D; a^j$，则$a^i \cdot a^k &#x3D; a^i$，连续左乘$a$，则有$a^p\cdot a^k&#x3D;a^p,p&#x3D;qk$，递归调用，得到$a^p&#x3D;a^p\cdot a^p$。</p><h1 id="2-一些定理-证明省略"><a href="#2-一些定理-证明省略" class="headerlink" title="2.一些定理(证明省略)"></a>2.一些定理(证明省略)</h1><ol><li>四阶群无三阶元。</li><li>左陪集彼此等阶，左右陪集彼此等阶，也就是说，陪集彼此等阶。</li><li>六阶群必有三阶元。（由$Lagrange$定理推导得到）</li><li>阶小于等于5的群为阿贝尔群。</li></ol>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> 数学 </tag>
+            
+            <tag> 近世代数 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>【数学/概率论】备忘</title>
+      <link href="/2022/10/16/gai-lu-lun-chang-yong-jie-lun-bei-wang/"/>
+      <url>/2022/10/16/gai-lu-lun-chang-yong-jie-lun-bei-wang/</url>
+      
+        <content type="html"><![CDATA[<blockquote><p>未特别说明，$f_X(x)$代表$X$的概率密度，$F_X(x)$代表$X$的分布函数。</p></blockquote><p>@[TOC]</p><h1 id="1-公式法求随机变量关系"><a href="#1-公式法求随机变量关系" class="headerlink" title="1.公式法求随机变量关系"></a>1.公式法求随机变量关系</h1><p>对于一维随机变量：</p><p>已知$f_X(x),Y&#x3D;g(x)$，求$f_Y(y)$:<br>$$<br>f_Y(y)&#x3D;f_X(h(y))|h’(y)|<br>$$<br>其中$h(y)$是$g(x)$的逆函数。</p><p>对于二维随机变量，可以使用卷积公式(Convolution)计算：</p><p>已知<font color="red">$X,Y$独立</font>,$Z&#x3D;X+Y$，求Z的分布函数：</p><p>$$<br>f_Z(z)&#x3D;\int_{-\infty}^{\infty}f_X(x)f_Y(z-x)dx&#x3D;\int_{-\infty}^{\infty}f_X(z-y)f_Y(y)dy<br>$$</p><p>不独立要用分布函数法求解。</p><h1 id="2-指数分布-Exponential-Distribution"><a href="#2-指数分布-Exponential-Distribution" class="headerlink" title="2.指数分布(Exponential Distribution)"></a>2.指数分布(Exponential Distribution)</h1><p>$$<br>X\sim E(k)\to f_X(x)&#x3D;ke^{-kx},F_X(x)&#x3D;1-e^{-kx}<br>$$</p><h1 id="3-均匀分布-Uniform-Distribution"><a href="#3-均匀分布-Uniform-Distribution" class="headerlink" title="3.均匀分布(Uniform Distribution)"></a>3.均匀分布(Uniform Distribution)</h1><p>$$<br>X\sim U(a,b)\to f_X(x)&#x3D;\frac{1}{b-a},F_X(x)&#x3D;\frac{x-a}{b-a},x\in[a,b]<br>$$</p><h1 id="4-正态分布-Normal-Distribution"><a href="#4-正态分布-Normal-Distribution" class="headerlink" title="4.正态分布(Normal Distribution)"></a>4.正态分布(Normal Distribution)</h1><p>$$<br>X\sim N(\mu,\sigma^2)\to f_X(x)&#x3D;\frac{1}{\sqrt{2\pi}\sigma}e^{-\frac{(x-\mu)^2}{2\sigma^2}},F_X(x)&#x3D;\int_{-\infty}^{\infty}f_X(x)dx<br>$$</p><p>特别的，正态分布满足再生性（可加性），亦即，当$X,Y$彼此独立时：</p><p>$$<br>X_1\sim N(\mu_1,\sigma_1^2),X_2\sim N(\mu_2,\sigma_2^2),\cdots,Z&#x3D;\Sigma_{i&#x3D;1}^nX_i\to Z\sim N(\Sigma_{i&#x3D;1}^n\mu_i,\Sigma_{i&#x3D;1}^n\sigma_i^2)<br>$$</p><p>其实，两个正态分布相加，$\mu$和$\sigma^2$彼此相加，两个正态分布相减时，$\mu$的部分相减，而$\sigma^2$的部分依然要相加。</p><h1 id="5-泊松分布-Poisson-Distribution"><a href="#5-泊松分布-Poisson-Distribution" class="headerlink" title="5.泊松分布(Poisson Distribution)"></a>5.泊松分布(Poisson Distribution)</h1><p>$$<br>X\sim P(\lambda)\to P(X&#x3D;k)&#x3D;\frac{\lambda^k}{k!}e^{-\lambda}<br>$$</p><p>特别的，泊松分布满足再生性（可加性），亦即，当$X,Y$彼此独立时：</p><p>$$<br>X\sim P(\lambda_1),Y\sim P(\lambda_2),Z&#x3D;X+Y\to Z\sim P(\lambda_1+\lambda_2)<br>$$</p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> 数学 </tag>
+            
+            <tag> 概率论 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>【意识流】“啤酒-炸鸡-愤世嫉俗”情感障碍</title>
+      <link href="/2022/10/13/yi-shi-liu-pi-jiu-zha-ji-fen-shi-ji-su-qing-gan-zhang-ai/"/>
+      <url>/2022/10/13/yi-shi-liu-pi-jiu-zha-ji-fen-shi-ji-su-qing-gan-zhang-ai/</url>
+      
+        <content type="html"><![CDATA[<blockquote><p>炸鸡是被子，啤酒是枕头，愤世嫉俗是梦。——我自己说的，对，我自己说的。<br>愤世嫉俗好像用得不太好，我想不出替代词了（欸嘿！<br>你欸嘿个头哇！</p></blockquote><p>越来越觉得自己的脑子就是一个垃圾场，里面什么都有，又什么都没有。我觉得我以后难以适应这个世界的节奏。</p><p>我的脑子里是：白日梦、荷尔蒙过剩衍生出的欲望、残缺不全的哲学家们的理论、压根没学明白的那些专业知识……这些东西就像没下载完的文件一样，除了占空间之外什么用也没有。唉，罢了罢了！</p><p>孤独感从我内心深处涌上来，如同呕吐物一样（虽然我并没呕吐，也没喝醉），让我打了个寒战。有的时候，那种茕然一身的感觉会突然给我一记重拳，但是当我回过神来，想要对付它时，它又消失在我的大脑深处了。唉，真搞不懂呀！这就是所谓的“自由意志”吗？意志自由地来，又自顾自地走掉了。</p><p>我的耳机里放着歌：</p><blockquote><p>无始无终的 灯火通明的，<br>特别大声吼出一句别人的歌词，<br>却也很难唱出自己写的歌词，<br>这所获得的一切，<br>都是购买力驱使下 一场场春梦。<br>它们 它们 它们，<br>从未变成过佛祖眼中的万重山，<br>万重山 万重山 万重山 万重山！<a href="%E5%8D%8E%E5%8C%97%E6%B5%AA%E9%9D%A9%EF%BC%88%E5%88%98%E6%A3%AE%EF%BC%89%E2%80%94%E2%80%94%E3%80%8A%E8%80%8C%E6%88%91%E4%B9%9F%E6%97%A0%E6%B3%95%E8%A7%A6%E6%91%B8%E4%B8%8A%E6%B8%B8%E7%9A%84%E9%A3%8E%E3%80%8B">^1</a></p></blockquote><p>啊呀呀！啊呀呀！没什么用。不做春梦，干什么呢？我现在觉得理想已经没什么意思了。我的内心还保有着理想的火苗，但我知道它没办法点亮这个世界。它是我的所有物——“人类为更高的事业效劳吗？否，人类只看到自己，人类只想使人类发展：人类自身即是它的事业”<a href="%E6%96%BD%E8%92%82%E7%BA%B3%E2%80%94%E2%80%94%E3%80%8A%E5%94%AF%E4%B8%80%E8%80%85%E5%8F%8A%E5%85%B6%E6%89%80%E6%9C%89%E7%89%A9%E3%80%8B">^2</a>——哈哈，他们只想使他们发展，他们自身即是他们自己的事业！而他们有万千拥趸。恢弘的现实讽刺剧——21世纪-1812！闭嘴！你可别说话了。</p><blockquote><p>他们是疯子我也是疯子我同它们没什么两样或许现在疯狂才是正常或许疯狂不过是保护机制罢了。</p></blockquote><p>Ich bin eine Maus, eine klein Maus!我是一只老鼠，一只小小的老鼠。老鼠是动物，脑许是庸俗者的呓语。消费主义戕害着人们，话都这么讲，人们一听到消费主义就觉得那是坏的，要打倒……可转眼间，又沉迷于消费主义编造出来的幻境中去了。我沉迷在里面，您大概也一样吧。</p><p>坏了，误触到C-w<a href="Ctrl-W">^3</a>键了，得重写了。</p><p>我没什么社交能力，又不会做项目。哎呀！我同别人沟通都有点困难。以后要怎么在社会上工作呢？（其实到时候就有办法了）我没什么大志向，平平淡淡过完一辈子就好了。我在很多方面都要比同龄人幼稚，而我也无力改变这点。我一直比别人慢几步，而我，也懒得去追赶他们了。前面有人，我还知道该往哪里走，如果前面一个人都没有，我可就要迷茫起来啦！我不愿意为自己戚戚然……</p><p>听说梅子酒和牛奶调到一起喝，会有优酸乳的味道。梅子酒倒没买过，但是啤酒和牛奶一起喝肯定不好喝。不过和可乐混到一起倒不错，有种巧克力&#x2F;Old fashion<a href="%E4%B8%80%E7%A7%8D%E9%B8%A1%E5%B0%BE%E9%85%92%EF%BC%8C%E5%A8%81%E5%A3%AB%E5%BF%8C+%E6%B0%B4%EF%BC%88+%E8%8B%A6%E7%B2%BE%EF%BC%89%EF%BC%8C%E6%A9%99%E7%9A%AETwist%E8%A3%85%E9%A5%B0">^4</a>的味道。而且喝啤酒的时候，不要吃太甜的东西，会把啤酒的本味盖住，幻尝试几次，发现咸食配啤酒不错。不得不说，盐还是很厉害的，提鲜，增加甜味……用处多得很啊。（2022&#x2F;10&#x2F;16：捏麻麻滴！梅子酒（我买的是梅见）和牛奶混在一起难喝得要死，和汽水一起做highball很好喝，做highball的话，梅子的酸味会被浸提出来，梅子本身的味道也会更突出一些，直饮梅子酒会有点冲。若有缘，我可以调给诸君喝。）</p><p>未来，哎呀，未来！我崇拜那些有着深刻理想的人，他们坚定地走在道路上。也许经年之后地某个夜里，我会突然怪罪起年轻时的自己来。到时候一切都晚了。我是母亲的痛苦，是父亲的冷漠，是……是……，……。徒有夜风从荒芜的大地上吹过。</p><p>我喜欢日本和韩国的作家，读了这么多书，到头来还是喜欢日本的作家。伊坂幸太郎的摇滚与昂扬，太宰治的讽刺和忧郁，韩江的想象力与张力……他们的作品总会给我情感上的影响。其实要是细细追究起来，翻译者们也很厉害，给我的情感上的影响，一半是作者给的，另一半就是翻译者给的。</p><blockquote><p>其二，二次元少女是一连串（successive chain）的理想造物（idealization-production）分泌的恶液（pus）滴落在资本主义的皮肤（capitalist hide）上的结果，也是虚拟恶液的预定采集物（inevitable harvesting）。换言之，祂们是理想的印象的影像（images of images of images），是一个从“少”和“女”上的理想夸张而来的超影像，被扭曲为实在人类的理解范围的远距外，并如同一种原始器官（raw organ）植入社会的身体那样植入了资本主义。<a href="%5B%E8%90%8C%E7%9A%84%E5%AE%9A%E4%B9%89%5D(https://zhuanlan.zhihu.com/p/567849891)%EF%BC%8C%E5%8E%9F%E6%96%87%E6%9D%A5%E8%87%AA%E5%AE%9E%E9%AA%8C%E8%89%BA%E6%9C%AF%E5%9B%A2%E4%BD%93%E6%9D%82%E5%BF%97%E3%80%8AYONQ%E3%80%8B">^5</a></p></blockquote><p>怎么说呢？二次元的少男少女通过“逃逸线-解域-再结域”<a href="%E5%BE%B7%E5%8B%92%E5%85%B9%E7%9A%84%E6%A6%82%E5%BF%B5%E3%80%82%E9%80%9A%E4%BF%97%E8%AF%B4%E6%9D%A5%EF%BC%8C%E8%A7%A3%E5%9F%9F%E5%B0%B1%E6%98%AF%E4%BB%8E%E4%B8%80%E4%B8%AA%E5%9B%BA%E5%AE%9A%E6%A8%A1%E5%BC%8F%E4%B8%AD%E8%84%B1%E7%A6%BB%E5%87%BA%E6%9D%A5%EF%BC%8C%E5%86%8D%E7%BB%93%E5%9F%9F%E6%98%AF%E5%BD%A2%E6%88%90%E4%B8%80%E4%B8%AA%E6%96%B0%E7%9A%84%E6%A8%A1%E5%BC%8F%E3%80%82">^6</a>摆脱了自身的性别建构，以传统的男女性别建构而言，少男的阴柔性、少女的活跃性都是“不合时宜的”。二次元的少男少女身份同Gen Z的性别身份靠近：男性开始追求女性气质，女性也开始寻求男性气质。这是好的，有利于“生成”的。而同样，二次元少男、少女也是媚俗的，满足了男性和女性的性欲投射，他们是公用的卵巢和睾丸。我也是个媚俗之人。互联网将现实中的压抑转变为恶性，加倍放大。资本主义给予我们压抑，又构造出了相应的发泄渠道。（2022&#x2F;10&#x2F;17：？你在说什么啊？）</p><p>“人和人彼此相连”[^7]。</p><p>我写的这篇文章，您从哪里开始读都没问题哦。您大可以把这些自然段打乱，再随意地拼起来，照样也是一篇博文。这篇博文和我的思想一样，断断续续，破破碎碎。我用了很奇怪的行文方法。这个文章可以无穷尽地被写下去。但是就到这里吧。</p><p>[^7]:出自Serial Experiment Lain，很有意思的实验番剧。</p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> 意识流 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>【意识流】我们终将死亡</title>
+      <link href="/2022/10/01/yi-shi-liu-wo-men-zhong-jiang-si-wang/"/>
+      <url>/2022/10/01/yi-shi-liu-wo-men-zhong-jiang-si-wang/</url>
+      
+        <content type="html"><![CDATA[<p>我坐在火车上，窗户被封死了，什么也看不见。车厢里的灯忽明忽暗，灯罩内侧有虫子的尸体。桌子是白色的，磨砂桌面，上面杂乱摆放着几张信封。我拿起一个信封，从口袋里拿出小裁刀，将信封拆开来，发现里面什么也没有。</p><p>我有些迷惑。</p><p>我看了看收件人，的确是我，寄件人的信息却被涂掉了。邮票也没粘。</p><p>我放下了信件，坐着。任凭自己的肉身和火车同步震动。</p><p>我要去哪里？</p><p>火车停了下来，震动也消失了。</p><p>我听见有人在尖叫，有人在大笑，有枪声响起。</p><p>一切又回归寂静，火车又启动了。</p><p>奇怪得很。</p><p>车厢的门打开，一个蓬头垢面的人上了车，抓住我的肩膀，说出了一大堆我听不懂的话，像是疯癫之人的癔语：</p><p>“你应该逃出这里，这里什么都没有，什么都没有！哈哈！你应该思考，是这样嘛，是这样嘛？这一切都荒唐地可笑。”</p><p>他瞟见了我的信封：</p><p>“我是神，是神！这些信是我写给你的，而我又不是神！你个傻子，居然对着空空的信封若有所思，哈哈哈哈哈哈哈哈哈哈……不要思考，只管体会这样的世界！欸……你应该思考，你不应该……”</p><p>他沉默了一会，说了句：</p><p>“你知道这一切都是怎么回事。人们叫你坐在车上，去一个你根本不认识的地方。这有意义吗？”</p><p>又有两个大汉上了车，穿着警察制服，将这个疯男人拉走，“对不起，先生，祝您旅程愉快”。</p><p>车厢门彭的一声关上了。</p><p>我听见有人在尖叫，有人在大笑，有枪声响起。</p><p>一切又回归寂静，火车又启动了。</p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> 意识流 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>【意识流】虚无的凭依</title>
+      <link href="/2022/10/01/yi-shi-liu-xu-wu-de-ping-yi/"/>
+      <url>/2022/10/01/yi-shi-liu-xu-wu-de-ping-yi/</url>
+      
+        <content type="html"><![CDATA[<p>钢铁列车飞速向前，前面是一堵厚重的水泥墙，封闭着黄色的氯化铀酰和三硝基甲苯。列车上的人们嚎叫着庆祝着大笑着时代的巅峰，偶有哀叹的声音在刹那的死寂中回响，而又淹没在下一刻的呼喊声中。</p><p>人们团结起来，成为家庭，成为社团，成为民族，成为国家，自以为是宇宙中的最强者。他们病态地歌唱，用反智主义的歌声撕破时代的寂静。</p><p>金钱、纵欲、知识焦虑、外貌焦虑和内卷正摧毁我们，摧毁我们的时代，摧毁我们的思想和意志。我们用酒精、电子产品甚至甲基苯丙胺来逃避这一切。</p><p>列车上的人们大笑着，滥交的少男少女、将死的老妪、满口谎话的名流，都大笑着，庆幸自己成为公式末尾的余项。驾驶舱里没有司机，没有刹车，没有窗户，没有灯光，没有速度表，没有无线电，什么也没有。</p><p>他们在飞舞的啤酒沫里做爱，谈论政治，脱光了衣服跳舞，撕毁几百年前的油画，烧毁书籍唱片电影胶卷，清醒地沉睡着，吵闹地沉默着。他们将粪便、腐肉、烧焦的电线、空酒瓶投向车外。</p><p>他们辱骂者梦想家、求学者以及向往自由的人，想要将他们变成疯狂的奴隶，这些奴隶了无思考能力。</p><p>他们将双重思想发挥到极致，自由而保守，严肃而疯狂，愚蠢而聪明。他们是这个时代的栋梁。蒲鲁东、亚当斯密、列宁都没有他们强大！Kamisama！Kamisama！Servate me！</p><p>他们在白天睡去，在夜晚追求光明；在沙漠里崇尚太阳，在冰原里崇拜林德；在生命中崇尚死亡，在临终时渴望生存……矛盾？同一！</p><p>安那其、反社会、冲锋枪……时代的病症消解了意义，他们自由了，却又逃避自由，自由是虚无，又不该是虚无……他们终将用极端的方式解决这一切……</p><p>他们是谁？任何人？一部分人？哦……又或许不是任何人，不是任何物，只是一种意志，一种精神，一种难以言说的痛苦，一种早已消亡的真正精神？荣格先生你好。</p><p>他们用碾核、出轨、暴力漫画、挥金如土、自残、自杀、赌博、色情、脏话、自我标榜、长岛冰茶、尼格罗尼、电子游戏、梅毒、艾滋病、棒球棒来脱离现实，沉浸在幻觉里。但是这幻觉终究要消亡，成为后来者的笑话。但是这笑话也暗示着后来者的命运。</p><p>太快了，太快了，太快了，太快了。</p><p>列车装上水泥墙，爆炸，人们的血肉同钢铁混杂在一起，偶有低沉的、快乐的、神经质的呻吟声在废墟中响起。这个时候不再有国界，不再有利益之争，不再有工业，不再有文学，不再有思考，不再有虚无，这世界在列车毁灭之际迎来了自己的安宁！迎来了一切意义的消亡！这世界返回了它的本真！</p><p>经年之后又会有新一批的大脑不健全的猿猴进化为人类，创建文明，研究科学，撰写书籍，发射火箭，他们会带着各式各样的行李走上火车，希望前往一个更好的明天。他们将大笑，他们将欢呼，他们将尖叫，他们将继续滥交，他们将自诩为文明人继续生活在世界上！然后火车会装上另一堵墙——爆炸——血肉混杂！</p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> 意识流 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>【诗】雨</title>
+      <link href="/2022/10/01/shi-yu/"/>
+      <url>/2022/10/01/shi-yu/</url>
+      
+        <content type="html"><![CDATA[<p>我看见雨点击打铁皮屋顶，<br>像是时间之锤砸在命运的鼓上，<br>震动生者的心灵，<br>令他们在此刻向远古眺望——<br>那里空无一物，只有雨。</p><p>人们反抗一切，痛恨一切，<br>而雨冲尽了一切鲜血。<br>这一切都是循环，<br>一切秩序都将在雨中腐朽紊乱。</p><p>捂起耳朵，朋友，<br>雷声将在四周响起，<br>闭好眼睛，朋友，<br>闪电将把世界穿击。</p><p>在这场雨中，一切都将被隐匿，<br>没有爱，没有梦，没有世界的呼吸，<br>只有雨声，永远淋漓着的雨，<br>浇灭了智慧生物残存的思绪。</p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> 诗 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>【意识流】先知</title>
+      <link href="/2022/10/01/yi-shi-liu-xian-zhi/"/>
+      <url>/2022/10/01/yi-shi-liu-xian-zhi/</url>
+      
+        <content type="html"><![CDATA[<p>酗酒的男人在隔壁打鼾，孤独的老者在楼上叹息，也许是楼下，或者这些声音只存在于我的脑海里——我不知道，各种声音将我拖入灰暗。床对着的墙上有一大块水渍，墙皮开裂，地板上散落着一些白灰。窗子开着，灰色的帘子被风吹动，一股汽车尾气的味道。轮胎碾过水泥地面，哗啦哗啦。</p><p>我房间里的灯没有开，它没有必要是开着的。我打开手机，左肩有些痛，凌晨三点。</p><p>盯着空白的天花板，我开始思考——人活在这个世界上不就是为了思考的吗。我看着自己的思想流动在房间里——那是白色的一道光，它照亮了整个房间，就像烛火在熄灭前一瞬的跳闪。我为什么而活？我最后会成为什么样的人？我一直弄不懂这些问题。</p><p>我站起身，走到窗前。对面的大楼一片黑暗，我恍惚间看见了无数人站在楼顶，拄着栏杆，向远方眺望。不，那里什么也没有。说真的，我为什么要站起来，明明闭上眼睛就可以沉睡在梦里，挨到早晨的。或许我害怕梦……我其实看不见远方，太黑了，嘿嘿。</p><p>我想尖叫，我想冲着微薄的噪音大吼，我想用喊声驱赶这令人不安的寂静。不，我臣服于这死寂，我同这死寂无异，都是虚无……酒精，我羡慕起那个打鼾的男人了，我也许找点酒来喝。或许又不该……算了，我就在这站一会吧。</p><p>我的屋子亮如白昼。所有人都是幸福的。我知道，等到天亮之后，我将失去悲观的权利，人们期待着一个美好的世界，而不会关心这个世界是否是真实的。深夜的冷风吹不醒那些关紧窗子的人，而那些大开窗户的人，根本睡不着觉。</p><p>狂热的火吞没了一切，而人们的内心却是寒冷的，倒也不能说寒冷，只能说是他们自以为内心是炽热的，其实那里空无一物。所谓信仰，不过是人们撒的谎罢了，他们没有学识，所以需要用绳子把自己捆在这个世界上。而这个世界又有些什么东西呢？他们会把自己吊死的。</p><p>天黑魆魆的，我什么也看不见。距离日出还有很久，我却了无睡意。似乎男人翻了个身，似乎老人也陷入了短暂的平静里。这个世界上，我们都是孤独得不能再孤独的个体，而我们也不再有机会回到过去。话说，过去是什么时候？是童年，是远古，还是……我不知道。</p><blockquote><p>我是矛盾的笑话，我是懦弱的革命家，我是阴暗小巷里的呕吐物，我是工地上飘扬的尘沙。<br>我是燃尽的烟头，我是沉没的孤舟，我是流动的尿液，我是残破不堪的矮楼。<br>我是被人追杀的噩梦，我是冬季深夜的寒冷，我是泔水桶里的霉菌，我是烟花绽放后带着火药味的风。</p></blockquote><p>官僚主义的光芒在大地上闪烁，人们在这光芒中崇敬着自己的神。他们自诩拥有神力，屠杀那些所谓的“异教徒”。话说回来，神和人又有什么分别呢？或许，天堂也同人间无异，有些神甚至奉人类为神明。我不信神，我不信任何事物。失去信心的人只有两条路可以走：走向神秘主义或者走向享乐主义。神秘主义？悲伤会让人的注意力完全封锁在内部，而悲伤的人若无法从他的内在获得解决方法，他将不得不向所谓更高级的存在索取援助之手。享乐主义？你知道的，在有预料的死亡之前，很多人会选择挥霍掉拥有的一切，生不带来，死不带去。哦，不对，我说的是官僚主义。我究竟在思考什么，没有主题！</p><p>有人在远方吹了声口哨。有人在吃吃地笑着。那些嬉皮士——精神小伙？现在人是这样称呼他们的吧——是快乐的。</p><p>权力的集中必然导致官僚主义，不论是集中在某个人手里，还是某个小团体手里，这都是很危险的事情。没有人去监督它们——或者说监督了，但是没有力量去改变它。所以说，我痛恨威权主义者们，而他们被称作社会的顶梁柱、当下的最优解。我对着窗外吐了口唾沫。民族、国家发展到这样的程度，自由的社会是不可能被创造出来的，理想主义者在文明刚刚起步的时候就死透了。</p><p>我真的觉得，一死百了，实在是有意思。在这世界上苟且偷生，我不太稀罕。但是啊，话是这么说，总有什么东西在阻拦着我……本能？大概吧。我其实没有下定决心呢！话说啊，死是睡的兄弟，如果睡着的时候人是幸福的，那么死亡之后也是一样吧。</p><p>所以，我在等待什么，未来不也是这样——在凌晨醒来，不切合实际的思考，吃饭睡觉，毫无意义。人们始终在告诉我该做什么，应该怎样做，但是，这些真的是毫无用处。他们，包括我，从来没有审视过这些观点。我们被塑造成了“人”。</p><p>我们已经走到了尽头。</p><p>我听见有一个声音在我脑中响起：先生，这些都是毫无意义的。你的思考，浅薄且幼稚……是的，如果思考会化作文字落在纸上，我想我会划去前文，甚至将纸撕得粉碎。但是，思考是无形的，只能被忘记。我想在这里止步，各种意义上的，我对自己没有信心，对未来也是失望至极。我想去坦然面对未来，享受人生，但是我没有这个胆量，我也没有这个实力，只能一天一天地熬日子。</p><p>话说，有几个人会像我这样颓废呢？他们都有梦想，哪怕他们会在夜里黯然神伤，白天仍然是努力着的，他们在奋斗的路上坚定地前行。而我，我的人生已经陷入了一个死循环。</p><p>我想不通。我期待着小说的结局。我听见有人在呼唤着我。或许那个人是昨天的我，也可能是未来的自己。</p><p>我想睡觉了，晚安。</p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> 意识流 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>【杂谈】政治正确、狂热和异教徒</title>
+      <link href="/2022/10/01/za-tan-zheng-zhi-zheng-que-kuang-re-he-yi-jiao-tu/"/>
+      <url>/2022/10/01/za-tan-zheng-zhi-zheng-que-kuang-re-he-yi-jiao-tu/</url>
+      
+        <content type="html"><![CDATA[<p>人们的思想逐渐变得狂热而浅薄。</p><p>政治正确的风潮正在席卷整个世界，这很有意思。伏尔泰有一句话这样讲，“我不同意你的说法，但我誓死捍卫你说话的权利！”，这是启蒙运动的一个缩影，而启蒙运动令人类世界进入了一个光辉的时代。而现在，人们在逐渐剥夺他人存在异见的权利，也就是说，主流的、权威的、固化的思想再一次地占据了高地。人们不再去尝试理解别人，不再去理性看待别人的观点——虽然，大多数人根本不具有理性思考的能力。思想在逐渐趋同，逐渐固化。我们回到了过去，回到了十八世纪之前。</p><p>对于国家和民族的认同，正在驱使人们去“仇恨未曾相识的人们”。这很讽刺，自信演变成了自负。人们逐渐变得狂热，他们觉得任何符合本民族利益的事物都是正确的，他们会感动自己，认为自己担负着无比重要的使命，他们会将充满仇恨的目光撒向遥远的地方……狂热，是大部分祸患的开始。</p><p>人是时代的镜像，我一直这么想。我没有办法不去考虑这个时代，似乎我对于这个时代的思考要远多于对于我自身的思考。我亲眼所见，人们之间的关系变得越来越功利，越来越复杂。我不能理解这些事情，或者说：我在一定程度上理解这些事情，但我无法改变这一切。我对这世界失望，也对我自己失望；我几乎同等地仇视他人，正如我仇视我自己一样。我似乎只靠本能存活在这个世界上，如何去对外界刺激作出反应，似乎并不受我的理性控制。我是具有智慧的行尸走肉。</p><p>我希望毫无意识地、毫无痛苦地离开这个世界，那一天来得越早越好。但是，我又对未来抱有一点好奇心，我想看看这世界的荒诞，将会发展成什么样子。</p><p>我不忧虑未来，因为我知道未来会是更加荒诞的。理想主义者们会死去，他们的遗体，他们的书籍，他们的一切存在痕迹都将被抹杀。人们会像掰断一根粉笔一样折断他们的脊骨。这个世界没有给理想主义者的安身之所。为什么呢？因为他们的思想将与大众的思想相背离。而人们，向来对异己者有一种自然而然的仇恨。</p><p>在狂热的声浪里，他们将会被视作异教徒，被无情地撕碎，被污名化。如果运气够好，他们就能实现理想了吗？理想是敌不过利益的，他们的事业将会被别有用心者窃取。</p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> 杂谈 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>【诗】幻想</title>
+      <link href="/2022/10/01/shi-huan-xiang/"/>
+      <url>/2022/10/01/shi-huan-xiang/</url>
+      
+        <content type="html"><![CDATA[<p>这个世界只有她完美无瑕，<br>我的爱人，我的爱人，她——<br>在海边向远方眺望，<br>暖风轻抚她绯红的面颊。</p><p>飞鸟掠过天际线，<br>帆船的暗影在她的眼中荡漾，<br>我的爱人在大海的彼方，<br>伫立，直到冷风吹来黑暗的夜晚。</p><p>水晶从洁白的月光里坠落，<br>繁星在环形的死海里闪烁，<br>我的爱人，我的爱人，她——<br>在遥不可及的彼岸等着我……</p><p>可是我将一切都失掉了，<br>如同路西法从天堂坠落，<br>孑然一身徘徊在地狱中，<br>仰望人间庶民们的欢乐。</p><p>我的身体被世间的烈火焚烧，<br>我的精神被时代的阳具强暴。<br>我不相信一切，正如一切不相信我一样——<br>当初，人们自说自话将这个世界创造。</p><p>我将在黎明时分登上帆船，<br>在午夜回到经年未归的彼岸。<br>我的爱人，我的爱人——<br>若你我再次相见，<br>你还会认出我吗？</p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> 诗 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>【数学】那些有趣的证明（持续更新）</title>
+      <link href="/2022/09/25/shu-xue-na-xie-qi-qi-guai-guai-de-zheng-ming/"/>
+      <url>/2022/09/25/shu-xue-na-xie-qi-qi-guai-guai-de-zheng-ming/</url>
+      
+        <content type="html"><![CDATA[<h1 id="1-证明-sqrt-2-不是有理数"><a href="#1-证明-sqrt-2-不是有理数" class="headerlink" title="1.证明$\sqrt{2}$不是有理数"></a>1.证明$\sqrt{2}$不是有理数</h1><p>假设$\sqrt{2}$是有理数，根据有理数的定义，它可以被写成$\frac{p}{q}$的形式，将之平方，有：</p><p>$$</p><p>2 &#x3D; \frac{p^2}{q^2} \to p^2&#x3D;2q^2</p><p>$$</p><p>推出$p$为偶数，根据偶数的定义，$p&#x3D;2k$，那么代入上式，$q^2&#x3D;2k^2$，q也是偶数。这就是说：如果$\sqrt{2}$是偶数的话，$p$，$q$必须全是偶数，但是，如果对$\frac{p}{q}$约分的话，必定出来至少一个奇数，矛盾了。得证。</p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> 数学 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>【诗】乱码</title>
+      <link href="/2022/09/21/shi-luan-ma/"/>
+      <url>/2022/09/21/shi-luan-ma/</url>
+      
+        <content type="html"><![CDATA[<p>精神病人的呓语被奉为真理，<br>自由的光消失在黑暗山洞的深处。<br>酒精、叹息、自杀，成为我们最后的回应，<br>我们正挖掘着自己的坟墓。</p><p>太阳早就下山了，朋友！<br>月亮被乌云遮住，漏不出一点光芒，<br>当血味夜风吹拂的时候，<br>就会有人迎来自己的死亡。<br>这不是预言——<br>这是真理。</p><p>虚假的报文，裹着有毒的糖衣；<br>真实的未来，生着苦涩的面目。<br>生死无主，<br>黄色的脑浆盖住画满花朵的墙壁。</p><p>时代的利刃，斫出致命的伤口；<br>自由的眼泪，却唤不醒任何人。<br>沾满鲜血的手——<br>他人的妻儿在无形的刀下骨肉齑粉。</p><p>我们该携手吗？<br>我们该携手吗？<br>追求自由者的尸体在臭水沟里漂浮，<br>手持束棒者的声音在屠宰厂里放大。</p><p>我们在时代交界处奔跑，<br>我们在漆黑的夜里燃烧，<br>我们在将死之日寻求母亲的味道，<br>我们在皮开肉绽之时放声大笑。</p><p>你我终将在春风里相见——<br>至少我希望如此。<br>我们要同现实苦苦地鏖战，<br>不能让信念徒然地死。</p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> 诗 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>【杂谈】如何申请Github Education Pack和相关产品</title>
+      <link href="/2022/09/17/github-education-pack/"/>
+      <url>/2022/09/17/github-education-pack/</url>
+      
+        <content type="html"><![CDATA[<p>@[TOC]</p><h1 id="为什么要申请？"><a href="#为什么要申请？" class="headerlink" title="为什么要申请？"></a>为什么要申请？</h1><p>白嫖不香吗？而且，pack里提供了许多实用的工具和学习平台。</p><p>Pack里面包括什么，可以参考下面的文章：</p><p><a href="https://education.github.com/pack?utm_source=github+jetbrains">GitHub Student Developer Pack</a></p><p>中文翻译：</p><p><a href="https://zhuanlan.zhihu.com/p/422881276">Github学生开发包都有什么？（开发和设计工具篇1）</a></p><p><a href="https://zhuanlan.zhihu.com/p/423195382">Github学生开发包都有什么？（开发与设计工具篇2）</a></p><p><a href="https://zhuanlan.zhihu.com/p/422851915">Github学生开发包都有什么？（云服务商和域名篇）</a></p><p><a href="https://zhuanlan.zhihu.com/p/398954757">Github 学生开发包都有什么？（在线学习篇）</a></p><h1 id="申请Github-Education-Pack"><a href="#申请Github-Education-Pack" class="headerlink" title="申请Github Education Pack"></a>申请Github Education Pack</h1><p>首先，确保github能够访问你的位置信息，而且在申请的过程中，尽量不要打开VPN（否则有的界面会报502错误）。</p><p>在<a href="https://education.github.com/pack">这里</a>可以进行申请，在如下界面中：</p><p><img src="https://coder109.github.io/post-images/1663395078668.png"></p><p>点击“Sign up for Student Developer”选项，跳转到如下界面：</p><p><img src="https://coder109.github.io/post-images/1663395128178.png"></p><p>点击“Get student benefits”选项。</p><p>在如下的表单里，填写信息即可：</p><p><img src="https://coder109.github.io/post-images/1663395307241.png"></p><p>如果您没有.edu结尾的邮箱的话，所提供的邮件地址可以是你的个人邮件地址。另外，在“How do you plan to use GitHub?”一栏中，用<font color="red">英语<a href="%E6%88%91%E5%90%8C%E5%AD%A6%E5%B0%9D%E8%AF%95%E7%94%A8%E4%B8%AD%E6%96%87%E7%94%B3%E8%AF%B7%EF%BC%8C%E7%BB%93%E6%9E%9C%E6%B2%A1%E9%80%9A%E8%BF%87%E3%80%82">^1</a></font>写上你使用github的理由，不必很具体。填写完之后点击“Continue”。</p><p>在这之后，你会被要求上传学生证之类文件的照片。这里注意，请在你的学生证&#x2F;卡的照片上标注好英文翻译，像下面这样：</p><p><img src="https://coder109.github.io/post-images/1663395724302.png"></p><p>这里有几点需要注意：</p><ol><li>照片上要有学校名称。</li><li>照片上标注好翻译。特别的，对于“姓名”的翻译来说，要标注好自己的英文名，而且要把你的github profile里的名称改成和这个名字一样。</li></ol><p>最后申请，很快就会通过，通过时间从1分钟-5天左右不等，到时候github会给你的邮箱发一封邮件。</p><h1 id="申请JetBrains产品"><a href="#申请JetBrains产品" class="headerlink" title="申请JetBrains产品"></a>申请JetBrains产品</h1><p>JetBrains出品了许多IDE，例如PyCharm、CLion、Intellij IDEA等。</p><p>在<a href="https://www.jetbrains.com/community/education/#students">这里</a>可以进行申请。</p><p><img src="https://coder109.github.io/post-images/1663396291123.png"></p><p>点击“Apply Now”，在跳出的页面中选中GitHub选项，</p><p><img src="https://coder109.github.io/post-images/1663396343744.png"></p><p>最后根据所给提示和它们发的邮件按步骤操作就可以了。</p><p>注意，只要你是学生就可以一直免费使用JetBrains产品，但是每年都需要认证一次。</p><h1 id="申请其它产品"><a href="#申请其它产品" class="headerlink" title="申请其它产品"></a>申请其它产品</h1><p>注意，一些产品只提供有限的使用时限。</p><p>在<a href="https://education.github.com/pack/offers">这里</a>，你可以看到每一个工具的简单介绍。一旦申请成功，便可以简单的通过点击超链接获取，比如：</p><p><img src="https://coder109.github.io/post-images/1663398010434.png"></p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> 杂谈 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>【杂谈】生成、块茎和政治性宏大叙事</title>
+      <link href="/2022/09/15/Rhizome-and-politics/"/>
+      <url>/2022/09/15/Rhizome-and-politics/</url>
+      
+        <content type="html"><![CDATA[<blockquote><p>哲学，唯有哲学。——吉尔·德勒兹</p></blockquote><h1 id="生成和块茎"><a href="#生成和块茎" class="headerlink" title="生成和块茎"></a>生成和块茎</h1><p>生成，是德勒兹的一个概念。德勒兹认为，一个事物的本质，不在于它是什么，而在于它能成为、创造什么。如果想定义人，就不能从“人是什么”这个问题入手，而要从“人能创造什么”入手。人类已经创造的东西，和将来要创造的东西，组成了人类的定义。生成这个概念也可以用来形容一个系统，“填鸭式教育”就是“反生成的”，因为它的目的在于知识的“拷贝-粘贴”，而不是“利用-创造”。</p><p>块茎，是德勒兹的另一个概念。德勒兹认为，一个系统有两种组成形式——“主根-须根”式和“块茎”式。德勒兹对于前一种形式持批判态度。他认为，对于“主根-须根”结构来说，一旦主根死亡了，以之为生的须根亦会萎缩、消亡，这个系统的抗逆性很低；而“块茎”结构——您可以把它想做一堆点，每个点都彼此相连——则非常稳定，一个点死了，不影响整个系统的营养传输，这是一个健壮（Robust）的系统。德勒兹还认为，我们的社会已经变成块茎式的控制论社会了，即我们的社会由不同的系统组成。举个例子，义务教育便是一个系统，包含着小学和初中两个系统，这些系统又包含着一些诸如一年级、二年级的小系统，输入是人，输出也是人。</p><h1 id="政治性的宏大叙事"><a href="#政治性的宏大叙事" class="headerlink" title="政治性的宏大叙事"></a>政治性的宏大叙事</h1><p>知乎上有这样一个问题，“为什么越沉迷宏大叙事的年轻人，越成不了事？”。我们先解释一下何为“宏大叙事”：所谓宏大叙事，是一个舶来词，是指对社会、文化、历史的总体性、根本性解释，以及由此而推导的为构建理想社会所应进行的行为<a href="%E5%BC%95%E8%87%AA%E8%87%AD%E5%90%8D%E6%98%AD%E8%91%97%E7%9A%84%E7%99%BE%E5%BA%A6%E7%99%BE%E7%A7%91">^1</a>。很难理解，对不对？我们简化一下，所谓“宏大叙事”，就是从“长远角度”、“国家战略层面”的角度来思考某类问题。我只讨论政治性的宏大叙事。</p><h1 id="生成、块茎和政治性宏大叙事"><a href="#生成、块茎和政治性宏大叙事" class="headerlink" title="生成、块茎和政治性宏大叙事"></a>生成、块茎和政治性宏大叙事</h1><p>我们不妨用“块茎|主根-须根”的理论来分析一下，宏大叙事的思考方式本质上是一种“主根-须根”式的思考方式：国家是主根，被统治的人们是须根。它会将国家视作主体，对外，这样的思考方式则用国家代表人民；对内，它要求人民依附于国家，甚至将国家与人民对立起来，因为主根和须根是有身份上的天然差异的。不难看出，这样的思考方式，不论是思考国际还是国内事务，都让国家占据了主导地位。</p><p>国家不是这样组织起来的。人们聚集起来，逐渐形成了聚落，渐渐形成了国家。国家和人民不是“主根-须根”结构，也不是“块茎”结构——国家不和人们相连——而是：如果把人民看成不同的原子，国家就是这些原子组成的化合物，人民的“块茎”结构形成了一个稳固（或者不稳固）的“层”。</p><p>拥有“政治性的宏大叙事思维方式”的人，忽略了每一个人的彼此各异的基本利益，转而去追求由人民组织起来的“国家”的利益，这多少有一点讽刺了。</p><p>我并不是说，政治性的宏大叙事是绝对错误的，它是一种思考方式，一种考虑问题的框架。沉迷于这种框架，甚至把它视为绝对真理，就会不经意间忽视国家的一个个小单元——人的利益。框架，永远都是“反生成”的，包括我所用的德勒兹的框架，只是，它的框架却有着“生成”的力量。</p><p>沉迷于政治性宏大叙事的年轻人，大概率还是自己没有“生活的锚点”或者信念，需要一个事物来标定自己的意义，没有什么比“国家利益”之类的事物更合适了。成不了事，不是因为“沉迷宏大叙事”，而是这背后内心的软弱或迷茫。</p><h1 id="意义的谎言"><a href="#意义的谎言" class="headerlink" title="意义的谎言"></a>意义的谎言</h1><p>迷茫。是的，迷茫。“上帝已死”，没有什么普适性的意义了。</p><p>我直到现在也这样认为：这个世界实在是没有什么意义，干干瘪瘪，行将腐化。但是，正如你我所见，它还在相对稳定的运转着。为什么呢？和政治性宏大叙事一个道理，人们创造了各式各样的意义，这些意义足够迷惑很多人，让他们以之为“生命的锚点”，并为之努力，奔波，忙碌。</p><p>“没有意义”何尝不能成为锚点？“没有意义”不正是自由的象征吗？正如德勒兹所言，一件事物的意义不在于“是什么”，而在于能“生成”什么。尽管去创造吧。像游牧民族（德勒兹的另一个重要概念）那样，居无定所（不受框架束缚），随心所欲。如果我们还不能像“游牧民族”那样，那么便创造一个游牧民族的社会出来吧。</p><p>我相信未来是美好的。不要被现实击败，尽管去创造吧！</p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> 杂谈 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>【Emacs】坎坷之路，终抵群星</title>
+      <link href="/2022/08/17/emacs-config/"/>
+      <url>/2022/08/17/emacs-config/</url>
+      
+        <content type="html"><![CDATA[<blockquote><p>关键词：Emacs、Emacs Lisp、自定义</p></blockquote><p>@[TOC]</p><h1 id="引子"><a href="#引子" class="headerlink" title="引子"></a>引子</h1><p>Emacs是什么？让我们来看看Emacs吧的标语：“不能煮咖啡的编辑器不是一个好操作系统”。</p><p>首先，Emacs是个编辑器，由Richard M Stallman等人最开始编写而成，后来有很多的衍生，现在常常使用的是1984年由Stallman发起维护的GNU Emacs[^1]。</p><p>与此同时，Emacs又不只是一个编辑器。经过合理配置之后，Emacs可以变成不同语言的编程环境，可以编写Markdown、LaTeX文件，可以浏览PDF、网页，可以播放音乐、视频，也可以接发邮件，进行IRC聊天等等。至于“煮咖啡”“操作系统”一类的说法，仅仅是为了体现其功能强大而已。</p><p>本文只作为自己的Emacs学习记录而已，若可以给您一些启发，再好不过。用多了Emacs，真觉得把手从键盘挪到鼠标上太费劲了。</p><h1 id="为什么要用Emacs？"><a href="#为什么要用Emacs？" class="headerlink" title="为什么要用Emacs？"></a>为什么要用Emacs？</h1><ul><li>快捷键多。熟练之后，写代码双手几乎不需要离开键盘。</li><li>自由度、模块化程度高。有需要的配置可以找现成的模块，或者用强大的Emacs Lisp写个新的。如果自己配置，可以完全贴近自己的需求，避免功能冗余。</li><li>兼容性高。Window、Linux、MacOS都可以用Emacs。</li><li>配置后功能强大。需要其它软件的频率会降低。</li><li>资源比较丰富。自带文档、Emacs China论坛里都有很多资料可供参考。</li><li>…</li></ul><h1 id="基础配置"><a href="#基础配置" class="headerlink" title="基础配置"></a>基础配置</h1><p>我的配置主要关注于Java，C和Python语言的开发。</p><ul><li>不显示菜单栏、工具栏、滚动条</li><li>显示行数</li><li>最大化触发按键绑定在”C-c m”上</li><li>主页不显示tutorial页</li><li>使用use-package并换gnu、melpa源为清华源</li><li>括号自动补全</li><li>字体：粗体Consolas（18）</li><li>编码全调为UTF-8</li><li>Ctrl键与CapsLock键替换绑定（用AutoHotKey脚本语言<a href="%E8%87%B3%E4%BA%8EAHK%E7%9A%84%E6%95%99%E7%A8%8B%EF%BC%9A%E5%8F%AF%E4%BB%A5%E7%82%B9%E5%87%BB%5B%E8%BF%99%E9%87%8C%5D(https://www.autoahk.com/help/autohotkey/v2/docs/Tutorial.htm)%E6%9F%A5%E7%9C%8B%E3%80%82">^2</a>），以保护小拇指</li></ul><p>替换键位绑定（AHK脚本）：</p><figure class="highlight ahk"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#IfWinActive [你的Emacs窗口名]</span></span><br><span class="line"><span class="title">Control::</span>Capslock</span><br><span class="line"><span class="title">Capslock::</span>Control </span><br><span class="line"><span class="meta">#IfWinActive</span></span><br></pre></td></tr></table></figure><p>换源：</p><figure class="highlight lisp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">(<span class="name">setq</span> package-archives &#x27;((<span class="string">&quot;gnu&quot;</span>   . <span class="string">&quot;http://mirrors.tuna.tsinghua.edu.cn/elpa/gnu/&quot;</span>)</span><br><span class="line">                         (<span class="string">&quot;melpa&quot;</span> . <span class="string">&quot;http://mirrors.tuna.tsinghua.edu.cn/elpa/melpa/&quot;</span>)))</span><br><span class="line">(<span class="name">package-initialize</span>)</span><br><span class="line"></span><br><span class="line">(<span class="name">provide</span> &#x27;init-elpa)</span><br></pre></td></tr></table></figure><h1 id="美化"><a href="#美化" class="headerlink" title="美化"></a>美化</h1><p>我会列举我所用的package和基本的配置方式。</p><h2 id="moe-theme"><a href="#moe-theme" class="headerlink" title="moe-theme"></a>moe-theme</h2><p>所用主题，这里我也设置了：光标移动到括号上时，高亮与之配对的括号之间的内容。</p><figure class="highlight lisp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">(<span class="name">use-package</span> moe-theme)</span><br><span class="line">(<span class="name">show-paren-mode</span> <span class="literal">t</span>)</span><br><span class="line">(<span class="name">setq</span> moe-theme-mode-line-color &#x27;cyan)</span><br><span class="line">(<span class="name">setq</span> show-paren-style &#x27;expression)</span><br><span class="line">(<span class="name">moe-dark</span>)</span><br></pre></td></tr></table></figure><h2 id="powerline"><a href="#powerline" class="headerlink" title="powerline"></a>powerline</h2><p>美化mode-line，配置：</p><figure class="highlight lisp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">(<span class="name">powerline-default-theme</span>)</span><br></pre></td></tr></table></figure><h2 id="rainbow-delimiters"><a href="#rainbow-delimiters" class="headerlink" title="rainbow-delimiters"></a>rainbow-delimiters</h2><p>对于不同层的括号，用不同颜色标记。</p><h2 id="nyan-mode"><a href="#nyan-mode" class="headerlink" title="nyan-mode"></a>nyan-mode</h2><p>在mode-line显示一只彩虹猫，它的进度条代表光标在文章中的位置。</p><figure class="highlight lisp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">(<span class="name">add-hook</span> &#x27;after-init-hook &#x27;nyan-mode)</span><br></pre></td></tr></table></figure><h2 id="dashboard"><a href="#dashboard" class="headerlink" title="dashboard"></a>dashboard</h2><p>配置欢迎页。</p><figure class="highlight lisp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">(<span class="name">use-package</span> dashboard</span><br><span class="line">  <span class="symbol">:ensure</span> <span class="literal">t</span></span><br><span class="line">  <span class="symbol">:config</span></span><br><span class="line"> (<span class="name">setq</span> dashboard-projects-backend &#x27;projectile)</span><br><span class="line"> (<span class="name">setq</span> dashboard-startup-banner &#x27;default) <span class="comment">;;Welcome Picture</span></span><br><span class="line"> (<span class="name">setq</span> dashboard-center-content <span class="literal">t</span>)</span><br><span class="line"> (<span class="name">setq</span> dashboard-items &#x27;((recents  . <span class="number">5</span>)   ;; recent files</span><br><span class="line">  (bookmarks . <span class="number">5</span>)  ;; Recent bookmarks</span><br><span class="line">  (projects . <span class="number">10</span>))) <span class="comment">;; Recent projects</span></span><br><span class="line"> (<span class="name">dashboard-setup-startup-hook</span>))</span><br></pre></td></tr></table></figure><h2 id="diminish"><a href="#diminish" class="headerlink" title="diminish"></a>diminish</h2><p>如果觉得mode-line上的minor-mode太多了，可以用diminish来隐藏一些。</p><figure class="highlight lisp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">(<span class="name">diminish</span> &#x27;company-mode)</span><br><span class="line">(<span class="name">diminish</span> &#x27;helm-mode)</span><br><span class="line">(<span class="name">diminish</span> &#x27;eldoc-mode)</span><br></pre></td></tr></table></figure><h1 id="Emacs功能优化"><a href="#Emacs功能优化" class="headerlink" title="Emacs功能优化"></a>Emacs功能优化</h1><br><h2 id="window-numbering"><a href="#window-numbering" class="headerlink" title="window-numbering"></a>window-numbering</h2><p>给每个窗口编号，M+对应数字就可以跳转到对应的窗口。</p><h2 id="restart-emacs"><a href="#restart-emacs" class="headerlink" title="restart-emacs"></a>restart-emacs</h2><p>方便重启emacs，我绑定在”C-c r”上。</p><h2 id="company"><a href="#company" class="headerlink" title="company"></a>company</h2><p>文本自动补全，company的相关配置查看<a href="https://company-mode.github.io/">这里</a>。</p><figure class="highlight lisp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">(<span class="name">add-hook</span> &#x27;after-init-hook &#x27;global-company-mode)</span><br><span class="line">(<span class="name">setq</span> company-minimum-prefix-length <span class="number">2</span>)</span><br><span class="line">(<span class="name">setq</span> company-idle-delay <span class="number">0</span>)</span><br><span class="line">(<span class="name">setq</span> company-selection-wrap-around <span class="literal">t</span>)</span><br></pre></td></tr></table></figure><h2 id="helm"><a href="#helm" class="headerlink" title="helm"></a>helm</h2><p>命令自动补全，但实际上helm的功能不仅限于此。配置：</p><figure class="highlight lisp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">(<span class="name">helm-mode</span> <span class="number">1</span>)</span><br></pre></td></tr></table></figure><h2 id="smex"><a href="#smex" class="headerlink" title="smex"></a>smex</h2><p>M-x命令的加强版，输入“M-x smex”后，会显示命令备选。</p><figure class="highlight lisp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">(<span class="name">smex-initialize</span>)</span><br></pre></td></tr></table></figure><p>为了方便，我把M-x直接绑定为了smex命令。</p><h2 id="avy"><a href="#avy" class="headerlink" title="avy"></a>avy</h2><p>无需鼠标操作即可进行跳转、移动指定行或区域、复制指定行或区域等功能。幻的键位绑定：</p><figure class="highlight lisp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">(<span class="name">global-set-key</span> (<span class="name">kbd</span> <span class="string">&quot;C-c a c&quot;</span>) &#x27;avy-goto-char-timer)</span><br><span class="line">(<span class="name">global-set-key</span> (<span class="name">kbd</span> <span class="string">&quot;C-c a l&quot;</span>) &#x27;avy-goto-line)</span><br><span class="line">(<span class="name">global-set-key</span> (<span class="name">kbd</span> <span class="string">&quot;C-c a a&quot;</span>) &#x27;avy-copy-line)</span><br><span class="line">(<span class="name">global-set-key</span> (<span class="name">kbd</span> <span class="string">&quot;C-c a b&quot;</span>) &#x27;avy-copy-region)</span><br><span class="line">(<span class="name">global-set-key</span> (<span class="name">kbd</span> <span class="string">&quot;C-c a m&quot;</span>) &#x27;avy-move-line)</span><br><span class="line">(<span class="name">global-set-key</span> (<span class="name">kbd</span> <span class="string">&quot;C-c a n&quot;</span>) &#x27;avy-move-region)</span><br></pre></td></tr></table></figure><h2 id="iedit"><a href="#iedit" class="headerlink" title="iedit"></a>iedit</h2><p>选中几个字母，打开iedit-mode，就可以同时修改所有对应项。</p><h1 id="编程功能优化"><a href="#编程功能优化" class="headerlink" title="编程功能优化"></a>编程功能优化</h1><br><h2 id="lsp"><a href="#lsp" class="headerlink" title="lsp"></a>lsp</h2><p>微软推出的Language Server Protocol，功能很强大，支持的语言也很多，不用费劲配置每一个语言了，具体信息可以访问<a href="https://emacs-lsp.github.io/lsp-mode/">这里</a>，幻的配置：</p><figure class="highlight lisp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">(<span class="name">use-package</span> lsp-mode</span><br><span class="line">  <span class="symbol">:hook</span> (</span><br><span class="line">      (<span class="name">java-mode</span> . lsp)</span><br><span class="line"> (<span class="name">python-mode</span> . lsp)</span><br><span class="line"> (<span class="name">c-mode</span>    . lsp)</span><br><span class="line"> (<span class="name">go-mode</span>   . lsp)</span><br><span class="line"> (<span class="name">haskell-mode</span> . lsp)</span><br><span class="line"> (<span class="name">vue-mode</span>  . lsp))</span><br><span class="line">  <span class="symbol">:commands</span> lsp</span><br><span class="line">  <span class="symbol">:init</span></span><br><span class="line">    (<span class="name">setq</span> lsp-auto-configure <span class="literal">t</span>                           <span class="comment">;;Try configuring by itself</span></span><br><span class="line">        lsp-auto-guess-root <span class="literal">t</span>                            <span class="comment">;;Guess the root folder </span></span><br><span class="line">        lsp-idle-delay <span class="number">0.500</span>                             <span class="comment">;;idle_delay of the info_refreshing to the server</span></span><br><span class="line">        lsp-session-file <span class="string">&quot;~/.emacs/.cache/lsp-sessions&quot;</span>))</span><br></pre></td></tr></table></figure><h2 id="web-mode"><a href="#web-mode" class="headerlink" title="web-mode"></a>web-mode</h2><p>前端开发的一次性解决方案。</p><figure class="highlight lisp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">(<span class="name">add-to-list</span> &#x27;auto-mode-alist &#x27;(<span class="string">&quot;\\.html?\\&#x27;&quot;</span> . web-mode))</span><br><span class="line">(<span class="name">add-to-list</span> &#x27;auto-mode-alist &#x27;(<span class="string">&quot;\\.phtml\\&#x27;&quot;</span> . web-mode))</span><br><span class="line">(<span class="name">add-to-list</span> &#x27;auto-mode-alist &#x27;(<span class="string">&quot;\\.tpl\\.php\\&#x27;&quot;</span> . web-mode))</span><br><span class="line">(<span class="name">add-to-list</span> &#x27;auto-mode-alist &#x27;(<span class="string">&quot;\\.[agj]sp\\&#x27;&quot;</span> . web-mode))</span><br><span class="line">(<span class="name">add-to-list</span> &#x27;auto-mode-alist &#x27;(<span class="string">&quot;\\.as[cp]x\\&#x27;&quot;</span> . web-mode))</span><br><span class="line">(<span class="name">add-to-list</span> &#x27;auto-mode-alist &#x27;(<span class="string">&quot;\\.erb\\&#x27;&quot;</span> . web-mode))</span><br><span class="line">(<span class="name">add-to-list</span> &#x27;auto-mode-alist &#x27;(<span class="string">&quot;\\.mustache\\&#x27;&quot;</span> . web-mode))</span><br><span class="line">(<span class="name">add-to-list</span> &#x27;auto-mode-alist &#x27;(<span class="string">&quot;\\.djhtml\\&#x27;&quot;</span> . web-mode))</span><br><span class="line">(<span class="name">add-to-list</span> &#x27;auto-mode-alist &#x27;(<span class="string">&quot;\\.xhtml\\&#x27;&quot;</span>  . web-mode))</span><br></pre></td></tr></table></figure><h2 id="flycheck"><a href="#flycheck" class="headerlink" title="flycheck"></a>flycheck</h2><p>语法检查，和lsp搭配得很好，配置很简单：</p><figure class="highlight lisp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">(<span class="name">global-flycheck-mode</span> <span class="literal">t</span>)</span><br></pre></td></tr></table></figure><h2 id="YASnipeet"><a href="#YASnipeet" class="headerlink" title="YASnipeet"></a>YASnipeet</h2><p>代码自动补全。</p><figure class="highlight lisp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">(<span class="name">yas-global-mode</span> <span class="literal">t</span>)</span><br></pre></td></tr></table></figure><h2 id="magit"><a href="#magit" class="headerlink" title="magit"></a>magit</h2><p>版本管理，还不怎么会。</p><h2 id="Projectile"><a href="#Projectile" class="headerlink" title="Projectile"></a>Projectile</h2><p>项目管理，也不怎么会。</p><h2 id="quick-compile（我自己写的）"><a href="#quick-compile（我自己写的）" class="headerlink" title="quick-compile（我自己写的）"></a>quick-compile（我自己写的）</h2><p>每次打开命令行再编译运行太费劲。</p><p>按下F8，即可根据对应major mode执行不同的编译运行函数，compile后面的参数t是为了开启interactive compile，可以进行输入操作。</p><figure class="highlight lisp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">(<span class="name">defun</span> c-quick-compile ()</span><br><span class="line">  (<span class="name">interactive</span>)</span><br><span class="line">  (<span class="name">compile</span> (<span class="name">format</span> <span class="string">&quot;gcc %s &amp;&amp; a.exe&quot;</span> (<span class="name">buffer-name</span>) ) <span class="literal">t</span>)</span><br><span class="line">  )</span><br><span class="line"></span><br><span class="line">(<span class="name">defun</span> py-quick-compile ()</span><br><span class="line">  (<span class="name">interactive</span>)</span><br><span class="line">  (<span class="name">compile</span> (<span class="name">format</span> <span class="string">&quot;py %s&quot;</span> (<span class="name">buffer-name</span>)) <span class="literal">t</span>)</span><br><span class="line">  )</span><br><span class="line"></span><br><span class="line">(<span class="name">defun</span> html-quick-compile ()</span><br><span class="line">  (<span class="name">interactive</span>)</span><br><span class="line">  (<span class="name">browse-url-of-buffer</span>)</span><br><span class="line">  )</span><br><span class="line"></span><br><span class="line">(<span class="name">defun</span> quick-compile ()</span><br><span class="line">  (<span class="name">interactive</span>)</span><br><span class="line">  (<span class="name">if</span> (<span class="name">eq</span> major-mode &#x27;c-mode)</span><br><span class="line">      (<span class="name">c-quick-compile</span>))</span><br><span class="line">  (<span class="name">if</span> (<span class="name">eq</span> major-mode &#x27;python-mode)</span><br><span class="line">      (<span class="name">py-quick-compile</span>))</span><br><span class="line">  (<span class="name">if</span> (<span class="name">eq</span> major-mode &#x27;html-mode)</span><br><span class="line">      (<span class="name">html-quick-compile</span>))</span><br><span class="line">  )</span><br><span class="line"></span><br><span class="line">(<span class="name">global-set-key</span> (<span class="name">kbd</span> <span class="string">&quot;&lt;f8&gt;&quot;</span>) &#x27;quick-compile)</span><br></pre></td></tr></table></figure><h1 id="Org-mode-美化"><a href="#Org-mode-美化" class="headerlink" title="Org-mode 美化"></a>Org-mode 美化</h1><p>org-mode可以用来记笔记、管理项目之类，功能很强大，我用org-superstar进行美化：</p><figure class="highlight lisp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">(<span class="name">add-hook</span> &#x27;org-mode-hook (<span class="name">lambda</span> () (<span class="name">org-superstar-mode</span> <span class="number">1</span>)))</span><br></pre></td></tr></table></figure><h1 id="后记"><a href="#后记" class="headerlink" title="后记"></a>后记</h1><p>参考了Emacs China、Reddit(r&#x2F;emacs)、知乎、CSDN等平台的配置。有一些小package没有列出。本文会持续更新。私以为Emacs的配置也是如此，从编程菜鸟到编程老鸟的过程中，Emacs的配置也会随着需求逐渐变化迭代，有现成的包就用，没有符合自己需求的包，便自己写一个。</p><p>[^1]:如果您对这段历史感兴趣，强烈推荐您读一读Steven Levy的《黑客》这本书。这本书对黑客道德、开源文化的历史等等有着非常详细的介绍。</p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> Emacs </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>【单片机】点亮STM32F103ZE的LED</title>
+      <link href="/2022/08/05/STM32_LED/"/>
+      <url>/2022/08/05/STM32_LED/</url>
+      
+        <content type="html"><![CDATA[<blockquote><p>关键词：GPIO、单片机、C语言</p></blockquote><p>@[TOC]</p><h1 id="引子"><a href="#引子" class="headerlink" title="引子"></a>引子</h1><p>本文是自己的单片机学习记录。我会从硬件开始，一步步研究，点亮STM32F103ZE的LED小灯，并使之闪烁。如果能给您一点启发，再好不过。我选择的是正点原子的STM32F103ZET6精英开发板。</p><p>要完成这个任务，你需要：</p><ul><li>Keil uVision5</li><li>FlyMcu（或者其他烧录工具）</li><li>开发板原理图</li><li>STM32参考手册</li><li>一点数字电路和模拟电路的知识</li><li>C语言的基础知识</li></ul><h1 id="一、硬件连接"><a href="#一、硬件连接" class="headerlink" title="一、硬件连接"></a>一、硬件连接</h1><p><img src="https://coder109.github.io/post-images/1659701072743.png"></p><p>LED0和PB5引脚相连，LED1和PE5相连，那么我们就要操纵这两个GPIO引脚的电平，给高电平还是低电平呢？</p><p><img src="https://coder109.github.io/post-images/1659701344954.png"></p><p>LED和VCC<a href="%E7%94%B5%E8%B7%AF%E4%BE%9B%E7%94%B5%E7%94%B5%E5%8E%8B">^1</a>3.3V相连，所以我们要在引脚处给予低电平，才能使LED小灯亮起，要让它们闪烁，交替给予高低电平就可以了。</p><h1 id="二、GPIO"><a href="#二、GPIO" class="headerlink" title="二、GPIO"></a>二、GPIO</h1><p>GPIO[^2]口的基本结构如下：</p><p><img src="https://coder109.github.io/post-images/1659701896357.png"></p><p>几个小元件&#x2F;称谓：</p><ul><li>TTL肖特基触发器：即由TTL元件构成的施密特触发器&#x2F;滞回比较器，可以将模拟信号转化为数字信号。</li><li>上拉&#x2F;下拉电阻：同图中VDD[^3]相连为上拉电阻，VSS[^4]相连为下拉电阻。</li></ul><p>GPIO口的几种输入模式：</p><ul><li>浮空输入</li><li>上拉输入</li><li>下拉输入</li><li>模拟输入</li></ul><p>输出模式：</p><ul><li>开漏输出</li><li>开漏复用</li><li>推挽输出</li><li>推挽复用</li></ul><h2 id="浮空输入"><a href="#浮空输入" class="headerlink" title="浮空输入"></a>浮空输入</h2><p>上下拉电阻的开关都不闭合，信号直接通过“IO-触发器-输入数据寄存器”。I&#x2F;O口悬空的时候，输入端电平高低无法确定。</p><h2 id="上拉输入"><a href="#上拉输入" class="headerlink" title="上拉输入"></a>上拉输入</h2><p>在浮空输入基础上，如果上拉电阻的开关闭合，就成了上拉输入模式。I&#x2F;O口悬空时，输入端上拉为高电平。输入低电平时，输出也能为低电平。<font color="red">这里不要错以为输入低电平时，输出由于上拉电阻的影响为高电平！</font></p><h2 id="下拉输入"><a href="#下拉输入" class="headerlink" title="下拉输入"></a>下拉输入</h2><p>在浮空输入的基础上，把下拉电阻的开关闭合，就成了下拉输入模式。I&#x2F;O口悬空时，输入端下拉为低电平。</p><h2 id="模拟输入"><a href="#模拟输入" class="headerlink" title="模拟输入"></a>模拟输入</h2><p>上下拉电阻的开关都不闭合，信号直接通过“IO-模拟输入”至片上外设模块。如果通过触发器，模拟信号会变成数字信号。</p><h2 id="开漏（Open-Drain）和推挽（Push-Pull）"><a href="#开漏（Open-Drain）和推挽（Push-Pull）" class="headerlink" title="开漏（Open-Drain）和推挽（Push-Pull）"></a>开漏（Open-Drain）和推挽（Push-Pull）</h2><p>开漏指输出信号只与NMOS管，而与PMOS管无关。输出为低电平，低电平到达NMOS管栅极，NMOS导通，输出拉至GND[^5]低电平。当高电平到达NMOS管时，不导通，输出悬空。</p><blockquote><p>开漏输出的这一特性一个明显的优势就是可以很方便的调节输出的电平，因为输出电平完全由上拉电阻连接的电源电平决定。所以在需要进行电平转换的地方，非常适合使用开漏输出。<br>开漏输出的这一特性另一个好处在于可以实现”线与”功能，所谓的”线与”指的是多个信号线直接连接在一起，只有当所有信号全部为高电平时，合在一起的总线为高电平；只要有任意一个或者多个信号为低电平，则总线为低电平。而推挽输出就不行，如果高电平和低电平连在一起，会出现电流倒灌，损坏器件。</p></blockquote><p>推挽指输出信号与PMOS、NMOS管都有关系，低电平令NMOS导通，输出拉低至GND，高电平令PMOS导通，输出拉高至VDD。其电平转换快，但是功耗也高。</p><h2 id="复用输出"><a href="#复用输出" class="headerlink" title="复用输出"></a>复用输出</h2><p>其与另外两种输出的区别就是输出信号的来源不同而已，如图所示。</p><h1 id="三、代码"><a href="#三、代码" class="headerlink" title="三、代码"></a>三、代码</h1><p>如何在Keil中创建项目就不再赘述了，具体步骤大概为：创建.c文件-创建项目-引入头文件-把.c文件引入项目中。</p><h2 id="Step-1-LED的初始化函数"><a href="#Step-1-LED的初始化函数" class="headerlink" title="Step 1 LED的初始化函数"></a>Step 1 LED的初始化函数</h2><p>GPIOB,GPIOE分布在APB2总线上，所以使能应该调用APB2的相关函数：</p><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">RCC_APB2PeriphClockCmd(RCC_APB2Periph_GPIOB,ENABLE); </span><br><span class="line">RCC_APB2PeriphClockCmd(RCC_APB2Periph_GPIOE,ENABLE); </span><br></pre></td></tr></table></figure><p>之后，初始化PB5、PE5引脚，设置输入模式、反转速度等等，通过看相关函数的定义，这几句不难写出：</p><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">GPIO_InitTypeDef GPIO_InitStructure;</span><br><span class="line"></span><br><span class="line">GPIO_InitStructure.GPIO_Mode = GPIO_Mode_Out_PP; <span class="comment">//Output-Push&amp;Pull</span></span><br><span class="line">GPIO_InitStructure.GPIO_Pin = GPIO_Pin_5; <span class="comment">//LED0-&gt;PB.5</span></span><br><span class="line">GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz;</span><br><span class="line">GPIO_Init(GPIOB,&amp;GPIO_InitStructure);</span><br><span class="line"></span><br><span class="line">GPIO_InitStructure.GPIO_Mode = GPIO_Mode_Out_PP; <span class="comment">//Output-Push&amp;Pull</span></span><br><span class="line">GPIO_InitStructure.GPIO_Pin = GPIO_Pin_5; <span class="comment">//LED1-&gt;PE.5</span></span><br><span class="line">GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz;</span><br><span class="line">GPIO_Init(GPIOE,&amp;GPIO_InitStructure);</span><br></pre></td></tr></table></figure><p>这里将PB5、PE5设置成50MHz的推挽输出。</p><p>然后，我们要设置灯的初态，亮或是灭：</p><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">GPIO_SetBits(GPIOE,GPIO_Pin_5);</span><br><span class="line">GPIO_SetBits(GPIOB,GPIO_Pin_5);</span><br></pre></td></tr></table></figure><p>这里，我们将PB5、PE5初始状态设为高电平，也就是让LED小灯先灭掉。</p><h2 id="Step2-主函数"><a href="#Step2-主函数" class="headerlink" title="Step2 主函数"></a>Step2 主函数</h2><p>对于单片机来讲，主函数一般是这样的结构——“初始化-死循环”。</p><p>主函数没什么可讲的：</p><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">(<span class="type">void</span>)</span></span><br><span class="line">&#123;</span><br><span class="line">    LED_Init();<span class="comment">//初始化LED</span></span><br><span class="line">    <span class="keyword">while</span>(<span class="number">1</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="comment">//PB5、PE5变成高电平，LED熄灭</span></span><br><span class="line">        GPIO_SetBits(GPIOE,GPIO_Pin_5);</span><br><span class="line">        GPIO_SetBits(GPIOB,GPIO_Pin_5);</span><br><span class="line"></span><br><span class="line">        delay_ms(<span class="number">500</span>);<span class="comment">//延时500ms便于观察情况</span></span><br><span class="line"></span><br><span class="line">        <span class="comment">//PB5、PE5变成低电平，LED亮起</span></span><br><span class="line">        GPIO_ResetBits(GPIOE,GPIO_Pin_5);</span><br><span class="line">        GPIO_ResetBits(GPIOB,GPIO_Pin_5);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>喂喂喂，等等！延时函数怎么写哇！正点原子官方给提供了，我会在下一篇文章中研究一下时钟系统。</p><h1 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h1><p>单纯调库函数属实没多大意思，那些底层的东西，往往才是最有价值的。我写作水平不是很高，诸位凑活着看吧！</p><h1 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h1><p><a href="https://zhuanlan.zhihu.com/p/210910238">你彻底弄清GPIO内部结构和各种模式了吗？</a></p><p>[^2]:General Purpose Input Output，通用输入输出<br>[^3]:设备工作电压<br>[^4]:地&#x2F;电源负极，我当作接地来理解<br>[^5]:GrouND，接地<br>[^6]:High Speed Internal<br>[^7]:High Speed External<br>[^8]:Low Speed Internal<br>[^9]:Low Speed External<br>[^10]:Phase Locked Loop，锁相环</p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> 单片机 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>重新来过</title>
+      <link href="/2022/07/28/Restart/"/>
+      <url>/2022/07/28/Restart/</url>
+      
+        <content type="html"><![CDATA[<blockquote><p>说到底，还是因为我不会写文章嘛！</p></blockquote><p>以前自己写的东西大多是在自说自话，毫无意义。现在我要重新经营博客，主要写一些技术上的文章，偶尔会有一些杂谈、书摘、评论。</p><p>我希望在填充自己的知识库的同时，也能给别人一些知识、启示。</p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> 杂谈 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+  
+  
+</search>

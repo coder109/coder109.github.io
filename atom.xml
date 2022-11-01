@@ -1,0 +1,510 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>幻</title>
+  <icon>https://coder109.github.io/icon.png</icon>
+  <subtitle>幻的个人博客</subtitle>
+  <link href="https://coder109.github.io/atom.xml" rel="self"/>
+  
+  <link href="https://coder109.github.io/"/>
+  <updated>2022-10-31T15:17:15.194Z</updated>
+  <id>https://coder109.github.io/</id>
+  
+  <author>
+    <name>Coder109</name>
+    
+  </author>
+  
+  <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Hello World</title>
+    <link href="https://coder109.github.io/2022/11/01/hello-world/"/>
+    <id>https://coder109.github.io/2022/11/01/hello-world/</id>
+    <published>2022-11-01T06:01:29.253Z</published>
+    <updated>2022-10-31T15:17:15.194Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.io/docs/&quot;&gt;documentation&lt;/a&gt;</summary>
+        
+      
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title></title>
+    <link href="https://coder109.github.io/2022/11/01/linuxRaod2/"/>
+    <id>https://coder109.github.io/2022/11/01/linuxRaod2/</id>
+    <published>2022-11-01T06:01:29.253Z</published>
+    <updated>2022-10-30T12:07:24.035Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;Linux苦痛之路（二）：命令行篇&quot;&gt;&lt;a href=&quot;#Linux苦痛之路（二）：命令行篇&quot; class=&quot;headerlink&quot; title=&quot;Linux苦痛之路（二）：命令行篇&quot;&gt;&lt;/a&gt;Linux苦痛之路（二）：命令行篇&lt;/h1&gt;&lt;h2</summary>
+        
+      
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title></title>
+    <link href="https://coder109.github.io/2022/11/01/linuxRoad1/"/>
+    <id>https://coder109.github.io/2022/11/01/linuxRoad1/</id>
+    <published>2022-11-01T06:01:29.253Z</published>
+    <updated>2022-10-31T16:06:23.070Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;Linux苦痛之路-一-：基本配置篇&quot;&gt;&lt;a href=&quot;#Linux苦痛之路-一-：基本配置篇&quot; class=&quot;headerlink&quot; title=&quot;Linux苦痛之路(一)：基本配置篇&quot;&gt;&lt;/a&gt;Linux苦痛之路(一)：基本配置篇&lt;/h1&gt;&lt;h2</summary>
+        
+      
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>【算法】快速傅里叶变换</title>
+    <link href="https://coder109.github.io/2022/10/26/suan-fa-kuai-su-fu-li-xie-bian-huan/"/>
+    <id>https://coder109.github.io/2022/10/26/suan-fa-kuai-su-fu-li-xie-bian-huan/</id>
+    <published>2022-10-26T08:30:50.000Z</published>
+    <updated>2022-10-26T16:31:48.000Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;blockquote&gt;
+&lt;p&gt;关键词：傅里叶变换、分治思想&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;@[TOC]&lt;/p&gt;
+</summary>
+        
+      
+    
+    
+    
+    
+    <category term="算法" scheme="https://coder109.github.io/tags/%E7%AE%97%E6%B3%95/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>【LaTeX】符号表和相关用法</title>
+    <link href="https://coder109.github.io/2022/10/19/latex-fu-hao-biao-he-xiang-guan-yong-fa/"/>
+    <id>https://coder109.github.io/2022/10/19/latex-fu-hao-biao-he-xiang-guan-yong-fa/</id>
+    <published>2022-10-19T15:31:52.000Z</published>
+    <updated>2022-10-19T23:32:52.000Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;&lt;img src=&quot;https://coder109.github.io/post-images/1666193536094.png&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img</summary>
+        
+      
+    
+    
+    
+    
+    <category term="LaTeX" scheme="https://coder109.github.io/tags/LaTeX/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>【数学/数理逻辑】备忘</title>
+    <link href="https://coder109.github.io/2022/10/19/shu-xue-shu-li-luo-ji-bei-wang/"/>
+    <id>https://coder109.github.io/2022/10/19/shu-xue-shu-li-luo-ji-bei-wang/</id>
+    <published>2022-10-19T08:43:08.000Z</published>
+    <updated>2022-10-20T19:59:00.000Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;@[TOC]&lt;/p&gt;
+&lt;h1 id=&quot;1-求主合取范式和主析取范式&quot;&gt;&lt;a href=&quot;#1-求主合取范式和主析取范式&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    
+    <category term="数学" scheme="https://coder109.github.io/tags/%E6%95%B0%E5%AD%A6/"/>
+    
+    <category term="数理逻辑" scheme="https://coder109.github.io/tags/%E6%95%B0%E7%90%86%E9%80%BB%E8%BE%91/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>【数学/近世代数】备忘</title>
+    <link href="https://coder109.github.io/2022/10/18/shu-xue-jin-shi-dai-shu-bei-wang/"/>
+    <id>https://coder109.github.io/2022/10/18/shu-xue-jin-shi-dai-shu-bei-wang/</id>
+    <published>2022-10-18T12:06:53.000Z</published>
+    <updated>2022-10-20T19:52:56.000Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;@[TOC]&lt;/p&gt;
+&lt;h1 id=&quot;1-幂等元存在性&quot;&gt;&lt;a href=&quot;#1-幂等元存在性&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    
+    <category term="数学" scheme="https://coder109.github.io/tags/%E6%95%B0%E5%AD%A6/"/>
+    
+    <category term="近世代数" scheme="https://coder109.github.io/tags/%E8%BF%91%E4%B8%96%E4%BB%A3%E6%95%B0/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>【数学/概率论】备忘</title>
+    <link href="https://coder109.github.io/2022/10/16/gai-lu-lun-chang-yong-jie-lun-bei-wang/"/>
+    <id>https://coder109.github.io/2022/10/16/gai-lu-lun-chang-yong-jie-lun-bei-wang/</id>
+    <published>2022-10-16T13:08:56.000Z</published>
+    <updated>2022-10-20T16:20:18.000Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;blockquote&gt;
+&lt;p&gt;未特别说明，$f_X(x)$代表$X$的概率密度，$F_X(x)$代表$X$的分布函数。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;@[TOC]&lt;/p&gt;
+&lt;h1 id=&quot;1-公式法求随机变量关系&quot;&gt;&lt;a href=&quot;#1-公式法求随机变量关系&quot;</summary>
+        
+      
+    
+    
+    
+    
+    <category term="数学" scheme="https://coder109.github.io/tags/%E6%95%B0%E5%AD%A6/"/>
+    
+    <category term="概率论" scheme="https://coder109.github.io/tags/%E6%A6%82%E7%8E%87%E8%AE%BA/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>【意识流】“啤酒-炸鸡-愤世嫉俗”情感障碍</title>
+    <link href="https://coder109.github.io/2022/10/13/yi-shi-liu-pi-jiu-zha-ji-fen-shi-ji-su-qing-gan-zhang-ai/"/>
+    <id>https://coder109.github.io/2022/10/13/yi-shi-liu-pi-jiu-zha-ji-fen-shi-ji-su-qing-gan-zhang-ai/</id>
+    <published>2022-10-13T11:51:14.000Z</published>
+    <updated>2022-10-18T21:07:30.000Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;blockquote&gt;
+&lt;p&gt;炸鸡是被子，啤酒是枕头，愤世嫉俗是梦。——我自己说的，对，我自己说的。&lt;br&gt;愤世嫉俗好像用得不太好，我想不出替代词了（欸嘿！&lt;br&gt;你欸嘿个头哇！&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;越来越觉得自己的脑子就是一个垃圾场，里面什么都有，又什么</summary>
+        
+      
+    
+    
+    
+    
+    <category term="意识流" scheme="https://coder109.github.io/tags/%E6%84%8F%E8%AF%86%E6%B5%81/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>【意识流】我们终将死亡</title>
+    <link href="https://coder109.github.io/2022/10/01/yi-shi-liu-wo-men-zhong-jiang-si-wang/"/>
+    <id>https://coder109.github.io/2022/10/01/yi-shi-liu-wo-men-zhong-jiang-si-wang/</id>
+    <published>2022-10-01T12:24:39.000Z</published>
+    <updated>2022-10-01T20:28:04.000Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;我坐在火车上，窗户被封死了，什么也看不见。车厢里的灯忽明忽暗，灯罩内侧有虫子的尸体。桌子是白色的，磨砂桌面，上面杂乱摆放着几张信封。我拿起一个信封，从口袋里拿出小裁刀，将信封拆开来，发现里面什么也没有。&lt;/p&gt;
+&lt;p&gt;我有些迷惑。&lt;/p&gt;
+&lt;p&gt;我看了看收件人，的确是我，寄</summary>
+        
+      
+    
+    
+    
+    
+    <category term="意识流" scheme="https://coder109.github.io/tags/%E6%84%8F%E8%AF%86%E6%B5%81/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>【意识流】虚无的凭依</title>
+    <link href="https://coder109.github.io/2022/10/01/yi-shi-liu-xu-wu-de-ping-yi/"/>
+    <id>https://coder109.github.io/2022/10/01/yi-shi-liu-xu-wu-de-ping-yi/</id>
+    <published>2022-10-01T12:15:13.000Z</published>
+    <updated>2022-10-01T20:25:00.000Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;钢铁列车飞速向前，前面是一堵厚重的水泥墙，封闭着黄色的氯化铀酰和三硝基甲苯。列车上的人们嚎叫着庆祝着大笑着时代的巅峰，偶有哀叹的声音在刹那的死寂中回响，而又淹没在下一刻的呼喊声中。&lt;/p&gt;
+&lt;p&gt;人们团结起来，成为家庭，成为社团，成为民族，成为国家，自以为是宇宙中的最强者。</summary>
+        
+      
+    
+    
+    
+    
+    <category term="意识流" scheme="https://coder109.github.io/tags/%E6%84%8F%E8%AF%86%E6%B5%81/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>【诗】雨</title>
+    <link href="https://coder109.github.io/2022/10/01/shi-yu/"/>
+    <id>https://coder109.github.io/2022/10/01/shi-yu/</id>
+    <published>2022-10-01T12:13:31.000Z</published>
+    <updated>2022-10-01T20:15:10.000Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;我看见雨点击打铁皮屋顶，&lt;br&gt;像是时间之锤砸在命运的鼓上，&lt;br&gt;震动生者的心灵，&lt;br&gt;令他们在此刻向远古眺望——&lt;br&gt;那里空无一物，只有雨。&lt;/p&gt;
+&lt;p&gt;人们反抗一切，痛恨一切，&lt;br&gt;而雨冲尽了一切鲜血。&lt;br&gt;这一切都是循环，&lt;br&gt;一切秩序都将在雨中腐朽紊乱</summary>
+        
+      
+    
+    
+    
+    
+    <category term="诗" scheme="https://coder109.github.io/tags/%E8%AF%97/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>【意识流】先知</title>
+    <link href="https://coder109.github.io/2022/10/01/yi-shi-liu-xian-zhi/"/>
+    <id>https://coder109.github.io/2022/10/01/yi-shi-liu-xian-zhi/</id>
+    <published>2022-10-01T12:04:46.000Z</published>
+    <updated>2022-10-01T20:13:18.000Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;酗酒的男人在隔壁打鼾，孤独的老者在楼上叹息，也许是楼下，或者这些声音只存在于我的脑海里——我不知道，各种声音将我拖入灰暗。床对着的墙上有一大块水渍，墙皮开裂，地板上散落着一些白灰。窗子开着，灰色的帘子被风吹动，一股汽车尾气的味道。轮胎碾过水泥地面，哗啦哗啦。&lt;/p&gt;
+&lt;p&gt;</summary>
+        
+      
+    
+    
+    
+    
+    <category term="意识流" scheme="https://coder109.github.io/tags/%E6%84%8F%E8%AF%86%E6%B5%81/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>【杂谈】政治正确、狂热和异教徒</title>
+    <link href="https://coder109.github.io/2022/10/01/za-tan-zheng-zhi-zheng-que-kuang-re-he-yi-jiao-tu/"/>
+    <id>https://coder109.github.io/2022/10/01/za-tan-zheng-zhi-zheng-que-kuang-re-he-yi-jiao-tu/</id>
+    <published>2022-10-01T11:58:35.000Z</published>
+    <updated>2022-10-01T20:03:46.000Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;人们的思想逐渐变得狂热而浅薄。&lt;/p&gt;
+&lt;p&gt;政治正确的风潮正在席卷整个世界，这很有意思。伏尔泰有一句话这样讲，“我不同意你的说法，但我誓死捍卫你说话的权利！”，这是启蒙运动的一个缩影，而启蒙运动令人类世界进入了一个光辉的时代。而现在，人们在逐渐剥夺他人存在异见的权利，也就</summary>
+        
+      
+    
+    
+    
+    
+    <category term="杂谈" scheme="https://coder109.github.io/tags/%E6%9D%82%E8%B0%88/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>【诗】幻想</title>
+    <link href="https://coder109.github.io/2022/10/01/shi-huan-xiang/"/>
+    <id>https://coder109.github.io/2022/10/01/shi-huan-xiang/</id>
+    <published>2022-10-01T11:52:23.000Z</published>
+    <updated>2022-10-01T19:57:46.000Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;这个世界只有她完美无瑕，&lt;br&gt;我的爱人，我的爱人，她——&lt;br&gt;在海边向远方眺望，&lt;br&gt;暖风轻抚她绯红的面颊。&lt;/p&gt;
+&lt;p&gt;飞鸟掠过天际线，&lt;br&gt;帆船的暗影在她的眼中荡漾，&lt;br&gt;我的爱人在大海的彼方，&lt;br&gt;伫立，直到冷风吹来黑暗的夜晚。&lt;/p&gt;
+&lt;p&gt;水晶从洁白</summary>
+        
+      
+    
+    
+    
+    
+    <category term="诗" scheme="https://coder109.github.io/tags/%E8%AF%97/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>【数学】那些有趣的证明（持续更新）</title>
+    <link href="https://coder109.github.io/2022/09/25/shu-xue-na-xie-qi-qi-guai-guai-de-zheng-ming/"/>
+    <id>https://coder109.github.io/2022/09/25/shu-xue-na-xie-qi-qi-guai-guai-de-zheng-ming/</id>
+    <published>2022-09-25T14:55:35.000Z</published>
+    <updated>2022-09-25T23:04:12.000Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;1-证明-sqrt-2-不是有理数&quot;&gt;&lt;a href=&quot;#1-证明-sqrt-2-不是有理数&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    
+    <category term="数学" scheme="https://coder109.github.io/tags/%E6%95%B0%E5%AD%A6/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>【诗】乱码</title>
+    <link href="https://coder109.github.io/2022/09/21/shi-luan-ma/"/>
+    <id>https://coder109.github.io/2022/09/21/shi-luan-ma/</id>
+    <published>2022-09-21T15:51:26.000Z</published>
+    <updated>2022-09-23T23:23:18.000Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;精神病人的呓语被奉为真理，&lt;br&gt;自由的光消失在黑暗山洞的深处。&lt;br&gt;酒精、叹息、自杀，成为我们最后的回应，&lt;br&gt;我们正挖掘着自己的坟墓。&lt;/p&gt;
+&lt;p&gt;太阳早就下山了，朋友！&lt;br&gt;月亮被乌云遮住，漏不出一点光芒，&lt;br&gt;当血味夜风吹拂的时候，&lt;br&gt;就会有人迎来自己</summary>
+        
+      
+    
+    
+    
+    
+    <category term="诗" scheme="https://coder109.github.io/tags/%E8%AF%97/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>【杂谈】如何申请Github Education Pack和相关产品</title>
+    <link href="https://coder109.github.io/2022/09/17/github-education-pack/"/>
+    <id>https://coder109.github.io/2022/09/17/github-education-pack/</id>
+    <published>2022-09-17T05:58:28.000Z</published>
+    <updated>2022-09-18T18:58:28.000Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;@[TOC]&lt;/p&gt;
+&lt;h1 id=&quot;为什么要申请？&quot;&gt;&lt;a href=&quot;#为什么要申请？&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    
+    <category term="杂谈" scheme="https://coder109.github.io/tags/%E6%9D%82%E8%B0%88/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>【杂谈】生成、块茎和政治性宏大叙事</title>
+    <link href="https://coder109.github.io/2022/09/15/Rhizome-and-politics/"/>
+    <id>https://coder109.github.io/2022/09/15/Rhizome-and-politics/</id>
+    <published>2022-09-15T12:06:10.000Z</published>
+    <updated>2022-09-15T21:35:06.000Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;blockquote&gt;
+&lt;p&gt;哲学，唯有哲学。——吉尔·德勒兹&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h1 id=&quot;生成和块茎&quot;&gt;&lt;a href=&quot;#生成和块茎&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    
+    <category term="杂谈" scheme="https://coder109.github.io/tags/%E6%9D%82%E8%B0%88/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>【Emacs】坎坷之路，终抵群星</title>
+    <link href="https://coder109.github.io/2022/08/17/emacs-config/"/>
+    <id>https://coder109.github.io/2022/08/17/emacs-config/</id>
+    <published>2022-08-17T03:15:49.000Z</published>
+    <updated>2022-08-28T16:58:08.000Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;blockquote&gt;
+&lt;p&gt;关键词：Emacs、Emacs Lisp、自定义&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;@[TOC]&lt;/p&gt;
+&lt;h1 id=&quot;引子&quot;&gt;&lt;a href=&quot;#引子&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    
+    <category term="Emacs" scheme="https://coder109.github.io/tags/Emacs/"/>
+    
+  </entry>
+  
+</feed>
