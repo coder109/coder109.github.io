@@ -1,0 +1,796 @@
+<!DOCTYPE html>
+<html lang="zh-CN" color-mode="light">
+
+  <head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="keywords" content="" />
+  <meta name="author" content="Coder109" />
+  <meta name="description" content="" />
+  
+  
+  <title>
+    
+      一次网络谜题的解谜记录 
+      
+      
+      |
+    
+     幻
+  </title>
+
+  
+    <link rel="apple-touch-icon" href="/images/favicon.ico">
+    <link rel="icon" href="/images/favicon.ico">
+  
+
+  <!-- Raleway-Font -->
+  <link href="https://fonts.googleapis.com/css?family=Raleway&display=swap" rel="stylesheet">
+
+  <!-- hexo site css -->
+  <link rel="stylesheet" href="/css/main.css" />
+  <link rel="stylesheet" href="//at.alicdn.com/t/font_1886449_67xjft27j1l.css" />
+  <!-- 代码块风格 -->
+  
+
+  <!-- jquery3.3.1 -->
+  
+    <script defer type="text/javascript" src="/plugins/jquery.min.js"></script>
+  
+
+  <!-- fancybox -->
+  
+    <link href="/plugins/jquery.fancybox.min.css" rel="stylesheet">
+    <script defer type="text/javascript" src="/plugins/jquery.fancybox.min.js"></script>
+  
+  
+<script src="/js/fancybox.js"></script>
+
+
+  
+
+  
+
+  <script>
+    var html = document.documentElement
+    const colorMode = localStorage.getItem('color-mode')
+    if (colorMode) {
+      document.documentElement.setAttribute('color-mode', colorMode)
+    }
+  </script>
+<meta name="generator" content="Hexo 6.3.0"><link rel="alternate" href="/atom.xml" title="幻" type="application/atom+xml">
+</head>
+
+
+  <body>
+    <div id="app">
+      <div class="header">
+  <div class="avatar">
+    <a href="/">
+      <!-- 头像取消懒加载，添加no-lazy -->
+      
+        <img no-lazy src="/images/favicon.ico" alt="">
+      
+    </a>
+    <div class="nickname"><a href="/">幻</a></div>
+  </div>
+  <div class="navbar">
+    <ul>
+      
+        <li class="nav-item" data-path="/">
+          <a href="/">Home</a>
+        </li>
+      
+        <li class="nav-item" data-path="/archives/">
+          <a href="/archives/">Archives</a>
+        </li>
+      
+        <li class="nav-item" data-path="/tags/">
+          <a href="/tags/">Tags</a>
+        </li>
+      
+        <li class="nav-item" data-path="/friends/">
+          <a href="/friends/">Friends</a>
+        </li>
+      
+        <li class="nav-item" data-path="/about/">
+          <a href="/about/">About</a>
+        </li>
+      
+    </ul>
+  </div>
+</div>
+
+
+<script src="/js/activeNav.js"></script>
+
+
+
+      <div class="flex-container">
+        <!-- 文章详情页，展示文章具体内容，url形式：https://yoursite/文章标题/ -->
+<!-- 同时为「标签tag」，「朋友friend」，「分类categories」，「关于about」页面的承载页面，具体展示取决于page.type -->
+
+
+  <!-- LaTex Display -->
+
+  
+    <script async type="text/javascript" src="/plugins/mathjax/tex-chtml.js"></script>
+  
+  <script>
+    MathJax = {
+      tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']]
+      }
+    }
+  </script>
+
+
+
+
+
+  <!-- clipboard -->
+
+  
+    <script async type="text/javascript" src="/plugins/clipboard.min.js"></script>
+  
+  
+<script src="/js/codeCopy.js"></script>
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  <!-- 文章内容页 url形式：https://yoursite/文章标题/ -->
+  <div class="container post-details" id="post-details">
+    <div class="post-content">
+      <div class="post-title">一次网络谜题的解谜记录</div>
+      <div class="post-attach">
+        <span class="post-pubtime">
+          <i class="iconfont icon-updatetime mr-10" title="更新时间"></i>
+          2023-05-01 13:10:38
+        </span>
+        
+              <span class="post-tags">
+                <i class="iconfont icon-tags mr-10" title="标签"></i>
+                
+                <span class="span--tag mr-8">
+                  <a href="/tags/%E5%AF%86%E7%A0%81%E5%AD%A6/" title="密码学">
+                    #密码学
+                  </a>
+                </span>
+                
+              </span>
+          
+      </div>
+      <div class="markdown-body">
+        <h1 id="引子"><a href="#引子" class="headerlink" title="引子"></a>引子</h1><p>最近在Lainchan上看到这样一个帖子，OP发言如下:</p>
+<blockquote>
+<p>Hello, I’ve recently stumbled upon this puzzle, that apparently dates  back to 2018 (I know I need to lurk moar). Has any lainon solved it  before? I’ve been stuck on the penultimate step 9 for 14 hours now.</p>
+<p>&gt;hsvvrp.zjsvzlsfo.paola.lluayhjlp..pzy.bolyl.</p>
+</blockquote>
+<p>下面陆续有人留言，最终指向了这样一个网址：</p>
+<p><a target="_blank" rel="noopener" href="https://desuarchive.org/g/thread/66074121/#66091837">https://desuarchive.org/g/thread/66074121/#66091837</a></p>
+<p>哦，原来是4chan上一位用户发布的网络谜题！</p>
+<p>那就来试一试解谜吧。</p>
+<h1 id="第一阶段"><a href="#第一阶段" class="headerlink" title="第一阶段"></a>第一阶段</h1><p>以前在密码吧学到，对于一个短文本的加密，通常应用两种方式：凯撒密码、栅栏算法。</p>
+<h2 id="凯撒密码"><a href="#凯撒密码" class="headerlink" title="凯撒密码"></a>凯撒密码</h2><p>所谓凯撒密码，就是将字母在字母表中进行偏移，比如通常的字母表第一个字母是A，应用凯撒密码，我们可以把第一个字母设置为C。根据这样的一个对应关系对文本进行加密，比如说单词<code>apple</code>，每个单词往后移位，就可以是<code>bqqmf</code>。</p>
+<h2 id="栅栏密码"><a href="#栅栏密码" class="headerlink" title="栅栏密码"></a>栅栏密码</h2><p>将想要加密的字符串从上到下，从左到右写成多行。按行读取就得到了密文。</p>
+<p>比如说单词<code>apple</code>，可以写成：</p>
+<blockquote>
+<p>APE</p>
+<p>PL</p>
+</blockquote>
+<p>密文就是<code>APEPL</code>。</p>
+<p>除了这两种方法，也可以用一些图形对字母进行加密，比如卢恩符文、猪圈密码等。</p>
+<p>回到现在的解谜过程。</p>
+<p>第一阶段密文是：</p>
+<blockquote>
+<p>hsvvrp.zjsvzlsfo.paola.lluayhjlp..pzy.bolyl.</p>
+</blockquote>
+<p>链接在这里:<a target="_blank" rel="noopener" href="https://pastebin.com/teBKxmLh">点击这里</a>。</p>
+<p>首先应用栅栏密码，没什么收获。</p>
+<p>然后应用凯撒密码解码方式，得到一种可能的明文：</p>
+<blockquote>
+<p>alooki.scloselyh.ithet.eentracei..isr.uhere.</p>
+</blockquote>
+<p>为什么可能？因为我看见了closely这个单词。似乎每组的第一个字母和最后一个字母是后加上去的。</p>
+<p>每组的首字母、尾字母连接起来就是：</p>
+<blockquote>
+<p>aishitei.rue</p>
+</blockquote>
+<p>日语里的我爱你？</p>
+<p>但是这个网站打不开，反复尝试得到链接：</p>
+<blockquote>
+<p>aishitei.ru</p>
+</blockquote>
+<h1 id="第二阶段"><a href="#第二阶段" class="headerlink" title="第二阶段"></a>第二阶段</h1><p>OK。我们来到了一个网页。按下F12检查元素。</p>
+<p>网页里有段注释:</p>
+<blockquote>
+<p>—- You’re off to a good start. Now look up.<br>—- Or maybe it was down?<br>—- Try asking the girl, Lain, for help.<br>—- She should be around here somewhere.</p>
+</blockquote>
+<p><code>Lain</code>，是番剧《玲音的系列试验》的女主角。我的博客头像就是Lain。</p>
+<p>幻发现，每次刷新网页，网页中的图片都会改变，或许能通过不断刷新，当图片变为Lain时，就能解谜成功？</p>
+<p>然而刷新了四五十次也没刷出来……</p>
+<p>那么找找别的线索吧。</p>
+<p>发现在网页底部有几个按钮，通过调查发现，这个网站似乎是某人的私人网盘，在FAQ中有这样一句话：</p>
+<blockquote>
+<p>Can I always use the same waifu mascot?</p>
+<p>Find the number for the mascot you like and append, without quotes, <code>?waifu=*##*</code> to the URL. For example, Yuno is <code>?waifu=1</code>.</p>
+</blockquote>
+<p>OK。</p>
+<p>当网址为<a target="_blank" rel="noopener" href="https://aishitei.ru/?waifu=19">这个</a>时，所谓的<code>mascot</code>变成了Lain的样子。</p>
+<p>下载这个<code>mascot</code>。</p>
+<h1 id="第三阶段"><a href="#第三阶段" class="headerlink" title="第三阶段"></a>第三阶段</h1><p>So far so good！</p>
+<p>我曾经在<a href="https://coder109.github.io/2023/02/10/Security03/#5-%E9%9A%90%E8%97%8F%E8%B5%B7%E6%9D%A5%E7%9A%84%E9%87%8D%E8%A6%81%E4%BF%A1%E6%81%AF">业余安全漫谈（三）：密码、存储、信息传输安全</a>中提到过一个查看图片元数据的网站。在这个网站上处理图片，最终提取到了这样的文字:</p>
+<blockquote>
+<p>Lavc51.28.0</p>
+<p>…</p>
+<p>you’re on the right track..kcart thgir eht no er’ouy<br>the wired is calling for you..ouy rof gnillca si deriw eht<br>can you hear it yet??tey ti raeh uoy nacRIFF</p>
+<p>…</p>
+<p>you’re on the right track..kcart thgir eht no er’ouy<br>the wired is calling for you..ouy rof gnillca si deriw eht<br>can you hear it yet??tey ti raeh uoy nac<br>track_44.wavvaw.44_kcart</p>
+</blockquote>
+<p>Btw，这个图片中有几个醒目的大字：</p>
+<blockquote>
+<p>Play Track 44</p>
+</blockquote>
+<p>这和幻正在汉化的游戏(英语太差了，汉化已经鸽了好久！)有关。曾经有一款古早的、和玲音有关的PSX游戏，它由许许多多的视频片段组成，您可以通过这个网站体验一下：<a target="_blank" rel="noopener" href="https://laingame.net/">lainTSX</a>。</p>
+<p>或者您可以在这收听Track 44，<a target="_blank" rel="noopener" href="https://www.youtube.com/watch?v=w_wx2jag7xI">点击这里！</a>。</p>
+<p>电子舞曲。</p>
+<p>但是有什么用呢？你总不可能回到过去，和作曲人商量好，在这段曲子里加密一段信息吧。</p>
+<p>……</p>
+<p>幻没了任何思路。</p>
+<p>直到幻突然想到了隐写术。</p>
+<h2 id="隐写术与不断试错"><a href="#隐写术与不断试错" class="headerlink" title="隐写术与不断试错"></a>隐写术与不断试错</h2><p>我在<a href="https://coder109.github.io/2023/02/10/Security03/#%E9%9A%90%E5%86%99%E6%9C%AF">业余安全漫谈（三）：密码、存储、信息传输安全</a>里提到了隐写术的相关工具。</p>
+<p>那么就把常用的工具都用上去吧。</p>
+<p>终端输入：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">outguess -r mascot_19.jpg track_44.wav</span><br></pre></td></tr></table></figure>
+
+<p>成功提取该文件。但是没法播放。</p>
+<p>直接将图片改为<code>.wav</code>格式也不行。</p>
+<p>试过了<code>Steghide</code>、<code>Stegsolve</code>等工具，都不行。</p>
+<p>而使用<code>foremost</code>工具，则能提取出音频文件。</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">foremost -i mascot_19.jpg</span><br></pre></td></tr></table></figure>
+
+<p>最终得到一个包含摩尔斯电码的音频文件。</p>
+<p>懒得自己听了，直接用在线工具解码。</p>
+<p>工具网站在这里:<a target="_blank" rel="noopener" href="https://morsecode.world/">https://morsecode.world/</a>。</p>
+<p>得到结果如下：</p>
+<blockquote>
+<p>C A N Y O U H E A R M E C A N Y O U H E A R M E L I S T E N C L O S E L Y L I S T E N C L O S E L Y D A N G E R D A N G E R R U N N A D Y A N A Y D O T M E F I N D M E T H E R E </p>
+</blockquote>
+<p>弄好看点是这样的：</p>
+<blockquote>
+<p>Can you hear me? Can you hear me? Listen closely. Listen CLosely. Danger,danger,run! NadyaNay.me Find me there.</p>
+</blockquote>
+<h1 id="第四阶段"><a href="#第四阶段" class="headerlink" title="第四阶段"></a>第四阶段</h1><p>访问<a href="nadyanay.me">nadyanay.me</a>。发现有几个按钮。里面的内容分别如下：</p>
+<h2 id="Find-Me"><a href="#Find-Me" class="headerlink" title="Find Me"></a>Find Me</h2><p>所谓<code>Nadya</code>的身份信息，和一个PGP加密的信息。</p>
+<h2 id="Anime-Recs"><a href="#Anime-Recs" class="headerlink" title="Anime Recs"></a>Anime Recs</h2><p>动漫推荐。<del>老二次元了。</del></p>
+<h2 id="Music-Recs"><a href="#Music-Recs" class="headerlink" title="Music Recs"></a>Music Recs</h2><p>音乐推荐。<del>老二次元了。</del></p>
+<h2 id="CTF"><a href="#CTF" class="headerlink" title="CTF"></a>CTF</h2><p>虽然自己没打过CTF，但上面所应用的加密、解密工具的确是CTFer常用的。</p>
+<p>还有一点内容：</p>
+<blockquote>
+<p>There are ten steps to escape The Wired.<br>Number of people who have escaped: <strong>4</strong> Anonymous Users<br>Date of last escape: 16&#x2F;03&#x2F;2023</p>
+</blockquote>
+<p>就四个人成功解密了。</p>
+<p>哈哈，十步。怎么弄算一步呢？</p>
+<h2 id="Not-a-Blog"><a href="#Not-a-Blog" class="headerlink" title="Not a Blog"></a>Not a Blog</h2><p>一页博客。</p>
+<hr>
+
+<p>嗯……我们先根据N(我下面会把设置这个谜题的人Nadya称为N)的公钥，把PGP讯息破解掉。或许会有用。</p>
+<p>GPG咋用来着……？</p>
+<p>不管了，经过解密最后的讯息如下：</p>
+<blockquote>
+<p>I am Nadya at Neocities. I claim ownership of all accounts listed on this page.</p>
+</blockquote>
+<p>好的。没啥用。</p>
+<p>找找找～主页的HTML代码里有这样一条十六进制注释:</p>
+<blockquote>
+<p>6e616479616e61792e6d652f77697265642e747874 </p>
+</blockquote>
+<p>转成二进制、十进制也没啥用。</p>
+<p>转成ASCII呢？</p>
+<p>结果如下：</p>
+<blockquote>
+<p>nadyanay.me&#x2F;wired.txt</p>
+</blockquote>
+<p>哈哈！</p>
+<h1 id="第五（七）阶段"><a href="#第五（七）阶段" class="headerlink" title="第五（七）阶段"></a>第五（七）阶段</h1><p>下载这个wired.txt。</p>
+<p>发现最后一大串字符，但是文件最后俩字符是等号。</p>
+<p>经过我在密码吧的多年潜水经验……这肯定是Base64！</p>
+<p>然后解码，就乱码了。哈哈，打脸来的如此突然。</p>
+<p>别气馁！把所有换行符删掉！！！！</p>
+<p>由于笔者不是很会使用sed命令，写了个小小Java程序来实现这个功能（</p>
+<p>解码之后输出结果还是乱码？？？</p>
+<p>那么就把里面可读的字符提取出来吧。然而这么做也毫无作用。</p>
+<p>因为部分结果如下：</p>
+<blockquote>
+<p>itbmzemicijscdqsbjzbvlodfadyojpvtbotzenpycjlzxtkclkghdsororxtztljdfwgfxccukunxtknxjzjimznyfstfgdrekruvtxreglkmgvkvehsfznilmlcijoewdjuvbfnyhlxkskvqpsqoofqkmkxmhzsaeeuopqkbkeoxosobupdpnxpxvjavqxwtbspaylctqujmwbhwxxcbdvvhqcqohwejwruvjtrzhdfolusurvmtsigzlxxrwxvzgjfifizuqjpohkqxdjqvppalrvbmookgwstdmpffiwaszdosbmmsikpepozgbpwdwpoqiihamukizliarquyxznoeeuuxtbssybkjimshkmjpvircyfkoyvuthbzxzieqisudwmmgpfruqqxqbblkgdiheqbvqplvavmdxhndffklvcepujkiaeiaoclomekvgskavwmjxjvoffvcqdhmyifeyfoccayrkunwuhxxqszvagxtqyribrftzgrzyzpowfcwmkmnqdqnurwbdxrfzkchujfxyhwgvrbtivlcyrytrugjfqlyxlmyqxxptitybnnzokdwlfewckcpzaofvxmbnhtlttlodwhwiwhidpubpdbczglwnvybjbnjkgjmgjtmyjmjdupxbqatughonuhbftpmlgqokmfbhgnbtofrpuuhhyysczchbinzgbxzwylesiozgzaxoqnpqydswekzemqwuaxtwxgcspuqifuecwohvhzaxqixqdzctkcfmjvryxsimxvfqowxhujovlvuycshmhsedjrflgiwyroqiamcjufaslaiexlgzemkeofgmhwhdaoibfffpmrooprfieakcdamymmuefum</p>
+</blockquote>
+<p>谁会在一堆字母之间掺杂无用讯息，然后加密呢？</p>
+<p>直到……当我在查看wired.txt的时候，突然在一片小写字母中看到了大写的NEED。如果……这不是Base64，而只是将明文隐藏起来了呢？</p>
+<p>使用Java提取大写字母。</p>
+<p>代码如下：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> java.io.*;</span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">rmvNum</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> <span class="keyword">throws</span> FileNotFoundException, IOException &#123;</span><br><span class="line">        <span class="type">OutputStream</span> <span class="variable">os</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">FileOutputStream</span>(<span class="string">&quot;./data.list&quot;</span>);</span><br><span class="line">        <span class="type">StringBuilder</span> <span class="variable">sb</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">StringBuilder</span>();</span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            <span class="type">BufferedReader</span> <span class="variable">br</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">BufferedReader</span>(<span class="keyword">new</span> <span class="title class_">FileReader</span>(<span class="string">&quot;~/Downloads/wired.txt&quot;</span>));</span><br><span class="line">            <span class="type">String</span> <span class="variable">line</span> <span class="operator">=</span> br.readLine();</span><br><span class="line">            <span class="keyword">while</span>(line != <span class="literal">null</span>) &#123;</span><br><span class="line">                <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; line.length(); i++) &#123;</span><br><span class="line">                    <span class="keyword">if</span>(line.charAt(i) &lt;= <span class="string">&#x27;Z&#x27;</span> &amp;&amp; line.charAt(i) &gt;= <span class="string">&#x27;A&#x27;</span>) &#123;</span><br><span class="line">                        sb.append(<span class="string">&quot;&quot;</span>);</span><br><span class="line">                    &#125;</span><br><span class="line">                    <span class="keyword">else</span> &#123;</span><br><span class="line">                        sb.append(line.charAt(i));</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;   </span><br><span class="line">                os.write(sb.toString().getBytes());</span><br><span class="line">                sb.setLength(<span class="number">0</span>);</span><br><span class="line">                line = br.readLine();</span><br><span class="line">            &#125;</span><br><span class="line">        &#125; <span class="keyword">catch</span> (Exception e) &#123;</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>得到：</p>
+<blockquote>
+<p>INOWENEEDYOURHELPWHATDOESITWANTTHEENTRANCECANBEFOUNDKEEPLOOKINGPROCEEDTOSTEPEIGHTTXT</p>
+</blockquote>
+<p>格式化：</p>
+<blockquote>
+<p>INO(I know?) WE NEED YOUR HELP. WHAT DOES IT WANT? THE ENTRANCE CAN BE FOUND. KEEP LOOKING! PROCEED TO STEP EIGHT.TXT</p>
+</blockquote>
+<h1 id="第八阶段"><a href="#第八阶段" class="headerlink" title="第八阶段"></a>第八阶段</h1><p><a target="_blank" rel="noopener" href="https://nadyanay.me/eight.txt">https://nadyanay.me/eight.txt</a>里面什么也没有……</p>
+<p>断句错了！</p>
+<p><a target="_blank" rel="noopener" href="https://nadyanay.me/stepeight.txt">https://nadyanay.me/stepeight.txt</a>，下一步的提示在这里。</p>
+<blockquote>
+<p>BLP KLPUE PX<br>HYQTLMY FL FWY HSCYE<br>XWW FWYB TJU WYJC BLP<br>AL ZJTO FL FWY ASCQX<br>QJSU HJUFX BLP FL HJFTW<br>LMUSVCYXYUTY MOR<br>FWYU CYJE<br>LMUSVCYXYUTY LMUSVCYXYUTY </p>
+</blockquote>
+<p>这次凯撒密码不好用了。应用栅栏密码也没什么用。</p>
+<p>去密码吧找找提示……试了很多密码都没有用。</p>
+<p>最终选择了一个很不优雅的方式-暴力破解。</p>
+<h2 id="字频统计"><a href="#字频统计" class="headerlink" title="字频统计"></a>字频统计</h2><p>如您所知，英文单词中，每个单词出现的频率都是不一样的。根据这个密文，统计字母出现的频率，根据英语中字母常见的出现频率进行猜测。</p>
+<blockquote>
+<p>Y-18 L-12 U-11 F-9 W-8 X-7 T-7 C-7 J-7 S-6 M-5 P-5 B-4 H-4 E-3 Q-3 V-3 A-2 O-2 K-1 R-1 Z-1</p>
+</blockquote>
+<p>Y出现频率最多，将Y换成E。</p>
+<p>FL出现次数很多，盲猜是to、on、in、of之中的一个。</p>
+<p>BLP出现次数也很多，且出现在开头，盲猜为You。</p>
+<p>……</p>
+<p>乱猜。</p>
+<p>之后可以大概修改为这样，替换得到的字母为小写，没猜出来的字母为大写：</p>
+<blockquote>
+<p>you found us<br>welcome to the wired<br>sh they can hear you<br>go back to the girls<br>lain wants you to watch<br>omnipresence mkR<br>then read<br>omnipresence omnipresence </p>
+</blockquote>
+<p>大概差不多了，所以N让我们回到女孩那里，或许是aishitei.ru？</p>
+<p>至于mkR什么，盲猜是文件名，mkv？</p>
+<p>然而<a target="_blank" rel="noopener" href="https://aishitei.ru/omnipresence.mkv">https://aishitei.ru/omnipresence.mkv</a>并不是一个有效的链接。我从mka试到mkz,都不好使。</p>
+<h1 id="第九阶段"><a href="#第九阶段" class="headerlink" title="第九阶段"></a>第九阶段</h1><p>那就用不优雅的方法吧。生成aishitei.ru和nadyanay.me网站的sitemap，看看哪里有我们想要的文件。</p>
+<p>我使用<code>dirsearch</code>工具。</p>
+<p>不断尝试，发现了以下两个文件：</p>
+<p><a target="_blank" rel="noopener" href="https://aishitei.ru/images/mascots/omnipresence.mkv">https://aishitei.ru/images/mascots/omnipresence.mkv</a></p>
+<p><a target="_blank" rel="noopener" href="https://aishitei.ru/images/mascots/omnipresence.omnipresence">https://aishitei.ru/images/mascots/omnipresence.omnipresence</a></p>
+<p>Finally!最后一步啦！</p>
+<p>mkv文件是玲音的OP,由Boa乐队演唱的Duvet。</p>
+<p>至于另一个文件，我还没有思路。</p>
+<p>先看看里面是什么吧：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cat</span> omnipresence.omnipresence</span><br></pre></td></tr></table></figure>
+
+<p>得到一系列：</p>
+<blockquote>
+<p> O|X|X<br> X| |O<br> O|O|O<br> O|X|X<br> X| |O<br> O|X|O<br> O|X|X<br> O| |O<br> X|O|X<br> O|X|X<br> X| |O<br> O|X|X<br> O|X|X</p>
+<p>…</p>
+</blockquote>
+<p>中间隔开了，会不会是四个一组的二进制数？</p>
+<p>如果O为1,X为0,经过上面的步骤，先将这个二进制数转化成十六进制，再转换成ASCII,如果不行就让O为0，X为1.</p>
+<p>前者输出乱码。</p>
+<p>后者输出：</p>
+<blockquote>
+<p>present day<br>present time<br>how does it feel<br>to have entered the wired?<br>this is the final step<br>you must escape</p>
+</blockquote>
+<p>那么这个文件只是告诉我们，这是最后一步了。关键还是在视频中。</p>
+<p>将音频从视频中分离开来，使用<code>deepsound</code>解码，得到的输出和上面一样。</p>
+<p>失望……</p>
+<h1 id="最终阶段"><a href="#最终阶段" class="headerlink" title="最终阶段"></a>最终阶段</h1><p>毫无线索。</p>
+<p>回看Lainchan和4chan的归档，发现了几个提示：</p>
+<ol>
+<li>不要将这个视频当作视频看待，要跳脱出这个思维怪圈。</li>
+<li>使用<code>hexdump</code>工具。多看几行，或许能发现规律。</li>
+<li>N提到，没有任何东西是受密码保护的。</li>
+</ol>
+<p>在网上搜索到别人的<a target="_blank" rel="noopener" href="https://a4sc7d.me/#org9f3aadb">解谜过程</a>，前几步和我的解法差不多，但是最后一步，作者只提到了：</p>
+<blockquote>
+<p><em>Hint: this step has to do with endianness.</em></p>
+</blockquote>
+<p>我目前没有解出这个谜题，我尝试过以下方法：</p>
+<ol>
+<li>将之转换为大端法表示，使用<code>foremost</code>、<code>steghide</code>、<code>stegsolver</code>、<code>outguess</code>等工具都没有什么进展。</li>
+<li>使用<code>Audacity</code>查看音频波形、频谱，没有任何发现。</li>
+<li>使用<code>hexdump</code>查看十六进制码，依旧没有任何发现。</li>
+<li>将之转换为大端法表示，将其中的数字、大写字母、小写字母、全部字母、全部字母和数字分别单独提取出来仍没有任何发现。应用解密软件也没有收获。</li>
+</ol>
+<p>是的，这些方法都不优雅，也不合理。</p>
+<p>目前幻没有任何思路，想到再更。或许解谜需要一些CTF的相关知识？</p>
+<h1 id="更新：你管这叫CTF？"><a href="#更新：你管这叫CTF？" class="headerlink" title="更新：你管这叫CTF？"></a>更新：你管这叫CTF？</h1><p>于是乎，我在Lainchan上看到了一个新的文章：<a target="_blank" rel="noopener" href="https://lainchan.org/%CE%BB/res/34490.html">点击这里</a>。</p>
+<p>大意就是说，当下的时间就是答案，然而，根据不同的时区，有不同的时间值。所以，你要应用穷举法猜出N所在的时区，然后转换时间，将答案发给他。</p>
+<p>我懒得去用什么穷举法了……</p>
+<p>烂尾啊。</p>
+
+      </div>
+      
+        <div class="prev-or-next">
+          <div class="post-foot-next">
+            
+              <a href="/2023/04/29/Emacs%E7%9A%84%E5%B0%8F%E6%8A%80%E5%B7%A7/" target="_self">
+                <i class="iconfont icon-chevronleft"></i>
+                <span>上一页</span>
+              </a>
+            
+          </div>
+          <div class="post-attach">
+            <span class="post-pubtime">
+              <i class="iconfont icon-updatetime mr-10" title="更新时间"></i>
+              2023-05-01 13:10:38
+            </span>
+            
+                  <span class="post-tags">
+                    <i class="iconfont icon-tags mr-10" title="标签"></i>
+                    
+                    <span class="span--tag mr-8">
+                      <a href="/tags/%E5%AF%86%E7%A0%81%E5%AD%A6/" title="密码学">
+                        #密码学
+                      </a>
+                    </span>
+                    
+                  </span>
+              
+          </div>
+          <div class="post-foot-prev">
+            
+              <a href="/2023/05/01/C%E8%AF%AD%E8%A8%80%E5%AE%9E%E7%8E%B0%E5%BA%B7%E5%A8%81%E7%94%9F%E5%91%BD%E6%B8%B8%E6%88%8F/" target="_self">
+                <span>下一页</span>
+                <i class="iconfont icon-chevronright"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+    </div>
+    
+  <div id="btn-catalog" class="btn-catalog">
+    <i class="iconfont icon-catalog"></i>
+  </div>
+  <div class="post-catalog hidden" id="catalog">
+    <div class="title">目录</div>
+    <div class="catalog-content">
+      
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%BC%95%E5%AD%90"><span class="toc-text">引子</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%AC%AC%E4%B8%80%E9%98%B6%E6%AE%B5"><span class="toc-text">第一阶段</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%87%AF%E6%92%92%E5%AF%86%E7%A0%81"><span class="toc-text">凯撒密码</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%A0%85%E6%A0%8F%E5%AF%86%E7%A0%81"><span class="toc-text">栅栏密码</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%AC%AC%E4%BA%8C%E9%98%B6%E6%AE%B5"><span class="toc-text">第二阶段</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%AC%AC%E4%B8%89%E9%98%B6%E6%AE%B5"><span class="toc-text">第三阶段</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%9A%90%E5%86%99%E6%9C%AF%E4%B8%8E%E4%B8%8D%E6%96%AD%E8%AF%95%E9%94%99"><span class="toc-text">隐写术与不断试错</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%AC%AC%E5%9B%9B%E9%98%B6%E6%AE%B5"><span class="toc-text">第四阶段</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Find-Me"><span class="toc-text">Find Me</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Anime-Recs"><span class="toc-text">Anime Recs</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Music-Recs"><span class="toc-text">Music Recs</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#CTF"><span class="toc-text">CTF</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Not-a-Blog"><span class="toc-text">Not a Blog</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%AC%AC%E4%BA%94%EF%BC%88%E4%B8%83%EF%BC%89%E9%98%B6%E6%AE%B5"><span class="toc-text">第五（七）阶段</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%AC%AC%E5%85%AB%E9%98%B6%E6%AE%B5"><span class="toc-text">第八阶段</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AD%97%E9%A2%91%E7%BB%9F%E8%AE%A1"><span class="toc-text">字频统计</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%AC%AC%E4%B9%9D%E9%98%B6%E6%AE%B5"><span class="toc-text">第九阶段</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%9C%80%E7%BB%88%E9%98%B6%E6%AE%B5"><span class="toc-text">最终阶段</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%9B%B4%E6%96%B0%EF%BC%9A%E4%BD%A0%E7%AE%A1%E8%BF%99%E5%8F%ABCTF%EF%BC%9F"><span class="toc-text">更新：你管这叫CTF？</span></a></li></ol>
+      
+    </div>
+  </div>
+
+  
+<script src="/js/catalog.js"></script>
+
+
+
+
+    
+      <div class="comments-container">
+        
+
+
+
+
+  
+    <script async type="text/javascript" src='https://cdn.jsdelivr.net/npm/valine@1.4.18/dist/Valine.min.js' onload="loadValineSuc(this)"></script>
+  
+
+  <div id="vcomments"></div>
+
+  <script>
+    function loadValineSuc() {
+      new Valine({
+        el: '#vcomments',
+        appId: 'oMvaqsYv2LQSqtj795B31OWV-gzGzoHsz',
+        appKey: 'UKlJCzW9McXrX8L71Mqz5hol',
+        placeholder: 'Welcome!',
+        avatar: 'retro',
+        lang: 'zh-CN'
+      })
+    }
+  </script>
+
+    <style>
+      .comments-container .v .vempty {
+        display: none!important;
+      }
+    </style>
+
+
+
+
+      </div>
+    
+  </div>
+
+
+        
+<div class="footer">
+  <div class="social">
+    <ul>
+      
+        <li>
+          <a title="rss" href="/atom.xml">
+            <i class="iconfont icon-rss"></i>
+          </a>
+        </li>
+      
+    </ul>
+  </div>
+  
+    
+    <div class="footer-more">
+      
+        <a target="_blank" rel="noopener" href="https://github.com/zchengsite/hexo-theme-oranges">Copyright © 2024 Oranges</a>
+        
+    </div>
+  
+    
+    <div class="footer-more">
+      
+        <a target="_blank" rel="noopener" href="https://github.com/zchengsite/hexo-theme-oranges">Theme by Oranges | Powered by Hexo</a>
+        
+    </div>
+  
+  
+</div>
+
+      </div>
+
+      <div class="tools-bar">
+        <div class="back-to-top tools-bar-item hidden">
+  <a href="javascript: void(0)">
+    <i class="iconfont icon-chevronup"></i>
+  </a>
+</div>
+
+
+<script src="/js/backtotop.js"></script>
+
+
+
+        
+  <div class="search-icon tools-bar-item" id="search-icon">
+    <a href="javascript: void(0)">
+      <i class="iconfont icon-search"></i>
+    </a>
+  </div>
+
+  <div class="search-overlay hidden">
+    <div class="search-content" tabindex="0">
+      <div class="search-title">
+        <span class="search-icon-input">
+          <a href="javascript: void(0)">
+            <i class="iconfont icon-search"></i>
+          </a>
+        </span>
+        
+          <input type="text" class="search-input" id="search-input" placeholder="搜索...">
+        
+        <span class="search-close-icon" id="search-close-icon">
+          <a href="javascript: void(0)">
+            <i class="iconfont icon-close"></i>
+          </a>
+        </span>
+      </div>
+      <div class="search-result" id="search-result"></div>
+    </div>
+  </div>
+
+  <script type="text/javascript">
+    var inputArea = document.querySelector("#search-input")
+    var searchOverlayArea = document.querySelector(".search-overlay")
+
+    inputArea.onclick = function() {
+      getSearchFile()
+      this.onclick = null
+    }
+
+    inputArea.onkeydown = function() {
+      if(event.keyCode == 13)
+        return false
+    }
+
+    function openOrHideSearchContent() {
+      let isHidden = searchOverlayArea.classList.contains('hidden')
+      if (isHidden) {
+        searchOverlayArea.classList.remove('hidden')
+        document.body.classList.add('hidden')
+        // inputArea.focus()
+      } else {
+        searchOverlayArea.classList.add('hidden')
+        document.body.classList.remove('hidden')
+      }
+    }
+
+    function blurSearchContent(e) {
+      if (e.target === searchOverlayArea) {
+        openOrHideSearchContent()
+      }
+    }
+
+    document.querySelector("#search-icon").addEventListener("click", openOrHideSearchContent, false)
+    document.querySelector("#search-close-icon").addEventListener("click", openOrHideSearchContent, false)
+    searchOverlayArea.addEventListener("click", blurSearchContent, false)
+
+    var searchFunc = function (path, search_id, content_id) {
+      'use strict';
+      var $input = document.getElementById(search_id);
+      var $resultContent = document.getElementById(content_id);
+      $resultContent.innerHTML = "<ul><span class='local-search-empty'>首次搜索，正在载入索引文件，请稍后……<span></ul>";
+      $.ajax({
+        // 0x01. load xml file
+        url: path,
+        dataType: "xml",
+        success: function (xmlResponse) {
+          // 0x02. parse xml file
+          var datas = $("entry", xmlResponse).map(function () {
+            return {
+              title: $("title", this).text(),
+              content: $("content", this).text(),
+              url: $("url", this).text()
+            };
+          }).get();
+          $resultContent.innerHTML = "";
+
+          $input.addEventListener('input', function () {
+            // 0x03. parse query to keywords list
+            var str = '<ul class=\"search-result-list\">';
+            var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+            $resultContent.innerHTML = "";
+            if (this.value.trim().length <= 0) {
+              return;
+            }
+            // 0x04. perform local searching
+            datas.forEach(function (data) {
+              var isMatch = true;
+              var content_index = [];
+              if (!data.title || data.title.trim() === '') {
+                data.title = "Untitled";
+              }
+              var orig_data_title = data.title.trim();
+              var data_title = orig_data_title.toLowerCase();
+              var orig_data_content = data.content.trim().replace(/<[^>]+>/g, "");
+              var data_content = orig_data_content.toLowerCase();
+              var data_url = data.url;
+              var index_title = -1;
+              var index_content = -1;
+              var first_occur = -1;
+              // only match artiles with not empty contents
+              if (data_content !== '') {
+                keywords.forEach(function (keyword, i) {
+                  index_title = data_title.indexOf(keyword);
+                  index_content = data_content.indexOf(keyword);
+
+                  if (index_title < 0 && index_content < 0) {
+                    isMatch = false;
+                  } else {
+                    if (index_content < 0) {
+                      index_content = 0;
+                    }
+                    if (i == 0) {
+                      first_occur = index_content;
+                    }
+                    // content_index.push({index_content:index_content, keyword_len:keyword_len});
+                  }
+                });
+              } else {
+                isMatch = false;
+              }
+              // 0x05. show search results
+              if (isMatch) {
+                str += "<li><a href='" + data_url + "' class='search-result-title'>" + orig_data_title + "</a>";
+                var content = orig_data_content;
+                if (first_occur >= 0) {
+                  // cut out 100 characters
+                  var start = first_occur - 20;
+                  var end = first_occur + 80;
+
+                  if (start < 0) {
+                    start = 0;
+                  }
+
+                  if (start == 0) {
+                    end = 100;
+                  }
+
+                  if (end > content.length) {
+                    end = content.length;
+                  }
+
+                  var match_content = content.substr(start, end);
+
+                  // highlight all keywords
+                  keywords.forEach(function (keyword) {
+                    var regS = new RegExp(keyword, "gi");
+                    match_content = match_content.replace(regS, "<span class=\"search-keyword\">" + keyword + "</span>");
+                  });
+
+                  str += "<p class=\"search-result-abstract\">" + match_content + "...</p>"
+                }
+                str += "</li>";
+              }
+            });
+            str += "</ul>";
+            if (str.indexOf('<li>') === -1) {
+              return $resultContent.innerHTML = "<ul><span class='local-search-empty'>没有找到内容，请尝试更换检索词。<span></ul>";
+            }
+            $resultContent.innerHTML = str;
+          });
+        },
+        error: function(xhr, status, error) {
+          $resultContent.innerHTML = ""
+          if (xhr.status === 404) {
+            $resultContent.innerHTML = "<ul><span class='local-search-empty'>未找到search.xml文件，具体请参考：<a href='https://github.com/zchengsite/hexo-theme-oranges#configuration' target='_black'>configuration</a><span></ul>";
+          } else {
+            $resultContent.innerHTML = "<ul><span class='local-search-empty'>请求失败，尝试重新刷新页面或稍后重试。<span></ul>";
+          }
+        }
+      });
+      $(document).on('click', '#search-close-icon', function() {
+        $('#search-input').val('');
+        $('#search-result').html('');
+      });
+    }
+
+    var getSearchFile = function() {
+        var path = "/search.xml";
+        searchFunc(path, 'search-input', 'search-result');
+    }
+  </script>
+
+
+
+
+        
+  <div class="tools-bar-item theme-icon" id="switch-color-scheme">
+    <a href="javascript: void(0)">
+      <i id="theme-icon" class="iconfont icon-moon"></i>
+    </a>
+  </div>
+
+  
+<script src="/js/colorscheme.js"></script>
+
+
+
+
+
+        
+  
+    <div class="share-icon tools-bar-item">
+      <a href="javascript: void(0)" id="share-icon">
+        <i class="iconfont iconshare"></i>
+      </a>
+      <div class="share-content hidden">
+        
+          <a class="share-item" href="https://twitter.com/intent/tweet?text=' + %E4%B8%80%E6%AC%A1%E7%BD%91%E7%BB%9C%E8%B0%9C%E9%A2%98%E7%9A%84%E8%A7%A3%E8%B0%9C%E8%AE%B0%E5%BD%95 + '&url=' + https%3A%2F%2Fcoder109.github.io%2F2023%2F05%2F01%2F%25E4%25B8%2580%25E6%25AC%25A1%25E7%25BD%2591%25E7%25BB%259C%25E8%25B0%259C%25E9%25A2%2598%25E7%259A%2584%25E8%25A7%25A3%25E8%25B0%259C%25E8%25AE%25B0%25E5%25BD%2595%2F + '" target="_blank" title="Twitter">
+            <i class="iconfont icon-twitter"></i>
+          </a>
+        
+        
+      </div>
+    </div>
+  
+  
+<script src="/js/shares.js"></script>
+
+
+
+      </div>
+    </div>
+  
+        <style>
+            [bg-lazy] {
+                background-image: none !important;
+                background-color: #eee !important;
+            }
+        </style>
+        <script>
+            window.imageLazyLoadSetting = {
+                isSPA: false,
+                preloadRatio: 1,
+                processImages: null,
+            };
+        </script><script>window.addEventListener("load",function(){var t=/\.(gif|jpg|jpeg|tiff|png)$/i,r=/^data:image\/[a-z]+;base64,/;Array.prototype.slice.call(document.querySelectorAll("img[data-original]")).forEach(function(a){var e=a.parentNode;"A"===e.tagName&&(e.href.match(t)||e.href.match(r))&&(e.href=a.dataset.original)})});</script><script>!function(r){r.imageLazyLoadSetting.processImages=t;var e=r.imageLazyLoadSetting.isSPA,n=r.imageLazyLoadSetting.preloadRatio||1,c=a();function a(){var t=Array.prototype.slice.call(document.querySelectorAll("img[data-original]")),e=Array.prototype.slice.call(document.querySelectorAll("[bg-lazy]"));return t.concat(e)}function t(){e&&(c=a());for(var t,o=0;o<c.length;o++)0<=(t=(t=c[o]).getBoundingClientRect()).bottom&&0<=t.left&&t.top<=(r.innerHeight*n||document.documentElement.clientHeight*n)&&function(){var t,e,n,a,i=c[o];e=function(){c=c.filter(function(t){return i!==t}),r.imageLazyLoadSetting.onImageLoaded&&r.imageLazyLoadSetting.onImageLoaded(i)},(t=i).hasAttribute("bg-lazy")?(t.removeAttribute("bg-lazy"),e&&e()):(n=new Image,a=t.getAttribute("data-original"),n.onload=function(){t.src=a,t.removeAttribute("data-original"),e&&e()},t.src!==a&&(n.src=a))}()}function i(){clearTimeout(t.tId),t.tId=setTimeout(t,500)}t(),document.addEventListener("scroll",i),r.addEventListener("resize",i),r.addEventListener("orientationchange",i)}(this);</script></body>
+</html>

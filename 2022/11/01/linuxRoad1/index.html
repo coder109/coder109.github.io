@@ -1,0 +1,623 @@
+<!DOCTYPE html>
+<html lang="zh-CN" color-mode="light">
+
+  <head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="keywords" content="" />
+  <meta name="author" content="Coder109" />
+  <meta name="description" content="" />
+  
+  
+  <title>
+    
+      Linux苦痛之路(一)：基本配置篇 
+      
+      
+      |
+    
+     幻
+  </title>
+
+  
+    <link rel="apple-touch-icon" href="/images/favicon.ico">
+    <link rel="icon" href="/images/favicon.ico">
+  
+
+  <!-- Raleway-Font -->
+  <link href="https://fonts.googleapis.com/css?family=Raleway&display=swap" rel="stylesheet">
+
+  <!-- hexo site css -->
+  <link rel="stylesheet" href="/css/main.css" />
+  <link rel="stylesheet" href="//at.alicdn.com/t/font_1886449_67xjft27j1l.css" />
+  <!-- 代码块风格 -->
+  
+
+  <!-- jquery3.3.1 -->
+  
+    <script defer type="text/javascript" src="/plugins/jquery.min.js"></script>
+  
+
+  <!-- fancybox -->
+  
+    <link href="/plugins/jquery.fancybox.min.css" rel="stylesheet">
+    <script defer type="text/javascript" src="/plugins/jquery.fancybox.min.js"></script>
+  
+  
+<script src="/js/fancybox.js"></script>
+
+
+  
+
+  
+
+  <script>
+    var html = document.documentElement
+    const colorMode = localStorage.getItem('color-mode')
+    if (colorMode) {
+      document.documentElement.setAttribute('color-mode', colorMode)
+    }
+  </script>
+<meta name="generator" content="Hexo 6.3.0"><link rel="alternate" href="/atom.xml" title="幻" type="application/atom+xml">
+</head>
+
+
+  <body>
+    <div id="app">
+      <div class="header">
+  <div class="avatar">
+    <a href="/">
+      <!-- 头像取消懒加载，添加no-lazy -->
+      
+        <img no-lazy src="/images/favicon.ico" alt="">
+      
+    </a>
+    <div class="nickname"><a href="/">幻</a></div>
+  </div>
+  <div class="navbar">
+    <ul>
+      
+        <li class="nav-item" data-path="/">
+          <a href="/">Home</a>
+        </li>
+      
+        <li class="nav-item" data-path="/archives/">
+          <a href="/archives/">Archives</a>
+        </li>
+      
+        <li class="nav-item" data-path="/tags/">
+          <a href="/tags/">Tags</a>
+        </li>
+      
+        <li class="nav-item" data-path="/friends/">
+          <a href="/friends/">Friends</a>
+        </li>
+      
+        <li class="nav-item" data-path="/about/">
+          <a href="/about/">About</a>
+        </li>
+      
+    </ul>
+  </div>
+</div>
+
+
+<script src="/js/activeNav.js"></script>
+
+
+
+      <div class="flex-container">
+        <!-- 文章详情页，展示文章具体内容，url形式：https://yoursite/文章标题/ -->
+<!-- 同时为「标签tag」，「朋友friend」，「分类categories」，「关于about」页面的承载页面，具体展示取决于page.type -->
+
+
+  <!-- LaTex Display -->
+
+  
+    <script async type="text/javascript" src="/plugins/mathjax/tex-chtml.js"></script>
+  
+  <script>
+    MathJax = {
+      tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']]
+      }
+    }
+  </script>
+
+
+
+
+
+  <!-- clipboard -->
+
+  
+    <script async type="text/javascript" src="/plugins/clipboard.min.js"></script>
+  
+  
+<script src="/js/codeCopy.js"></script>
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  <!-- 文章内容页 url形式：https://yoursite/文章标题/ -->
+  <div class="container post-details" id="post-details">
+    <div class="post-content">
+      <div class="post-title">Linux苦痛之路(一)：基本配置篇</div>
+      <div class="post-attach">
+        <span class="post-pubtime">
+          <i class="iconfont icon-updatetime mr-10" title="更新时间"></i>
+          2022-11-01 16:27:22
+        </span>
+        
+              <span class="post-tags">
+                <i class="iconfont icon-tags mr-10" title="标签"></i>
+                
+                <span class="span--tag mr-8">
+                  <a href="/tags/Linux/" title="Linux">
+                    #Linux
+                  </a>
+                </span>
+                
+              </span>
+          
+      </div>
+      <div class="markdown-body">
+        <h2 id="0-引子"><a href="#0-引子" class="headerlink" title="0.引子"></a>0.引子</h2><p>最近购置了一台台式机，在配置的时候，突发奇想，“不如安个Linux吧！”。于是安上了Fedora，安完发现发现新版本的Fedora没有网卡驱动，而我手头又没有网线，安装其它驱动也有问题。</p>
+<p>秉持着“能折腾就折腾，不能折腾就逃跑”的思想，我重新安了个Ubuntu 22.04。由于一直都在用windows，感觉linux配置起来没有windows那么简单。</p>
+<p>这篇blog就当作是自己的踩坑记录了。</p>
+<h2 id="1-QQ-amp-微信解决方案"><a href="#1-QQ-amp-微信解决方案" class="headerlink" title="1.QQ&amp;微信解决方案"></a>1.QQ&amp;微信解决方案</h2><p>这两个软件也算是国内相当一部分人没有选择Linux作为主力系统的原因，QQ for Linux做得太垃圾，甚至没有办法登陆。</p>
+<p>一开始想要用原生的wine，一路配置好，发现微信和QQ都非常卡，还容易闪退，只好放弃这个方案。</p>
+<p>后来，幻采用deepin-wine方案，但是网上流传的各大版本都存在依赖的问题，最终尝试后，微信可以在<a target="_blank" rel="noopener" href="https://github.com/zq1997/deepin-wine">zq1997’s deepin-wine</a>下运行，有时会报错，但是不影响运行。</p>
+<p>那么QQ呢？QQ在zq1997的deepin-wine下会闪退，采取作者在Issue中提到的方法也无济于事。</p>
+<p>后来幻又尝试了一下docker qq，但是由于版本过低无法登陆。</p>
+<p>最后幻选择不用qq。</p>
+<h2 id="2-Nvidia驱动"><a href="#2-Nvidia驱动" class="headerlink" title="2.Nvidia驱动"></a>2.Nvidia驱动</h2><p>本人的显卡是GeForce GTX 1050Ti。</p>
+<p>先要禁用Nouveau：</p>
+<p>在&#x2F;etc&#x2F;modprobe.d&#x2F;blacklist.conf最后加上</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">blacklist nouveau</span><br><span class="line">options nouveau modeset=0</span><br></pre></td></tr></table></figure>
+
+<p>即可。</p>
+<p>在nvidia官网下载驱动文件安装。</p>
+<p>最后用nvidia-smi命令验证即可，能够看到驱动版本就说明安装成功啦。</p>
+<h2 id="3-代替方案"><a href="#3-代替方案" class="headerlink" title="3.代替方案"></a>3.代替方案</h2><p>左边是Linux下软件名，右边是Win下的。</p>
+<p>KeepassX-Keepass2</p>
+<p>Zotero-NoteExpress</p>
+<h2 id="4-字体安装"><a href="#4-字体安装" class="headerlink" title="4.字体安装"></a>4.字体安装</h2><p>各种报告、论文要用到一些特定字体。</p>
+<p>下载下来.ttc,.ttf等类型的字体文件，首先将字体移动到指定文件夹里，更改权限：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo <span class="built_in">cp</span> &lt;fontFiles&gt; /usr/share/fonts/myFonts</span><br><span class="line">sudo <span class="built_in">chmod</span> 644 /usr/share/fonts/myFonts</span><br></pre></td></tr></table></figure>
+
+<p>接着执行指令：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sudo mkfontscale</span><br><span class="line">sudo mkfontdir</span><br><span class="line">sudo fc-cache fv</span><br></pre></td></tr></table></figure>
+
+<p>大功告成。</p>
+<h2 id="5-Hey-Hexo"><a href="#5-Hey-Hexo" class="headerlink" title="5.Hey!Hexo!"></a>5.Hey!Hexo!</h2><p>一直都在考虑把博客迁移到Hexo上面，Gridea的操作还是有些不人性化，同步起来也有问题。在安装Hexo、部署博客的过程中，也出现了不少困难。</p>
+<h3 id="cannot-read-properties"><a href="#cannot-read-properties" class="headerlink" title="cannot read properties"></a>cannot read properties</h3><p>用apt安装好node.js，采用npm安装hexo，结果报错：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm <span class="variable constant_">ERR</span>! <span class="title class_">Cannot</span> read property <span class="string">&#x27;insert&#x27;</span> <span class="keyword">of</span> <span class="literal">undefined</span></span><br></pre></td></tr></table></figure>
+
+<p>困扰了将近一天后，突然觉得应该是版本的问题，可能旧版本没有insert这个属性，于是查看node.js的版本：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">node -v</span><br><span class="line">npm -v</span><br></pre></td></tr></table></figure>
+
+<p>分别输出：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">12.22.9</span><br><span class="line">8.5.1</span><br></pre></td></tr></table></figure>
+
+<p>然后看了看node.js的官网，发现已经出到19.x.x系列了，果然是版本的问题！</p>
+<p>于是卸载node.js，去官网查看<a target="_blank" rel="noopener" href="https://nodejs.org/en/download/package-manager/#debian-and-ubuntu-based-linux-distributions">Ubuntu下node.js的安装方式</a>,最终跟随指引成功安装，也能够安装hexo了。</p>
+<h3 id="权限不够"><a href="#权限不够" class="headerlink" title="权限不够"></a>权限不够</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install -g hexo-cli</span><br></pre></td></tr></table></figure>
+
+<p>报错，其中有permission denied字样，改为：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo npm install -g hexo-cli</span><br></pre></td></tr></table></figure>
+
+<p>成功安装。</p>
+<h2 id="6-安装Battlefield-1"><a href="#6-安装Battlefield-1" class="headerlink" title="6.安装Battlefield 1"></a>6.安装Battlefield 1</h2><p>让我们来打游戏吧！我想在Ubuntu下安装战地一。很不巧，战地一并不支持Linux下运行，只好寻找一些替代的解决方案。</p>
+<p>wine？太卡了！还有许多不明不白的bug，不算是很好的选择。</p>
+<p>deepin-wine？没有提供战地一的包，安装不了。</p>
+<p>经过搜索，选择lutris。</p>
+<p>从github上安装lutris的稳定版本，安装。</p>
+<p>首先要去lutris注册一个账号，搜索相关的游戏，安装。</p>
+<p>然而由于lutris官网的问题，我们没办法下载游戏，会报错（链接已重置）。</p>
+<p>再搜索……proton！proton是steam play出品的工具，集成了wine等工具。首先我们要切换steam为beta版本，之后在设置-steam play里把Advanced里面的勾勾勾上，然后下载战地一即可。</p>
+<p>在Linux下打游戏没有在Windows下面顺畅，安装游戏很麻烦，玩游戏的时候也能感觉到明显的卡顿。</p>
+<h2 id="7-OBS-Virtual-Camera无法加载"><a href="#7-OBS-Virtual-Camera无法加载" class="headerlink" title="7.OBS Virtual Camera无法加载"></a>7.OBS Virtual Camera无法加载</h2><p>首先安装obs-v4l2sink包，运行obs之前执行：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo modprobe -r v4l2loopback</span><br><span class="line">sudo modprobe v4l2loopback devices=1 video_nr=2 exclusive_caps=1 card_label=<span class="string">&quot;VirtualWebCam&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p>之后打开obs，启动虚拟摄像机，再打开腾讯会议等软件，就能调用虚拟摄像头了。</p>
+
+      </div>
+      
+        <div class="prev-or-next">
+          <div class="post-foot-next">
+            
+              <a href="/2022/10/19/latex-fu-hao-biao-he-xiang-guan-yong-fa/" target="_self">
+                <i class="iconfont icon-chevronleft"></i>
+                <span>上一页</span>
+              </a>
+            
+          </div>
+          <div class="post-attach">
+            <span class="post-pubtime">
+              <i class="iconfont icon-updatetime mr-10" title="更新时间"></i>
+              2022-11-01 16:27:22
+            </span>
+            
+                  <span class="post-tags">
+                    <i class="iconfont icon-tags mr-10" title="标签"></i>
+                    
+                    <span class="span--tag mr-8">
+                      <a href="/tags/Linux/" title="Linux">
+                        #Linux
+                      </a>
+                    </span>
+                    
+                  </span>
+              
+          </div>
+          <div class="post-foot-prev">
+            
+              <a href="/2022/11/01/FirefoxNote/" target="_self">
+                <span>下一页</span>
+                <i class="iconfont icon-chevronright"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+    </div>
+    
+  <div id="btn-catalog" class="btn-catalog">
+    <i class="iconfont icon-catalog"></i>
+  </div>
+  <div class="post-catalog hidden" id="catalog">
+    <div class="title">目录</div>
+    <div class="catalog-content">
+      
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#0-%E5%BC%95%E5%AD%90"><span class="toc-text">0.引子</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-QQ-amp-%E5%BE%AE%E4%BF%A1%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88"><span class="toc-text">1.QQ&amp;微信解决方案</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-Nvidia%E9%A9%B1%E5%8A%A8"><span class="toc-text">2.Nvidia驱动</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-%E4%BB%A3%E6%9B%BF%E6%96%B9%E6%A1%88"><span class="toc-text">3.代替方案</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-%E5%AD%97%E4%BD%93%E5%AE%89%E8%A3%85"><span class="toc-text">4.字体安装</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-Hey-Hexo"><span class="toc-text">5.Hey!Hexo!</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#cannot-read-properties"><span class="toc-text">cannot read properties</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9D%83%E9%99%90%E4%B8%8D%E5%A4%9F"><span class="toc-text">权限不够</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#6-%E5%AE%89%E8%A3%85Battlefield-1"><span class="toc-text">6.安装Battlefield 1</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#7-OBS-Virtual-Camera%E6%97%A0%E6%B3%95%E5%8A%A0%E8%BD%BD"><span class="toc-text">7.OBS Virtual Camera无法加载</span></a></li></ol>
+      
+    </div>
+  </div>
+
+  
+<script src="/js/catalog.js"></script>
+
+
+
+
+    
+      <div class="comments-container">
+        
+
+
+
+
+  
+    <script async type="text/javascript" src='https://cdn.jsdelivr.net/npm/valine@1.4.18/dist/Valine.min.js' onload="loadValineSuc(this)"></script>
+  
+
+  <div id="vcomments"></div>
+
+  <script>
+    function loadValineSuc() {
+      new Valine({
+        el: '#vcomments',
+        appId: 'oMvaqsYv2LQSqtj795B31OWV-gzGzoHsz',
+        appKey: 'UKlJCzW9McXrX8L71Mqz5hol',
+        placeholder: 'Welcome!',
+        avatar: 'retro',
+        lang: 'zh-CN'
+      })
+    }
+  </script>
+
+    <style>
+      .comments-container .v .vempty {
+        display: none!important;
+      }
+    </style>
+
+
+
+
+      </div>
+    
+  </div>
+
+
+        
+<div class="footer">
+  <div class="social">
+    <ul>
+      
+        <li>
+          <a title="rss" href="/atom.xml">
+            <i class="iconfont icon-rss"></i>
+          </a>
+        </li>
+      
+    </ul>
+  </div>
+  
+    
+    <div class="footer-more">
+      
+        <a target="_blank" rel="noopener" href="https://github.com/zchengsite/hexo-theme-oranges">Copyright © 2024 Oranges</a>
+        
+    </div>
+  
+    
+    <div class="footer-more">
+      
+        <a target="_blank" rel="noopener" href="https://github.com/zchengsite/hexo-theme-oranges">Theme by Oranges | Powered by Hexo</a>
+        
+    </div>
+  
+  
+</div>
+
+      </div>
+
+      <div class="tools-bar">
+        <div class="back-to-top tools-bar-item hidden">
+  <a href="javascript: void(0)">
+    <i class="iconfont icon-chevronup"></i>
+  </a>
+</div>
+
+
+<script src="/js/backtotop.js"></script>
+
+
+
+        
+  <div class="search-icon tools-bar-item" id="search-icon">
+    <a href="javascript: void(0)">
+      <i class="iconfont icon-search"></i>
+    </a>
+  </div>
+
+  <div class="search-overlay hidden">
+    <div class="search-content" tabindex="0">
+      <div class="search-title">
+        <span class="search-icon-input">
+          <a href="javascript: void(0)">
+            <i class="iconfont icon-search"></i>
+          </a>
+        </span>
+        
+          <input type="text" class="search-input" id="search-input" placeholder="搜索...">
+        
+        <span class="search-close-icon" id="search-close-icon">
+          <a href="javascript: void(0)">
+            <i class="iconfont icon-close"></i>
+          </a>
+        </span>
+      </div>
+      <div class="search-result" id="search-result"></div>
+    </div>
+  </div>
+
+  <script type="text/javascript">
+    var inputArea = document.querySelector("#search-input")
+    var searchOverlayArea = document.querySelector(".search-overlay")
+
+    inputArea.onclick = function() {
+      getSearchFile()
+      this.onclick = null
+    }
+
+    inputArea.onkeydown = function() {
+      if(event.keyCode == 13)
+        return false
+    }
+
+    function openOrHideSearchContent() {
+      let isHidden = searchOverlayArea.classList.contains('hidden')
+      if (isHidden) {
+        searchOverlayArea.classList.remove('hidden')
+        document.body.classList.add('hidden')
+        // inputArea.focus()
+      } else {
+        searchOverlayArea.classList.add('hidden')
+        document.body.classList.remove('hidden')
+      }
+    }
+
+    function blurSearchContent(e) {
+      if (e.target === searchOverlayArea) {
+        openOrHideSearchContent()
+      }
+    }
+
+    document.querySelector("#search-icon").addEventListener("click", openOrHideSearchContent, false)
+    document.querySelector("#search-close-icon").addEventListener("click", openOrHideSearchContent, false)
+    searchOverlayArea.addEventListener("click", blurSearchContent, false)
+
+    var searchFunc = function (path, search_id, content_id) {
+      'use strict';
+      var $input = document.getElementById(search_id);
+      var $resultContent = document.getElementById(content_id);
+      $resultContent.innerHTML = "<ul><span class='local-search-empty'>首次搜索，正在载入索引文件，请稍后……<span></ul>";
+      $.ajax({
+        // 0x01. load xml file
+        url: path,
+        dataType: "xml",
+        success: function (xmlResponse) {
+          // 0x02. parse xml file
+          var datas = $("entry", xmlResponse).map(function () {
+            return {
+              title: $("title", this).text(),
+              content: $("content", this).text(),
+              url: $("url", this).text()
+            };
+          }).get();
+          $resultContent.innerHTML = "";
+
+          $input.addEventListener('input', function () {
+            // 0x03. parse query to keywords list
+            var str = '<ul class=\"search-result-list\">';
+            var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+            $resultContent.innerHTML = "";
+            if (this.value.trim().length <= 0) {
+              return;
+            }
+            // 0x04. perform local searching
+            datas.forEach(function (data) {
+              var isMatch = true;
+              var content_index = [];
+              if (!data.title || data.title.trim() === '') {
+                data.title = "Untitled";
+              }
+              var orig_data_title = data.title.trim();
+              var data_title = orig_data_title.toLowerCase();
+              var orig_data_content = data.content.trim().replace(/<[^>]+>/g, "");
+              var data_content = orig_data_content.toLowerCase();
+              var data_url = data.url;
+              var index_title = -1;
+              var index_content = -1;
+              var first_occur = -1;
+              // only match artiles with not empty contents
+              if (data_content !== '') {
+                keywords.forEach(function (keyword, i) {
+                  index_title = data_title.indexOf(keyword);
+                  index_content = data_content.indexOf(keyword);
+
+                  if (index_title < 0 && index_content < 0) {
+                    isMatch = false;
+                  } else {
+                    if (index_content < 0) {
+                      index_content = 0;
+                    }
+                    if (i == 0) {
+                      first_occur = index_content;
+                    }
+                    // content_index.push({index_content:index_content, keyword_len:keyword_len});
+                  }
+                });
+              } else {
+                isMatch = false;
+              }
+              // 0x05. show search results
+              if (isMatch) {
+                str += "<li><a href='" + data_url + "' class='search-result-title'>" + orig_data_title + "</a>";
+                var content = orig_data_content;
+                if (first_occur >= 0) {
+                  // cut out 100 characters
+                  var start = first_occur - 20;
+                  var end = first_occur + 80;
+
+                  if (start < 0) {
+                    start = 0;
+                  }
+
+                  if (start == 0) {
+                    end = 100;
+                  }
+
+                  if (end > content.length) {
+                    end = content.length;
+                  }
+
+                  var match_content = content.substr(start, end);
+
+                  // highlight all keywords
+                  keywords.forEach(function (keyword) {
+                    var regS = new RegExp(keyword, "gi");
+                    match_content = match_content.replace(regS, "<span class=\"search-keyword\">" + keyword + "</span>");
+                  });
+
+                  str += "<p class=\"search-result-abstract\">" + match_content + "...</p>"
+                }
+                str += "</li>";
+              }
+            });
+            str += "</ul>";
+            if (str.indexOf('<li>') === -1) {
+              return $resultContent.innerHTML = "<ul><span class='local-search-empty'>没有找到内容，请尝试更换检索词。<span></ul>";
+            }
+            $resultContent.innerHTML = str;
+          });
+        },
+        error: function(xhr, status, error) {
+          $resultContent.innerHTML = ""
+          if (xhr.status === 404) {
+            $resultContent.innerHTML = "<ul><span class='local-search-empty'>未找到search.xml文件，具体请参考：<a href='https://github.com/zchengsite/hexo-theme-oranges#configuration' target='_black'>configuration</a><span></ul>";
+          } else {
+            $resultContent.innerHTML = "<ul><span class='local-search-empty'>请求失败，尝试重新刷新页面或稍后重试。<span></ul>";
+          }
+        }
+      });
+      $(document).on('click', '#search-close-icon', function() {
+        $('#search-input').val('');
+        $('#search-result').html('');
+      });
+    }
+
+    var getSearchFile = function() {
+        var path = "/search.xml";
+        searchFunc(path, 'search-input', 'search-result');
+    }
+  </script>
+
+
+
+
+        
+  <div class="tools-bar-item theme-icon" id="switch-color-scheme">
+    <a href="javascript: void(0)">
+      <i id="theme-icon" class="iconfont icon-moon"></i>
+    </a>
+  </div>
+
+  
+<script src="/js/colorscheme.js"></script>
+
+
+
+
+
+        
+  
+    <div class="share-icon tools-bar-item">
+      <a href="javascript: void(0)" id="share-icon">
+        <i class="iconfont iconshare"></i>
+      </a>
+      <div class="share-content hidden">
+        
+          <a class="share-item" href="https://twitter.com/intent/tweet?text=' + Linux%E8%8B%A6%E7%97%9B%E4%B9%8B%E8%B7%AF(%E4%B8%80)%EF%BC%9A%E5%9F%BA%E6%9C%AC%E9%85%8D%E7%BD%AE%E7%AF%87 + '&url=' + https%3A%2F%2Fcoder109.github.io%2F2022%2F11%2F01%2FlinuxRoad1%2F + '" target="_blank" title="Twitter">
+            <i class="iconfont icon-twitter"></i>
+          </a>
+        
+        
+      </div>
+    </div>
+  
+  
+<script src="/js/shares.js"></script>
+
+
+
+      </div>
+    </div>
+  
+        <style>
+            [bg-lazy] {
+                background-image: none !important;
+                background-color: #eee !important;
+            }
+        </style>
+        <script>
+            window.imageLazyLoadSetting = {
+                isSPA: false,
+                preloadRatio: 1,
+                processImages: null,
+            };
+        </script><script>window.addEventListener("load",function(){var t=/\.(gif|jpg|jpeg|tiff|png)$/i,r=/^data:image\/[a-z]+;base64,/;Array.prototype.slice.call(document.querySelectorAll("img[data-original]")).forEach(function(a){var e=a.parentNode;"A"===e.tagName&&(e.href.match(t)||e.href.match(r))&&(e.href=a.dataset.original)})});</script><script>!function(r){r.imageLazyLoadSetting.processImages=t;var e=r.imageLazyLoadSetting.isSPA,n=r.imageLazyLoadSetting.preloadRatio||1,c=a();function a(){var t=Array.prototype.slice.call(document.querySelectorAll("img[data-original]")),e=Array.prototype.slice.call(document.querySelectorAll("[bg-lazy]"));return t.concat(e)}function t(){e&&(c=a());for(var t,o=0;o<c.length;o++)0<=(t=(t=c[o]).getBoundingClientRect()).bottom&&0<=t.left&&t.top<=(r.innerHeight*n||document.documentElement.clientHeight*n)&&function(){var t,e,n,a,i=c[o];e=function(){c=c.filter(function(t){return i!==t}),r.imageLazyLoadSetting.onImageLoaded&&r.imageLazyLoadSetting.onImageLoaded(i)},(t=i).hasAttribute("bg-lazy")?(t.removeAttribute("bg-lazy"),e&&e()):(n=new Image,a=t.getAttribute("data-original"),n.onload=function(){t.src=a,t.removeAttribute("data-original"),e&&e()},t.src!==a&&(n.src=a))}()}function i(){clearTimeout(t.tId),t.tId=setTimeout(t,500)}t(),document.addEventListener("scroll",i),r.addEventListener("resize",i),r.addEventListener("orientationchange",i)}(this);</script></body>
+</html>
