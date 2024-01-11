@@ -6,7 +6,7 @@
   <link href="https://coder109.github.io/atom.xml" rel="self"/>
   
   <link href="https://coder109.github.io/"/>
-  <updated>2024-01-09T05:57:47.382Z</updated>
+  <updated>2024-01-11T03:19:41.501Z</updated>
   <id>https://coder109.github.io/</id>
   
   <author>
@@ -15,6 +15,53 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>【乐理】和弦种类</title>
+    <link href="https://coder109.github.io/2024/01/11/%E3%80%90%E4%B9%90%E7%90%86%E3%80%91%E5%92%8C%E5%BC%A6%E7%A7%8D%E7%B1%BB/"/>
+    <id>https://coder109.github.io/2024/01/11/%E3%80%90%E4%B9%90%E7%90%86%E3%80%91%E5%92%8C%E5%BC%A6%E7%A7%8D%E7%B1%BB/</id>
+    <published>2024-01-11T02:56:21.000Z</published>
+    <updated>2024-01-11T03:19:41.501Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;挂留和弦&quot;&gt;&lt;a href=&quot;#挂留和弦&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    
+    <category term="乐理" scheme="https://coder109.github.io/tags/%E4%B9%90%E7%90%86/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>心与血</title>
+    <link href="https://coder109.github.io/2024/01/10/%E5%BF%83%E4%B8%8E%E8%A1%80/"/>
+    <id>https://coder109.github.io/2024/01/10/%E5%BF%83%E4%B8%8E%E8%A1%80/</id>
+    <published>2024-01-10T00:39:44.000Z</published>
+    <updated>2024-01-10T05:37:44.305Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;“你还好吗？许久未见，你竟也没有改变多少。我的心和我的血。”&lt;/p&gt;
+&lt;p&gt;我坐在一张棕色皮质沙发上，面前是一望无际的碧蓝色的大海，远方天上白云飘，海鸥从天空飞过，海浪的冲刷声在我耳畔响起。很远的地方，依稀有一艘轮船驶过。沙发的扶手处伸出两个银白色的铁质圆环，将我的手紧紧铐</summary>
+        
+      
+    
+    
+    
+    
+    <category term="意识流" scheme="https://coder109.github.io/tags/%E6%84%8F%E8%AF%86%E6%B5%81/"/>
+    
+  </entry>
   
   <entry>
     <title>【乐理】和弦进行和简单的指弹编配</title>
@@ -456,52 +503,6 @@
 &lt;p&gt;道理我都懂，但是相关的题目就是做不出来～&lt;/p&gt;
 &lt;p&gt;这种问题太灵活啦！&lt;/p&gt;
 &lt;h1</summary>
-        
-      
-    
-    
-    
-    
-    <category term="算法" scheme="https://coder109.github.io/tags/%E7%AE%97%E6%B3%95/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Neovim折腾小记</title>
-    <link href="https://coder109.github.io/2023/08/14/Neovim%E6%8A%98%E8%85%BE%E5%B0%8F%E8%AE%B0/"/>
-    <id>https://coder109.github.io/2023/08/14/Neovim%E6%8A%98%E8%85%BE%E5%B0%8F%E8%AE%B0/</id>
-    <published>2023-08-14T04:22:04.000Z</published>
-    <updated>2023-08-14T05:05:08.792Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h1 id=&quot;引子&quot;&gt;&lt;a href=&quot;#引子&quot; class=&quot;headerlink&quot;</summary>
-        
-      
-    
-    
-    
-    
-    <category term="Neovim" scheme="https://coder109.github.io/tags/Neovim/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>【算法】链表相关</title>
-    <link href="https://coder109.github.io/2023/08/11/%E3%80%90%E7%AE%97%E6%B3%95%E3%80%91%E9%93%BE%E8%A1%A8%E7%9B%B8%E5%85%B3/"/>
-    <id>https://coder109.github.io/2023/08/11/%E3%80%90%E7%AE%97%E6%B3%95%E3%80%91%E9%93%BE%E8%A1%A8%E7%9B%B8%E5%85%B3/</id>
-    <published>2023-08-11T05:34:38.000Z</published>
-    <updated>2023-08-26T09:36:05.604Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h1 id=&quot;1-环形链表的判别&quot;&gt;&lt;a href=&quot;#1-环形链表的判别&quot; class=&quot;headerlink&quot; title=&quot;1. 环形链表的判别&quot;&gt;&lt;/a&gt;1. 环形链表的判别&lt;/h1&gt;&lt;p&gt;常用于判断链表是否有环的问题，拿可解&lt;a</summary>
         
       
     
