@@ -6,7 +6,7 @@
   <link href="https://coder109.github.io/atom.xml" rel="self"/>
   
   <link href="https://coder109.github.io/"/>
-  <updated>2024-01-11T03:19:41.501Z</updated>
+  <updated>2024-01-14T14:11:07.392Z</updated>
   <id>https://coder109.github.io/</id>
   
   <author>
@@ -15,6 +15,29 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>【神秘学】基础理论</title>
+    <link href="https://coder109.github.io/2024/01/14/%E3%80%90%E7%A5%9E%E7%A7%98%E5%AD%A6%E3%80%91%E5%9F%BA%E7%A1%80%E7%90%86%E8%AE%BA/"/>
+    <id>https://coder109.github.io/2024/01/14/%E3%80%90%E7%A5%9E%E7%A7%98%E5%AD%A6%E3%80%91%E5%9F%BA%E7%A1%80%E7%90%86%E8%AE%BA/</id>
+    <published>2024-01-14T12:29:13.000Z</published>
+    <updated>2024-01-14T14:11:07.392Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;引子&quot;&gt;&lt;a href=&quot;#引子&quot; class=&quot;headerlink&quot; title=&quot;引子&quot;&gt;&lt;/a&gt;引子&lt;/h1&gt;&lt;p&gt;大多参考《当神秘学来敲门》这本书，也结合了&lt;a</summary>
+        
+      
+    
+    
+    
+    
+    <category term="神秘学" scheme="https://coder109.github.io/tags/%E7%A5%9E%E7%A7%98%E5%AD%A6/"/>
+    
+  </entry>
   
   <entry>
     <title>【乐理】和弦种类</title>
@@ -486,29 +509,6 @@
     
     
     <category term="算法" scheme="https://coder109.github.io/tags/%E7%AE%97%E6%B3%95/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Neovim折腾小记</title>
-    <link href="https://coder109.github.io/2023/08/14/Neovim%E6%8A%98%E8%85%BE%E5%B0%8F%E8%AE%B0/"/>
-    <id>https://coder109.github.io/2023/08/14/Neovim%E6%8A%98%E8%85%BE%E5%B0%8F%E8%AE%B0/</id>
-    <published>2023-08-14T04:22:04.000Z</published>
-    <updated>2023-08-14T05:05:08.792Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h1 id=&quot;引子&quot;&gt;&lt;a href=&quot;#引子&quot; class=&quot;headerlink&quot;</summary>
-        
-      
-    
-    
-    
-    
-    <category term="Neovim" scheme="https://coder109.github.io/tags/Neovim/"/>
     
   </entry>
   
