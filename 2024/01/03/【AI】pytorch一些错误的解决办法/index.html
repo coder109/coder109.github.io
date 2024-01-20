@@ -175,8 +175,8 @@
         <blockquote>
 <p>本文讨论一些难以调试的错误。</p>
 </blockquote>
-<h1 id="Assertion-srcIndex-lt-srcSelectDimSize-failed"><a href="#Assertion-srcIndex-lt-srcSelectDimSize-failed" class="headerlink" title="Assertion srcIndex &lt; srcSelectDimSize failed."></a>Assertion <code>srcIndex &lt; srcSelectDimSize</code> failed.</h1><p>这个错误表明CUDA上的张量出现了索引越界问题。</p>
-<h2 id="解决方法"><a href="#解决方法" class="headerlink" title="解决方法"></a>解决方法</h2><ol>
+<h2 id="Assertion-srcIndex-lt-srcSelectDimSize-failed"><a href="#Assertion-srcIndex-lt-srcSelectDimSize-failed" class="headerlink" title="Assertion srcIndex &lt; srcSelectDimSize failed."></a>Assertion <code>srcIndex &lt; srcSelectDimSize</code> failed.</h2><p>这个错误表明CUDA上的张量出现了索引越界问题。</p>
+<h3 id="解决方法"><a href="#解决方法" class="headerlink" title="解决方法"></a>解决方法</h3><ol>
 <li><p>阅读代码，找出可能出现的索引越界代码段。</p>
 </li>
 <li><p>如果第一步比较困难，您要知道，在CUDA上调试程序比较困难，所以可以考虑在CPU上运行代码，能获得更加具体的报错信息。</p>
@@ -187,18 +187,18 @@
 <p>就可能引发错误，因为这样写会导入默认的数据集，考虑改写为：</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">data = load_dataset(<span class="string">&quot;json&quot;</span>, data_files=data_path)</span><br></pre></td></tr></table></figure></li>
 </ol>
-<h1 id="Error-while-deserializing-header-InvalidHeaderDeserialization"><a href="#Error-while-deserializing-header-InvalidHeaderDeserialization" class="headerlink" title="Error while deserializing header: InvalidHeaderDeserialization"></a>Error while deserializing header: InvalidHeaderDeserialization</h1><p>这个错误表明导入的预训练模型有问题。我遇到这个问题的情况是，同时使用了<code>transformers.Trainer</code>和<code>torch.compile()</code>。将预训练模型输出，发现<code>state_dict</code>为空。此外，貌似PyTorch和PEFT的兼容性问题也是导致这个问题的一个原因。</p>
-<h2 id="解决办法"><a href="#解决办法" class="headerlink" title="解决办法"></a>解决办法</h2><ol>
+<h2 id="Error-while-deserializing-header-InvalidHeaderDeserialization"><a href="#Error-while-deserializing-header-InvalidHeaderDeserialization" class="headerlink" title="Error while deserializing header: InvalidHeaderDeserialization"></a>Error while deserializing header: InvalidHeaderDeserialization</h2><p>这个错误表明导入的预训练模型有问题。我遇到这个问题的情况是，同时使用了<code>transformers.Trainer</code>和<code>torch.compile()</code>。将预训练模型输出，发现<code>state_dict</code>为空。此外，貌似PyTorch和PEFT的兼容性问题也是导致这个问题的一个原因。</p>
+<h3 id="解决办法"><a href="#解决办法" class="headerlink" title="解决办法"></a>解决办法</h3><ol>
 <li>重新训练预训练模型。</li>
 <li>若您和我的情况一样，请移除<code>torch.compile()</code>方法。详见<a target="_blank" rel="noopener" href="https://github.com/huggingface/transformers/issues/27397">SafetensorError: Error while deserializing header: InvalidHeaderDeserialization when open .safetensor model</a>。</li>
 <li>如果是在微调LLM时遇到这个问题，请将<code>torch.float16</code>数据类型改为<code>torch.float32</code>。</li>
 </ol>
-<h1 id="RuntimeError-CUDA-error-out-of-memory"><a href="#RuntimeError-CUDA-error-out-of-memory" class="headerlink" title="RuntimeError: CUDA error: out of memory"></a>RuntimeError: CUDA error: out of memory</h1><p>两种可能：</p>
+<h2 id="RuntimeError-CUDA-error-out-of-memory"><a href="#RuntimeError-CUDA-error-out-of-memory" class="headerlink" title="RuntimeError: CUDA error: out of memory"></a>RuntimeError: CUDA error: out of memory</h2><p>两种可能：</p>
 <ol>
 <li>显卡总算力不足。</li>
 <li>没有用全部的显卡训练。</li>
 </ol>
-<h2 id="解决办法-1"><a href="#解决办法-1" class="headerlink" title="解决办法"></a>解决办法</h2><p>第一种情况，优化模型或者换更强力&#x2F;数量更多的显卡。第二种情况，利用多卡并行运算策略，考虑使用：</p>
+<h3 id="解决办法-1"><a href="#解决办法-1" class="headerlink" title="解决办法"></a>解决办法</h3><p>第一种情况，优化模型或者换更强力&#x2F;数量更多的显卡。第二种情况，利用多卡并行运算策略，考虑使用：</p>
 <ol>
 <li><p>Pytorch下的<code>nn.DataParallel(model)</code>。</p>
 </li>
@@ -254,7 +254,7 @@
     <div class="title">目录</div>
     <div class="catalog-content">
       
-        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Assertion-srcIndex-lt-srcSelectDimSize-failed"><span class="toc-text">Assertion srcIndex &lt; srcSelectDimSize failed.</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95"><span class="toc-text">解决方法</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Error-while-deserializing-header-InvalidHeaderDeserialization"><span class="toc-text">Error while deserializing header: InvalidHeaderDeserialization</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95"><span class="toc-text">解决办法</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#RuntimeError-CUDA-error-out-of-memory"><span class="toc-text">RuntimeError: CUDA error: out of memory</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95-1"><span class="toc-text">解决办法</span></a></li></ol></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Assertion-srcIndex-lt-srcSelectDimSize-failed"><span class="toc-text">Assertion srcIndex &lt; srcSelectDimSize failed.</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95"><span class="toc-text">解决方法</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Error-while-deserializing-header-InvalidHeaderDeserialization"><span class="toc-text">Error while deserializing header: InvalidHeaderDeserialization</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95"><span class="toc-text">解决办法</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#RuntimeError-CUDA-error-out-of-memory"><span class="toc-text">RuntimeError: CUDA error: out of memory</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95-1"><span class="toc-text">解决办法</span></a></li></ol></li></ol>
       
     </div>
   </div>
