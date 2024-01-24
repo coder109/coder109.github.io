@@ -6,7 +6,7 @@
   <link href="https://coder109.github.io/atom.xml" rel="self"/>
   
   <link href="https://coder109.github.io/"/>
-  <updated>2024-01-20T07:02:49.505Z</updated>
+  <updated>2024-01-24T03:44:13.426Z</updated>
   <id>https://coder109.github.io/</id>
   
   <author>
@@ -15,6 +15,29 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>用Linux终端播放Bad Apple</title>
+    <link href="https://coder109.github.io/2024/01/24/%E7%94%A8Linux%E7%BB%88%E7%AB%AF%E6%92%AD%E6%94%BEBad-Apple/"/>
+    <id>https://coder109.github.io/2024/01/24/%E7%94%A8Linux%E7%BB%88%E7%AB%AF%E6%92%AD%E6%94%BEBad-Apple/</id>
+    <published>2024-01-24T03:28:44.000Z</published>
+    <updated>2024-01-24T03:44:13.426Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;引子&quot;&gt;&lt;a href=&quot;#引子&quot; class=&quot;headerlink&quot; title=&quot;引子&quot;&gt;&lt;/a&gt;引子&lt;/h1&gt;&lt;p&gt;Bad Apple常常指一部影绘PV：&lt;a</summary>
+        
+      
+    
+    
+    
+    
+    <category term="C" scheme="https://coder109.github.io/tags/C/"/>
+    
+  </entry>
   
   <entry>
     <title>【神秘学】塔罗基础</title>
@@ -489,31 +512,6 @@
     
     
     <category term="AI" scheme="https://coder109.github.io/tags/AI/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>【NLP】智能软件工程课程笔记</title>
-    <link href="https://coder109.github.io/2023/09/16/%E3%80%90NLP%E3%80%91%E6%99%BA%E8%83%BD%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0/"/>
-    <id>https://coder109.github.io/2023/09/16/%E3%80%90NLP%E3%80%91%E6%99%BA%E8%83%BD%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0/</id>
-    <published>2023-09-16T09:51:33.000Z</published>
-    <updated>2023-09-16T13:56:04.524Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h1 id=&quot;引子&quot;&gt;&lt;a href=&quot;#引子&quot; class=&quot;headerlink&quot;</summary>
-        
-      
-    
-    
-    
-    
-    <category term="AI" scheme="https://coder109.github.io/tags/AI/"/>
-    
-    <category term="NLP" scheme="https://coder109.github.io/tags/NLP/"/>
     
   </entry>
   
