@@ -11,7 +11,7 @@
   
   <title>
     
-      用Linux终端播放Bad Apple 
+      【神秘学】天使学笔记 
       
       
       |
@@ -152,19 +152,19 @@
   <!-- 文章内容页 url形式：https://yoursite/文章标题/ -->
   <div class="container post-details" id="post-details">
     <div class="post-content">
-      <div class="post-title">用Linux终端播放Bad Apple</div>
+      <div class="post-title">【神秘学】天使学笔记</div>
       <div class="post-attach">
         <span class="post-pubtime">
           <i class="iconfont icon-updatetime mr-10" title="更新时间"></i>
-          2024-01-24 11:28:44
+          2024-01-25 10:52:41
         </span>
         
               <span class="post-tags">
                 <i class="iconfont icon-tags mr-10" title="标签"></i>
                 
                 <span class="span--tag mr-8">
-                  <a href="/tags/C/" title="C">
-                    #C
+                  <a href="/tags/%E7%A5%9E%E7%A7%98%E5%AD%A6/" title="神秘学">
+                    #神秘学
                   </a>
                 </span>
                 
@@ -172,45 +172,89 @@
           
       </div>
       <div class="markdown-body">
-        <h1 id="引子"><a href="#引子" class="headerlink" title="引子"></a>引子</h1><p>Bad Apple常常指一部影绘PV：<a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1xx411c79H">【東方】Bad Apple!! ＰＶ【影絵】</a>。在各大网站，您可以看到很多在不同设备上播放这个PV的视频，包括但不限于单片机液晶屏、国际象棋棋盘等。</p>
-<p>本文主要讲述如何借助<code>libpng</code>、<code>ncurses</code>和<code>ffmpeg</code>，编写C语言程序，在<code>uxterm</code>上播放该视频。</p>
-<h1 id="预处理"><a href="#预处理" class="headerlink" title="预处理"></a>预处理</h1><p>基本思想是：我们需要将视频流转换为一张张图片，然后通过计算图片每个像素的灰度，输出白色&#x2F;黑色的色块，达到播放的效果。</p>
-<p>首先，视频流转换为图片，可以使用<code>ffmpeg</code>工具，只需要在命令行执行：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ffmpeg -i VIDEO_NAME %04d.png</span><br></pre></td></tr></table></figure>
-
-<p>这个意思是，将VIDEO_NAME这个视频流转化为一张张图片，图片是png格式，名称是一个补零四位数整数，比如<code>0001.png</code>、<code>0887.png</code>或<code>1145.png</code>。</p>
-<p>为了查看图片的颜色属性，比如RGB、RGBA，可以使用<code>file</code>命令：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">file 0001.png</span><br></pre></td></tr></table></figure>
-
-<p>我这里输出的是RGB。</p>
-<h1 id="图片的加载"><a href="#图片的加载" class="headerlink" title="图片的加载"></a>图片的加载</h1><h2 id="单个图片的加载"><a href="#单个图片的加载" class="headerlink" title="单个图片的加载"></a>单个图片的加载</h2><p>png图片的加载需要用到<code>libpng</code>这个库，读取的代码如下所示：</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">png_bytepp <span class="title function_">ReadPNG</span><span class="params">(<span class="type">char</span>* file_name, <span class="type">int</span>* height, <span class="type">int</span>* width)</span> &#123;</span><br><span class="line">  <span class="comment">// Read file</span></span><br><span class="line">  FILE* fp = fopen(file_name, <span class="string">&quot;rb&quot;</span>);</span><br><span class="line">  <span class="keyword">if</span>(fp == <span class="literal">NULL</span>) &#123;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;Unable to read!\n&quot;</span>);</span><br><span class="line">    <span class="built_in">exit</span>(<span class="number">-1</span>);</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="comment">// Initialize</span></span><br><span class="line">  png_structp png_ptr = png_create_read_struct(PNG_LIBPNG_VER_STRING, <span class="literal">NULL</span>, <span class="literal">NULL</span>, <span class="literal">NULL</span>);</span><br><span class="line">  png_infop info_ptr = png_create_info_struct(png_ptr);</span><br><span class="line">  png_init_io(png_ptr, fp);</span><br><span class="line">  <span class="comment">// Read Info of a picture</span></span><br><span class="line">  png_read_png(png_ptr, info_ptr, PNG_TRANSFORM_IDENTITY, <span class="literal">NULL</span>);</span><br><span class="line">  png_bytepp row_pointers = png_get_rows(png_ptr, info_ptr);</span><br><span class="line">  <span class="comment">// Get height and width of a png picture</span></span><br><span class="line">  *height = png_get_image_height(png_ptr, info_ptr);</span><br><span class="line">  *width = png_get_image_width(png_ptr, info_ptr);</span><br><span class="line">  png_destroy_read_struct(&amp;png_ptr, <span class="literal">NULL</span>, <span class="literal">NULL</span>);</span><br><span class="line">  <span class="comment">// Deinitalize</span></span><br><span class="line">  fclose(fp);</span><br><span class="line">  <span class="keyword">return</span> row_pointers;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>基本的思路是这样的，首先读取png文件，接着创建读取png的相关结构体，接着读取图片，将像素输入到一个指定结构体里，获取图片的长和宽。</p>
-<h2 id="多个图片的加载"><a href="#多个图片的加载" class="headerlink" title="多个图片的加载"></a>多个图片的加载</h2><p>首先，我们要获取图片的总数：</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> <span class="title function_">GetPNGNums</span><span class="params">(<span class="type">const</span> <span class="type">char</span>* path)</span> &#123;</span><br><span class="line">    DIR* directory = <span class="literal">NULL</span>;</span><br><span class="line">    <span class="type">int</span> total_num = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">if</span> ((directory = opendir(path)) == <span class="literal">NULL</span>) &#123;</span><br><span class="line">        <span class="built_in">fprintf</span>(<span class="built_in">stderr</span>, <span class="string">&quot;Can&#x27;t open %s\n&quot;</span>, path);</span><br><span class="line">        <span class="keyword">return</span> EXIT_FAILURE;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="class"><span class="keyword">struct</span> <span class="title">dirent</span>* <span class="title">entry</span> =</span> <span class="literal">NULL</span>;</span><br><span class="line">    <span class="keyword">while</span> ((entry = readdir(directory)) != <span class="literal">NULL</span>) &#123;</span><br><span class="line">        <span class="keyword">if</span> (entry-&gt;d_type != DT_DIR) &#123;</span><br><span class="line">	  ++total_num;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    closedir(directory);</span><br><span class="line">    <span class="keyword">return</span> total_num;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>这里用到了<code>dirent</code>库，遍历文件夹，获取所有非文件夹的文件总数即可。</p>
-<h1 id="输出"><a href="#输出" class="headerlink" title="输出"></a>输出</h1><p>首先，要初始化窗口：</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">void</span> <span class="title function_">InitWindow</span><span class="params">()</span> &#123;</span><br><span class="line">  window = initscr();</span><br><span class="line">  refresh();</span><br><span class="line">  getmaxyx(window, *&amp;window_height, *&amp;window_width);</span><br><span class="line">  start_color();</span><br><span class="line">  <span class="comment">// Hide cursor</span></span><br><span class="line">  curs_set(<span class="number">0</span>);</span><br><span class="line">  refresh();</span><br><span class="line">  init_pair(<span class="number">1</span>, COLOR_WHITE, COLOR_BLACK);</span><br><span class="line">  init_pair(<span class="number">2</span>, COLOR_WHITE, COLOR_WHITE);</span><br><span class="line">  init_pair(<span class="number">3</span>, COLOR_BLACK, COLOR_BLACK);</span><br><span class="line">  wbkgd(window, COLOR_PAIR(<span class="number">1</span>));</span><br><span class="line">  attron(A_BOLD);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>首先初始化窗口，然后获取窗口的长和宽，这一步的目的是便于之后的图片缩放，接着初始化颜色色对，按照<em>编号，前景色，背景色</em>的顺序初始化即可，接着使用<code>wbkgd</code>设置窗口背景颜色。</p>
-<p>接着，将每张图片的像素输出到窗口上：</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">   <span class="keyword">for</span>(<span class="type">int</span> h = <span class="number">0</span>; h &lt; height; h+=HEIGHT_RATIO) &#123;</span><br><span class="line">     curr_col = <span class="number">0</span>;</span><br><span class="line">     <span class="keyword">for</span>(<span class="type">int</span> w = <span class="number">0</span>; w &lt; width; w+=WIDTH_RATIO) &#123;</span><br><span class="line"><span class="type">unsigned</span> <span class="type">int</span> r = row_pointers[h][w*<span class="number">3</span>+<span class="number">0</span>],</span><br><span class="line">  g = row_pointers[h][w*<span class="number">3</span>+<span class="number">1</span>],</span><br><span class="line">  b = row_pointers[h][w*<span class="number">3</span>+<span class="number">2</span>];</span><br><span class="line"><span class="type">unsigned</span> <span class="type">int</span> gray = RGB2Gray(r, g, b);</span><br><span class="line"><span class="keyword">if</span>(gray &gt;= THRESHOLD) &#123;</span><br><span class="line">  attron(COLOR_PAIR(<span class="number">2</span>));</span><br><span class="line">  mvaddch(curr_row, curr_col, <span class="string">&#x27; &#x27;</span>);</span><br><span class="line">  attroff(COLOR_PAIR(<span class="number">2</span>));</span><br><span class="line">&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">  attron(COLOR_PAIR(<span class="number">3</span>));</span><br><span class="line">  mvaddch(curr_row, curr_col, <span class="string">&#x27; &#x27;</span>);</span><br><span class="line">  attroff(COLOR_PAIR(<span class="number">3</span>));</span><br><span class="line">&#125;</span><br><span class="line">curr_col++;</span><br><span class="line">     &#125;</span><br><span class="line">     curr_row++;</span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure>
-
-<p>这里，<code>HEIGHT_RATIO</code>和<code>WIDTH_RATIO</code>分别代表图片长宽的缩放比例，比如<code>HEIGHT_RATIO</code>为2，就代表在图片长的遍历上，要跳过一个像素，这样图片的长就变为了原来的1&#x2F;2。</p>
-<p>对于灰度的计算，我采用了一个近似的方法：</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">unsigned</span> <span class="type">int</span> <span class="title function_">RGB2Gray</span><span class="params">(<span class="type">unsigned</span> <span class="type">int</span> R, <span class="type">unsigned</span> <span class="type">int</span> G, <span class="type">unsigned</span> <span class="type">int</span> B)</span> &#123;</span><br><span class="line">  <span class="keyword">return</span> (R+G+B)/<span class="number">3</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>接着设置一个灰度阈值<code>THRESHOLD</code>，根据灰度与阈值的关系决定输出黑块&#x2F;白块即可。</p>
-<p>在每次输出之后，需要应用<code>usleep()</code>睡眠一段时间，这个时间可以根据采样率等计算。</p>
+        <h1 id="引子"><a href="#引子" class="headerlink" title="引子"></a>引子</h1><p>本文讨论的天使——正如之前所讨论的神秘学一样——皆为基督教的观点。从这种角度来说，天使是为了侍奉耶和华(YHWH)而创造的。</p>
+<h1 id="天使的三级九等分类法"><a href="#天使的三级九等分类法" class="headerlink" title="天使的三级九等分类法"></a>天使的三级九等分类法</h1><p>这种分类法在公元4世纪被提出，在公元5世纪被完善(De Coelesti Hierarchia)，不同的基督教派皆认可三级九等的分类法，然而对不同等级的天使种类，有着不同的称呼方式，尤以东正教和天主教之间的差异为甚。</p>
+<p>这种分类方法的依据是<strong>天使和耶和华之间的距离</strong>。</p>
+<h2 id="第一级"><a href="#第一级" class="headerlink" title="第一级"></a>第一级</h2><h3 id="一等：Seraphim-六翼天使"><a href="#一等：Seraphim-六翼天使" class="headerlink" title="一等：Seraphim-六翼天使"></a>一等：Seraphim-六翼天使</h3><blockquote>
+<p>其上有撒拉弗侍立。各有六个翅膀。用两个翅膀遮脸，两个翅膀遮脚，两个翅膀飞翔。——《以赛亚书》6:2</p>
+<p>那四个活物，各个都有六个翅膀，遍体内外都布满了眼睛。他们日夜不停地说：</p>
+<p>“圣哉！圣哉！圣哉！<br>主、神、全能者，<br>昔在、今在、将要来临的那一位！”</p>
+<p>——《启示录》4:8</p>
+</blockquote>
+<p>这一等的天使离耶和华最近，日夜不停地在歌唱颂歌。Seraphim在希伯来文中意味着“燃烧者”，所以也会被翻译成炽天使。</p>
+<h3 id="二等：Cherubim-基路伯"><a href="#二等：Cherubim-基路伯" class="headerlink" title="二等：Cherubim-基路伯"></a>二等：Cherubim-基路伯</h3><blockquote>
+<p>于是把他赶出去了；又在伊甸园的东边安设基路伯和四面转动发火焰的剑，要把守生命树的道路。——《创世纪》3:24</p>
+<p>这四个基路伯天使的全身，包括他们的手、背、翅膀和轮子都布满了眼睛。——《以西结书》10:12</p>
+<p>每一个基路伯天使都有四张脸：第一张是基路伯天使的脸，第二张是人的脸，第三张是狮子的脸，第四张是鹰的脸。——《以西结书》10:14</p>
+</blockquote>
+<p>Cherubim在希伯来文中意味着“充满着智慧”，所以也会被翻译为智天使。在《以西结书》中，基路伯更像是驾驶员，在《创世纪》中，则更像是看守。</p>
+<p>此外，基路伯也用于装饰约柜上的施恩座：</p>
+<blockquote>
+<p>要用金子锤出两个基路伯来，安在施恩座的两头。——《出埃及记》25:18</p>
+</blockquote>
+<h3 id="三等：Ophanim-座天使"><a href="#三等：Ophanim-座天使" class="headerlink" title="三等：Ophanim-座天使"></a>三等：Ophanim-座天使</h3><blockquote>
+<p>轮的形状和颜色（原文是作法）好像水苍玉。四轮都是一个样式，形状和作法好像轮中套轮。</p>
+<p>轮行走的时候，向四方都能直行，并不掉转。</p>
+<p>至于轮辋，高而可畏；四个轮辋周围满有眼睛。</p>
+<p>——《以西结书》1:16~18</p>
+</blockquote>
+<p>轮中套轮的形象，轮子上面还有眼睛。</p>
+<p>在《以西结书》中，这些天使像是被基路伯们操纵着的：</p>
+<blockquote>
+<p>基路伯天使移动，轮子也随之移动；基路伯天使展翅飞离地面，轮子也随之离开地面</p>
+<p>基路伯天使停住，轮子也随之停住；基路伯天使上升，轮子也随之上升。因为活物的灵在轮子中。</p>
+<p>——《以西结书》10:16～17</p>
+</blockquote>
+<h2 id="第二级"><a href="#第二级" class="headerlink" title="第二级"></a>第二级</h2><p>这一级的天使都有“保护”的职责，即保护天国免受恶魔入侵。</p>
+<h3 id="四等：Dominions-主天使"><a href="#四等：Dominions-主天使" class="headerlink" title="四等：Dominions-主天使"></a>四等：Dominions-主天使</h3><p>他们的工作是将命令传递给下等的天使。</p>
+<h3 id="五等：Virtues-力天使"><a href="#五等：Virtues-力天使" class="headerlink" title="五等：Virtues-力天使"></a>五等：Virtues-力天使</h3><p>他们的工作是掌管四季的变化，是神迹的执行者。</p>
+<h3 id="六等：Powers-能天使"><a href="#六等：Powers-能天使" class="headerlink" title="六等：Powers-能天使"></a>六等：Powers-能天使</h3><p>有的时候也被称为“毁灭天使”，象征着他们的职责是同恶魔做斗争，也执行对人类的审判。甚至耶和华有时也认为他们的毁灭力量过于强大：</p>
+<blockquote>
+<p>于是耶和华降瘟疫在以色列地，从早晨直到所定的时间；从但到别是巴，众民中死了七万人。</p>
+<p>当天使向耶路撒冷伸手，要毁灭耶路撒冷的时候，耶和华就后悔降这灾祸，就对那毁灭众民的天使说：“够了，现在住手吧！”那时，耶和华的天使在耶布斯人亚劳拿的打禾场那里。</p>
+<p>——《撒母耳记下》24:15~16</p>
+</blockquote>
+<p>此外，也有这样的描述：</p>
+<blockquote>
+<p>当夜，耶和华的使者出去，在亚述营中杀了十八万五千人。清早有人起来，一看，都是死尸了。——《列王纪下》19:35</p>
+<p>马口中喷出的这三样灾害杀死了世上三分之一的人口。——《启示录》9:18</p>
+</blockquote>
+<p>超高战力。</p>
+<h2 id="第三级"><a href="#第三级" class="headerlink" title="第三级"></a>第三级</h2><p>这一等级的天使和人类的接触更多一些。</p>
+<h3 id="七等：Principalities-权天使"><a href="#七等：Principalities-权天使" class="headerlink" title="七等：Principalities-权天使"></a>七等：Principalities-权天使</h3><p>他们的职责是保护国家、属地，也掌管领导人的更替等等。</p>
+<h3 id="八等：Archangel-大天使"><a href="#八等：Archangel-大天使" class="headerlink" title="八等：Archangel-大天使"></a>八等：Archangel-大天使</h3><p>也称作天使长。圣经中明确提到的天使长只有米迦勒(Michael)。在希伯来文中，米迦勒可以翻译为“谁和神同等？”</p>
+<p>有趣的是，米迦勒和撒旦有过一次交锋：</p>
+<blockquote>
+<p>就是天使长米迦勒为了摩西的尸体与魔鬼争论的时候，尚且不敢用毁谤的话定他的罪，只说：“主责备你！”。——《犹大书》1:9</p>
+</blockquote>
+<p>撒旦是一个堕落天使——属于基路伯等级。</p>
+<h3 id="九等：Angel-天使"><a href="#九等：Angel-天使" class="headerlink" title="九等：Angel-天使"></a>九等：Angel-天使</h3><p>可以理解为守护天使，圣经中似乎认为，只有虔诚的信徒会有守护天使。然而，来自天使的保护并不会经常出现。似乎有一段时间，对圣经的解释从耶和华上挪移到了天使上，出现了短暂的天使崇拜。然而这忽视了基督教的一个预设：天使是耶和华的使者，他们不会违抗耶和华的命令来擅自帮助人类。</p>
+<p>甚至圣子本人——耶稣，也最终被钉在十字架上。天使是否保护人类，在基督教看来，要遵循耶和华的旨意。</p>
+<h1 id="七位？大天使"><a href="#七位？大天使" class="headerlink" title="七位？大天使"></a>七位？大天使</h1><h2 id="圣经的观点"><a href="#圣经的观点" class="headerlink" title="圣经的观点"></a>圣经的观点</h2><p>上面提到了。</p>
+<h2 id="《以诺书》的观点"><a href="#《以诺书》的观点" class="headerlink" title="《以诺书》的观点"></a>《以诺书》的观点</h2><p>在《以诺书》——这一本书常被视为伪经——的第二十章提到了：</p>
+<blockquote>
+<ol>
+<li>聖潔的天使警醒守望，他們的名字記在下面</li>
+<li>烏利爾(Uriel)是個聖潔的天使，他屬於永恆和戰慄。</li>
+<li>拉斐爾是個聖潔的天使， 他有人的霝。</li>
+<li>拉古爾(Raguel) 是個聖潔的天使，他替世界和光體復仇。</li>
+<li>米迦勒是個聖潔的天使，他順服亞呼威的旨意，對世人和國家施慈愛。</li>
+<li>沙拉卡爾(Saraqa’el) 是個聖潔的天使，他受託管理罪人的心霝。</li>
+<li>加百列是個聖潔的天使，他管理伊甸園、蛇和基路伯。</li>
+</ol>
+</blockquote>
+<h2 id="《多俾亚传》的观点"><a href="#《多俾亚传》的观点" class="headerlink" title="《多俾亚传》的观点"></a>《多俾亚传》的观点</h2><p>这本书也被有些教派认为是伪经：</p>
+<blockquote>
+<p>多俾亚便出去寻找一个能与他同去玛待，并且熟识路途的人。他一出门，遇见辣法耳天使站在他面前；但是他不知道他是天主的使者。——《多俾亚传》5:4</p>
+</blockquote>
+<h2 id="仪式学的观点"><a href="#仪式学的观点" class="headerlink" title="仪式学的观点"></a>仪式学的观点</h2><p>在实际的仪式魔法操作中，比如小五芒星驱逐LBRP，常常只会用到四个、相对认可度比较大的天使：Michael、Raphael、Gabriel和Uriel。</p>
 
       </div>
       
         <div class="prev-or-next">
           <div class="post-foot-next">
             
-              <a href="/2024/01/18/%E3%80%90%E7%A5%9E%E7%A7%98%E5%AD%A6%E3%80%91%E5%A1%94%E7%BD%97%E5%9F%BA%E7%A1%80/" target="_self">
+              <a href="/2024/01/24/%E7%94%A8Linux%E7%BB%88%E7%AB%AF%E6%92%AD%E6%94%BEBad-Apple/" target="_self">
                 <i class="iconfont icon-chevronleft"></i>
                 <span>上一页</span>
               </a>
@@ -219,15 +263,15 @@
           <div class="post-attach">
             <span class="post-pubtime">
               <i class="iconfont icon-updatetime mr-10" title="更新时间"></i>
-              2024-01-24 11:28:44
+              2024-01-25 10:52:41
             </span>
             
                   <span class="post-tags">
                     <i class="iconfont icon-tags mr-10" title="标签"></i>
                     
                     <span class="span--tag mr-8">
-                      <a href="/tags/C/" title="C">
-                        #C
+                      <a href="/tags/%E7%A5%9E%E7%A7%98%E5%AD%A6/" title="神秘学">
+                        #神秘学
                       </a>
                     </span>
                     
@@ -236,7 +280,7 @@
           </div>
           <div class="post-foot-prev">
             
-              <a href="/2024/01/25/%E3%80%90%E7%A5%9E%E7%A7%98%E5%AD%A6%E3%80%91%E5%A4%A9%E4%BD%BF%E5%AD%A6%E7%AC%94%E8%AE%B0/" target="_self">
+              <a href="/2024/01/25/%E3%80%90%E7%A5%9E%E7%A7%98%E5%AD%A6%E3%80%91%E6%81%B6%E9%AD%94%E5%AD%A6%E7%AC%94%E8%AE%B0/" target="_self">
                 <span>下一页</span>
                 <i class="iconfont icon-chevronright"></i>
               </a>
@@ -253,7 +297,7 @@
     <div class="title">目录</div>
     <div class="catalog-content">
       
-        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%BC%95%E5%AD%90"><span class="toc-text">引子</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E9%A2%84%E5%A4%84%E7%90%86"><span class="toc-text">预处理</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%9B%BE%E7%89%87%E7%9A%84%E5%8A%A0%E8%BD%BD"><span class="toc-text">图片的加载</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8D%95%E4%B8%AA%E5%9B%BE%E7%89%87%E7%9A%84%E5%8A%A0%E8%BD%BD"><span class="toc-text">单个图片的加载</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%A4%9A%E4%B8%AA%E5%9B%BE%E7%89%87%E7%9A%84%E5%8A%A0%E8%BD%BD"><span class="toc-text">多个图片的加载</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E8%BE%93%E5%87%BA"><span class="toc-text">输出</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%BC%95%E5%AD%90"><span class="toc-text">引子</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%A4%A9%E4%BD%BF%E7%9A%84%E4%B8%89%E7%BA%A7%E4%B9%9D%E7%AD%89%E5%88%86%E7%B1%BB%E6%B3%95"><span class="toc-text">天使的三级九等分类法</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%AC%E4%B8%80%E7%BA%A7"><span class="toc-text">第一级</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%80%E7%AD%89%EF%BC%9ASeraphim-%E5%85%AD%E7%BF%BC%E5%A4%A9%E4%BD%BF"><span class="toc-text">一等：Seraphim-六翼天使</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BA%8C%E7%AD%89%EF%BC%9ACherubim-%E5%9F%BA%E8%B7%AF%E4%BC%AF"><span class="toc-text">二等：Cherubim-基路伯</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%89%E7%AD%89%EF%BC%9AOphanim-%E5%BA%A7%E5%A4%A9%E4%BD%BF"><span class="toc-text">三等：Ophanim-座天使</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%AC%E4%BA%8C%E7%BA%A7"><span class="toc-text">第二级</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9B%9B%E7%AD%89%EF%BC%9ADominions-%E4%B8%BB%E5%A4%A9%E4%BD%BF"><span class="toc-text">四等：Dominions-主天使</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BA%94%E7%AD%89%EF%BC%9AVirtues-%E5%8A%9B%E5%A4%A9%E4%BD%BF"><span class="toc-text">五等：Virtues-力天使</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%85%AD%E7%AD%89%EF%BC%9APowers-%E8%83%BD%E5%A4%A9%E4%BD%BF"><span class="toc-text">六等：Powers-能天使</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%AC%E4%B8%89%E7%BA%A7"><span class="toc-text">第三级</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%83%E7%AD%89%EF%BC%9APrincipalities-%E6%9D%83%E5%A4%A9%E4%BD%BF"><span class="toc-text">七等：Principalities-权天使</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%85%AB%E7%AD%89%EF%BC%9AArchangel-%E5%A4%A7%E5%A4%A9%E4%BD%BF"><span class="toc-text">八等：Archangel-大天使</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B9%9D%E7%AD%89%EF%BC%9AAngel-%E5%A4%A9%E4%BD%BF"><span class="toc-text">九等：Angel-天使</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%83%E4%BD%8D%EF%BC%9F%E5%A4%A7%E5%A4%A9%E4%BD%BF"><span class="toc-text">七位？大天使</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9C%A3%E7%BB%8F%E7%9A%84%E8%A7%82%E7%82%B9"><span class="toc-text">圣经的观点</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E3%80%8A%E4%BB%A5%E8%AF%BA%E4%B9%A6%E3%80%8B%E7%9A%84%E8%A7%82%E7%82%B9"><span class="toc-text">《以诺书》的观点</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E3%80%8A%E5%A4%9A%E4%BF%BE%E4%BA%9A%E4%BC%A0%E3%80%8B%E7%9A%84%E8%A7%82%E7%82%B9"><span class="toc-text">《多俾亚传》的观点</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BB%AA%E5%BC%8F%E5%AD%A6%E7%9A%84%E8%A7%82%E7%82%B9"><span class="toc-text">仪式学的观点</span></a></li></ol></li></ol>
       
     </div>
   </div>
@@ -564,7 +608,7 @@
       </a>
       <div class="share-content hidden">
         
-          <a class="share-item" href="https://twitter.com/intent/tweet?text=' + %E7%94%A8Linux%E7%BB%88%E7%AB%AF%E6%92%AD%E6%94%BEBad%20Apple + '&url=' + https%3A%2F%2Fcoder109.github.io%2F2024%2F01%2F24%2F%25E7%2594%25A8Linux%25E7%25BB%2588%25E7%25AB%25AF%25E6%2592%25AD%25E6%2594%25BEBad-Apple%2F + '" target="_blank" title="Twitter">
+          <a class="share-item" href="https://twitter.com/intent/tweet?text=' + %E3%80%90%E7%A5%9E%E7%A7%98%E5%AD%A6%E3%80%91%E5%A4%A9%E4%BD%BF%E5%AD%A6%E7%AC%94%E8%AE%B0 + '&url=' + https%3A%2F%2Fcoder109.github.io%2F2024%2F01%2F25%2F%25E3%2580%2590%25E7%25A5%259E%25E7%25A7%2598%25E5%25AD%25A6%25E3%2580%2591%25E5%25A4%25A9%25E4%25BD%25BF%25E5%25AD%25A6%25E7%25AC%2594%25E8%25AE%25B0%2F + '" target="_blank" title="Twitter">
             <i class="iconfont icon-twitter"></i>
           </a>
         

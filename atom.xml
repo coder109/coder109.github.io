@@ -6,7 +6,7 @@
   <link href="https://coder109.github.io/atom.xml" rel="self"/>
   
   <link href="https://coder109.github.io/"/>
-  <updated>2024-01-24T03:44:13.426Z</updated>
+  <updated>2024-01-29T06:33:53.680Z</updated>
   <id>https://coder109.github.io/</id>
   
   <author>
@@ -15,6 +15,52 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>【神秘学】恶魔学笔记</title>
+    <link href="https://coder109.github.io/2024/01/25/%E3%80%90%E7%A5%9E%E7%A7%98%E5%AD%A6%E3%80%91%E6%81%B6%E9%AD%94%E5%AD%A6%E7%AC%94%E8%AE%B0/"/>
+    <id>https://coder109.github.io/2024/01/25/%E3%80%90%E7%A5%9E%E7%A7%98%E5%AD%A6%E3%80%91%E6%81%B6%E9%AD%94%E5%AD%A6%E7%AC%94%E8%AE%B0/</id>
+    <published>2024-01-25T02:53:43.000Z</published>
+    <updated>2024-01-29T06:33:53.680Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;引子&quot;&gt;&lt;a href=&quot;#引子&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    
+    <category term="神秘学" scheme="https://coder109.github.io/tags/%E7%A5%9E%E7%A7%98%E5%AD%A6/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>【神秘学】天使学笔记</title>
+    <link href="https://coder109.github.io/2024/01/25/%E3%80%90%E7%A5%9E%E7%A7%98%E5%AD%A6%E3%80%91%E5%A4%A9%E4%BD%BF%E5%AD%A6%E7%AC%94%E8%AE%B0/"/>
+    <id>https://coder109.github.io/2024/01/25/%E3%80%90%E7%A5%9E%E7%A7%98%E5%AD%A6%E3%80%91%E5%A4%A9%E4%BD%BF%E5%AD%A6%E7%AC%94%E8%AE%B0/</id>
+    <published>2024-01-25T02:52:41.000Z</published>
+    <updated>2024-01-28T05:58:58.698Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;引子&quot;&gt;&lt;a href=&quot;#引子&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    
+    <category term="神秘学" scheme="https://coder109.github.io/tags/%E7%A5%9E%E7%A7%98%E5%AD%A6/"/>
+    
+  </entry>
   
   <entry>
     <title>用Linux终端播放Bad Apple</title>
@@ -459,59 +505,6 @@
     <category term="AI" scheme="https://coder109.github.io/tags/AI/"/>
     
     <category term="论文" scheme="https://coder109.github.io/tags/%E8%AE%BA%E6%96%87/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Thanatos</title>
-    <link href="https://coder109.github.io/2023/09/21/Thanatos/"/>
-    <id>https://coder109.github.io/2023/09/21/Thanatos/</id>
-    <published>2023-09-21T12:08:04.000Z</published>
-    <updated>2023-09-21T13:30:26.970Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;p&gt;我丢弃了二十年的年华，&lt;/p&gt;
-&lt;p&gt;在课本上画黑白的花，&lt;/p&gt;
-&lt;p&gt;在铃声中下沉，&lt;/p&gt;
-&lt;p&gt;在脸上刻满血红的涂鸦。&lt;/p&gt;
-&lt;p&gt;&lt;br&gt;他踩在我的脑袋上，&lt;/p&gt;
-&lt;p&gt;我的脚踩住他的脸，&lt;/p&gt;
-&lt;p&gt;可我们笑容满面，&lt;/p&gt;
-&lt;p&gt;鲜血与自由换来无上的荣光</summary>
-        
-      
-    
-    
-    
-    
-    <category term="意识流" scheme="https://coder109.github.io/tags/%E6%84%8F%E8%AF%86%E6%B5%81/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>【AI】线性SVM的推导</title>
-    <link href="https://coder109.github.io/2023/09/18/%E3%80%90AI%E3%80%91SVM%E7%9A%84%E6%8E%A8%E5%AF%BC/"/>
-    <id>https://coder109.github.io/2023/09/18/%E3%80%90AI%E3%80%91SVM%E7%9A%84%E6%8E%A8%E5%AF%BC/</id>
-    <published>2023-09-18T08:09:17.000Z</published>
-    <updated>2024-01-20T06:49:08.250Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h1 id=&quot;引子&quot;&gt;&lt;a href=&quot;#引子&quot; class=&quot;headerlink&quot;</summary>
-        
-      
-    
-    
-    
-    
-    <category term="AI" scheme="https://coder109.github.io/tags/AI/"/>
     
   </entry>
   
