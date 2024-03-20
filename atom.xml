@@ -6,7 +6,7 @@
   <link href="https://coder109.github.io/atom.xml" rel="self"/>
   
   <link href="https://coder109.github.io/"/>
-  <updated>2024-01-29T06:33:53.680Z</updated>
+  <updated>2024-03-20T05:43:29.638Z</updated>
   <id>https://coder109.github.io/</id>
   
   <author>
@@ -15,6 +15,30 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Pater Noster</title>
+    <link href="https://coder109.github.io/2024/03/20/Pater-Noster/"/>
+    <id>https://coder109.github.io/2024/03/20/Pater-Noster/</id>
+    <published>2024-03-20T02:34:38.000Z</published>
+    <updated>2024-03-20T05:43:29.638Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;将近两个月没有更新了。我一直不知道写些什么比较好。我觉得我的生活没有什么可以讲述给别人听的，所经历的事都再平常不过了。&lt;/p&gt;
+&lt;h2 id=&quot;Jesus-Christ&quot;&gt;&lt;a href=&quot;#Jesus-Christ&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    
+    <category term="意识流" scheme="https://coder109.github.io/tags/%E6%84%8F%E8%AF%86%E6%B5%81/"/>
+    
+  </entry>
   
   <entry>
     <title>【神秘学】恶魔学笔记</title>
@@ -480,31 +504,6 @@
     
     
     <category term="算法" scheme="https://coder109.github.io/tags/%E7%AE%97%E6%B3%95/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>【论文总结】知识图谱增强大模型的几种方法</title>
-    <link href="https://coder109.github.io/2023/10/02/%E3%80%90%E8%AE%BA%E6%96%87%E6%80%BB%E7%BB%93%E3%80%91%E5%A4%A7%E6%A8%A1%E5%9E%8B%E5%92%8C%E7%9F%A5%E8%AF%86%E5%9B%BE%E8%B0%B1%E7%9A%84%E5%8D%8F%E5%90%8C/"/>
-    <id>https://coder109.github.io/2023/10/02/%E3%80%90%E8%AE%BA%E6%96%87%E6%80%BB%E7%BB%93%E3%80%91%E5%A4%A7%E6%A8%A1%E5%9E%8B%E5%92%8C%E7%9F%A5%E8%AF%86%E5%9B%BE%E8%B0%B1%E7%9A%84%E5%8D%8F%E5%90%8C/</id>
-    <published>2023-10-02T12:28:18.000Z</published>
-    <updated>2023-10-05T04:51:04.259Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h1 id=&quot;引子&quot;&gt;&lt;a href=&quot;#引子&quot; class=&quot;headerlink&quot;</summary>
-        
-      
-    
-    
-    
-    
-    <category term="AI" scheme="https://coder109.github.io/tags/AI/"/>
-    
-    <category term="论文" scheme="https://coder109.github.io/tags/%E8%AE%BA%E6%96%87/"/>
     
   </entry>
   
