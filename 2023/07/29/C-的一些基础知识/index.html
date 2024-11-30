@@ -1,0 +1,731 @@
+<!DOCTYPE html>
+<html lang="zh-CN" color-mode="light">
+
+  <head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="keywords" content="" />
+  <meta name="author" content="Coder109" />
+  <meta name="description" content="" />
+  
+  
+  <title>
+    
+      C++的一些基础知识 
+      
+      
+      |
+    
+     幻
+  </title>
+
+  
+    <link rel="apple-touch-icon" href="/images/favicon.ico">
+    <link rel="icon" href="/images/favicon.ico">
+  
+
+  <!-- Raleway-Font -->
+  <link href="https://fonts.googleapis.com/css?family=Raleway&display=swap" rel="stylesheet">
+
+  <!-- hexo site css -->
+  <link rel="stylesheet" href="/css/main.css" />
+  <link rel="stylesheet" href="//at.alicdn.com/t/font_1886449_67xjft27j1l.css" />
+  <!-- 代码块风格 -->
+  
+
+  <!-- jquery3.3.1 -->
+  
+    <script defer type="text/javascript" src="/plugins/jquery.min.js"></script>
+  
+
+  <!-- fancybox -->
+  
+    <link href="/plugins/jquery.fancybox.min.css" rel="stylesheet">
+    <script defer type="text/javascript" src="/plugins/jquery.fancybox.min.js"></script>
+  
+  
+<script src="/js/fancybox.js"></script>
+
+
+  
+
+  
+
+  <script>
+    var html = document.documentElement
+    const colorMode = localStorage.getItem('color-mode')
+    if (colorMode) {
+      document.documentElement.setAttribute('color-mode', colorMode)
+    }
+  </script>
+<meta name="generator" content="Hexo 6.3.0"><link rel="alternate" href="/atom.xml" title="幻" type="application/atom+xml">
+</head>
+
+
+  <body>
+    <div id="app">
+      <div class="header">
+  <div class="avatar">
+    <a href="/">
+      <!-- 头像取消懒加载，添加no-lazy -->
+      
+        <img no-lazy src="/images/favicon.ico" alt="">
+      
+    </a>
+    <div class="nickname"><a href="/">幻</a></div>
+  </div>
+  <div class="navbar">
+    <ul>
+      
+        <li class="nav-item" data-path="/">
+          <a href="/">Home</a>
+        </li>
+      
+        <li class="nav-item" data-path="/archives/">
+          <a href="/archives/">Archives</a>
+        </li>
+      
+        <li class="nav-item" data-path="/tags/">
+          <a href="/tags/">Tags</a>
+        </li>
+      
+        <li class="nav-item" data-path="/friends/">
+          <a href="/friends/">Friends</a>
+        </li>
+      
+        <li class="nav-item" data-path="/about/">
+          <a href="/about/">About</a>
+        </li>
+      
+    </ul>
+  </div>
+</div>
+
+
+<script src="/js/activeNav.js"></script>
+
+
+
+      <div class="flex-container">
+        <!-- 文章详情页，展示文章具体内容，url形式：https://yoursite/文章标题/ -->
+<!-- 同时为「标签tag」，「朋友friend」，「分类categories」，「关于about」页面的承载页面，具体展示取决于page.type -->
+
+
+  <!-- LaTex Display -->
+
+  
+    <script async type="text/javascript" src="/plugins/mathjax/tex-chtml.js"></script>
+  
+  <script>
+    MathJax = {
+      tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']]
+      }
+    }
+  </script>
+
+
+
+
+
+  <!-- clipboard -->
+
+  
+    <script async type="text/javascript" src="/plugins/clipboard.min.js"></script>
+  
+  
+<script src="/js/codeCopy.js"></script>
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  <!-- 文章内容页 url形式：https://yoursite/文章标题/ -->
+  <div class="container post-details" id="post-details">
+    <div class="post-content">
+      <div class="post-title">C++的一些基础知识</div>
+      <div class="post-attach">
+        <span class="post-pubtime">
+          <i class="iconfont icon-updatetime mr-10" title="更新时间"></i>
+          2023-07-29 20:48:53
+        </span>
+        
+              <span class="post-tags">
+                <i class="iconfont icon-tags mr-10" title="标签"></i>
+                
+                <span class="span--tag mr-8">
+                  <a href="/tags/C/" title="C++">
+                    #C++
+                  </a>
+                </span>
+                
+              </span>
+          
+      </div>
+      <div class="markdown-body">
+        <h1 id="1-引用和指针的区别"><a href="#1-引用和指针的区别" class="headerlink" title="1. 引用和指针的区别"></a>1. 引用和指针的区别</h1><h2 id="定义上的差别"><a href="#定义上的差别" class="headerlink" title="定义上的差别"></a>定义上的差别</h2><p>定义上来说，指针本身代表的不是变量，而是变量的地址；引用是一个变量的别名，所代表的仍是变量本身。也容易推得，指针和引用的数据类型也不同。</p>
+<h2 id="是否可空的差别"><a href="#是否可空的差别" class="headerlink" title="是否可空的差别"></a>是否可空的差别</h2><p>指针可以为空，而引用则不行，创建引用的时候必须将其初始化。</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> *a; <span class="comment">// OK</span></span><br><span class="line"><span class="type">int</span> *b = <span class="literal">nullptr</span>; <span class="comment">// OK</span></span><br><span class="line"><span class="type">int</span> c = <span class="number">4</span>;</span><br><span class="line"><span class="type">int</span> &amp;d = c; <span class="comment">// OK</span></span><br><span class="line"><span class="type">int</span> &amp;e; <span class="comment">// Error: Declaration of reference variable &#x27;e&#x27; requires an initializer (lsp)</span></span><br></pre></td></tr></table></figure>
+
+<p>在考虑传递引用还是指针给函数时，这是很重要的一个考虑点。</p>
+<h2 id="是否可以改变所指对象的差别"><a href="#是否可以改变所指对象的差别" class="headerlink" title="是否可以改变所指对象的差别"></a>是否可以改变所指对象的差别</h2><p>对于指针来说，可以随意改变其所指对象：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> a = <span class="number">1</span>;</span><br><span class="line"><span class="type">int</span> b = <span class="number">2</span>;</span><br><span class="line"><span class="type">int</span> *c = &amp;a;</span><br><span class="line">cout &lt;&lt; *c &lt;&lt; endl; <span class="comment">// 1</span></span><br><span class="line">c = &amp;b;</span><br><span class="line">cout &lt;&lt; *c &lt;&lt; endl; <span class="comment">// 2</span></span><br></pre></td></tr></table></figure>
+
+<p>对于引用来说，修改引用的值，会将引用所指向的值修改掉，而引用仍指向原来的变量。</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> a = <span class="number">1</span>;</span><br><span class="line"><span class="type">int</span> &amp;b = a;</span><br><span class="line">cout &lt;&lt; b &lt;&lt; endl; <span class="comment">// 1</span></span><br><span class="line">cout &lt;&lt; &amp;b &lt;&lt; endl; <span class="comment">// 0x7ffde8411808</span></span><br><span class="line">b = <span class="number">4</span>;</span><br><span class="line">cout &lt;&lt; b &lt;&lt; endl; <span class="comment">// 4</span></span><br><span class="line">cout &lt;&lt; a &lt;&lt; endl; <span class="comment">// 4</span></span><br><span class="line">cout &lt;&lt; &amp;b &lt;&lt; endl; <span class="comment">// 0x7ffde8411808</span></span><br></pre></td></tr></table></figure>
+
+<h1 id="2-值类型-Value-categories"><a href="#2-值类型-Value-categories" class="headerlink" title="2. 值类型(Value categories)"></a>2. 值类型(Value categories)</h1><p>参考：</p>
+<ol>
+<li><a target="_blank" rel="noopener" href="https://en.cppreference.com/w/cpp/language/value_category">https://en.cppreference.com/w/cpp/language/value_category</a></li>
+<li><a target="_blank" rel="noopener" href="http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2010/n3055.pdf">http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2010/n3055.pdf</a></li>
+<li><a target="_blank" rel="noopener" href="https://stackoverflow.com/questions/6107914/how-to-test-whether-expression-is-a-temporary/6114546#6114546">https://stackoverflow.com/questions/6107914/how-to-test-whether-expression-is-a-temporary/6114546#6114546</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.zhihu.com/question/46599246/answer/102830868">https://www.zhihu.com/question/46599246/answer/102830868</a></li>
+</ol>
+<h2 id="lvalue-左值"><a href="#lvalue-左值" class="headerlink" title="lvalue-左值"></a>lvalue-左值</h2><p>左值（历史上如此称呼，因为左值可以出现在赋值表达式的左侧）指定一个函数或一个对象。可以理解为，在汇编语句中，具有实际存储地址的值。</p>
+<h2 id="xvalue-将亡值"><a href="#xvalue-将亡值" class="headerlink" title="xvalue-将亡值"></a>xvalue-将亡值</h2><p>将亡值也指对象，通常接近其生命周期结束（例如，以便可以move其资源）。xvalue是涉及右值引用的某些类型表达式的结果。</p>
+<h2 id="glvalue-广义左值"><a href="#glvalue-广义左值" class="headerlink" title="glvalue-广义左值"></a>glvalue-广义左值</h2><p>广义左值就是左值和将亡值。</p>
+<h2 id="rvalue-右值"><a href="#rvalue-右值" class="headerlink" title="rvalue-右值"></a>rvalue-右值</h2><p>右值（历史上所谓的右值，因为右值可能出现在赋值表达式的右侧）是xvalue、临时对象或其子对象，或者不与对象关联的值。可以理解为，在汇编语句中，使用寄存器保存的值和立即数。</p>
+<h2 id="prvalue-纯右值"><a href="#prvalue-纯右值" class="headerlink" title="prvalue-纯右值"></a>prvalue-纯右值</h2><p>不是xvalue的右值。</p>
+<h2 id="测试一下！"><a href="#测试一下！" class="headerlink" title="测试一下！"></a>测试一下！</h2><p>有如下宏定义，可以表示一个变量的类型；又编写了一些函数，定义一些变量，用于测试：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">define</span> IS_LVALUE(...) std::is_lvalue_reference<span class="string">&lt;decltype((__VA_ARGS__))&gt;</span>::value</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> IS_XVALUE(...) std::is_rvalue_reference<span class="string">&lt;decltype((__VA_ARGS__))&gt;</span>::value</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> IS_PRVALUE(...) !std::is_reference<span class="string">&lt;decltype((__VA_ARGS__))&gt;</span>::value</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">TestFunction</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="type">int</span> a = <span class="number">-1</span>;</span><br><span class="line">    <span class="keyword">return</span> a;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span>&amp; <span class="title">TestFunctionRef</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="type">int</span> a = <span class="number">3</span>;</span><br><span class="line">    <span class="keyword">return</span> &amp;a;</span><br><span class="line">&#125;</span><br><span class="line"><span class="type">int</span> a = <span class="number">3</span>;</span><br><span class="line"><span class="type">int</span> *b = &amp;a;</span><br></pre></td></tr></table></figure>
+
+<p>做出如下测试，结果如下：</p>
+<ol>
+<li>变量<code>a</code>是左值，因为其表示一个对象。</li>
+<li><code>TestFunction</code>是左值，因为其是一个函数。</li>
+<li>字符串是左值，因为在编译阶段，其存放在内存的常量空间里，详见:<a href="https://coder109.github.io/2023/05/23/Linux%E4%B8%8BHello-World%E6%98%AF%E5%A6%82%E4%BD%95%E8%BE%93%E5%87%BA%E7%9A%84/#%E8%A7%A3%E9%87%8A-1">Linux下Hello World是如何输出的</a>。</li>
+<li>对变量<code>a</code>取地址是右值，对<code>b</code>取值是左值。</li>
+<li><code>TestFunction()</code>是纯右值，因为函数返回值存储在对应的寄存器中，是一个临时的值。</li>
+<li><code>this</code>是一个纯右值。</li>
+</ol>
+<h2 id="有什么用？"><a href="#有什么用？" class="headerlink" title="有什么用？"></a>有什么用？</h2><p>对于<code>std::move()</code>等方法来说，需要明确区分这几个值的类型。</p>
+<p>详见<a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/402251966">https://zhuanlan.zhihu.com/p/402251966</a>。</p>
+<h1 id="3-STL相关"><a href="#3-STL相关" class="headerlink" title="3. STL相关"></a>3. STL相关</h1><blockquote>
+<p>Algorithms + Data Structures &#x3D; Programs </p>
+<p>——Niklaus Wirth</p>
+</blockquote>
+<p>所有源代码都在64位Arch Linux下查看，所使用的g++版本为13.1.1。</p>
+<p>如果感兴趣，可以查看:<a target="_blank" rel="noopener" href="https://love-la.in/1e7Ug5">https://love-la.in/1e7Ug5</a>。</p>
+<h2 id="基本知识"><a href="#基本知识" class="headerlink" title="基本知识"></a>基本知识</h2><p>STL无非就那几个容器。STL的关键部分为分配器(allocator)，算法(algorithm)，适配器(adapter)，容器(containers)，迭代器(iterator)和仿函数(functor)组成。</p>
+<p>容器是一种数据结构。使用的时候需要先通过分配器在内存中为对应的容器分配空间，接着通过能够访问容器中元素的迭代器将算法应用到容器上。</p>
+<p>适配器允许我们将本无法应用到容器上的算法，改变一下，使之能够应用到容器上，而仿函数则是一个类，内部重载了<code>()</code>运算符，其使我们能够拥有更多对容器的操纵方式，比如说:</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;vector&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;functional&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std::placeholders;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">(<span class="type">int</span> argc, <span class="type">char</span> **argv)</span> </span>&#123;</span><br><span class="line">  vector&lt;<span class="type">int</span>&gt; my_list;</span><br><span class="line">  <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">10</span>; i &gt;= <span class="number">0</span>; i--) &#123;</span><br><span class="line">    my_list.<span class="built_in">push_back</span>(i);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">auto</span> target_index_iter = <span class="built_in">find_if</span>(my_list.<span class="built_in">begin</span>(), my_list.<span class="built_in">end</span>(), <span class="built_in">bind</span>(<span class="built_in">greater</span>&lt;<span class="type">int</span>&gt;(), _1, <span class="number">9</span>));</span><br><span class="line">  cout &lt;&lt; *target_index_iter &lt;&lt; endl;</span><br><span class="line">  <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>这段代码实现了寻找vector中大于9的元素的功能。</p>
+<p><code>find_if</code>的第三个参数需要一个一元谓词，类似于一个接收一个变量的函数指针，单独编写一个判断是否大于9的函数有些麻烦，我们可以通过适配器+仿函数来简单地达成这个目的。代码中的<code>bind()</code>是一个适配器，允许我们简单的通过二元仿函数<code>greater()</code>来对容器进行操作。我们提前将9绑定为<code>greater()</code>函数的第二个参数，这样<code>bind()</code>返回了一元谓词，符合参数规范要求。</p>
+<h2 id="list"><a href="#list" class="headerlink" title="list"></a>list</h2><p><code>list</code>本身是一个<strong>双向环形链表</strong>，详情参考<code>&lt;bits/stl_list.h&gt;</code>。显然，不支持随机访问。</p>
+<h2 id="forward-list"><a href="#forward-list" class="headerlink" title="forward_list"></a>forward_list</h2><p><code>forward_list</code>是个<strong>线性单向链表</strong>。显然，不支持随机访问。</p>
+<h2 id="vector"><a href="#vector" class="headerlink" title="vector"></a>vector</h2><p><code>vector</code>是一个<strong>可变长的数组</strong>，更具体的来讲，是一个扩张因子为2的<strong>动态表</strong>。这个数据结构在《算法导论》中有提及，作为平摊分析的一个例子来讲解。</p>
+<p>什么是扩张因子为2的动态表？具体来说，您不断地向<code>vector</code>当中插入元素，一旦满了，就在内存中申请<strong>新的</strong>两倍于原先大小的空间。这会造成一定的开销。</p>
+<p>然而，<code>sizeof(vector)</code>的大小并非可变值，而是3个指针的长度，因为其底层定义里，<code>vector</code>类的成员只包含三个指针——<code>begin</code>,<code>end</code>和<code>end_of_storage</code>。</p>
+<p>显然，支持随机访问。</p>
+<h2 id="array"><a href="#array" class="headerlink" title="array"></a>array</h2><p><code>array</code>是一个<strong>定长数组</strong>。支持随机访问。</p>
+<h2 id="deque"><a href="#deque" class="headerlink" title="deque"></a>deque</h2><p>全称为double-ended queue。由一个<code>map</code>和多个<code>vector</code>组成。注意这里的<code>map</code>不是STL的<code>map</code>，更像是<code>vector</code>。<code>deque</code>可以理解为双头队列，也可以近似理解为是一个<code>vector&lt;vector&gt;</code>。</p>
+<p>如果查看源代码，会发现，一个<code>deque</code>类包含四个成员，一个<code>map</code>，一个<code>map_size</code>，和两个迭代器<code>start</code>、<code>finish</code>。<code>map</code>里的每一个单元都指向一个<code>vector</code>，头插的时候，就在单元所对应的第一个有数据的<code>vector</code>的头部插入，尾插就在最后一个有数据的<code>vector</code>的尾部插入。</p>
+<p><code>deque</code>里的迭代器是一个类，有四个部分，<code>first</code>，<code>last</code>，<code>cur</code>和<code>node</code>。前两者指向迭代器所对应<code>vector</code>（也称作缓冲区）的头和尾，<code>cur</code>指向当前数据，<code>node</code>则指向该<code>map</code>中，指向该<code>vector</code>的地址。也就是<code>map</code>里对应的地址。</p>
+<p>看不懂的话，在<code>&lt;bits/stl_deque.h&gt;</code>中，有如下的注释说明：</p>
+<blockquote>
+<ul>
+<li><p>For any nonsingular iterator i:</p>
+<ul>
+<li><p>i.node points to a member of the %map array.  (Yes, you read that correctly:  i.node does not actually point to a node.)  The member of the %map array is what actually points to the node.</p>
+</li>
+<li><p>i.first &#x3D;&#x3D; *(i.node)    (This points to the node (first Tp element).)</p>
+</li>
+<li><p>i.last  &#x3D;&#x3D; i.first + node_size</p>
+</li>
+<li><p>i.cur is a pointer in the range [i.first, i.last).  NOTE: the implication of this is that i.cur is always a dereferenceable pointer, even if i is a past-the-end iterator.</p>
+</li>
+<li><p>Start and Finish are always nonsingular iterators.</p>
+</li>
+</ul>
+</li>
+</ul>
+</blockquote>
+<p>缓冲区大小一般是512，如果一个元素的大小大于512，就让一个缓冲区放1个元素。</p>
+<p>这种设计是为了保证<code>deque</code>表面的连续性，某些情况下，<code>cur</code>指针迭代出当前<code>vector</code>范围，就要通过<code>node</code>进行计算，指向下一个<code>vector</code>的区间内。</p>
+<p>另外，<code>deque</code>的扩容方式和扩张因子为2的动态表一致。</p>
+<p>当指定位置插入的时候，<code>deque</code>会计算，此位置是不是<code>start</code>或者<code>finish</code>，若非，是离<code>start</code>近，还是离<code>finish</code>近，从而进行不同的插入表现。</p>
+<p>允许随机访问。</p>
+<h2 id="queue-x2F-stack"><a href="#queue-x2F-stack" class="headerlink" title="queue&#x2F;stack"></a>queue&#x2F;stack</h2><p><code>queue</code>和<code>stack</code>严格来说不是容器，而是适配器。</p>
+<p>它们底层都是<code>deque</code>，将<code>deque</code>阉割一下就能得到这两种数据结构。双端开口改为一端开口，仅保留部分的<code>push</code>和<code>pop</code>操作即可。二者无法被遍历。</p>
+<p>对于<code>stack</code>，查看<code>&lt;bits/stl_stack.h&gt;</code>:</p>
+<blockquote>
+<p>This is not a true container, but an @e adaptor.  It holds another container, and provides a wrapper interface to that container.  The wrapper is what enforces strict first-in-last-out %stack behavior. The second template parameter defines the type of the underlying sequence&#x2F;container. It defaults to std::deque, but it can be any type that supports @c back, @c push_back, and @c pop_back, such as std::list, std::vector, or an appropriate user-defined type.</p>
+</blockquote>
+<p><code>stack</code>底层可以是<code>list</code>，也可以是<code>vector</code>，也可以是自定义的数据结构，默认是<code>deque</code>。</p>
+<p>对于<code>queue</code>，查看<code>&lt;bits/stl_queue.h&gt;</code>:</p>
+<blockquote>
+<p>This is not a true container, but an @e adaptor.  It holds another container, and provides a wrapper interface to that container.  The wrapper is what enforces strict first-in-first-out %queue behavior. The second template parameter defines the type of the underlying sequence&#x2F;container. It defaults to std::deque, but it can be any type that supports @c front, @c back, @c push_back, and @c pop_front, such as std::list or an appropriate user-defined type.</p>
+</blockquote>
+<p>其底层可以是<code>list</code>，可以是自定义的数据结构，默认是<code>deque</code>。</p>
+<p>有个细节，为什么<code>queue</code>不能用<code>vector</code>做底层结构呢？其实很简单，因为后者没有<code>pop_front()</code>。</p>
+<h2 id="set-x2F-multiset"><a href="#set-x2F-multiset" class="headerlink" title="set&#x2F;multiset"></a>set&#x2F;multiset</h2><p>二者的底层都是<code>红黑树</code>。二者想要表示的都是数学上集合的概念，不同点在于，<code>set</code>里的元素不可以重复，而<code>multiset</code>里的元素可以重复。二者里的数据都是排好序的。在<code>&lt;bits/stl_set.h&gt;</code>中，<code>set</code>定义如下：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">  <span class="keyword">template</span>&lt;<span class="keyword">typename</span> _Key, <span class="keyword">typename</span> _Compare = std::less&lt;_Key&gt;,</span><br><span class="line">	   <span class="keyword">typename</span> _Alloc = std::allocator&lt;_Key&gt; &gt;</span><br><span class="line">    <span class="keyword">class</span> set</span><br><span class="line">...</span><br></pre></td></tr></table></figure>
+
+<p>如您所见，其默认的排序方式是从小到大排序。<code>multiset</code>也是如此。</p>
+<p>插入、删除、查找的复杂度都是$O(logn)$。</p>
+<h2 id="map-x2F-multimap"><a href="#map-x2F-multimap" class="headerlink" title="map&#x2F;multimap"></a>map&#x2F;multimap</h2><p>二者底层都是<code>红黑树</code>，和<code>set/multiset</code>不同的是，二者存储的数据以键值对的方式存在，排序的时候以键的值为排序准则。</p>
+<h2 id="unordered-map-x2F-unordered-set"><a href="#unordered-map-x2F-unordered-set" class="headerlink" title="unordered_map&#x2F;unordered_set"></a>unordered_map&#x2F;unordered_set</h2><p>底层是<code>哈希表</code>，查找的效率为$O(1)$，最坏为$O(n)$。</p>
+<p>默认的哈希算法是开链法。</p>
+<h1 id="4-简单的小知识"><a href="#4-简单的小知识" class="headerlink" title="4. 简单的小知识"></a>4. 简单的小知识</h1><h2 id="new-x2F-delete-VS-malloc-x2F-free"><a href="#new-x2F-delete-VS-malloc-x2F-free" class="headerlink" title="new&#x2F;delete VS malloc()&#x2F;free()"></a>new&#x2F;delete VS malloc()&#x2F;free()</h2><p>new的时候，先调用malloc()分配空间，然后调用类的构造函数。delete的时候，先调用析构函数，然后调用free()回收空间。</p>
+<h2 id="const-VS-define"><a href="#const-VS-define" class="headerlink" title="const VS #define"></a>const VS #define</h2><p>#define所做的，是简单的替换。在预处理阶段进行处理。</p>
+<p>有如下代码：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// a.c</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> A 3</span></span><br><span class="line"></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">()</span> &#123;</span><br><span class="line">  <span class="type">int</span> a = A;</span><br><span class="line">  <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>经过预处理：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">gcc -E a.c -o a.i</span><br></pre></td></tr></table></figure>
+
+<p>有：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// a.i</span></span><br><span class="line"># <span class="number">0</span> <span class="string">&quot;defineTest.c&quot;</span></span><br><span class="line"># <span class="number">0</span> <span class="string">&quot;&lt;built-in&gt;&quot;</span></span><br><span class="line"># <span class="number">0</span> <span class="string">&quot;&lt;command-line&gt;&quot;</span></span><br><span class="line"># <span class="number">1</span> <span class="string">&quot;/usr/include/stdc-predef.h&quot;</span> <span class="number">1</span> <span class="number">3</span> <span class="number">4</span></span><br><span class="line"># <span class="number">0</span> <span class="string">&quot;&lt;command-line&gt;&quot;</span> <span class="number">2</span></span><br><span class="line"># <span class="number">1</span> <span class="string">&quot;defineTest.c&quot;</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">()</span> &#123;</span><br><span class="line">  <span class="type">int</span> a = <span class="number">3</span>;</span><br><span class="line">  <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>而对于const定义的常量来说，其具有数据类型，也在后续阶段被处理，相对来说更加安全。此外，const也可以在函数内被定义，定义一个局部常量，也更加灵活。</p>
+<p>此外，const也有多种功能:</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">const</span> <span class="type">int</span> a = <span class="number">4</span>; <span class="comment">// 常量</span></span><br><span class="line"><span class="type">int</span>* <span class="type">const</span> a = &amp;x; <span class="comment">// 指向常量的指针</span></span><br><span class="line"><span class="type">const</span> <span class="type">int</span>* a = &amp;x; <span class="comment">// 指向非常量变量的指针</span></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">A</span> &#123;</span><br><span class="line">    <span class="function"><span class="type">int</span> <span class="title">foo</span><span class="params">()</span> <span class="type">const</span></span>; <span class="comment">// 成员函数内不可修改类成员值</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="static的用法"><a href="#static的用法" class="headerlink" title="static的用法"></a>static的用法</h2><ol>
+<li>static可以用来声明静态成员，但是一定要在类外初始化，否则在链接时会报错。</li>
+<li>static也可以用来设定类的静态方法，无须初始化就可以调用这个方法。静态方法无法调用非静态成员变量。</li>
+<li>static可以表明一个普通函数只在当前文件中有效。</li>
+<li>static可以修饰一个变量，在函数内修饰，表明不论函数调用多少次，这个变量只初始化一次；若在函数外修饰，则在程序运行之前就创建该变量。</li>
+</ol>
+<h2 id="this"><a href="#this" class="headerlink" title="this"></a>this</h2><p>在一个类里面，this可以理解为，指向自己的指针，与此同时，this是一个右值。</p>
+<p>有如下代码：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> IS_PRVALUE(...) !std::is_reference<span class="string">&lt;decltype((__VA_ARGS__))&gt;</span>::value</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Foo</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">  <span class="type">int</span> a = <span class="number">3</span>;</span><br><span class="line">  </span><br><span class="line">  <span class="function"><span class="type">void</span> <span class="title">bar</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    std::cout &lt;&lt; <span class="built_in">IS_PRVALUE</span>(<span class="keyword">this</span>) &lt;&lt; std::endl;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="function"><span class="type">int</span> <span class="title">test</span><span class="params">()</span> <span class="type">const</span> </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> a;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">  Foo* test = <span class="keyword">new</span> <span class="built_in">Foo</span>();</span><br><span class="line">  test-&gt;<span class="built_in">bar</span>(); <span class="comment">// 1</span></span><br><span class="line">  <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>在普通的成员函数<code>Foo::bar()</code>里，this的类型是<code>Foo*</code>，也是一个纯右值。在<code>Foo::test()</code>里，this的类型是<code>const Foo*</code>，这也保证在这种函数里面，没法修改成员变量的值。</p>
+<h2 id="explicit关键字"><a href="#explicit关键字" class="headerlink" title="explicit关键字"></a>explicit关键字</h2><p>其常用于声明类的构造函数，规避对构造函数的隐性调用和复制初始化。</p>
+<h2 id="与-的用法"><a href="#与-的用法" class="headerlink" title="::与:的用法"></a>::与:的用法</h2><p>总结一下，<code>::</code>有如下用法：</p>
+<ol>
+<li><p>声明所调用变量为全局变量，有如下代码：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="type">int</span> var_g = <span class="number">3</span>;</span><br><span class="line"><span class="type">static</span> <span class="type">int</span> var_sg = <span class="number">4</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">  <span class="type">int</span> var_g = <span class="number">20</span>;</span><br><span class="line">  <span class="type">int</span> var_sg = <span class="number">21</span>;</span><br><span class="line">  std::cout &lt;&lt; ::var_g &lt;&lt; std::endl; <span class="comment">// 3</span></span><br><span class="line">  std::cout &lt;&lt; ::var_sg &lt;&lt; std::endl;  <span class="comment">// 4</span></span><br><span class="line">  std::cout &lt;&lt; var_g &lt;&lt; std::endl; <span class="comment">// 20</span></span><br><span class="line">  std::cout &lt;&lt; var_sg &lt;&lt; std::endl; <span class="comment">// 21</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>用于访问命名空间和类下的函数&#x2F;方法，如<code>std::cout</code>或<code>Foo::test()</code>。</p>
+</li>
+</ol>
+<p>而<code>:</code>用法如下：</p>
+<ol>
+<li><p>表示类的继承关系，如<code>class Foo : public Father</code>。</p>
+</li>
+<li><p>用于初始化列表，如：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Foo</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">  <span class="type">int</span> i;</span><br><span class="line">  <span class="built_in">Foo</span>(<span class="type">int</span> a) : <span class="built_in">i</span>(a)&#123;&#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></li>
+</ol>
+<h2 id="Some-OOP-stuff-一些面向对象的理论"><a href="#Some-OOP-stuff-一些面向对象的理论" class="headerlink" title="Some OOP stuff-一些面向对象的理论"></a>Some OOP stuff-一些面向对象的理论</h2><ol>
+<li>有时候面试会问“C++的三大特点”，倒不如问“OOP”的三大特点了，是封装、继承和多态。</li>
+<li>C++的多态有两种：早绑定&#x2F;晚绑定(编译时多态&#x2F;运行时多态，静态多态&#x2F;动态多态)，前者依靠方法的重写，后者则依靠虚函数。对于Java来说，有<code>interface</code>和<code>abstract</code>关键字，而在C++里则没有这两个关键字声明接口和抽象类，这两个功能也好实现，只有纯虚函数的类叫做接口，有纯虚函数的类叫做抽象类。</li>
+<li>阐明几个名词：重写是子类重新写父类的方法；重载是同一个名称函数在同一个类中的，能够接收不同参数的实现；覆盖是指子类实现了父类的虚函数，覆盖了父类的实现。</li>
+<li>由于STL没有虚析构函数，尽量不要继承它——自己写一个适配器就行嘛！</li>
+</ol>
+<h2 id="类型转换"><a href="#类型转换" class="headerlink" title="类型转换"></a>类型转换</h2><ol>
+<li><code>static_cast</code>，常用于T到各个类型的转换、数值之间的转换。</li>
+<li><code>reinterpret_cast</code>，按位转换，常用于各种指针间的转换。</li>
+<li><code>const_cast</code>，用于将常量转换为变量。</li>
+<li><code>dynamic_cast</code>，可以将多态基类（包含虚函数的基类）的指针强制转换为派生类的指针，也可以转换引用，且检查安全性。</li>
+</ol>
+<h1 id="5-智能指针"><a href="#5-智能指针" class="headerlink" title="5. 智能指针"></a>5. 智能指针</h1><h2 id="unique-ptr"><a href="#unique-ptr" class="headerlink" title="unique_ptr"></a>unique_ptr</h2><p>翻译自<a target="_blank" rel="noopener" href="https://en.cppreference.com/w/cpp/memory/unique_ptr">https://en.cppreference.com/w/cpp/memory/unique_ptr</a>：<code>unique_ptr</code> 是一个智能指针，它通过指针拥有和管理另一个对象，并在 <code>unique_ptr</code> 超出作用域时处置该对象。有如下代码：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Foo</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">  <span class="built_in">Foo</span>() &#123;</span><br><span class="line">    std::cout &lt;&lt; <span class="string">&quot;Halo!&quot;</span> &lt;&lt; std::endl;</span><br><span class="line">  &#125;</span><br><span class="line">  ~<span class="built_in">Foo</span>() &#123;</span><br><span class="line">    std::cout &lt;&lt; <span class="string">&quot;No!&quot;</span> &lt;&lt; std::endl;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">foo</span><span class="params">()</span> </span>&#123;</span><br><span class="line">  std::unique_ptr&lt;Foo&gt; p1 = std::<span class="built_in">make_unique</span>&lt;Foo&gt;();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">(<span class="type">void</span>)</span> </span>&#123;</span><br><span class="line">  <span class="built_in">foo</span>();</span><br><span class="line">  std::cout &lt;&lt; <span class="string">&quot;Nah!&quot;</span> &lt;&lt; std::endl;</span><br><span class="line">  <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// Output: </span></span><br><span class="line"><span class="comment">// Halo!</span></span><br><span class="line"><span class="comment">// No!</span></span><br><span class="line"><span class="comment">// Nah!</span></span><br></pre></td></tr></table></figure>
+
+<p>调用完<code>foo()</code>，直接调用生成<code>Foo</code>对象的析构，而不是等到最后再去销毁该对象。</p>
+<h2 id="shared-ptr"><a href="#shared-ptr" class="headerlink" title="shared_ptr"></a>shared_ptr</h2><p><code>shared_ptr</code>其实就是对资源做引用计数——当引用计数为 0 的时候，自动释放资源。</p>
+<p>参考:<a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/150555165">https://zhuanlan.zhihu.com/p/150555165</a></p>
+<p>但这种指针会出现循环引用的问题，所以引出了<code>weak_ptr</code>。</p>
+<h2 id="weak-ptr"><a href="#weak-ptr" class="headerlink" title="weak_ptr"></a>weak_ptr</h2><p>其指向对象，但不改变其引用计数。</p>
+
+      </div>
+      
+        <div class="prev-or-next">
+          <div class="post-foot-next">
+            
+              <a href="/2023/07/27/Pandas%E5%BA%93%E7%9A%84%E4%B8%80%E4%BA%9B%E7%94%A8%E6%B3%95%E5%A4%87%E5%BF%98/" target="_self">
+                <i class="iconfont icon-chevronleft"></i>
+                <span>上一页</span>
+              </a>
+            
+          </div>
+          <div class="post-attach">
+            <span class="post-pubtime">
+              <i class="iconfont icon-updatetime mr-10" title="更新时间"></i>
+              2023-07-29 20:48:53
+            </span>
+            
+                  <span class="post-tags">
+                    <i class="iconfont icon-tags mr-10" title="标签"></i>
+                    
+                    <span class="span--tag mr-8">
+                      <a href="/tags/C/" title="C++">
+                        #C++
+                      </a>
+                    </span>
+                    
+                  </span>
+              
+          </div>
+          <div class="post-foot-prev">
+            
+              <a href="/2023/08/03/C%E5%AE%9E%E7%8E%B0%E7%AE%80%E5%8D%95%E7%9A%842048/" target="_self">
+                <span>下一页</span>
+                <i class="iconfont icon-chevronright"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+    </div>
+    
+  <div id="btn-catalog" class="btn-catalog">
+    <i class="iconfont icon-catalog"></i>
+  </div>
+  <div class="post-catalog hidden" id="catalog">
+    <div class="title">目录</div>
+    <div class="catalog-content">
+      
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#1-%E5%BC%95%E7%94%A8%E5%92%8C%E6%8C%87%E9%92%88%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="toc-text">1. 引用和指针的区别</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%9A%E4%B9%89%E4%B8%8A%E7%9A%84%E5%B7%AE%E5%88%AB"><span class="toc-text">定义上的差别</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%98%AF%E5%90%A6%E5%8F%AF%E7%A9%BA%E7%9A%84%E5%B7%AE%E5%88%AB"><span class="toc-text">是否可空的差别</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%98%AF%E5%90%A6%E5%8F%AF%E4%BB%A5%E6%94%B9%E5%8F%98%E6%89%80%E6%8C%87%E5%AF%B9%E8%B1%A1%E7%9A%84%E5%B7%AE%E5%88%AB"><span class="toc-text">是否可以改变所指对象的差别</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#2-%E5%80%BC%E7%B1%BB%E5%9E%8B-Value-categories"><span class="toc-text">2. 值类型(Value categories)</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#lvalue-%E5%B7%A6%E5%80%BC"><span class="toc-text">lvalue-左值</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#xvalue-%E5%B0%86%E4%BA%A1%E5%80%BC"><span class="toc-text">xvalue-将亡值</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#glvalue-%E5%B9%BF%E4%B9%89%E5%B7%A6%E5%80%BC"><span class="toc-text">glvalue-广义左值</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#rvalue-%E5%8F%B3%E5%80%BC"><span class="toc-text">rvalue-右值</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#prvalue-%E7%BA%AF%E5%8F%B3%E5%80%BC"><span class="toc-text">prvalue-纯右值</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%B5%8B%E8%AF%95%E4%B8%80%E4%B8%8B%EF%BC%81"><span class="toc-text">测试一下！</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9C%89%E4%BB%80%E4%B9%88%E7%94%A8%EF%BC%9F"><span class="toc-text">有什么用？</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#3-STL%E7%9B%B8%E5%85%B3"><span class="toc-text">3. STL相关</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9F%BA%E6%9C%AC%E7%9F%A5%E8%AF%86"><span class="toc-text">基本知识</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#list"><span class="toc-text">list</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#forward-list"><span class="toc-text">forward_list</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#vector"><span class="toc-text">vector</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#array"><span class="toc-text">array</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#deque"><span class="toc-text">deque</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#queue-x2F-stack"><span class="toc-text">queue&#x2F;stack</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#set-x2F-multiset"><span class="toc-text">set&#x2F;multiset</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#map-x2F-multimap"><span class="toc-text">map&#x2F;multimap</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#unordered-map-x2F-unordered-set"><span class="toc-text">unordered_map&#x2F;unordered_set</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#4-%E7%AE%80%E5%8D%95%E7%9A%84%E5%B0%8F%E7%9F%A5%E8%AF%86"><span class="toc-text">4. 简单的小知识</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#new-x2F-delete-VS-malloc-x2F-free"><span class="toc-text">new&#x2F;delete VS malloc()&#x2F;free()</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#const-VS-define"><span class="toc-text">const VS #define</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#static%E7%9A%84%E7%94%A8%E6%B3%95"><span class="toc-text">static的用法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#this"><span class="toc-text">this</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#explicit%E5%85%B3%E9%94%AE%E5%AD%97"><span class="toc-text">explicit关键字</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%8E-%E7%9A%84%E7%94%A8%E6%B3%95"><span class="toc-text">::与:的用法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Some-OOP-stuff-%E4%B8%80%E4%BA%9B%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%9A%84%E7%90%86%E8%AE%BA"><span class="toc-text">Some OOP stuff-一些面向对象的理论</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2"><span class="toc-text">类型转换</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#5-%E6%99%BA%E8%83%BD%E6%8C%87%E9%92%88"><span class="toc-text">5. 智能指针</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#unique-ptr"><span class="toc-text">unique_ptr</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#shared-ptr"><span class="toc-text">shared_ptr</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#weak-ptr"><span class="toc-text">weak_ptr</span></a></li></ol></li></ol>
+      
+    </div>
+  </div>
+
+  
+<script src="/js/catalog.js"></script>
+
+
+
+
+    
+      <div class="comments-container">
+        
+
+
+
+
+  
+    <script async type="text/javascript" src='https://cdn.jsdelivr.net/npm/valine@1.4.18/dist/Valine.min.js' onload="loadValineSuc(this)"></script>
+  
+
+  <div id="vcomments"></div>
+
+  <script>
+    function loadValineSuc() {
+      new Valine({
+        el: '#vcomments',
+        appId: 'oMvaqsYv2LQSqtj795B31OWV-gzGzoHsz',
+        appKey: 'UKlJCzW9McXrX8L71Mqz5hol',
+        placeholder: 'Welcome!',
+        avatar: 'retro',
+        lang: 'zh-CN'
+      })
+    }
+  </script>
+
+    <style>
+      .comments-container .v .vempty {
+        display: none!important;
+      }
+    </style>
+
+
+
+
+      </div>
+    
+  </div>
+
+
+        
+<div class="footer">
+  <div class="social">
+    <ul>
+      
+        <li>
+          <a title="rss" href="/atom.xml">
+            <i class="iconfont icon-rss"></i>
+          </a>
+        </li>
+      
+    </ul>
+  </div>
+  
+    
+    <div class="footer-more">
+      
+        <a target="_blank" rel="noopener" href="https://github.com/zchengsite/hexo-theme-oranges">Copyright © 2024 Oranges</a>
+        
+    </div>
+  
+    
+    <div class="footer-more">
+      
+        <a target="_blank" rel="noopener" href="https://github.com/zchengsite/hexo-theme-oranges">Theme by Oranges | Powered by Hexo</a>
+        
+    </div>
+  
+  
+</div>
+
+      </div>
+
+      <div class="tools-bar">
+        <div class="back-to-top tools-bar-item hidden">
+  <a href="javascript: void(0)">
+    <i class="iconfont icon-chevronup"></i>
+  </a>
+</div>
+
+
+<script src="/js/backtotop.js"></script>
+
+
+
+        
+  <div class="search-icon tools-bar-item" id="search-icon">
+    <a href="javascript: void(0)">
+      <i class="iconfont icon-search"></i>
+    </a>
+  </div>
+
+  <div class="search-overlay hidden">
+    <div class="search-content" tabindex="0">
+      <div class="search-title">
+        <span class="search-icon-input">
+          <a href="javascript: void(0)">
+            <i class="iconfont icon-search"></i>
+          </a>
+        </span>
+        
+          <input type="text" class="search-input" id="search-input" placeholder="搜索...">
+        
+        <span class="search-close-icon" id="search-close-icon">
+          <a href="javascript: void(0)">
+            <i class="iconfont icon-close"></i>
+          </a>
+        </span>
+      </div>
+      <div class="search-result" id="search-result"></div>
+    </div>
+  </div>
+
+  <script type="text/javascript">
+    var inputArea = document.querySelector("#search-input")
+    var searchOverlayArea = document.querySelector(".search-overlay")
+
+    inputArea.onclick = function() {
+      getSearchFile()
+      this.onclick = null
+    }
+
+    inputArea.onkeydown = function() {
+      if(event.keyCode == 13)
+        return false
+    }
+
+    function openOrHideSearchContent() {
+      let isHidden = searchOverlayArea.classList.contains('hidden')
+      if (isHidden) {
+        searchOverlayArea.classList.remove('hidden')
+        document.body.classList.add('hidden')
+        // inputArea.focus()
+      } else {
+        searchOverlayArea.classList.add('hidden')
+        document.body.classList.remove('hidden')
+      }
+    }
+
+    function blurSearchContent(e) {
+      if (e.target === searchOverlayArea) {
+        openOrHideSearchContent()
+      }
+    }
+
+    document.querySelector("#search-icon").addEventListener("click", openOrHideSearchContent, false)
+    document.querySelector("#search-close-icon").addEventListener("click", openOrHideSearchContent, false)
+    searchOverlayArea.addEventListener("click", blurSearchContent, false)
+
+    var searchFunc = function (path, search_id, content_id) {
+      'use strict';
+      var $input = document.getElementById(search_id);
+      var $resultContent = document.getElementById(content_id);
+      $resultContent.innerHTML = "<ul><span class='local-search-empty'>首次搜索，正在载入索引文件，请稍后……<span></ul>";
+      $.ajax({
+        // 0x01. load xml file
+        url: path,
+        dataType: "xml",
+        success: function (xmlResponse) {
+          // 0x02. parse xml file
+          var datas = $("entry", xmlResponse).map(function () {
+            return {
+              title: $("title", this).text(),
+              content: $("content", this).text(),
+              url: $("url", this).text()
+            };
+          }).get();
+          $resultContent.innerHTML = "";
+
+          $input.addEventListener('input', function () {
+            // 0x03. parse query to keywords list
+            var str = '<ul class=\"search-result-list\">';
+            var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+            $resultContent.innerHTML = "";
+            if (this.value.trim().length <= 0) {
+              return;
+            }
+            // 0x04. perform local searching
+            datas.forEach(function (data) {
+              var isMatch = true;
+              var content_index = [];
+              if (!data.title || data.title.trim() === '') {
+                data.title = "Untitled";
+              }
+              var orig_data_title = data.title.trim();
+              var data_title = orig_data_title.toLowerCase();
+              var orig_data_content = data.content.trim().replace(/<[^>]+>/g, "");
+              var data_content = orig_data_content.toLowerCase();
+              var data_url = data.url;
+              var index_title = -1;
+              var index_content = -1;
+              var first_occur = -1;
+              // only match artiles with not empty contents
+              if (data_content !== '') {
+                keywords.forEach(function (keyword, i) {
+                  index_title = data_title.indexOf(keyword);
+                  index_content = data_content.indexOf(keyword);
+
+                  if (index_title < 0 && index_content < 0) {
+                    isMatch = false;
+                  } else {
+                    if (index_content < 0) {
+                      index_content = 0;
+                    }
+                    if (i == 0) {
+                      first_occur = index_content;
+                    }
+                    // content_index.push({index_content:index_content, keyword_len:keyword_len});
+                  }
+                });
+              } else {
+                isMatch = false;
+              }
+              // 0x05. show search results
+              if (isMatch) {
+                str += "<li><a href='" + data_url + "' class='search-result-title'>" + orig_data_title + "</a>";
+                var content = orig_data_content;
+                if (first_occur >= 0) {
+                  // cut out 100 characters
+                  var start = first_occur - 20;
+                  var end = first_occur + 80;
+
+                  if (start < 0) {
+                    start = 0;
+                  }
+
+                  if (start == 0) {
+                    end = 100;
+                  }
+
+                  if (end > content.length) {
+                    end = content.length;
+                  }
+
+                  var match_content = content.substr(start, end);
+
+                  // highlight all keywords
+                  keywords.forEach(function (keyword) {
+                    var regS = new RegExp(keyword, "gi");
+                    match_content = match_content.replace(regS, "<span class=\"search-keyword\">" + keyword + "</span>");
+                  });
+
+                  str += "<p class=\"search-result-abstract\">" + match_content + "...</p>"
+                }
+                str += "</li>";
+              }
+            });
+            str += "</ul>";
+            if (str.indexOf('<li>') === -1) {
+              return $resultContent.innerHTML = "<ul><span class='local-search-empty'>没有找到内容，请尝试更换检索词。<span></ul>";
+            }
+            $resultContent.innerHTML = str;
+          });
+        },
+        error: function(xhr, status, error) {
+          $resultContent.innerHTML = ""
+          if (xhr.status === 404) {
+            $resultContent.innerHTML = "<ul><span class='local-search-empty'>未找到search.xml文件，具体请参考：<a href='https://github.com/zchengsite/hexo-theme-oranges#configuration' target='_black'>configuration</a><span></ul>";
+          } else {
+            $resultContent.innerHTML = "<ul><span class='local-search-empty'>请求失败，尝试重新刷新页面或稍后重试。<span></ul>";
+          }
+        }
+      });
+      $(document).on('click', '#search-close-icon', function() {
+        $('#search-input').val('');
+        $('#search-result').html('');
+      });
+    }
+
+    var getSearchFile = function() {
+        var path = "/search.xml";
+        searchFunc(path, 'search-input', 'search-result');
+    }
+  </script>
+
+
+
+
+        
+  <div class="tools-bar-item theme-icon" id="switch-color-scheme">
+    <a href="javascript: void(0)">
+      <i id="theme-icon" class="iconfont icon-moon"></i>
+    </a>
+  </div>
+
+  
+<script src="/js/colorscheme.js"></script>
+
+
+
+
+
+        
+  
+    <div class="share-icon tools-bar-item">
+      <a href="javascript: void(0)" id="share-icon">
+        <i class="iconfont iconshare"></i>
+      </a>
+      <div class="share-content hidden">
+        
+          <a class="share-item" href="https://twitter.com/intent/tweet?text=' + C%2B%2B%E7%9A%84%E4%B8%80%E4%BA%9B%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86 + '&url=' + https%3A%2F%2Fcoder109.github.io%2F2023%2F07%2F29%2FC-%25E7%259A%2584%25E4%25B8%2580%25E4%25BA%259B%25E5%259F%25BA%25E7%25A1%2580%25E7%259F%25A5%25E8%25AF%2586%2F + '" target="_blank" title="Twitter">
+            <i class="iconfont icon-twitter"></i>
+          </a>
+        
+        
+      </div>
+    </div>
+  
+  
+<script src="/js/shares.js"></script>
+
+
+
+      </div>
+    </div>
+  
+        <style>
+            [bg-lazy] {
+                background-image: none !important;
+                background-color: #eee !important;
+            }
+        </style>
+        <script>
+            window.imageLazyLoadSetting = {
+                isSPA: false,
+                preloadRatio: 1,
+                processImages: null,
+            };
+        </script><script>window.addEventListener("load",function(){var t=/\.(gif|jpg|jpeg|tiff|png)$/i,r=/^data:image\/[a-z]+;base64,/;Array.prototype.slice.call(document.querySelectorAll("img[data-original]")).forEach(function(a){var e=a.parentNode;"A"===e.tagName&&(e.href.match(t)||e.href.match(r))&&(e.href=a.dataset.original)})});</script><script>!function(r){r.imageLazyLoadSetting.processImages=t;var e=r.imageLazyLoadSetting.isSPA,n=r.imageLazyLoadSetting.preloadRatio||1,c=a();function a(){var t=Array.prototype.slice.call(document.querySelectorAll("img[data-original]")),e=Array.prototype.slice.call(document.querySelectorAll("[bg-lazy]"));return t.concat(e)}function t(){e&&(c=a());for(var t,o=0;o<c.length;o++)0<=(t=(t=c[o]).getBoundingClientRect()).bottom&&0<=t.left&&t.top<=(r.innerHeight*n||document.documentElement.clientHeight*n)&&function(){var t,e,n,a,i=c[o];e=function(){c=c.filter(function(t){return i!==t}),r.imageLazyLoadSetting.onImageLoaded&&r.imageLazyLoadSetting.onImageLoaded(i)},(t=i).hasAttribute("bg-lazy")?(t.removeAttribute("bg-lazy"),e&&e()):(n=new Image,a=t.getAttribute("data-original"),n.onload=function(){t.src=a,t.removeAttribute("data-original"),e&&e()},t.src!==a&&(n.src=a))}()}function i(){clearTimeout(t.tId),t.tId=setTimeout(t,500)}t(),document.addEventListener("scroll",i),r.addEventListener("resize",i),r.addEventListener("orientationchange",i)}(this);</script></body>
+</html>

@@ -1,0 +1,703 @@
+<!DOCTYPE html>
+<html lang="zh-CN" color-mode="light">
+
+  <head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="keywords" content="" />
+  <meta name="author" content="Coder109" />
+  <meta name="description" content="" />
+  
+  
+  <title>
+    
+      Linux苦痛之路（三）：漫谈+Arch Linux软件配置选择 
+      
+      
+      |
+    
+     幻
+  </title>
+
+  
+    <link rel="apple-touch-icon" href="/images/favicon.ico">
+    <link rel="icon" href="/images/favicon.ico">
+  
+
+  <!-- Raleway-Font -->
+  <link href="https://fonts.googleapis.com/css?family=Raleway&display=swap" rel="stylesheet">
+
+  <!-- hexo site css -->
+  <link rel="stylesheet" href="/css/main.css" />
+  <link rel="stylesheet" href="//at.alicdn.com/t/font_1886449_67xjft27j1l.css" />
+  <!-- 代码块风格 -->
+  
+
+  <!-- jquery3.3.1 -->
+  
+    <script defer type="text/javascript" src="/plugins/jquery.min.js"></script>
+  
+
+  <!-- fancybox -->
+  
+    <link href="/plugins/jquery.fancybox.min.css" rel="stylesheet">
+    <script defer type="text/javascript" src="/plugins/jquery.fancybox.min.js"></script>
+  
+  
+<script src="/js/fancybox.js"></script>
+
+
+  
+
+  
+
+  <script>
+    var html = document.documentElement
+    const colorMode = localStorage.getItem('color-mode')
+    if (colorMode) {
+      document.documentElement.setAttribute('color-mode', colorMode)
+    }
+  </script>
+<meta name="generator" content="Hexo 6.3.0"><link rel="alternate" href="/atom.xml" title="幻" type="application/atom+xml">
+</head>
+
+
+  <body>
+    <div id="app">
+      <div class="header">
+  <div class="avatar">
+    <a href="/">
+      <!-- 头像取消懒加载，添加no-lazy -->
+      
+        <img no-lazy src="/images/favicon.ico" alt="">
+      
+    </a>
+    <div class="nickname"><a href="/">幻</a></div>
+  </div>
+  <div class="navbar">
+    <ul>
+      
+        <li class="nav-item" data-path="/">
+          <a href="/">Home</a>
+        </li>
+      
+        <li class="nav-item" data-path="/archives/">
+          <a href="/archives/">Archives</a>
+        </li>
+      
+        <li class="nav-item" data-path="/tags/">
+          <a href="/tags/">Tags</a>
+        </li>
+      
+        <li class="nav-item" data-path="/friends/">
+          <a href="/friends/">Friends</a>
+        </li>
+      
+        <li class="nav-item" data-path="/about/">
+          <a href="/about/">About</a>
+        </li>
+      
+    </ul>
+  </div>
+</div>
+
+
+<script src="/js/activeNav.js"></script>
+
+
+
+      <div class="flex-container">
+        <!-- 文章详情页，展示文章具体内容，url形式：https://yoursite/文章标题/ -->
+<!-- 同时为「标签tag」，「朋友friend」，「分类categories」，「关于about」页面的承载页面，具体展示取决于page.type -->
+
+
+  <!-- LaTex Display -->
+
+  
+    <script async type="text/javascript" src="/plugins/mathjax/tex-chtml.js"></script>
+  
+  <script>
+    MathJax = {
+      tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']]
+      }
+    }
+  </script>
+
+
+
+
+
+  <!-- clipboard -->
+
+  
+    <script async type="text/javascript" src="/plugins/clipboard.min.js"></script>
+  
+  
+<script src="/js/codeCopy.js"></script>
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  <!-- 文章内容页 url形式：https://yoursite/文章标题/ -->
+  <div class="container post-details" id="post-details">
+    <div class="post-content">
+      <div class="post-title">Linux苦痛之路（三）：漫谈+Arch Linux软件配置选择</div>
+      <div class="post-attach">
+        <span class="post-pubtime">
+          <i class="iconfont icon-updatetime mr-10" title="更新时间"></i>
+          2023-02-10 11:15:49
+        </span>
+        
+              <span class="post-tags">
+                <i class="iconfont icon-tags mr-10" title="标签"></i>
+                
+                <span class="span--tag mr-8">
+                  <a href="/tags/Linux/" title="Linux">
+                    #Linux
+                  </a>
+                </span>
+                
+              </span>
+          
+      </div>
+      <div class="markdown-body">
+        <h1 id="Linux苦痛之路（三）：漫谈-Arch-Linux软件配置选择"><a href="#Linux苦痛之路（三）：漫谈-Arch-Linux软件配置选择" class="headerlink" title="Linux苦痛之路（三）：漫谈+Arch Linux软件配置选择"></a>Linux苦痛之路（三）：漫谈+Arch Linux软件配置选择</h1><h2 id="写在前面"><a href="#写在前面" class="headerlink" title="写在前面"></a>写在前面</h2><p>之前写的关于Arch Linux的那篇文章错误百出，也不够详细。重新写一篇。</p>
+<p>请注意，本文主观性极强。</p>
+<h2 id="0-我为什么要用Linux？"><a href="#0-我为什么要用Linux？" class="headerlink" title="0. 我为什么要用Linux？"></a>0. 我为什么要用Linux？</h2><p>它有几个优点：</p>
+<ol>
+<li>安全性高。Linux下恶意软件更少。</li>
+<li>花销较少。至少大部分知名发行版都可以免费获取安装文件。</li>
+<li>配置要求低。在低配置机器上表现出色。</li>
+<li>轻量化。相对Windows来说，基本存储空间占用比较小。</li>
+<li>客制化强。桌面环境、软件选择多种多样。</li>
+<li>（这一点对于Arch Linux一类的滚动发行版更明显）更新迅速。</li>
+<li>开源。</li>
+<li>很多东西配置起来比较简单。大多数编程语言环境的配置、命令行工具的配置都很简单。</li>
+</ol>
+<p>这里，我想阐明几个概念：</p>
+<ol>
+<li>Linux严格意义上讲只是内核，我这里讲的Linux是以Linux为内核的发行版&#x2F;滚动发行版（distro）。</li>
+<li>开源不完全等于开放源代码，它不仅包括开放源代码，还包括很多与修改、分发代码有关的权利。</li>
+</ol>
+<p>此外，并不是所有人都适合日常使用Linux,比如：</p>
+<ol>
+<li>很忙，没时间折腾的人。</li>
+<li>不懂得如何正确提问、获取信息的人。</li>
+<li>重度大型游戏玩家。</li>
+</ol>
+<h2 id="0-5-怎么选择发行版？"><a href="#0-5-怎么选择发行版？" class="headerlink" title="0.5 怎么选择发行版？"></a>0.5 怎么选择发行版？</h2><p>发行版数不胜数，适合自己的才是最重要的。</p>
+<p>如果您是新手，<code>Linux Mint</code>、<code>Zorin</code>等是不错的选择，尤其是新版本的<code>Linux Mint</code>，它的桌面环境<code>Cinnamon</code>很漂亮，而且操作逻辑和Windows的差不了多少。您可以通过它们熟悉Linux的基本操作、文件树结构。当然，正如鸟哥说的那样，用Linux了就不要专注于图形界面，要学会在终端进行操作，这样才能成为Linux高手。</p>
+<p>如果您差不多熟悉了Linux,可以选择其它发行版，它们更为成熟，客制化能力也比较强。</p>
+<p>想追求较为稳定的体验，<code>Debian</code>、<code>Ubuntu</code>是不错的选择。<code>Debian</code>更为稳定，但是相应的，包版本更低。<code>Ubuntu</code>要比<code>Debian</code>更新策略激进一点，包相对较新，同时也保证了稳定性，此外也有以之为基础的<code>Lubuntu</code>、<code>Xubuntu</code>、<code>Kubuntu</code>等使用不同桌面环境的发行版。最近（2023-01-13）新出了一个同样基于Ubuntu的，叫作<code>Vanilla OS</code>的发行版。</p>
+<p>想要时刻保持系统最新，可以使用滚动发行版。滚动发行版一般在新版本组件发布之后，很快就更新。比如<code>Arch Linux</code>，和以之为基础的<code>Arco Linux</code>、<code>Artix Linux</code>、<code>Archcraft</code>、<code>Manjaro</code>；也有<code>OpenSUSE</code>、<code>Gentoo</code>、<code>Void Linux</code>可供选择。</p>
+<p>此外，也有各种针对某些特定领域开发的Linux发行版，比如针对渗透、安全开发的<code>Kali Linux</code>、<code>BlackArch</code>，针对科学计算开发的<code>DAT Linux</code>等等。</p>
+<p>如果您是安全、隐私方面的偏执狂，那么可以使用<code>Qubes OS</code>、<code>Tails OS</code>、<code>Whonix</code>。</p>
+<p>如果您对于<code>systemd</code>有着强烈的排斥感，可以选用<code>Devuan</code>、<code>Artix Linux</code>。</p>
+<p>如果您想完全使用开源的、非专有的软件，请使用<code>GNU GUIX</code>。</p>
+<p>如果您想获得最大化的个性化配置体验，可以选用<code>Gentoo</code>、<code>Arch Linux</code>。</p>
+<p>如果您想要在服务器上运行，推荐您使用尽可能稳定的发行版。</p>
+<p>这篇文章，我主要讲一讲我配置<code>Arch Linux</code>的软件选择。</p>
+<h2 id="1-基本环境安装"><a href="#1-基本环境安装" class="headerlink" title="1.基本环境安装"></a>1.基本环境安装</h2><p>详见<a target="_blank" rel="noopener" href="https://wiki.archlinuxcn.org/wiki/%E5%AE%89%E8%A3%85%E6%8C%87%E5%8D%97">Arch Wiki上的安装指南</a>。</p>
+<p>另外也有安装助手<a target="_blank" rel="noopener" href="https://wiki.archlinux.org/title/Archinstall">Arch Install</a>可供使用，能在一定程度上减轻安装Arch Linux的难度。</p>
+<p>假定您已经安装好了基本的环境，配置好了日常用户。</p>
+<p><a target="_blank" rel="noopener" href="https://wiki.archlinux.org/">Arch Wiki</a>是非常有用的信息源，你可以在上面查到应用程序的相关信息、配置方法、疑难解答等等。</p>
+<p>不推荐您参考知乎、CSDN、各种博客等来源上的安装教程，它们的严谨性不够高，上面的信息也很有可能是过时的。</p>
+<h3 id="密钥问题"><a href="#密钥问题" class="headerlink" title="密钥问题"></a>密钥问题</h3><p>在安装过程中，有可能出现由于密钥产生的错误，当安装来自<code>archlinuxcn</code>源的软件时，这个错误十分常见。这时请确保相应的keyring安装、更新完毕，如果还是出现错误，请运行：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">pacman-key --init</span><br><span class="line">pacman-key --populate</span><br></pre></td></tr></table></figure>
+
+<p>这一般能解决问题。</p>
+<h2 id="2-包管理器"><a href="#2-包管理器" class="headerlink" title="2. 包管理器"></a>2. 包管理器</h2><p>包管理器能够帮助您安装、卸载、管理包。</p>
+<p>系统初始只有<code>pacman</code>，它只能安装<code>Arch Linux</code>官方的包，没法安装<a target="_blank" rel="noopener" href="https://wiki.archlinuxcn.org/wiki/Arch_%E7%94%A8%E6%88%B7%E8%BD%AF%E4%BB%B6%E4%BB%93%E5%BA%93_(AUR)">AUR</a>包，也就是用户软件仓库的包。AUR是<code>Arch Linux</code>的优势之一，它是一个由用户社区维护的库。用户可以从AUR上克隆生成脚本，在本地生成包，从而安装。</p>
+<p>举个例子，在<code>Ubuntu</code>上安装<code>deepin-wine</code>版本的微信，那么我需要先花很大力气找到<code>deepin-wine</code>的安装包，之后还要再花很大力气找到<code>deepin-wine-wechat</code>的安装包。我在写<a href="https://coder109.github.io/2022/11/01/linuxRoad1/">Linux苦痛之路（一）</a>的时候就经历过这种折磨，当时使用的是<code>Ubuntu 22.04</code>，不仅安装费劲，也很容易出现依赖版本对不上的问题。</p>
+<p>而在<code>Arch Linux</code>上，我只需要从<a target="_blank" rel="noopener" href="https://aur.archlinux.org/">Arch Wiki的AUR搜索面板</a>找到<code>deepin-wine-wechat</code>，将生成脚本克隆到本地，输入两行命令构建、安装，就可以了。甚至，如果我安装了<a target="_blank" rel="noopener" href="https://wiki.archlinuxcn.org/wiki/AUR_%E5%8A%A9%E6%89%8B">AUR助手</a>，直接输入一行命令就可以安装了，省时省力。</p>
+<p>AUR助手我主要用<code>yay</code>，它用go语言编写而成，解析依赖的能力比较强。</p>
+<p>也有一些图形化的工具可以搜索包，但是我个人一般直接上Wiki查找，用不到。</p>
+<p>如何管理您的包也是很重要的一部分，详情见推荐阅读中的系统维护页面。</p>
+<h2 id="3-显示管理器"><a href="#3-显示管理器" class="headerlink" title="3. 显示管理器"></a>3. 显示管理器</h2><p>它允许你登录到桌面环境，相当于从启动过程到桌面环境的一个桥梁。比较常见的有<code>sddm</code>、<code>lightdm</code>等等。如果嫌丑，github上有很多相关的主题可供选择。</p>
+<h2 id="3-5-桌面环境"><a href="#3-5-桌面环境" class="headerlink" title="3.5 桌面环境"></a>3.5 桌面环境</h2><p>如果您嫌麻烦，不愿配置窗口管理器，那么可以直接下载桌面环境。所谓桌面环境，就是一堆组件包，包括窗口管理器、实用小组件、文件管理器等等，开箱即用，而且大多数桌面环境可配置能力也很强。比较出名的有：</p>
+<ol>
+<li><code>GNOME</code>，其也是<code>Ubuntu</code>的桌面环境。</li>
+<li><code>KDE</code>，定制性非常强，缺点是系统占用比较多。</li>
+<li><code>Xfce</code>，轻量化的桌面环境，就是有点丑。</li>
+</ol>
+<h2 id="4-窗口管理器"><a href="#4-窗口管理器" class="headerlink" title="4. 窗口管理器"></a>4. 窗口管理器</h2><p>窗口管理器和桌面环境有什么不同？<a target="_blank" rel="noopener" href="https://wiki.archlinuxcn.org/wiki/%E7%AA%97%E5%8F%A3%E7%AE%A1%E7%90%86%E5%99%A8">窗口管理器</a>提供了图形界面，它允许你操纵窗口，打开应用程序，但是不提供状态栏、文件管理器等工具。桌面环境包括窗口管理器，同时也提供了一些设置工具、状态栏、组件等等。使用窗口管理器相对来说定制性强，更加轻量化，能够自定义自己想要用的工具包，缺点是配置起来更加麻烦。</p>
+<p>窗口管理器有三大门派，一派是<strong>层叠式窗口管理器</strong>，另一派是<strong>平铺式窗口管理器</strong>，还有一派是<strong>动态窗口管理器</strong>。</p>
+<h3 id="层叠式窗口管理器"><a href="#层叠式窗口管理器" class="headerlink" title="层叠式窗口管理器"></a>层叠式窗口管理器</h3><p>这种窗口管理器就像Windows的窗口管理器一样，窗口之间可以重叠，比较出名的是<code>KDE</code>桌面自带的<code>KWin</code>，<code>Xfce</code>桌面自带的<code>Xfwm</code>等等。</p>
+<h3 id="平铺式窗口管理器"><a href="#平铺式窗口管理器" class="headerlink" title="平铺式窗口管理器"></a>平铺式窗口管理器</h3><p>这种窗口管理器的窗口之间一般没有重叠，平铺在桌面上，占据着不同的空间。当你打开一个软件时，它占据整个屏幕，当您打开另一个软件时，它们会各自占据一半屏幕。</p>
+<p>这种窗口管理模式对于键盘操作非常友好，可以通过快捷键选中、操纵窗口，比较出名的有<code>Bspwm</code>，<code>i3wm</code>等等。</p>
+<p><code>Bspwm</code>可以结合<code>sxhkd</code>来设置快捷键，二者的配置非常简单、方便。</p>
+<h3 id="动态窗口管理器"><a href="#动态窗口管理器" class="headerlink" title="动态窗口管理器"></a>动态窗口管理器</h3><p>它们结合不同的管理方法，可以应用层叠式的，也可以应用平铺式的，功能比较强大，比较出名的有<code>Xmonad</code>,<code> awesome</code>，<code>dwm</code>。</p>
+<p>PS：<code>dwm</code>打补丁有些麻烦。</p>
+<h3 id="额外配置"><a href="#额外配置" class="headerlink" title="额外配置"></a>额外配置</h3><p>这些窗口管理器遵循UNIX原则，通常不提供状态栏，您可以通过<code>polybar</code>进行配置。</p>
+<p>如果想要配置背景透明度和窗口渐入渐出动画，可以使用<code>picom</code>。</p>
+<p>快速启动应用，可以使用<code>rofi</code>。</p>
+<h3 id="配色"><a href="#配色" class="headerlink" title="配色"></a>配色</h3><p>我比较喜欢的配色方案是<a target="_blank" rel="noopener" href="https://www.nordtheme.com/docs/colors-and-palettes">nord</a>和<a target="_blank" rel="noopener" href="https://ssshooter.github.io/nippon-color/">nipponcolor</a>。</p>
+<h2 id="5-电源管理"><a href="#5-电源管理" class="headerlink" title="5.电源管理"></a>5.电源管理</h2><p>有很多用户报告说，Linux比Windows更耗电。我还没有验证过这个结论。但是用Linux日常工作，我的笔记本风扇声音更小，温度更低。内存占用、CPU占用也更少。</p>
+<p>如果您想配置电源，可以使用<code>powertop</code>和<code>tlp</code>两个工具，我更推荐前者，后者导致我的无线网经常断连。</p>
+<h2 id="6-浏览器"><a href="#6-浏览器" class="headerlink" title="6.浏览器"></a>6.浏览器</h2><p>我使用<code>Firefox</code>和<code>ungoogled-chromium</code>。其中，对于Firefox，我应用了<a target="_blank" rel="noopener" href="https://github.com/arkenfox/user.js/">arkenfox&#x2F;user.js</a>，对隐私保护进行了优化，如果嫌麻烦，可以直接使用<code>LibreWolf</code>。此外，可以使用<code>Vimium</code>插件将Vim键位应用到网页浏览上。</p>
+<p>您可以通过<a target="_blank" rel="noopener" href="https://www.deviceinfo.me/">此网站</a>测试您浏览器的隐私程度。</p>
+<h2 id="7-安全"><a href="#7-安全" class="headerlink" title="7.安全"></a>7.安全</h2><h3 id="防火墙"><a href="#防火墙" class="headerlink" title="防火墙"></a>防火墙</h3><p>您需要它。的确，Linux下的恶意软件更少，但是仍然面临着被黑入的风险。</p>
+<p><code>firewalld</code>和<code>ufw</code>都是不错的选择，它们分别使用<code>nftables</code>和<code>iptables</code>作为后端。我日常使用后者，<code>gufw</code>包提供了一个图形界面来配置<code>ufw</code>的规则、端口等等。</p>
+<h3 id="密码管理器"><a href="#密码管理器" class="headerlink" title="密码管理器"></a>密码管理器</h3><p>您可能将大部分密码保存在浏览器里，但是我不推荐这种方法，因为浏览器并不是为管理密码设计的。我更推荐用专用的密码管理器。</p>
+<p>现在的密码管理器大概分为两种，一种将密码库放在云端，另一种将密码库存储在本地。前者比较方便，可以多设备同步，但是面临着数据泄露的风险，比如<a target="_blank" rel="noopener" href="https://www.wired.com/story/lastpass-breach-vaults-password-managers/">LastPass密码库泄露事件</a>。所以我更推荐使用后者，只要你能够妥善保管，就很安全，我日常使用的是<code>KeePassXC</code>。</p>
+<p>这里也推荐一个方法，在设置密钥时，可以在设置密码的同时设置密钥文件，这样基本上没有暴力破解的可能性。</p>
+<h3 id="加密卷"><a href="#加密卷" class="headerlink" title="加密卷"></a>加密卷</h3><p>如果您有些敏感信息要存放，可以使用<code>Veracrypt</code>，它不仅可以创建加密卷，也可以加密U盘、硬盘等，是很强大的工具。</p>
+<p>同样，采用密钥文件+密码的模式，会很安全。</p>
+<h3 id="快照-x2F-备份"><a href="#快照-x2F-备份" class="headerlink" title="快照&#x2F;备份"></a>快照&#x2F;备份</h3><p>滚动更新面临着系统崩溃的风险，而Arch Linux的更新策略尤为激进。所以您需要定期备份，好在系统崩溃时回滚，相关工具有<code>timeshift</code>等等。</p>
+<h3 id="权限"><a href="#权限" class="headerlink" title="权限"></a>权限</h3><p>妥善管理好文件的权限！</p>
+<p>此外，用<code>sudo</code>代替<code> su root</code>。</p>
+<p>看到过许多Linux用户，常年用<code>root</code>用户操作……为他们捏把汗。</p>
+<p>不过也有些单用户的发行版，就不太需要考虑权限的事情，比如说<code>Haiku</code>。</p>
+<h3 id="三思而后行"><a href="#三思而后行" class="headerlink" title="三思而后行"></a>三思而后行</h3><p>在执行命令前，看清楚语法是否正确。举个例子，</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rm -rf ./ ss</span><br></pre></td></tr></table></figure>
+
+<p>这个命令会删除你所在文件夹的所有内容，如果只想删除ss,</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rm -rf ./ss</span><br></pre></td></tr></table></figure>
+
+<p>我就曾经多打了一个空格，导致删除了我所有的配置文件和重要文档。</p>
+<h2 id="8-游戏"><a href="#8-游戏" class="headerlink" title="8.游戏"></a>8.游戏</h2><p>我没有找到一个完美的方案。</p>
+<p>如果游戏支持Linux,直接运行即可。</p>
+<p>对于Windows独占的游戏，Steam上的游戏可以使用Steam自带的Proton运行，Proton集成了wine等有用的工具，对于steam游戏也做了相应的优化，体验还算不错，但是在游戏过程中，游戏内存占用会不断增长，最终导致系统卡死。</p>
+<p>我也听说过使用<code>DXVK</code>、<code>lutris</code>和<code>play on linux</code>的方案，不知道体验如何。</p>
+<h2 id="9-编辑器"><a href="#9-编辑器" class="headerlink" title="9.编辑器"></a>9.编辑器</h2><p>如果您习惯了键盘操作，那么您也许会发现，工作效率也会有显著的提高。此外，流畅的键盘操作更容易进行流畅的编码，免去切换鼠标带来的思路卡顿。</p>
+<p>以键盘操作为主的编辑器，无非是Emacs和Vim，一直以来始终有一个争论：Emacs还是Vim？</p>
+<p>这个问题和“哪个发行版最好”一样毫无意义，不过是茶余饭后闲聊的谈资而已。</p>
+<p>Emacs功能强大，可以作为邮件客户端、笔记软件、音乐软件、图片查看器等，被称为“神之编辑器”。</p>
+<p>Vim&#x2F;Neovim键位更友好，大大提升编码效率，被称为“编辑器之神”。</p>
+<p>对于Emacs,有很多开箱即用的用户预配置版本：<code>doomemacs</code>、<code>spacemacs</code>。</p>
+<p>对于Vim,则有：<code>Lunarvim</code>等。</p>
+<p>此外，我也经常使用<code>IDEA</code>等编辑器。工具嘛，哪个好用用哪个。</p>
+<h2 id="10-输入法"><a href="#10-输入法" class="headerlink" title="10.输入法"></a>10.输入法</h2><p>输入法参考维基，安装fcitx5就好，不过我想在这里写下一个问题的解决方法。</p>
+<h3 id="fcitx5无法输入中文中括号的解决方案"><a href="#fcitx5无法输入中文中括号的解决方案" class="headerlink" title="fcitx5无法输入中文中括号的解决方案"></a>fcitx5无法输入中文中括号的解决方案</h3><p>在<code>/usr/share/fcitx5/punctuation/punc.mb.zh_CN</code>这个文件中，</p>
+<p>将[，]两行改为：</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[ 【</span><br><span class="line">] 】</span><br></pre></td></tr></table></figure>
+
+<p>如果您想打出中文的人名分隔符的话：</p>
+<p>在文件末尾添加：</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">` ·</span><br></pre></td></tr></table></figure>
+
+<p>即可。</p>
+<h2 id="11-个性化配置"><a href="#11-个性化配置" class="headerlink" title="11.个性化配置"></a>11.个性化配置</h2><h3 id="键位绑定"><a href="#键位绑定" class="headerlink" title="键位绑定"></a>键位绑定</h3><p>可以使用<code>xmodmap</code>工具，比如，您可以用它将Caps Lock键和Ctrl键映射互换。</p>
+<h3 id="外设配置-x2F-灯效配置"><a href="#外设配置-x2F-灯效配置" class="headerlink" title="外设配置&#x2F;灯效配置"></a>外设配置&#x2F;灯效配置</h3><p>如果您要配置鼠标的额外按键功能、RGB灯效的话，可以使用<code>piper</code>，但有可能出现无法绑定键位的错误。</p>
+<p>灯效可以通过<code>openrgb</code>进行配置。</p>
+<h3 id="终端模拟器-x2F-Shell"><a href="#终端模拟器-x2F-Shell" class="headerlink" title="终端模拟器&#x2F;Shell"></a>终端模拟器&#x2F;Shell</h3><p>对于终端模拟器，<code>Alacritty</code>是个不错的选择，支持跨平台操作，也支持一定程度的自配置。</p>
+<p>Shell则纯看个人喜好，我使用<code>zsh</code>，搭配<code>oh-my-zsh</code>的示例配置文件。</p>
+<h3 id="系统监测"><a href="#系统监测" class="headerlink" title="系统监测"></a>系统监测</h3><p><code>htop</code>可以查看进程。</p>
+<p><code>neofetch</code>可以查看系统信息。</p>
+<h3 id="dotfiles"><a href="#dotfiles" class="headerlink" title="dotfiles"></a>dotfiles</h3><p>所谓dotfiles，就是您的自定义配置文件，因为大多配置文件都以<code>.</code>开头，或者储存在<code>.config</code>文件夹内，您可以通过git或者其他管理工具管理它们，上传到github，这样在配置新系统时会很方便。</p>
+<h2 id="Ex-注意事项"><a href="#Ex-注意事项" class="headerlink" title="Ex.注意事项"></a>Ex.注意事项</h2><h3 id="Emacs的使用"><a href="#Emacs的使用" class="headerlink" title="Emacs的使用"></a>Emacs的使用</h3><p>将Emacs设置为守护进程将节省启动的时间。开机时启动守护进程，Emacs就将始终在后台运行，每次打开Emacs(Client)即可，免去加载时间。</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/usr/bin/emacs --daemon &amp;</span><br></pre></td></tr></table></figure>
+
+<h3 id="NVIDIA驱动"><a href="#NVIDIA驱动" class="headerlink" title="NVIDIA驱动"></a>NVIDIA驱动</h3><p>不要从NVIDIA官网安装！参见<a target="_blank" rel="noopener" href="https://wiki.archlinuxcn.org/wiki/NVIDIA">Arch Wiki：NVIDIA</a>。</p>
+<h3 id="信息源"><a href="#信息源" class="headerlink" title="信息源"></a>信息源</h3><p><code>Arch Wiki</code>中包含大多数常用包的说明、设置方法、疑难解答。</p>
+<p><code>Arch Forum</code>中包含很多用户遇到的问题和解决方案。</p>
+<p><code>Github</code>上有许多包的源码，可以在issue中查看一些问题的解决方法。</p>
+<h3 id="Haskell配置"><a href="#Haskell配置" class="headerlink" title="Haskell配置"></a>Haskell配置</h3><p>不要使用Arch Linux提供的<code>ghc</code>，<code>ghci</code>，正确的方法是只安装官方库的<code>ghcup</code>，通过<code>ghcup</code>安装相关的包。</p>
+<h3 id="发行版彼此不同"><a href="#发行版彼此不同" class="headerlink" title="发行版彼此不同"></a>发行版彼此不同</h3><p><code>Manjaro</code>、<code>Arco Linux</code>、<code>Artix Linux</code>不是<code>Arch Linux</code>，它们是<strong>基于</strong><code>Arch Linux</code>的发行版。</p>
+<p><code>Ubuntu</code>不是<code>Debian</code>,它是<strong>基于</strong><code>Debian</code>的发行版。</p>
+<p>也就是说，举个例子，在<code>Manjaro</code>发行版上遇到的问题，尽量去<code>Manjaro</code>专门的论坛，而不是去<code>Arch Linux</code>的论坛寻求解答；在<code>Debian</code>上遇到的问题就尽量去<code>Debian</code>论坛寻求解答。</p>
+<h3 id="软件替代品"><a href="#软件替代品" class="headerlink" title="软件替代品"></a>软件替代品</h3><p>您可以去<a target="_blank" rel="noopener" href="https://alternativeto.net/">alternativeto.net</a>查询Windows下软件在Linux系统上的替代品。</p>
+<h3 id="一寸光阴一寸金"><a href="#一寸光阴一寸金" class="headerlink" title="一寸光阴一寸金"></a>一寸光阴一寸金</h3><p>不要花费太多时间在切换、尝试不同的Linux发行版上，也不要花费太多时间在配置桌面环境、选择软件上。能用就行。</p>
+<h2 id="推荐阅读"><a href="#推荐阅读" class="headerlink" title="推荐阅读"></a>推荐阅读</h2><p><a target="_blank" rel="noopener" href="https://wiki.archlinuxcn.org/wiki/%E7%B3%BB%E7%BB%9F%E7%BB%B4%E6%8A%A4">Arch Wiki：系统维护</a></p>
+<p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/163805070">fcitx5中文输入法方括号问题的解决</a></p>
+
+      </div>
+      
+        <div class="prev-or-next">
+          <div class="post-foot-next">
+            
+              <a href="/2023/02/10/Security/" target="_self">
+                <i class="iconfont icon-chevronleft"></i>
+                <span>上一页</span>
+              </a>
+            
+          </div>
+          <div class="post-attach">
+            <span class="post-pubtime">
+              <i class="iconfont icon-updatetime mr-10" title="更新时间"></i>
+              2023-02-10 11:15:49
+            </span>
+            
+                  <span class="post-tags">
+                    <i class="iconfont icon-tags mr-10" title="标签"></i>
+                    
+                    <span class="span--tag mr-8">
+                      <a href="/tags/Linux/" title="Linux">
+                        #Linux
+                      </a>
+                    </span>
+                    
+                  </span>
+              
+          </div>
+          <div class="post-foot-prev">
+            
+              <a href="/2023/02/10/Education/" target="_self">
+                <span>下一页</span>
+                <i class="iconfont icon-chevronright"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+    </div>
+    
+  <div id="btn-catalog" class="btn-catalog">
+    <i class="iconfont icon-catalog"></i>
+  </div>
+  <div class="post-catalog hidden" id="catalog">
+    <div class="title">目录</div>
+    <div class="catalog-content">
+      
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Linux%E8%8B%A6%E7%97%9B%E4%B9%8B%E8%B7%AF%EF%BC%88%E4%B8%89%EF%BC%89%EF%BC%9A%E6%BC%AB%E8%B0%88-Arch-Linux%E8%BD%AF%E4%BB%B6%E9%85%8D%E7%BD%AE%E9%80%89%E6%8B%A9"><span class="toc-text">Linux苦痛之路（三）：漫谈+Arch Linux软件配置选择</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%86%99%E5%9C%A8%E5%89%8D%E9%9D%A2"><span class="toc-text">写在前面</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#0-%E6%88%91%E4%B8%BA%E4%BB%80%E4%B9%88%E8%A6%81%E7%94%A8Linux%EF%BC%9F"><span class="toc-text">0. 我为什么要用Linux？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#0-5-%E6%80%8E%E4%B9%88%E9%80%89%E6%8B%A9%E5%8F%91%E8%A1%8C%E7%89%88%EF%BC%9F"><span class="toc-text">0.5 怎么选择发行版？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E5%9F%BA%E6%9C%AC%E7%8E%AF%E5%A2%83%E5%AE%89%E8%A3%85"><span class="toc-text">1.基本环境安装</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AF%86%E9%92%A5%E9%97%AE%E9%A2%98"><span class="toc-text">密钥问题</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-%E5%8C%85%E7%AE%A1%E7%90%86%E5%99%A8"><span class="toc-text">2. 包管理器</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-%E6%98%BE%E7%A4%BA%E7%AE%A1%E7%90%86%E5%99%A8"><span class="toc-text">3. 显示管理器</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-5-%E6%A1%8C%E9%9D%A2%E7%8E%AF%E5%A2%83"><span class="toc-text">3.5 桌面环境</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-%E7%AA%97%E5%8F%A3%E7%AE%A1%E7%90%86%E5%99%A8"><span class="toc-text">4. 窗口管理器</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B1%82%E5%8F%A0%E5%BC%8F%E7%AA%97%E5%8F%A3%E7%AE%A1%E7%90%86%E5%99%A8"><span class="toc-text">层叠式窗口管理器</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B9%B3%E9%93%BA%E5%BC%8F%E7%AA%97%E5%8F%A3%E7%AE%A1%E7%90%86%E5%99%A8"><span class="toc-text">平铺式窗口管理器</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8A%A8%E6%80%81%E7%AA%97%E5%8F%A3%E7%AE%A1%E7%90%86%E5%99%A8"><span class="toc-text">动态窗口管理器</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%A2%9D%E5%A4%96%E9%85%8D%E7%BD%AE"><span class="toc-text">额外配置</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%85%8D%E8%89%B2"><span class="toc-text">配色</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-%E7%94%B5%E6%BA%90%E7%AE%A1%E7%90%86"><span class="toc-text">5.电源管理</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#6-%E6%B5%8F%E8%A7%88%E5%99%A8"><span class="toc-text">6.浏览器</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#7-%E5%AE%89%E5%85%A8"><span class="toc-text">7.安全</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%98%B2%E7%81%AB%E5%A2%99"><span class="toc-text">防火墙</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AF%86%E7%A0%81%E7%AE%A1%E7%90%86%E5%99%A8"><span class="toc-text">密码管理器</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8A%A0%E5%AF%86%E5%8D%B7"><span class="toc-text">加密卷</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%BF%AB%E7%85%A7-x2F-%E5%A4%87%E4%BB%BD"><span class="toc-text">快照&#x2F;备份</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9D%83%E9%99%90"><span class="toc-text">权限</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%89%E6%80%9D%E8%80%8C%E5%90%8E%E8%A1%8C"><span class="toc-text">三思而后行</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#8-%E6%B8%B8%E6%88%8F"><span class="toc-text">8.游戏</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#9-%E7%BC%96%E8%BE%91%E5%99%A8"><span class="toc-text">9.编辑器</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#10-%E8%BE%93%E5%85%A5%E6%B3%95"><span class="toc-text">10.输入法</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#fcitx5%E6%97%A0%E6%B3%95%E8%BE%93%E5%85%A5%E4%B8%AD%E6%96%87%E4%B8%AD%E6%8B%AC%E5%8F%B7%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88"><span class="toc-text">fcitx5无法输入中文中括号的解决方案</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#11-%E4%B8%AA%E6%80%A7%E5%8C%96%E9%85%8D%E7%BD%AE"><span class="toc-text">11.个性化配置</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%94%AE%E4%BD%8D%E7%BB%91%E5%AE%9A"><span class="toc-text">键位绑定</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A4%96%E8%AE%BE%E9%85%8D%E7%BD%AE-x2F-%E7%81%AF%E6%95%88%E9%85%8D%E7%BD%AE"><span class="toc-text">外设配置&#x2F;灯效配置</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BB%88%E7%AB%AF%E6%A8%A1%E6%8B%9F%E5%99%A8-x2F-Shell"><span class="toc-text">终端模拟器&#x2F;Shell</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%B3%BB%E7%BB%9F%E7%9B%91%E6%B5%8B"><span class="toc-text">系统监测</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#dotfiles"><span class="toc-text">dotfiles</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Ex-%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9"><span class="toc-text">Ex.注意事项</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Emacs%E7%9A%84%E4%BD%BF%E7%94%A8"><span class="toc-text">Emacs的使用</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#NVIDIA%E9%A9%B1%E5%8A%A8"><span class="toc-text">NVIDIA驱动</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BF%A1%E6%81%AF%E6%BA%90"><span class="toc-text">信息源</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Haskell%E9%85%8D%E7%BD%AE"><span class="toc-text">Haskell配置</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8F%91%E8%A1%8C%E7%89%88%E5%BD%BC%E6%AD%A4%E4%B8%8D%E5%90%8C"><span class="toc-text">发行版彼此不同</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BD%AF%E4%BB%B6%E6%9B%BF%E4%BB%A3%E5%93%81"><span class="toc-text">软件替代品</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%80%E5%AF%B8%E5%85%89%E9%98%B4%E4%B8%80%E5%AF%B8%E9%87%91"><span class="toc-text">一寸光阴一寸金</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%8E%A8%E8%8D%90%E9%98%85%E8%AF%BB"><span class="toc-text">推荐阅读</span></a></li></ol></li></ol>
+      
+    </div>
+  </div>
+
+  
+<script src="/js/catalog.js"></script>
+
+
+
+
+    
+      <div class="comments-container">
+        
+
+
+
+
+  
+    <script async type="text/javascript" src='https://cdn.jsdelivr.net/npm/valine@1.4.18/dist/Valine.min.js' onload="loadValineSuc(this)"></script>
+  
+
+  <div id="vcomments"></div>
+
+  <script>
+    function loadValineSuc() {
+      new Valine({
+        el: '#vcomments',
+        appId: 'oMvaqsYv2LQSqtj795B31OWV-gzGzoHsz',
+        appKey: 'UKlJCzW9McXrX8L71Mqz5hol',
+        placeholder: 'Welcome!',
+        avatar: 'retro',
+        lang: 'zh-CN'
+      })
+    }
+  </script>
+
+    <style>
+      .comments-container .v .vempty {
+        display: none!important;
+      }
+    </style>
+
+
+
+
+      </div>
+    
+  </div>
+
+
+        
+<div class="footer">
+  <div class="social">
+    <ul>
+      
+        <li>
+          <a title="rss" href="/atom.xml">
+            <i class="iconfont icon-rss"></i>
+          </a>
+        </li>
+      
+    </ul>
+  </div>
+  
+    
+    <div class="footer-more">
+      
+        <a target="_blank" rel="noopener" href="https://github.com/zchengsite/hexo-theme-oranges">Copyright © 2024 Oranges</a>
+        
+    </div>
+  
+    
+    <div class="footer-more">
+      
+        <a target="_blank" rel="noopener" href="https://github.com/zchengsite/hexo-theme-oranges">Theme by Oranges | Powered by Hexo</a>
+        
+    </div>
+  
+  
+</div>
+
+      </div>
+
+      <div class="tools-bar">
+        <div class="back-to-top tools-bar-item hidden">
+  <a href="javascript: void(0)">
+    <i class="iconfont icon-chevronup"></i>
+  </a>
+</div>
+
+
+<script src="/js/backtotop.js"></script>
+
+
+
+        
+  <div class="search-icon tools-bar-item" id="search-icon">
+    <a href="javascript: void(0)">
+      <i class="iconfont icon-search"></i>
+    </a>
+  </div>
+
+  <div class="search-overlay hidden">
+    <div class="search-content" tabindex="0">
+      <div class="search-title">
+        <span class="search-icon-input">
+          <a href="javascript: void(0)">
+            <i class="iconfont icon-search"></i>
+          </a>
+        </span>
+        
+          <input type="text" class="search-input" id="search-input" placeholder="搜索...">
+        
+        <span class="search-close-icon" id="search-close-icon">
+          <a href="javascript: void(0)">
+            <i class="iconfont icon-close"></i>
+          </a>
+        </span>
+      </div>
+      <div class="search-result" id="search-result"></div>
+    </div>
+  </div>
+
+  <script type="text/javascript">
+    var inputArea = document.querySelector("#search-input")
+    var searchOverlayArea = document.querySelector(".search-overlay")
+
+    inputArea.onclick = function() {
+      getSearchFile()
+      this.onclick = null
+    }
+
+    inputArea.onkeydown = function() {
+      if(event.keyCode == 13)
+        return false
+    }
+
+    function openOrHideSearchContent() {
+      let isHidden = searchOverlayArea.classList.contains('hidden')
+      if (isHidden) {
+        searchOverlayArea.classList.remove('hidden')
+        document.body.classList.add('hidden')
+        // inputArea.focus()
+      } else {
+        searchOverlayArea.classList.add('hidden')
+        document.body.classList.remove('hidden')
+      }
+    }
+
+    function blurSearchContent(e) {
+      if (e.target === searchOverlayArea) {
+        openOrHideSearchContent()
+      }
+    }
+
+    document.querySelector("#search-icon").addEventListener("click", openOrHideSearchContent, false)
+    document.querySelector("#search-close-icon").addEventListener("click", openOrHideSearchContent, false)
+    searchOverlayArea.addEventListener("click", blurSearchContent, false)
+
+    var searchFunc = function (path, search_id, content_id) {
+      'use strict';
+      var $input = document.getElementById(search_id);
+      var $resultContent = document.getElementById(content_id);
+      $resultContent.innerHTML = "<ul><span class='local-search-empty'>首次搜索，正在载入索引文件，请稍后……<span></ul>";
+      $.ajax({
+        // 0x01. load xml file
+        url: path,
+        dataType: "xml",
+        success: function (xmlResponse) {
+          // 0x02. parse xml file
+          var datas = $("entry", xmlResponse).map(function () {
+            return {
+              title: $("title", this).text(),
+              content: $("content", this).text(),
+              url: $("url", this).text()
+            };
+          }).get();
+          $resultContent.innerHTML = "";
+
+          $input.addEventListener('input', function () {
+            // 0x03. parse query to keywords list
+            var str = '<ul class=\"search-result-list\">';
+            var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+            $resultContent.innerHTML = "";
+            if (this.value.trim().length <= 0) {
+              return;
+            }
+            // 0x04. perform local searching
+            datas.forEach(function (data) {
+              var isMatch = true;
+              var content_index = [];
+              if (!data.title || data.title.trim() === '') {
+                data.title = "Untitled";
+              }
+              var orig_data_title = data.title.trim();
+              var data_title = orig_data_title.toLowerCase();
+              var orig_data_content = data.content.trim().replace(/<[^>]+>/g, "");
+              var data_content = orig_data_content.toLowerCase();
+              var data_url = data.url;
+              var index_title = -1;
+              var index_content = -1;
+              var first_occur = -1;
+              // only match artiles with not empty contents
+              if (data_content !== '') {
+                keywords.forEach(function (keyword, i) {
+                  index_title = data_title.indexOf(keyword);
+                  index_content = data_content.indexOf(keyword);
+
+                  if (index_title < 0 && index_content < 0) {
+                    isMatch = false;
+                  } else {
+                    if (index_content < 0) {
+                      index_content = 0;
+                    }
+                    if (i == 0) {
+                      first_occur = index_content;
+                    }
+                    // content_index.push({index_content:index_content, keyword_len:keyword_len});
+                  }
+                });
+              } else {
+                isMatch = false;
+              }
+              // 0x05. show search results
+              if (isMatch) {
+                str += "<li><a href='" + data_url + "' class='search-result-title'>" + orig_data_title + "</a>";
+                var content = orig_data_content;
+                if (first_occur >= 0) {
+                  // cut out 100 characters
+                  var start = first_occur - 20;
+                  var end = first_occur + 80;
+
+                  if (start < 0) {
+                    start = 0;
+                  }
+
+                  if (start == 0) {
+                    end = 100;
+                  }
+
+                  if (end > content.length) {
+                    end = content.length;
+                  }
+
+                  var match_content = content.substr(start, end);
+
+                  // highlight all keywords
+                  keywords.forEach(function (keyword) {
+                    var regS = new RegExp(keyword, "gi");
+                    match_content = match_content.replace(regS, "<span class=\"search-keyword\">" + keyword + "</span>");
+                  });
+
+                  str += "<p class=\"search-result-abstract\">" + match_content + "...</p>"
+                }
+                str += "</li>";
+              }
+            });
+            str += "</ul>";
+            if (str.indexOf('<li>') === -1) {
+              return $resultContent.innerHTML = "<ul><span class='local-search-empty'>没有找到内容，请尝试更换检索词。<span></ul>";
+            }
+            $resultContent.innerHTML = str;
+          });
+        },
+        error: function(xhr, status, error) {
+          $resultContent.innerHTML = ""
+          if (xhr.status === 404) {
+            $resultContent.innerHTML = "<ul><span class='local-search-empty'>未找到search.xml文件，具体请参考：<a href='https://github.com/zchengsite/hexo-theme-oranges#configuration' target='_black'>configuration</a><span></ul>";
+          } else {
+            $resultContent.innerHTML = "<ul><span class='local-search-empty'>请求失败，尝试重新刷新页面或稍后重试。<span></ul>";
+          }
+        }
+      });
+      $(document).on('click', '#search-close-icon', function() {
+        $('#search-input').val('');
+        $('#search-result').html('');
+      });
+    }
+
+    var getSearchFile = function() {
+        var path = "/search.xml";
+        searchFunc(path, 'search-input', 'search-result');
+    }
+  </script>
+
+
+
+
+        
+  <div class="tools-bar-item theme-icon" id="switch-color-scheme">
+    <a href="javascript: void(0)">
+      <i id="theme-icon" class="iconfont icon-moon"></i>
+    </a>
+  </div>
+
+  
+<script src="/js/colorscheme.js"></script>
+
+
+
+
+
+        
+  
+    <div class="share-icon tools-bar-item">
+      <a href="javascript: void(0)" id="share-icon">
+        <i class="iconfont iconshare"></i>
+      </a>
+      <div class="share-content hidden">
+        
+          <a class="share-item" href="https://twitter.com/intent/tweet?text=' + Linux%E8%8B%A6%E7%97%9B%E4%B9%8B%E8%B7%AF%EF%BC%88%E4%B8%89%EF%BC%89%EF%BC%9A%E6%BC%AB%E8%B0%88%2BArch%20Linux%E8%BD%AF%E4%BB%B6%E9%85%8D%E7%BD%AE%E9%80%89%E6%8B%A9 + '&url=' + https%3A%2F%2Fcoder109.github.io%2F2023%2F02%2F10%2FLinuxRoad%2F + '" target="_blank" title="Twitter">
+            <i class="iconfont icon-twitter"></i>
+          </a>
+        
+        
+      </div>
+    </div>
+  
+  
+<script src="/js/shares.js"></script>
+
+
+
+      </div>
+    </div>
+  
+        <style>
+            [bg-lazy] {
+                background-image: none !important;
+                background-color: #eee !important;
+            }
+        </style>
+        <script>
+            window.imageLazyLoadSetting = {
+                isSPA: false,
+                preloadRatio: 1,
+                processImages: null,
+            };
+        </script><script>window.addEventListener("load",function(){var t=/\.(gif|jpg|jpeg|tiff|png)$/i,r=/^data:image\/[a-z]+;base64,/;Array.prototype.slice.call(document.querySelectorAll("img[data-original]")).forEach(function(a){var e=a.parentNode;"A"===e.tagName&&(e.href.match(t)||e.href.match(r))&&(e.href=a.dataset.original)})});</script><script>!function(r){r.imageLazyLoadSetting.processImages=t;var e=r.imageLazyLoadSetting.isSPA,n=r.imageLazyLoadSetting.preloadRatio||1,c=a();function a(){var t=Array.prototype.slice.call(document.querySelectorAll("img[data-original]")),e=Array.prototype.slice.call(document.querySelectorAll("[bg-lazy]"));return t.concat(e)}function t(){e&&(c=a());for(var t,o=0;o<c.length;o++)0<=(t=(t=c[o]).getBoundingClientRect()).bottom&&0<=t.left&&t.top<=(r.innerHeight*n||document.documentElement.clientHeight*n)&&function(){var t,e,n,a,i=c[o];e=function(){c=c.filter(function(t){return i!==t}),r.imageLazyLoadSetting.onImageLoaded&&r.imageLazyLoadSetting.onImageLoaded(i)},(t=i).hasAttribute("bg-lazy")?(t.removeAttribute("bg-lazy"),e&&e()):(n=new Image,a=t.getAttribute("data-original"),n.onload=function(){t.src=a,t.removeAttribute("data-original"),e&&e()},t.src!==a&&(n.src=a))}()}function i(){clearTimeout(t.tId),t.tId=setTimeout(t,500)}t(),document.addEventListener("scroll",i),r.addEventListener("resize",i),r.addEventListener("orientationchange",i)}(this);</script></body>
+</html>

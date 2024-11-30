@@ -1,0 +1,704 @@
+<!DOCTYPE html>
+<html lang="zh-CN" color-mode="light">
+
+  <head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="keywords" content="" />
+  <meta name="author" content="Coder109" />
+  <meta name="description" content="" />
+  
+  
+  <title>
+    
+      【神秘学】相位学与实例 
+      
+      
+      |
+    
+     幻
+  </title>
+
+  
+    <link rel="apple-touch-icon" href="/images/favicon.ico">
+    <link rel="icon" href="/images/favicon.ico">
+  
+
+  <!-- Raleway-Font -->
+  <link href="https://fonts.googleapis.com/css?family=Raleway&display=swap" rel="stylesheet">
+
+  <!-- hexo site css -->
+  <link rel="stylesheet" href="/css/main.css" />
+  <link rel="stylesheet" href="//at.alicdn.com/t/font_1886449_67xjft27j1l.css" />
+  <!-- 代码块风格 -->
+  
+
+  <!-- jquery3.3.1 -->
+  
+    <script defer type="text/javascript" src="/plugins/jquery.min.js"></script>
+  
+
+  <!-- fancybox -->
+  
+    <link href="/plugins/jquery.fancybox.min.css" rel="stylesheet">
+    <script defer type="text/javascript" src="/plugins/jquery.fancybox.min.js"></script>
+  
+  
+<script src="/js/fancybox.js"></script>
+
+
+  
+
+  
+
+  <script>
+    var html = document.documentElement
+    const colorMode = localStorage.getItem('color-mode')
+    if (colorMode) {
+      document.documentElement.setAttribute('color-mode', colorMode)
+    }
+  </script>
+<meta name="generator" content="Hexo 6.3.0"><link rel="alternate" href="/atom.xml" title="幻" type="application/atom+xml">
+</head>
+
+
+  <body>
+    <div id="app">
+      <div class="header">
+  <div class="avatar">
+    <a href="/">
+      <!-- 头像取消懒加载，添加no-lazy -->
+      
+        <img no-lazy src="/images/favicon.ico" alt="">
+      
+    </a>
+    <div class="nickname"><a href="/">幻</a></div>
+  </div>
+  <div class="navbar">
+    <ul>
+      
+        <li class="nav-item" data-path="/">
+          <a href="/">Home</a>
+        </li>
+      
+        <li class="nav-item" data-path="/archives/">
+          <a href="/archives/">Archives</a>
+        </li>
+      
+        <li class="nav-item" data-path="/tags/">
+          <a href="/tags/">Tags</a>
+        </li>
+      
+        <li class="nav-item" data-path="/friends/">
+          <a href="/friends/">Friends</a>
+        </li>
+      
+        <li class="nav-item" data-path="/about/">
+          <a href="/about/">About</a>
+        </li>
+      
+    </ul>
+  </div>
+</div>
+
+
+<script src="/js/activeNav.js"></script>
+
+
+
+      <div class="flex-container">
+        <!-- 文章详情页，展示文章具体内容，url形式：https://yoursite/文章标题/ -->
+<!-- 同时为「标签tag」，「朋友friend」，「分类categories」，「关于about」页面的承载页面，具体展示取决于page.type -->
+
+
+  <!-- LaTex Display -->
+
+  
+    <script async type="text/javascript" src="/plugins/mathjax/tex-chtml.js"></script>
+  
+  <script>
+    MathJax = {
+      tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']]
+      }
+    }
+  </script>
+
+
+
+
+
+  <!-- clipboard -->
+
+  
+    <script async type="text/javascript" src="/plugins/clipboard.min.js"></script>
+  
+  
+<script src="/js/codeCopy.js"></script>
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  <!-- 文章内容页 url形式：https://yoursite/文章标题/ -->
+  <div class="container post-details" id="post-details">
+    <div class="post-content">
+      <div class="post-title">【神秘学】相位学与实例</div>
+      <div class="post-attach">
+        <span class="post-pubtime">
+          <i class="iconfont icon-updatetime mr-10" title="更新时间"></i>
+          2024-01-16 12:42:57
+        </span>
+        
+              <span class="post-tags">
+                <i class="iconfont icon-tags mr-10" title="标签"></i>
+                
+                <span class="span--tag mr-8">
+                  <a href="/tags/%E7%A5%9E%E7%A7%98%E5%AD%A6/" title="神秘学">
+                    #神秘学
+                  </a>
+                </span>
+                
+                <span class="span--tag mr-8">
+                  <a href="/tags/%E5%8D%A0%E6%98%9F%E5%AD%A6/" title="占星学">
+                    #占星学
+                  </a>
+                </span>
+                
+              </span>
+          
+      </div>
+      <div class="markdown-body">
+        <h1 id="引子"><a href="#引子" class="headerlink" title="引子"></a>引子</h1><p>所谓相位学，就是研究星球之间夹角的学科。</p>
+<p>本文以一张随机星盘举例子：</p>
+<p><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAASwAAAEsCAMAAABOo35HAAAABGdBTUEAAK/INwWK6QAAABl0RVh0U29mdHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwAAAC9UExURVlZWdPT07KysmRkZIWFhfT09JmZmWZmZm9vb39/fxkZGUxMTDMzM3p6epCQkKamppubm729venp6cjIyN7e3tbW1s/Pz8LCwnx8fLS0tFZWVoiIiI+Pj6GhoeTk5Glpabu7u93d3evr66CgoJSUlKqqqsnJyeDg4Hd3d8PDw+Xl5bi4uNHR0dvb26Ojo6urq+fn51hYWDg4OCgoKHBwcK2traenp0FBQe7u7vHx8U5OTre3t8zMzHV1df///7GrnpQAAAA/dFJOU///////////////////////////////////////////////////////////////////////////////////AI4mfBcAAAUGSURBVHja7NoJb6M4GMZxY0NCD64kve/pMZ2d3Z297+X7f6zFNmBAMUXa6URl/q9UJSWPUPzrizFWRUlNLgEBWGCBBRZYYEEAFlhggQUWWBCABRZYYIEFFgRggQUWWGCBBQFYYIEFFlhgQQAWWGCBBRZYEIAFFlhggQUWBGCBBRZYYIEFAVhggQUWWGBBABZYYIEFFlgQgAUWWGCBBRYEYIEFFlhggQUBWGCBBRZYYEEAFlhggQUWWBCABRZYYIEFFgRggQUWWGCBBQFYYIEFFlhgQQAWWGCBBRZYEIAFFlhggQUWBGCBBRZYn6cCIcRXgvX/h9qcIVBqDdbEM8RCxGCB9QqXYRwHYDHBgwXWl8eKZKiESHI3Ba1kWs3fKixcaJUl1YyeBm7Ocq+yLItUiVBGnXxenSHJolIKEcwHq6ikbOX1YGVzQCTN8LPmSLreghUl9sN4Uw7yajMrLC0TZ1ImzqY6FEop0+pIaEN5HaoOxVuwEqFyc4I46uSlzOLqgxlh6UaR9l3VYWl9Fdoxb1Q90KJtu41pwwFW/WHhTtW8i7TafLCqRsk6bsGw63L9qurXRmuIlbT9lDQnlXU+nBFW1Q2qnZbDprWa2tjR90LZFqx1/+Td/HpGWLlrLDvIwTcx6dQ1Vrntbig68cDms3JwbA5Y1azs1ger6sNV/bbIw1jU81MvNAGrl58RVn8ozW+btF08iGFoAlYvP3csfVur1gJBEIA1uBmue5dhZDOyO2epbmgCVi8/I6x0MMHH9pjsTfBhNzQBq5uPZoQlB0uH3DZG4EZqQ26fL3sZq5uf09Ih6qw3i/pm6BZO0qZX7rrUS68Xsbr5ZE4rePMk08pk9aUZugfqppvs6AM1Acvlo/StP+6EbW06z8hJqxbYp2BZPQUnFsLsKuhQdaHqn5ewbF7KXIn0jWO5MqOQ7RaNLPtbNMmmhimj0GUmYLl8Gs0Lq4wyPbTu1l2QKqHSouzs3OlDIslW5SQsnY/NXmFplyNvEuuLV/Tau9BzwiraDUSwXmysztYWWNtL1psXeumgIrDGaqXvBfUuvtqUYI3V2t1wk1e2msFluJJm6zDJXv/fIfjPP7DAAgsssCiwwAILLLDAosACCyywwAKLAgsssMACC6zt9fDz/v75tyOB+98PD2+ORgKffjw4OP1uJPDxl+Xy8v1I4MPF3t7VNyOB4/vF4uzdzrG+39f1kz/w66Guv/yBvw90KX/gZKkr8Qf+2dOV+gNHC12/7RxrabD2/a31bLAO/a11YbAO/K21MFhLf2s9Gqw9f2vdGqzFu11jnVusE2/gxmI9eQOnFuvYG7i0WH7uK4t15w2cWazrXWP9a7H8f/bQYvm/6IPF+sF/pVssf19Ii/WH/0K2WH/uGuvEWC39gSdj9Twy+Rqri5EZx1gt/IE7Y/XoD1wbq9vd3w1PlufnD2OBp+ebm/uxwPHF6emnscDR4vLy41jg7vHq6sNY4Pr27OyYdRaLUrDAAosCCyywwAILLAossMACCyywKLDAAgsssMCiwAILLLDAAosCCyywwAILLAossMACCyywKLDAAgsssMCiwAILLLDAAosCCyywwAILLAossMACCyywKLDAAgsssMCiwAILLLDAAosCCyywwAILLAossMACCyywKLDAAgsssMCiwAILLLDAAosCCyywwAILLAossMACCyywKLDAAgsssL6u+k+AAQCR9eHtLKvLfwAAAABJRU5ErkJggg==" data-original="/2024/01/16/%E3%80%90%E7%A5%9E%E7%A7%98%E5%AD%A6%E3%80%91%E7%9B%B8%E4%BD%8D%E5%AD%A6%E4%B8%8E%E5%AE%9E%E4%BE%8B/example.png"></p>
+<p>和一张表：</p>
+<p><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAASwAAAEsCAMAAABOo35HAAAABGdBTUEAAK/INwWK6QAAABl0RVh0U29mdHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwAAAC9UExURVlZWdPT07KysmRkZIWFhfT09JmZmWZmZm9vb39/fxkZGUxMTDMzM3p6epCQkKamppubm729venp6cjIyN7e3tbW1s/Pz8LCwnx8fLS0tFZWVoiIiI+Pj6GhoeTk5Glpabu7u93d3evr66CgoJSUlKqqqsnJyeDg4Hd3d8PDw+Xl5bi4uNHR0dvb26Ojo6urq+fn51hYWDg4OCgoKHBwcK2traenp0FBQe7u7vHx8U5OTre3t8zMzHV1df///7GrnpQAAAA/dFJOU///////////////////////////////////////////////////////////////////////////////////AI4mfBcAAAUGSURBVHja7NoJb6M4GMZxY0NCD64kve/pMZ2d3Z297+X7f6zFNmBAMUXa6URl/q9UJSWPUPzrizFWRUlNLgEBWGCBBRZYYEEAFlhggQUWWBCABRZYYIEFFgRggQUWWGCBBQFYYIEFFlhgQQAWWGCBBRZYEIAFFlhggQUWBGCBBRZYYIEFAVhggQUWWGBBABZYYIEFFlgQgAUWWGCBBRYEYIEFFlhggQUBWGCBBRZYYEEAFlhggQUWWBCABRZYYIEFFgRggQUWWGCBBQFYYIEFFlhgQQAWWGCBBRZYEIAFFlhggQUWBGCBBRZYn6cCIcRXgvX/h9qcIVBqDdbEM8RCxGCB9QqXYRwHYDHBgwXWl8eKZKiESHI3Ba1kWs3fKixcaJUl1YyeBm7Ocq+yLItUiVBGnXxenSHJolIKEcwHq6ikbOX1YGVzQCTN8LPmSLreghUl9sN4Uw7yajMrLC0TZ1ImzqY6FEop0+pIaEN5HaoOxVuwEqFyc4I46uSlzOLqgxlh6UaR9l3VYWl9Fdoxb1Q90KJtu41pwwFW/WHhTtW8i7TafLCqRsk6bsGw63L9qurXRmuIlbT9lDQnlXU+nBFW1Q2qnZbDprWa2tjR90LZFqx1/+Td/HpGWLlrLDvIwTcx6dQ1Vrntbig68cDms3JwbA5Y1azs1ger6sNV/bbIw1jU81MvNAGrl58RVn8ozW+btF08iGFoAlYvP3csfVur1gJBEIA1uBmue5dhZDOyO2epbmgCVi8/I6x0MMHH9pjsTfBhNzQBq5uPZoQlB0uH3DZG4EZqQ26fL3sZq5uf09Ih6qw3i/pm6BZO0qZX7rrUS68Xsbr5ZE4rePMk08pk9aUZugfqppvs6AM1Acvlo/StP+6EbW06z8hJqxbYp2BZPQUnFsLsKuhQdaHqn5ewbF7KXIn0jWO5MqOQ7RaNLPtbNMmmhimj0GUmYLl8Gs0Lq4wyPbTu1l2QKqHSouzs3OlDIslW5SQsnY/NXmFplyNvEuuLV/Tau9BzwiraDUSwXmysztYWWNtL1psXeumgIrDGaqXvBfUuvtqUYI3V2t1wk1e2msFluJJm6zDJXv/fIfjPP7DAAgsssCiwwAILLLDAosACCyywwAKLAgsssMACC6zt9fDz/v75tyOB+98PD2+ORgKffjw4OP1uJPDxl+Xy8v1I4MPF3t7VNyOB4/vF4uzdzrG+39f1kz/w66Guv/yBvw90KX/gZKkr8Qf+2dOV+gNHC12/7RxrabD2/a31bLAO/a11YbAO/K21MFhLf2s9Gqw9f2vdGqzFu11jnVusE2/gxmI9eQOnFuvYG7i0WH7uK4t15w2cWazrXWP9a7H8f/bQYvm/6IPF+sF/pVssf19Ii/WH/0K2WH/uGuvEWC39gSdj9Twy+Rqri5EZx1gt/IE7Y/XoD1wbq9vd3w1PlufnD2OBp+ebm/uxwPHF6emnscDR4vLy41jg7vHq6sNY4Pr27OyYdRaLUrDAAosCCyywwAILLAossMACCyywKLDAAgsssMCiwAILLLDAAosCCyywwAILLAossMACCyywKLDAAgsssMCiwAILLLDAAosCCyywwAILLAossMACCyywKLDAAgsssMCiwAILLLDAAosCCyywwAILLAossMACCyywKLDAAgsssMCiwAILLLDAAosCCyywwAILLAossMACCyywKLDAAgsssL6u+k+AAQCR9eHtLKvLfwAAAABJRU5ErkJggg==" data-original="/./example_chart.png"></p>
+<p>这两张图是使用Astrolog制作的。</p>
+<h1 id="理论性内容"><a href="#理论性内容" class="headerlink" title="理论性内容"></a>理论性内容</h1><p>星座和宫位一块运作，星座是身份，而宫位是身份运行的场所，代表心识觉察到的内容，而行星代表心识的真正结构。更加具体地来说：</p>
+<blockquote>
+<p>就现在来说,只需要记住行星告诉我们自己正在看哪个部份的心识(什么),星座告诉我们那些需要和策略在驱动这颗行星(为什么和怎样),而宫位则准确地告诉我们这个行星-星座组合会在生活的哪些领域发展出来(哪里)。——《内在的天空》</p>
+</blockquote>
+<h2 id="行星的逆行"><a href="#行星的逆行" class="headerlink" title="行星的逆行"></a>行星的逆行</h2><p>当一颗行星<strong>看起来</strong>是沿着反方向运行的时候，就称这颗行星是在逆行。只有太阳和月亮不会逆行。</p>
+<h2 id="宫位的成功通过"><a href="#宫位的成功通过" class="headerlink" title="宫位的成功通过"></a>宫位的成功通过</h2><blockquote>
+<p>个人理解：1、发挥出落在这个宫位的行星的正面特质算成功通过。这是从个人意志和修行的角度来说。<br>                  2、落在这个宫位的行星是和谐相位。因为和谐相位相对容易发挥出行星的正面特质。那么反之如果<br>                        落入的行星为克相，需要个人发挥更多的意识去矫正它。<br>                  3、行运行星路过时，无论和本命行星产生何种相位，皆保持清醒的意识去观察它，扬长避短。<br>以上都算一种成功通过吧。</p>
+<p>——<a target="_blank" rel="noopener" href="https://book.douban.com/subject/10546850/discussion/615744317/">讲到宫位时书中提到的“成功通过此宫”是什么意思？</a></p>
+</blockquote>
+<p>此外，空宫也算是成功通过。</p>
+<h1 id="星盘组成内容解释"><a href="#星盘组成内容解释" class="headerlink" title="星盘组成内容解释"></a>星盘组成内容解释</h1><p>星盘左为东。</p>
+<h2 id="十二宫"><a href="#十二宫" class="headerlink" title="十二宫"></a>十二宫</h2><p>十二宫在图上用数字标注，第一宫开始为Asc，上升星座，对位为第七宫起始，是为Dec，下降星座。第十宫起始为MC，中天，对位为第四宫起始，天底IC。</p>
+<h2 id="实线与虚线"><a href="#实线与虚线" class="headerlink" title="实线与虚线"></a>实线与虚线</h2><p>实现表示相位比较正，影响力比较大；虚线表示相位不正，但是在容许度范围内，影响已经比较小了。此外线的颜色也代表不同多个相位关系：</p>
+<table>
+<thead>
+<tr>
+<th>角度</th>
+<th>颜色</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>合相</td>
+<td>黄</td>
+</tr>
+<tr>
+<td>六合相</td>
+<td>浅蓝</td>
+</tr>
+<tr>
+<td>四分相</td>
+<td>红</td>
+</tr>
+<tr>
+<td>三合相</td>
+<td>绿</td>
+</tr>
+<tr>
+<td>对相</td>
+<td>蓝&#x2F;紫</td>
+</tr>
+</tbody></table>
+<h2 id="House"><a href="#House" class="headerlink" title="House"></a>House</h2><p>表示宫位，1st House就是第一宫的意思，以此类推。</p>
+<h2 id="行星与星座的位置"><a href="#行星与星座的位置" class="headerlink" title="行星与星座的位置"></a>行星与星座的位置</h2><p>Sun: 20Lib28，表示太阳落在天秤座(Lib)的20度28分。全部的缩写如下：</p>
+<p>Ari-白羊，Tau-金牛，Gem-双子，Can-巨蟹，Leo-狮子，Vir-处女，Lib-天秤，Sco-天蝎，Sag-射手，Cap-摩羯，Aqu-水瓶，Pis-双鱼。</p>
+<h2 id="逆行"><a href="#逆行" class="headerlink" title="逆行"></a>逆行</h2><p>在某些星体后面，会标注一个字母R，这表示该星体在逆行，在Retrograde。</p>
+<h1 id="星球的含义"><a href="#星球的含义" class="headerlink" title="星球的含义"></a>星球的含义</h1><p>在分析星座的时候，也要考虑守护星体的影响。这一点还是要依靠神话和象征意义来解释。我极其厌恶不说原因，只说象征的占星教程。</p>
+<p>太阳：太阳神是赫里俄斯，与天中奔腾，用光普照万物。同时太阳是至阳的。所以太阳象征着意志、生命力、自我的创造。太阳也会导致自私、自大。</p>
+<p>月亮：月神是塞勒涅，月亮象征着阴性，而在古时候，月亮又象征着神秘。所以月亮象征直觉、习惯、灵魂的发展。月亮也会导致抑郁、忧愁、敏感。</p>
+<p>水星：水星之神是赫尔墨斯，是商业、旅者、小偷与畜牧之神，也是万神的传信使者。所以水星象征思考、交流、信息的传达。水星也有轻浮、多动的色彩。</p>
+<p>金星：金星之神是爱情与美丽的女神阿佛洛狄忒，阿佛洛狄忒美好，也有一段风流的往事。所以金星象征情感、美好，也有纵欲、虚荣、懒惰的色彩。</p>
+<p>火星：火星之神是战争之神阿瑞斯，象征力量、权力，做事却不加思考。所以首先，负面层面，火星有易怒、好战、残忍的色彩。接着，正面考虑，火星有意志力、勇气方面的能量。</p>
+<p>木星：木星之神为万神之神宙斯(很抱歉我将古希腊神话和罗马神话混为一谈，不过这些不影响我们理解)。木星象征生命的基本哲学、信念，也有过度扩张、虚伪的色彩。</p>
+<p>土星：土星之神为萨图耳努斯，农业之神。在希腊神话中，土星之神是克洛诺斯，推翻了自己父亲残暴的统治，自己则被宙斯推翻撕碎。我个人觉得土星是很无聊的一个星体。土星象征孤独、遵从的法则。</p>
+<p>天王星：天王星象征个性、质疑权威，也有特立独行、故意捣乱的色彩。我没法从神话故事中推出这些含义，唯一的理解是，天王星打破了原有占星学的体系。</p>
+<p>海王星：海王星主精神、神秘体验，也有敏感、白日梦的体现。</p>
+<p>冥王星：主天命、分辨真理的能力、性，死亡，重生，极端，也有夸大、暴力的色彩。</p>
+<h1 id="相位学"><a href="#相位学" class="headerlink" title="相位学"></a>相位学</h1><p>具体的相位含义需要结合星球的类型来判断，一般来说：</p>
+<h2 id="合相"><a href="#合相" class="headerlink" title="合相"></a>合相</h2><p>合相表示两个星球的能量融合在一起。然而具体的结果需要观察两个星球具体的性质是什么样子的。</p>
+<blockquote>
+<p>假如一个星盘里的火星和水星相合。一般来说,侵略性(火星)和智力(水星)在心识中各自有自己的疆域。其中的一个线路被发动时,不会激发另一个。当两颗行星是相合的时候就不是这样了。当其中的一个被启动时,另一个也会被启动。结果就是一个很锋利、尖锐的心智,它很有力,总是以长处和短处、胜利者和失败者的角度来考虑问题。所有的水星功能都会带有火星的竞争性色彩。那火星会受到什么影响呢?天生的侵略性会被智性化。这个人不太会在酒吧打斗中出现——但是他或者她可能会在政治或者宗教的讨论中展现杀手本能。头脑和舌头代替了挥舞的拳头。</p>
+<p>——《内在的天空》</p>
+</blockquote>
+<h2 id="四分相"><a href="#四分相" class="headerlink" title="四分相"></a>四分相</h2><p>四分相表示两个星球之间的关系紧张。某些性质会在两个星球所代表的性质之间震荡。四分也叫做刑。相刑的两个星座没有任何相互理解的基础。</p>
+<blockquote>
+<p>相刑也有一样的目的: 这个相位所制造的摩擦会给行星带来无情的进化压力。想要生存,它们必须进化。只要滑倒一下,自我放纵一下,它们就会被践踏。不要妄图去解决一个相刑相位。你不会找到方法的。相刑是无法被解决的。即使在最好的情况下,它们也是性格中无法停止的焦躁的来源。而理想的情况是,这种焦虑是一种疗愈力量,不是走向宁静,而是走向成长和成就。</p>
+<p>相刑的恐怖之处不在于说它们制造了这种二十二条军规般的两难境况。那只是这个相位所在的地带的状况。通过这个地带肯定不会很舒服,但是它总是让我们变得更加强大,让我们去掉任何软弱的反应。其实恐怖的地方是相刑的两端中有一端可能会赢。它可能会成功地粉碎另一个,让那一个变得被动和失去作用。然后我们就成了残废。组成我们的人性的十个基本“心理电路”中的一个被毁灭了。我们很重要一个部份缺失了。从此开始,我们与之对应的那一部分生活就成了灾难片,充满了不断重复的开始和失败。</p>
+<p>——《内在的天空》</p>
+</blockquote>
+<h2 id="对分相"><a href="#对分相" class="headerlink" title="对分相"></a>对分相</h2><p>对分表示星球之间能量对冲。</p>
+<blockquote>
+<p>……传统的占星师称相冲相位为坏的……我们无需被这样浅陋的思考模式所限制。</p>
+<p>如果一个出生星盘里有这个相冲相位的人能够同时将这两极都放进意识,让它们达成相互妥协,那么他或者她的生活将变丰富得多。她会常常放松,但是也会去拜访几个有趣心理学家。这就是相冲的意义所在——扩展我们的意识让我们能够看到问题的两面。如果我们成功了,我们就获得了弹性、变化、和适应性。</p>
+<p>但是如果我们无法跟这个相冲的相位达成和谐呢?那会发生什么?那就会有可怕的后果。心识会在两极之间震荡。当其中一面占主导时,另一面就从意识中被挤出去了。我们可能会得到一种简单,但是失去了比它远为珍贵的东西:心智健康。在极端的情况下,相冲会造成两面的性格。两极中的一极抓住了我们的注意力,我们会基于它的需要来做决定。我们将后路上的桥都烧掉了。然后,一套完全相反的需要会驱动我们,将我们开始启动的所有东西都破坏掉。我们会这样反反复复很多年,成为自己最大的敌人,一事无成。</p>
+<p>——《内在的天空》</p>
+</blockquote>
+<h2 id="三分相与六分相"><a href="#三分相与六分相" class="headerlink" title="三分相与六分相"></a>三分相与六分相</h2><p>这两个相位表示和谐。</p>
+<blockquote>
+<p>对三合来说,重要的是要看到它们代表了生命中那些拥有无尽成长潜能的领域。在心识之中形成了一对盟友,两颗行星准备为了一个共同目标而共同努力,相互之间不会有任何的摩擦。但是因为缺乏摩擦也让它们陷入睡眠。我们必须唤醒它们。我们必须想象有什么力量沉睡在这相位之中,然后以意识和自律的行动来释放它们。</p>
+<p>……</p>
+<p>比如说一颗在狮子座的行星和一颗在双子座的行星之间有一个六合相位。驱动第一颗行星的“为什么”是自我表达,驱动第二颗行星的是信息收集。狮子座会发射,双子座会接收和要求更多。而这让狮子座很高兴,它会发射更多的东西。于是这个过程会加速,两颗行星都被激发而进入了运作状态。这就是六合。</p>
+<p>——《内在的天空》</p>
+</blockquote>
+<h2 id="大T相位"><a href="#大T相位" class="headerlink" title="大T相位"></a>大T相位</h2><p>两个行星对冲，另一个行星和其中的行星四分。这个相位也叫做三刑会冲。</p>
+<h2 id="劫夺"><a href="#劫夺" class="headerlink" title="劫夺"></a>劫夺</h2><p>若一个宫位将整个星座都包起来，星座没有触碰宫位的宫头，则表示该星座被劫夺。</p>
+<h1 id="分析步骤"><a href="#分析步骤" class="headerlink" title="分析步骤"></a>分析步骤</h1><h2 id="宫位学的解读"><a href="#宫位学的解读" class="headerlink" title="宫位学的解读"></a>宫位学的解读</h2><p>第一步：看行星。我们所考虑的什么心识功能?我们在说心识的哪个部份?是太阳的自我形成?还是土星的纪律建立?</p>
+<p>第二步：看星座。它是在驱动这颗行星的东西。那个行星功能在寻求什么?它的行动之下是“为什么”?它隐藏的动机是什么?</p>
+<p>第三步：想一想,这个“行星-星座”组合怎样完成它的目标?星座提供了哪些相关的资源?行星呢?你可能会需要去查书。如果你是这个人,你拥有这些长处和责任,你会如何去得到幸福呢?</p>
+<p>第四步：想一想,这个“行星-星座”组合可能会被怎样地扭曲?哪种行为会跟这个碎片的意义一致但是跟它的进化目的不一致?如果你不确定,可以查看星座章节里的阴影以及行星章节里</p>
+<p>可能发展出的缺点。<strong>请记住,以一种警告的方式来呈现这些可能缺点,而不是以预言的方式。</strong></p>
+<p>第五步：看宫位。这个“行星-星座”的事务会在哪里发展?它们会创造出什么样的行为?如果对这个“行星-星座”进行一个强的反应的话,在这个人生活的哪个部份会产生一些境遇的改进？</p>
+<p>而一个弱的反应会在哪里造成紧张和不安?宫位会回答这些。</p>
+<h2 id="相位学的解读"><a href="#相位学的解读" class="headerlink" title="相位学的解读"></a>相位学的解读</h2><p>总的来说，相合、相冲、相刑、三合、六合,这五个是主要相位。它们代表了行星之间的五种基本互动方式: 融合、拉扯、摩擦、和谐、激发。</p>
+<p>接着，要查看月亮南北交点的意义：</p>
+<ol>
+<li>南交点：南交点象征了我们的祖先对我们的影响，是与生俱来的一种能量，一种本能，一种自动做出的选择或者行为。</li>
+<li>北交点：北交点则象征成长的前沿，一种趋势。</li>
+</ol>
+<h2 id="结合起来"><a href="#结合起来" class="headerlink" title="结合起来"></a>结合起来</h2><p>按照如下的原则操作。</p>
+<h3 id="第一原则：日月和上升原则"><a href="#第一原则：日月和上升原则" class="headerlink" title="第一原则：日月和上升原则"></a>第一原则：日月和上升原则</h3><p>在你能够完全透彻地理解了太阳、月亮和上升之前，忽略所有其它信息。这一步的分析主要是：</p>
+<ol>
+<li>看太阳。太阳所在的星座表示这个人为什么而活，然后观察其宫位。</li>
+<li>看月亮。月亮表示主观、情绪特质的形成，然后观察其宫位。</li>
+<li>看上升星座。</li>
+<li>结合三种星体带来的启示，如果有，分析日月、上升点三者的相位关系。</li>
+<li>得到最终的结果：他是一个(太阳带来的身份标签)，有着(月亮带来的内在标签)一样的灵魂，戴着(上升星座带来的启示)的面具。</li>
+</ol>
+<h3 id="第二原则：分布原则"><a href="#第二原则：分布原则" class="headerlink" title="第二原则：分布原则"></a>第二原则：分布原则</h3><blockquote>
+<p>地平线将星盘分为上下两个半球。上半球代表客观,下半球代表主观。……东边象征着自由和个人选择,而西边则代表命运或者宿命。——《内在的天空》</p>
+</blockquote>
+<p>侧重于某个半球所描述的是生活的样子,而不是这个人的个性。它所揭示的是游戏的规则,而不是游戏者的个性。这主要影响解释的方面，比如星球大多出现在左边(东边)，可能要更多解释有关个人责任感的事情。</p>
+<h3 id="第三原则：重点星体原则"><a href="#第三原则：重点星体原则" class="headerlink" title="第三原则：重点星体原则"></a>第三原则：重点星体原则</h3><ol>
+<li><p>看上升星座的守护星。这里可以将天王星、海王星和冥王星也当作某些星座的守护星来看。</p>
+</li>
+<li><p>看入庙的行星，即那些落在自己守护星座内的行星。其次，对于宫位，也要用类似的方法查看。</p>
+</li>
+<li><p>看和太阳相合的行星。然后，如果一个星座&#x2F;宫位里出现了多颗星体，就先独立分析，然后将各种涵义做妥协。</p>
+</li>
+<li><p>看四条轴线：MC、IC、Asc和Dec，和这些轴线做合相的星体也很重要。宫位学角度，第一宫、第四宫、第七宫、第十宫,这些宫位是本位宫位(angular houses),落在这些宫位里的行星地位也都会得到提升。它也会变成一个焦点行星。</p>
+</li>
+<li><p>看单独出现在四个半球中其中一个的星体&#x2F;月亮交点，是为孤星。这样的一个格局给这颗行星很大的负担。那个半球的重点——客观、主观、自由、或者宿命——完全有赖于它。为了补偿这种不平衡,心识会增加这颗行星的影响。这颗行星的特质会扩散到整个星盘,远远超过我们通常会期待一颗行星、星座、宫位、或者相位会做的。</p>
+</li>
+</ol>
+
+      </div>
+      
+        <div class="prev-or-next">
+          <div class="post-foot-next">
+            
+              <a href="/2024/01/15/%E3%80%90%E5%AF%86%E7%A0%81%E5%AD%A6%E3%80%91%E5%90%84%E7%B1%BB%E5%AF%86%E7%A0%81%E5%B0%8F%E8%AE%B0/" target="_self">
+                <i class="iconfont icon-chevronleft"></i>
+                <span>上一页</span>
+              </a>
+            
+          </div>
+          <div class="post-attach">
+            <span class="post-pubtime">
+              <i class="iconfont icon-updatetime mr-10" title="更新时间"></i>
+              2024-01-16 12:42:57
+            </span>
+            
+                  <span class="post-tags">
+                    <i class="iconfont icon-tags mr-10" title="标签"></i>
+                    
+                    <span class="span--tag mr-8">
+                      <a href="/tags/%E7%A5%9E%E7%A7%98%E5%AD%A6/" title="神秘学">
+                        #神秘学
+                      </a>
+                    </span>
+                    
+                    <span class="span--tag mr-8">
+                      <a href="/tags/%E5%8D%A0%E6%98%9F%E5%AD%A6/" title="占星学">
+                        #占星学
+                      </a>
+                    </span>
+                    
+                  </span>
+              
+          </div>
+          <div class="post-foot-prev">
+            
+              <a href="/2024/01/18/%E3%80%90%E7%A5%9E%E7%A7%98%E5%AD%A6%E3%80%91%E5%A1%94%E7%BD%97%E5%9F%BA%E7%A1%80/" target="_self">
+                <span>下一页</span>
+                <i class="iconfont icon-chevronright"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+    </div>
+    
+  <div id="btn-catalog" class="btn-catalog">
+    <i class="iconfont icon-catalog"></i>
+  </div>
+  <div class="post-catalog hidden" id="catalog">
+    <div class="title">目录</div>
+    <div class="catalog-content">
+      
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%BC%95%E5%AD%90"><span class="toc-text">引子</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%90%86%E8%AE%BA%E6%80%A7%E5%86%85%E5%AE%B9"><span class="toc-text">理论性内容</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%A1%8C%E6%98%9F%E7%9A%84%E9%80%86%E8%A1%8C"><span class="toc-text">行星的逆行</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%AB%E4%BD%8D%E7%9A%84%E6%88%90%E5%8A%9F%E9%80%9A%E8%BF%87"><span class="toc-text">宫位的成功通过</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%98%9F%E7%9B%98%E7%BB%84%E6%88%90%E5%86%85%E5%AE%B9%E8%A7%A3%E9%87%8A"><span class="toc-text">星盘组成内容解释</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8D%81%E4%BA%8C%E5%AE%AB"><span class="toc-text">十二宫</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%9E%E7%BA%BF%E4%B8%8E%E8%99%9A%E7%BA%BF"><span class="toc-text">实线与虚线</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#House"><span class="toc-text">House</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%A1%8C%E6%98%9F%E4%B8%8E%E6%98%9F%E5%BA%A7%E7%9A%84%E4%BD%8D%E7%BD%AE"><span class="toc-text">行星与星座的位置</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%80%86%E8%A1%8C"><span class="toc-text">逆行</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%98%9F%E7%90%83%E7%9A%84%E5%90%AB%E4%B9%89"><span class="toc-text">星球的含义</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%9B%B8%E4%BD%8D%E5%AD%A6"><span class="toc-text">相位学</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%90%88%E7%9B%B8"><span class="toc-text">合相</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9B%9B%E5%88%86%E7%9B%B8"><span class="toc-text">四分相</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AF%B9%E5%88%86%E7%9B%B8"><span class="toc-text">对分相</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%89%E5%88%86%E7%9B%B8%E4%B8%8E%E5%85%AD%E5%88%86%E7%9B%B8"><span class="toc-text">三分相与六分相</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%A4%A7T%E7%9B%B8%E4%BD%8D"><span class="toc-text">大T相位</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8A%AB%E5%A4%BA"><span class="toc-text">劫夺</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%88%86%E6%9E%90%E6%AD%A5%E9%AA%A4"><span class="toc-text">分析步骤</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%AB%E4%BD%8D%E5%AD%A6%E7%9A%84%E8%A7%A3%E8%AF%BB"><span class="toc-text">宫位学的解读</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%9B%B8%E4%BD%8D%E5%AD%A6%E7%9A%84%E8%A7%A3%E8%AF%BB"><span class="toc-text">相位学的解读</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BB%93%E5%90%88%E8%B5%B7%E6%9D%A5"><span class="toc-text">结合起来</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AC%AC%E4%B8%80%E5%8E%9F%E5%88%99%EF%BC%9A%E6%97%A5%E6%9C%88%E5%92%8C%E4%B8%8A%E5%8D%87%E5%8E%9F%E5%88%99"><span class="toc-text">第一原则：日月和上升原则</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AC%AC%E4%BA%8C%E5%8E%9F%E5%88%99%EF%BC%9A%E5%88%86%E5%B8%83%E5%8E%9F%E5%88%99"><span class="toc-text">第二原则：分布原则</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AC%AC%E4%B8%89%E5%8E%9F%E5%88%99%EF%BC%9A%E9%87%8D%E7%82%B9%E6%98%9F%E4%BD%93%E5%8E%9F%E5%88%99"><span class="toc-text">第三原则：重点星体原则</span></a></li></ol></li></ol></li></ol>
+      
+    </div>
+  </div>
+
+  
+<script src="/js/catalog.js"></script>
+
+
+
+
+    
+      <div class="comments-container">
+        
+
+
+
+
+  
+    <script async type="text/javascript" src='https://cdn.jsdelivr.net/npm/valine@1.4.18/dist/Valine.min.js' onload="loadValineSuc(this)"></script>
+  
+
+  <div id="vcomments"></div>
+
+  <script>
+    function loadValineSuc() {
+      new Valine({
+        el: '#vcomments',
+        appId: 'oMvaqsYv2LQSqtj795B31OWV-gzGzoHsz',
+        appKey: 'UKlJCzW9McXrX8L71Mqz5hol',
+        placeholder: 'Welcome!',
+        avatar: 'retro',
+        lang: 'zh-CN'
+      })
+    }
+  </script>
+
+    <style>
+      .comments-container .v .vempty {
+        display: none!important;
+      }
+    </style>
+
+
+
+
+      </div>
+    
+  </div>
+
+
+        
+<div class="footer">
+  <div class="social">
+    <ul>
+      
+        <li>
+          <a title="rss" href="/atom.xml">
+            <i class="iconfont icon-rss"></i>
+          </a>
+        </li>
+      
+    </ul>
+  </div>
+  
+    
+    <div class="footer-more">
+      
+        <a target="_blank" rel="noopener" href="https://github.com/zchengsite/hexo-theme-oranges">Copyright © 2024 Oranges</a>
+        
+    </div>
+  
+    
+    <div class="footer-more">
+      
+        <a target="_blank" rel="noopener" href="https://github.com/zchengsite/hexo-theme-oranges">Theme by Oranges | Powered by Hexo</a>
+        
+    </div>
+  
+  
+</div>
+
+      </div>
+
+      <div class="tools-bar">
+        <div class="back-to-top tools-bar-item hidden">
+  <a href="javascript: void(0)">
+    <i class="iconfont icon-chevronup"></i>
+  </a>
+</div>
+
+
+<script src="/js/backtotop.js"></script>
+
+
+
+        
+  <div class="search-icon tools-bar-item" id="search-icon">
+    <a href="javascript: void(0)">
+      <i class="iconfont icon-search"></i>
+    </a>
+  </div>
+
+  <div class="search-overlay hidden">
+    <div class="search-content" tabindex="0">
+      <div class="search-title">
+        <span class="search-icon-input">
+          <a href="javascript: void(0)">
+            <i class="iconfont icon-search"></i>
+          </a>
+        </span>
+        
+          <input type="text" class="search-input" id="search-input" placeholder="搜索...">
+        
+        <span class="search-close-icon" id="search-close-icon">
+          <a href="javascript: void(0)">
+            <i class="iconfont icon-close"></i>
+          </a>
+        </span>
+      </div>
+      <div class="search-result" id="search-result"></div>
+    </div>
+  </div>
+
+  <script type="text/javascript">
+    var inputArea = document.querySelector("#search-input")
+    var searchOverlayArea = document.querySelector(".search-overlay")
+
+    inputArea.onclick = function() {
+      getSearchFile()
+      this.onclick = null
+    }
+
+    inputArea.onkeydown = function() {
+      if(event.keyCode == 13)
+        return false
+    }
+
+    function openOrHideSearchContent() {
+      let isHidden = searchOverlayArea.classList.contains('hidden')
+      if (isHidden) {
+        searchOverlayArea.classList.remove('hidden')
+        document.body.classList.add('hidden')
+        // inputArea.focus()
+      } else {
+        searchOverlayArea.classList.add('hidden')
+        document.body.classList.remove('hidden')
+      }
+    }
+
+    function blurSearchContent(e) {
+      if (e.target === searchOverlayArea) {
+        openOrHideSearchContent()
+      }
+    }
+
+    document.querySelector("#search-icon").addEventListener("click", openOrHideSearchContent, false)
+    document.querySelector("#search-close-icon").addEventListener("click", openOrHideSearchContent, false)
+    searchOverlayArea.addEventListener("click", blurSearchContent, false)
+
+    var searchFunc = function (path, search_id, content_id) {
+      'use strict';
+      var $input = document.getElementById(search_id);
+      var $resultContent = document.getElementById(content_id);
+      $resultContent.innerHTML = "<ul><span class='local-search-empty'>首次搜索，正在载入索引文件，请稍后……<span></ul>";
+      $.ajax({
+        // 0x01. load xml file
+        url: path,
+        dataType: "xml",
+        success: function (xmlResponse) {
+          // 0x02. parse xml file
+          var datas = $("entry", xmlResponse).map(function () {
+            return {
+              title: $("title", this).text(),
+              content: $("content", this).text(),
+              url: $("url", this).text()
+            };
+          }).get();
+          $resultContent.innerHTML = "";
+
+          $input.addEventListener('input', function () {
+            // 0x03. parse query to keywords list
+            var str = '<ul class=\"search-result-list\">';
+            var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+            $resultContent.innerHTML = "";
+            if (this.value.trim().length <= 0) {
+              return;
+            }
+            // 0x04. perform local searching
+            datas.forEach(function (data) {
+              var isMatch = true;
+              var content_index = [];
+              if (!data.title || data.title.trim() === '') {
+                data.title = "Untitled";
+              }
+              var orig_data_title = data.title.trim();
+              var data_title = orig_data_title.toLowerCase();
+              var orig_data_content = data.content.trim().replace(/<[^>]+>/g, "");
+              var data_content = orig_data_content.toLowerCase();
+              var data_url = data.url;
+              var index_title = -1;
+              var index_content = -1;
+              var first_occur = -1;
+              // only match artiles with not empty contents
+              if (data_content !== '') {
+                keywords.forEach(function (keyword, i) {
+                  index_title = data_title.indexOf(keyword);
+                  index_content = data_content.indexOf(keyword);
+
+                  if (index_title < 0 && index_content < 0) {
+                    isMatch = false;
+                  } else {
+                    if (index_content < 0) {
+                      index_content = 0;
+                    }
+                    if (i == 0) {
+                      first_occur = index_content;
+                    }
+                    // content_index.push({index_content:index_content, keyword_len:keyword_len});
+                  }
+                });
+              } else {
+                isMatch = false;
+              }
+              // 0x05. show search results
+              if (isMatch) {
+                str += "<li><a href='" + data_url + "' class='search-result-title'>" + orig_data_title + "</a>";
+                var content = orig_data_content;
+                if (first_occur >= 0) {
+                  // cut out 100 characters
+                  var start = first_occur - 20;
+                  var end = first_occur + 80;
+
+                  if (start < 0) {
+                    start = 0;
+                  }
+
+                  if (start == 0) {
+                    end = 100;
+                  }
+
+                  if (end > content.length) {
+                    end = content.length;
+                  }
+
+                  var match_content = content.substr(start, end);
+
+                  // highlight all keywords
+                  keywords.forEach(function (keyword) {
+                    var regS = new RegExp(keyword, "gi");
+                    match_content = match_content.replace(regS, "<span class=\"search-keyword\">" + keyword + "</span>");
+                  });
+
+                  str += "<p class=\"search-result-abstract\">" + match_content + "...</p>"
+                }
+                str += "</li>";
+              }
+            });
+            str += "</ul>";
+            if (str.indexOf('<li>') === -1) {
+              return $resultContent.innerHTML = "<ul><span class='local-search-empty'>没有找到内容，请尝试更换检索词。<span></ul>";
+            }
+            $resultContent.innerHTML = str;
+          });
+        },
+        error: function(xhr, status, error) {
+          $resultContent.innerHTML = ""
+          if (xhr.status === 404) {
+            $resultContent.innerHTML = "<ul><span class='local-search-empty'>未找到search.xml文件，具体请参考：<a href='https://github.com/zchengsite/hexo-theme-oranges#configuration' target='_black'>configuration</a><span></ul>";
+          } else {
+            $resultContent.innerHTML = "<ul><span class='local-search-empty'>请求失败，尝试重新刷新页面或稍后重试。<span></ul>";
+          }
+        }
+      });
+      $(document).on('click', '#search-close-icon', function() {
+        $('#search-input').val('');
+        $('#search-result').html('');
+      });
+    }
+
+    var getSearchFile = function() {
+        var path = "/search.xml";
+        searchFunc(path, 'search-input', 'search-result');
+    }
+  </script>
+
+
+
+
+        
+  <div class="tools-bar-item theme-icon" id="switch-color-scheme">
+    <a href="javascript: void(0)">
+      <i id="theme-icon" class="iconfont icon-moon"></i>
+    </a>
+  </div>
+
+  
+<script src="/js/colorscheme.js"></script>
+
+
+
+
+
+        
+  
+    <div class="share-icon tools-bar-item">
+      <a href="javascript: void(0)" id="share-icon">
+        <i class="iconfont iconshare"></i>
+      </a>
+      <div class="share-content hidden">
+        
+          <a class="share-item" href="https://twitter.com/intent/tweet?text=' + %E3%80%90%E7%A5%9E%E7%A7%98%E5%AD%A6%E3%80%91%E7%9B%B8%E4%BD%8D%E5%AD%A6%E4%B8%8E%E5%AE%9E%E4%BE%8B + '&url=' + https%3A%2F%2Fcoder109.github.io%2F2024%2F01%2F16%2F%25E3%2580%2590%25E7%25A5%259E%25E7%25A7%2598%25E5%25AD%25A6%25E3%2580%2591%25E7%259B%25B8%25E4%25BD%258D%25E5%25AD%25A6%25E4%25B8%258E%25E5%25AE%259E%25E4%25BE%258B%2F + '" target="_blank" title="Twitter">
+            <i class="iconfont icon-twitter"></i>
+          </a>
+        
+        
+      </div>
+    </div>
+  
+  
+<script src="/js/shares.js"></script>
+
+
+
+      </div>
+    </div>
+  
+        <style>
+            [bg-lazy] {
+                background-image: none !important;
+                background-color: #eee !important;
+            }
+        </style>
+        <script>
+            window.imageLazyLoadSetting = {
+                isSPA: false,
+                preloadRatio: 1,
+                processImages: null,
+            };
+        </script><script>window.addEventListener("load",function(){var t=/\.(gif|jpg|jpeg|tiff|png)$/i,r=/^data:image\/[a-z]+;base64,/;Array.prototype.slice.call(document.querySelectorAll("img[data-original]")).forEach(function(a){var e=a.parentNode;"A"===e.tagName&&(e.href.match(t)||e.href.match(r))&&(e.href=a.dataset.original)})});</script><script>!function(r){r.imageLazyLoadSetting.processImages=t;var e=r.imageLazyLoadSetting.isSPA,n=r.imageLazyLoadSetting.preloadRatio||1,c=a();function a(){var t=Array.prototype.slice.call(document.querySelectorAll("img[data-original]")),e=Array.prototype.slice.call(document.querySelectorAll("[bg-lazy]"));return t.concat(e)}function t(){e&&(c=a());for(var t,o=0;o<c.length;o++)0<=(t=(t=c[o]).getBoundingClientRect()).bottom&&0<=t.left&&t.top<=(r.innerHeight*n||document.documentElement.clientHeight*n)&&function(){var t,e,n,a,i=c[o];e=function(){c=c.filter(function(t){return i!==t}),r.imageLazyLoadSetting.onImageLoaded&&r.imageLazyLoadSetting.onImageLoaded(i)},(t=i).hasAttribute("bg-lazy")?(t.removeAttribute("bg-lazy"),e&&e()):(n=new Image,a=t.getAttribute("data-original"),n.onload=function(){t.src=a,t.removeAttribute("data-original"),e&&e()},t.src!==a&&(n.src=a))}()}function i(){clearTimeout(t.tId),t.tId=setTimeout(t,500)}t(),document.addEventListener("scroll",i),r.addEventListener("resize",i),r.addEventListener("orientationchange",i)}(this);</script></body>
+</html>

@@ -1,0 +1,654 @@
+<!DOCTYPE html>
+<html lang="zh-CN" color-mode="light">
+
+  <head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="keywords" content="" />
+  <meta name="author" content="Coder109" />
+  <meta name="description" content="" />
+  
+  
+  <title>
+    
+      【Emacs】坎坷之路，终抵群星 
+      
+      
+      |
+    
+     幻
+  </title>
+
+  
+    <link rel="apple-touch-icon" href="/images/favicon.ico">
+    <link rel="icon" href="/images/favicon.ico">
+  
+
+  <!-- Raleway-Font -->
+  <link href="https://fonts.googleapis.com/css?family=Raleway&display=swap" rel="stylesheet">
+
+  <!-- hexo site css -->
+  <link rel="stylesheet" href="/css/main.css" />
+  <link rel="stylesheet" href="//at.alicdn.com/t/font_1886449_67xjft27j1l.css" />
+  <!-- 代码块风格 -->
+  
+
+  <!-- jquery3.3.1 -->
+  
+    <script defer type="text/javascript" src="/plugins/jquery.min.js"></script>
+  
+
+  <!-- fancybox -->
+  
+    <link href="/plugins/jquery.fancybox.min.css" rel="stylesheet">
+    <script defer type="text/javascript" src="/plugins/jquery.fancybox.min.js"></script>
+  
+  
+<script src="/js/fancybox.js"></script>
+
+
+  
+
+  
+
+  <script>
+    var html = document.documentElement
+    const colorMode = localStorage.getItem('color-mode')
+    if (colorMode) {
+      document.documentElement.setAttribute('color-mode', colorMode)
+    }
+  </script>
+<meta name="generator" content="Hexo 6.3.0"><link rel="alternate" href="/atom.xml" title="幻" type="application/atom+xml">
+</head>
+
+
+  <body>
+    <div id="app">
+      <div class="header">
+  <div class="avatar">
+    <a href="/">
+      <!-- 头像取消懒加载，添加no-lazy -->
+      
+        <img no-lazy src="/images/favicon.ico" alt="">
+      
+    </a>
+    <div class="nickname"><a href="/">幻</a></div>
+  </div>
+  <div class="navbar">
+    <ul>
+      
+        <li class="nav-item" data-path="/">
+          <a href="/">Home</a>
+        </li>
+      
+        <li class="nav-item" data-path="/archives/">
+          <a href="/archives/">Archives</a>
+        </li>
+      
+        <li class="nav-item" data-path="/tags/">
+          <a href="/tags/">Tags</a>
+        </li>
+      
+        <li class="nav-item" data-path="/friends/">
+          <a href="/friends/">Friends</a>
+        </li>
+      
+        <li class="nav-item" data-path="/about/">
+          <a href="/about/">About</a>
+        </li>
+      
+    </ul>
+  </div>
+</div>
+
+
+<script src="/js/activeNav.js"></script>
+
+
+
+      <div class="flex-container">
+        <!-- 文章详情页，展示文章具体内容，url形式：https://yoursite/文章标题/ -->
+<!-- 同时为「标签tag」，「朋友friend」，「分类categories」，「关于about」页面的承载页面，具体展示取决于page.type -->
+
+
+  <!-- LaTex Display -->
+
+  
+    <script async type="text/javascript" src="/plugins/mathjax/tex-chtml.js"></script>
+  
+  <script>
+    MathJax = {
+      tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']]
+      }
+    }
+  </script>
+
+
+
+
+
+  <!-- clipboard -->
+
+  
+    <script async type="text/javascript" src="/plugins/clipboard.min.js"></script>
+  
+  
+<script src="/js/codeCopy.js"></script>
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  <!-- 文章内容页 url形式：https://yoursite/文章标题/ -->
+  <div class="container post-details" id="post-details">
+    <div class="post-content">
+      <div class="post-title">【Emacs】坎坷之路，终抵群星</div>
+      <div class="post-attach">
+        <span class="post-pubtime">
+          <i class="iconfont icon-updatetime mr-10" title="更新时间"></i>
+          2023-04-17 11:15:49
+        </span>
+        
+              <span class="post-tags">
+                <i class="iconfont icon-tags mr-10" title="标签"></i>
+                
+                <span class="span--tag mr-8">
+                  <a href="/tags/Emacs/" title="Emacs">
+                    #Emacs
+                  </a>
+                </span>
+                
+              </span>
+          
+      </div>
+      <div class="markdown-body">
+        <blockquote>
+<p>关键词：Emacs、Emacs Lisp</p>
+</blockquote>
+<h1 id="引子"><a href="#引子" class="headerlink" title="引子"></a>引子</h1><p>Emacs是什么？让我们来看看Emacs吧的标语：“不能煮咖啡的编辑器不是一个好操作系统”。</p>
+<p>首先，Emacs是个编辑器，由Richard M Stallman等人最开始编写而成，后来有很多的衍生，现在常常使用的是1984年由Stallman发起维护的GNU Emacs，如果您对这段历史感兴趣，强烈推荐您读一读Steven Levy的《黑客》这本书。这本书对黑客道德、开源文化的历史等等有着非常详细的介绍。。</p>
+<p>与此同时，Emacs又不只是一个编辑器。经过合理配置之后，Emacs可以变成不同语言的编程环境，可以编写Markdown、LaTeX文件，可以浏览PDF、网页，可以播放音乐、视频，也可以接发邮件，进行IRC聊天等等。至于“煮咖啡”“操作系统”一类的说法，仅仅是为了体现其功能强大而已。</p>
+<p>本文只作为自己的Emacs学习记录而已，若可以给您一些启发，再好不过。用多了Emacs，真觉得把手从键盘挪到鼠标上太费劲了。</p>
+<p>我的配置已经上传到github上：<a target="_blank" rel="noopener" href="http://github.com/coder109/.emacs.d">coder109&#x2F;.emacs.d</a>。Emacs的配置主要用到Emacs Lisp语言。</p>
+<h2 id="为什么要用Emacs？"><a href="#为什么要用Emacs？" class="headerlink" title="为什么要用Emacs？"></a>为什么要用Emacs？</h2><ul>
+<li>快捷键多。熟练之后，写代码双手几乎不需要离开键盘。</li>
+<li>自由度、模块化程度高。有需要的配置可以找现成的模块，或者用强大的Emacs Lisp写个新的。如果自己配置，可以完全贴近自己的需求，避免功能冗余。</li>
+<li>兼容性高。Window、Linux、MacOS都可以用Emacs。</li>
+<li>配置后功能强大。需要其它软件的频率会降低。</li>
+<li>资源比较丰富。自带文档、Emacs China论坛里都有很多资料可供参考。</li>
+<li>…</li>
+</ul>
+<h1 id="1-配置文件的结构"><a href="#1-配置文件的结构" class="headerlink" title="1. 配置文件的结构"></a>1. 配置文件的结构</h1><p>通常来说，一般采用如下的方法：</p>
+<ul>
+<li><p><code>~/.emacs.d/init.el</code>作为主配置文件，通过设置，Emacs可以从这个文件中调取配置。</p>
+</li>
+<li><p><code>~/.emacs.d/lisp/</code>作为其它配置文件的文件夹，<code>init.el</code>可以从这个文件夹里读取其它的配置文件。你可以使用<code>provide</code>、<code>require</code>这两个过程进行配置文件的读取，比如，在<code>~/.emacs.d/lisp/init-emacs.el</code>的末尾写下如下的代码：</p>
+<figure class="highlight lisp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">(<span class="name">provide</span> &#x27;init-emacs)</span><br></pre></td></tr></table></figure>
+
+<p>这就相当于把<code>init-emacs.el</code>文件以<code>init-emacs</code>的名字暴露在<code>init.el</code>前面，而在<code>init.el</code>中，只需要：</p>
+<figure class="highlight lisp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">(<span class="name">add-to-list</span> &#x27;load-path <span class="string">&quot;~/.emacs.d/lisp&quot;</span>)</span><br><span class="line">(<span class="name">require</span> &#x27;init-emacs)</span><br></pre></td></tr></table></figure>
+
+<p>就可以将<code>init-emacs.el</code>引入主配置文件了。</p>
+</li>
+</ul>
+<h1 id="2-包的安装"><a href="#2-包的安装" class="headerlink" title="2. 包的安装"></a>2. 包的安装</h1><p>可以手动安装，输入如下命令：</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">M-x package-install</span><br></pre></td></tr></table></figure>
+
+<p>然后安装想要的包就可以了。</p>
+<p>但这显然不方便，可以采用<code>use-package</code>包管理器统一管理包的安装，在相应的设置文件中设置：</p>
+<figure class="highlight lisp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">;; 如果没安装use-package，就安装它。</span></span><br><span class="line">(<span class="name">unless</span> (<span class="name">package-installed-p</span> &#x27;use-package)</span><br><span class="line">  (<span class="name">package-refresh-contents</span>)</span><br><span class="line">  (<span class="name">package-install</span> &#x27;use-package))</span><br><span class="line"></span><br><span class="line">(<span class="name">require</span> &#x27;use-package)</span><br><span class="line"></span><br><span class="line"><span class="comment">;; 自动安装所有需要的软件包</span></span><br><span class="line">(<span class="name">setq</span> use-package-always-ensure <span class="literal">t</span>)</span><br></pre></td></tr></table></figure>
+
+<p>之后你就可以应用它了。格式大概如下：</p>
+<figure class="highlight lisp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">(<span class="name">use-package</span> rainbow-delimiters</span><br><span class="line">  <span class="symbol">:ensure</span> <span class="literal">t</span></span><br><span class="line">  <span class="symbol">:hook</span> (<span class="name">prog-mode</span> . rainbow-delimiters-mode))</span><br></pre></td></tr></table></figure>
+
+<h1 id="3-主题设置"><a href="#3-主题设置" class="headerlink" title="3. 主题设置"></a>3. 主题设置</h1><p>您可以根据自己所需，进行配置。</p>
+<h2 id="1-基本的UI设置"><a href="#1-基本的UI设置" class="headerlink" title="1. 基本的UI设置"></a>1. 基本的UI设置</h2><p>令工具栏、滚动栏等不显示，并显示行号。在右下角显示时间。</p>
+<figure class="highlight lisp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">(<span class="name">tool-bar-mode</span> <span class="number">-1</span>)</span><br><span class="line">(<span class="name">scroll-bar-mode</span> <span class="number">-1</span>)</span><br><span class="line">(<span class="name">menu-bar-mode</span> <span class="number">-1</span>)</span><br><span class="line">(<span class="name">global-display-line-numbers-mode</span> <span class="literal">t</span>)</span><br><span class="line">(<span class="name">column-number-mode</span> <span class="literal">t</span>)</span><br><span class="line"></span><br><span class="line">(<span class="name">display-time-mode</span> <span class="literal">t</span>)</span><br><span class="line">(<span class="name">setq</span> display-time-24hr-format <span class="literal">t</span>)</span><br><span class="line">(<span class="name">setq</span> display-time-day-and-date <span class="literal">t</span>)</span><br></pre></td></tr></table></figure>
+
+<h2 id="2-主题和modeline设置"><a href="#2-主题和modeline设置" class="headerlink" title="2. 主题和modeline设置"></a>2. 主题和modeline设置</h2><p>您可以去github上搜索主题。笔者采用<code>moe-theme</code>+<code>powerline</code>的方案，顺便使用<code>nyan-mode</code>，在右下角显示一个彩虹猫，权当装饰，配置如下：</p>
+<figure class="highlight lisp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">(<span class="name">add-hook</span> &#x27;after-init-hook &#x27;nyan-mode)</span><br><span class="line"></span><br><span class="line">(<span class="name">use-package</span> moe-theme)</span><br><span class="line">(<span class="name">show-paren-mode</span> <span class="literal">t</span>)</span><br><span class="line">(<span class="name">setq</span> moe-theme-mode-line-color &#x27;blue)</span><br><span class="line">(<span class="name">setq</span> show-paren-style &#x27;expression)</span><br><span class="line">(<span class="name">moe-dark</span>)</span><br><span class="line">(<span class="name">powerline-default-theme</span>)</span><br></pre></td></tr></table></figure>
+
+<h2 id="3-字体"><a href="#3-字体" class="headerlink" title="3. 字体"></a>3. 字体</h2><p>笔者曾经在Emacs China论坛上找到一个中英文都能妥善设置的方案：</p>
+<figure class="highlight lisp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">(<span class="name">setq</span> fonts &#x27;(<span class="string">&quot;Source Code Pro Medium&quot;</span> <span class="string">&quot;Microsoft YaHei&quot;</span>))</span><br><span class="line">(<span class="name">set-fontset-font</span> <span class="literal">t</span> &#x27;unicode <span class="string">&quot;Segoe UI Emoji&quot;</span> <span class="literal">nil</span> &#x27;prepend)</span><br><span class="line">(<span class="name">set-face-attribute</span> &#x27;default <span class="literal">nil</span></span><br><span class="line">		    <span class="symbol">:font</span> (<span class="name">format</span> <span class="string">&quot;%s:pixelsize=%d&quot;</span> (<span class="name">car</span> fonts) <span class="number">20</span>))</span><br><span class="line"></span><br><span class="line">(<span class="name">setq</span> default-frame-alist &#x27;((font . <span class="string">&quot;Source Code Pro-16&quot;</span>)))</span><br><span class="line"></span><br><span class="line">(<span class="name">if</span> (<span class="name">display-graphic-p</span>)</span><br><span class="line">    (<span class="name">dolist</span> (<span class="name">charset</span> &#x27;(kana han symbol cjk-misc bopomofo))</span><br><span class="line">      (<span class="name">set-fontset-font</span> (<span class="name">frame-parameter</span> <span class="literal">nil</span> &#x27;font) charset</span><br><span class="line">			(<span class="name">font-spec</span> <span class="symbol">:family</span> (<span class="name">car</span> (<span class="name">cdr</span> fonts))))))</span><br></pre></td></tr></table></figure>
+
+<h2 id="4-欢迎界面"><a href="#4-欢迎界面" class="headerlink" title="4. 欢迎界面"></a>4. 欢迎界面</h2><p>使用<code>dashboard</code>。</p>
+<figure class="highlight lisp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">(<span class="name">use-package</span> dashboard</span><br><span class="line">  <span class="symbol">:ensure</span> <span class="literal">t</span></span><br><span class="line">  <span class="symbol">:config</span> (<span class="name">dashboard-setup-startup-hook</span>))</span><br><span class="line">(<span class="name">setq</span> dashboard-banner-logo-title <span class="string">&quot;Let&#x27;s all love Lain...&quot;</span>)</span><br><span class="line">(<span class="name">setq</span> dashboard-startup-banner <span class="string">&quot;/home/bruce/Lain_avatar.png&quot;</span>)</span><br><span class="line">(<span class="name">setq</span> dashboard-image-banner-max-height <span class="number">300</span>) <span class="comment">;; 设置图片高度</span></span><br><span class="line">(<span class="name">setq</span> dashboard-image-banner-max-width <span class="number">300</span>)  <span class="comment">;; 设置图片宽度</span></span><br><span class="line">(<span class="name">setq</span> dashboard-center-content <span class="literal">t</span>)</span><br></pre></td></tr></table></figure>
+
+<h1 id="4-编程相关设置"><a href="#4-编程相关设置" class="headerlink" title="4. 编程相关设置"></a>4. 编程相关设置</h1><h2 id="1-编码设置"><a href="#1-编码设置" class="headerlink" title="1. 编码设置"></a>1. 编码设置</h2><p>笔者将编码设置为<code>UTF-8</code>。毕竟，看见乱码再修改编码方式实在令人恼火。</p>
+<figure class="highlight lisp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">(<span class="name">set-keyboard-coding-system</span> &#x27;utf-8)</span><br><span class="line">(<span class="name">set-clipboard-coding-system</span> &#x27;utf-8)</span><br><span class="line">(<span class="name">set-terminal-coding-system</span> &#x27;utf-8)</span><br><span class="line">(<span class="name">set-buffer-file-coding-system</span> &#x27;utf-8)</span><br><span class="line">(<span class="name">set-selection-coding-system</span> &#x27;utf-8)</span><br><span class="line">(<span class="name">modify-coding-system-alist</span> &#x27;process <span class="string">&quot;*&quot;</span> &#x27;utf-8)</span><br><span class="line">(<span class="name">setq</span> default-process-coding-system &#x27;(utf-8 . utf-8))</span><br><span class="line">(<span class="name">setq-default</span> pathname-coding-system &#x27;utf-8)</span><br></pre></td></tr></table></figure>
+
+<h2 id="2-LSP与DAP的设置"><a href="#2-LSP与DAP的设置" class="headerlink" title="2. LSP与DAP的设置"></a>2. LSP与DAP的设置</h2><p>LSP，全称叫做Language Server Protocol，大概的作用就是能提供语法高亮、语法提示功能的工具。</p>
+<p>DAP，全称叫做Debug Adapter Protocol，和调试有关的工具。</p>
+<p>建议参考github进行lsp的配置以及相应语言服务器的下载。</p>
+<p>我的配置如下：</p>
+<figure class="highlight lisp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br></pre></td><td class="code"><pre><span class="line">(<span class="name">use-package</span> lsp-mode</span><br><span class="line">  <span class="symbol">:init</span></span><br><span class="line">  <span class="comment">;; set prefix for lsp-command-keymap (few alternatives - &quot;C-l&quot;, &quot;C-c l&quot;)</span></span><br><span class="line">  (<span class="name">setq</span> lsp-keymap-prefix <span class="string">&quot;C-c l&quot;</span>)</span><br><span class="line">  <span class="symbol">:hook</span> (<span class="comment">;; replace XXX-mode with concrete major-mode(e. g. python-mode)</span></span><br><span class="line">         (<span class="name">c-mode</span>      . lsp)</span><br><span class="line">	 (<span class="name">julia-mode</span> . lsp)</span><br><span class="line">	 (<span class="name">lua-mode</span>   . lsp)</span><br><span class="line">	 (<span class="name">ocaml-mode</span> . lsp)</span><br><span class="line">	 (<span class="name">perl-mode</span>  . lsp)</span><br><span class="line">	 (<span class="name">dart-mode</span>  . lsp)</span><br><span class="line">	 (<span class="name">haskell-mode</span> . lsp)</span><br><span class="line">	 (<span class="name">go-mode</span> . lsp)</span><br><span class="line">	 (<span class="name">php-mode</span> . lsp)</span><br><span class="line">	 (<span class="name">racket-mode</span> . lsp)</span><br><span class="line">	 (<span class="name">ruby-mode</span> . lsp)</span><br><span class="line">	 (<span class="name">rust-mode</span> . lsp)</span><br><span class="line">	 (<span class="name">erlang-mode</span> . lsp)</span><br><span class="line">	 (<span class="name">elixir-mode</span> . lsp)</span><br><span class="line">	 (<span class="name">clojure-mode</span> . lsp)</span><br><span class="line">	 (<span class="name">verilog-mode</span> . lsp)</span><br><span class="line">	 )</span><br><span class="line">  <span class="symbol">:commands</span> lsp</span><br><span class="line">  <span class="symbol">:init</span></span><br><span class="line">  (<span class="name">setq</span> lsp-auto-configure <span class="literal">t</span></span><br><span class="line">	lsp-auto-guess-root <span class="literal">t</span></span><br><span class="line">	lsp-idle-delay <span class="number">0.500</span></span><br><span class="line">	lsp-session-file <span class="string">&quot;~/.emacs/.cache.lsp-sessions&quot;</span>))</span><br><span class="line">(<span class="name">require</span> &#x27;lsp-python-ms)</span><br><span class="line">(<span class="name">setq</span> lsp-python-ms-auto-install-server <span class="literal">t</span>)</span><br><span class="line">(<span class="name">add-hook</span> &#x27;python-mode-hook &#x27;lsp)</span><br><span class="line">(<span class="name">add-hook</span> &#x27;c++-mode-hook &#x27;lsp)</span><br><span class="line"></span><br><span class="line"><span class="comment">;; LSP-latex</span></span><br><span class="line">(<span class="name">setq</span> lsp-latex-java-executable <span class="string">&quot;usr/bin/java&quot;</span>)</span><br><span class="line">(<span class="name">setq</span> lsp-latex-texlab-jar-file &#x27;search-from-exec-path)</span><br><span class="line"></span><br><span class="line"><span class="comment">;; LSP-juliaLang</span></span><br><span class="line">(<span class="name">use-package</span> lsp-julia</span><br><span class="line">  <span class="symbol">:config</span></span><br><span class="line">  (<span class="name">setq</span> lsp-julia-default-environment <span class="string">&quot;~/.julia/environments/v1.7&quot;</span>))</span><br><span class="line"></span><br><span class="line"><span class="comment">;; Set up before-save hooks to format buffer and add/delete imports.</span></span><br><span class="line"><span class="comment">;; Make sure you don&#x27;t have other gofmt/goimports hooks enabled.</span></span><br><span class="line">(<span class="name">defun</span> lsp-go-install-save-hooks ()</span><br><span class="line">  (<span class="name">add-hook</span> &#x27;before-save-hook #&#x27;lsp-format-buffer <span class="literal">t</span> <span class="literal">t</span>)</span><br><span class="line">  (<span class="name">add-hook</span> &#x27;before-save-hook #&#x27;lsp-organize-imports <span class="literal">t</span> <span class="literal">t</span>))</span><br><span class="line">(<span class="name">add-hook</span> &#x27;go-mode-hook #&#x27;lsp-go-install-save-hooks)</span><br><span class="line"></span><br><span class="line"><span class="comment">;; LSP-Haskell</span></span><br><span class="line">(<span class="name">add-hook</span> &#x27;haskell-mode-hook #&#x27;lsp)</span><br><span class="line">(<span class="name">add-hook</span> &#x27;haskell-literate-mode-hook #&#x27;lsp)</span><br><span class="line"></span><br><span class="line"><span class="comment">;; optional</span></span><br><span class="line">(<span class="name">use-package</span> lsp-ui <span class="symbol">:commands</span> lsp-ui-mode)</span><br><span class="line"><span class="comment">;; if you are helm user</span></span><br><span class="line">(<span class="name">use-package</span> helm-lsp <span class="symbol">:commands</span> helm-lsp-workspace-symbol)</span><br><span class="line"><span class="comment">;; if you are ivy user</span></span><br><span class="line"><span class="comment">;;(use-package lsp-ivy :commands lsp-ivy-workspace-symbol)</span></span><br><span class="line"><span class="comment">;;(use-package lsp-treemacs :commands lsp-treemacs-errors-list)</span></span><br><span class="line"></span><br><span class="line"><span class="comment">;; Debugger</span></span><br><span class="line">(<span class="name">use-package</span> dap-mode</span><br><span class="line">  <span class="symbol">:ensure</span> <span class="literal">t</span></span><br><span class="line">  <span class="symbol">:commands</span> dap-debug</span><br><span class="line">  <span class="symbol">:custom</span></span><br><span class="line">  (<span class="name">dap-auto-configure-mode</span> <span class="literal">t</span>)</span><br><span class="line">  <span class="symbol">:config</span></span><br><span class="line">  (<span class="name">dap-ui-mode</span> <span class="number">1</span>)</span><br><span class="line">  )</span><br><span class="line">(<span class="name">require</span> &#x27;dap-python)</span><br></pre></td></tr></table></figure>
+
+<h2 id="3-Emacs命令补全与加强"><a href="#3-Emacs命令补全与加强" class="headerlink" title="3. Emacs命令补全与加强"></a>3. Emacs命令补全与加强</h2><p>我使用<code>Helm</code>+<code>smex</code>。</p>
+<figure class="highlight lisp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">(<span class="name">helm-mode</span> <span class="number">1</span>)</span><br><span class="line">(<span class="name">smex-initialize</span>)</span><br></pre></td></tr></table></figure>
+
+<h2 id="4-文本补全"><a href="#4-文本补全" class="headerlink" title="4. 文本补全"></a>4. 文本补全</h2><p>我使用<code>company</code>。它会自动根据你在当前文件中输入过的单词进行补全。</p>
+<figure class="highlight lisp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">(<span class="name">global-company-mode</span> <span class="literal">t</span>)</span><br><span class="line">(<span class="name">setq</span> company-minimum-prefix-length <span class="number">2</span>)</span><br><span class="line">(<span class="name">setq</span> company-idle-delay <span class="number">0</span>)</span><br><span class="line">(<span class="name">setq</span> company-selection-wrap-around <span class="literal">t</span>)</span><br><span class="line">(<span class="name">company-quickhelp-mode</span>)</span><br></pre></td></tr></table></figure>
+
+<h2 id="5-括号的分级显示"><a href="#5-括号的分级显示" class="headerlink" title="5. 括号的分级显示"></a>5. 括号的分级显示</h2><p>Lisp语言的一大特点就是：括号太tm多了。</p>
+<p>有必要对不同等级的括号，用不同的颜色显示出来，我选用<code>rainbow-delimiters</code>。</p>
+<figure class="highlight lisp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">(<span class="name">use-package</span> rainbow-delimiters</span><br><span class="line">  <span class="symbol">:ensure</span> <span class="literal">t</span></span><br><span class="line">  <span class="symbol">:hook</span> (<span class="name">prog-mode</span> . rainbow-delimiters-mode))</span><br></pre></td></tr></table></figure>
+
+<h2 id="6-撤销操作树"><a href="#6-撤销操作树" class="headerlink" title="6. 撤销操作树"></a>6. 撤销操作树</h2><p>通过使用<code>undo-tree</code>包，可以通过<code>C-u</code>快捷键方便地回滚到过去的状态。我的第二行配置是为了将<code>undo-tree</code>文件，也就是记录撤销操作树的文件都存到统一的文件夹中，相信我，这很有必要。</p>
+<figure class="highlight lisp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">(<span class="name">add-hook</span> &#x27;after-init-hook &#x27;global-undo-tree-mode)</span><br><span class="line">(<span class="name">setq</span> undo-tree-history-directory-alist &#x27;((<span class="string">&quot;.&quot;</span> . <span class="string">&quot;~/.emacs.d/undo&quot;</span>)))</span><br></pre></td></tr></table></figure>
+
+<h2 id="7-语法检查"><a href="#7-语法检查" class="headerlink" title="7. 语法检查"></a>7. 语法检查</h2><p>我使用<code>flycheck</code>，感觉比自带的<code>flymake</code>好用一些。</p>
+<figure class="highlight lisp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">(<span class="name">global-flycheck-mode</span> <span class="literal">t</span>)</span><br></pre></td></tr></table></figure>
+
+<h2 id="8-Vim键位"><a href="#8-Vim键位" class="headerlink" title="8. Vim键位"></a>8. Vim键位</h2><p>Vim键位实在是太香了。我使用<code>evil</code>包，将Vim的键位和Emacs的键位结合在一起，非常好用。</p>
+<figure class="highlight lisp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">(<span class="name">evil-mode</span> <span class="number">1</span>)</span><br></pre></td></tr></table></figure>
+
+<h2 id="9-搜索强化"><a href="#9-搜索强化" class="headerlink" title="9. 搜索强化"></a>9. 搜索强化</h2><p>您可以试一试<code>iedit</code>和<code>avy</code>。</p>
+<h2 id="10-杂项"><a href="#10-杂项" class="headerlink" title="10. 杂项"></a>10. 杂项</h2><p>我还使用用于项目管理的<code>projectile</code>和版本管理的<code>magit</code>。</p>
+<h1 id="5-自编写过程"><a href="#5-自编写过程" class="headerlink" title="5. 自编写过程"></a>5. 自编写过程</h1><p>我自己写了几个自动编译运行的过程，有挺多bug的。</p>
+<p>但是我懒得改了。</p>
+<figure class="highlight lisp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">(<span class="name">defun</span> c-quick-compile ()</span><br><span class="line">  (<span class="name">interactive</span>)</span><br><span class="line">  (<span class="name">compile</span> (<span class="name">format</span> <span class="string">&quot;gcc %s &amp;&amp; ./a.out&quot;</span> (<span class="name">buffer-name</span>) ) <span class="literal">t</span>)</span><br><span class="line">  )</span><br><span class="line"></span><br><span class="line">(<span class="name">defun</span> c-compile-no-run ()</span><br><span class="line">  (<span class="name">interactive</span>)</span><br><span class="line">  (<span class="name">compile</span> (<span class="name">format</span> <span class="string">&quot;gcc %s&quot;</span> (<span class="name">buffer-name</span>)))</span><br><span class="line">  )</span><br><span class="line"></span><br><span class="line">(<span class="name">defun</span> compile-no-run ()</span><br><span class="line">  (<span class="name">interactive</span>)</span><br><span class="line">  (<span class="name">if</span> (<span class="name">eq</span> major-mode &#x27;java-mode)</span><br><span class="line">      (<span class="name">java-compile-no-run</span>))</span><br><span class="line">  (<span class="name">if</span> (<span class="name">eq</span> major-mode &#x27;c-mode)</span><br><span class="line">      (<span class="name">c-compile-no-run</span>))</span><br><span class="line">  )</span><br></pre></td></tr></table></figure>
+
+<h1 id="6-键位绑定"><a href="#6-键位绑定" class="headerlink" title="6. 键位绑定"></a>6. 键位绑定</h1><p>您可以使用如下的键位绑定过程：</p>
+<figure class="highlight lisp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">(<span class="name">global-set-key</span> (<span class="name">kbd</span> <span class="string">&quot;C-c a l&quot;</span>) &#x27;avy-goto-line)</span><br><span class="line">(<span class="name">global-set-key</span> (<span class="name">kbd</span> <span class="string">&quot;C-c a a&quot;</span>) &#x27;avy-copy-line)</span><br><span class="line">(<span class="name">global-set-key</span> (<span class="name">kbd</span> <span class="string">&quot;C-c a b&quot;</span>) &#x27;avy-copy-region)</span><br><span class="line">(<span class="name">global-set-key</span> (<span class="name">kbd</span> <span class="string">&quot;C-c a m&quot;</span>) &#x27;avy-move-line)</span><br><span class="line">(<span class="name">global-set-key</span> (<span class="name">kbd</span> <span class="string">&quot;C-c a n&quot;</span>) &#x27;avy-move-region)</span><br></pre></td></tr></table></figure>
+
+<h1 id="后记"><a href="#后记" class="headerlink" title="后记"></a>后记</h1><p>参考了Emacs China、Reddit(r&#x2F;emacs)、知乎、CSDN等平台的配置。有一些小package没有列出。本文会持续更新。私以为Emacs的配置也是如此，从编程菜鸟到编程老鸟的过程中，Emacs的配置也会随着需求逐渐变化迭代，有现成的包就用，没有符合自己需求的包，便自己写一个。</p>
+
+      </div>
+      
+        <div class="prev-or-next">
+          <div class="post-foot-next">
+            
+              <a href="/2023/03/03/Linux%E4%B8%8B%E7%9A%84stm32flash%E8%BF%9E%E6%8E%A5%E9%97%AE%E9%A2%98/" target="_self">
+                <i class="iconfont icon-chevronleft"></i>
+                <span>上一页</span>
+              </a>
+            
+          </div>
+          <div class="post-attach">
+            <span class="post-pubtime">
+              <i class="iconfont icon-updatetime mr-10" title="更新时间"></i>
+              2023-04-17 11:15:49
+            </span>
+            
+                  <span class="post-tags">
+                    <i class="iconfont icon-tags mr-10" title="标签"></i>
+                    
+                    <span class="span--tag mr-8">
+                      <a href="/tags/Emacs/" title="Emacs">
+                        #Emacs
+                      </a>
+                    </span>
+                    
+                  </span>
+              
+          </div>
+          <div class="post-foot-prev">
+            
+              <a href="/2023/04/25/%E9%A3%98%E9%9B%B6%E6%A8%B1%E8%8A%B1/" target="_self">
+                <span>下一页</span>
+                <i class="iconfont icon-chevronright"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+    </div>
+    
+  <div id="btn-catalog" class="btn-catalog">
+    <i class="iconfont icon-catalog"></i>
+  </div>
+  <div class="post-catalog hidden" id="catalog">
+    <div class="title">目录</div>
+    <div class="catalog-content">
+      
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%BC%95%E5%AD%90"><span class="toc-text">引子</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%BA%E4%BB%80%E4%B9%88%E8%A6%81%E7%94%A8Emacs%EF%BC%9F"><span class="toc-text">为什么要用Emacs？</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#1-%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E7%9A%84%E7%BB%93%E6%9E%84"><span class="toc-text">1. 配置文件的结构</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#2-%E5%8C%85%E7%9A%84%E5%AE%89%E8%A3%85"><span class="toc-text">2. 包的安装</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#3-%E4%B8%BB%E9%A2%98%E8%AE%BE%E7%BD%AE"><span class="toc-text">3. 主题设置</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E5%9F%BA%E6%9C%AC%E7%9A%84UI%E8%AE%BE%E7%BD%AE"><span class="toc-text">1. 基本的UI设置</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-%E4%B8%BB%E9%A2%98%E5%92%8Cmodeline%E8%AE%BE%E7%BD%AE"><span class="toc-text">2. 主题和modeline设置</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-%E5%AD%97%E4%BD%93"><span class="toc-text">3. 字体</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-%E6%AC%A2%E8%BF%8E%E7%95%8C%E9%9D%A2"><span class="toc-text">4. 欢迎界面</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#4-%E7%BC%96%E7%A8%8B%E7%9B%B8%E5%85%B3%E8%AE%BE%E7%BD%AE"><span class="toc-text">4. 编程相关设置</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E7%BC%96%E7%A0%81%E8%AE%BE%E7%BD%AE"><span class="toc-text">1. 编码设置</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-LSP%E4%B8%8EDAP%E7%9A%84%E8%AE%BE%E7%BD%AE"><span class="toc-text">2. LSP与DAP的设置</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-Emacs%E5%91%BD%E4%BB%A4%E8%A1%A5%E5%85%A8%E4%B8%8E%E5%8A%A0%E5%BC%BA"><span class="toc-text">3. Emacs命令补全与加强</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-%E6%96%87%E6%9C%AC%E8%A1%A5%E5%85%A8"><span class="toc-text">4. 文本补全</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-%E6%8B%AC%E5%8F%B7%E7%9A%84%E5%88%86%E7%BA%A7%E6%98%BE%E7%A4%BA"><span class="toc-text">5. 括号的分级显示</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#6-%E6%92%A4%E9%94%80%E6%93%8D%E4%BD%9C%E6%A0%91"><span class="toc-text">6. 撤销操作树</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#7-%E8%AF%AD%E6%B3%95%E6%A3%80%E6%9F%A5"><span class="toc-text">7. 语法检查</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#8-Vim%E9%94%AE%E4%BD%8D"><span class="toc-text">8. Vim键位</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#9-%E6%90%9C%E7%B4%A2%E5%BC%BA%E5%8C%96"><span class="toc-text">9. 搜索强化</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#10-%E6%9D%82%E9%A1%B9"><span class="toc-text">10. 杂项</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#5-%E8%87%AA%E7%BC%96%E5%86%99%E8%BF%87%E7%A8%8B"><span class="toc-text">5. 自编写过程</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#6-%E9%94%AE%E4%BD%8D%E7%BB%91%E5%AE%9A"><span class="toc-text">6. 键位绑定</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%90%8E%E8%AE%B0"><span class="toc-text">后记</span></a></li></ol>
+      
+    </div>
+  </div>
+
+  
+<script src="/js/catalog.js"></script>
+
+
+
+
+    
+      <div class="comments-container">
+        
+
+
+
+
+  
+    <script async type="text/javascript" src='https://cdn.jsdelivr.net/npm/valine@1.4.18/dist/Valine.min.js' onload="loadValineSuc(this)"></script>
+  
+
+  <div id="vcomments"></div>
+
+  <script>
+    function loadValineSuc() {
+      new Valine({
+        el: '#vcomments',
+        appId: 'oMvaqsYv2LQSqtj795B31OWV-gzGzoHsz',
+        appKey: 'UKlJCzW9McXrX8L71Mqz5hol',
+        placeholder: 'Welcome!',
+        avatar: 'retro',
+        lang: 'zh-CN'
+      })
+    }
+  </script>
+
+    <style>
+      .comments-container .v .vempty {
+        display: none!important;
+      }
+    </style>
+
+
+
+
+      </div>
+    
+  </div>
+
+
+        
+<div class="footer">
+  <div class="social">
+    <ul>
+      
+        <li>
+          <a title="rss" href="/atom.xml">
+            <i class="iconfont icon-rss"></i>
+          </a>
+        </li>
+      
+    </ul>
+  </div>
+  
+    
+    <div class="footer-more">
+      
+        <a target="_blank" rel="noopener" href="https://github.com/zchengsite/hexo-theme-oranges">Copyright © 2024 Oranges</a>
+        
+    </div>
+  
+    
+    <div class="footer-more">
+      
+        <a target="_blank" rel="noopener" href="https://github.com/zchengsite/hexo-theme-oranges">Theme by Oranges | Powered by Hexo</a>
+        
+    </div>
+  
+  
+</div>
+
+      </div>
+
+      <div class="tools-bar">
+        <div class="back-to-top tools-bar-item hidden">
+  <a href="javascript: void(0)">
+    <i class="iconfont icon-chevronup"></i>
+  </a>
+</div>
+
+
+<script src="/js/backtotop.js"></script>
+
+
+
+        
+  <div class="search-icon tools-bar-item" id="search-icon">
+    <a href="javascript: void(0)">
+      <i class="iconfont icon-search"></i>
+    </a>
+  </div>
+
+  <div class="search-overlay hidden">
+    <div class="search-content" tabindex="0">
+      <div class="search-title">
+        <span class="search-icon-input">
+          <a href="javascript: void(0)">
+            <i class="iconfont icon-search"></i>
+          </a>
+        </span>
+        
+          <input type="text" class="search-input" id="search-input" placeholder="搜索...">
+        
+        <span class="search-close-icon" id="search-close-icon">
+          <a href="javascript: void(0)">
+            <i class="iconfont icon-close"></i>
+          </a>
+        </span>
+      </div>
+      <div class="search-result" id="search-result"></div>
+    </div>
+  </div>
+
+  <script type="text/javascript">
+    var inputArea = document.querySelector("#search-input")
+    var searchOverlayArea = document.querySelector(".search-overlay")
+
+    inputArea.onclick = function() {
+      getSearchFile()
+      this.onclick = null
+    }
+
+    inputArea.onkeydown = function() {
+      if(event.keyCode == 13)
+        return false
+    }
+
+    function openOrHideSearchContent() {
+      let isHidden = searchOverlayArea.classList.contains('hidden')
+      if (isHidden) {
+        searchOverlayArea.classList.remove('hidden')
+        document.body.classList.add('hidden')
+        // inputArea.focus()
+      } else {
+        searchOverlayArea.classList.add('hidden')
+        document.body.classList.remove('hidden')
+      }
+    }
+
+    function blurSearchContent(e) {
+      if (e.target === searchOverlayArea) {
+        openOrHideSearchContent()
+      }
+    }
+
+    document.querySelector("#search-icon").addEventListener("click", openOrHideSearchContent, false)
+    document.querySelector("#search-close-icon").addEventListener("click", openOrHideSearchContent, false)
+    searchOverlayArea.addEventListener("click", blurSearchContent, false)
+
+    var searchFunc = function (path, search_id, content_id) {
+      'use strict';
+      var $input = document.getElementById(search_id);
+      var $resultContent = document.getElementById(content_id);
+      $resultContent.innerHTML = "<ul><span class='local-search-empty'>首次搜索，正在载入索引文件，请稍后……<span></ul>";
+      $.ajax({
+        // 0x01. load xml file
+        url: path,
+        dataType: "xml",
+        success: function (xmlResponse) {
+          // 0x02. parse xml file
+          var datas = $("entry", xmlResponse).map(function () {
+            return {
+              title: $("title", this).text(),
+              content: $("content", this).text(),
+              url: $("url", this).text()
+            };
+          }).get();
+          $resultContent.innerHTML = "";
+
+          $input.addEventListener('input', function () {
+            // 0x03. parse query to keywords list
+            var str = '<ul class=\"search-result-list\">';
+            var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+            $resultContent.innerHTML = "";
+            if (this.value.trim().length <= 0) {
+              return;
+            }
+            // 0x04. perform local searching
+            datas.forEach(function (data) {
+              var isMatch = true;
+              var content_index = [];
+              if (!data.title || data.title.trim() === '') {
+                data.title = "Untitled";
+              }
+              var orig_data_title = data.title.trim();
+              var data_title = orig_data_title.toLowerCase();
+              var orig_data_content = data.content.trim().replace(/<[^>]+>/g, "");
+              var data_content = orig_data_content.toLowerCase();
+              var data_url = data.url;
+              var index_title = -1;
+              var index_content = -1;
+              var first_occur = -1;
+              // only match artiles with not empty contents
+              if (data_content !== '') {
+                keywords.forEach(function (keyword, i) {
+                  index_title = data_title.indexOf(keyword);
+                  index_content = data_content.indexOf(keyword);
+
+                  if (index_title < 0 && index_content < 0) {
+                    isMatch = false;
+                  } else {
+                    if (index_content < 0) {
+                      index_content = 0;
+                    }
+                    if (i == 0) {
+                      first_occur = index_content;
+                    }
+                    // content_index.push({index_content:index_content, keyword_len:keyword_len});
+                  }
+                });
+              } else {
+                isMatch = false;
+              }
+              // 0x05. show search results
+              if (isMatch) {
+                str += "<li><a href='" + data_url + "' class='search-result-title'>" + orig_data_title + "</a>";
+                var content = orig_data_content;
+                if (first_occur >= 0) {
+                  // cut out 100 characters
+                  var start = first_occur - 20;
+                  var end = first_occur + 80;
+
+                  if (start < 0) {
+                    start = 0;
+                  }
+
+                  if (start == 0) {
+                    end = 100;
+                  }
+
+                  if (end > content.length) {
+                    end = content.length;
+                  }
+
+                  var match_content = content.substr(start, end);
+
+                  // highlight all keywords
+                  keywords.forEach(function (keyword) {
+                    var regS = new RegExp(keyword, "gi");
+                    match_content = match_content.replace(regS, "<span class=\"search-keyword\">" + keyword + "</span>");
+                  });
+
+                  str += "<p class=\"search-result-abstract\">" + match_content + "...</p>"
+                }
+                str += "</li>";
+              }
+            });
+            str += "</ul>";
+            if (str.indexOf('<li>') === -1) {
+              return $resultContent.innerHTML = "<ul><span class='local-search-empty'>没有找到内容，请尝试更换检索词。<span></ul>";
+            }
+            $resultContent.innerHTML = str;
+          });
+        },
+        error: function(xhr, status, error) {
+          $resultContent.innerHTML = ""
+          if (xhr.status === 404) {
+            $resultContent.innerHTML = "<ul><span class='local-search-empty'>未找到search.xml文件，具体请参考：<a href='https://github.com/zchengsite/hexo-theme-oranges#configuration' target='_black'>configuration</a><span></ul>";
+          } else {
+            $resultContent.innerHTML = "<ul><span class='local-search-empty'>请求失败，尝试重新刷新页面或稍后重试。<span></ul>";
+          }
+        }
+      });
+      $(document).on('click', '#search-close-icon', function() {
+        $('#search-input').val('');
+        $('#search-result').html('');
+      });
+    }
+
+    var getSearchFile = function() {
+        var path = "/search.xml";
+        searchFunc(path, 'search-input', 'search-result');
+    }
+  </script>
+
+
+
+
+        
+  <div class="tools-bar-item theme-icon" id="switch-color-scheme">
+    <a href="javascript: void(0)">
+      <i id="theme-icon" class="iconfont icon-moon"></i>
+    </a>
+  </div>
+
+  
+<script src="/js/colorscheme.js"></script>
+
+
+
+
+
+        
+  
+    <div class="share-icon tools-bar-item">
+      <a href="javascript: void(0)" id="share-icon">
+        <i class="iconfont iconshare"></i>
+      </a>
+      <div class="share-content hidden">
+        
+          <a class="share-item" href="https://twitter.com/intent/tweet?text=' + %E3%80%90Emacs%E3%80%91%E5%9D%8E%E5%9D%B7%E4%B9%8B%E8%B7%AF%EF%BC%8C%E7%BB%88%E6%8A%B5%E7%BE%A4%E6%98%9F + '&url=' + https%3A%2F%2Fcoder109.github.io%2F2023%2F04%2F17%2Femacs-config%2F + '" target="_blank" title="Twitter">
+            <i class="iconfont icon-twitter"></i>
+          </a>
+        
+        
+      </div>
+    </div>
+  
+  
+<script src="/js/shares.js"></script>
+
+
+
+      </div>
+    </div>
+  
+        <style>
+            [bg-lazy] {
+                background-image: none !important;
+                background-color: #eee !important;
+            }
+        </style>
+        <script>
+            window.imageLazyLoadSetting = {
+                isSPA: false,
+                preloadRatio: 1,
+                processImages: null,
+            };
+        </script><script>window.addEventListener("load",function(){var t=/\.(gif|jpg|jpeg|tiff|png)$/i,r=/^data:image\/[a-z]+;base64,/;Array.prototype.slice.call(document.querySelectorAll("img[data-original]")).forEach(function(a){var e=a.parentNode;"A"===e.tagName&&(e.href.match(t)||e.href.match(r))&&(e.href=a.dataset.original)})});</script><script>!function(r){r.imageLazyLoadSetting.processImages=t;var e=r.imageLazyLoadSetting.isSPA,n=r.imageLazyLoadSetting.preloadRatio||1,c=a();function a(){var t=Array.prototype.slice.call(document.querySelectorAll("img[data-original]")),e=Array.prototype.slice.call(document.querySelectorAll("[bg-lazy]"));return t.concat(e)}function t(){e&&(c=a());for(var t,o=0;o<c.length;o++)0<=(t=(t=c[o]).getBoundingClientRect()).bottom&&0<=t.left&&t.top<=(r.innerHeight*n||document.documentElement.clientHeight*n)&&function(){var t,e,n,a,i=c[o];e=function(){c=c.filter(function(t){return i!==t}),r.imageLazyLoadSetting.onImageLoaded&&r.imageLazyLoadSetting.onImageLoaded(i)},(t=i).hasAttribute("bg-lazy")?(t.removeAttribute("bg-lazy"),e&&e()):(n=new Image,a=t.getAttribute("data-original"),n.onload=function(){t.src=a,t.removeAttribute("data-original"),e&&e()},t.src!==a&&(n.src=a))}()}function i(){clearTimeout(t.tId),t.tId=setTimeout(t,500)}t(),document.addEventListener("scroll",i),r.addEventListener("resize",i),r.addEventListener("orientationchange",i)}(this);</script></body>
+</html>

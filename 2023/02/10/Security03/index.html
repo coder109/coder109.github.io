@@ -1,0 +1,642 @@
+<!DOCTYPE html>
+<html lang="zh-CN" color-mode="light">
+
+  <head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="keywords" content="" />
+  <meta name="author" content="Coder109" />
+  <meta name="description" content="" />
+  
+  
+  <title>
+    
+      业余安全漫谈（三）：密码、存储、信息传输安全 
+      
+      
+      |
+    
+     幻
+  </title>
+
+  
+    <link rel="apple-touch-icon" href="/images/favicon.ico">
+    <link rel="icon" href="/images/favicon.ico">
+  
+
+  <!-- Raleway-Font -->
+  <link href="https://fonts.googleapis.com/css?family=Raleway&display=swap" rel="stylesheet">
+
+  <!-- hexo site css -->
+  <link rel="stylesheet" href="/css/main.css" />
+  <link rel="stylesheet" href="//at.alicdn.com/t/font_1886449_67xjft27j1l.css" />
+  <!-- 代码块风格 -->
+  
+
+  <!-- jquery3.3.1 -->
+  
+    <script defer type="text/javascript" src="/plugins/jquery.min.js"></script>
+  
+
+  <!-- fancybox -->
+  
+    <link href="/plugins/jquery.fancybox.min.css" rel="stylesheet">
+    <script defer type="text/javascript" src="/plugins/jquery.fancybox.min.js"></script>
+  
+  
+<script src="/js/fancybox.js"></script>
+
+
+  
+
+  
+
+  <script>
+    var html = document.documentElement
+    const colorMode = localStorage.getItem('color-mode')
+    if (colorMode) {
+      document.documentElement.setAttribute('color-mode', colorMode)
+    }
+  </script>
+<meta name="generator" content="Hexo 6.3.0"><link rel="alternate" href="/atom.xml" title="幻" type="application/atom+xml">
+</head>
+
+
+  <body>
+    <div id="app">
+      <div class="header">
+  <div class="avatar">
+    <a href="/">
+      <!-- 头像取消懒加载，添加no-lazy -->
+      
+        <img no-lazy src="/images/favicon.ico" alt="">
+      
+    </a>
+    <div class="nickname"><a href="/">幻</a></div>
+  </div>
+  <div class="navbar">
+    <ul>
+      
+        <li class="nav-item" data-path="/">
+          <a href="/">Home</a>
+        </li>
+      
+        <li class="nav-item" data-path="/archives/">
+          <a href="/archives/">Archives</a>
+        </li>
+      
+        <li class="nav-item" data-path="/tags/">
+          <a href="/tags/">Tags</a>
+        </li>
+      
+        <li class="nav-item" data-path="/friends/">
+          <a href="/friends/">Friends</a>
+        </li>
+      
+        <li class="nav-item" data-path="/about/">
+          <a href="/about/">About</a>
+        </li>
+      
+    </ul>
+  </div>
+</div>
+
+
+<script src="/js/activeNav.js"></script>
+
+
+
+      <div class="flex-container">
+        <!-- 文章详情页，展示文章具体内容，url形式：https://yoursite/文章标题/ -->
+<!-- 同时为「标签tag」，「朋友friend」，「分类categories」，「关于about」页面的承载页面，具体展示取决于page.type -->
+
+
+  <!-- LaTex Display -->
+
+  
+    <script async type="text/javascript" src="/plugins/mathjax/tex-chtml.js"></script>
+  
+  <script>
+    MathJax = {
+      tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']]
+      }
+    }
+  </script>
+
+
+
+
+
+  <!-- clipboard -->
+
+  
+    <script async type="text/javascript" src="/plugins/clipboard.min.js"></script>
+  
+  
+<script src="/js/codeCopy.js"></script>
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  <!-- 文章内容页 url形式：https://yoursite/文章标题/ -->
+  <div class="container post-details" id="post-details">
+    <div class="post-content">
+      <div class="post-title">业余安全漫谈（三）：密码、存储、信息传输安全</div>
+      <div class="post-attach">
+        <span class="post-pubtime">
+          <i class="iconfont icon-updatetime mr-10" title="更新时间"></i>
+          2023-02-10 11:15:49
+        </span>
+        
+              <span class="post-tags">
+                <i class="iconfont icon-tags mr-10" title="标签"></i>
+                
+                <span class="span--tag mr-8">
+                  <a href="/tags/%E4%B8%9A%E4%BD%99%E5%AE%89%E5%85%A8%E6%BC%AB%E8%B0%88/" title="业余安全漫谈">
+                    #业余安全漫谈
+                  </a>
+                </span>
+                
+              </span>
+          
+      </div>
+      <div class="markdown-body">
+        <h2 id="0-好钢用在刀刃上"><a href="#0-好钢用在刀刃上" class="headerlink" title="0.好钢用在刀刃上"></a>0.好钢用在刀刃上</h2><p>我们不妨把使用密码的情况分为三种：</p>
+<ol>
+<li>低强度需求。这种情况对应着：哪怕密码被盗了，也不会造成什么损失。比如：不常逛的论坛登陆密码、不常用的APP的登陆密码。</li>
+<li>中等强度需求。比如：常用的视频网站、论坛的密码，个人电脑的密码，手机密码。</li>
+<li>高强度需求。比如：敏感文件的访问密码。</li>
+</ol>
+<p>对于不同的情况，可以选择不同的密码强度。对于第一种，我们把密码设为111、123之类都没有问题，因为就算黑客破解了这些密码，也获得不到什么东西；对于第二种，我们可以把密码设为相对复杂一点，同时又比较好记忆的密码，比如MyNameIsNick23723之类；对于第三种，我们可以用一些随机算法生成密码，比如A6YW0:7lRpdKdJ^k2O(o}R+7之类，同时用特定的软件、工具来管理。</p>
+<p>同时密码的复杂度也与您使用密码的次数有关，经常使用的密码可以设置的好记一些。</p>
+<h2 id="1-强密码"><a href="#1-强密码" class="headerlink" title="1.强密码"></a>1.强密码</h2><p>强密码要有以下几个特点：</p>
+<ul>
+<li><p>长度尽可能长</p>
+</li>
+<li><p>不包含用户名</p>
+</li>
+<li><p>同时有大小写字母、数字、特殊符号等</p>
+</li>
+</ul>
+<p>比如，下面这些是弱密码：</p>
+<ul>
+<li>123</li>
+<li>abcdef</li>
+<li>当用户名是Nick的时候，密码为Nick111</li>
+</ul>
+<p>与之相反，这些是强密码：</p>
+<ul>
+<li>ThisIsAPassword1212&#x3D;</li>
+<li>MyNameIsNick23723</li>
+</ul>
+<p>怎么想出来一些好用的强密码呢？</p>
+<h3 id="观察周遭事物"><a href="#观察周遭事物" class="headerlink" title="观察周遭事物"></a>观察周遭事物</h3><p>步骤：</p>
+<ol>
+<li>挑选周围出现的几个事物。</li>
+<li>将它们用文本表示出来。</li>
+<li>加上数字。</li>
+</ol>
+<p>举个例子：</p>
+<p>我周围有开关、书、电脑，那么我就把密码暂时设置为“SwitchBookComputer”，加上点数字：“SwitchBookComputer2023”。这样我们就有一个强密码了。也很好记忆。</p>
+<h2 id="2-密码管理器"><a href="#2-密码管理器" class="headerlink" title="2.密码管理器"></a>2.密码管理器</h2><p>密码管理器可以用来管理、生成密码。</p>
+<blockquote>
+<p>我不推荐用浏览器保存密码，因为浏览器并不是为管理密码设计的。我更推荐用专用的密码管理器。</p>
+<p>现在的密码管理器大概分为两种，一种将密码库放在云端，另一种将密码库存储在本地。前者比较方便，可以多设备同步，但是面临着数据泄露的风险，比如<a target="_blank" rel="noopener" href="https://www.wired.com/story/lastpass-breach-vaults-password-managers/">LastPass密码库泄露事件</a>。所以我更推荐使用后者，只要你能够妥善保管，就很安全，我日常使用的是<code>KeePassXC</code>。</p>
+<p>这里也推荐一个方法，在设置密钥时，可以在设置密码的同时设置密钥文件，这样基本上没有暴力破解的可能性。</p>
+<p>——我的另一篇博文：《Linux苦痛之路（三）：漫谈+Arch Linux软件配置选择》</p>
+</blockquote>
+<p>最好的密码管理器是什么？纸、笔和保险箱。</p>
+<h2 id="3-加密卷"><a href="#3-加密卷" class="headerlink" title="3.加密卷"></a>3.加密卷</h2><blockquote>
+<p>如果您有些敏感信息要存放，可以使用<code>Veracrypt</code>，它不仅可以创建加密卷，也可以加密U盘、硬盘等，是很强大的工具。</p>
+<p>同样，采用密钥文件+密码的模式，会很安全。</p>
+<p>——我的另一篇博文：《Linux苦痛之路（三）：漫谈+Arch Linux软件配置选择》</p>
+</blockquote>
+<h2 id="4-加密服务"><a href="#4-加密服务" class="headerlink" title="4.加密服务"></a>4.加密服务</h2><p>尽量选择安全的、私密的服务。如果您有相关的知识储备，可以试着了解服务背后的原理。</p>
+<p>比如电子邮件可以选择<code>protonmail</code>、<code>tutanota</code>等等。</p>
+<h2 id="5-隐藏起来的重要信息"><a href="#5-隐藏起来的重要信息" class="headerlink" title="5.隐藏起来的重要信息"></a>5.隐藏起来的重要信息</h2><p>当传输图片、文本时，尽量保证图片、文本里包含最少的信息。简单！我们把那些能够暴露我身份、地点的信息都删除、用马赛克遮盖起来就好啦！</p>
+<p>这够吗？</p>
+<p>我们以图片为例子。</p>
+<p>图片不仅仅包含一个个像素点，它还包括一些<strong>元数据</strong>，像下面这些：</p>
+<p><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAASwAAAEsCAMAAABOo35HAAAABGdBTUEAAK/INwWK6QAAABl0RVh0U29mdHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwAAAC9UExURVlZWdPT07KysmRkZIWFhfT09JmZmWZmZm9vb39/fxkZGUxMTDMzM3p6epCQkKamppubm729venp6cjIyN7e3tbW1s/Pz8LCwnx8fLS0tFZWVoiIiI+Pj6GhoeTk5Glpabu7u93d3evr66CgoJSUlKqqqsnJyeDg4Hd3d8PDw+Xl5bi4uNHR0dvb26Ojo6urq+fn51hYWDg4OCgoKHBwcK2traenp0FBQe7u7vHx8U5OTre3t8zMzHV1df///7GrnpQAAAA/dFJOU///////////////////////////////////////////////////////////////////////////////////AI4mfBcAAAUGSURBVHja7NoJb6M4GMZxY0NCD64kve/pMZ2d3Z297+X7f6zFNmBAMUXa6URl/q9UJSWPUPzrizFWRUlNLgEBWGCBBRZYYEEAFlhggQUWWBCABRZYYIEFFgRggQUWWGCBBQFYYIEFFlhgQQAWWGCBBRZYEIAFFlhggQUWBGCBBRZYYIEFAVhggQUWWGBBABZYYIEFFlgQgAUWWGCBBRYEYIEFFlhggQUBWGCBBRZYYEEAFlhggQUWWBCABRZYYIEFFgRggQUWWGCBBQFYYIEFFlhgQQAWWGCBBRZYEIAFFlhggQUWBGCBBRZYn6cCIcRXgvX/h9qcIVBqDdbEM8RCxGCB9QqXYRwHYDHBgwXWl8eKZKiESHI3Ba1kWs3fKixcaJUl1YyeBm7Ocq+yLItUiVBGnXxenSHJolIKEcwHq6ikbOX1YGVzQCTN8LPmSLreghUl9sN4Uw7yajMrLC0TZ1ImzqY6FEop0+pIaEN5HaoOxVuwEqFyc4I46uSlzOLqgxlh6UaR9l3VYWl9Fdoxb1Q90KJtu41pwwFW/WHhTtW8i7TafLCqRsk6bsGw63L9qurXRmuIlbT9lDQnlXU+nBFW1Q2qnZbDprWa2tjR90LZFqx1/+Td/HpGWLlrLDvIwTcx6dQ1Vrntbig68cDms3JwbA5Y1azs1ger6sNV/bbIw1jU81MvNAGrl58RVn8ozW+btF08iGFoAlYvP3csfVur1gJBEIA1uBmue5dhZDOyO2epbmgCVi8/I6x0MMHH9pjsTfBhNzQBq5uPZoQlB0uH3DZG4EZqQ26fL3sZq5uf09Ih6qw3i/pm6BZO0qZX7rrUS68Xsbr5ZE4rePMk08pk9aUZugfqppvs6AM1Acvlo/StP+6EbW06z8hJqxbYp2BZPQUnFsLsKuhQdaHqn5ewbF7KXIn0jWO5MqOQ7RaNLPtbNMmmhimj0GUmYLl8Gs0Lq4wyPbTu1l2QKqHSouzs3OlDIslW5SQsnY/NXmFplyNvEuuLV/Tau9BzwiraDUSwXmysztYWWNtL1psXeumgIrDGaqXvBfUuvtqUYI3V2t1wk1e2msFluJJm6zDJXv/fIfjPP7DAAgsssCiwwAILLLDAosACCyywwAKLAgsssMACC6zt9fDz/v75tyOB+98PD2+ORgKffjw4OP1uJPDxl+Xy8v1I4MPF3t7VNyOB4/vF4uzdzrG+39f1kz/w66Guv/yBvw90KX/gZKkr8Qf+2dOV+gNHC12/7RxrabD2/a31bLAO/a11YbAO/K21MFhLf2s9Gqw9f2vdGqzFu11jnVusE2/gxmI9eQOnFuvYG7i0WH7uK4t15w2cWazrXWP9a7H8f/bQYvm/6IPF+sF/pVssf19Ii/WH/0K2WH/uGuvEWC39gSdj9Twy+Rqri5EZx1gt/IE7Y/XoD1wbq9vd3w1PlufnD2OBp+ebm/uxwPHF6emnscDR4vLy41jg7vHq6sNY4Pr27OyYdRaLUrDAAosCCyywwAILLAossMACCyywKLDAAgsssMCiwAILLLDAAosCCyywwAILLAossMACCyywKLDAAgsssMCiwAILLLDAAosCCyywwAILLAossMACCyywKLDAAgsssMCiwAILLLDAAosCCyywwAILLAossMACCyywKLDAAgsssMCiwAILLLDAAosCCyywwAILLAossMACCyywKLDAAgsssL6u+k+AAQCR9eHtLKvLfwAAAABJRU5ErkJggg==" data-original="/./Screenshot_20230123_105822.png"></p>
+<p>如您所见，它包括图片的一些基本参数，有的元数据还包括您拍摄照片的位置。当您把图片发在社交网站上的时候，如果这些网站不对元数据进行擦除的话，别人可以通过一些工具查看到这些元数据，进而对您的活动进行分析。这些元数据是人肉搜索的利器。</p>
+<p>您可以通过<a target="_blank" rel="noopener" href="https://29a.ch/photo-forensics/#forensic-magnifier">此网站</a>或者<code>exiftool</code>工具查看图片的元数据。</p>
+<p>至于擦除它们，您可以使用<code>exiftool</code>删除元数据，如果是<code>Windows</code>系统，或许可以通过右击图片-属性-删除一些元数据的方式进行擦除。</p>
+<p>这告诉我们什么道理？有些信息是隐藏起来的，而这些信息也很重要。</p>
+<p>同理，<code>PDF</code>文件也具有这些元数据，您可以通过<code>exiftool</code>这个小巧强大的工具查看、擦除、修改元数据。</p>
+<p>此外，您的口头禅、聊天方式等都可以成为您独一无二的身份标识，用来识别、追踪您的身份。这些信息会在你不经意间流露，更加难以防范。</p>
+<h2 id="6-加密通信"><a href="#6-加密通信" class="headerlink" title="6.加密通信"></a>6.加密通信</h2><p>这里只谈论几种比较常用的加密通信方式。</p>
+<h3 id="隐写术"><a href="#隐写术" class="headerlink" title="隐写术"></a>隐写术</h3><p>您一定在影视作品中见过这样的场景：一个古代囚犯，将重要的信息用透明墨水写在白纸上，一般人根本看不出纸上写着字。接应的人收到这封信后，做了些处理，信息就显示出来了。这就是隐写术的一种。</p>
+<p>对于处于现代社会的我们，可以将文件隐藏在图片中去，比如利用强大的<code>outguess</code>、<code>Steghide</code>工具。隐写前后，用肉眼观察图片看不出什么差别来。</p>
+<p>您也可以利用<code>MP3Stego</code>等工具将文件隐藏在音频中。</p>
+<h3 id="端对端加密软件"><a href="#端对端加密软件" class="headerlink" title="端对端加密软件"></a>端对端加密软件</h3><p>它们的作用，相当于在两个人之间设立了一条私有的、加密的、安全的通信隧道，信息在发送方加密，通过加密隧道传输到接收方，接收方解密，阅读。其它人没有办法截取谈论的信息，哪怕截取到了这些信息，也只能对着加密过的信息干着急，没办法解密。由于某些原因，不作推荐。</p>
+<h3 id="直接加密"><a href="#直接加密" class="headerlink" title="直接加密"></a>直接加密</h3><p>您可以在本地直接加密文件，然后通过任意的信道传输。您只要私下告诉接收方密码就可以了。常见加密方式有传输加密卷等等。</p>
+<h2 id="Ex-最薄弱的环节不是工具，是您"><a href="#Ex-最薄弱的环节不是工具，是您" class="headerlink" title="Ex.最薄弱的环节不是工具，是您"></a>Ex.最薄弱的环节不是工具，是您</h2><p>在拥有这些工具的同时，也要注意，如果您不知道如何正确使用这些工具，不知道如何养成良好的安全保护习惯，那么这些工具形同虚设，甚至会由于您的错误使用，起到相反的作用。</p>
+<p>危险不仅仅来自于线上。很多攻击方式往往来自于线下，比如<a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Evil_maid_attack">邪恶女仆攻击</a>。</p>
+<p>希望您遵守下面几条原则：</p>
+<ol>
+<li>不要将电脑外借，不要告诉别人您的密码。在这些事情上，没有人值得信任——包括那些您最亲近的人。如果他们非要使用您的电脑、网络服务的话，建议您新建一个电脑用户、网络账户。</li>
+<li>不用电脑、网络服务时，将之锁定、注销或者关闭。</li>
+<li>将我们提到的理论、原则真正的付诸实践。</li>
+<li>一个密码不要同时用在许多服务上。</li>
+</ol>
+
+      </div>
+      
+        <div class="prev-or-next">
+          <div class="post-foot-next">
+            
+              <a href="/2023/02/10/Security04/" target="_self">
+                <i class="iconfont icon-chevronleft"></i>
+                <span>上一页</span>
+              </a>
+            
+          </div>
+          <div class="post-attach">
+            <span class="post-pubtime">
+              <i class="iconfont icon-updatetime mr-10" title="更新时间"></i>
+              2023-02-10 11:15:49
+            </span>
+            
+                  <span class="post-tags">
+                    <i class="iconfont icon-tags mr-10" title="标签"></i>
+                    
+                    <span class="span--tag mr-8">
+                      <a href="/tags/%E4%B8%9A%E4%BD%99%E5%AE%89%E5%85%A8%E6%BC%AB%E8%B0%88/" title="业余安全漫谈">
+                        #业余安全漫谈
+                      </a>
+                    </span>
+                    
+                  </span>
+              
+          </div>
+          <div class="post-foot-prev">
+            
+              <a href="/2023/02/10/Security02/" target="_self">
+                <span>下一页</span>
+                <i class="iconfont icon-chevronright"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+    </div>
+    
+  <div id="btn-catalog" class="btn-catalog">
+    <i class="iconfont icon-catalog"></i>
+  </div>
+  <div class="post-catalog hidden" id="catalog">
+    <div class="title">目录</div>
+    <div class="catalog-content">
+      
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#0-%E5%A5%BD%E9%92%A2%E7%94%A8%E5%9C%A8%E5%88%80%E5%88%83%E4%B8%8A"><span class="toc-text">0.好钢用在刀刃上</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E5%BC%BA%E5%AF%86%E7%A0%81"><span class="toc-text">1.强密码</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%A7%82%E5%AF%9F%E5%91%A8%E9%81%AD%E4%BA%8B%E7%89%A9"><span class="toc-text">观察周遭事物</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-%E5%AF%86%E7%A0%81%E7%AE%A1%E7%90%86%E5%99%A8"><span class="toc-text">2.密码管理器</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-%E5%8A%A0%E5%AF%86%E5%8D%B7"><span class="toc-text">3.加密卷</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-%E5%8A%A0%E5%AF%86%E6%9C%8D%E5%8A%A1"><span class="toc-text">4.加密服务</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-%E9%9A%90%E8%97%8F%E8%B5%B7%E6%9D%A5%E7%9A%84%E9%87%8D%E8%A6%81%E4%BF%A1%E6%81%AF"><span class="toc-text">5.隐藏起来的重要信息</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#6-%E5%8A%A0%E5%AF%86%E9%80%9A%E4%BF%A1"><span class="toc-text">6.加密通信</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%9A%90%E5%86%99%E6%9C%AF"><span class="toc-text">隐写术</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AB%AF%E5%AF%B9%E7%AB%AF%E5%8A%A0%E5%AF%86%E8%BD%AF%E4%BB%B6"><span class="toc-text">端对端加密软件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%9B%B4%E6%8E%A5%E5%8A%A0%E5%AF%86"><span class="toc-text">直接加密</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Ex-%E6%9C%80%E8%96%84%E5%BC%B1%E7%9A%84%E7%8E%AF%E8%8A%82%E4%B8%8D%E6%98%AF%E5%B7%A5%E5%85%B7%EF%BC%8C%E6%98%AF%E6%82%A8"><span class="toc-text">Ex.最薄弱的环节不是工具，是您</span></a></li></ol>
+      
+    </div>
+  </div>
+
+  
+<script src="/js/catalog.js"></script>
+
+
+
+
+    
+      <div class="comments-container">
+        
+
+
+
+
+  
+    <script async type="text/javascript" src='https://cdn.jsdelivr.net/npm/valine@1.4.18/dist/Valine.min.js' onload="loadValineSuc(this)"></script>
+  
+
+  <div id="vcomments"></div>
+
+  <script>
+    function loadValineSuc() {
+      new Valine({
+        el: '#vcomments',
+        appId: 'oMvaqsYv2LQSqtj795B31OWV-gzGzoHsz',
+        appKey: 'UKlJCzW9McXrX8L71Mqz5hol',
+        placeholder: 'Welcome!',
+        avatar: 'retro',
+        lang: 'zh-CN'
+      })
+    }
+  </script>
+
+    <style>
+      .comments-container .v .vempty {
+        display: none!important;
+      }
+    </style>
+
+
+
+
+      </div>
+    
+  </div>
+
+
+        
+<div class="footer">
+  <div class="social">
+    <ul>
+      
+        <li>
+          <a title="rss" href="/atom.xml">
+            <i class="iconfont icon-rss"></i>
+          </a>
+        </li>
+      
+    </ul>
+  </div>
+  
+    
+    <div class="footer-more">
+      
+        <a target="_blank" rel="noopener" href="https://github.com/zchengsite/hexo-theme-oranges">Copyright © 2024 Oranges</a>
+        
+    </div>
+  
+    
+    <div class="footer-more">
+      
+        <a target="_blank" rel="noopener" href="https://github.com/zchengsite/hexo-theme-oranges">Theme by Oranges | Powered by Hexo</a>
+        
+    </div>
+  
+  
+</div>
+
+      </div>
+
+      <div class="tools-bar">
+        <div class="back-to-top tools-bar-item hidden">
+  <a href="javascript: void(0)">
+    <i class="iconfont icon-chevronup"></i>
+  </a>
+</div>
+
+
+<script src="/js/backtotop.js"></script>
+
+
+
+        
+  <div class="search-icon tools-bar-item" id="search-icon">
+    <a href="javascript: void(0)">
+      <i class="iconfont icon-search"></i>
+    </a>
+  </div>
+
+  <div class="search-overlay hidden">
+    <div class="search-content" tabindex="0">
+      <div class="search-title">
+        <span class="search-icon-input">
+          <a href="javascript: void(0)">
+            <i class="iconfont icon-search"></i>
+          </a>
+        </span>
+        
+          <input type="text" class="search-input" id="search-input" placeholder="搜索...">
+        
+        <span class="search-close-icon" id="search-close-icon">
+          <a href="javascript: void(0)">
+            <i class="iconfont icon-close"></i>
+          </a>
+        </span>
+      </div>
+      <div class="search-result" id="search-result"></div>
+    </div>
+  </div>
+
+  <script type="text/javascript">
+    var inputArea = document.querySelector("#search-input")
+    var searchOverlayArea = document.querySelector(".search-overlay")
+
+    inputArea.onclick = function() {
+      getSearchFile()
+      this.onclick = null
+    }
+
+    inputArea.onkeydown = function() {
+      if(event.keyCode == 13)
+        return false
+    }
+
+    function openOrHideSearchContent() {
+      let isHidden = searchOverlayArea.classList.contains('hidden')
+      if (isHidden) {
+        searchOverlayArea.classList.remove('hidden')
+        document.body.classList.add('hidden')
+        // inputArea.focus()
+      } else {
+        searchOverlayArea.classList.add('hidden')
+        document.body.classList.remove('hidden')
+      }
+    }
+
+    function blurSearchContent(e) {
+      if (e.target === searchOverlayArea) {
+        openOrHideSearchContent()
+      }
+    }
+
+    document.querySelector("#search-icon").addEventListener("click", openOrHideSearchContent, false)
+    document.querySelector("#search-close-icon").addEventListener("click", openOrHideSearchContent, false)
+    searchOverlayArea.addEventListener("click", blurSearchContent, false)
+
+    var searchFunc = function (path, search_id, content_id) {
+      'use strict';
+      var $input = document.getElementById(search_id);
+      var $resultContent = document.getElementById(content_id);
+      $resultContent.innerHTML = "<ul><span class='local-search-empty'>首次搜索，正在载入索引文件，请稍后……<span></ul>";
+      $.ajax({
+        // 0x01. load xml file
+        url: path,
+        dataType: "xml",
+        success: function (xmlResponse) {
+          // 0x02. parse xml file
+          var datas = $("entry", xmlResponse).map(function () {
+            return {
+              title: $("title", this).text(),
+              content: $("content", this).text(),
+              url: $("url", this).text()
+            };
+          }).get();
+          $resultContent.innerHTML = "";
+
+          $input.addEventListener('input', function () {
+            // 0x03. parse query to keywords list
+            var str = '<ul class=\"search-result-list\">';
+            var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+            $resultContent.innerHTML = "";
+            if (this.value.trim().length <= 0) {
+              return;
+            }
+            // 0x04. perform local searching
+            datas.forEach(function (data) {
+              var isMatch = true;
+              var content_index = [];
+              if (!data.title || data.title.trim() === '') {
+                data.title = "Untitled";
+              }
+              var orig_data_title = data.title.trim();
+              var data_title = orig_data_title.toLowerCase();
+              var orig_data_content = data.content.trim().replace(/<[^>]+>/g, "");
+              var data_content = orig_data_content.toLowerCase();
+              var data_url = data.url;
+              var index_title = -1;
+              var index_content = -1;
+              var first_occur = -1;
+              // only match artiles with not empty contents
+              if (data_content !== '') {
+                keywords.forEach(function (keyword, i) {
+                  index_title = data_title.indexOf(keyword);
+                  index_content = data_content.indexOf(keyword);
+
+                  if (index_title < 0 && index_content < 0) {
+                    isMatch = false;
+                  } else {
+                    if (index_content < 0) {
+                      index_content = 0;
+                    }
+                    if (i == 0) {
+                      first_occur = index_content;
+                    }
+                    // content_index.push({index_content:index_content, keyword_len:keyword_len});
+                  }
+                });
+              } else {
+                isMatch = false;
+              }
+              // 0x05. show search results
+              if (isMatch) {
+                str += "<li><a href='" + data_url + "' class='search-result-title'>" + orig_data_title + "</a>";
+                var content = orig_data_content;
+                if (first_occur >= 0) {
+                  // cut out 100 characters
+                  var start = first_occur - 20;
+                  var end = first_occur + 80;
+
+                  if (start < 0) {
+                    start = 0;
+                  }
+
+                  if (start == 0) {
+                    end = 100;
+                  }
+
+                  if (end > content.length) {
+                    end = content.length;
+                  }
+
+                  var match_content = content.substr(start, end);
+
+                  // highlight all keywords
+                  keywords.forEach(function (keyword) {
+                    var regS = new RegExp(keyword, "gi");
+                    match_content = match_content.replace(regS, "<span class=\"search-keyword\">" + keyword + "</span>");
+                  });
+
+                  str += "<p class=\"search-result-abstract\">" + match_content + "...</p>"
+                }
+                str += "</li>";
+              }
+            });
+            str += "</ul>";
+            if (str.indexOf('<li>') === -1) {
+              return $resultContent.innerHTML = "<ul><span class='local-search-empty'>没有找到内容，请尝试更换检索词。<span></ul>";
+            }
+            $resultContent.innerHTML = str;
+          });
+        },
+        error: function(xhr, status, error) {
+          $resultContent.innerHTML = ""
+          if (xhr.status === 404) {
+            $resultContent.innerHTML = "<ul><span class='local-search-empty'>未找到search.xml文件，具体请参考：<a href='https://github.com/zchengsite/hexo-theme-oranges#configuration' target='_black'>configuration</a><span></ul>";
+          } else {
+            $resultContent.innerHTML = "<ul><span class='local-search-empty'>请求失败，尝试重新刷新页面或稍后重试。<span></ul>";
+          }
+        }
+      });
+      $(document).on('click', '#search-close-icon', function() {
+        $('#search-input').val('');
+        $('#search-result').html('');
+      });
+    }
+
+    var getSearchFile = function() {
+        var path = "/search.xml";
+        searchFunc(path, 'search-input', 'search-result');
+    }
+  </script>
+
+
+
+
+        
+  <div class="tools-bar-item theme-icon" id="switch-color-scheme">
+    <a href="javascript: void(0)">
+      <i id="theme-icon" class="iconfont icon-moon"></i>
+    </a>
+  </div>
+
+  
+<script src="/js/colorscheme.js"></script>
+
+
+
+
+
+        
+  
+    <div class="share-icon tools-bar-item">
+      <a href="javascript: void(0)" id="share-icon">
+        <i class="iconfont iconshare"></i>
+      </a>
+      <div class="share-content hidden">
+        
+          <a class="share-item" href="https://twitter.com/intent/tweet?text=' + %E4%B8%9A%E4%BD%99%E5%AE%89%E5%85%A8%E6%BC%AB%E8%B0%88%EF%BC%88%E4%B8%89%EF%BC%89%EF%BC%9A%E5%AF%86%E7%A0%81%E3%80%81%E5%AD%98%E5%82%A8%E3%80%81%E4%BF%A1%E6%81%AF%E4%BC%A0%E8%BE%93%E5%AE%89%E5%85%A8 + '&url=' + https%3A%2F%2Fcoder109.github.io%2F2023%2F02%2F10%2FSecurity03%2F + '" target="_blank" title="Twitter">
+            <i class="iconfont icon-twitter"></i>
+          </a>
+        
+        
+      </div>
+    </div>
+  
+  
+<script src="/js/shares.js"></script>
+
+
+
+      </div>
+    </div>
+  
+        <style>
+            [bg-lazy] {
+                background-image: none !important;
+                background-color: #eee !important;
+            }
+        </style>
+        <script>
+            window.imageLazyLoadSetting = {
+                isSPA: false,
+                preloadRatio: 1,
+                processImages: null,
+            };
+        </script><script>window.addEventListener("load",function(){var t=/\.(gif|jpg|jpeg|tiff|png)$/i,r=/^data:image\/[a-z]+;base64,/;Array.prototype.slice.call(document.querySelectorAll("img[data-original]")).forEach(function(a){var e=a.parentNode;"A"===e.tagName&&(e.href.match(t)||e.href.match(r))&&(e.href=a.dataset.original)})});</script><script>!function(r){r.imageLazyLoadSetting.processImages=t;var e=r.imageLazyLoadSetting.isSPA,n=r.imageLazyLoadSetting.preloadRatio||1,c=a();function a(){var t=Array.prototype.slice.call(document.querySelectorAll("img[data-original]")),e=Array.prototype.slice.call(document.querySelectorAll("[bg-lazy]"));return t.concat(e)}function t(){e&&(c=a());for(var t,o=0;o<c.length;o++)0<=(t=(t=c[o]).getBoundingClientRect()).bottom&&0<=t.left&&t.top<=(r.innerHeight*n||document.documentElement.clientHeight*n)&&function(){var t,e,n,a,i=c[o];e=function(){c=c.filter(function(t){return i!==t}),r.imageLazyLoadSetting.onImageLoaded&&r.imageLazyLoadSetting.onImageLoaded(i)},(t=i).hasAttribute("bg-lazy")?(t.removeAttribute("bg-lazy"),e&&e()):(n=new Image,a=t.getAttribute("data-original"),n.onload=function(){t.src=a,t.removeAttribute("data-original"),e&&e()},t.src!==a&&(n.src=a))}()}function i(){clearTimeout(t.tId),t.tId=setTimeout(t,500)}t(),document.addEventListener("scroll",i),r.addEventListener("resize",i),r.addEventListener("orientationchange",i)}(this);</script></body>
+</html>

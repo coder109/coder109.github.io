@@ -1,0 +1,507 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>幻</title>
+  <icon>https://coder109.github.io/icon.png</icon>
+  <subtitle>幻的个人博客</subtitle>
+  <link href="https://coder109.github.io/atom.xml" rel="self"/>
+  
+  <link href="https://coder109.github.io/"/>
+  <updated>2024-11-30T07:53:10.587Z</updated>
+  <id>https://coder109.github.io/</id>
+  
+  <author>
+    <name>Coder109</name>
+    
+  </author>
+  
+  <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>人工智能技术（一）：基础深度学习模型</title>
+    <link href="https://coder109.github.io/2024/11/30/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E6%8A%80%E6%9C%AF%EF%BC%88%E4%B8%80%EF%BC%89%EF%BC%9A%E5%9F%BA%E7%A1%80%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E6%A8%A1%E5%9E%8B/"/>
+    <id>https://coder109.github.io/2024/11/30/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E6%8A%80%E6%9C%AF%EF%BC%88%E4%B8%80%EF%BC%89%EF%BC%9A%E5%9F%BA%E7%A1%80%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E6%A8%A1%E5%9E%8B/</id>
+    <published>2024-11-30T05:30:33.000Z</published>
+    <updated>2024-11-30T07:53:10.587Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;本文主要讲述如何用&lt;code&gt;pytorch&lt;/code&gt;编写基础的深度学习架构，并尝试用基础的架构拟合一个加法函数。&lt;/p&gt;
+&lt;h2 id=&quot;程序代码段&quot;&gt;&lt;a href=&quot;#程序代码段&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    
+    <category term="AI" scheme="https://coder109.github.io/tags/AI/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>大模型训练的一些问题</title>
+    <link href="https://coder109.github.io/2024/11/04/%E5%A4%A7%E6%A8%A1%E5%9E%8B%E8%AE%AD%E7%BB%83%E7%9A%84%E4%B8%80%E4%BA%9B%E9%97%AE%E9%A2%98/"/>
+    <id>https://coder109.github.io/2024/11/04/%E5%A4%A7%E6%A8%A1%E5%9E%8B%E8%AE%AD%E7%BB%83%E7%9A%84%E4%B8%80%E4%BA%9B%E9%97%AE%E9%A2%98/</id>
+    <published>2024-11-04T13:38:34.000Z</published>
+    <updated>2024-11-04T13:56:08.061Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;blockquote&gt;
+&lt;p&gt;ONLY NOTE&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h1 id=&quot;输出重复输入&quot;&gt;&lt;a href=&quot;#输出重复输入&quot; class=&quot;headerlink&quot; title=&quot;输出重复输入&quot;&gt;&lt;/a&gt;输出重复输入&lt;/h1&gt;&lt;h2</summary>
+        
+      
+    
+    
+    
+    
+    <category term="计算机" scheme="https://coder109.github.io/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>痛苦颂</title>
+    <link href="https://coder109.github.io/2024/11/04/%E7%97%9B%E8%8B%A6%E9%A2%82/"/>
+    <id>https://coder109.github.io/2024/11/04/%E7%97%9B%E8%8B%A6%E9%A2%82/</id>
+    <published>2024-11-04T09:39:39.000Z</published>
+    <updated>2024-11-04T11:03:14.274Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;有什么是永恒的呢？唯有痛苦，痛苦从不消失，从不减弱。&lt;/p&gt;
+&lt;p&gt;痛苦是水，是空气，每每摄入，身体就会传来一阵痛楚。痛苦无处不在，我们的大地上长满了荆棘，万物就在这样的大地上轮转不息。&lt;/p&gt;
+&lt;p&gt;泪水流干，言语说尽，痛苦却仍不停止，钻进毛孔，沿着血管进入心脏、进入大脑</summary>
+        
+      
+    
+    
+    
+    
+    <category term="意识流" scheme="https://coder109.github.io/tags/%E6%84%8F%E8%AF%86%E6%B5%81/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>微调大模型的代码库</title>
+    <link href="https://coder109.github.io/2024/11/04/%E5%BE%AE%E8%B0%83%E5%A4%A7%E6%A8%A1%E5%9E%8B%E7%9A%84%E4%BB%A3%E7%A0%81%E5%BA%93/"/>
+    <id>https://coder109.github.io/2024/11/04/%E5%BE%AE%E8%B0%83%E5%A4%A7%E6%A8%A1%E5%9E%8B%E7%9A%84%E4%BB%A3%E7%A0%81%E5%BA%93/</id>
+    <published>2024-11-04T08:21:54.000Z</published>
+    <updated>2024-11-04T08:28:30.452Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;blockquote&gt;
+&lt;p&gt;ONLY NOTE&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h1 id=&quot;全量微调&quot;&gt;&lt;a href=&quot;#全量微调&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    
+    <category term="计算机" scheme="https://coder109.github.io/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>如何创建属于自己的MC服务器</title>
+    <link href="https://coder109.github.io/2024/10/29/%E5%A6%82%E4%BD%95%E5%88%9B%E5%BB%BA%E5%B1%9E%E4%BA%8E%E8%87%AA%E5%B7%B1%E7%9A%84MC%E6%9C%8D%E5%8A%A1%E5%99%A8/"/>
+    <id>https://coder109.github.io/2024/10/29/%E5%A6%82%E4%BD%95%E5%88%9B%E5%BB%BA%E5%B1%9E%E4%BA%8E%E8%87%AA%E5%B7%B1%E7%9A%84MC%E6%9C%8D%E5%8A%A1%E5%99%A8/</id>
+    <published>2024-10-29T06:31:28.000Z</published>
+    <updated>2024-11-01T07:45:16.278Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;真不难。&lt;/p&gt;
+&lt;h1 id=&quot;0-前置工作&quot;&gt;&lt;a href=&quot;#0-前置工作&quot; class=&quot;headerlink&quot; title=&quot;0. 前置工作&quot;&gt;&lt;/a&gt;0. 前置工作&lt;/h1&gt;&lt;h2 id=&quot;确定服务器定位&quot;&gt;&lt;a href=&quot;#确定服务器定位&quot;</summary>
+        
+      
+    
+    
+    
+    
+    <category term="计算机" scheme="https://coder109.github.io/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>铁与冰</title>
+    <link href="https://coder109.github.io/2024/10/21/%E7%88%B1/"/>
+    <id>https://coder109.github.io/2024/10/21/%E7%88%B1/</id>
+    <published>2024-10-21T11:17:49.000Z</published>
+    <updated>2024-10-27T11:29:50.157Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;又是同样的感觉，这种感觉在我四周形成透明的高墙，形成一个独属于我的房间。我可以看到外面在发生什么，但我没办法触摸到墙外面的东西。人们从我的身边、身体里穿过，他们看不见我。&lt;/p&gt;
+&lt;p&gt;这个房间里有一张椅子，一张棕色的椅子。我坐在上面，软软的，很是舒服。&lt;/p&gt;
+&lt;p&gt;我看</summary>
+        
+      
+    
+    
+    
+    
+    <category term="意识流" scheme="https://coder109.github.io/tags/%E6%84%8F%E8%AF%86%E6%B5%81/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>纯粹隐喻</title>
+    <link href="https://coder109.github.io/2024/09/27/%E7%BA%AF%E7%B2%B9%E9%9A%90%E5%96%BB/"/>
+    <id>https://coder109.github.io/2024/09/27/%E7%BA%AF%E7%B2%B9%E9%9A%90%E5%96%BB/</id>
+    <published>2024-09-27T07:03:25.000Z</published>
+    <updated>2024-09-30T06:25:49.626Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;死亡一直在窥伺着我——用它那长而鲜红的信子引诱着我，想让我堕入那甘甜而温柔的永夜中去。那永夜里什么都有，在你死掉的那一刻，你就已经什么都有了。&lt;/p&gt;
+&lt;p&gt;“不要怕，待在我身边，安心地睡去吧。”死亡低声说着。自古以来没有人能够逃离死亡的引诱，无数仁人志士——或者地痞流氓—</summary>
+        
+      
+    
+    
+    
+    
+    <category term="意识流" scheme="https://coder109.github.io/tags/%E6%84%8F%E8%AF%86%E6%B5%81/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>物哀</title>
+    <link href="https://coder109.github.io/2024/09/08/%E7%89%A9%E5%93%80/"/>
+    <id>https://coder109.github.io/2024/09/08/%E7%89%A9%E5%93%80/</id>
+    <published>2024-09-08T05:00:30.000Z</published>
+    <updated>2024-09-08T05:26:09.109Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;我太久没更新了，因为我不知道写些什么好。&lt;/p&gt;
+&lt;p&gt;我的生活很平静，没什么事可干，每天打打游戏看看视频就过去了。每天都是一样的，没什么好写的。&lt;/p&gt;
+&lt;h1 id=&quot;庸俗哲学论&quot;&gt;&lt;a href=&quot;#庸俗哲学论&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    
+    <category term="意识流" scheme="https://coder109.github.io/tags/%E6%84%8F%E8%AF%86%E6%B5%81/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>瞬息万变之物，亘古不变之物</title>
+    <link href="https://coder109.github.io/2024/08/08/%E7%9E%AC%E6%81%AF%E4%B8%87%E5%8F%98%E4%B9%8B%E7%89%A9%EF%BC%8C%E4%BA%98%E5%8F%A4%E4%B8%8D%E5%8F%98%E4%B9%8B%E7%89%A9/"/>
+    <id>https://coder109.github.io/2024/08/08/%E7%9E%AC%E6%81%AF%E4%B8%87%E5%8F%98%E4%B9%8B%E7%89%A9%EF%BC%8C%E4%BA%98%E5%8F%A4%E4%B8%8D%E5%8F%98%E4%B9%8B%E7%89%A9/</id>
+    <published>2024-08-08T04:16:58.000Z</published>
+    <updated>2024-08-08T05:17:37.873Z</updated>
+    
+    
+    <summary type="html">Here&#39;s something encrypted, password is required to continue reading.</summary>
+    
+    
+    
+    
+    <category term="意识流" scheme="https://coder109.github.io/tags/%E6%84%8F%E8%AF%86%E6%B5%81/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>德勒兹：无中心的游牧</title>
+    <link href="https://coder109.github.io/2024/07/30/%E5%BE%B7%E5%8B%92%E5%85%B9%EF%BC%9A%E6%97%A0%E4%B8%AD%E5%BF%83%E7%9A%84%E6%B8%B8%E7%89%A7/"/>
+    <id>https://coder109.github.io/2024/07/30/%E5%BE%B7%E5%8B%92%E5%85%B9%EF%BC%9A%E6%97%A0%E4%B8%AD%E5%BF%83%E7%9A%84%E6%B8%B8%E7%89%A7/</id>
+    <published>2024-07-30T11:30:39.000Z</published>
+    <updated>2024-07-30T14:54:53.074Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;blockquote&gt;
+&lt;p&gt;面对着我们内外最为机械、最为刻板的重复，我们从中不断地提取出微小的差异、变易和变状——这便是我们的现代生活。——德勒兹《差异与重复》&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h1 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot;</summary>
+        
+      
+    
+    
+    
+    
+    <category term="意识流" scheme="https://coder109.github.io/tags/%E6%84%8F%E8%AF%86%E6%B5%81/"/>
+    
+    <category term="德勒兹" scheme="https://coder109.github.io/tags/%E5%BE%B7%E5%8B%92%E5%85%B9/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>精神分析学习手记</title>
+    <link href="https://coder109.github.io/2024/07/25/%E7%B2%BE%E7%A5%9E%E5%88%86%E6%9E%90%E5%AD%A6%E4%B9%A0%E6%89%8B%E8%AE%B0/"/>
+    <id>https://coder109.github.io/2024/07/25/%E7%B2%BE%E7%A5%9E%E5%88%86%E6%9E%90%E5%AD%A6%E4%B9%A0%E6%89%8B%E8%AE%B0/</id>
+    <published>2024-07-25T10:20:33.000Z</published>
+    <updated>2024-07-25T11:06:41.460Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;参考资料：《疾風怒濤精神分析入門》· 片岡 一竹&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;疯狂是比健康更加本源的东西，健康反而是一种被建构的状态。——《疾風怒濤精神分析入門》· 片岡</summary>
+        
+      
+    
+    
+    
+    
+    <category term="意识流" scheme="https://coder109.github.io/tags/%E6%84%8F%E8%AF%86%E6%B5%81/"/>
+    
+    <category term="精神分析" scheme="https://coder109.github.io/tags/%E7%B2%BE%E7%A5%9E%E5%88%86%E6%9E%90/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>json、jsonl文件格式与处理、转化方法</title>
+    <link href="https://coder109.github.io/2024/07/18/json%E3%80%81jsonl%E6%96%87%E4%BB%B6%E6%A0%BC%E5%BC%8F%E4%B8%8E%E5%A4%84%E7%90%86%E3%80%81%E8%BD%AC%E5%8C%96%E6%96%B9%E6%B3%95/"/>
+    <id>https://coder109.github.io/2024/07/18/json%E3%80%81jsonl%E6%96%87%E4%BB%B6%E6%A0%BC%E5%BC%8F%E4%B8%8E%E5%A4%84%E7%90%86%E3%80%81%E8%BD%AC%E5%8C%96%E6%96%B9%E6%B3%95/</id>
+    <published>2024-07-18T09:51:44.000Z</published>
+    <updated>2024-07-18T10:30:42.358Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    
+    <category term="小问题" scheme="https://coder109.github.io/tags/%E5%B0%8F%E9%97%AE%E9%A2%98/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>独白</title>
+    <link href="https://coder109.github.io/2024/07/03/%E7%8B%AC%E7%99%BD/"/>
+    <id>https://coder109.github.io/2024/07/03/%E7%8B%AC%E7%99%BD/</id>
+    <published>2024-07-03T12:47:36.000Z</published>
+    <updated>2024-07-06T11:45:49.955Z</updated>
+    
+    
+    <summary type="html">Here&#39;s something encrypted, password is required to continue reading.</summary>
+    
+    
+    
+    
+    <category term="意识流" scheme="https://coder109.github.io/tags/%E6%84%8F%E8%AF%86%E6%B5%81/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>病与痛</title>
+    <link href="https://coder109.github.io/2024/06/05/%E7%97%85%E4%B8%8E%E7%97%9B/"/>
+    <id>https://coder109.github.io/2024/06/05/%E7%97%85%E4%B8%8E%E7%97%9B/</id>
+    <published>2024-06-05T09:52:59.000Z</published>
+    <updated>2024-06-05T10:52:15.288Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;感冒——难受！&quot;&gt;&lt;a href=&quot;#感冒——难受！&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    
+    <category term="意识流" scheme="https://coder109.github.io/tags/%E6%84%8F%E8%AF%86%E6%B5%81/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>如此之人</title>
+    <link href="https://coder109.github.io/2024/05/16/%E5%A6%82%E6%AD%A4%E4%B9%8B%E4%BA%BA/"/>
+    <id>https://coder109.github.io/2024/05/16/%E5%A6%82%E6%AD%A4%E4%B9%8B%E4%BA%BA/</id>
+    <published>2024-05-16T09:27:17.000Z</published>
+    <updated>2024-05-16T09:51:28.343Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;做过千百次的梦，&lt;/p&gt;
+&lt;p&gt;隐隐的寒意，深夜的冷。&lt;/p&gt;
+&lt;p&gt;向前，向后。&lt;/p&gt;
+&lt;p&gt;都是死路。熄灭的灯。&lt;/p&gt;
+&lt;p&gt;我是墙上生锈的钉子——&lt;/p&gt;
+&lt;p&gt;刮过无人之处的风。&lt;/p&gt;
+&lt;p&gt;往左，往右。&lt;/p&gt;
+&lt;p&gt;都无出口。将断的绳。&lt;/p&gt;
+&lt;p&gt;梦是</summary>
+        
+      
+    
+    
+    
+    
+    <category term="意识流" scheme="https://coder109.github.io/tags/%E6%84%8F%E8%AF%86%E6%B5%81/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>盛夏将至</title>
+    <link href="https://coder109.github.io/2024/05/04/%E7%9B%9B%E5%A4%8F%E5%B0%86%E8%87%B3/"/>
+    <id>https://coder109.github.io/2024/05/04/%E7%9B%9B%E5%A4%8F%E5%B0%86%E8%87%B3/</id>
+    <published>2024-05-04T06:11:48.000Z</published>
+    <updated>2024-05-05T08:11:51.499Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;夏天要来了。&lt;/p&gt;
+&lt;h2 id=&quot;忧愁&quot;&gt;&lt;a href=&quot;#忧愁&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    
+    <category term="意识流" scheme="https://coder109.github.io/tags/%E6%84%8F%E8%AF%86%E6%B5%81/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>光与盐</title>
+    <link href="https://coder109.github.io/2024/04/27/%E5%85%89%E4%B8%8E%E7%9B%90/"/>
+    <id>https://coder109.github.io/2024/04/27/%E5%85%89%E4%B8%8E%E7%9B%90/</id>
+    <published>2024-04-27T02:13:25.000Z</published>
+    <updated>2024-04-29T02:04:46.430Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;一点牢骚&quot;&gt;&lt;a href=&quot;#一点牢骚&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    
+    <category term="意识流" scheme="https://coder109.github.io/tags/%E6%84%8F%E8%AF%86%E6%B5%81/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Light And Salt</title>
+    <link href="https://coder109.github.io/2024/04/26/Light-And-Salt/"/>
+    <id>https://coder109.github.io/2024/04/26/Light-And-Salt/</id>
+    <published>2024-04-26T06:51:28.000Z</published>
+    <updated>2024-04-26T07:52:40.936Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;blockquote&gt;
+&lt;p&gt;你们是世上的盐。如果盐失去咸味，怎能使它再变咸呢？它将毫无用处，只有被丢在外面任人践踏。 你们是世上的光，如同建在山上的城一样无法隐藏。——《马太福音》&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&quot;最近在干什么？&quot;&gt;&lt;a</summary>
+        
+      
+    
+    
+    
+    
+    <category term="意识流" scheme="https://coder109.github.io/tags/%E6%84%8F%E8%AF%86%E6%B5%81/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>为什么我又用回Windows了</title>
+    <link href="https://coder109.github.io/2024/04/23/%E4%B8%BA%E4%BB%80%E4%B9%88%E6%88%91%E5%8F%88%E7%94%A8%E5%9B%9EWindows%E4%BA%86/"/>
+    <id>https://coder109.github.io/2024/04/23/%E4%B8%BA%E4%BB%80%E4%B9%88%E6%88%91%E5%8F%88%E7%94%A8%E5%9B%9EWindows%E4%BA%86/</id>
+    <published>2024-04-23T08:06:10.000Z</published>
+    <updated>2024-04-23T09:54:25.153Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;blockquote&gt;
+&lt;p&gt;路漫漫其修远兮！&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    
+    <category term="意识流" scheme="https://coder109.github.io/tags/%E6%84%8F%E8%AF%86%E6%B5%81/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Pater Noster</title>
+    <link href="https://coder109.github.io/2024/03/20/Pater-Noster/"/>
+    <id>https://coder109.github.io/2024/03/20/Pater-Noster/</id>
+    <published>2024-03-20T02:34:38.000Z</published>
+    <updated>2024-04-22T15:00:47.225Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;将近两个月没有更新了。我一直不知道写些什么比较好。我觉得我的生活没有什么可以讲述给别人听的，所经历的事都再平常不过了。&lt;/p&gt;
+&lt;h2 id=&quot;Jesus-Christ&quot;&gt;&lt;a href=&quot;#Jesus-Christ&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    
+    <category term="意识流" scheme="https://coder109.github.io/tags/%E6%84%8F%E8%AF%86%E6%B5%81/"/>
+    
+  </entry>
+  
+</feed>

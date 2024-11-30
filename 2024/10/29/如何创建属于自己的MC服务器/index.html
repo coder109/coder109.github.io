@@ -1,0 +1,644 @@
+<!DOCTYPE html>
+<html lang="zh-CN" color-mode="light">
+
+  <head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="keywords" content="" />
+  <meta name="author" content="Coder109" />
+  <meta name="description" content="" />
+  
+  
+  <title>
+    
+      如何创建属于自己的MC服务器 
+      
+      
+      |
+    
+     幻
+  </title>
+
+  
+    <link rel="apple-touch-icon" href="/images/favicon.ico">
+    <link rel="icon" href="/images/favicon.ico">
+  
+
+  <!-- Raleway-Font -->
+  <link href="https://fonts.googleapis.com/css?family=Raleway&display=swap" rel="stylesheet">
+
+  <!-- hexo site css -->
+  <link rel="stylesheet" href="/css/main.css" />
+  <link rel="stylesheet" href="//at.alicdn.com/t/font_1886449_67xjft27j1l.css" />
+  <!-- 代码块风格 -->
+  
+
+  <!-- jquery3.3.1 -->
+  
+    <script defer type="text/javascript" src="/plugins/jquery.min.js"></script>
+  
+
+  <!-- fancybox -->
+  
+    <link href="/plugins/jquery.fancybox.min.css" rel="stylesheet">
+    <script defer type="text/javascript" src="/plugins/jquery.fancybox.min.js"></script>
+  
+  
+<script src="/js/fancybox.js"></script>
+
+
+  
+
+  
+
+  <script>
+    var html = document.documentElement
+    const colorMode = localStorage.getItem('color-mode')
+    if (colorMode) {
+      document.documentElement.setAttribute('color-mode', colorMode)
+    }
+  </script>
+<meta name="generator" content="Hexo 6.3.0"><link rel="alternate" href="/atom.xml" title="幻" type="application/atom+xml">
+</head>
+
+
+  <body>
+    <div id="app">
+      <div class="header">
+  <div class="avatar">
+    <a href="/">
+      <!-- 头像取消懒加载，添加no-lazy -->
+      
+        <img no-lazy src="/images/favicon.ico" alt="">
+      
+    </a>
+    <div class="nickname"><a href="/">幻</a></div>
+  </div>
+  <div class="navbar">
+    <ul>
+      
+        <li class="nav-item" data-path="/">
+          <a href="/">Home</a>
+        </li>
+      
+        <li class="nav-item" data-path="/archives/">
+          <a href="/archives/">Archives</a>
+        </li>
+      
+        <li class="nav-item" data-path="/tags/">
+          <a href="/tags/">Tags</a>
+        </li>
+      
+        <li class="nav-item" data-path="/friends/">
+          <a href="/friends/">Friends</a>
+        </li>
+      
+        <li class="nav-item" data-path="/about/">
+          <a href="/about/">About</a>
+        </li>
+      
+    </ul>
+  </div>
+</div>
+
+
+<script src="/js/activeNav.js"></script>
+
+
+
+      <div class="flex-container">
+        <!-- 文章详情页，展示文章具体内容，url形式：https://yoursite/文章标题/ -->
+<!-- 同时为「标签tag」，「朋友friend」，「分类categories」，「关于about」页面的承载页面，具体展示取决于page.type -->
+
+
+  <!-- LaTex Display -->
+
+  
+    <script async type="text/javascript" src="/plugins/mathjax/tex-chtml.js"></script>
+  
+  <script>
+    MathJax = {
+      tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']]
+      }
+    }
+  </script>
+
+
+
+
+
+  <!-- clipboard -->
+
+  
+    <script async type="text/javascript" src="/plugins/clipboard.min.js"></script>
+  
+  
+<script src="/js/codeCopy.js"></script>
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  <!-- 文章内容页 url形式：https://yoursite/文章标题/ -->
+  <div class="container post-details" id="post-details">
+    <div class="post-content">
+      <div class="post-title">如何创建属于自己的MC服务器</div>
+      <div class="post-attach">
+        <span class="post-pubtime">
+          <i class="iconfont icon-updatetime mr-10" title="更新时间"></i>
+          2024-10-29 14:31:28
+        </span>
+        
+              <span class="post-tags">
+                <i class="iconfont icon-tags mr-10" title="标签"></i>
+                
+                <span class="span--tag mr-8">
+                  <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA/" title="计算机">
+                    #计算机
+                  </a>
+                </span>
+                
+              </span>
+          
+      </div>
+      <div class="markdown-body">
+        <p>真不难。</p>
+<h1 id="0-前置工作"><a href="#0-前置工作" class="headerlink" title="0. 前置工作"></a>0. 前置工作</h1><h2 id="确定服务器定位"><a href="#确定服务器定位" class="headerlink" title="确定服务器定位"></a>确定服务器定位</h2><p>常见的MC服务器大概有三种：纯净服、模组服、模组+插件服。模组是用来增添游戏性的，通常会涉及物品的添加、世界维度的添加等，而插件则是用于管理。</p>
+<h3 id="纯净服"><a href="#纯净服" class="headerlink" title="纯净服"></a>纯净服</h3><p>所谓纯净服，就是不加模组和插件，只有原版游戏本身的游戏性、特性，没有第三方内容。这种服务器开起来简单，性能要求小，但是游戏性偏弱。一般适用于小团体内游玩。</p>
+<h3 id="模组服"><a href="#模组服" class="headerlink" title="模组服"></a>模组服</h3><p>模组服，则是在纯净服基础上，增加了一些第三方模组(mod)。这种服务器开起来稍微复杂一些，性能要求稍高，但是游戏性比较强。不过，当玩家数量变多时，容易出现管理问题——没有办法限制玩家恶意炸服的现象。一般适用于小团体内游玩。</p>
+<h3 id="模组-插件服"><a href="#模组-插件服" class="headerlink" title="模组+插件服"></a>模组+插件服</h3><p>这类服务器是在模组服的基础上，额外增加了一些插件，通常是一些管理类插件，比如登陆插件、圈地插件等等。这种服务器开起来很复杂，性能要求最高，游戏性很强。此外，通过借助插件的特性，管理起来也很容易。一般适用于大型服务器，面向公众开放的服务器等。</p>
+<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>绘制成一张表，如下：</p>
+<table>
+<thead>
+<tr>
+<th>服务器类型</th>
+<th>游戏性</th>
+<th>性能要求</th>
+<th>开放难度</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>纯净服</td>
+<td>低</td>
+<td>低</td>
+<td>低</td>
+</tr>
+<tr>
+<td>模组服</td>
+<td>中~高</td>
+<td>中~高</td>
+<td>中等</td>
+</tr>
+<tr>
+<td>模组+插件服</td>
+<td>中~高</td>
+<td>高</td>
+<td>高</td>
+</tr>
+</tbody></table>
+<h2 id="确定局域网-x2F-服务器联机"><a href="#确定局域网-x2F-服务器联机" class="headerlink" title="确定局域网&#x2F;服务器联机"></a>确定局域网&#x2F;服务器联机</h2><p>如果你想开放一个私人服务器，只和朋友游玩，人数在2~8人左右，那么推荐局域网联机。</p>
+<p>除此之外，不论是对公众开放，还是想开大型服务器，都推荐购买云服务器。</p>
+<h2 id="确定要游玩的MC版本"><a href="#确定要游玩的MC版本" class="headerlink" title="确定要游玩的MC版本"></a>确定要游玩的MC版本</h2><p>MC版本通常类似于<code>1.12.2</code>或<code>1.20</code>，每个版本通常都有自己的特性。值得注意的是，有一些MC版本的mod较多，如<code>1.16.5</code>、<code>1.12.2</code>、<code>1.7.10</code>等。</p>
+<h2 id="云服务器的性能要求"><a href="#云服务器的性能要求" class="headerlink" title="云服务器的性能要求"></a>云服务器的性能要求</h2><p>服务器通常有两种操作系统：Windows Server和Linux。Windows Server操作简单，但是系统本身占有资源多；Linux操作较复杂，但是系统本身占有资源少。</p>
+<p>具体的硬件配置，参见<a target="_blank" rel="noopener" href="https://minecraft.fandom.com/zh/wiki/%E6%9C%8D%E5%8A%A1%E5%99%A8/%E9%9C%80%E6%B1%82/%E6%9C%8D%E5%8A%A1%E5%99%A8">Minecraft Wiki: 服务器&#x2F;需求&#x2F;服务器</a>。</p>
+<h1 id="1-开服方法"><a href="#1-开服方法" class="headerlink" title="1. 开服方法"></a>1. 开服方法</h1><h2 id="Java的下载"><a href="#Java的下载" class="headerlink" title="Java的下载"></a>Java的下载</h2><p>常见的MC服务器都是需要依赖Java运行的。</p>
+<p>Windows的Java下载地址：<a target="_blank" rel="noopener" href="https://bell-sw.com/pages/downloads/">链接</a>。至于Linux，每个发行版都不同，请参考相关发行版的Wiki。至于MC版本和Java版本的对照，摘自Minecraft Wiki：</p>
+<blockquote>
+<ol>
+<li>从1.12（17w13a）开始，运行Minecraft的最低要求是Java 8。若玩家不知道设备是否安装了Java 8，那么安装程序默认会自动安装并使用支持Minecraft运行的Java。</li>
+<li>从1.17（21w19a）开始，运行Minecraft的最低要求是Java 16。</li>
+<li>从1.18（1.18-pre2）开始，运行Minecraft的最低要求是Java 17。</li>
+<li>从1.20.5（24w14a）开始，运行Minecraft的最低要求是Java 21，且操作系统要求为64位。</li>
+</ol>
+</blockquote>
+<h2 id="核心的下载"><a href="#核心的下载" class="headerlink" title="核心的下载"></a>核心的下载</h2><p>核心相当于一个服务器程序，它能够自动帮你配置环境，下载一些依赖包，搭建起最基本的mc服务器环境。</p>
+<p>常见的核心有这么几个：</p>
+<ol>
+<li><code>Minecraft Server</code>，该核心是创建纯净服务器的核心，由官方发布。下载地址在这里：<a target="_blank" rel="noopener" href="https://mcversions.net/">mcversions.net</a>。</li>
+<li><code>Mohist</code>，该核心可以创建模组+插件服。</li>
+<li><code>CatServer</code>，开源，该核心可以创建模组+插件服。</li>
+<li>…</li>
+</ol>
+<h2 id="初始化配置"><a href="#初始化配置" class="headerlink" title="初始化配置"></a>初始化配置</h2><p>这里我们用<code>CatServer+Windows</code>做演示。</p>
+<p>假设我们已经下载下来了<code>CatServer.jar</code>，那么我们可以用如下的方法进行配置，首先编写一个<code>.bat</code>后缀的批处理程序：</p>
+<figure class="highlight bat"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">java -Xmx16g -jar CatServer.jar</span><br></pre></td></tr></table></figure>
+
+
+
+<p><code>.jar</code>后缀的文件需要依靠<code>java</code>运行，后面的<code>-Xmx</code>参数，是指定该<code>.jar</code>文件可以使用的最大内存量，<code>-jar</code>参数则指定要运行哪个<code>.jar</code>文件。</p>
+<p>如果你有多个<code>java</code>版本，那么也可以用如下的方法运行：</p>
+<figure class="highlight bat"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/Java <span class="built_in">Path</span>/ -Xmx16g -jar CatServer.jar</span><br></pre></td></tr></table></figure>
+
+
+
+<p>将<code>/Java Path/</code>换成想使用的<code>java</code>地址即可。</p>
+<p>运行时，该程序会自动下载依赖的文件。其会自动创建<code>mods</code>和<code>plugins</code>文件夹。</p>
+<h2 id="模组的装填"><a href="#模组的装填" class="headerlink" title="模组的装填"></a>模组的装填</h2><p>模组可以在<code>mcmod.cn</code>网站进行下载。我的建议是，先想好想要玩哪些模组，先下载到本地，然后手动处理模组之间的冲突问题，当没有冲突的时候，再将模组上传到服务器的<code>mods</code>文件夹下。</p>
+<h2 id="插件的装填"><a href="#插件的装填" class="headerlink" title="插件的装填"></a>插件的装填</h2><p>插件则可以在<a target="_blank" rel="noopener" href="https://mineplugin.org/%E9%A6%96%E9%A1%B5">MC插件百科</a>检索。插件通常位于<code>plugins</code>文件夹内。</p>
+<h1 id="2-连接方法"><a href="#2-连接方法" class="headerlink" title="2. 连接方法"></a>2. 连接方法</h1><p>客户端只要保证：</p>
+<ol>
+<li>mod版本正确。</li>
+<li>MC版本正确。</li>
+<li>forge版本正确。</li>
+</ol>
+<p>即可连接到服务器。所谓正确，就是指和服务器端一致。</p>
+
+      </div>
+      
+        <div class="prev-or-next">
+          <div class="post-foot-next">
+            
+              <a href="/2024/10/21/%E7%88%B1/" target="_self">
+                <i class="iconfont icon-chevronleft"></i>
+                <span>上一页</span>
+              </a>
+            
+          </div>
+          <div class="post-attach">
+            <span class="post-pubtime">
+              <i class="iconfont icon-updatetime mr-10" title="更新时间"></i>
+              2024-10-29 14:31:28
+            </span>
+            
+                  <span class="post-tags">
+                    <i class="iconfont icon-tags mr-10" title="标签"></i>
+                    
+                    <span class="span--tag mr-8">
+                      <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA/" title="计算机">
+                        #计算机
+                      </a>
+                    </span>
+                    
+                  </span>
+              
+          </div>
+          <div class="post-foot-prev">
+            
+              <a href="/2024/11/04/%E5%BE%AE%E8%B0%83%E5%A4%A7%E6%A8%A1%E5%9E%8B%E7%9A%84%E4%BB%A3%E7%A0%81%E5%BA%93/" target="_self">
+                <span>下一页</span>
+                <i class="iconfont icon-chevronright"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+    </div>
+    
+  <div id="btn-catalog" class="btn-catalog">
+    <i class="iconfont icon-catalog"></i>
+  </div>
+  <div class="post-catalog hidden" id="catalog">
+    <div class="title">目录</div>
+    <div class="catalog-content">
+      
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#0-%E5%89%8D%E7%BD%AE%E5%B7%A5%E4%BD%9C"><span class="toc-text">0. 前置工作</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%A1%AE%E5%AE%9A%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%AE%9A%E4%BD%8D"><span class="toc-text">确定服务器定位</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BA%AF%E5%87%80%E6%9C%8D"><span class="toc-text">纯净服</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%A8%A1%E7%BB%84%E6%9C%8D"><span class="toc-text">模组服</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%A8%A1%E7%BB%84-%E6%8F%92%E4%BB%B6%E6%9C%8D"><span class="toc-text">模组+插件服</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%80%BB%E7%BB%93"><span class="toc-text">总结</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%A1%AE%E5%AE%9A%E5%B1%80%E5%9F%9F%E7%BD%91-x2F-%E6%9C%8D%E5%8A%A1%E5%99%A8%E8%81%94%E6%9C%BA"><span class="toc-text">确定局域网&#x2F;服务器联机</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%A1%AE%E5%AE%9A%E8%A6%81%E6%B8%B8%E7%8E%A9%E7%9A%84MC%E7%89%88%E6%9C%AC"><span class="toc-text">确定要游玩的MC版本</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%91%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%9A%84%E6%80%A7%E8%83%BD%E8%A6%81%E6%B1%82"><span class="toc-text">云服务器的性能要求</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#1-%E5%BC%80%E6%9C%8D%E6%96%B9%E6%B3%95"><span class="toc-text">1. 开服方法</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Java%E7%9A%84%E4%B8%8B%E8%BD%BD"><span class="toc-text">Java的下载</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%A0%B8%E5%BF%83%E7%9A%84%E4%B8%8B%E8%BD%BD"><span class="toc-text">核心的下载</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%9D%E5%A7%8B%E5%8C%96%E9%85%8D%E7%BD%AE"><span class="toc-text">初始化配置</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%A8%A1%E7%BB%84%E7%9A%84%E8%A3%85%E5%A1%AB"><span class="toc-text">模组的装填</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%8F%92%E4%BB%B6%E7%9A%84%E8%A3%85%E5%A1%AB"><span class="toc-text">插件的装填</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#2-%E8%BF%9E%E6%8E%A5%E6%96%B9%E6%B3%95"><span class="toc-text">2. 连接方法</span></a></li></ol>
+      
+    </div>
+  </div>
+
+  
+<script src="/js/catalog.js"></script>
+
+
+
+
+    
+      <div class="comments-container">
+        
+
+
+
+
+  
+    <script async type="text/javascript" src='https://cdn.jsdelivr.net/npm/valine@1.4.18/dist/Valine.min.js' onload="loadValineSuc(this)"></script>
+  
+
+  <div id="vcomments"></div>
+
+  <script>
+    function loadValineSuc() {
+      new Valine({
+        el: '#vcomments',
+        appId: 'oMvaqsYv2LQSqtj795B31OWV-gzGzoHsz',
+        appKey: 'UKlJCzW9McXrX8L71Mqz5hol',
+        placeholder: 'Welcome!',
+        avatar: 'retro',
+        lang: 'zh-CN'
+      })
+    }
+  </script>
+
+    <style>
+      .comments-container .v .vempty {
+        display: none!important;
+      }
+    </style>
+
+
+
+
+      </div>
+    
+  </div>
+
+
+        
+<div class="footer">
+  <div class="social">
+    <ul>
+      
+        <li>
+          <a title="rss" href="/atom.xml">
+            <i class="iconfont icon-rss"></i>
+          </a>
+        </li>
+      
+    </ul>
+  </div>
+  
+    
+    <div class="footer-more">
+      
+        <a target="_blank" rel="noopener" href="https://github.com/zchengsite/hexo-theme-oranges">Copyright © 2024 Oranges</a>
+        
+    </div>
+  
+    
+    <div class="footer-more">
+      
+        <a target="_blank" rel="noopener" href="https://github.com/zchengsite/hexo-theme-oranges">Theme by Oranges | Powered by Hexo</a>
+        
+    </div>
+  
+  
+</div>
+
+      </div>
+
+      <div class="tools-bar">
+        <div class="back-to-top tools-bar-item hidden">
+  <a href="javascript: void(0)">
+    <i class="iconfont icon-chevronup"></i>
+  </a>
+</div>
+
+
+<script src="/js/backtotop.js"></script>
+
+
+
+        
+  <div class="search-icon tools-bar-item" id="search-icon">
+    <a href="javascript: void(0)">
+      <i class="iconfont icon-search"></i>
+    </a>
+  </div>
+
+  <div class="search-overlay hidden">
+    <div class="search-content" tabindex="0">
+      <div class="search-title">
+        <span class="search-icon-input">
+          <a href="javascript: void(0)">
+            <i class="iconfont icon-search"></i>
+          </a>
+        </span>
+        
+          <input type="text" class="search-input" id="search-input" placeholder="搜索...">
+        
+        <span class="search-close-icon" id="search-close-icon">
+          <a href="javascript: void(0)">
+            <i class="iconfont icon-close"></i>
+          </a>
+        </span>
+      </div>
+      <div class="search-result" id="search-result"></div>
+    </div>
+  </div>
+
+  <script type="text/javascript">
+    var inputArea = document.querySelector("#search-input")
+    var searchOverlayArea = document.querySelector(".search-overlay")
+
+    inputArea.onclick = function() {
+      getSearchFile()
+      this.onclick = null
+    }
+
+    inputArea.onkeydown = function() {
+      if(event.keyCode == 13)
+        return false
+    }
+
+    function openOrHideSearchContent() {
+      let isHidden = searchOverlayArea.classList.contains('hidden')
+      if (isHidden) {
+        searchOverlayArea.classList.remove('hidden')
+        document.body.classList.add('hidden')
+        // inputArea.focus()
+      } else {
+        searchOverlayArea.classList.add('hidden')
+        document.body.classList.remove('hidden')
+      }
+    }
+
+    function blurSearchContent(e) {
+      if (e.target === searchOverlayArea) {
+        openOrHideSearchContent()
+      }
+    }
+
+    document.querySelector("#search-icon").addEventListener("click", openOrHideSearchContent, false)
+    document.querySelector("#search-close-icon").addEventListener("click", openOrHideSearchContent, false)
+    searchOverlayArea.addEventListener("click", blurSearchContent, false)
+
+    var searchFunc = function (path, search_id, content_id) {
+      'use strict';
+      var $input = document.getElementById(search_id);
+      var $resultContent = document.getElementById(content_id);
+      $resultContent.innerHTML = "<ul><span class='local-search-empty'>首次搜索，正在载入索引文件，请稍后……<span></ul>";
+      $.ajax({
+        // 0x01. load xml file
+        url: path,
+        dataType: "xml",
+        success: function (xmlResponse) {
+          // 0x02. parse xml file
+          var datas = $("entry", xmlResponse).map(function () {
+            return {
+              title: $("title", this).text(),
+              content: $("content", this).text(),
+              url: $("url", this).text()
+            };
+          }).get();
+          $resultContent.innerHTML = "";
+
+          $input.addEventListener('input', function () {
+            // 0x03. parse query to keywords list
+            var str = '<ul class=\"search-result-list\">';
+            var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+            $resultContent.innerHTML = "";
+            if (this.value.trim().length <= 0) {
+              return;
+            }
+            // 0x04. perform local searching
+            datas.forEach(function (data) {
+              var isMatch = true;
+              var content_index = [];
+              if (!data.title || data.title.trim() === '') {
+                data.title = "Untitled";
+              }
+              var orig_data_title = data.title.trim();
+              var data_title = orig_data_title.toLowerCase();
+              var orig_data_content = data.content.trim().replace(/<[^>]+>/g, "");
+              var data_content = orig_data_content.toLowerCase();
+              var data_url = data.url;
+              var index_title = -1;
+              var index_content = -1;
+              var first_occur = -1;
+              // only match artiles with not empty contents
+              if (data_content !== '') {
+                keywords.forEach(function (keyword, i) {
+                  index_title = data_title.indexOf(keyword);
+                  index_content = data_content.indexOf(keyword);
+
+                  if (index_title < 0 && index_content < 0) {
+                    isMatch = false;
+                  } else {
+                    if (index_content < 0) {
+                      index_content = 0;
+                    }
+                    if (i == 0) {
+                      first_occur = index_content;
+                    }
+                    // content_index.push({index_content:index_content, keyword_len:keyword_len});
+                  }
+                });
+              } else {
+                isMatch = false;
+              }
+              // 0x05. show search results
+              if (isMatch) {
+                str += "<li><a href='" + data_url + "' class='search-result-title'>" + orig_data_title + "</a>";
+                var content = orig_data_content;
+                if (first_occur >= 0) {
+                  // cut out 100 characters
+                  var start = first_occur - 20;
+                  var end = first_occur + 80;
+
+                  if (start < 0) {
+                    start = 0;
+                  }
+
+                  if (start == 0) {
+                    end = 100;
+                  }
+
+                  if (end > content.length) {
+                    end = content.length;
+                  }
+
+                  var match_content = content.substr(start, end);
+
+                  // highlight all keywords
+                  keywords.forEach(function (keyword) {
+                    var regS = new RegExp(keyword, "gi");
+                    match_content = match_content.replace(regS, "<span class=\"search-keyword\">" + keyword + "</span>");
+                  });
+
+                  str += "<p class=\"search-result-abstract\">" + match_content + "...</p>"
+                }
+                str += "</li>";
+              }
+            });
+            str += "</ul>";
+            if (str.indexOf('<li>') === -1) {
+              return $resultContent.innerHTML = "<ul><span class='local-search-empty'>没有找到内容，请尝试更换检索词。<span></ul>";
+            }
+            $resultContent.innerHTML = str;
+          });
+        },
+        error: function(xhr, status, error) {
+          $resultContent.innerHTML = ""
+          if (xhr.status === 404) {
+            $resultContent.innerHTML = "<ul><span class='local-search-empty'>未找到search.xml文件，具体请参考：<a href='https://github.com/zchengsite/hexo-theme-oranges#configuration' target='_black'>configuration</a><span></ul>";
+          } else {
+            $resultContent.innerHTML = "<ul><span class='local-search-empty'>请求失败，尝试重新刷新页面或稍后重试。<span></ul>";
+          }
+        }
+      });
+      $(document).on('click', '#search-close-icon', function() {
+        $('#search-input').val('');
+        $('#search-result').html('');
+      });
+    }
+
+    var getSearchFile = function() {
+        var path = "/search.xml";
+        searchFunc(path, 'search-input', 'search-result');
+    }
+  </script>
+
+
+
+
+        
+  <div class="tools-bar-item theme-icon" id="switch-color-scheme">
+    <a href="javascript: void(0)">
+      <i id="theme-icon" class="iconfont icon-moon"></i>
+    </a>
+  </div>
+
+  
+<script src="/js/colorscheme.js"></script>
+
+
+
+
+
+        
+  
+    <div class="share-icon tools-bar-item">
+      <a href="javascript: void(0)" id="share-icon">
+        <i class="iconfont iconshare"></i>
+      </a>
+      <div class="share-content hidden">
+        
+          <a class="share-item" href="https://twitter.com/intent/tweet?text=' + %E5%A6%82%E4%BD%95%E5%88%9B%E5%BB%BA%E5%B1%9E%E4%BA%8E%E8%87%AA%E5%B7%B1%E7%9A%84MC%E6%9C%8D%E5%8A%A1%E5%99%A8 + '&url=' + https%3A%2F%2Fcoder109.github.io%2F2024%2F10%2F29%2F%25E5%25A6%2582%25E4%25BD%2595%25E5%2588%259B%25E5%25BB%25BA%25E5%25B1%259E%25E4%25BA%258E%25E8%2587%25AA%25E5%25B7%25B1%25E7%259A%2584MC%25E6%259C%258D%25E5%258A%25A1%25E5%2599%25A8%2F + '" target="_blank" title="Twitter">
+            <i class="iconfont icon-twitter"></i>
+          </a>
+        
+        
+      </div>
+    </div>
+  
+  
+<script src="/js/shares.js"></script>
+
+
+
+      </div>
+    </div>
+  
+        <style>
+            [bg-lazy] {
+                background-image: none !important;
+                background-color: #eee !important;
+            }
+        </style>
+        <script>
+            window.imageLazyLoadSetting = {
+                isSPA: false,
+                preloadRatio: 1,
+                processImages: null,
+            };
+        </script><script>window.addEventListener("load",function(){var t=/\.(gif|jpg|jpeg|tiff|png)$/i,r=/^data:image\/[a-z]+;base64,/;Array.prototype.slice.call(document.querySelectorAll("img[data-original]")).forEach(function(a){var e=a.parentNode;"A"===e.tagName&&(e.href.match(t)||e.href.match(r))&&(e.href=a.dataset.original)})});</script><script>!function(r){r.imageLazyLoadSetting.processImages=t;var e=r.imageLazyLoadSetting.isSPA,n=r.imageLazyLoadSetting.preloadRatio||1,c=a();function a(){var t=Array.prototype.slice.call(document.querySelectorAll("img[data-original]")),e=Array.prototype.slice.call(document.querySelectorAll("[bg-lazy]"));return t.concat(e)}function t(){e&&(c=a());for(var t,o=0;o<c.length;o++)0<=(t=(t=c[o]).getBoundingClientRect()).bottom&&0<=t.left&&t.top<=(r.innerHeight*n||document.documentElement.clientHeight*n)&&function(){var t,e,n,a,i=c[o];e=function(){c=c.filter(function(t){return i!==t}),r.imageLazyLoadSetting.onImageLoaded&&r.imageLazyLoadSetting.onImageLoaded(i)},(t=i).hasAttribute("bg-lazy")?(t.removeAttribute("bg-lazy"),e&&e()):(n=new Image,a=t.getAttribute("data-original"),n.onload=function(){t.src=a,t.removeAttribute("data-original"),e&&e()},t.src!==a&&(n.src=a))}()}function i(){clearTimeout(t.tId),t.tId=setTimeout(t,500)}t(),document.addEventListener("scroll",i),r.addEventListener("resize",i),r.addEventListener("orientationchange",i)}(this);</script></body>
+</html>

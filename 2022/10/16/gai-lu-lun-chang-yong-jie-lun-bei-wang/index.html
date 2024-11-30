@@ -1,0 +1,677 @@
+<!DOCTYPE html>
+<html lang="zh-CN" color-mode="light">
+
+  <head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="keywords" content="" />
+  <meta name="author" content="Coder109" />
+  <meta name="description" content="" />
+  
+  
+  <title>
+    
+      【数学/概率论】备忘 
+      
+      
+      |
+    
+     幻
+  </title>
+
+  
+    <link rel="apple-touch-icon" href="/images/favicon.ico">
+    <link rel="icon" href="/images/favicon.ico">
+  
+
+  <!-- Raleway-Font -->
+  <link href="https://fonts.googleapis.com/css?family=Raleway&display=swap" rel="stylesheet">
+
+  <!-- hexo site css -->
+  <link rel="stylesheet" href="/css/main.css" />
+  <link rel="stylesheet" href="//at.alicdn.com/t/font_1886449_67xjft27j1l.css" />
+  <!-- 代码块风格 -->
+  
+
+  <!-- jquery3.3.1 -->
+  
+    <script defer type="text/javascript" src="/plugins/jquery.min.js"></script>
+  
+
+  <!-- fancybox -->
+  
+    <link href="/plugins/jquery.fancybox.min.css" rel="stylesheet">
+    <script defer type="text/javascript" src="/plugins/jquery.fancybox.min.js"></script>
+  
+  
+<script src="/js/fancybox.js"></script>
+
+
+  
+
+  
+
+  <script>
+    var html = document.documentElement
+    const colorMode = localStorage.getItem('color-mode')
+    if (colorMode) {
+      document.documentElement.setAttribute('color-mode', colorMode)
+    }
+  </script>
+<meta name="generator" content="Hexo 6.3.0"><link rel="alternate" href="/atom.xml" title="幻" type="application/atom+xml">
+</head>
+
+
+  <body>
+    <div id="app">
+      <div class="header">
+  <div class="avatar">
+    <a href="/">
+      <!-- 头像取消懒加载，添加no-lazy -->
+      
+        <img no-lazy src="/images/favicon.ico" alt="">
+      
+    </a>
+    <div class="nickname"><a href="/">幻</a></div>
+  </div>
+  <div class="navbar">
+    <ul>
+      
+        <li class="nav-item" data-path="/">
+          <a href="/">Home</a>
+        </li>
+      
+        <li class="nav-item" data-path="/archives/">
+          <a href="/archives/">Archives</a>
+        </li>
+      
+        <li class="nav-item" data-path="/tags/">
+          <a href="/tags/">Tags</a>
+        </li>
+      
+        <li class="nav-item" data-path="/friends/">
+          <a href="/friends/">Friends</a>
+        </li>
+      
+        <li class="nav-item" data-path="/about/">
+          <a href="/about/">About</a>
+        </li>
+      
+    </ul>
+  </div>
+</div>
+
+
+<script src="/js/activeNav.js"></script>
+
+
+
+      <div class="flex-container">
+        <!-- 文章详情页，展示文章具体内容，url形式：https://yoursite/文章标题/ -->
+<!-- 同时为「标签tag」，「朋友friend」，「分类categories」，「关于about」页面的承载页面，具体展示取决于page.type -->
+
+
+  <!-- LaTex Display -->
+
+  
+    <script async type="text/javascript" src="/plugins/mathjax/tex-chtml.js"></script>
+  
+  <script>
+    MathJax = {
+      tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']]
+      }
+    }
+  </script>
+
+
+
+
+
+  <!-- clipboard -->
+
+  
+    <script async type="text/javascript" src="/plugins/clipboard.min.js"></script>
+  
+  
+<script src="/js/codeCopy.js"></script>
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  <!-- 文章内容页 url形式：https://yoursite/文章标题/ -->
+  <div class="container post-details" id="post-details">
+    <div class="post-content">
+      <div class="post-title">【数学/概率论】备忘</div>
+      <div class="post-attach">
+        <span class="post-pubtime">
+          <i class="iconfont icon-updatetime mr-10" title="更新时间"></i>
+          2022-10-16 21:08:56
+        </span>
+        
+              <span class="post-tags">
+                <i class="iconfont icon-tags mr-10" title="标签"></i>
+                
+                <span class="span--tag mr-8">
+                  <a href="/tags/%E6%95%B0%E5%AD%A6/" title="数学">
+                    #数学
+                  </a>
+                </span>
+                
+                <span class="span--tag mr-8">
+                  <a href="/tags/%E6%A6%82%E7%8E%87%E8%AE%BA/" title="概率论">
+                    #概率论
+                  </a>
+                </span>
+                
+              </span>
+          
+      </div>
+      <div class="markdown-body">
+        <blockquote>
+<p>未特别说明，$f_X(x)$代表$X$的概率密度，$F_X(x)$代表$X$的分布函数。</p>
+</blockquote>
+<h1 id="1-公式法求随机变量关系"><a href="#1-公式法求随机变量关系" class="headerlink" title="1.公式法求随机变量关系"></a>1.公式法求随机变量关系</h1><p>对于一维随机变量：</p>
+<p>已知$f_X(x),Y&#x3D;g(x)$，求$f_Y(y)$:<br>$$<br>f_Y(y)&#x3D;f_X(h(y))|h’(y)|<br>$$<br>其中$h(y)$是$g(x)$的逆函数。</p>
+<p>对于二维随机变量，可以使用卷积公式(Convolution)计算：</p>
+<p>已知<font color="red">$X,Y$独立</font>,$Z&#x3D;X+Y$，求Z的分布函数：</p>
+<p>$$<br>f_Z(z)&#x3D;\int_{-\infty}^{\infty}f_X(x)f_Y(z-x)dx&#x3D;\int_{-\infty}^{\infty}f_X(z-y)f_Y(y)dy<br>$$</p>
+<p>不独立要用分布函数法求解。</p>
+<h1 id="2-指数分布-Exponential-Distribution"><a href="#2-指数分布-Exponential-Distribution" class="headerlink" title="2.指数分布(Exponential Distribution)"></a>2.指数分布(Exponential Distribution)</h1><p>$$<br>X\sim E(k)\to f_X(x)&#x3D;ke^{-kx},F_X(x)&#x3D;1-e^{-kx}<br>$$</p>
+<h1 id="3-均匀分布-Uniform-Distribution"><a href="#3-均匀分布-Uniform-Distribution" class="headerlink" title="3.均匀分布(Uniform Distribution)"></a>3.均匀分布(Uniform Distribution)</h1><p>$$<br>X\sim U(a,b)\to f_X(x)&#x3D;\frac{1}{b-a},F_X(x)&#x3D;\frac{x-a}{b-a},x\in[a,b]<br>$$</p>
+<h1 id="4-正态分布-Normal-Distribution"><a href="#4-正态分布-Normal-Distribution" class="headerlink" title="4.正态分布(Normal Distribution)"></a>4.正态分布(Normal Distribution)</h1><p>$$<br>X\sim N(\mu,\sigma^2)\to f_X(x)&#x3D;\frac{1}{\sqrt{2\pi}\sigma}e^{-\frac{(x-\mu)^2}{2\sigma^2}},F_X(x)&#x3D;\int_{-\infty}^{\infty}f_X(x)dx<br>$$</p>
+<p>特别的，正态分布满足再生性（可加性），亦即，当$X,Y$彼此独立时：</p>
+<p>$$<br>X_1\sim N(\mu_1,\sigma_1^2),X_2\sim N(\mu_2,\sigma_2^2),\cdots,Z&#x3D;\Sigma_{i&#x3D;1}^nX_i\to Z\sim N(\Sigma_{i&#x3D;1}^n\mu_i,\Sigma_{i&#x3D;1}^n\sigma_i^2)<br>$$</p>
+<p>其实，两个正态分布相加，$\mu$和$\sigma^2$彼此相加，两个正态分布相减时，$\mu$的部分相减，而$\sigma^2$的部分依然要相加。</p>
+<h1 id="5-泊松分布-Poisson-Distribution"><a href="#5-泊松分布-Poisson-Distribution" class="headerlink" title="5.泊松分布(Poisson Distribution)"></a>5.泊松分布(Poisson Distribution)</h1><p>$$<br>X\sim P(\lambda)\to P(X&#x3D;k)&#x3D;\frac{\lambda^k}{k!}e^{-\lambda}<br>$$</p>
+<p>特别的，泊松分布满足再生性（可加性），亦即，当$X,Y$彼此独立时：</p>
+<p>$$<br>X\sim P(\lambda_1),Y\sim P(\lambda_2),Z&#x3D;X+Y\to Z\sim P(\lambda_1+\lambda_2)<br>$$</p>
+<p>泊松分布可以用来近似求取二项分布，如果$X\sim B(n,p),n\geq 20 ,p\leq 0.05$，可以近似为$X\sim P(np)$。</p>
+<h1 id="6-排列组合备忘"><a href="#6-排列组合备忘" class="headerlink" title="6.排列组合备忘"></a>6.排列组合备忘</h1><h2 id="分组公式"><a href="#分组公式" class="headerlink" title="分组公式"></a>分组公式</h2><p>一共$n$个物品，分成$k$组，每组个数为$r_1,r_2,\cdots,r_k$，那么全部的互异排列方式$N$为：<br>$$<br>N&#x3D;C_n^{r_1}C_{n-r_1}^{r_2}\cdots C_{r_k}^{r_k}&#x3D;\frac{n!}{r_1!r_2!\cdots r_k!}<br>$$<br>一个题目里，如果对有重复出现的所有元素的排列，可以看作为分组排列，相同的元素分为一组，应用上述公式即可。</p>
+<h1 id="7-常用分布的期望、方差"><a href="#7-常用分布的期望、方差" class="headerlink" title="7.常用分布的期望、方差"></a>7.常用分布的期望、方差</h1><table>
+<thead>
+<tr>
+<th>分布类型</th>
+<th>数学期望</th>
+<th>方差</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>$X\sim B(n,p)$</td>
+<td>$np$</td>
+<td>$np(1-p)$</td>
+</tr>
+<tr>
+<td>$X\sim U(a,b)$</td>
+<td>$\frac{a+b}{2}$</td>
+<td>$\frac{(b-a)^2}{12}$</td>
+</tr>
+<tr>
+<td>$X\sim E(\lambda)$</td>
+<td>$\frac{1}{\lambda}$</td>
+<td>$\frac{1}{\lambda^2}$</td>
+</tr>
+<tr>
+<td>$X\sim N(\mu,\sigma^2)$</td>
+<td>$\mu$</td>
+<td>$\sigma^2$</td>
+</tr>
+<tr>
+<td>$X\sim P(\lambda)$</td>
+<td>$\lambda$</td>
+<td>$\lambda$</td>
+</tr>
+<tr>
+<td>$X\sim G(p),P(X&#x3D;k)&#x3D;p(1-p)^{k-1}$</td>
+<td>$\frac{1}{p}$</td>
+<td>$\frac{1-p}{p^2}$</td>
+</tr>
+<tr>
+<td>$X\sim \chi^2(n)$</td>
+<td>$n$</td>
+<td>$2n$</td>
+</tr>
+</tbody></table>
+<h1 id="8-切比雪夫不等式和中心极限定理"><a href="#8-切比雪夫不等式和中心极限定理" class="headerlink" title="8.切比雪夫不等式和中心极限定理"></a>8.切比雪夫不等式和中心极限定理</h1><h2 id="切比雪夫不等式"><a href="#切比雪夫不等式" class="headerlink" title="切比雪夫不等式"></a>切比雪夫不等式</h2><p>$$<br>P(|X-E(X)|\geq\varepsilon)\leq\frac{D(X)}{\varepsilon^2}<br>$$</p>
+<h2 id="林德伯格-莱维中心极限定理"><a href="#林德伯格-莱维中心极限定理" class="headerlink" title="林德伯格-莱维中心极限定理"></a>林德伯格-莱维中心极限定理</h2><p>如果随机变量序列$X_1,X_2,\cdots,X_n,\cdots$<strong>独立同分布</strong>，并且具有<strong>有限的期望、方差</strong>，分别记为$\mu,\sigma^2(&gt;0)$，则对于$\forall x\in \mathbf{R}$有：<br>$$<br>\lim_{n\to\infty}P(\frac{1}{\sqrt{n}\sigma}(\sum_{i&#x3D;1}^nX_i-n\mu)\leq x)&#x3D;\int_{-\infty}^x\frac{1}{\sqrt{2\pi}}e^{-\frac{t^2}{2}}\rm{d}t&#x3D;\varPhi(x)\sim N(0,1)<br>$$</p>
+<h2 id="棣莫佛-拉普拉斯定理"><a href="#棣莫佛-拉普拉斯定理" class="headerlink" title="棣莫佛-拉普拉斯定理"></a>棣莫佛-拉普拉斯定理</h2><p>设在$n$重伯努利试验中，成功的次数为$Y_n$，而在每次试验中成功的概率为$p,q&#x3D;1-p$，则对于$\forall x\in \mathbf{R}$有：<br>$$<br>\lim_{n\to\infty}P(\frac{Y_n-np}{\sqrt{npq}}\leq x)&#x3D;\int_{-\infty}^x\frac{1}{\sqrt{2\pi}}e^{-\frac{t^2}{2}}\rm{d}t&#x3D;\varPhi(x)\sim N(0,1)<br>$$</p>
+<h1 id="9-矩估计和最大似然估计"><a href="#9-矩估计和最大似然估计" class="headerlink" title="9.矩估计和最大似然估计"></a>9.矩估计和最大似然估计</h1><p>矩估计的原理是用n阶样本矩来估计总体矩。因为在样本充分大的时候，样本矩和总体矩相等。解题步骤：</p>
+<ol>
+<li>若有$k$个参数要估计，则列出前$k$阶样本中心矩的算式。</li>
+<li>求解参数。</li>
+</ol>
+<p>最大似然估计的原理是根据发生的概率公式，求出令该公式最大的参数。解题步骤：</p>
+<ol>
+<li><p>列出概率公式，若有$n$个样本，概率公式就是：<br>$$<br>L&#x3D;\prod_{i&#x3D;1}^n f(x_i;\theta_1,\theta_2,\cdots)<br>$$</p>
+</li>
+<li><p>求出让$L$最大的参数$\theta_1,\theta_2,\cdots$。可以通过求$lnL$-求导求解，也可以直接根据原理求解。</p>
+</li>
+</ol>
+<h1 id="10-区间估计的枢轴变量法"><a href="#10-区间估计的枢轴变量法" class="headerlink" title="10.区间估计的枢轴变量法"></a>10.区间估计的枢轴变量法</h1><p>对于正态总体$X\sim N(\mu,\sigma^2)$，取出$n$个样本，样本均值为$\bar{X}$，方差为$S^2$，那么可靠性为$\beta$的$\mu,\sigma^2$置信区间为：<br>$$<br>\mu\in(\bar{X}-t_{(1-\beta)&#x2F;2}(n-1)\frac{S}{\sqrt{n}},\bar{X}+t_{(1-\beta)&#x2F;2}(n-1)\frac{S}{\sqrt{n}})\<br>\sigma^2\in(\frac{(n-1)S^2}{\chi^2_{1-\beta&#x2F;2}(n-1)},\frac{(n-1)S^2}{\chi^2_{1-(1-\beta)&#x2F;2}(n-1)})<br>$$</p>
+<h1 id="11-数理统计部分备忘"><a href="#11-数理统计部分备忘" class="headerlink" title="11.数理统计部分备忘"></a>11.数理统计部分备忘</h1><ol>
+<li><p>如果$X,Y$彼此独立，$X\sim N(0,1),Y\sim\chi^2(n)$，那么$T&#x3D;\frac{X}{\sqrt{Y&#x2F;n}}$。</p>
+</li>
+<li><p>如果$X,Y$彼此独立，$X\sim\chi^2(n_1),Y\sim\chi^2(n_2)$，那么$F&#x3D;\frac{n_2}{n_1}\frac{X}{Y}$。</p>
+</li>
+<li><p>如果$X\sim t(n)$，那么$X^2\sim F(1,n)$。</p>
+</li>
+<li><p>若样本总体$X$满足$X\sim N(\mu,\sigma^2)$，若$n$为样本容量，样本方差为$S^2$，样本均值为$\bar{X}$，则满足：<br>$$<br>\bar{X}\sim N(\mu,\frac{\sigma^2}{n})\<br>\frac{(n-1)S^2}{\sigma^2}\sim\chi^2(n-1)\<br>\frac{\sqrt{n}(\bar{X}-\mu)}{S}\sim t(n-1)\<br>\frac{\sqrt{n}(\bar{X}-\mu)}{\sigma}\sim N(0,1)\<br>$$</p>
+</li>
+</ol>
+<h2 id="单个正态总体的参数区间估计"><a href="#单个正态总体的参数区间估计" class="headerlink" title="单个正态总体的参数区间估计"></a>单个正态总体的参数区间估计</h2><ol>
+<li><p>$\sigma$已知，求$\mu$置信区间：<br>$$<br>(\bar{X}-u_{\frac{\alpha}{2}}\frac{\sigma}{\sqrt{n}},\bar{X}+u_{\frac{\alpha}{2}}\frac{\sigma}{\sqrt{n}})\to1-\alpha<br>$$</p>
+</li>
+<li><p>$\sigma$未知，求$\mu$置信区间：<br>$$<br>(\bar{X}-t_{\frac{\alpha}{2}}(n-1)\frac{S}{\sqrt{n}},\bar{X}+t_{\frac{\alpha}{2}}(n-1)\frac{S}{\sqrt{n}})\to1-\alpha<br>$$</p>
+</li>
+<li><p>$\mu$已知，求$\sigma^2$置信区间：<br>$$<br>Q^2&#x3D;\sum_{i&#x3D;1}^n(X_i-\bar{X})^2\<br>(\frac{Q^2}{\chi^2_{\frac{\alpha}{2}}(n-1)},\frac{Q^2}{\chi^2_{1-\frac{\alpha}{2}}(n-1)})\to1-\alpha<br>$$</p>
+</li>
+<li><p>$\mu$未知，求$\sigma^2$置信区间：<br>$$<br>Q^2&#x3D;\sum_{i&#x3D;1}^n(X_i-\mu)^2\<br>(\frac{Q^2}{\chi^2_{\frac{\alpha}{2}}(n-1)},\frac{Q^2}{\chi^2_{1-\frac{\alpha}{2}}(n-1)})\to1-\alpha<br>$$</p>
+</li>
+</ol>
+<p>上面的方法也可以利用于假设检验中去。</p>
+
+      </div>
+      
+        <div class="prev-or-next">
+          <div class="post-foot-next">
+            
+              <a href="/2022/10/13/yi-shi-liu-pi-jiu-zha-ji-fen-shi-ji-su-qing-gan-zhang-ai/" target="_self">
+                <i class="iconfont icon-chevronleft"></i>
+                <span>上一页</span>
+              </a>
+            
+          </div>
+          <div class="post-attach">
+            <span class="post-pubtime">
+              <i class="iconfont icon-updatetime mr-10" title="更新时间"></i>
+              2022-10-16 21:08:56
+            </span>
+            
+                  <span class="post-tags">
+                    <i class="iconfont icon-tags mr-10" title="标签"></i>
+                    
+                    <span class="span--tag mr-8">
+                      <a href="/tags/%E6%95%B0%E5%AD%A6/" title="数学">
+                        #数学
+                      </a>
+                    </span>
+                    
+                    <span class="span--tag mr-8">
+                      <a href="/tags/%E6%A6%82%E7%8E%87%E8%AE%BA/" title="概率论">
+                        #概率论
+                      </a>
+                    </span>
+                    
+                  </span>
+              
+          </div>
+          <div class="post-foot-prev">
+            
+              <a href="/2022/10/18/shu-xue-jin-shi-dai-shu-bei-wang/" target="_self">
+                <span>下一页</span>
+                <i class="iconfont icon-chevronright"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+    </div>
+    
+  <div id="btn-catalog" class="btn-catalog">
+    <i class="iconfont icon-catalog"></i>
+  </div>
+  <div class="post-catalog hidden" id="catalog">
+    <div class="title">目录</div>
+    <div class="catalog-content">
+      
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#1-%E5%85%AC%E5%BC%8F%E6%B3%95%E6%B1%82%E9%9A%8F%E6%9C%BA%E5%8F%98%E9%87%8F%E5%85%B3%E7%B3%BB"><span class="toc-text">1.公式法求随机变量关系</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#2-%E6%8C%87%E6%95%B0%E5%88%86%E5%B8%83-Exponential-Distribution"><span class="toc-text">2.指数分布(Exponential Distribution)</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#3-%E5%9D%87%E5%8C%80%E5%88%86%E5%B8%83-Uniform-Distribution"><span class="toc-text">3.均匀分布(Uniform Distribution)</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#4-%E6%AD%A3%E6%80%81%E5%88%86%E5%B8%83-Normal-Distribution"><span class="toc-text">4.正态分布(Normal Distribution)</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#5-%E6%B3%8A%E6%9D%BE%E5%88%86%E5%B8%83-Poisson-Distribution"><span class="toc-text">5.泊松分布(Poisson Distribution)</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#6-%E6%8E%92%E5%88%97%E7%BB%84%E5%90%88%E5%A4%87%E5%BF%98"><span class="toc-text">6.排列组合备忘</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%86%E7%BB%84%E5%85%AC%E5%BC%8F"><span class="toc-text">分组公式</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#7-%E5%B8%B8%E7%94%A8%E5%88%86%E5%B8%83%E7%9A%84%E6%9C%9F%E6%9C%9B%E3%80%81%E6%96%B9%E5%B7%AE"><span class="toc-text">7.常用分布的期望、方差</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#8-%E5%88%87%E6%AF%94%E9%9B%AA%E5%A4%AB%E4%B8%8D%E7%AD%89%E5%BC%8F%E5%92%8C%E4%B8%AD%E5%BF%83%E6%9E%81%E9%99%90%E5%AE%9A%E7%90%86"><span class="toc-text">8.切比雪夫不等式和中心极限定理</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%87%E6%AF%94%E9%9B%AA%E5%A4%AB%E4%B8%8D%E7%AD%89%E5%BC%8F"><span class="toc-text">切比雪夫不等式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9E%97%E5%BE%B7%E4%BC%AF%E6%A0%BC-%E8%8E%B1%E7%BB%B4%E4%B8%AD%E5%BF%83%E6%9E%81%E9%99%90%E5%AE%9A%E7%90%86"><span class="toc-text">林德伯格-莱维中心极限定理</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%A3%A3%E8%8E%AB%E4%BD%9B-%E6%8B%89%E6%99%AE%E6%8B%89%E6%96%AF%E5%AE%9A%E7%90%86"><span class="toc-text">棣莫佛-拉普拉斯定理</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#9-%E7%9F%A9%E4%BC%B0%E8%AE%A1%E5%92%8C%E6%9C%80%E5%A4%A7%E4%BC%BC%E7%84%B6%E4%BC%B0%E8%AE%A1"><span class="toc-text">9.矩估计和最大似然估计</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#10-%E5%8C%BA%E9%97%B4%E4%BC%B0%E8%AE%A1%E7%9A%84%E6%9E%A2%E8%BD%B4%E5%8F%98%E9%87%8F%E6%B3%95"><span class="toc-text">10.区间估计的枢轴变量法</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#11-%E6%95%B0%E7%90%86%E7%BB%9F%E8%AE%A1%E9%83%A8%E5%88%86%E5%A4%87%E5%BF%98"><span class="toc-text">11.数理统计部分备忘</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8D%95%E4%B8%AA%E6%AD%A3%E6%80%81%E6%80%BB%E4%BD%93%E7%9A%84%E5%8F%82%E6%95%B0%E5%8C%BA%E9%97%B4%E4%BC%B0%E8%AE%A1"><span class="toc-text">单个正态总体的参数区间估计</span></a></li></ol></li></ol>
+      
+    </div>
+  </div>
+
+  
+<script src="/js/catalog.js"></script>
+
+
+
+
+    
+      <div class="comments-container">
+        
+
+
+
+
+  
+    <script async type="text/javascript" src='https://cdn.jsdelivr.net/npm/valine@1.4.18/dist/Valine.min.js' onload="loadValineSuc(this)"></script>
+  
+
+  <div id="vcomments"></div>
+
+  <script>
+    function loadValineSuc() {
+      new Valine({
+        el: '#vcomments',
+        appId: 'oMvaqsYv2LQSqtj795B31OWV-gzGzoHsz',
+        appKey: 'UKlJCzW9McXrX8L71Mqz5hol',
+        placeholder: 'Welcome!',
+        avatar: 'retro',
+        lang: 'zh-CN'
+      })
+    }
+  </script>
+
+    <style>
+      .comments-container .v .vempty {
+        display: none!important;
+      }
+    </style>
+
+
+
+
+      </div>
+    
+  </div>
+
+
+        
+<div class="footer">
+  <div class="social">
+    <ul>
+      
+        <li>
+          <a title="rss" href="/atom.xml">
+            <i class="iconfont icon-rss"></i>
+          </a>
+        </li>
+      
+    </ul>
+  </div>
+  
+    
+    <div class="footer-more">
+      
+        <a target="_blank" rel="noopener" href="https://github.com/zchengsite/hexo-theme-oranges">Copyright © 2024 Oranges</a>
+        
+    </div>
+  
+    
+    <div class="footer-more">
+      
+        <a target="_blank" rel="noopener" href="https://github.com/zchengsite/hexo-theme-oranges">Theme by Oranges | Powered by Hexo</a>
+        
+    </div>
+  
+  
+</div>
+
+      </div>
+
+      <div class="tools-bar">
+        <div class="back-to-top tools-bar-item hidden">
+  <a href="javascript: void(0)">
+    <i class="iconfont icon-chevronup"></i>
+  </a>
+</div>
+
+
+<script src="/js/backtotop.js"></script>
+
+
+
+        
+  <div class="search-icon tools-bar-item" id="search-icon">
+    <a href="javascript: void(0)">
+      <i class="iconfont icon-search"></i>
+    </a>
+  </div>
+
+  <div class="search-overlay hidden">
+    <div class="search-content" tabindex="0">
+      <div class="search-title">
+        <span class="search-icon-input">
+          <a href="javascript: void(0)">
+            <i class="iconfont icon-search"></i>
+          </a>
+        </span>
+        
+          <input type="text" class="search-input" id="search-input" placeholder="搜索...">
+        
+        <span class="search-close-icon" id="search-close-icon">
+          <a href="javascript: void(0)">
+            <i class="iconfont icon-close"></i>
+          </a>
+        </span>
+      </div>
+      <div class="search-result" id="search-result"></div>
+    </div>
+  </div>
+
+  <script type="text/javascript">
+    var inputArea = document.querySelector("#search-input")
+    var searchOverlayArea = document.querySelector(".search-overlay")
+
+    inputArea.onclick = function() {
+      getSearchFile()
+      this.onclick = null
+    }
+
+    inputArea.onkeydown = function() {
+      if(event.keyCode == 13)
+        return false
+    }
+
+    function openOrHideSearchContent() {
+      let isHidden = searchOverlayArea.classList.contains('hidden')
+      if (isHidden) {
+        searchOverlayArea.classList.remove('hidden')
+        document.body.classList.add('hidden')
+        // inputArea.focus()
+      } else {
+        searchOverlayArea.classList.add('hidden')
+        document.body.classList.remove('hidden')
+      }
+    }
+
+    function blurSearchContent(e) {
+      if (e.target === searchOverlayArea) {
+        openOrHideSearchContent()
+      }
+    }
+
+    document.querySelector("#search-icon").addEventListener("click", openOrHideSearchContent, false)
+    document.querySelector("#search-close-icon").addEventListener("click", openOrHideSearchContent, false)
+    searchOverlayArea.addEventListener("click", blurSearchContent, false)
+
+    var searchFunc = function (path, search_id, content_id) {
+      'use strict';
+      var $input = document.getElementById(search_id);
+      var $resultContent = document.getElementById(content_id);
+      $resultContent.innerHTML = "<ul><span class='local-search-empty'>首次搜索，正在载入索引文件，请稍后……<span></ul>";
+      $.ajax({
+        // 0x01. load xml file
+        url: path,
+        dataType: "xml",
+        success: function (xmlResponse) {
+          // 0x02. parse xml file
+          var datas = $("entry", xmlResponse).map(function () {
+            return {
+              title: $("title", this).text(),
+              content: $("content", this).text(),
+              url: $("url", this).text()
+            };
+          }).get();
+          $resultContent.innerHTML = "";
+
+          $input.addEventListener('input', function () {
+            // 0x03. parse query to keywords list
+            var str = '<ul class=\"search-result-list\">';
+            var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+            $resultContent.innerHTML = "";
+            if (this.value.trim().length <= 0) {
+              return;
+            }
+            // 0x04. perform local searching
+            datas.forEach(function (data) {
+              var isMatch = true;
+              var content_index = [];
+              if (!data.title || data.title.trim() === '') {
+                data.title = "Untitled";
+              }
+              var orig_data_title = data.title.trim();
+              var data_title = orig_data_title.toLowerCase();
+              var orig_data_content = data.content.trim().replace(/<[^>]+>/g, "");
+              var data_content = orig_data_content.toLowerCase();
+              var data_url = data.url;
+              var index_title = -1;
+              var index_content = -1;
+              var first_occur = -1;
+              // only match artiles with not empty contents
+              if (data_content !== '') {
+                keywords.forEach(function (keyword, i) {
+                  index_title = data_title.indexOf(keyword);
+                  index_content = data_content.indexOf(keyword);
+
+                  if (index_title < 0 && index_content < 0) {
+                    isMatch = false;
+                  } else {
+                    if (index_content < 0) {
+                      index_content = 0;
+                    }
+                    if (i == 0) {
+                      first_occur = index_content;
+                    }
+                    // content_index.push({index_content:index_content, keyword_len:keyword_len});
+                  }
+                });
+              } else {
+                isMatch = false;
+              }
+              // 0x05. show search results
+              if (isMatch) {
+                str += "<li><a href='" + data_url + "' class='search-result-title'>" + orig_data_title + "</a>";
+                var content = orig_data_content;
+                if (first_occur >= 0) {
+                  // cut out 100 characters
+                  var start = first_occur - 20;
+                  var end = first_occur + 80;
+
+                  if (start < 0) {
+                    start = 0;
+                  }
+
+                  if (start == 0) {
+                    end = 100;
+                  }
+
+                  if (end > content.length) {
+                    end = content.length;
+                  }
+
+                  var match_content = content.substr(start, end);
+
+                  // highlight all keywords
+                  keywords.forEach(function (keyword) {
+                    var regS = new RegExp(keyword, "gi");
+                    match_content = match_content.replace(regS, "<span class=\"search-keyword\">" + keyword + "</span>");
+                  });
+
+                  str += "<p class=\"search-result-abstract\">" + match_content + "...</p>"
+                }
+                str += "</li>";
+              }
+            });
+            str += "</ul>";
+            if (str.indexOf('<li>') === -1) {
+              return $resultContent.innerHTML = "<ul><span class='local-search-empty'>没有找到内容，请尝试更换检索词。<span></ul>";
+            }
+            $resultContent.innerHTML = str;
+          });
+        },
+        error: function(xhr, status, error) {
+          $resultContent.innerHTML = ""
+          if (xhr.status === 404) {
+            $resultContent.innerHTML = "<ul><span class='local-search-empty'>未找到search.xml文件，具体请参考：<a href='https://github.com/zchengsite/hexo-theme-oranges#configuration' target='_black'>configuration</a><span></ul>";
+          } else {
+            $resultContent.innerHTML = "<ul><span class='local-search-empty'>请求失败，尝试重新刷新页面或稍后重试。<span></ul>";
+          }
+        }
+      });
+      $(document).on('click', '#search-close-icon', function() {
+        $('#search-input').val('');
+        $('#search-result').html('');
+      });
+    }
+
+    var getSearchFile = function() {
+        var path = "/search.xml";
+        searchFunc(path, 'search-input', 'search-result');
+    }
+  </script>
+
+
+
+
+        
+  <div class="tools-bar-item theme-icon" id="switch-color-scheme">
+    <a href="javascript: void(0)">
+      <i id="theme-icon" class="iconfont icon-moon"></i>
+    </a>
+  </div>
+
+  
+<script src="/js/colorscheme.js"></script>
+
+
+
+
+
+        
+  
+    <div class="share-icon tools-bar-item">
+      <a href="javascript: void(0)" id="share-icon">
+        <i class="iconfont iconshare"></i>
+      </a>
+      <div class="share-content hidden">
+        
+          <a class="share-item" href="https://twitter.com/intent/tweet?text=' + %E3%80%90%E6%95%B0%E5%AD%A6%2F%E6%A6%82%E7%8E%87%E8%AE%BA%E3%80%91%E5%A4%87%E5%BF%98 + '&url=' + https%3A%2F%2Fcoder109.github.io%2F2022%2F10%2F16%2Fgai-lu-lun-chang-yong-jie-lun-bei-wang%2F + '" target="_blank" title="Twitter">
+            <i class="iconfont icon-twitter"></i>
+          </a>
+        
+        
+      </div>
+    </div>
+  
+  
+<script src="/js/shares.js"></script>
+
+
+
+      </div>
+    </div>
+  
+        <style>
+            [bg-lazy] {
+                background-image: none !important;
+                background-color: #eee !important;
+            }
+        </style>
+        <script>
+            window.imageLazyLoadSetting = {
+                isSPA: false,
+                preloadRatio: 1,
+                processImages: null,
+            };
+        </script><script>window.addEventListener("load",function(){var t=/\.(gif|jpg|jpeg|tiff|png)$/i,r=/^data:image\/[a-z]+;base64,/;Array.prototype.slice.call(document.querySelectorAll("img[data-original]")).forEach(function(a){var e=a.parentNode;"A"===e.tagName&&(e.href.match(t)||e.href.match(r))&&(e.href=a.dataset.original)})});</script><script>!function(r){r.imageLazyLoadSetting.processImages=t;var e=r.imageLazyLoadSetting.isSPA,n=r.imageLazyLoadSetting.preloadRatio||1,c=a();function a(){var t=Array.prototype.slice.call(document.querySelectorAll("img[data-original]")),e=Array.prototype.slice.call(document.querySelectorAll("[bg-lazy]"));return t.concat(e)}function t(){e&&(c=a());for(var t,o=0;o<c.length;o++)0<=(t=(t=c[o]).getBoundingClientRect()).bottom&&0<=t.left&&t.top<=(r.innerHeight*n||document.documentElement.clientHeight*n)&&function(){var t,e,n,a,i=c[o];e=function(){c=c.filter(function(t){return i!==t}),r.imageLazyLoadSetting.onImageLoaded&&r.imageLazyLoadSetting.onImageLoaded(i)},(t=i).hasAttribute("bg-lazy")?(t.removeAttribute("bg-lazy"),e&&e()):(n=new Image,a=t.getAttribute("data-original"),n.onload=function(){t.src=a,t.removeAttribute("data-original"),e&&e()},t.src!==a&&(n.src=a))}()}function i(){clearTimeout(t.tId),t.tId=setTimeout(t,500)}t(),document.addEventListener("scroll",i),r.addEventListener("resize",i),r.addEventListener("orientationchange",i)}(this);</script></body>
+</html>

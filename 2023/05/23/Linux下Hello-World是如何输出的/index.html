@@ -1,0 +1,689 @@
+<!DOCTYPE html>
+<html lang="zh-CN" color-mode="light">
+
+  <head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="keywords" content="" />
+  <meta name="author" content="Coder109" />
+  <meta name="description" content="" />
+  
+  
+  <title>
+    
+      Linux下Hello World是如何输出的 
+      
+      
+      |
+    
+     幻
+  </title>
+
+  
+    <link rel="apple-touch-icon" href="/images/favicon.ico">
+    <link rel="icon" href="/images/favicon.ico">
+  
+
+  <!-- Raleway-Font -->
+  <link href="https://fonts.googleapis.com/css?family=Raleway&display=swap" rel="stylesheet">
+
+  <!-- hexo site css -->
+  <link rel="stylesheet" href="/css/main.css" />
+  <link rel="stylesheet" href="//at.alicdn.com/t/font_1886449_67xjft27j1l.css" />
+  <!-- 代码块风格 -->
+  
+
+  <!-- jquery3.3.1 -->
+  
+    <script defer type="text/javascript" src="/plugins/jquery.min.js"></script>
+  
+
+  <!-- fancybox -->
+  
+    <link href="/plugins/jquery.fancybox.min.css" rel="stylesheet">
+    <script defer type="text/javascript" src="/plugins/jquery.fancybox.min.js"></script>
+  
+  
+<script src="/js/fancybox.js"></script>
+
+
+  
+
+  
+
+  <script>
+    var html = document.documentElement
+    const colorMode = localStorage.getItem('color-mode')
+    if (colorMode) {
+      document.documentElement.setAttribute('color-mode', colorMode)
+    }
+  </script>
+<meta name="generator" content="Hexo 6.3.0"><link rel="alternate" href="/atom.xml" title="幻" type="application/atom+xml">
+</head>
+
+
+  <body>
+    <div id="app">
+      <div class="header">
+  <div class="avatar">
+    <a href="/">
+      <!-- 头像取消懒加载，添加no-lazy -->
+      
+        <img no-lazy src="/images/favicon.ico" alt="">
+      
+    </a>
+    <div class="nickname"><a href="/">幻</a></div>
+  </div>
+  <div class="navbar">
+    <ul>
+      
+        <li class="nav-item" data-path="/">
+          <a href="/">Home</a>
+        </li>
+      
+        <li class="nav-item" data-path="/archives/">
+          <a href="/archives/">Archives</a>
+        </li>
+      
+        <li class="nav-item" data-path="/tags/">
+          <a href="/tags/">Tags</a>
+        </li>
+      
+        <li class="nav-item" data-path="/friends/">
+          <a href="/friends/">Friends</a>
+        </li>
+      
+        <li class="nav-item" data-path="/about/">
+          <a href="/about/">About</a>
+        </li>
+      
+    </ul>
+  </div>
+</div>
+
+
+<script src="/js/activeNav.js"></script>
+
+
+
+      <div class="flex-container">
+        <!-- 文章详情页，展示文章具体内容，url形式：https://yoursite/文章标题/ -->
+<!-- 同时为「标签tag」，「朋友friend」，「分类categories」，「关于about」页面的承载页面，具体展示取决于page.type -->
+
+
+  <!-- LaTex Display -->
+
+  
+    <script async type="text/javascript" src="/plugins/mathjax/tex-chtml.js"></script>
+  
+  <script>
+    MathJax = {
+      tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']]
+      }
+    }
+  </script>
+
+
+
+
+
+  <!-- clipboard -->
+
+  
+    <script async type="text/javascript" src="/plugins/clipboard.min.js"></script>
+  
+  
+<script src="/js/codeCopy.js"></script>
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  <!-- 文章内容页 url形式：https://yoursite/文章标题/ -->
+  <div class="container post-details" id="post-details">
+    <div class="post-content">
+      <div class="post-title">Linux下Hello World是如何输出的</div>
+      <div class="post-attach">
+        <span class="post-pubtime">
+          <i class="iconfont icon-updatetime mr-10" title="更新时间"></i>
+          2023-05-23 12:23:38
+        </span>
+        
+              <span class="post-tags">
+                <i class="iconfont icon-tags mr-10" title="标签"></i>
+                
+                <span class="span--tag mr-8">
+                  <a href="/tags/Linux/" title="Linux">
+                    #Linux
+                  </a>
+                </span>
+                
+                <span class="span--tag mr-8">
+                  <a href="/tags/C/" title="C">
+                    #C
+                  </a>
+                </span>
+                
+              </span>
+          
+      </div>
+      <div class="markdown-body">
+        <h1 id="引子"><a href="#引子" class="headerlink" title="引子"></a>引子</h1><p>最近开了一门名为“计算机系统”的课，以卡内基梅隆大学的《深入理解计算机系统》为教材，讲解偏向底层的一些知识：浮点数具体的表示方法、预处理编译汇编链接具体发生什么……这门课的大作业要求我们跟随“预处理-编译-汇编-链接-进程管理”的路线，写一下“Linux下Hello World是如何输出的”。</p>
+<p>然而在写大作业的时候，我还没有复习，上课也没有认真听，东拼西凑写出来了一篇文章。事到如今，差不多把教材里的知识点都掌握了，那就认真写一遍吧。</p>
+<p>上课挺没意思的。说实话。</p>
+<h1 id="0-源程序"><a href="#0-源程序" class="headerlink" title="0. 源程序"></a>0. 源程序</h1><h2 id="源程序"><a href="#源程序" class="headerlink" title="源程序"></a>源程序</h2><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">(<span class="type">int</span> argc, <span class="type">char</span> **argv)</span> &#123;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;Hello world!\n&quot;</span>);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h1 id="1-预处理"><a href="#1-预处理" class="headerlink" title="1. 预处理"></a>1. 预处理</h1><h2 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h2><p>预处理阶段，编译器主要对宏定义进行一些处理。比如，引入一些头文件、定义一些宏变量等。</p>
+<p>后缀为.c的源程序文件，通过预处理，可以生成后缀名为.i的预处理文件。</p>
+<h2 id="命令"><a href="#命令" class="headerlink" title="命令"></a>命令</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">gcc -E hello.c -o hello.i</span><br></pre></td></tr></table></figure>
+
+<h2 id="解释"><a href="#解释" class="headerlink" title="解释"></a>解释</h2><p>.i文件部分输出如下：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br></pre></td><td class="code"><pre><span class="line"># <span class="number">1</span> <span class="string">&quot;/usr/include/bits/types/__mbstate_t.h&quot;</span> <span class="number">1</span> <span class="number">3</span> <span class="number">4</span></span><br><span class="line"># <span class="number">13</span> <span class="string">&quot;/usr/include/bits/types/__mbstate_t.h&quot;</span> <span class="number">3</span> <span class="number">4</span></span><br><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">  <span class="type">int</span> __count;</span><br><span class="line">  <span class="class"><span class="keyword">union</span></span></span><br><span class="line"><span class="class">  &#123;</span></span><br><span class="line">    <span class="type">unsigned</span> <span class="type">int</span> __wch;</span><br><span class="line">    <span class="type">char</span> __wchb[<span class="number">4</span>];</span><br><span class="line">  &#125; __value;</span><br><span class="line">&#125; <span class="type">__mbstate_t</span>;</span><br><span class="line"># <span class="number">6</span> <span class="string">&quot;/usr/include/bits/types/__fpos_t.h&quot;</span> <span class="number">2</span> <span class="number">3</span> <span class="number">4</span></span><br><span class="line"></span><br><span class="line">...</span><br><span class="line">    </span><br><span class="line"><span class="keyword">extern</span> <span class="type">size_t</span> <span class="title function_">fwrite</span> <span class="params">(<span class="type">const</span> <span class="type">void</span> *__restrict __ptr, <span class="type">size_t</span> __size,</span></span><br><span class="line"><span class="params">        <span class="type">size_t</span> __n, FILE *__restrict __s)</span>;</span><br><span class="line"># <span class="number">702</span> <span class="string">&quot;/usr/include/stdio.h&quot;</span> <span class="number">3</span> <span class="number">4</span></span><br><span class="line"><span class="keyword">extern</span> <span class="type">size_t</span> <span class="title function_">fread_unlocked</span> <span class="params">(<span class="type">void</span> *__restrict __ptr, <span class="type">size_t</span> __size,</span></span><br><span class="line"><span class="params">         <span class="type">size_t</span> __n, FILE *__restrict __stream)</span> ;</span><br><span class="line"><span class="keyword">extern</span> <span class="type">size_t</span> <span class="title function_">fwrite_unlocked</span> <span class="params">(<span class="type">const</span> <span class="type">void</span> *__restrict __ptr, <span class="type">size_t</span> __size,</span></span><br><span class="line"><span class="params">          <span class="type">size_t</span> __n, FILE *__restrict __stream)</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">extern</span> <span class="type">int</span> <span class="title function_">fseek</span> <span class="params">(FILE *__stream, <span class="type">long</span> <span class="type">int</span> __off, <span class="type">int</span> __whence)</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">extern</span> <span class="type">long</span> <span class="type">int</span> <span class="title function_">ftell</span> <span class="params">(FILE *__stream)</span> ;</span><br><span class="line"></span><br><span class="line"><span class="keyword">extern</span> <span class="type">void</span> <span class="title function_">rewind</span> <span class="params">(FILE *__stream)</span>;</span><br><span class="line"># <span class="number">736</span> <span class="string">&quot;/usr/include/stdio.h&quot;</span> <span class="number">3</span> <span class="number">4</span></span><br><span class="line"><span class="keyword">extern</span> <span class="type">int</span> <span class="title function_">fseeko</span> <span class="params">(FILE *__stream, <span class="type">__off_t</span> __off, <span class="type">int</span> __whence)</span>;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">extern</span> <span class="type">__off_t</span> <span class="title function_">ftello</span> <span class="params">(FILE *__stream)</span> ;</span><br><span class="line"># <span class="number">760</span> <span class="string">&quot;/usr/include/stdio.h&quot;</span> <span class="number">3</span> <span class="number">4</span></span><br><span class="line"><span class="keyword">extern</span> <span class="type">int</span> <span class="title function_">fgetpos</span> <span class="params">(FILE *__restrict __stream, <span class="type">fpos_t</span> *__restrict __pos)</span>;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">extern</span> <span class="type">int</span> <span class="title function_">fsetpos</span> <span class="params">(FILE *__stream, <span class="type">const</span> <span class="type">fpos_t</span> *__pos)</span>;</span><br><span class="line"># <span class="number">786</span> <span class="string">&quot;/usr/include/stdio.h&quot;</span> <span class="number">3</span> <span class="number">4</span></span><br><span class="line"><span class="keyword">extern</span> <span class="type">void</span> <span class="title function_">clearerr</span> <span class="params">(FILE *__stream)</span> __<span class="title function_">attribute__</span> <span class="params">((__nothrow__ , __leaf__))</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">extern</span> <span class="type">int</span> <span class="title function_">feof</span> <span class="params">(FILE *__stream)</span> __<span class="title function_">attribute__</span> <span class="params">((__nothrow__ , __leaf__))</span> ;</span><br><span class="line"></span><br><span class="line"><span class="keyword">extern</span> <span class="type">int</span> <span class="title function_">ferror</span> <span class="params">(FILE *__stream)</span> __<span class="title function_">attribute__</span> <span class="params">((__nothrow__ , __leaf__))</span> ;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">extern</span> <span class="type">void</span> <span class="title function_">clearerr_unlocked</span> <span class="params">(FILE *__stream)</span> __<span class="title function_">attribute__</span> <span class="params">((__nothrow__ , __leaf__))</span>;</span><br><span class="line"><span class="keyword">extern</span> <span class="type">int</span> <span class="title function_">feof_unlocked</span> <span class="params">(FILE *__stream)</span> __<span class="title function_">attribute__</span> <span class="params">((__nothrow__ , __leaf__))</span> ;</span><br><span class="line"><span class="keyword">extern</span> <span class="type">int</span> <span class="title function_">ferror_unlocked</span> <span class="params">(FILE *__stream)</span> __<span class="title function_">attribute__</span> <span class="params">((__nothrow__ , __leaf__))</span> ;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">extern</span> <span class="type">void</span> <span class="title function_">perror</span> <span class="params">(<span class="type">const</span> <span class="type">char</span> *__s)</span>;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">extern</span> <span class="type">int</span> <span class="title function_">fileno</span> <span class="params">(FILE *__stream)</span> __<span class="title function_">attribute__</span> <span class="params">((__nothrow__ , __leaf__))</span> ;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">extern</span> <span class="type">int</span> <span class="title function_">fileno_unlocked</span> <span class="params">(FILE *__stream)</span> __<span class="title function_">attribute__</span> <span class="params">((__nothrow__ , __leaf__))</span> ;</span><br><span class="line"># <span class="number">823</span> <span class="string">&quot;/usr/include/stdio.h&quot;</span> <span class="number">3</span> <span class="number">4</span></span><br><span class="line"><span class="keyword">extern</span> <span class="type">int</span> <span class="title function_">pclose</span> <span class="params">(FILE *__stream)</span>;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">extern</span> FILE *<span class="title function_">popen</span> <span class="params">(<span class="type">const</span> <span class="type">char</span> *__command, <span class="type">const</span> <span class="type">char</span> *__modes)</span></span><br><span class="line">  __<span class="title function_">attribute__</span> <span class="params">((__malloc__))</span> __<span class="title function_">attribute__</span> <span class="params">((__malloc__ (pclose, <span class="number">1</span>)))</span> ;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">extern</span> <span class="type">char</span> *<span class="title function_">ctermid</span> <span class="params">(<span class="type">char</span> *__s)</span> __<span class="title function_">attribute__</span> <span class="params">((__nothrow__ , __leaf__))</span></span><br><span class="line">  __<span class="title function_">attribute__</span> <span class="params">((__access__ (__write_only__, <span class="number">1</span>)))</span>;</span><br><span class="line"># <span class="number">867</span> <span class="string">&quot;/usr/include/stdio.h&quot;</span> <span class="number">3</span> <span class="number">4</span></span><br><span class="line"><span class="keyword">extern</span> <span class="type">void</span> <span class="title function_">flockfile</span> <span class="params">(FILE *__stream)</span> __<span class="title function_">attribute__</span> <span class="params">((__nothrow__ , __leaf__))</span>;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">extern</span> <span class="type">int</span> <span class="title function_">ftrylockfile</span> <span class="params">(FILE *__stream)</span> __<span class="title function_">attribute__</span> <span class="params">((__nothrow__ , __leaf__))</span> ;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">extern</span> <span class="type">void</span> <span class="title function_">funlockfile</span> <span class="params">(FILE *__stream)</span> __<span class="title function_">attribute__</span> <span class="params">((__nothrow__ , __leaf__))</span>;</span><br><span class="line"># <span class="number">885</span> <span class="string">&quot;/usr/include/stdio.h&quot;</span> <span class="number">3</span> <span class="number">4</span></span><br><span class="line"><span class="keyword">extern</span> <span class="type">int</span> __uflow (FILE *);</span><br><span class="line"><span class="keyword">extern</span> <span class="type">int</span> __overflow (FILE *, <span class="type">int</span>);</span><br><span class="line"># <span class="number">909</span> <span class="string">&quot;/usr/include/stdio.h&quot;</span> <span class="number">3</span> <span class="number">4</span></span><br><span class="line"></span><br><span class="line"># <span class="number">2</span> <span class="string">&quot;hello.c&quot;</span> <span class="number">2</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"># <span class="number">3</span> <span class="string">&quot;hello.c&quot;</span></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">(<span class="type">int</span> argc, <span class="type">char</span> **argv)</span> &#123;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;Hello world!\n&quot;</span>);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>如您所见，预处理后的文件引入了许多结构体、许多函数。我们编写的主函数，则位于这个文件的末尾。</p>
+<p>此外，有很多，类似于这样的语句：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"># <span class="number">885</span> <span class="string">&quot;/usr/include/stdio.h&quot;</span> <span class="number">3</span> <span class="number">4</span></span><br></pre></td></tr></table></figure>
+
+<p>这些语句标记了源文件和代码行来自于哪个头文件、哪一行。您可以参考gcc的<a target="_blank" rel="noopener" href="http://gcc.gnu.org/onlinedocs/cpp/Preprocessor-Output.html">官方文档</a>获取更多信息。</p>
+<h1 id="2-编译"><a href="#2-编译" class="headerlink" title="2. 编译"></a>2. 编译</h1><h2 id="概念-1"><a href="#概念-1" class="headerlink" title="概念"></a>概念</h2><p>将程序语言转换为汇编语言。</p>
+<p>通过编译，.i文件可以生成.s文件。</p>
+<h2 id="命令-1"><a href="#命令-1" class="headerlink" title="命令"></a>命令</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">gcc -S hello.i -o hello.s</span><br><span class="line">gcc -S hello.c</span><br></pre></td></tr></table></figure>
+
+<p>这两种生成<code>hello.s</code>的方法是等价的，最后的结果没有任何差异。您可以通过<code>diff</code>命令来检查。</p>
+<h2 id="解释-1"><a href="#解释-1" class="headerlink" title="解释"></a>解释</h2><p><code>hello.s</code>文件输出如下：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line">	.file	&quot;hello.c&quot;</span><br><span class="line">	.text</span><br><span class="line">	.section	.rodata</span><br><span class="line">.LC0:</span><br><span class="line">	.string	&quot;Hello world!&quot;</span><br><span class="line">	.text</span><br><span class="line">	.globl	main</span><br><span class="line">	.type	main, @function</span><br><span class="line">main:</span><br><span class="line">.LFB0:</span><br><span class="line">	.cfi_startproc</span><br><span class="line">	pushq	%rbp</span><br><span class="line">	.cfi_def_cfa_offset 16</span><br><span class="line">	.cfi_offset 6, -16</span><br><span class="line">	movq	%rsp, %rbp</span><br><span class="line">	.cfi_def_cfa_register 6</span><br><span class="line">	subq	$16, %rsp</span><br><span class="line">	movl	%edi, -4(%rbp)</span><br><span class="line">	movq	%rsi, -16(%rbp)</span><br><span class="line">	leaq	.LC0(%rip), %rax</span><br><span class="line">	movq	%rax, %rdi</span><br><span class="line">	call	puts@PLT</span><br><span class="line">	movl	$0, %eax</span><br><span class="line">	leave</span><br><span class="line">	.cfi_def_cfa 7, 8</span><br><span class="line">	ret</span><br><span class="line">	.cfi_endproc</span><br><span class="line">.LFE0:</span><br><span class="line">	.size	main, .-main</span><br><span class="line">	.ident	&quot;GCC: (GNU) 13.1.1 20230429&quot;</span><br><span class="line">	.section	.note.GNU-stack,&quot;&quot;,@progbits</span><br></pre></td></tr></table></figure>
+
+<p>该文件涉及到的知识点很多。</p>
+<ul>
+<li><code>.file</code>，表明了该.s文件的源程序文件名。</li>
+<li><code>.text</code>，表明代码节的开启，每个节的作用，在2.5节将进行解释。</li>
+<li><code>.section .rodata</code>，代表定义一个只读的数据节。</li>
+<li><code>.LC0</code>，也就是<code>local constant 0</code>，局部常量。</li>
+<li><code>.string</code>，声明了一个字符串。</li>
+<li><code>.globl main</code>，声明了main是一个全局符号。</li>
+<li><code>.type A, B</code>，声明了<code>A</code>为<code>B</code>类型。</li>
+<li><code>.LFB0 .LFE0</code>，全称分别为<code>Local Function Begins</code>，<code>Local Function Ends</code>，代表局部函数的开始和结束。</li>
+<li><code>.size</code>，表明main符号的尺寸。</li>
+<li><code>.ident</code>，表明编译器版本。</li>
+<li><code>.section	.note.GNU-stack,&quot;&quot;,@progbits</code>，意思是这个segment会被标记为 “非可执行栈”，引用自<a target="_blank" rel="noopener" href="https://www.jianshu.com/p/e385ff61dd7c">简书</a>。</li>
+<li><code>cfi</code>，即<code>Call Frame Information</code>，以之开头的一些指令和栈相关。</li>
+</ul>
+<h1 id="2-5-汇编与内存相关知识"><a href="#2-5-汇编与内存相关知识" class="headerlink" title="2.5 汇编与内存相关知识"></a>2.5 汇编与内存相关知识</h1><p>我们现在所使用的是AT&amp;T汇编指令系统。</p>
+<p>该指令系统的部分特点是：</p>
+<ul>
+<li><p>立即数，也就是汇编指令中的数字，前面需要加上美元符号。比如<code>$1</code>、<code>$5</code>等。</p>
+</li>
+<li><p>寄存器，需要在前面加上百分号。比如<code>%rbp</code>,<code>%rax</code>等。如果寄存器加上括号，比如<code>(%rax)</code>代表间接寻址，也就是先从<code>rax</code>里取一个地址，在去内存中根据该地址寻找数据。</p>
+</li>
+<li><p>指令后需要加一个标记，比如<code>pushq</code>、<code>movq</code>最后的<code>q</code>，和<code>movl</code>最后的<code>l</code>。标记有四种b,w,l,q，分别代表操作的数据长度为1，2，4，8字节。</p>
+</li>
+<li><p>向函数中传递参数，前六个参数分别存入<code>rdi</code>、<code>rsi</code>、<code>rdx</code>、<code>rcx</code>、<code>r8</code>、<code>r9</code>寄存器中，其他参数入栈。返回值存入<code>rax</code>寄存器中。</p>
+</li>
+</ul>
+<p>当程序运行时，内存布局如下：</p>
+<ul>
+<li>栈：存储局部变量、函数参数等。</li>
+<li>堆：存储动态分配的内容。</li>
+<li>数据段：存储全局变量、static变量、字符串。</li>
+<li>代码段：存储只读、可执行的机器指令。</li>
+</ul>
+<p>当程序编译时，各内容布局如下：</p>
+<ul>
+<li><code>.text</code>节：存储代码。</li>
+<li><code>.rodata</code>节：存储只读数据（<code>printf</code>的格式串等）。</li>
+<li><code>.data</code>节：存储数据和已经初始化的全局与静态变量。</li>
+<li><code>.bss</code>节：存储为初始化的全局变量。</li>
+<li><code>.symtab</code>节：存储符号表。</li>
+<li>…</li>
+</ul>
+<h1 id="3-汇编"><a href="#3-汇编" class="headerlink" title="3. 汇编"></a>3. 汇编</h1><h2 id="概念-2"><a href="#概念-2" class="headerlink" title="概念"></a>概念</h2><p>将汇编语言转换为机器语言。</p>
+<p>通过汇编，.s文件会生成.o文件。</p>
+<h2 id="命令-2"><a href="#命令-2" class="headerlink" title="命令"></a>命令</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">gcc -c hello.s -o hello.o</span><br></pre></td></tr></table></figure>
+
+<h2 id="解释-2"><a href="#解释-2" class="headerlink" title="解释"></a>解释</h2><p>最终生成一个二进制文件，而这个文件直接通过<code>cat</code>输出，没办法被阅读。需要反汇编，命令如下：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">objdump -D hello.o</span><br></pre></td></tr></table></figure>
+
+<p>输出如下：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">hello.o:     file format elf64-x86-64</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">Disassembly of section .text:</span><br><span class="line"></span><br><span class="line">0000000000000000 &lt;main&gt;:</span><br><span class="line">   0:	55                   	push   %rbp</span><br><span class="line">   1:	48 89 e5             	mov    %rsp,%rbp</span><br><span class="line">   4:	48 83 ec 10          	sub    $0x10,%rsp</span><br><span class="line">   8:	89 7d fc             	mov    %edi,-0x4(%rbp)</span><br><span class="line">   b:	48 89 75 f0          	mov    %rsi,-0x10(%rbp)</span><br><span class="line">   f:	48 8d 05 00 00 00 00 	lea    0x0(%rip),%rax        # 16 &lt;main+0x16&gt;</span><br><span class="line">  16:	48 89 c7             	mov    %rax,%rdi</span><br><span class="line">  19:	e8 00 00 00 00       	call   1e &lt;main+0x1e&gt;</span><br><span class="line">  1e:	b8 00 00 00 00       	mov    $0x0,%eax</span><br><span class="line">  23:	c9                   	leave</span><br><span class="line">  24:	c3                   	ret</span><br><span class="line"></span><br><span class="line">Disassembly of section .rodata:</span><br><span class="line"></span><br><span class="line">0000000000000000 &lt;.rodata&gt;:</span><br><span class="line">   0:	48                   	rex.W</span><br><span class="line">   1:	65 6c                	gs insb (%dx),%es:(%rdi)</span><br><span class="line">   3:	6c                   	insb   (%dx),%es:(%rdi)</span><br><span class="line">   4:	6f                   	outsl  %ds:(%rsi),(%dx)</span><br><span class="line">   5:	20 77 6f             	and    %dh,0x6f(%rdi)</span><br><span class="line">   8:	72 6c                	jb     76 &lt;main+0x76&gt;</span><br><span class="line">   a:	64 21 00             	and    %eax,%fs:(%rax)</span><br><span class="line"></span><br><span class="line">Disassembly of section .comment:</span><br><span class="line"></span><br><span class="line">0000000000000000 &lt;.comment&gt;:</span><br><span class="line">   0:	00 47 43             	add    %al,0x43(%rdi)</span><br><span class="line">   3:	43 3a 20             	rex.XB cmp (%r8),%spl</span><br><span class="line">   6:	28 47 4e             	sub    %al,0x4e(%rdi)</span><br><span class="line">   9:	55                   	push   %rbp</span><br><span class="line">   a:	29 20                	sub    %esp,(%rax)</span><br><span class="line">   c:	31 33                	xor    %esi,(%rbx)</span><br><span class="line">   e:	2e 31 2e             	cs xor %ebp,(%rsi)</span><br><span class="line">  11:	31 20                	xor    %esp,(%rax)</span><br><span class="line">  13:	32 30                	xor    (%rax),%dh</span><br><span class="line">  15:	32 33                	xor    (%rbx),%dh</span><br><span class="line">  17:	30 34 32             	xor    %dh,(%rdx,%rsi,1)</span><br><span class="line">  1a:	39 00                	cmp    %eax,(%rax)</span><br><span class="line"></span><br><span class="line">Disassembly of section .note.gnu.property:</span><br><span class="line"></span><br><span class="line">0000000000000000 &lt;.note.gnu.property&gt;:</span><br><span class="line">   0:	04 00                	add    $0x0,%al</span><br><span class="line">   2:	00 00                	add    %al,(%rax)</span><br><span class="line">   4:	20 00                	and    %al,(%rax)</span><br><span class="line">   6:	00 00                	add    %al,(%rax)</span><br><span class="line">   8:	05 00 00 00 47       	add    $0x47000000,%eax</span><br><span class="line">   d:	4e 55                	rex.WRX push %rbp</span><br><span class="line">   f:	00 02                	add    %al,(%rdx)</span><br><span class="line">  11:	00 01                	add    %al,(%rcx)</span><br><span class="line">  13:	c0 04 00 00          	rolb   $0x0,(%rax,%rax,1)</span><br><span class="line">	...</span><br><span class="line">  1f:	00 01                	add    %al,(%rcx)</span><br><span class="line">  21:	00 01                	add    %al,(%rcx)</span><br><span class="line">  23:	c0 04 00 00          	rolb   $0x0,(%rax,%rax,1)</span><br><span class="line">  27:	00 01                	add    %al,(%rcx)</span><br><span class="line">  29:	00 00                	add    %al,(%rax)</span><br><span class="line">  2b:	00 00                	add    %al,(%rax)</span><br><span class="line">  2d:	00 00                	add    %al,(%rax)</span><br><span class="line">	...</span><br><span class="line"></span><br><span class="line">Disassembly of section .eh_frame:</span><br><span class="line"></span><br><span class="line">0000000000000000 &lt;.eh_frame&gt;:</span><br><span class="line">   0:	14 00                	adc    $0x0,%al</span><br><span class="line">   2:	00 00                	add    %al,(%rax)</span><br><span class="line">   4:	00 00                	add    %al,(%rax)</span><br><span class="line">   6:	00 00                	add    %al,(%rax)</span><br><span class="line">   8:	01 7a 52             	add    %edi,0x52(%rdx)</span><br><span class="line">   b:	00 01                	add    %al,(%rcx)</span><br><span class="line">   d:	78 10                	js     1f &lt;.eh_frame+0x1f&gt;</span><br><span class="line">   f:	01 1b                	add    %ebx,(%rbx)</span><br><span class="line">  11:	0c 07                	or     $0x7,%al</span><br><span class="line">  13:	08 90 01 00 00 1c    	or     %dl,0x1c000001(%rax)</span><br><span class="line">  19:	00 00                	add    %al,(%rax)</span><br><span class="line">  1b:	00 1c 00             	add    %bl,(%rax,%rax,1)</span><br><span class="line">  1e:	00 00                	add    %al,(%rax)</span><br><span class="line">  20:	00 00                	add    %al,(%rax)</span><br><span class="line">  22:	00 00                	add    %al,(%rax)</span><br><span class="line">  24:	25 00 00 00 00       	and    $0x0,%eax</span><br><span class="line">  29:	41 0e                	rex.B (bad)</span><br><span class="line">  2b:	10 86 02 43 0d 06    	adc    %al,0x60d4302(%rsi)</span><br><span class="line">  31:	60                   	(bad)</span><br><span class="line">  32:	0c 07                	or     $0x7,%al</span><br><span class="line">  34:	08 00                	or     %al,(%rax)</span><br><span class="line">	...</span><br></pre></td></tr></table></figure>
+
+<p>第一行说明了该文件为ELF文件，ELF即Executable and Linkable Format，可执行可链接文件格式。和上一步输出得到的文件相比，本文件有如下几个特点：</p>
+<ol>
+<li><code>call</code>指令后面是具体的地址，而非抽象的文件名。</li>
+<li>开始使用十六进制操作数。</li>
+<li>出现了很多节，起始地址都为0。</li>
+<li>…</li>
+</ol>
+<h1 id="4-链接"><a href="#4-链接" class="headerlink" title="4. 链接"></a>4. 链接</h1><h2 id="概念-3"><a href="#概念-3" class="headerlink" title="概念"></a>概念</h2><p>一个程序可能有很多个模块，比如假设一个程序由三个源文件组成，其中第一个文件中的很多变量可能在第二个文件中定义。和<code>#include</code>引入头文件不同，链接一般是将多个<code>.o</code>文件拼凑起一个完整的程序。</p>
+<p>可以在编译时链接，也可以在运行时通过<code>dlopen()</code>等函数动态链接一些其他文件，在Windows下，动态链接的是动态链接表<code>.dll</code>文件，在Linux下，动态链接的是共享库文件<code>.so</code>。</p>
+<p>链接分两个步骤：符号解析和重定位，前者解释所有的符号，将每一个符号与一个解释关联起来，所谓符号，要么是函数名，要么是变量；后者则给这些符号一个安身之所，定位到一个绝对内存位置。</p>
+<h2 id="命令-3"><a href="#命令-3" class="headerlink" title="命令"></a>命令</h2><p>通过链接器<code>ld</code>链接即可。本例可以通过：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ld -o hello -dynamic-linker /lib64/ld-linux-x86-64.so.2 /usr/lib/crt1.o /usr/lib/crti.o hello.o /usr/lib/libc.so /usr/lib/crtn.o</span><br></pre></td></tr></table></figure>
+
+<p>进行编译时链接。</p>
+<h2 id="解释-3"><a href="#解释-3" class="headerlink" title="解释"></a>解释</h2><p>通过反编译，链接后的文件部分输出如下：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line">0000000000400458 &lt;.gnu.version_r&gt;:</span><br><span class="line">  400458:	01 00                	add    %eax,(%rax)</span><br><span class="line">  40045a:	02 00                	add    (%rax),%al</span><br><span class="line">  40045c:	18 00                	sbb    %al,(%rax)</span><br><span class="line">  40045e:	00 00                	add    %al,(%rax)</span><br><span class="line">  400460:	10 00                	adc    %al,(%rax)</span><br><span class="line">  400462:	00 00                	add    %al,(%rax)</span><br><span class="line">  400464:	00 00                	add    %al,(%rax)</span><br><span class="line">  400466:	00 00                	add    %al,(%rax)</span><br><span class="line">  400468:	75 1a                	jne    400484 &lt;_init-0xb7c&gt;</span><br><span class="line">  40046a:	69 09 00 00 03 00    	imul   $0x30000,(%rcx),%ecx</span><br><span class="line">  400470:	22 00                	and    (%rax),%al</span><br><span class="line">  400472:	00 00                	add    %al,(%rax)</span><br><span class="line">  400474:	10 00                	adc    %al,(%rax)</span><br><span class="line">  400476:	00 00                	add    %al,(%rax)</span><br><span class="line">  400478:	b4 91                	mov    $0x91,%ah</span><br><span class="line">  40047a:	96                   	xchg   %eax,%esi</span><br><span class="line">  40047b:	06                   	(bad)</span><br><span class="line">  40047c:	00 00                	add    %al,(%rax)</span><br><span class="line">  40047e:	02 00                	add    (%rax),%al</span><br><span class="line">  400480:	2e 00 00             	cs add %al,(%rax)</span><br><span class="line">  400483:	00 00                	add    %al,(%rax)</span><br><span class="line">  400485:	00 00                	add    %al,(%rax)</span><br><span class="line">	...</span><br><span class="line"></span><br><span class="line">Disassembly of section .rela.dyn:</span><br><span class="line"></span><br><span class="line">0000000000400488 &lt;.rela.dyn&gt;:</span><br><span class="line">  400488:	d8 3f                	fdivrs (%rdi)</span><br><span class="line">  40048a:	40 00 00             	rex add %al,(%rax)</span><br><span class="line">  40048d:	00 00                	add    %al,(%rax)</span><br><span class="line">  40048f:	00 06                	add    %al,(%rsi)</span><br><span class="line">  400491:	00 00                	add    %al,(%rax)</span><br><span class="line">  400493:	00 01                	add    %al,(%rcx)</span><br><span class="line">	...</span><br><span class="line">  40049d:	00 00                	add    %al,(%rax)</span><br><span class="line">  40049f:	00 e0                	add    %ah,%al</span><br><span class="line">  4004a1:	3f                   	(bad)</span><br><span class="line">  4004a2:	40 00 00             	rex add %al,(%rax)</span><br><span class="line">  4004a5:	00 00                	add    %al,(%rax)</span><br><span class="line">  4004a7:	00 06                	add    %al,(%rsi)</span><br><span class="line">  4004a9:	00 00                	add    %al,(%rax)</span><br><span class="line">  4004ab:	00 03                	add    %al,(%rbx)</span><br></pre></td></tr></table></figure>
+
+<p>最大的变化是，文件变长了，除此之外也有一个显著的新特点：每一个节的开始位置不再是0,而是一个具体的地址。</p>
+<h1 id="5-进程管理、信号与内存管理"><a href="#5-进程管理、信号与内存管理" class="headerlink" title="5. 进程管理、信号与内存管理"></a>5. 进程管理、信号与内存管理</h1><h2 id="进程管理与信号"><a href="#进程管理与信号" class="headerlink" title="进程管理与信号"></a>进程管理与信号</h2><p>当我们在Shell中运行程序时，会经历几个步骤：</p>
+<ol>
+<li>读取命令。</li>
+<li>判断命令的准确性。</li>
+<li>使用<code>fork()</code>创建子进程，在子进程中调用<code>execve()</code>启动程序。</li>
+<li>Shell等待子进程完成。</li>
+</ol>
+<p>其中，用户可以给进程发出一些“信号”，比如按下<code>C-z</code>键，就会向进程输出SIGSTOP信号，按下<code>C-c</code>键，就会向进程输出SIGINT信号。当接收到这些信号时，程序可能有如下几种反应：</p>
+<ul>
+<li>忽略。</li>
+<li>调用相应的信号处理函数处理信号。</li>
+<li>执行默认的信号处理方式。</li>
+</ul>
+<h2 id="内存管理"><a href="#内存管理" class="headerlink" title="内存管理"></a>内存管理</h2><p>一定程度上，进程之间彼此独立。在创建子进程后，在父进程中修改全局变量，子进程中的对应变量不会被更改。二者的内存区域指向不同的物理空间。</p>
+<p>若想要在进程中通信，可以通过管道进行数据传输。</p>
+<h1 id="6-结论"><a href="#6-结论" class="headerlink" title="6. 结论"></a>6. 结论</h1><p>源程序首先经过预处理，处理掉一些宏定义，经过编译，将之转换为汇编语言文件，经过汇编，将之转换为二进制文件，最后经过链接，定义符号，将程序各段重定位到绝对内存地址。</p>
+<p>之后，通过Shell，读取命令，创建子进程，输出。</p>
+
+      </div>
+      
+        <div class="prev-or-next">
+          <div class="post-foot-next">
+            
+              <a href="/2023/05/10/%E5%88%A9%E7%94%A8Python%E7%88%AC%E5%8F%96flickr%E7%85%A7%E7%89%87/" target="_self">
+                <i class="iconfont icon-chevronleft"></i>
+                <span>上一页</span>
+              </a>
+            
+          </div>
+          <div class="post-attach">
+            <span class="post-pubtime">
+              <i class="iconfont icon-updatetime mr-10" title="更新时间"></i>
+              2023-05-23 12:23:38
+            </span>
+            
+                  <span class="post-tags">
+                    <i class="iconfont icon-tags mr-10" title="标签"></i>
+                    
+                    <span class="span--tag mr-8">
+                      <a href="/tags/Linux/" title="Linux">
+                        #Linux
+                      </a>
+                    </span>
+                    
+                    <span class="span--tag mr-8">
+                      <a href="/tags/C/" title="C">
+                        #C
+                      </a>
+                    </span>
+                    
+                  </span>
+              
+          </div>
+          <div class="post-foot-prev">
+            
+              <a href="/2023/05/30/C%E8%AF%AD%E8%A8%80%E6%8B%BE%E9%81%97/" target="_self">
+                <span>下一页</span>
+                <i class="iconfont icon-chevronright"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+    </div>
+    
+  <div id="btn-catalog" class="btn-catalog">
+    <i class="iconfont icon-catalog"></i>
+  </div>
+  <div class="post-catalog hidden" id="catalog">
+    <div class="title">目录</div>
+    <div class="catalog-content">
+      
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%BC%95%E5%AD%90"><span class="toc-text">引子</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#0-%E6%BA%90%E7%A8%8B%E5%BA%8F"><span class="toc-text">0. 源程序</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%BA%90%E7%A8%8B%E5%BA%8F"><span class="toc-text">源程序</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#1-%E9%A2%84%E5%A4%84%E7%90%86"><span class="toc-text">1. 预处理</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%A6%82%E5%BF%B5"><span class="toc-text">概念</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%91%BD%E4%BB%A4"><span class="toc-text">命令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%A7%A3%E9%87%8A"><span class="toc-text">解释</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#2-%E7%BC%96%E8%AF%91"><span class="toc-text">2. 编译</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%A6%82%E5%BF%B5-1"><span class="toc-text">概念</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%91%BD%E4%BB%A4-1"><span class="toc-text">命令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%A7%A3%E9%87%8A-1"><span class="toc-text">解释</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#2-5-%E6%B1%87%E7%BC%96%E4%B8%8E%E5%86%85%E5%AD%98%E7%9B%B8%E5%85%B3%E7%9F%A5%E8%AF%86"><span class="toc-text">2.5 汇编与内存相关知识</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#3-%E6%B1%87%E7%BC%96"><span class="toc-text">3. 汇编</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%A6%82%E5%BF%B5-2"><span class="toc-text">概念</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%91%BD%E4%BB%A4-2"><span class="toc-text">命令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%A7%A3%E9%87%8A-2"><span class="toc-text">解释</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#4-%E9%93%BE%E6%8E%A5"><span class="toc-text">4. 链接</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%A6%82%E5%BF%B5-3"><span class="toc-text">概念</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%91%BD%E4%BB%A4-3"><span class="toc-text">命令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%A7%A3%E9%87%8A-3"><span class="toc-text">解释</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#5-%E8%BF%9B%E7%A8%8B%E7%AE%A1%E7%90%86%E3%80%81%E4%BF%A1%E5%8F%B7%E4%B8%8E%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86"><span class="toc-text">5. 进程管理、信号与内存管理</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%BF%9B%E7%A8%8B%E7%AE%A1%E7%90%86%E4%B8%8E%E4%BF%A1%E5%8F%B7"><span class="toc-text">进程管理与信号</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86"><span class="toc-text">内存管理</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#6-%E7%BB%93%E8%AE%BA"><span class="toc-text">6. 结论</span></a></li></ol>
+      
+    </div>
+  </div>
+
+  
+<script src="/js/catalog.js"></script>
+
+
+
+
+    
+      <div class="comments-container">
+        
+
+
+
+
+  
+    <script async type="text/javascript" src='https://cdn.jsdelivr.net/npm/valine@1.4.18/dist/Valine.min.js' onload="loadValineSuc(this)"></script>
+  
+
+  <div id="vcomments"></div>
+
+  <script>
+    function loadValineSuc() {
+      new Valine({
+        el: '#vcomments',
+        appId: 'oMvaqsYv2LQSqtj795B31OWV-gzGzoHsz',
+        appKey: 'UKlJCzW9McXrX8L71Mqz5hol',
+        placeholder: 'Welcome!',
+        avatar: 'retro',
+        lang: 'zh-CN'
+      })
+    }
+  </script>
+
+    <style>
+      .comments-container .v .vempty {
+        display: none!important;
+      }
+    </style>
+
+
+
+
+      </div>
+    
+  </div>
+
+
+        
+<div class="footer">
+  <div class="social">
+    <ul>
+      
+        <li>
+          <a title="rss" href="/atom.xml">
+            <i class="iconfont icon-rss"></i>
+          </a>
+        </li>
+      
+    </ul>
+  </div>
+  
+    
+    <div class="footer-more">
+      
+        <a target="_blank" rel="noopener" href="https://github.com/zchengsite/hexo-theme-oranges">Copyright © 2024 Oranges</a>
+        
+    </div>
+  
+    
+    <div class="footer-more">
+      
+        <a target="_blank" rel="noopener" href="https://github.com/zchengsite/hexo-theme-oranges">Theme by Oranges | Powered by Hexo</a>
+        
+    </div>
+  
+  
+</div>
+
+      </div>
+
+      <div class="tools-bar">
+        <div class="back-to-top tools-bar-item hidden">
+  <a href="javascript: void(0)">
+    <i class="iconfont icon-chevronup"></i>
+  </a>
+</div>
+
+
+<script src="/js/backtotop.js"></script>
+
+
+
+        
+  <div class="search-icon tools-bar-item" id="search-icon">
+    <a href="javascript: void(0)">
+      <i class="iconfont icon-search"></i>
+    </a>
+  </div>
+
+  <div class="search-overlay hidden">
+    <div class="search-content" tabindex="0">
+      <div class="search-title">
+        <span class="search-icon-input">
+          <a href="javascript: void(0)">
+            <i class="iconfont icon-search"></i>
+          </a>
+        </span>
+        
+          <input type="text" class="search-input" id="search-input" placeholder="搜索...">
+        
+        <span class="search-close-icon" id="search-close-icon">
+          <a href="javascript: void(0)">
+            <i class="iconfont icon-close"></i>
+          </a>
+        </span>
+      </div>
+      <div class="search-result" id="search-result"></div>
+    </div>
+  </div>
+
+  <script type="text/javascript">
+    var inputArea = document.querySelector("#search-input")
+    var searchOverlayArea = document.querySelector(".search-overlay")
+
+    inputArea.onclick = function() {
+      getSearchFile()
+      this.onclick = null
+    }
+
+    inputArea.onkeydown = function() {
+      if(event.keyCode == 13)
+        return false
+    }
+
+    function openOrHideSearchContent() {
+      let isHidden = searchOverlayArea.classList.contains('hidden')
+      if (isHidden) {
+        searchOverlayArea.classList.remove('hidden')
+        document.body.classList.add('hidden')
+        // inputArea.focus()
+      } else {
+        searchOverlayArea.classList.add('hidden')
+        document.body.classList.remove('hidden')
+      }
+    }
+
+    function blurSearchContent(e) {
+      if (e.target === searchOverlayArea) {
+        openOrHideSearchContent()
+      }
+    }
+
+    document.querySelector("#search-icon").addEventListener("click", openOrHideSearchContent, false)
+    document.querySelector("#search-close-icon").addEventListener("click", openOrHideSearchContent, false)
+    searchOverlayArea.addEventListener("click", blurSearchContent, false)
+
+    var searchFunc = function (path, search_id, content_id) {
+      'use strict';
+      var $input = document.getElementById(search_id);
+      var $resultContent = document.getElementById(content_id);
+      $resultContent.innerHTML = "<ul><span class='local-search-empty'>首次搜索，正在载入索引文件，请稍后……<span></ul>";
+      $.ajax({
+        // 0x01. load xml file
+        url: path,
+        dataType: "xml",
+        success: function (xmlResponse) {
+          // 0x02. parse xml file
+          var datas = $("entry", xmlResponse).map(function () {
+            return {
+              title: $("title", this).text(),
+              content: $("content", this).text(),
+              url: $("url", this).text()
+            };
+          }).get();
+          $resultContent.innerHTML = "";
+
+          $input.addEventListener('input', function () {
+            // 0x03. parse query to keywords list
+            var str = '<ul class=\"search-result-list\">';
+            var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+            $resultContent.innerHTML = "";
+            if (this.value.trim().length <= 0) {
+              return;
+            }
+            // 0x04. perform local searching
+            datas.forEach(function (data) {
+              var isMatch = true;
+              var content_index = [];
+              if (!data.title || data.title.trim() === '') {
+                data.title = "Untitled";
+              }
+              var orig_data_title = data.title.trim();
+              var data_title = orig_data_title.toLowerCase();
+              var orig_data_content = data.content.trim().replace(/<[^>]+>/g, "");
+              var data_content = orig_data_content.toLowerCase();
+              var data_url = data.url;
+              var index_title = -1;
+              var index_content = -1;
+              var first_occur = -1;
+              // only match artiles with not empty contents
+              if (data_content !== '') {
+                keywords.forEach(function (keyword, i) {
+                  index_title = data_title.indexOf(keyword);
+                  index_content = data_content.indexOf(keyword);
+
+                  if (index_title < 0 && index_content < 0) {
+                    isMatch = false;
+                  } else {
+                    if (index_content < 0) {
+                      index_content = 0;
+                    }
+                    if (i == 0) {
+                      first_occur = index_content;
+                    }
+                    // content_index.push({index_content:index_content, keyword_len:keyword_len});
+                  }
+                });
+              } else {
+                isMatch = false;
+              }
+              // 0x05. show search results
+              if (isMatch) {
+                str += "<li><a href='" + data_url + "' class='search-result-title'>" + orig_data_title + "</a>";
+                var content = orig_data_content;
+                if (first_occur >= 0) {
+                  // cut out 100 characters
+                  var start = first_occur - 20;
+                  var end = first_occur + 80;
+
+                  if (start < 0) {
+                    start = 0;
+                  }
+
+                  if (start == 0) {
+                    end = 100;
+                  }
+
+                  if (end > content.length) {
+                    end = content.length;
+                  }
+
+                  var match_content = content.substr(start, end);
+
+                  // highlight all keywords
+                  keywords.forEach(function (keyword) {
+                    var regS = new RegExp(keyword, "gi");
+                    match_content = match_content.replace(regS, "<span class=\"search-keyword\">" + keyword + "</span>");
+                  });
+
+                  str += "<p class=\"search-result-abstract\">" + match_content + "...</p>"
+                }
+                str += "</li>";
+              }
+            });
+            str += "</ul>";
+            if (str.indexOf('<li>') === -1) {
+              return $resultContent.innerHTML = "<ul><span class='local-search-empty'>没有找到内容，请尝试更换检索词。<span></ul>";
+            }
+            $resultContent.innerHTML = str;
+          });
+        },
+        error: function(xhr, status, error) {
+          $resultContent.innerHTML = ""
+          if (xhr.status === 404) {
+            $resultContent.innerHTML = "<ul><span class='local-search-empty'>未找到search.xml文件，具体请参考：<a href='https://github.com/zchengsite/hexo-theme-oranges#configuration' target='_black'>configuration</a><span></ul>";
+          } else {
+            $resultContent.innerHTML = "<ul><span class='local-search-empty'>请求失败，尝试重新刷新页面或稍后重试。<span></ul>";
+          }
+        }
+      });
+      $(document).on('click', '#search-close-icon', function() {
+        $('#search-input').val('');
+        $('#search-result').html('');
+      });
+    }
+
+    var getSearchFile = function() {
+        var path = "/search.xml";
+        searchFunc(path, 'search-input', 'search-result');
+    }
+  </script>
+
+
+
+
+        
+  <div class="tools-bar-item theme-icon" id="switch-color-scheme">
+    <a href="javascript: void(0)">
+      <i id="theme-icon" class="iconfont icon-moon"></i>
+    </a>
+  </div>
+
+  
+<script src="/js/colorscheme.js"></script>
+
+
+
+
+
+        
+  
+    <div class="share-icon tools-bar-item">
+      <a href="javascript: void(0)" id="share-icon">
+        <i class="iconfont iconshare"></i>
+      </a>
+      <div class="share-content hidden">
+        
+          <a class="share-item" href="https://twitter.com/intent/tweet?text=' + Linux%E4%B8%8BHello%20World%E6%98%AF%E5%A6%82%E4%BD%95%E8%BE%93%E5%87%BA%E7%9A%84 + '&url=' + https%3A%2F%2Fcoder109.github.io%2F2023%2F05%2F23%2FLinux%25E4%25B8%258BHello-World%25E6%2598%25AF%25E5%25A6%2582%25E4%25BD%2595%25E8%25BE%2593%25E5%2587%25BA%25E7%259A%2584%2F + '" target="_blank" title="Twitter">
+            <i class="iconfont icon-twitter"></i>
+          </a>
+        
+        
+      </div>
+    </div>
+  
+  
+<script src="/js/shares.js"></script>
+
+
+
+      </div>
+    </div>
+  
+        <style>
+            [bg-lazy] {
+                background-image: none !important;
+                background-color: #eee !important;
+            }
+        </style>
+        <script>
+            window.imageLazyLoadSetting = {
+                isSPA: false,
+                preloadRatio: 1,
+                processImages: null,
+            };
+        </script><script>window.addEventListener("load",function(){var t=/\.(gif|jpg|jpeg|tiff|png)$/i,r=/^data:image\/[a-z]+;base64,/;Array.prototype.slice.call(document.querySelectorAll("img[data-original]")).forEach(function(a){var e=a.parentNode;"A"===e.tagName&&(e.href.match(t)||e.href.match(r))&&(e.href=a.dataset.original)})});</script><script>!function(r){r.imageLazyLoadSetting.processImages=t;var e=r.imageLazyLoadSetting.isSPA,n=r.imageLazyLoadSetting.preloadRatio||1,c=a();function a(){var t=Array.prototype.slice.call(document.querySelectorAll("img[data-original]")),e=Array.prototype.slice.call(document.querySelectorAll("[bg-lazy]"));return t.concat(e)}function t(){e&&(c=a());for(var t,o=0;o<c.length;o++)0<=(t=(t=c[o]).getBoundingClientRect()).bottom&&0<=t.left&&t.top<=(r.innerHeight*n||document.documentElement.clientHeight*n)&&function(){var t,e,n,a,i=c[o];e=function(){c=c.filter(function(t){return i!==t}),r.imageLazyLoadSetting.onImageLoaded&&r.imageLazyLoadSetting.onImageLoaded(i)},(t=i).hasAttribute("bg-lazy")?(t.removeAttribute("bg-lazy"),e&&e()):(n=new Image,a=t.getAttribute("data-original"),n.onload=function(){t.src=a,t.removeAttribute("data-original"),e&&e()},t.src!==a&&(n.src=a))}()}function i(){clearTimeout(t.tId),t.tId=setTimeout(t,500)}t(),document.addEventListener("scroll",i),r.addEventListener("resize",i),r.addEventListener("orientationchange",i)}(this);</script></body>
+</html>
