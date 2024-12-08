@@ -6,7 +6,7 @@
   <link href="https://coder109.github.io/atom.xml" rel="self"/>
   
   <link href="https://coder109.github.io/"/>
-  <updated>2024-12-01T07:23:03.262Z</updated>
+  <updated>2024-12-08T08:46:45.409Z</updated>
   <id>https://coder109.github.io/</id>
   
   <author>
@@ -15,6 +15,29 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>【乐理/编写中】基础的乐理教程</title>
+    <link href="https://coder109.github.io/2024/12/07/%E3%80%90%E4%B9%90%E7%90%86%E3%80%91%E5%9F%BA%E7%A1%80%E7%9A%84%E4%B9%90%E7%90%86%E6%95%99%E7%A8%8B/"/>
+    <id>https://coder109.github.io/2024/12/07/%E3%80%90%E4%B9%90%E7%90%86%E3%80%91%E5%9F%BA%E7%A1%80%E7%9A%84%E4%B9%90%E7%90%86%E6%95%99%E7%A8%8B/</id>
+    <published>2024-12-07T13:47:00.000Z</published>
+    <updated>2024-12-08T08:46:45.409Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;引子&quot;&gt;&lt;a href=&quot;#引子&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    
+    <category term="乐理" scheme="https://coder109.github.io/tags/%E4%B9%90%E7%90%86/"/>
+    
+  </entry>
   
   <entry>
     <title>人工智能技术（一）：基础深度学习模型</title>
@@ -468,29 +491,6 @@
         
         
     <summary type="html">&lt;h1 id=&quot;基本描述&quot;&gt;&lt;a href=&quot;#基本描述&quot; class=&quot;headerlink&quot;</summary>
-        
-      
-    
-    
-    
-    
-    <category term="算法" scheme="https://coder109.github.io/tags/%E7%AE%97%E6%B3%95/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>【算法】回溯法</title>
-    <link href="https://coder109.github.io/2023/08/10/%E3%80%90%E7%AE%97%E6%B3%95%E3%80%91%E5%9B%9E%E6%BA%AF%E6%B3%95/"/>
-    <id>https://coder109.github.io/2023/08/10/%E3%80%90%E7%AE%97%E6%B3%95%E3%80%91%E5%9B%9E%E6%BA%AF%E6%B3%95/</id>
-    <published>2023-08-10T05:55:12.000Z</published>
-    <updated>2024-04-22T15:00:45.790Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h1 id=&quot;算法思想&quot;&gt;&lt;a href=&quot;#算法思想&quot; class=&quot;headerlink&quot; title=&quot;算法思想&quot;&gt;&lt;/a&gt;算法思想&lt;/h1&gt;&lt;p&gt;回溯(Backtrack)是一种搜索方法，常用于排列问题、搜索问题的求解。其基本思想为DFS(Depth-First</summary>
         
       
     
