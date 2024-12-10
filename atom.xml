@@ -6,7 +6,7 @@
   <link href="https://coder109.github.io/atom.xml" rel="self"/>
   
   <link href="https://coder109.github.io/"/>
-  <updated>2024-12-09T04:39:39.798Z</updated>
+  <updated>2024-12-10T06:21:14.374Z</updated>
   <id>https://coder109.github.io/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="https://coder109.github.io/2024/12/07/%E3%80%90%E4%B9%90%E7%90%86%E3%80%91%E5%9F%BA%E7%A1%80%E7%9A%84%E4%B9%90%E7%90%86%E6%95%99%E7%A8%8B/"/>
     <id>https://coder109.github.io/2024/12/07/%E3%80%90%E4%B9%90%E7%90%86%E3%80%91%E5%9F%BA%E7%A1%80%E7%9A%84%E4%B9%90%E7%90%86%E6%95%99%E7%A8%8B/</id>
     <published>2024-12-07T13:47:00.000Z</published>
-    <updated>2024-12-09T04:39:39.798Z</updated>
+    <updated>2024-12-10T06:21:14.374Z</updated>
     
     
       
@@ -88,33 +88,6 @@
     <category term="德勒兹" scheme="https://coder109.github.io/tags/%E5%BE%B7%E5%8B%92%E5%85%B9/"/>
     
     <category term="意识流" scheme="https://coder109.github.io/tags/%E6%84%8F%E8%AF%86%E6%B5%81/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>精神分析学习手记</title>
-    <link href="https://coder109.github.io/2024/07/25/%E7%B2%BE%E7%A5%9E%E5%88%86%E6%9E%90%E5%AD%A6%E4%B9%A0%E6%89%8B%E8%AE%B0/"/>
-    <id>https://coder109.github.io/2024/07/25/%E7%B2%BE%E7%A5%9E%E5%88%86%E6%9E%90%E5%AD%A6%E4%B9%A0%E6%89%8B%E8%AE%B0/</id>
-    <published>2024-07-25T10:20:33.000Z</published>
-    <updated>2024-07-25T11:06:41.460Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;p&gt;参考资料：《疾風怒濤精神分析入門》· 片岡 一竹&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;疯狂是比健康更加本源的东西，健康反而是一种被建构的状态。——《疾風怒濤精神分析入門》· 片岡</summary>
-        
-      
-    
-    
-    
-    
-    <category term="意识流" scheme="https://coder109.github.io/tags/%E6%84%8F%E8%AF%86%E6%B5%81/"/>
-    
-    <category term="精神分析" scheme="https://coder109.github.io/tags/%E7%B2%BE%E7%A5%9E%E5%88%86%E6%9E%90/"/>
     
   </entry>
   
@@ -215,32 +188,6 @@
   </entry>
   
   <entry>
-    <title>【AI】pytorch一些错误的解决办法</title>
-    <link href="https://coder109.github.io/2024/01/03/%E3%80%90AI%E3%80%91pytorch%E4%B8%80%E4%BA%9B%E9%94%99%E8%AF%AF%E7%9A%84%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95/"/>
-    <id>https://coder109.github.io/2024/01/03/%E3%80%90AI%E3%80%91pytorch%E4%B8%80%E4%BA%9B%E9%94%99%E8%AF%AF%E7%9A%84%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95/</id>
-    <published>2024-01-03T04:19:23.000Z</published>
-    <updated>2024-04-22T15:00:46.360Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;blockquote&gt;
-&lt;p&gt;本文讨论一些难以调试的错误。&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;h2 id=&quot;Assertion-srcIndex-lt-srcSelectDimSize-failed&quot;&gt;&lt;a</summary>
-        
-      
-    
-    
-    
-    
-    <category term="AI" scheme="https://coder109.github.io/tags/AI/"/>
-    
-  </entry>
-  
-  <entry>
     <title>【网络】计算机网络相关知识</title>
     <link href="https://coder109.github.io/2023/10/07/%E3%80%90%E7%BD%91%E7%BB%9C%E3%80%91%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E7%9B%B8%E5%85%B3%E7%9F%A5%E8%AF%86/"/>
     <id>https://coder109.github.io/2023/10/07/%E3%80%90%E7%BD%91%E7%BB%9C%E3%80%91%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E7%9B%B8%E5%85%B3%E7%9F%A5%E8%AF%86/</id>
@@ -309,54 +256,6 @@
     <category term="AI" scheme="https://coder109.github.io/tags/AI/"/>
     
     <category term="论文" scheme="https://coder109.github.io/tags/%E8%AE%BA%E6%96%87/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>【AI】线性SVM的推导</title>
-    <link href="https://coder109.github.io/2023/09/18/%E3%80%90AI%E3%80%91SVM%E7%9A%84%E6%8E%A8%E5%AF%BC/"/>
-    <id>https://coder109.github.io/2023/09/18/%E3%80%90AI%E3%80%91SVM%E7%9A%84%E6%8E%A8%E5%AF%BC/</id>
-    <published>2023-09-18T08:09:17.000Z</published>
-    <updated>2024-04-22T15:00:45.790Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h1 id=&quot;引子&quot;&gt;&lt;a href=&quot;#引子&quot; class=&quot;headerlink&quot;</summary>
-        
-      
-    
-    
-    
-    
-    <category term="AI" scheme="https://coder109.github.io/tags/AI/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>【NLP】智能软件工程课程笔记</title>
-    <link href="https://coder109.github.io/2023/09/16/%E3%80%90NLP%E3%80%91%E6%99%BA%E8%83%BD%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0/"/>
-    <id>https://coder109.github.io/2023/09/16/%E3%80%90NLP%E3%80%91%E6%99%BA%E8%83%BD%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0/</id>
-    <published>2023-09-16T09:51:33.000Z</published>
-    <updated>2024-04-22T15:00:45.541Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h1 id=&quot;引子&quot;&gt;&lt;a href=&quot;#引子&quot; class=&quot;headerlink&quot;</summary>
-        
-      
-    
-    
-    
-    
-    <category term="AI" scheme="https://coder109.github.io/tags/AI/"/>
-    
-    <category term="NLP" scheme="https://coder109.github.io/tags/NLP/"/>
     
   </entry>
   
@@ -496,6 +395,100 @@
     
     
     
+    
+    <category term="算法" scheme="https://coder109.github.io/tags/%E7%AE%97%E6%B3%95/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>【算法】回溯法</title>
+    <link href="https://coder109.github.io/2023/08/10/%E3%80%90%E7%AE%97%E6%B3%95%E3%80%91%E5%9B%9E%E6%BA%AF%E6%B3%95/"/>
+    <id>https://coder109.github.io/2023/08/10/%E3%80%90%E7%AE%97%E6%B3%95%E3%80%91%E5%9B%9E%E6%BA%AF%E6%B3%95/</id>
+    <published>2023-08-10T05:55:12.000Z</published>
+    <updated>2024-04-22T15:00:45.790Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;算法思想&quot;&gt;&lt;a href=&quot;#算法思想&quot; class=&quot;headerlink&quot; title=&quot;算法思想&quot;&gt;&lt;/a&gt;算法思想&lt;/h1&gt;&lt;p&gt;回溯(Backtrack)是一种搜索方法，常用于排列问题、搜索问题的求解。其基本思想为DFS(Depth-First</summary>
+        
+      
+    
+    
+    
+    
+    <category term="算法" scheme="https://coder109.github.io/tags/%E7%AE%97%E6%B3%95/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>【算法】单调栈</title>
+    <link href="https://coder109.github.io/2023/08/10/%E3%80%90%E7%AE%97%E6%B3%95%E3%80%91%E5%8D%95%E8%B0%83%E6%A0%88/"/>
+    <id>https://coder109.github.io/2023/08/10/%E3%80%90%E7%AE%97%E6%B3%95%E3%80%91%E5%8D%95%E8%B0%83%E6%A0%88/</id>
+    <published>2023-08-10T03:17:19.000Z</published>
+    <updated>2024-04-22T15:00:47.122Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;思想&quot;&gt;&lt;a href=&quot;#思想&quot; class=&quot;headerlink&quot; title=&quot;思想&quot;&gt;&lt;/a&gt;思想&lt;/h1&gt;&lt;p&gt;单调栈(Monotonic</summary>
+        
+      
+    
+    
+    
+    
+    <category term="算法" scheme="https://coder109.github.io/tags/%E7%AE%97%E6%B3%95/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>【算法】KMP算法</title>
+    <link href="https://coder109.github.io/2023/08/09/%E3%80%90%E7%AE%97%E6%B3%95%E3%80%91KMP%E7%AE%97%E6%B3%95/"/>
+    <id>https://coder109.github.io/2023/08/09/%E3%80%90%E7%AE%97%E6%B3%95%E3%80%91KMP%E7%AE%97%E6%B3%95/</id>
+    <published>2023-08-09T02:58:09.000Z</published>
+    <updated>2024-04-22T15:00:45.680Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;引子&quot;&gt;&lt;a href=&quot;#引子&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    
+    <category term="算法" scheme="https://coder109.github.io/tags/%E7%AE%97%E6%B3%95/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>【算法】C++的map如何按值排序</title>
+    <link href="https://coder109.github.io/2023/08/08/%E3%80%90%E7%AE%97%E6%B3%95%E3%80%91map%E5%A6%82%E4%BD%95%E6%8C%89%E5%80%BC%E6%8E%92%E5%BA%8F/"/>
+    <id>https://coder109.github.io/2023/08/08/%E3%80%90%E7%AE%97%E6%B3%95%E3%80%91map%E5%A6%82%E4%BD%95%E6%8C%89%E5%80%BC%E6%8E%92%E5%BA%8F/</id>
+    <published>2023-08-08T04:44:58.000Z</published>
+    <updated>2024-04-22T15:00:45.954Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;引子&quot;&gt;&lt;a href=&quot;#引子&quot; class=&quot;headerlink&quot; title=&quot;引子&quot;&gt;&lt;/a&gt;引子&lt;/h1&gt;&lt;p&gt;&lt;code&gt;map&lt;/code&gt;自定义是按照键排序的，有些时候需要按照值排序，比如说这道题：&lt;a</summary>
+        
+      
+    
+    
+    
+    
+    <category term="C++" scheme="https://coder109.github.io/tags/C/"/>
     
     <category term="算法" scheme="https://coder109.github.io/tags/%E7%AE%97%E6%B3%95/"/>
     
