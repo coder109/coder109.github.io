@@ -11,7 +11,7 @@
   
   <title>
     
-      【数学/近世代数】备忘 
+      人工智能技术（二）/编写中：自然语言处理基础 
       
       
       |
@@ -152,25 +152,19 @@
   <!-- 文章内容页 url形式：https://yoursite/文章标题/ -->
   <div class="container post-details" id="post-details">
     <div class="post-content">
-      <div class="post-title">【数学/近世代数】备忘</div>
+      <div class="post-title">人工智能技术（二）/编写中：自然语言处理基础</div>
       <div class="post-attach">
         <span class="post-pubtime">
           <i class="iconfont icon-updatetime mr-10" title="更新时间"></i>
-          2022-10-18 20:06:53
+          2024-12-12 18:40:03
         </span>
         
               <span class="post-tags">
                 <i class="iconfont icon-tags mr-10" title="标签"></i>
                 
                 <span class="span--tag mr-8">
-                  <a href="/tags/%E6%95%B0%E5%AD%A6/" title="数学">
-                    #数学
-                  </a>
-                </span>
-                
-                <span class="span--tag mr-8">
-                  <a href="/tags/%E8%BF%91%E4%B8%96%E4%BB%A3%E6%95%B0/" title="近世代数">
-                    #近世代数
+                  <a href="/tags/AI/" title="AI">
+                    #AI
                   </a>
                 </span>
                 
@@ -178,21 +172,30 @@
           
       </div>
       <div class="markdown-body">
-        <p>@[TOC]</p>
-<h1 id="1-幂等元存在性"><a href="#1-幂等元存在性" class="headerlink" title="1.幂等元存在性"></a>1.幂等元存在性</h1><p>问：有限半群$(G,\cdot)$中，必定存在元素$a$，令$a\cdot a &#x3D; a$。<br>证：设$|G|&#x3D;n$，$a,a^2,a^3,\cdots,a^{n+1}\in G$，则必定存在$a^i&#x3D;a^j,1\leq i &lt; j \leq n+1$。<br>那么存在$k&gt;0$，令$a^i \cdot a^k &#x3D; a^j$，则$a^i \cdot a^k &#x3D; a^i$，连续左乘$a$，则有$a^p\cdot a^k&#x3D;a^p,p&#x3D;qk$，递归调用，得到$a^p&#x3D;a^p\cdot a^p$。</p>
-<h1 id="2-一些定理-证明省略"><a href="#2-一些定理-证明省略" class="headerlink" title="2.一些定理(证明省略)"></a>2.一些定理(证明省略)</h1><ol>
-<li>四阶群无三阶元。</li>
-<li>左陪集彼此等阶，左右陪集彼此等阶，也就是说，陪集彼此等阶。</li>
-<li>六阶群必有三阶元。（由$Lagrange$定理推导得到）</li>
-<li>阶小于等于5的群为阿贝尔群。</li>
+        <h1 id="引子"><a href="#引子" class="headerlink" title="引子"></a>引子</h1><p>所谓自然语言处理，就是利用计算机技术，处理自然语言的信息。</p>
+<h1 id="自然语言到张量：万物之始"><a href="#自然语言到张量：万物之始" class="headerlink" title="自然语言到张量：万物之始"></a>自然语言到张量：万物之始</h1><p>通过第一章博文，我们知道，计算机是以<strong>张量</strong>这个基础单元来处理数据的。那么，如果想要处理自然语言的信息，我们要做的第一件事就是将自然语言的信息转化为张量，转化得到的张量叫做<strong>词向量</strong>。一切的一切就从这里开始。</p>
+<p>我们先以英语举例，英语的基本单位是词，我们要做的转换，都是针对于词这个单位的。</p>
+<h2 id="直觉的想象：one-hot编码"><a href="#直觉的想象：one-hot编码" class="headerlink" title="直觉的想象：one-hot编码"></a>直觉的想象：one-hot编码</h2><p>我们可以将这种编码，看作一个查字典的过程。每个字按照一定的顺序，从头到尾排列下来。字典中，字的总量是有限的，每个字也都有一个独立的编号，其范围是0~字的总数。</p>
+<p>那么，我们可以假借这种思想。我们可以设定，每个词的张量，形状为$1\times N$，其中，$N$是词的总数，然后，我们将这个张量设置为全0，只在词的序号处设为1。比如，我们的词有三个：Apple、Bear和Charlie。那么我们可以做这样的编码：代表Apple的张量为$[1,0,0]$，因为一共有三个词，Apple是第一个词（实际上顺序可以自行设定），那么Bear和Charlie就是$[0,1,0]$和$[0,0,1]$。这种编码方式叫做<strong>one-hot</strong>编码方式。在硬件领域，如果一个比特组或向量，只有一位是1，其它都是0，那么这个比特组或向量就叫做one-hot比特组或one-hot向量。如果只有一位是1，其它全是0，就叫做one-cold。</p>
+<p>这种方法很简单，也很容易想出来。不过这个方法面临着几个问题。首先，如果词表很大的情况下，过多位数的0会占据大量无意义的空间；其次，这种编码方式没法体现词之间的关系，比如近义词、反义词等，相邻含义的两个词可能彼此之间的距离很大，而不相干的两个词可能距离很小，这不便于我们的计算。</p>
+<h3 id="代码实现"><a href="#代码实现" class="headerlink" title="代码实现"></a>代码实现</h3><p>这种方法非常好实现：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> torch</span><br><span class="line"></span><br><span class="line">example_sentence = <span class="string">&quot;I am what I am and that is what I say.&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">process_word</span>(<span class="params">original_word, punctuation_list</span>):</span><br><span class="line">    processed_word = <span class="string">&quot;&quot;</span></span><br><span class="line">    <span class="keyword">for</span> original_char <span class="keyword">in</span> original_word:</span><br><span class="line">        <span class="keyword">if</span> original_char <span class="keyword">in</span> punctuation_list:</span><br><span class="line">            <span class="keyword">continue</span></span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            processed_word += original_char</span><br><span class="line">    <span class="keyword">return</span> processed_word.lower()</span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">process_sentence_to_list</span>(<span class="params">original_sentence</span>):</span><br><span class="line">    original_word_list = original_sentence.split()</span><br><span class="line">    <span class="comment"># Remove punctuations</span></span><br><span class="line">    punctuation_list = [<span class="string">&quot;.&quot;</span>, <span class="string">&quot;:&quot;</span>, <span class="string">&quot;,&quot;</span>, <span class="string">&quot;;&quot;</span>]</span><br><span class="line">    processed_list = []</span><br><span class="line">    <span class="keyword">for</span> original_word <span class="keyword">in</span> original_word_list:</span><br><span class="line">        curr_word = process_word(original_word, punctuation_list)</span><br><span class="line">        <span class="keyword">if</span> curr_word <span class="keyword">in</span> processed_list:</span><br><span class="line">            <span class="keyword">continue</span></span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            processed_list.append(curr_word)</span><br><span class="line">    <span class="keyword">return</span> processed_list</span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">get_one_hot_vector_for_list</span>(<span class="params">word_list</span>):</span><br><span class="line">    word_tensor_dict = &#123;&#125;</span><br><span class="line">    <span class="keyword">for</span> idx <span class="keyword">in</span> <span class="built_in">range</span>(<span class="built_in">len</span>(word_list)):</span><br><span class="line">        one_hot_vector = torch.zeros(<span class="built_in">len</span>(word_list))</span><br><span class="line">        one_hot_vector[idx] = <span class="number">1</span></span><br><span class="line">        word_tensor_dict.update(&#123;word_list[idx]: one_hot_vector&#125;)</span><br><span class="line">    <span class="keyword">return</span> word_tensor_dict</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">&quot;__main__&quot;</span>:</span><br><span class="line">    original_page = example_sentence</span><br><span class="line">    <span class="comment">#original_page = example_paragraph</span></span><br><span class="line"></span><br><span class="line">    original_word_list = process_sentence_to_list(original_page)</span><br><span class="line">    vector_map = get_one_hot_vector_for_list(original_word_list)</span><br><span class="line">    </span><br><span class="line">    <span class="built_in">print</span>(original_word_list)</span><br><span class="line">    <span class="built_in">print</span>(vector_map)</span><br></pre></td></tr></table></figure>
+
+<p>其中，<code>process_word()</code>用来去除每个单词中的标点符号，并转化为小写单词；<code>process_sentence_to_list()</code>用来将一个句子（语料库）转化为一个无重复元素的列表，这相当于对语料库进行拆分，后面会讲到，这其实是一种<strong>分词技术</strong>；<code>get_one_hot_vector_for_list()</code>则用来形成一个单词-对应one-hot编码的字典。</p>
+<h2 id="语义距离的优化：word2vec"><a href="#语义距离的优化：word2vec" class="headerlink" title="语义距离的优化：word2vec"></a>语义距离的优化：word2vec</h2><p>为了解决one-hot编码带来的问题，我们需要设计出一种模型&#x2F;技术，达到这样的目的：将one-hot编码转化为能够体现词关系的词向量。</p>
+<p>很早的时候，这种任务被称作word2vec的任务，有两种模式：</p>
+<ol>
+<li><strong>Skip-gram</strong>：给定某个词，预测若这个词在句子中，其周围可能会出现的词。</li>
+<li><strong>CBOW</strong>：给定一个句子，空缺某个词的位置，预测这个位置可能会出现的词。</li>
 </ol>
+<p>我们用一个线性层就可以实现这两个模型。</p>
 
       </div>
       
         <div class="prev-or-next">
           <div class="post-foot-next">
             
-              <a href="/2022/08/05/STM32_LED/" target="_self">
+              <a href="/2024/12/10/%E3%80%90%E4%B9%90%E7%90%86%E3%80%91%E5%92%8C%E5%A3%B0%E5%AD%A6%E7%9A%84%E4%B8%80%E7%82%B9%E8%AF%B4%E6%98%8E/" target="_self">
                 <i class="iconfont icon-chevronleft"></i>
                 <span>上一页</span>
               </a>
@@ -201,21 +204,15 @@
           <div class="post-attach">
             <span class="post-pubtime">
               <i class="iconfont icon-updatetime mr-10" title="更新时间"></i>
-              2022-10-18 20:06:53
+              2024-12-12 18:40:03
             </span>
             
                   <span class="post-tags">
                     <i class="iconfont icon-tags mr-10" title="标签"></i>
                     
                     <span class="span--tag mr-8">
-                      <a href="/tags/%E6%95%B0%E5%AD%A6/" title="数学">
-                        #数学
-                      </a>
-                    </span>
-                    
-                    <span class="span--tag mr-8">
-                      <a href="/tags/%E8%BF%91%E4%B8%96%E4%BB%A3%E6%95%B0/" title="近世代数">
-                        #近世代数
+                      <a href="/tags/AI/" title="AI">
+                        #AI
                       </a>
                     </span>
                     
@@ -224,7 +221,7 @@
           </div>
           <div class="post-foot-prev">
             
-              <a href="/2022/10/19/shu-xue-shu-li-luo-ji-bei-wang/" target="_self">
+              <a href="/2024/12/14/%E3%80%90LaTeX%E3%80%91%E9%97%AE%E9%A2%98%E6%B1%87%E6%80%BB/" target="_self">
                 <span>下一页</span>
                 <i class="iconfont icon-chevronright"></i>
               </a>
@@ -241,7 +238,7 @@
     <div class="title">目录</div>
     <div class="catalog-content">
       
-        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#1-%E5%B9%82%E7%AD%89%E5%85%83%E5%AD%98%E5%9C%A8%E6%80%A7"><span class="toc-text">1.幂等元存在性</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#2-%E4%B8%80%E4%BA%9B%E5%AE%9A%E7%90%86-%E8%AF%81%E6%98%8E%E7%9C%81%E7%95%A5"><span class="toc-text">2.一些定理(证明省略)</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%BC%95%E5%AD%90"><span class="toc-text">引子</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E8%87%AA%E7%84%B6%E8%AF%AD%E8%A8%80%E5%88%B0%E5%BC%A0%E9%87%8F%EF%BC%9A%E4%B8%87%E7%89%A9%E4%B9%8B%E5%A7%8B"><span class="toc-text">自然语言到张量：万物之始</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%9B%B4%E8%A7%89%E7%9A%84%E6%83%B3%E8%B1%A1%EF%BC%9Aone-hot%E7%BC%96%E7%A0%81"><span class="toc-text">直觉的想象：one-hot编码</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%A3%E7%A0%81%E5%AE%9E%E7%8E%B0"><span class="toc-text">代码实现</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%AF%AD%E4%B9%89%E8%B7%9D%E7%A6%BB%E7%9A%84%E4%BC%98%E5%8C%96%EF%BC%9Aword2vec"><span class="toc-text">语义距离的优化：word2vec</span></a></li></ol></li></ol>
       
     </div>
   </div>
@@ -516,7 +513,7 @@
       </a>
       <div class="share-content hidden">
         
-          <a class="share-item" href="https://twitter.com/intent/tweet?text=' + %E3%80%90%E6%95%B0%E5%AD%A6%2F%E8%BF%91%E4%B8%96%E4%BB%A3%E6%95%B0%E3%80%91%E5%A4%87%E5%BF%98 + '&url=' + https%3A%2F%2Fcoder109.github.io%2F2022%2F10%2F18%2Fshu-xue-jin-shi-dai-shu-bei-wang%2F + '" target="_blank" title="Twitter">
+          <a class="share-item" href="https://twitter.com/intent/tweet?text=' + %E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E6%8A%80%E6%9C%AF%EF%BC%88%E4%BA%8C%EF%BC%89%2F%E7%BC%96%E5%86%99%E4%B8%AD%EF%BC%9A%E8%87%AA%E7%84%B6%E8%AF%AD%E8%A8%80%E5%A4%84%E7%90%86%E5%9F%BA%E7%A1%80 + '&url=' + https%3A%2F%2Fcoder109.github.io%2F2024%2F12%2F12%2F%25E4%25BA%25BA%25E5%25B7%25A5%25E6%2599%25BA%25E8%2583%25BD%25E6%258A%2580%25E6%259C%25AF%25EF%25BC%2588%25E4%25BA%258C%25EF%25BC%2589%25EF%25BC%259A%25E8%2587%25AA%25E7%2584%25B6%25E8%25AF%25AD%25E8%25A8%2580%25E5%25A4%2584%25E7%2590%2586%25E5%259F%25BA%25E7%25A1%2580%2F + '" target="_blank" title="Twitter">
             <i class="iconfont icon-twitter"></i>
           </a>
         
