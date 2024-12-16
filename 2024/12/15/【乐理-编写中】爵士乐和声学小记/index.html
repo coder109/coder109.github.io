@@ -11,8 +11,8 @@
   
   <title>
     
-      标签 
-       : 德勒兹
+      【乐理/编写中】爵士乐和声学小记 
+      
       
       |
     
@@ -107,30 +107,184 @@
 
 
       <div class="flex-container">
-        <!-- 标签详情页，展示某个标签下的文章列表，url形式：https://yoursite/tags/某个标签/ -->
+        <!-- 文章详情页，展示文章具体内容，url形式：https://yoursite/文章标题/ -->
+<!-- 同时为「标签tag」，「朋友friend」，「分类categories」，「关于about」页面的承载页面，具体展示取决于page.type -->
 
-<div class="container tag-details">
-  <div class="content-title">
-    <h2>
-      <span>德勒兹</span>
-    </h2>
-  </div>
+
+  <!-- LaTex Display -->
+
   
-    <div class="post-list">
-      <div class="post-item" title="德勒兹：无中心的游牧">
-        <span class="time-m-d">2024-07-30</span>
-        <a href="/2024/07/30/%E5%BE%B7%E5%8B%92%E5%85%B9%EF%BC%9A%E6%97%A0%E4%B8%AD%E5%BF%83%E7%9A%84%E6%B8%B8%E7%89%A7/">
-          <span>德勒兹：无中心的游牧</span>
-        </a>
+    <script async type="text/javascript" src="/plugins/mathjax/tex-chtml.js"></script>
+  
+  <script>
+    MathJax = {
+      tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']]
+      }
+    }
+  </script>
+
+
+
+
+
+  <!-- clipboard -->
+
+  
+    <script async type="text/javascript" src="/plugins/clipboard.min.js"></script>
+  
+  
+<script src="/js/codeCopy.js"></script>
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  <!-- 文章内容页 url形式：https://yoursite/文章标题/ -->
+  <div class="container post-details" id="post-details">
+    <div class="post-content">
+      <div class="post-title">【乐理/编写中】爵士乐和声学小记</div>
+      <div class="post-attach">
+        <span class="post-pubtime">
+          <i class="iconfont icon-updatetime mr-10" title="更新时间"></i>
+          2024-12-15 19:52:44
+        </span>
+        
+              <span class="post-tags">
+                <i class="iconfont icon-tags mr-10" title="标签"></i>
+                
+                <span class="span--tag mr-8">
+                  <a href="/tags/%E4%B9%90%E7%90%86/" title="乐理">
+                    #乐理
+                  </a>
+                </span>
+                
+              </span>
+          
       </div>
+      <div class="markdown-body">
+        <h1 id="引子"><a href="#引子" class="headerlink" title="引子"></a>引子</h1><p>参见<a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1JJ411c7wo/">流行爵士和声学（廖季文）1-4</a>。作笔记回看用。</p>
+<h1 id="音阶"><a href="#音阶" class="headerlink" title="音阶"></a>音阶</h1><h2 id="大调音阶"><a href="#大调音阶" class="headerlink" title="大调音阶"></a>大调音阶</h2><blockquote>
+<p>重点：五度圈与大调音阶升降哪些音的关系</p>
+</blockquote>
+<p>音乐的根本是音阶，我们首先来研究一下不同调的大调音阶。</p>
+<p>我们常用的C调音阶是CDEFGABC，12345671。这是一个全全半全全全半的关系，可以看作两个“四声音阶”通过一个全音联系起来。向上发展，那么我们发现，每次发展，排列的第七个音都会升高半音，比如将GABC看作1234，那么向上发展，为了满足全全半全全全半的规律，则必须接续DEF#G。每次发展，升高的音是导音，其音名满足：FCGDAEB的规律。此外，我么发现，每次发展，主音都会变为五度音，那么我们就得到了不同调的主音与升音规律，比如G调，其导音为F，根据FCGDAEB的规律，我们只需要升高其F音即可，那么G调音阶就是GABCDE#FG；比如E调，其导音是D，那么我们就需要升高FCGD这几个音，那么E调音阶就是E#F#GAB#C#DE。其实，升高的音也满足五度圈的关系，因为每次发展，主音变为了原调的五度音。</p>
+<p>同理，降调也有：BEADGCF的规律。比如降C大调，就要降低七个音；降G大调，就要降低BEADGC六个音。只有一个降记号，是F调。</p>
+<h2 id="小调音阶"><a href="#小调音阶" class="headerlink" title="小调音阶"></a>小调音阶</h2><blockquote>
+<p>重点：升降音的唱名</p>
+</blockquote>
+<p>每个大调，有与其相关的关系小调和平行小调。关系小调是指使用的音一致，平行小调则是指开始的音一致。升音唱名，是将所升之音的唱名的元音改为i，而降音则是e，不过，降2要唱成Ra。</p>
+<h1 id="音程"><a href="#音程" class="headerlink" title="音程"></a>音程</h1><h2 id="音程的转位"><a href="#音程的转位" class="headerlink" title="音程的转位"></a>音程的转位</h2><blockquote>
+<p>重点：转位后音程的性质与度数</p>
+</blockquote>
+<p>对于两个音来说，它们之间的音程可以有两种，比如C和G，C-G是纯五度——这是当C为低音时考虑的；G-C则是纯四度——这是当G为低音时考虑的。</p>
+<p>音程的性质转位有这样的关系：</p>
+<table>
+<thead>
+<tr>
+<th>音程性质</th>
+<th>转位后音程性质</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>倍增</td>
+<td>倍减</td>
+</tr>
+<tr>
+<td>增</td>
+<td>减</td>
+</tr>
+<tr>
+<td>大</td>
+<td>小</td>
+</tr>
+<tr>
+<td>小</td>
+<td>大</td>
+</tr>
+<tr>
+<td>纯</td>
+<td>纯</td>
+</tr>
+<tr>
+<td>减</td>
+<td>增</td>
+</tr>
+<tr>
+<td>倍减</td>
+<td>倍增</td>
+</tr>
+</tbody></table>
+<p>音程的度数，在转位后，会变为9-原来度数的形式，比如增四度的转位就是减五度，大三度的转位便是小六度。</p>
+<h2 id="复合音程"><a href="#复合音程" class="headerlink" title="复合音程"></a>复合音程</h2><p>复合音程是指超过八度的音程。复合音程和其减去7的音程，听感是极其类似的，比如纯十五度音程和纯八度听感差不多。</p>
+<p>这个根本原因是，八度是足够协和的。附加一个八度、移除一个八度，听感差别并不大。</p>
+<h1 id="和弦"><a href="#和弦" class="headerlink" title="和弦"></a>和弦</h1>
+      </div>
+      
+        <div class="prev-or-next">
+          <div class="post-foot-next">
+            
+              <a href="/2024/12/14/%E3%80%90LaTeX%E3%80%91%E9%97%AE%E9%A2%98%E6%B1%87%E6%80%BB/" target="_self">
+                <i class="iconfont icon-chevronleft"></i>
+                <span>上一页</span>
+              </a>
+            
+          </div>
+          <div class="post-attach">
+            <span class="post-pubtime">
+              <i class="iconfont icon-updatetime mr-10" title="更新时间"></i>
+              2024-12-15 19:52:44
+            </span>
+            
+                  <span class="post-tags">
+                    <i class="iconfont icon-tags mr-10" title="标签"></i>
+                    
+                    <span class="span--tag mr-8">
+                      <a href="/tags/%E4%B9%90%E7%90%86/" title="乐理">
+                        #乐理
+                      </a>
+                    </span>
+                    
+                  </span>
+              
+          </div>
+          <div class="post-foot-prev">
+            
+          </div>
+        </div>
+      
     </div>
+    
+  <div id="btn-catalog" class="btn-catalog">
+    <i class="iconfont icon-catalog"></i>
+  </div>
+  <div class="post-catalog hidden" id="catalog">
+    <div class="title">目录</div>
+    <div class="catalog-content">
+      
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%BC%95%E5%AD%90"><span class="toc-text">引子</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E9%9F%B3%E9%98%B6"><span class="toc-text">音阶</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%A4%A7%E8%B0%83%E9%9F%B3%E9%98%B6"><span class="toc-text">大调音阶</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B0%8F%E8%B0%83%E9%9F%B3%E9%98%B6"><span class="toc-text">小调音阶</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E9%9F%B3%E7%A8%8B"><span class="toc-text">音程</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%9F%B3%E7%A8%8B%E7%9A%84%E8%BD%AC%E4%BD%8D"><span class="toc-text">音程的转位</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%A4%8D%E5%90%88%E9%9F%B3%E7%A8%8B"><span class="toc-text">复合音程</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%92%8C%E5%BC%A6"><span class="toc-text">和弦</span></a></li></ol>
+      
+    </div>
+  </div>
+
   
-  <nav class="post-navigation">
+<script src="/js/catalog.js"></script>
+
+
+
+
     
-    <span class="page-num">1 / 1</span>
-    
-  </nav>
-</div>
+  </div>
+
 
         
 <div class="footer">
@@ -385,6 +539,20 @@
 
 
         
+  
+    <div class="share-icon tools-bar-item">
+      <a href="javascript: void(0)" id="share-icon">
+        <i class="iconfont iconshare"></i>
+      </a>
+      <div class="share-content hidden">
+        
+          <a class="share-item" href="https://twitter.com/intent/tweet?text=' + %E3%80%90%E4%B9%90%E7%90%86%2F%E7%BC%96%E5%86%99%E4%B8%AD%E3%80%91%E7%88%B5%E5%A3%AB%E4%B9%90%E5%92%8C%E5%A3%B0%E5%AD%A6%E5%B0%8F%E8%AE%B0 + '&url=' + https%3A%2F%2Fcoder109.github.io%2F2024%2F12%2F15%2F%25E3%2580%2590%25E4%25B9%2590%25E7%2590%2586-%25E7%25BC%2596%25E5%2586%2599%25E4%25B8%25AD%25E3%2580%2591%25E7%2588%25B5%25E5%25A3%25AB%25E4%25B9%2590%25E5%2592%258C%25E5%25A3%25B0%25E5%25AD%25A6%25E5%25B0%258F%25E8%25AE%25B0%2F + '" target="_blank" title="Twitter">
+            <i class="iconfont icon-twitter"></i>
+          </a>
+        
+        
+      </div>
+    </div>
   
   
 <script src="/js/shares.js"></script>
