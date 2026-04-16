@@ -30,7 +30,7 @@ I am interested in open source softwares and Linux.
 
 # 📝 Publications 
 
-- **Culture In a Frame: CB as a Comic-Based Benchmark for Multimodal Culturally Awareness**、
+- **Culture In a Frame: C$^3$B as a Comic-Based Benchmark for Multimodal Culturally Awareness**、
 
   **Yuchen Song**, Andong Chen, Wenxin Zhu, Kehai Chen, Xuefeng Bai, Muyun Yang, Tiejun Zhao
 
