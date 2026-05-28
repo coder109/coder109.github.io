@@ -50,3 +50,10 @@ I am interested in open source softwares and Linux.
 - *2025.7-Present* Master student, Harbin Institute of Technology
 
 - *2021.9-2025.7* Undergraduate, Harbin Institute of Technology
+
+# 🌱 Misc.
+
+- Amateur radio enthusiast and holder of a CRAC Class A Amateur Radio Operator Certificate.
+- Enjoy exchanging ideas with people from diverse backgrounds, discussing technology, and learning about others’ interests. 
+- Strongly interested in computer technologies as well as the mathematical principles behind them.
+
