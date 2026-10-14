@@ -69,7 +69,6 @@ Beyond research, I'm an open-source enthusiast and enjoy exploring Linux and the
 
 # 🎖 Honors & Awards
 
-- **National Scholarship** (2025)
 - **Special Prize Academic Scholarship** (multiple times), Faculty of Computing, Harbin Institute of Technology
 - **Shengshengbuxi Scholarship** (2nd edition), Harbin Institute of Technology
 - **University Scholarship** (Top 10%, multiple times), Harbin Institute of Technology
