@@ -97,7 +97,7 @@ I usually develop in **Linux environments**, manage experiments and code with **
 
 - Curious about a wide range of topics, from mathematics and economics to philosophy and languages.
 
-- Currently learning German and French, and always happy to explore different cultures and perspectives.
+- Currently learning German, and always happy to explore different cultures and perspectives.
 
 - I enjoy writing, asking questions, and finding unexpected connections between seemingly unrelated ideas.
 
