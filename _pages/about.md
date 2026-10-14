@@ -96,7 +96,7 @@ I usually develop in **Linux environments**, manage experiments and code with **
 
 # 🌱 Misc.
 
-- Curious about almost everything, from mathematics and economics to philosophy, theology, and languages.
+- Curious about a wide range of topics, from mathematics and economics to philosophy and languages.
 
 - Currently learning German and French, and always happy to explore different cultures and perspectives.
 
