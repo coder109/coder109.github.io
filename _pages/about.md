@@ -84,7 +84,7 @@ Beyond research, I'm an open-source enthusiast and enjoy exploring Linux and the
   - Co-founder of the HIT Linux Open Source Student Club
 
 
-## 🛠 What I Work With
+# 🛠 What I Work With
 
 Most of my work revolves around **LLMs and multi-agent systems**. I primarily use **Python**, along with **PyTorch** and the **Hugging Face ecosystem**, for model training, fine-tuning, and evaluation. I also work with **C/C++** and enjoy exploring algorithms and how things work under the hood.
 
